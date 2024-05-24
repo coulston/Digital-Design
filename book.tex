@@ -1,0 +1,110 @@
+%%------------------------------------
+%% To backup the book
+%% tar -cvf book.tar *.tex ./Fig*/*.fig ./Fig*/*.eps
+%%
+%% To make the book
+%% unix% latex book.tex
+%% unix% makeindex book
+%% unix% latex book.tex
+%% unix% dvips book.dvi -o book.ps
+%% unix% ghostview book.ps &
+%%
+%% To make an index entry
+%% \index{word!subword}
+%%
+%% To make a multipage index
+%% \index{word|(}
+%% \index{word|)}
+%%
+%% To make a page reference
+%% \label{page:topic}
+%% \pageref{page:topic}
+%%
+%% xfig libraries: /usr/X386/lib/X11/xfig/Libraries/Digital
+%%------------------------------------
+
+%%------------------------------------------------------
+%% Document formatting standards.
+%%
+%% States names bold
+%% Vector circuit signals are uppercase $math$
+%% single-bit signals are upper case $math$
+%% Individual components of a vector are lower case $math$
+%% $clk$ and $reset$ are always lower case
+%% literal program statments are \verb
+%% "if/then/else" and "for loop" are regular font
+%% The name of a hardware component is regular font, e.g. MBR
+%% 4-bit register, ``4" always arabic
+%% four bits of input, spell out when less than 10
+%% Use `` quotes at begining and " at end
+%% 2's-complement number or using 2's complement.
+%% If you italize the first usage, it should also appear in the index
+%% No "we", "you", "let's", "our", 
+%% Boolean Algebra
+%% ``Don't care"
+%% all time reference are regular font and use "=", e.g. time=20
+%% Hz, or MHz
+%% figure order, caption then label
+%%------------------------------------------------------
+
+
+%%\documentclass[11pt,psfig]{book}
+\documentclass[11pt]{book}
+%%\usepackage{makeidx, graphics, textcomp, setspace}
+\usepackage{makeidx, graphics, textcomp, setspace}
+\makeindex
+
+\begin{document}
+\newcommand{\bs}{\backslash}
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\Tplh}{${\rm T}_{\rm plh} \ $}
+\newcommand{\Tphl}{${\rm T}_{\rm phl} \ $}
+\newcommand{\VCC}{${\rm V}_{\rm CC} \ $}
+\newcommand{\VIH}{${\rm V}_{\rm IH} \ $}
+\newcommand{\VIL}{${\rm V}_{\rm IL} \ $}
+\newcommand{\IOH}{${\rm I}_{\rm OH} \ $}
+\newcommand{\IOL}{${\rm I}_{\rm OL} \ $}
+\newcommand{\TA}{${\rm T}_{\rm A} \ $}
+\newcommand{\VOH}{${\rm V}_{\rm OH} \ $}
+\newcommand{\VOL}{${\rm V}_{\rm OL} \ $}
+\newcommand{\IIH}{${\rm I}_{\rm IH} \ $}
+\newcommand{\IIL}{${\rm I}_{\rm IL} \ $}
+\newcommand{\Ra}{${\rm R}_{\rm a} \ $}
+\newcommand{\Rb}{${\rm R}_{\rm b} \ $}
+\newcommand{\mod}{{\rm mod} \ }
+%% This will surpress expression of the homework solutions
+\newcommand{\solution}[1]{}
+
+
+\frontmatter
+%% \title{{\Huge Digital Design} \\
+%% A Datapath and Control Approach}
+%% \author{Chris Coulston}
+%% \date{}
+%% \maketitle
+
+\begin{titlepage}
+\center
+\includegraphics{./Fig/cover}
+\end{titlepage}
+
+\include{copyright}
+\include{dedication}
+\tableofcontents
+
+\mainmatter
+\include{chapter1}
+%%\include{chapter2}
+%%\include{chapter3}
+%%\include{chapter4}
+%%\include{chapter5}
+%%\include{chapter6}
+%%\include{chapter7}
+%%\include{chapter8}
+%%\include{chapter9}
+%%\include{chapter10}
+\appendix
+\include{appendix}
+\printindex
+\end{document} 

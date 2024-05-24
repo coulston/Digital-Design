@@ -1,0 +1,60 @@
+%%------------------------------------
+%% This is for the workbook 
+%% tar -cvf work.tar *.tex ./Fig*/*.fig
+%%
+%% To make the book
+%% unix% latex work.tex
+%% unix% makeindex work
+%% unix% latex work.tex
+%% unix% dvips work.dvi -o work.ps
+%% unix% ghostview work.ps &
+%%
+%%------------------------------------
+
+\documentclass[11pt,psfig]{article}
+\usepackage{graphics}
+
+\begin{document}
+\newcommand{\bs}{\backslash}
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\Tplh}{${\rm T}_{\rm plh} \ $}
+\newcommand{\Tphl}{${\rm T}_{\rm phl} \ $}
+\newcommand{\VCC}{${\rm V}_{\rm CC} \ $}
+\newcommand{\VIH}{${\rm V}_{\rm IH} \ $}
+\newcommand{\VIL}{${\rm V}_{\rm IL} \ $}
+\newcommand{\IOH}{${\rm I}_{\rm OH} \ $}
+\newcommand{\IOL}{${\rm I}_{\rm OL} \ $}
+\newcommand{\TA}{${\rm T}_{\rm A} \ $}
+\newcommand{\VOH}{${\rm V}_{\rm OH} \ $}
+\newcommand{\VOL}{${\rm V}_{\rm OL} \ $}
+\newcommand{\IIH}{${\rm I}_{\rm IH} \ $}
+\newcommand{\IIL}{${\rm I}_{\rm IL} \ $}
+\newcommand{\Ra}{${\rm R}_{\rm a} \ $}
+\newcommand{\Rb}{${\rm R}_{\rm b} \ $}
+\newcommand{\mod}{{\rm mod} \ }
+
+
+\title{{\Huge Digital Design} \\
+A Datapath and Control Approach \\
+The workbook}
+\author{Chris Coulston}
+\date{}
+\maketitle
+
+%% \begin{titlepage}
+%% \includegraphics{./Fig/cover}
+%% \end{titlepage}
+
+\include{copyright}
+
+\include{work1}
+\include{work2}
+\include{work3}
+\include{work4}
+\include{work5}
+\include{work6}
+\include{work7}
+\include{work8}
+
+\end{document} 

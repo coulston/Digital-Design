@@ -1,0 +1,784 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2003.2.18)  10 DEC 2004 08:48
+**hw.tex
+(hw.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk11.clo
+File: bk11.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+
+LaTeX Warning: Unused global option(s):
+    [psfig].
+
+(hw.aux)
+\openout1 = `hw.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 23.
+ [1
+
+
+] [2
+
+]
+Chapter 1.
+(hw1.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 24.
+
+Underfull \vbox (badness 1852) has occurred while \output is active []
+
+ [3]
+[4]) [5] [6
+
+]
+Chapter 2.
+(hw2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+
+ []
+
+
+Overfull \hbox (39.1302pt too wide) in paragraph at lines 31--32
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+File: ./FigHw2/Sol2-1.eps Graphic file (type eps)
+<./FigHw2/Sol2-1.eps> [7]
+File: ./FigHw2/Prob2-3.eps Graphic file (type eps)
+ <./FigHw2/Prob2-3.eps> [8]
+Overfull \hbox (14.1998pt too wide) in paragraph at lines 104--104
+[]\OT1/cmr/m/it/10.95 F(A,B,C) = (A+B+C)(A+B'+C')(A'+B+C')(A'+B'+C) = A'B'C
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+
+ []
+
+
+Overfull \hbox (30.30342pt too wide) in paragraph at lines 104--104
+[]\OT1/cmr/m/it/10.95 H(A,B,C) = (A+B'+C)(A+B'+C')(A'+B+C)(A'+B+C')(A'+B'+C')
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+File: ./FigHw2/Sol2-4.eps Graphic file (type eps)
+<./FigHw2/Sol2-4.eps>
+Overfull \hbox (72.61624pt too wide) in paragraph at lines 113--113
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 122.07475pt on input line 113.
+
+[9] [10] [11] [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+Overfull \hbox (58.2089pt too wide) in paragraph at lines 358--359
+\OT1/cmr/m/it/10.95 Leading to this an-swer $\OML/cmm/m/it/10.95 z \OT1/cmr/m/n
+/10.95 = [] \OML/cmm/m/it/10.95 m\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; \OT
+1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 
+; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10
+.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 6\OML/cmm/m/
+it/10.95 ; \OT1/cmr/m/n/10.95 8\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 12) = [
+] \OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 (7\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/
+10.95 9\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10\OML/cmm/m/it/10.95 ; \OT1/cm
+r/m/n/10.95 11\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 13\OML/cmm/m/it/10.95 ; 
+\OT1/cmr/m/n/10.95 14\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 15)$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+
+Overfull \hbox (27.95132pt too wide) in paragraph at lines 362--364
+[]\OT1/cmr/bx/n/10.95 (3 pts.) \OT1/cmr/m/n/10.95 De-ter-mine the canon-i-cal S
+OP and POS ex-pres-sion for $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 A; B; C\OT1/cmr/m/n/10.95 ) =
+ []
+
+
+Overfull \hbox (41.57948pt too wide) in paragraph at lines 370--372
+[]\OT1/cmr/bx/n/10.95 (3 pts.) \OT1/cmr/m/n/10.95 De-ter-mine the canon-i-cal S
+OP and POS ex-pres-sion for $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 A; B; C; D\OT1/cmr/m/n/10.95 ) =
+ []
+
+
+Overfull \hbox (82.37622pt too wide) in paragraph at lines 378--379
+\OT1/cmr/m/it/10.95 F(A,B,C)=(A+B+C+D')(A+B+C'+D)(A+B+C'+D') (A+B'+C+D')(A+B'+C
+'+D) 
+ []
+
+
+Overfull \hbox (113.71733pt too wide) in paragraph at lines 378--379
+\OT1/cmr/m/it/10.95 (A+B'+C'+D')(A'+B+C+D)(A'+B+C+D') (A'+B+C'+D)(A'+B+C'+D')(A
+'+B'+C+D') 
+ []
+
+File: ./FigHw2/Prob2-14.eps Graphic file (type eps)
+<./FigHw2/Prob2-14.eps>
+Overfull \hbox (24.2733pt too wide) in paragraph at lines 386--391
+[]\OT1/cmr/bx/n/10.95 (4 pts.) \OT1/cmr/m/n/10.95 Please com-plete the tim-ing 
+di-a-gram for the func-tions $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm
+/m/it/10.95 A; B; C\OT1/cmr/m/n/10.95 ) =
+ []
+
+[14]
+File: ./FigHw2/Sol2-14.eps Graphic file (type eps)
+ <./FigHw2/Sol2-14.eps>) [15] [16] [17] [18
+
+]
+Chapter 3.
+(hw3.tex [19]
+File: ./FigHw3/Prob3-3.eps Graphic file (type eps)
+ <./FigHw3/Prob3-3.eps>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 83.
+ (/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
+
+Underfull \vbox (badness 3579) has occurred while \output is active []
+
+ [20]
+Overfull \hbox (7.19687pt too wide) in paragraph at lines 126--127
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+Overfull \hbox (3.76498pt too wide) in paragraph at lines 180--181
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+
+Overfull \hbox (47.39252pt too wide) in paragraph at lines 201--202
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+[22]
+Overfull \hbox (8.11972pt too wide) in paragraph at lines 259--260
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+
+ []
+
+
+Overfull \hbox (8.11972pt too wide) in paragraph at lines 280--281
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+[23]
+Overfull \hbox (6.00217pt too wide) in paragraph at lines 347--348
+\OT1/cmr/m/it/10.95 F(A,B,C,D,E) = BCE + A'C'D'E' + BC'DE + ACDE' + A'BD'E
+ []
+
+
+Overfull \hbox (9.76772pt too wide) in paragraph at lines 347--348
+\OT1/cmr/m/it/10.95 F(A,B,C,D,E) = BCE + A'C'D'E' + BC'DE + ACDE' + A'BC'D'
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+
+Overfull \hbox (5.46632pt too wide) in paragraph at lines 349--350
+[]$\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A; B; C; D; E\O
+T1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 m\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm
+/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OM
+L/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.9
+5 13\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 15\OML/cmm/m/it/10.95 ; \OT1/cmr/m
+/n/10.95 18\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 21\OML/cmm/m/it/10.95 ; \OT
+1/cmr/m/n/10.95 24\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 26\OML/cmm/m/it/10.9
+5 ; \OT1/cmr/m/n/10.95 28\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 29)$ 
+ []
+
+
+Underfull \vbox (badness 6625) has occurred while \output is active []
+
+ [24]
+Overfull \hbox (40.57959pt too wide) in paragraph at lines 414--415
+[]$\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A; B; C; D; E\O
+T1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 m\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm
+/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 11\O
+ML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 13\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.
+95 17\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 19\OML/cmm/m/it/10.95 ; \OT1/cmr/
+m/n/10.95 29\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 31) + [] \OML/cmm/m/it/10.
+95 d\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm/m/i
+t/10.95 ; \OT1/cmr/m/n/10.95 9\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 16\OML/c
+mm/m/it/10.95 ; \OT1/cmr/m/n/10.95 25)$ 
+ []
+
+
+Overfull \hbox (7.02258pt too wide) in paragraph at lines 436--437
+\OT1/cmr/m/it/10.95 F(A,B,C,D,E)=A'D'E+A'C'E+A'B'C'D+B'C'E+ABCE +A'B'E
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+[25]
+Overfull \hbox (15.357pt too wide) in paragraph at lines 516--517
+[][] $\OT1/cmr/m/it/10.95 F(A,B,C,D) = (A+C+D)(B'+C+D)(A+B'+D)(A'+B+C') 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+
+Underfull \vbox (badness 2591) has occurred while \output is active []
+
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Overfull \hbox (39.73631pt too wide) in paragraph at lines 625--629
+[][] 
+ []
+
+[28]) [29] [30
+
+]
+Chapter 4.
+(hw4.tex [31] [32]
+
+LaTeX Warning: Reference `page:Ovf' on page 33 undefined on input line 120.
+
+
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 137--146
+[][] 
+ []
+
+File: ./FigHw4/Prob4-5.eps Graphic file (type eps)
+<./FigHw4/Prob4-5.eps>
+Overfull \hbox (67.89674pt too wide) in paragraph at lines 156--158
+ [] 
+ []
+
+[33]
+Overfull \hbox (72.59538pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/it/10.95 Sym-bol-i-cally we have: s7=(b3+b2+b1+b0')(b2'+b1+b0)(b3'+b
+0')(b2'+b1'+b0'); 
+ []
+
+
+Overfull \hbox (92.74333pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/it/10.95 s5=(b2'+b1+b0')(b3+b2+b1+b0')(b2+b1+b0')(b2'+b1+b0)(b3'+b0'
+)(b2'+b1'+b0'); 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+ []
+
+[34]
+File: ./FigHw4/Sol4-7.eps Graphic file (type eps)
+ <./FigHw4/Sol4-7.eps>
+
+LaTeX Warning: Float too large for page by 226.10017pt on input line 326.
+
+[35]
+File: ./FigHw4/Sol4-8a.eps Graphic file (type eps)
+ <./FigHw4/Sol4-8a.eps>
+File: ./FigHw4/Sol4-8b.eps Graphic file (type eps)
+ <./FigHw4/Sol4-8b.eps>
+File: ./FigHw4/Sol4-8c.eps Graphic file (type eps)
+ <./FigHw4/Sol4-8c.eps>
+File: ./FigHw4/Sol4-8d.eps Graphic file (type eps)
+
+<./FigHw4/Sol4-8d.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+File: ./FigHw4/Sol4-8e.eps Graphic file (type eps)
+
+<./FigHw4/Sol4-8e.eps>
+File: ./FigHw4/Sol4-8f.eps Graphic file (type eps)
+ <./FigHw4/Sol4-8f.eps>
+File: ./FigHw4/Sol4-8g.eps Graphic file (type eps)
+ <./FigHw4/Sol4-8g.eps>
+File: ./FigHw4/Sol4-8h.eps Graphic file (type eps)
+
+<./FigHw4/Sol4-8h.eps>
+Underfull \vbox (badness 5260) has occurred while \output is active []
+
+ [37]
+File: ./FigHw4/Sol4-8i.eps Graphic file (type eps)
+
+<./FigHw4/Sol4-8i.eps>
+File: ./FigHw4/Sol4-8j.eps Graphic file (type eps)
+ <./FigHw4/Sol4-8j.eps>
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 403--414
+[][]
+ []
+
+[38]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 454--467
+[][] 
+ []
+
+File: ./FigHw4/Sol4-10.eps Graphic file (type eps)
+<./FigHw4/Sol4-10.eps> [39]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 509--521
+[][] 
+ []
+
+[40]
+File: ./FigHw4/Sol4-11.eps Graphic file (type eps)
+ <./FigHw4/Sol4-11.eps> [41]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 639--660
+[][]
+ []
+
+File: ./FigHw4/Prob4-16.eps Graphic file (type eps)
+<./FigHw4/Prob4-16.eps>
+File: ./FigHw4/Prob4-17.eps Graphic file (type eps)
+ <./FigHw4/Prob4-17.eps>) [42] [43] [44]
+Chapter 5.
+(hw5.tex
+File: ./FigHw5/Prob5-1.eps Graphic file (type eps)
+ <./FigHw5/Prob5-1.eps>
+File: ./FigHw5/Prob5-2.eps Graphic file (type eps)
+ <./FigHw5/Prob5-2.eps> [45
+
+]
+File: ./FigHw5/Prob5-3.eps Graphic file (type eps)
+
+<./FigHw5/Prob5-3.eps> [46]
+File: ./FigHw5/Prob5-4.eps Graphic file (type eps)
+ <./FigHw5/Prob5-4.eps>
+Overfull \hbox (17.91187pt too wide) in paragraph at lines 120--121
+ [] 
+ []
+
+File: ./FigHw5/Sol5-4.eps Graphic file (type eps)
+<./FigHw5/Sol5-4.eps>
+Overfull \hbox (17.91187pt too wide) in paragraph at lines 129--129
+ [] 
+ []
+
+File: ./FigHw5/Prob5-5.eps Graphic file (type eps)
+<./FigHw5/Prob5-5.eps>
+Overfull \hbox (17.91187pt too wide) in paragraph at lines 137--138
+ [] 
+ []
+
+File: ./FigHw5/Sol5-5.eps Graphic file (type eps)
+<./FigHw5/Sol5-5.eps>
+Overfull \hbox (17.91187pt too wide) in paragraph at lines 146--146
+ [] 
+ []
+
+) [47] [48] [49] [50
+
+]
+Chapter 6.
+(hw6.tex
+File: ./FigHw6/Prob6-1.eps Graphic file (type eps)
+ <./FigHw6/Prob6-1.eps>
+Overfull \hbox (165.965pt too wide) in paragraph at lines 25--25
+ [] 
+ []
+
+[51]
+File: ./FigHw6/Prob6-2.eps Graphic file (type eps)
+ <./FigHw6/Prob6-2.eps>
+Overfull \hbox (35.4775pt too wide) in paragraph at lines 57--57
+ [] 
+ []
+
+File: ./FigHw6/Prob6-3.eps Graphic file (type eps)
+<./FigHw6/Prob6-3.eps> [52]
+File: ./FigHw6/Prob6-4.eps Graphic file (type eps)
+ <./FigHw6/Prob6-4.eps>
+File: ./FigHw6/Prob6-5.eps Graphic file (type eps)
+ <./FigHw6/Prob6-5.eps>
+[53] [54]
+File: ./FigHw6/Prob6-6.eps Graphic file (type eps)
+ <./FigHw6/Prob6-6.eps> [55]
+File: ./FigHw6/Prob6-7.eps Graphic file (type eps)
+ <./FigHw6/Prob6-7.eps>
+File: ./FigHw6/Prob6-8.eps Graphic file (type eps)
+
+<./FigHw6/Prob6-8.eps>
+File: ./FigHw6/Prob6-9.eps Graphic file (type eps)
+ <./FigHw6/Prob6-9.eps> [56]
+File: ./FigHw6/Prob6-10.eps Graphic file (type eps)
+ <./FigHw6/Prob6-10.eps>
+
+LaTeX Warning: Reference `page:shi' on page 57 undefined on input line 210.
+
+File: ./FigHw6/Prob6-14.eps Graphic file (type eps)
+<./FigHw6/Prob6-14.eps>
+File: ./FigHw6/Prob6-13.eps Graphic file (type eps)
+ <./FigHw6/Prob6-13.eps>
+
+LaTeX Warning: Reference `page:cou' on page 57 undefined on input line 227.
+
+File: ./FigHw6/Prob6-15.eps Graphic file (type eps)
+<./FigHw6/Prob6-15.eps> [57]
+File: ./FigHw6/Prob6-14.eps Graphic file (type eps)
+ <./FigHw6/Prob6-14.eps>
+
+LaTeX Warning: Reference `page:reg' on page 58 undefined on input line 244.
+
+
+LaTeX Warning: Reference `fig:comb3' on page 58 undefined on input line 246.
+
+File: ./FigHw6/Prob6-16.eps Graphic file (type eps)
+<./FigHw6/Prob6-16.eps>
+File: ./FigHw6/Prob6-15.eps Graphic file (type eps)
+ <./FigHw6/Prob6-15.eps>) [58] [59] [60] [61] [62
+
+]
+Chapter 7.
+(hw7.tex [63] [64]
+Overfull \hbox (26.95778pt too wide) in paragraph at lines 92--130
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+
+ []
+
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+
+ []
+
+File: ./FigHw7/Prob7-10.eps Graphic file (type eps)
+<./FigHw7/Prob7-10.eps> [66]
+File: ./FigHw7/Sol7-9.eps Graphic file (type eps)
+ <./FigHw7/Sol7-9.eps>
+Overfull \hbox (257.30624pt too wide) in paragraph at lines 271--271
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
+File: ./FigHw7/Prob7-11.eps Graphic file (type eps)
+
+<./FigHw7/Prob7-11.eps> [68]
+File: ./FigHw7/Prob7-11b.eps Graphic file (type eps)
+ <./FigHw7/Prob7-11b.eps>
+File: ./FigHw7/Sol7-11.eps Graphic file (type eps)
+ <./FigHw7/Sol7-11.eps>
+[69]
+File: ./FigHw7/Prob7-12.eps Graphic file (type eps)
+ <./FigHw7/Prob7-12.eps> [70]
+File: ./FigHw7/Sol7-11.eps Graphic file (type eps)
+ <./FigHw7/Sol7-11.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71]
+File: ./FigHw7/Prob7-13.eps Graphic file (type eps)
+
+<./FigHw7/Prob7-13.eps>
+
+LaTeX Warning: Reference `fig:pushfsm' on page 72 undefined on input line 407.
+
+
+Underfull \vbox (badness 6978) has occurred while \output is active []
+
+ [72]
+File: ./FigHw7/Sol7-12.eps Graphic file (type eps)
+
+<./FigHw7/Sol7-12.eps>
+Overfull \hbox (21.42499pt too wide) in paragraph at lines 444--444
+ [] 
+ []
+
+File: ./FigHw7/Prob7-14.eps Graphic file (type eps)
+<./FigHw7/Prob7-14.eps> [73] [74]
+Overfull \hbox (5.35338pt too wide) in paragraph at lines 495--502
+[][] 
+ []
+
+File: ./FigHw7/Sol7-13.eps Graphic file (type eps)
+<./FigHw7/Sol7-13.eps>
+Overfull \hbox (6.36874pt too wide) in paragraph at lines 573--573
+ [] 
+ []
+
+[75] [76]
+File: ./FigHw7/Prob7-15.eps Graphic file (type eps)
+ <./FigHw7/Prob7-15.eps> [77]
+Overfull \hbox (48.79546pt too wide) in paragraph at lines 619--626
+[][] 
+ []
+
+
+Overfull \hbox (27.75452pt too wide) in paragraph at lines 630--636
+[][] 
+ []
+
+File: ./FigHw7/Prob7-16.eps Graphic file (type eps)
+<./FigHw7/Prob7-16.eps> [78]
+Overfull \hbox (61.8054pt too wide) in paragraph at lines 674--679
+[][] 
+ []
+
+[79]
+File: ./FigHw7/Sol7-16.eps Graphic file (type eps)
+ <./FigHw7/Sol7-16.eps> [80] [81]) [82]
+Chapter 8.
+(hw8.tex [83
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+
+ []
+
+[84]
+File: ./FigHw8/Sol8-5.eps Graphic file (type eps)
+ <./FigHw8/Sol8-5.eps>
+Overfull \hbox (133.9432pt too wide) in paragraph at lines 140--140
+ [] 
+ []
+
+
+Overfull \hbox (13.53467pt too wide) in paragraph at lines 140--140
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85]
+[86]
+File: ./FigHw8/Prob8-7.eps Graphic file (type eps)
+ <./FigHw8/Prob8-7.eps>
+File: ./FigHw8/Prob8-8.eps Graphic file (type eps)
+ <./FigHw8/Prob8-8.eps>
+File: ./FigHw8/Sol8-8.eps Graphic file (type eps)
+ <./FigHw8/Sol8-8.eps>
+Overfull \hbox (107.7475pt too wide) in paragraph at lines 237--237
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87]
+[88]
+File: ./FigHw8/Sol8-10.eps Graphic file (type eps)
+ <./FigHw8/Sol8-10.eps>
+Overfull \hbox (27.14467pt too wide) in paragraph at lines 338--338
+ [] 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 338.
+
+Overfull \hbox (0.44623pt too wide) in paragraph at lines 338--338
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+
+ []
+
+[89] [90]
+File: ./FigHw8/Prob8-14.eps Graphic file (type eps)
+ <./FigHw8/Prob8-14.eps>
+Overfull \hbox (43.98961pt too wide) in paragraph at lines 407--419
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91]
+[92]
+File: ./FigHw8/Prob8-14b.eps Graphic file (type eps)
+ <./FigHw8/Prob8-14b.eps> [93]
+
+LaTeX Warning: Reference `page:MulyBy10' on page 94 undefined on input line 480
+.
+
+File: ./FigHw8/Prob8-16.eps Graphic file (type eps)
+<./FigHw8/Prob8-16.eps>
+File: ./FigHw8/Prob8-17.eps Graphic file (type eps)
+ <./FigHw8/Prob8-17.eps> [94] [95]
+File: ./FigHw8/Sol8-16.eps Graphic file (type eps)
+
+<./FigHw8/Sol8-16.eps>
+Overfull \hbox (473.11249pt too wide) in paragraph at lines 649--649
+ [] 
+ []
+
+[96]
+Overfull \hbox (58.42741pt too wide) in paragraph at lines 649--649
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--649
+
+ []
+
+
+Overfull \hbox (71.89806pt too wide) detected at line 649
+[]
+ []
+
+[97]) [98]
+Chapter 9.
+(hw10.tex
+
+LaTeX Warning: Reference `fig:pushbutton' on page 99 undefined on input line 5.
+
+
+
+Overfull \hbox (26.04977pt too wide) in paragraph at lines 22--37
+[][] 
+ []
+
+[99
+
+]
+Overfull \hbox (26.04977pt too wide) in paragraph at lines 46--57
+[][] 
+ []
+
+File: ./FigHw10/Prob10-4.eps Graphic file (type eps)
+<./FigHw10/Prob10-4.eps>
+
+LaTeX Warning: Reference `page:push_dp' on page 100 undefined on input line 100
+.
+
+[100]
+File: ./FigHw10/Prob10-4b.eps Graphic file (type eps)
+ <./FigHw10/Prob10-4b.eps> [101] [102]
+File: ./FigHw10/Prob10-6.eps Graphic file (type eps)
+ <./FigHw10/Prob10-6.eps> [103]
+File: ./FigHw10/Prob10-6b.eps Graphic file (type eps)
+
+<./FigHw10/Prob10-6b.eps> [104]
+File: ./FigHw10/Prob10-6c.eps Graphic file (type eps)
+ <./FigHw10/Prob10-6c.eps>
+Overfull \hbox (26.04977pt too wide) in paragraph at lines 247--258
+[][] 
+ []
+
+[105] [106]) [107] (hw.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 721 strings out of 20880
+ 8377 string characters out of 196184
+ 65901 words of memory out of 350001
+ 3617 multiletter control sequences out of 10000+15000
+ 10991 words of font info for 38 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 23i,14n,19p,233b,507s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on hw.dvi (107 pages, 265824 bytes).

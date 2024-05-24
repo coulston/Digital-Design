@@ -1,0 +1,1681 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=latex 2010.5.5)  13 DEC 2010 12:46
+entering extended mode
+**book.tex book.tex
+(./book.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8d> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, bulgarian, catalan, croatian, czech, danish, dutch, esperanto, e
+stonian, finnish, greek, icelandic, irish, italian, latin, magyar, norsk, polis
+h, portuges, romanian, russian, serbian, slovak, slovene, spanish, swedish, tur
+kish, ukrainian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2004/02/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk11.clo
+File: bk11.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.cfg
+File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texmf/tex/latex/base/textcomp.sty
+Package: textcomp 2004/02/22 v1.99f Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
+(/usr/share/texmf/tex/latex/setspace/setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+)
+\@indexfile=\write3
+\openout3 = `book.idx'.
+
+
+Writing index file book.idx
+
+LaTeX Warning: Unused global option(s):
+    [psfig].
+
+(./book.aux (./copyright.aux) (./dedication.aux) (./chapter0.aux)
+(./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
+(./chapter5.aux) (./chapter6.aux) (./chapter7.aux) (./chapter8.aux)
+(./chapter9.aux) (./chapter10.aux) (./appendix.aux))
+\openout1 = `book.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 56.
+
+(/usr/share/texmf/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 56.
+File: ./Fig/cover.eps Graphic file (type eps)
+ <./Fig/cover.eps> [1
+
+
+
+]
+\openout2 = `copyright.aux'.
+
+
+(./copyright.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+
+ []
+
+) [2
+
+]
+\openout2 = `dedication.aux'.
+
+ (./dedication.tex) [3
+
+
+] [4
+
+
+] (./book.toc [5] [6] [7] [8])
+\tf@toc=\write4
+\openout4 = `book.toc'.
+
+ [9] [10
+
+]
+\openout2 = `chapter0.aux'.
+
+
+(./chapter0.tex
+Chapter 1.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6])
+[7]
+\openout2 = `chapter1.aux'.
+
+ (./chapter1.tex [8
+
+
+
+]
+Chapter 2.
+File: ./Fig1/sys.eps Graphic file (type eps)
+<./Fig1/sys.eps> [9] [10]
+Overfull \hbox (24.7015pt too wide) detected at line 86
+\OT1/cmr/m/n/10.95 1 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 2[] + 1 \OMS/cm
+sy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 2[] + 0 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/
+n/10.95 2[] + 1 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 2[] = [] 1 \OMS/cmsy
+/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 8[] + 1 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/
+10.95 4[] + 0 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 2[] + 1 \OMS/cmsy/m/n/
+10.95 ^^C \OT1/cmr/m/n/10.95 1[] = [] 8[] + 4[] + 0[] + 1[] = 13[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--107
+
+ []
+
+[11]
+Underfull \vbox (badness 2293) has occurred while \output is active []
+
+ [12]
+[13]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 230.
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--241
+
+ []
+
+
+Overfull \hbox (25.94577pt too wide) in paragraph at lines 225--241
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--241
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--295
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--295
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--295
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--295
+
+ []
+
+[14] [15]
+File: ./Fig1/2wheel.eps Graphic file (type eps)
+ <./Fig1/2wheel.eps> [16]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 385.
+
+Overfull \hbox (34.00055pt too wide) in paragraph at lines 385--408
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--451
+
+ []
+
+[17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+(./hw1.tex [25])) [26]
+\openout2 = `chapter2.aux'.
+
+ (./chapter2.tex
+Chapter 3.
+[27
+
+
+
+]
+File: ./Fig2/Design.eps Graphic file (type eps)
+ <./Fig2/Design.eps> [28]
+File: ./Fig2/and.eps Graphic file (type eps)
+ <./Fig2/and.eps>
+Overfull \hbox (83.22552pt too wide) in paragraph at lines 100--124
+[][] 
+ []
+
+File: ./Fig2/or.eps Graphic file (type eps)
+<./Fig2/or.eps>
+File: ./Fig2/not.eps Graphic file (type eps)
+ <./Fig2/not.eps>
+File: ./Fig2/nand.eps Graphic file (type eps)
+ <./Fig2/nand.eps>
+Overfull \hbox (90.9132pt too wide) in paragraph at lines 125--183
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
+File: ./Fig2/nor.eps Graphic file (type eps)
+
+<./Fig2/nor.eps>
+File: ./Fig2/xor.eps Graphic file (type eps)
+ <./Fig2/xor.eps>
+Overfull \hbox (77.51549pt too wide) in paragraph at lines 184--229
+[][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+File: ./Fig2/forms.eps Graphic file (type eps)
+
+<./Fig2/forms.eps>
+File: ./Fig2/cd-tt.eps Graphic file (type eps)
+ <./Fig2/cd-tt.eps> [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+File: ./Fig2/cd-tt2.eps Graphic file (type eps)
+
+<./Fig2/cd-tt2.eps>
+Overfull \hbox (2.35374pt too wide) in paragraph at lines 351--353
+ [] 
+ []
+
+[34] [35]
+File: ./Fig2/basic.eps Graphic file (type eps)
+ <./Fig2/basic.eps>
+Overfull \hbox (51.53749pt too wide) in paragraph at lines 406--408
+ [] 
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 477--490
+
+ []
+
+
+Underfull \vbox (badness 6741) has occurred while \output is active []
+
+ [37]
+[38] [39] [40]
+File: ./Fig2/advance.eps Graphic file (type eps)
+ <./Fig2/advance.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+[42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+[44] [45]
+Underfull \hbox (badness 10000) in paragraph at lines 909--924
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1019
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1065
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1065
+
+ []
+
+[49] [50] [51] [52] [53]
+File: ./Fig2/ThreeOutputs.eps Graphic file (type eps)
+ <./Fig2/ThreeOutputs.eps> [54]
+File: ./Fig2/time.eps Graphic file (type eps)
+ <./Fig2/time.eps>
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 1336--1349
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+(./hw2.tex
+File: ./FigHw2/Prob2-3.eps Graphic file (type eps)
+ <./FigHw2/Prob2-3.eps>
+Underfull \vbox (badness 1509) has occurred while \output is active []
+
+ [63]
+[64]
+Overfull \hbox (27.95132pt too wide) in paragraph at lines 368--370
+[]\OT1/cmr/bx/n/10.95 (3 pts.) \OT1/cmr/m/n/10.95 De-ter-mine the canon-i-cal S
+OP and POS ex-pres-sion for $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 A; B; C\OT1/cmr/m/n/10.95 ) =
+ []
+
+
+Overfull \hbox (41.57948pt too wide) in paragraph at lines 376--378
+[]\OT1/cmr/bx/n/10.95 (3 pts.) \OT1/cmr/m/n/10.95 De-ter-mine the canon-i-cal S
+OP and POS ex-pres-sion for $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 A; B; C; D\OT1/cmr/m/n/10.95 ) =
+ []
+
+File: ./FigHw2/Prob2-14.eps Graphic file (type eps)
+<./FigHw2/Prob2-14.eps> [65])) [66]
+\openout2 = `chapter3.aux'.
+
+ (./chapter3.tex
+Chapter 4.
+[67
+
+
+
+] [68]
+File: ./Fig3/Torus.eps Graphic file (type eps)
+ <./Fig3/Torus.eps>
+Overfull \hbox (39.4925pt too wide) in paragraph at lines 149--152
+ [] 
+ []
+
+[69] [70] [71]
+
+LaTeX Warning: Marginpar on page 72 moved.
+
+
+Overfull \hbox (0.11784pt too wide) in paragraph at lines 313--314
+[]\OT1/cmr/m/n/10.95 A Kmap may have more
+ []
+
+
+LaTeX Warning: Marginpar on page 72 moved.
+
+
+LaTeX Warning: Marginpar on page 72 moved.
+
+[72]
+Underfull \vbox (badness 1286) has occurred while \output is active []
+
+ [73]
+
+LaTeX Warning: Marginpar on page 74 moved.
+
+
+Overfull \hbox (13.78093pt too wide) in paragraph at lines 447--454
+[]\OT1/cmr/m/n/10.95 This ex-am-ple demon-strates an in-ter-est-ing point:
+ []
+
+[74]
+Overfull \hbox (11.23523pt too wide) in paragraph at lines 479--488
+\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A; B; C; D; E\OT1/
+cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 m\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10
+.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/
+it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OML/c
+mm/m/it/10.95 ; \OT1/cmr/m/n/10.95 8\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10
+\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 15\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/1
+0.95 16\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 18\OML/cmm/m/it/10.95 ; \OT1/cm
+r/m/n/10.95 23\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 24\OML/cmm/m/it/10.95 ; 
+\OT1/cmr/m/n/10.95 26\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 28\OML/cmm/m/it/1
+0.95 ; \OT1/cmr/m/n/10.95 29\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 31)$. Each
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--533
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--533
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--555
+
+ []
+
+[75]
+File: ./Fig3/MultiOut.eps Graphic file (type eps)
+ <./Fig3/MultiOut.eps>
+Underfull \hbox (badness 1325) in paragraph at lines 625--625
+$\OML/cmm/m/it/6 I\OT1/cmr/m/n/6 (\OML/cmm/m/it/6 A; B; C\OT1/cmr/m/n/6 ) = [] 
+\OML/cmm/m/it/6 m\OT1/cmr/m/n/6 (1\OML/cmm/m/it/6 ; \OT1/cmr/m/n/6 2\OML/cmm/m/
+it/6 ; \OT1/cmr/m/n/6 3\OML/cmm/m/it/6 ; \OT1/cmr/m/n/6 5) =
+ []
+
+[76]
+File: ./Fig3/Share.eps Graphic file (type eps)
+ <./Fig3/Share.eps> [77]
+Overfull \hbox (0.97473pt too wide) detected at line 666
+[]
+ []
+
+
+Overfull \hbox (0.97473pt too wide) detected at line 707
+[]
+ []
+
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 784--797
+
+ []
+
+[79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 848--860
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 862--873
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 875--886
+
+ []
+
+
+LaTeX Warning: Marginpar on page 81 moved.
+
+[81]
+Underfull \hbox (badness 10000) in paragraph at lines 928--936
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 938--947
+
+ []
+
+
+Overfull \hbox (12.97128pt too wide) in paragraph at lines 949--958
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 949--958
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 960--970
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--982
+
+ []
+
+[82]
+Overfull \hbox (5.18246pt too wide) in paragraph at lines 1043--1045
+[]\OT1/cmr/m/n/10.95 The fol-low-ing is an ex-am-ple Espresso in-put file for t
+he func-tion $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a; b
+; c\OT1/cmr/m/n/10.95 ) =
+ []
+
+[83] [84] [85] [86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [88]
+(./hw3.tex
+File: ./FigHw3/Prob3-3.eps Graphic file (type eps)
+ <./FigHw3/Prob3-3.eps> [89]
+Overfull \hbox (5.46632pt too wide) in paragraph at lines 351--352
+[]$\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A; B; C; D; E\O
+T1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 m\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm
+/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OM
+L/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.9
+5 13\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 15\OML/cmm/m/it/10.95 ; \OT1/cmr/m
+/n/10.95 18\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 21\OML/cmm/m/it/10.95 ; \OT
+1/cmr/m/n/10.95 24\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 26\OML/cmm/m/it/10.9
+5 ; \OT1/cmr/m/n/10.95 28\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 29)$ 
+ []
+
+
+Overfull \hbox (40.57959pt too wide) in paragraph at lines 416--417
+[]$\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A; B; C; D; E\O
+T1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 m\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm
+/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 11\O
+ML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 13\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.
+95 17\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 19\OML/cmm/m/it/10.95 ; \OT1/cmr/
+m/n/10.95 29\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 31) + [] \OML/cmm/m/it/10.
+95 d\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm/m/i
+t/10.95 ; \OT1/cmr/m/n/10.95 9\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 16\OML/c
+mm/m/it/10.95 ; \OT1/cmr/m/n/10.95 25)$ 
+ []
+
+[90]
+Overfull \hbox (39.73631pt too wide) in paragraph at lines 627--631
+[][] 
+ []
+
+[91])) [92]
+\openout2 = `chapter4.aux'.
+
+ (./chapter4.tex
+Chapter 5.
+File: ./Fig4/Asys.eps Graphic file (type eps)
+<./Fig4/Asys.eps> [93
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 38--56
+
+ []
+
+File: ./Fig4/3:8.eps Graphic file (type eps)
+<./Fig4/3:8.eps> [94]
+File: ./Fig4/3:8Guts.eps Graphic file (type eps)
+ <./Fig4/3:8Guts.eps> [95]
+File: ./Fig4/BigDecoder.eps Graphic file (type eps)
+ <./Fig4/BigDecoder.eps>
+File: ./Fig4/8:1.eps Graphic file (type eps)
+
+<./Fig4/8:1.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 153--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--195
+
+ []
+
+[96] [97]
+File: ./Fig4/8:1Guts.eps Graphic file (type eps)
+ <./Fig4/8:1Guts.eps>
+File: ./Fig4/BigMux.eps Graphic file (type eps)
+ <./Fig4/BigMux.eps> [98]
+File: ./Fig4/4x2x1mux.eps Graphic file (type eps)
+ <./Fig4/4x2x1mux.eps>
+Overfull \hbox (17.40999pt too wide) in paragraph at lines 266--268
+ [] 
+ []
+
+
+Overfull \hbox (3.62968pt too wide) in paragraph at lines 280--294
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--294
+
+ []
+
+[99]
+File: ./Fig4/add.eps Graphic file (type eps)
+ <./Fig4/add.eps> [100]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 339.
+
+Overfull \hbox (235.72832pt too wide) in paragraph at lines 339--353
+[][]
+ []
+
+File: ./Fig4/adder.eps Graphic file (type eps)
+<./Fig4/adder.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [101]
+Overfull \hbox (3.62968pt too wide) in paragraph at lines 388--408
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--408
+
+ []
+
+File: ./Fig4/AddSub.eps Graphic file (type eps)
+<./Fig4/AddSub.eps> [102] [103]
+File: ./Fig4/TotalAddSub.eps Graphic file (type eps)
+ <./Fig4/TotalAddSub.eps>
+Overfull \hbox (3.62968pt too wide) in paragraph at lines 476--492
+[][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104]
+File: ./Fig4/Compare.eps Graphic file (type eps)
+
+<./Fig4/Compare.eps>
+Overfull \hbox (15.4025pt too wide) in paragraph at lines 522--523
+ [] 
+ []
+
+
+Overfull \hbox (17.28224pt too wide) in paragraph at lines 527--530
+[]\OT1/cmr/m/n/10.95 The truth ta-ble for a bit-slice of the com-para-tor has f
+ive in-puts, $\OML/cmm/m/it/10.95 x; y; Ein; Lin$
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [105]
+[106]
+Underfull \hbox (badness 10000) in paragraph at lines 571--591
+
+ []
+
+File: ./Fig4/tsb.eps Graphic file (type eps)
+<./Fig4/tsb.eps> [107]
+File: ./Fig4/bus.eps Graphic file (type eps)
+ <./Fig4/bus.eps>
+Overfull \hbox (3.3575pt too wide) in paragraph at lines 647--649
+ [] 
+ []
+
+[108] [109]
+Overfull \hbox (37.54552pt too wide) in paragraph at lines 761--767
+\OT1/cmr/m/n/10.95 Conditional state-ments arise in pro-gram-ming lan-guages in
+ the form of []\OT1/cmtt/m/n/10.95 if/then/else
+ []
+
+[110]
+File: ./Fig4/cond.eps Graphic file (type eps)
+ <./Fig4/cond.eps> [111]
+File: ./Fig4/cond2.eps Graphic file (type eps)
+ <./Fig4/cond2.eps> (./hw4.tex [112]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 137--146
+[][] 
+ []
+
+File: ./FigHw4/Prob4-5.eps Graphic file (type eps)
+<./FigHw4/Prob4-5.eps>
+Overfull \hbox (67.89674pt too wide) in paragraph at lines 157--159
+ [] 
+ []
+
+[113] [114]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 405--416
+[][]
+ []
+
+
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 455--468
+[][] 
+ []
+
+
+Underfull \vbox (badness 1132) has occurred while \output is active []
+
+ [115]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 511--523
+[][] 
+ []
+
+[116]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 639--661
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--661
+
+ []
+
+[117]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 682--692
+[][] 
+ []
+
+
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 728--740
+[][] 
+ []
+
+[118]
+Overfull \hbox (14.00475pt too wide) in paragraph at lines 747--758
+[][] 
+ []
+
+)) [119]
+\openout2 = `chapter5.aux'.
+
+ (./chapter5.tex [120
+
+
+
+]
+Chapter 6.
+[121]
+File: ./Fig5/SimpleFurnace.eps Graphic file (type eps)
+ <./Fig5/SimpleFurnace.eps> [122]
+File: ./Fig5/HysteresisGraph.eps Graphic file (type eps)
+ <./Fig5/HysteresisGraph.eps> [123]
+File: ./Fig5/HysteresisSD.eps Graphic file (type eps)
+
+<./Fig5/HysteresisSD.eps> [124]
+File: ./Fig5/SDproperties.eps Graphic file (type eps)
+ <./Fig5/SDproperties.eps> [125] [126]
+File: ./Fig5/devices.eps Graphic file (type eps)
+
+<./Fig5/devices.eps> [127]
+Underfull \hbox (badness 10000) in paragraph at lines 359--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--378
+
+ []
+
+File: ./Fig5/DCL.eps Graphic file (type eps)
+<./Fig5/DCL.eps> [128]
+File: ./Fig5/JKFF.eps Graphic file (type eps)
+ <./Fig5/JKFF.eps> [129] [130]
+File: ./Fig5/DFF.eps Graphic file (type eps)
+ <./Fig5/DFF.eps>
+File: ./Fig5/SRLtime.eps Graphic file (type eps)
+
+<./Fig5/SRLtime.eps> [131]
+File: ./Fig5/SRL.eps Graphic file (type eps)
+ <./Fig5/SRL.eps> [132] [133]
+File: ./Fig5/SR1.eps Graphic file (type eps)
+ <./Fig5/SR1.eps>
+[134]
+File: ./Fig5/ff-time.eps Graphic file (type eps)
+ <./Fig5/ff-time.eps> [135]
+File: ./Fig5/DFFSR.eps Graphic file (type eps)
+ <./Fig5/DFFSR.eps> [136] (./hw5.tex
+File: ./FigHw5/Prob5-1.eps Graphic file (type eps)
+
+<./FigHw5/Prob5-1.eps>
+File: ./FigHw5/Prob5-2.eps Graphic file (type eps)
+ <./FigHw5/Prob5-2.eps>
+File: ./FigHw5/Prob5-3.eps Graphic file (type eps)
+ <./FigHw5/Prob5-3.eps> [137]
+File: ./FigHw5/Prob5-4.eps Graphic file (type eps)
+
+<./FigHw5/Prob5-4.eps>
+File: ./FigHw5/Prob5-5.eps Graphic file (type eps)
+ <./FigHw5/Prob5-5.eps> [138]
+Overfull \hbox (26.39087pt too wide) in paragraph at lines 165--208
+ [] 
+ []
+
+)) [139] [140]
+\openout2 = `chapter6.aux'.
+
+ (./chapter6.tex
+Chapter 7.
+
+Overfull \hbox (7.67415pt too wide) in paragraph at lines 25--37
+[]\OT1/cmr/m/n/10.95 Clearly, choos-ing com-po-nents, or as they are called ``b
+a-sic build-ing blocks,"
+ []
+
+
+Underfull \vbox (badness 1308) has occurred while \output is active []
+
+ [141
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 48--76
+
+ []
+
+[142]
+File: ./Fig6/RegTime.eps Graphic file (type eps)
+ <./Fig6/RegTime.eps>
+File: ./Fig6/reg.eps Graphic file (type eps)
+ <./Fig6/reg.eps>
+Overfull \hbox (16.40625pt too wide) in paragraph at lines 117--118
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--160
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [143]
+[144] [145] [146]
+File: ./Fig6/ShiftReg.eps Graphic file (type eps)
+ <./Fig6/ShiftReg.eps>
+Overfull \hbox (16.40625pt too wide) in paragraph at lines 282--283
+ [] 
+ []
+
+
+Underfull \vbox (badness 4779) has occurred while \output is active []
+
+ [147]
+Overfull \hbox (3.62968pt too wide) in paragraph at lines 312--336
+[][]
+ []
+
+File: ./Fig6/CountTime.eps Graphic file (type eps)
+<./Fig6/CountTime.eps> [148]
+File: ./Fig6/counter.eps Graphic file (type eps)
+ <./Fig6/counter.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [149]
+Underfull \vbox (badness 1412) has occurred while \output is active []
+
+ [150]
+Overfull \hbox (4.69406pt too wide) in paragraph at lines 438--443
+[][]| 
+ []
+
+
+Overfull \hbox (3.62968pt too wide) in paragraph at lines 428--447
+[][]
+ []
+
+File: ./Fig6/ram.eps Graphic file (type eps)
+<./Fig6/ram.eps> [151] [152]
+File: ./Fig6/wide.eps Graphic file (type eps)
+ <./Fig6/wide.eps>
+Overfull \hbox (57.56pt too wide) in paragraph at lines 532--533
+ [] 
+ []
+
+File: ./Fig6/deep.eps Graphic file (type eps)
+<./Fig6/deep.eps> [153]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [154]
+File: ./Fig6/simple.eps Graphic file (type eps)
+
+<./Fig6/simple.eps> [155]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [156]
+File: ./Fig6/comb1.eps Graphic file (type eps)
+
+<./Fig6/comb1.eps>
+Overfull \hbox (7.3725pt too wide) in paragraph at lines 684--685
+ [] 
+ []
+
+[157] [158]
+File: ./Fig6/min.eps Graphic file (type eps)
+ <./Fig6/min.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [159]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [160]
+(./hw6.tex [161] [162]
+File: ./FigHw6/Prob6-14.eps Graphic file (type eps)
+ <./FigHw6/Prob6-14.eps>
+File: ./FigHw6/Prob6-15.eps Graphic file (type eps)
+ <./FigHw6/Prob6-15.eps>
+File: ./FigHw6/Prob6-16.eps Graphic file (type eps)
+
+<./FigHw6/Prob6-16.eps> [163]
+File: ./FigHw6/fib.eps Graphic file (type eps)
+ <./FigHw6/fib.eps>
+Overfull \hbox (16.40625pt too wide) in paragraph at lines 270--271
+ [] 
+ []
+
+)) [164] [165]
+\openout2 = `chapter7.aux'.
+
+ (./chapter7.tex [166
+
+
+
+]
+Chapter 8.
+File: ./Fig7/GenFSM.eps Graphic file (type eps)
+<./Fig7/GenFSM.eps> [167] [168] [169]
+File: ./Fig7/Ones.eps Graphic file (type eps)
+ <./Fig7/Ones.eps> [170]
+File: ./Fig7/FurnaceSD.eps Graphic file (type eps)
+
+<./Fig7/FurnaceSD.eps> [171]
+Underfull \hbox (badness 10000) in paragraph at lines 228--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--246
+
+ []
+
+File: ./Fig7/FurnaceCir.eps Graphic file (type eps)
+<./Fig7/FurnaceCir.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [172]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [173]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [174]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [175]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [176]
+File: ./Fig7/GenTime.eps Graphic file (type eps)
+
+<./Fig7/GenTime.eps> [177]
+File: ./Fig7/FurnaceTime.eps Graphic file (type eps)
+ <./Fig7/FurnaceTime.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [178]
+File: ./Fig7/VendSD.eps Graphic file (type eps)
+
+<./Fig7/VendSD.eps> [179]
+Underfull \vbox (badness 7186) has occurred while \output is active []
+
+ [180]
+[181]
+File: ./Fig7/Daisy.eps Graphic file (type eps)
+ <./Fig7/Daisy.eps> [182]
+Underfull \hbox (badness 10000) in paragraph at lines 573--601
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--601
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--601
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [183]
+File: ./Fig7/DaisySD.eps Graphic file (type eps)
+
+<./Fig7/DaisySD.eps> [184]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [185]
+Overfull \hbox (30.97229pt too wide) in paragraph at lines 700--715
+[][]
+ []
+
+(./hw7.tex [186]
+Overfull \hbox (26.95778pt too wide) in paragraph at lines 52--90
+[][] 
+ []
+
+[187]
+File: ./FigHw7/Prob7-10.eps Graphic file (type eps)
+ <./FigHw7/Prob7-10.eps> [188]
+File: ./FigWork/RPS.eps Graphic file (type eps)
+ <./FigWork/RPS.eps> [189]
+File: ./FigWork/Door.eps Graphic file (type eps)
+
+<./FigWork/Door.eps>
+File: ./FigWork/Light.eps Graphic file (type eps)
+ <./FigWork/Light.eps> [190]
+Overfull \hbox (4.54507pt too wide) in paragraph at lines 445--461
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [191]
+File: ./FigHw7/Prob7-11.eps Graphic file (type eps)
+
+<./FigHw7/Prob7-11.eps> [192]
+File: ./FigHw7/Prob7-11b.eps Graphic file (type eps)
+ <./FigHw7/Prob7-11b.eps>
+File: ./FigHw7/Prob7-12.eps Graphic file (type eps)
+ <./FigHw7/Prob7-12.eps>
+[193]
+File: ./FigHw7/Prob7-13.eps Graphic file (type eps)
+ <./FigHw7/Prob7-13.eps>
+File: ./FigHw7/Prob7-14.eps Graphic file (type eps)
+ <./FigHw7/Prob7-14.eps> [194]
+Overfull \hbox (5.35338pt too wide) in paragraph at lines 679--686
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [195]
+File: ./FigHw7/Prob7-15.eps Graphic file (type eps)
+
+<./FigHw7/Prob7-15.eps> [196]
+Overfull \hbox (48.79546pt too wide) in paragraph at lines 803--810
+[][] 
+ []
+
+
+Overfull \hbox (27.75452pt too wide) in paragraph at lines 814--820
+[][] 
+ []
+
+[197]
+File: ./FigHw7/Prob7-16.eps Graphic file (type eps)
+ <./FigHw7/Prob7-16.eps>
+Overfull \hbox (61.8054pt too wide) in paragraph at lines 853--858
+[][] 
+ []
+
+[198])) [199]
+\openout2 = `chapter8.aux'.
+
+ (./chapter8.tex [200
+
+
+
+]
+Chapter 9.
+File: ./Fig8/Abstract.eps Graphic file (type eps)
+<./Fig8/Abstract.eps> [201] [202] [203]
+File: ./Fig8/IfThen.eps Graphic file (type eps)
+ <./Fig8/IfThen.eps> [204]
+File: ./Fig8/For.eps Graphic file (type eps)
+
+<./Fig8/For.eps>
+File: ./Fig8/While.eps Graphic file (type eps)
+ <./Fig8/While.eps> [205]
+File: ./Fig8/Op.eps Graphic file (type eps)
+ <./Fig8/Op.eps> [206]
+File: ./Fig8/2Source.eps Graphic file (type eps)
+
+<./Fig8/2Source.eps> [207]
+Overfull \hbox (59.5145pt too wide) in paragraph at lines 293--311
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--311
+
+ []
+
+[208]
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 363--363
+[]\OT1/cmtt/m/n/10.95 1.  min = 0xFF;               // Set the min reg to large
+st 8-bit value[] 
+ []
+
+
+Overfull \hbox (7.91602pt too wide) in paragraph at lines 363--363
+[]\OT1/cmtt/m/n/10.95 2.  for (i=0; i<100; i++) {   // Search through the entir
+e array[] 
+ []
+
+
+Overfull \hbox (13.6647pt too wide) in paragraph at lines 363--363
+[]\OT1/cmtt/m/n/10.95 3.      MBR=RAM[i];           // Read an 8-bit value from
+ the RAM[] 
+ []
+
+
+Overfull \hbox (36.65945pt too wide) in paragraph at lines 363--363
+[]\OT1/cmtt/m/n/10.95 5.          min = MBR;        //   then set min to the sm
+allest value[] 
+ []
+
+[209]
+Underfull \vbox (badness 3919) has occurred while \output is active []
+
+ [210]
+File: ./Fig8/MinSearch.eps Graphic file (type eps)
+
+<./Fig8/MinSearch.eps>
+Overfull \hbox (74.22034pt too wide) in paragraph at lines 438--440
+ [] 
+ []
+
+[211]
+Overfull \hbox (19.209pt too wide) in paragraph at lines 488--503
+[][] 
+ []
+
+[212]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [213]
+File: ./Fig8/MinSearch2a.eps Graphic file (type eps)
+
+<./Fig8/MinSearch2a.eps>
+File: ./Fig8/MinSearch2e.eps Graphic file (type eps)
+ <./Fig8/MinSearch2e.eps>
+File: ./Fig8/MinSearch2b.eps Graphic file (type eps)
+ <./Fig8/MinSearch2b.eps>
+File: ./Fig8/MinSearch2f.eps Graphic file (type eps)
+
+<./Fig8/MinSearch2f.eps>
+File: ./Fig8/MinSearch2c.eps Graphic file (type eps)
+ <./Fig8/MinSearch2c.eps>
+File: ./Fig8/MinSearch2g.eps Graphic file (type eps)
+ <./Fig8/MinSearch2g.eps>
+File: ./Fig8/MinSearch2d.eps Graphic file (type eps)
+
+<./Fig8/MinSearch2d.eps>
+File: ./Fig8/MinSearch2h.eps Graphic file (type eps)
+ <./Fig8/MinSearch2h.eps>
+Overfull \hbox (22.94467pt too wide) in paragraph at lines 608--622
+[][] 
+ []
+
+[214] [215] [216]
+File: ./Fig8/DPTime.eps Graphic file (type eps)
+ <./Fig8/DPTime.eps> [217]
+File: ./Fig8/Branch.eps Graphic file (type eps)
+ <./Fig8/Branch.eps> [218]
+File: ./Fig8/ProdConTime.eps Graphic file (type eps)
+
+<./Fig8/ProdConTime.eps> [219]
+File: ./Fig8/2Line.eps Graphic file (type eps)
+ <./Fig8/2Line.eps> [220] [221] [222]
+File: ./Fig8/RAMmatch.eps Graphic file (type eps)
+
+<./Fig8/RAMmatch.eps>
+Overfull \hbox (15.67471pt too wide) in paragraph at lines 990--1004
+[][] 
+ []
+
+[223]
+Underfull \vbox (badness 2689) has occurred while \output is active []
+
+ [224]
+File: ./Fig8/Keyboard.eps Graphic file (type eps)
+
+<./Fig8/Keyboard.eps>
+Overfull \hbox (3.62968pt too wide) in paragraph at lines 1067--1087
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1067--1087
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [225]
+[226]
+File: ./Fig8/Kbscan.eps Graphic file (type eps)
+ <./Fig8/Kbscan.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [227]
+File: ./Fig8/Behavior.eps Graphic file (type eps)
+
+<./Fig8/Behavior.eps> [228]
+Underfull \hbox (badness 2828) in paragraph at lines 1219--1222
+[]\OT1/cmr/m/n/10.95 Each frame has eight bits
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 1223--1226
+[]\OT1/cmr/m/n/10.95 Consecutive frames are dis-
+ []
+
+
+Overfull \hbox (41.4264pt too wide) in paragraph at lines 1210--1227
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [229]
+[230]
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 1282--1282
+[]\OT1/cmtt/m/n/10.95 25.                         RAM[index] = Flip(IsOct(ScanC
+ode),RAM[index]);[] 
+ []
+
+[231] [232] [233]
+File: ./Fig8/LightShowCir.eps Graphic file (type eps)
+ <./Fig8/LightShowCir.eps>
+Overfull \hbox (70.01086pt too wide) in paragraph at lines 1441--1442
+ [] 
+ []
+
+[234]
+Overfull \hbox (81.74075pt too wide) in paragraph at lines 1456--1482
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1456--1482
+
+ []
+
+(./hw8.tex [235] [236]
+File: ./FigHw8/Prob8-7.eps Graphic file (type eps)
+ <./FigHw8/Prob8-7.eps> [237]
+File: ./FigHw8/Prob8-8.eps Graphic file (type eps)
+ <./FigHw8/Prob8-8.eps>
+[238] [239]
+File: ./FigHw8/Prob8-14.eps Graphic file (type eps)
+ <./FigHw8/Prob8-14.eps> [240]
+Overfull \hbox (43.98961pt too wide) in paragraph at lines 407--419
+[][] 
+ []
+
+[241]
+File: ./FigHw8/Prob8-14b.eps Graphic file (type eps)
+ <./FigHw8/Prob8-14b.eps> [242]
+File: ./FigHw8/Prob8-16.eps Graphic file (type eps)
+ <./FigHw8/Prob8-16.eps>
+File: ./FigHw8/Prob8-17.eps Graphic file (type eps)
+
+<./FigHw8/Prob8-17.eps> [243] [244])) [245]
+\openout2 = `chapter9.aux'.
+
+ (./chapter9.tex [246
+
+
+
+]
+Chapter 10.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [247]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [248]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [249]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [250]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [251]
+[252]
+File: ./Fig9/vih.eps Graphic file (type eps)
+ <./Fig9/vih.eps>
+File: ./Fig9/vil.eps Graphic file (type eps)
+ <./Fig9/vil.eps>
+File: ./Fig9/ioh.eps Graphic file (type eps)
+ <./Fig9/ioh.eps>
+File: ./Fig9/iol.eps Graphic file (type eps)
+ <./Fig9/iol.eps>
+Overfull \hbox (62.98384pt too wide) in paragraph at lines 108--116
+[][] 
+ []
+
+[253]
+File: ./Fig9/voh.eps Graphic file (type eps)
+ <./Fig9/voh.eps>
+File: ./Fig9/vol.eps Graphic file (type eps)
+ <./Fig9/vol.eps>
+File: ./Fig9/iih.eps Graphic file (type eps)
+ <./Fig9/iih.eps>
+File: ./Fig9/iil.eps Graphic file (type eps)
+ <./Fig9/iil.eps>
+Overfull \hbox (34.30084pt too wide) in paragraph at lines 144--151
+[][] 
+ []
+
+[254]
+File: ./Fig9/cascade.eps Graphic file (type eps)
+ <./Fig9/cascade.eps> [255]
+File: ./Fig9/impedance.eps Graphic file (type eps)
+ <./Fig9/impedance.eps> [256]
+File: ./Fig9/transistor.eps Graphic file (type eps)
+
+<./Fig9/transistor.eps> [257] (./hw9.tex)) [258]
+\openout2 = `chapter10.aux'.
+
+ (./chapter10.tex
+Chapter 11.
+File: ./Fig10/pushbutton.eps Graphic file (type eps)
+<./Fig10/pushbutton.eps> [259
+
+
+
+]
+File: ./Fig10/bounce.eps Graphic file (type eps)
+ <./Fig10/bounce.eps> [260]
+File: ./Fig10/pushbutton_dp.eps Graphic file (type eps)
+
+<./Fig10/pushbutton_dp.eps>
+File: ./Fig10/pushfsm.eps Graphic file (type eps)
+ <./Fig10/pushfsm.eps> [261]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [262]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [263]
+Underfull \hbox (badness 1418) in paragraph at lines 168--171
+\OT1/cmr/m/n/10.95 the vec-tor $\OML/cmm/m/it/10.95 A$ \OT1/cmr/m/n/10.95 pro-d
+uces an in-creas-ing gray code
+ []
+
+File: ./Fig10/encoder.eps Graphic file (type eps)
+<./Fig10/encoder.eps>
+Underfull \vbox (badness 1270) has occurred while \output is active []
+
+ [264]
+File: ./Fig10/keyboard.eps Graphic file (type eps)
+
+<./Fig10/keyboard.eps>
+Overfull \hbox (6.16939pt too wide) in paragraph at lines 234--236
+ [] 
+ []
+
+[265] [266]
+File: ./Fig10/keypad.eps Graphic file (type eps)
+ <./Fig10/keypad.eps> [267]
+File: ./Fig10/led.eps Graphic file (type eps)
+ <./Fig10/led.eps> [268]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [269]
+File: ./Fig10/pulse.eps Graphic file (type eps)
+
+<./Fig10/pulse.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [270]
+File: ./Fig10/alpha.eps Graphic file (type eps)
+
+<./Fig10/alpha.eps>
+File: ./Fig10/common.eps Graphic file (type eps)
+ <./Fig10/common.eps> [271]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [272]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [273]
+File: ./Fig10/ultra.eps Graphic file (type eps)
+
+<./Fig10/ultra.eps> [274] [275]
+File: ./Fig10/hbridge.eps Graphic file (type eps)
+ <./Fig10/hbridge.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [276]
+Overfull \hbox (5.76804pt too wide) in paragraph at lines 674--687
+[]\OT1/cmr/m/n/10.95 All elec-tric mo-tors op-er-ate on two ba-sic prin-ci-ples
+; cur-rent flow-ing through
+ []
+
+File: ./Fig10/stepper.eps Graphic file (type eps)
+<./Fig10/stepper.eps> [277] [278] [279] [280] [281] [282]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [283]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [284]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [285]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [286]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [287]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [288]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [289]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [290]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [291]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [292]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [293]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [294]
+(./hw10.tex
+Overfull \hbox (26.04977pt too wide) in paragraph at lines 22--37
+[][] 
+ []
+
+
+Overfull \hbox (26.04977pt too wide) in paragraph at lines 46--57
+[][] 
+ []
+
+[295]
+File: ./FigHw10/Prob10-4.eps Graphic file (type eps)
+ <./FigHw10/Prob10-4.eps> [296]
+File: ./FigHw10/Prob10-4b.eps Graphic file (type eps)
+ <./FigHw10/Prob10-4b.eps> [297] [298]
+File: ./FigHw10/Prob10-6.eps Graphic file (type eps)
+
+<./FigHw10/Prob10-6.eps> [299]
+File: ./FigHw10/Prob10-6b.eps Graphic file (type eps)
+ <./FigHw10/Prob10-6b.eps> [300]
+File: ./FigHw10/Prob10-6c.eps Graphic file (type eps)
+
+<./FigHw10/Prob10-6c.eps>
+Overfull \hbox (26.04977pt too wide) in paragraph at lines 247--258
+[][] 
+ []
+
+[301] [302])) [303]
+\openout2 = `appendix.aux'.
+
+ (./appendix.tex [304
+
+
+
+]
+Appendix A.
+) [305] (./book.ind [306
+
+
+] [307]) (./book.aux (./copyright.aux)
+(./dedication.aux) (./chapter0.aux) (./chapter1.aux) (./chapter2.aux)
+(./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./chapter6.aux)
+(./chapter7.aux) (./chapter8.aux) (./chapter9.aux) (./chapter10.aux)
+(./appendix.aux)) ) 
+Here is how much of TeX's memory you used:
+ 1685 strings out of 94501
+ 22084 string characters out of 1176790
+ 74333 words of memory out of 1000000
+ 4594 multiletter control sequences out of 10000+50000
+ 11849 words of font info for 41 fonts, out of 500000 for 2000
+ 580 hyphenation exceptions out of 1000
+ 23i,21n,20p,300b,355s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on book.dvi (317 pages, 832464 bytes).

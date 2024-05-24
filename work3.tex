@@ -1,0 +1,263 @@
+\section{Chapter 3 -- Minimization of Logical Functions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here are the helpfull stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here are terms that the students define
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definitions}
+\begin{description}
+\item[Simplification Trick]
+\end{description}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here are the problems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Problems}
+\begin{description}
+
+\item[Simplify] Utilize the simplification trick.
+
+\begin{tabular}{ll}
+\begin{tabular}{c|c|c||c|c|c}
+A & B & C & F & G & H  \\ \hline
+0 & 0 & 0 & 1 & 0 & 1  \\ \hline
+0 & 0 & 1 & 1 & 1 & 1  \\ \hline
+0 & 1 & 0 & 0 & 0 & 0  \\ \hline
+0 & 1 & 1 & 0 & 0 & 0  \\ \hline
+1 & 0 & 0 & 0 & 0 & 0  \\ \hline
+1 & 0 & 1 & 0 & 1 & 1  \\ \hline
+1 & 1 & 0 & 0 & 0 & 0  \\ \hline
+1 & 1 & 1 & 0 & 0 & 0  \\
+\end{tabular}
+&
+\begin{tabular}{l}
+F(A,B,C)= \\
+G(A,B,C)= \\
+H(A,B,C)= \\
+\end{tabular} 
+\end{tabular}
+
+\pagebreak
+
+\item[Kmap 3 variable] Solve each kmap.
+
+\begin{tabular}{c|c|c||c|c|c|c|c|c|c|c}
+A & B & C & F & G & H & I & J & K & L & M  \\ \hline
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0  \\ \hline
+0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0  \\ \hline
+0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0  \\ \hline
+0 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 0  \\ \hline
+1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\ \hline
+1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 0  \\ \hline
+1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0  \\ \hline
+1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 0  
+\end{tabular}
+
+\vspace{0.3in}
+
+    \begin{tabular}{ll} 
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		&
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		\\ 
+	F & G \vspace{0.3in}\\
+
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		&
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		\\ 
+	H & I \vspace{0.3in}\\ 
+
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		&
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		\\
+	J & K \vspace{0.3in}\\
+
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		&
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		\\
+	L & M \vspace{0.3in}\\ 
+    \end{tabular}
+
+\pagebreak
+
+\item[Minimize] Determine the \SOPmin for the following functions.
+
+\begin{description}
+\item[F(A,B,C)=A'BC' + A'BC + AB'C' + AB'C]
+\item[G(A,B,C)=A'B' + AB'C' + AC]
+\item[H(A,B,C)=B+AB'C + B'C']
+\item[I(A,B,C)=A(B+C')+A'B'C']
+\end{description}
+
+    \begin{tabular}{ll} 
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		&
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		\\
+	F & G \vspace{0.2in}\\ 
+
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		&
+	\begin{tabular} {c||c|c|c|c}
+      A $\bs$ BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+	\end{tabular}		\\
+	H & I \vspace{0.2in}\\ 
+    \end{tabular}
+
+
+\item[Minimize]  Determine the \SOPmin realization
+\begin{description}
+\item[$F(A,B,C,D) = \sum m(0,1,4,5,8,9)$				]
+\item[$G(A,B,C,D) = \sum m(0,5,7,10,11,14,15)$			]
+\item[$H(A,B,C,D) = \sum m(0,2,3,5,6,7,8,10,11,14,15)$	]
+\item[$I(A,B,C,D) = \sum m(1,4,6,9,11,12,14,15)$		]
+\end{description}
+
+    \begin{tabular}{ll}
+	    \begin{tabular} {c||c|c|c|c}
+	       AB$\bs$CD & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		&
+	    \begin{tabular} {c||c|c|c|c}
+	       AB$\bs$CD & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		\\
+	F & G \vspace{0.2in}\\ 
+	    \begin{tabular} {c||c|c|c|c}
+	       AB$\bs$CD & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		&
+	    \begin{tabular} {c||c|c|c|c}
+	       AB$\bs$CD & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		\\
+	H & I \vspace{0.2in}\\
+	\end{tabular}
+
+
+\pagebreak
+
+\item[Minimize]  Determine the \SOPmin  for the following functions.
+
+\begin{description}
+\item[$F(A,B,C,D,E) = \sum m(0,1,2,5,7,8,10,15,16,18,23,24,26,28,29,31)$]
+\item[$G(A,B,C,D,E) = \sum m(0,2,4,6,7,8,9,15,16,18,20,21,22,24,25,29)$]
+\end{description}
+
+    \begin{tabular}{cc}
+	    \begin{tabular} {c||c|c|c|c}
+	       BC$\bs$DE & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		&
+	    \begin{tabular} {c||c|c|c|c}
+	       BC$\bs$DE & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		\\
+	A=0 & A=1 			\\ 
+	\multicolumn{2}{l}{F(A,B,C,D,E)=}	 \vspace{0.2in} \\ 
+
+	    \begin{tabular} {c||c|c|c|c}
+	       BC$\bs$DE & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		&
+	    \begin{tabular} {c||c|c|c|c}
+	       BC$\bs$DE & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		\\
+	A=0 & A=1 			\\ 
+	\multicolumn{2}{l}{G(A,B,C,D,E)=} \vspace{0.2in}	\\
+    \end{tabular}
+
+
+\item[Minmize]  Determine the \SOPmin reaization of the following functions.
+
+\begin{description}
+\item[$F(A,B,C,D) = \sum m(0,1,5,14,15) + \sum d(4,13)$	]
+\item[$G(A,B,C,D) = \sum m(0,6,7,9,10,12)+\sum d(2,4,8,13)$			]
+\end{description}
+
+    \begin{tabular}{ll}
+	    \begin{tabular} {c||c|c|c|c}
+	       AB$\bs$CD & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		&
+	    \begin{tabular} {c||c|c|c|c}
+	       AB$\bs$CD & 00 & 01 & 11 & 10 \\ \hline \hline
+	       00        &    &    &    &    \\ \hline
+	       01        &    &    &    &    \\ \hline
+	       11        &    &    &    &    \\ \hline
+	       10        &    &    &    &    \\
+	    \end{tabular}		\\
+	F & G \vspace{0.1in}\\ 
+	\end{tabular}
+
+\end{description}

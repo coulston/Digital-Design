@@ -1,0 +1,57 @@
+This is makeindex, version 2.14 [02-Oct-2002] (kpathsea + Thai support).
+Scanning input file book.idx....done (104 entries accepted, 0 rejected).
+Sorting entries....done (760 comparisons).
+Generating output file book.ind....
+## Warning (input = book.idx, line = 92; output = book.ind, line = 3):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 93; output = book.ind, line = 4):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 94; output = book.ind, line = 7):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 82; output = book.ind, line = 20):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 95; output = book.ind, line = 22):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 96; output = book.ind, line = 23):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 84; output = book.ind, line = 45):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 88; output = book.ind, line = 52):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 89; output = book.ind, line = 67):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 90; output = book.ind, line = 68):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 91; output = book.ind, line = 77):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 83; output = book.ind, line = 96):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 85; output = book.ind, line = 113):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 71; output = book.ind, line = 119):
+   -- Unmatched range closing operator ).
+
+## Warning (input = book.idx, line = 87; output = book.ind, line = 122):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 86; output = book.ind, line = 133):
+   -- Unmatched range opening operator (.
+
+## Warning (input = book.idx, line = 97; output = book.ind, line = 153):
+   -- Unmatched range opening operator (.
+done (160 lines written, 17 warnings).
+Output written in book.ind.
+Transcript written in book.ilg.

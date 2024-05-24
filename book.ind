@@ -1,0 +1,160 @@
+\begin{theindex}
+
+  \item active high, 269
+  \item active low, 269
+  \item adder, 99--101
+  \item adder subtractor, 102--104
+  \item alphanumeric display, 271
+
+  \indexspace
+
+  \item bcd to 7-segment, 113
+  \item bit-slice, 14, 100
+  \item Boolean Algebra, 37
+  \item Boolean variable, 9
+  \item bus, 108
+  \item bus transceiver, 117
+
+  \indexspace
+
+  \item cascade configuration, 255
+  \item clocked latch, 126
+  \item common anode, 271
+  \item common cathode, 271
+  \item comparator, 104--107
+    \subitem truth table, 105
+  \item counter, 148--149
+  \item crt, 281
+
+  \indexspace
+
+  \item decoder, 94--96
+  \item Doughnut
+    \subitem Hyper, 74
+    \subitem Ultra, 75
+  \item doughnut, 69, 72
+    \subitem Texas, 73
+  \item duality principle, 42
+
+  \indexspace
+
+  \item edge sensitive, 127
+
+  \indexspace
+
+  \item fan out, 255
+  \item flip flop, 126
+    \subitem asynchronous set, reset, 136
+    \subitem propagation delay, 135
+
+  \indexspace
+
+  \item gray code, 264
+
+  \indexspace
+
+  \item hold time, 135
+
+  \indexspace
+
+  \item implement, 40
+  \item Implicant, 73
+    \subitem Essential Prime, 73
+    \subitem Prime, 73
+
+  \indexspace
+
+  \item keyboard, 265
+  \item keypad, 267
+
+  \indexspace
+
+  \item latch, 126
+    \subitem bad, 134
+    \subitem silly, 134
+    \subitem SR, 131--134
+  \item LCD, 279
+  \item led, 268
+
+  \indexspace
+
+  \item maxterm
+    \subitem definition, 48
+  \item minterm
+    \subitem definition, 45
+  \item modular adder, 116
+  \item modular arithmetic, 116
+  \item motor
+    \subitem dc, 275
+    \subitem H-bridge, 276
+    \subitem servo, 278
+    \subitem stepper, 277
+  \item multiplexer, 97--99
+
+  \indexspace
+
+  \item noise margin, 255
+  \item numbering system
+    \subitem base, 10
+    \subitem positional, 9
+
+  \indexspace
+
+  \item overflow, 14
+
+  \indexspace
+
+  \item POS
+    \subitem canonical, 49
+  \item priority encoder, 115
+  \item product term, 39
+  \item propagation delay
+    \subitem flip flop, 135
+  \item push button, 259
+
+  \indexspace
+
+  \item RAM, 151--154
+  \item realize, 40
+  \item register, 142--143
+    \subitem shift, 144--147
+  \item Remote control, 280
+  \item rotary encoder, 264
+
+  \indexspace
+
+  \item saturation adder, 115
+  \item setup time, 135
+  \item sign extension, 18
+  \item SOP
+    \subitem \SOPmin, 70
+    \subitem canonical, 47
+  \item state diagram, 124
+  \item switch bouncing, 260
+
+  \indexspace
+
+  \item three-state buffer, 107--108
+  \item timing
+    \subitem counter, 148
+    \subitem datapath and control, 217
+    \subitem diagrams, 54
+    \subitem FSM, 178
+    \subitem producer consumer, 219
+    \subitem register, 143
+  \item trick
+    \subitem expansion, 43
+    \subitem maxterm, 48
+    \subitem minterm, 46
+    \subitem simplification, 68
+
+  \indexspace
+
+  \item Ultrasonic sensor, 274
+
+  \indexspace
+
+  \item wire logic, 108--110
+  \item word size, 14
+
+\end{theindex}

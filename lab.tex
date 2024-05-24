@@ -1,0 +1,72 @@
+
+%%%%%%%%%%%%%%%%%%%%%  Lab #2
+
+You are to design a circuit which control the water pump of
+a washing machine.
+
+The pump will not pump water if
+\begin{description}
+\item The lid is closed and the cycle is not fill
+\item The cycle is fill and the detergent level is empty
+\item The detergent if not empty and the lid is open
+\end{description}
+
+The variable for this problem are
+\begin{description}
+\item L = lid is closed
+\item C = cycle is fill
+\item D = detergent is empty
+\item P = pump will pump water
+\end{description}
+
+Create a truth table which describes when the pump will not
+pump water.  Call this output P'.  Determine the canonical SOP 
+expression for P'.  Use this canonical SOP expression to generate 
+a circuit diagram for P.  This can be done by inserting an 
+inverter onto the output of the circuit.
+
+Take the P' column from truth table and invert all the entries
+to generate a new output column of the kmap called P (becuase
+the negation of P' is P).  Determine the canonical SOP 
+realization for P using this new column.
+
+%%%%%%%%%%%%%%%%%%%%%  Lab #3
+%% This is just the majority circuit in chapter 2
+
+
+%%%%%%%%%%%%%%%%%%%%%  Lab #4
+
+Sometimes a logic circuit needs to output a logic 0 in order to
+produce some behavior.  For example, you can attach an LED to
+a digital circuit output so that it lights up when the circuit 
+outputs a 0.  This is called an active low output, the output
+device is {\it active} then the digital output is {\it low}.
+
+Build a digital circuit that takes as input 2 2-bit numbers,
+A and B.  The circuit has three outputs which drive three
+LEDS labeled G, L, and E.  
+The G LED should be illuminated when A>B.
+The L LED should be illuminated when A<B.
+The E LED should be illuminated when A=B.
+The LEDs are illuniated when the circuit outputs a 0, otherwise
+they are turned off.
+
+Determine \SOPmin expression for the G,L and E outputs.
+Determine \POSmin expression for the G,L and E outputs.
+
+%%%%%%%%%%%%%%%%%%%%%  Lab #5
+%% Add sub is covered in chapter 4
+
+%%%%%%%%%%%%%%%%%%%%%  Lab #6
+%% ALU uses tristate buffer mux
+%% shuold move this unit from chapter 6 to chapter 4
+%% and move the associated HW questions.
+
+
+%%%%%%%%%%%%%%%%%%%%%  Lab #7
+%% VHDL
+
+%%%%%%%%%%%%%%%%%%%%%  Lab #8
+%% serial add/sub
+
+

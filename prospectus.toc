@@ -1,0 +1,141 @@
+\contentsline {chapter}{\numberline {0}Introduction}{1}
+\contentsline {section}{\numberline {0.1}The Design Process}{2}
+\contentsline {section}{\numberline {0.2}Digital Systems}{2}
+\contentsline {section}{\numberline {0.3}Realization}{2}
+\contentsline {subsection}{\numberline {0.3.1}Discrete Components}{3}
+\contentsline {subsection}{\numberline {0.3.2}FPGA}{3}
+\contentsline {subsection}{\numberline {0.3.3}VLSI}{3}
+
+
+
+\contentsline {chapter}{\numberline {1}Numbers}{1}
+\contentsline {section}{\numberline {1.1}Decimal}{2}
+\contentsline {section}{\numberline {1.2}Binary}{2}
+\contentsline {subsection}{\numberline {1.2.1}Binary to Decimal}{3}
+\contentsline {subsection}{\numberline {1.2.2}Decimal to Binary}{3}
+\contentsline {section}{\numberline {1.3}Hexadecimal}{5}
+\contentsline {subsection}{\numberline {1.3.1}Hexadecimal to Binary}{5}
+\contentsline {subsection}{\numberline {1.3.2}Binary to Hexadecimal}{6}
+\contentsline {section}{\numberline {1.4}Addition of Binary Numbers}{6}
+\contentsline {section}{\numberline {1.5}Negative Numbers}{7}
+\contentsline {section}{\numberline {1.6}Exercises}{10}
+\contentsline {chapter}{\numberline {2}Representations of Logical Functions}{13}
+\contentsline {section}{\numberline {2.1}Elementary Logical Functions}{15}
+\contentsline {section}{\numberline {2.2}Conversion Between Representations}{18}
+\contentsline {subsection}{\numberline {2.2.1}Circuit Diagram to Truth Table}{18}
+\contentsline {subsection}{\numberline {2.2.2}Circuit Diagram to Symbolic}{22}
+\contentsline {subsection}{\numberline {2.2.3}Symbolic to Truth Table}{23}
+\contentsline {subsection}{\numberline {2.2.4}Symbolic to Circuit Diagram}{26}
+\contentsline {subsection}{\numberline {2.2.5}Symbolic to Symbolic}{28}
+\contentsline {subsection}{\numberline {2.2.6}Truth Table to Symbolic}{31}
+\contentsline {paragraph}{Minterms}{31}
+\contentsline {paragraph}{Maxterms}{34}
+\contentsline {subsection}{\numberline {2.2.7}Word Statement to Truth Table}{36}
+\contentsline {section}{\numberline {2.3}Timing Diagrams}{40}
+\contentsline {section}{\numberline {2.4}Exercises}{42}
+\contentsline {chapter}{\numberline {3}Minimization of Logical Functions}{47}
+\contentsline {section}{\numberline {3.1}Karnaugh Maps}{50}
+\contentsline {section}{\numberline {3.2}4-Variable Kmaps}{53}
+\contentsline {section}{\numberline {3.3}5-Variable Kmaps}{54}
+\contentsline {section}{\numberline {3.4}Multiple Output Circuits}{56}
+\contentsline {section}{\numberline {3.5}``Don't Cares"}{57}
+\contentsline {section}{\numberline {3.6}SOP and POS in Kmaps}{59}
+\contentsline {subsection}{\numberline {3.6.1}$\sum m(\dots )$ to ${\rm SOP}_{\rm min} \ $}{61}
+\contentsline {subsection}{\numberline {3.6.2}SOP to ${\rm SOP}_{\rm min} \ $}{61}
+\contentsline {subsection}{\numberline {3.6.3}$\sum m(\dots )$ to ${\rm POS}_{\rm min} \ $}{61}
+\contentsline {subsection}{\numberline {3.6.4}SOP to ${\rm POS}_{\rm min} \ $}{62}
+\contentsline {subsection}{\numberline {3.6.5}$\prod M(\dots )$ to ${\rm SOP}_{\rm min} \ $}{62}
+\contentsline {subsection}{\numberline {3.6.6}$\prod M(\dots )$ to ${\rm POS}_{\rm min} \ $}{62}
+\contentsline {subsection}{\numberline {3.6.7}POS to ${\rm SOP}_{\rm min} \ $}{63}
+\contentsline {subsection}{\numberline {3.6.8}POS to ${\rm POS}_{\rm min} \ $}{63}
+\contentsline {section}{\numberline {3.7}Espresso}{63}
+\contentsline {section}{\numberline {3.8}Exercises}{68}
+\contentsline {chapter}{\numberline {4}Combinational Logic Building Blocks}{73}
+\contentsline {section}{\numberline {4.1}Decoder}{74}
+\contentsline {section}{\numberline {4.2}Multiplexer}{77}
+\contentsline {section}{\numberline {4.3}The Adder}{79}
+\contentsline {section}{\numberline {4.4}The Adder Subtractor}{82}
+\contentsline {section}{\numberline {4.5}The Comparator}{84}
+\contentsline {section}{\numberline {4.6}Three-State Buffer}{87}
+\contentsline {section}{\numberline {4.7}Wire Logic}{88}
+\contentsline {section}{\numberline {4.8}Combinations}{90}
+\contentsline {subsection}{\numberline {4.8.1}Arithmetic Statements}{90}
+\contentsline {subsection}{\numberline {4.8.2}Conditional Statements}{90}
+\contentsline {section}{\numberline {4.9}Exercises}{92}
+\contentsline {chapter}{\numberline {5}Sequential Circuits}{101}
+\contentsline {section}{\numberline {5.1}Basic Memory Elements}{105}
+\contentsline {section}{\numberline {5.2}The D Clocked Latch}{108}
+\contentsline {section}{\numberline {5.3}The JK Flip Flop}{109}
+\contentsline {section}{\numberline {5.4}The Negative Edge Triggered D Flip Flop}{110}
+\contentsline {section}{\numberline {5.5}The SR Latch}{111}
+\contentsline {section}{\numberline {5.6}Unimplemented Basic Memory Elements}{114}
+\contentsline {section}{\numberline {5.7}Flip Flop Details}{115}
+\contentsline {section}{\numberline {5.8}Exercises}{117}
+\contentsline {chapter}{\numberline {6}Sequential Building Blocks}{121}
+\contentsline {section}{\numberline {6.1}The Register}{122}
+\contentsline {section}{\numberline {6.2}The Shift Register}{124}
+\contentsline {section}{\numberline {6.3}The Counter}{128}
+\contentsline {section}{\numberline {6.4}RAMs}{129}
+\contentsline {section}{\numberline {6.5}Register Transfer}{133}
+\contentsline {section}{\numberline {6.6}Combinations}{136}
+\contentsline {section}{\numberline {6.7}Exercises}{139}
+\contentsline {chapter}{\numberline {7}Finite State Machines}{145}
+\contentsline {section}{\numberline {7.1}Word Statement to State Diagram}{146}
+\contentsline {section}{\numberline {7.2}State Diagram to Circuit Diagram}{147}
+\contentsline {paragraph}{Word Statement}{149}
+\contentsline {paragraph}{State Diagram}{149}
+\contentsline {paragraph}{Circuit Diagram}{150}
+\contentsline {section}{\numberline {7.3}Timing}{151}
+\contentsline {section}{\numberline {7.4}Vending Machine}{153}
+\contentsline {paragraph}{Word Statement}{154}
+\contentsline {paragraph}{State Diagram}{154}
+\contentsline {paragraph}{Circuit Diagram}{155}
+\contentsline {section}{\numberline {7.5}Waits States}{155}
+\contentsline {section}{\numberline {7.6}DAISY}{156}
+\contentsline {paragraph}{Word Statement}{156}
+\contentsline {paragraph}{System Inputs and Outputs}{157}
+\contentsline {paragraph}{State Diagram}{158}
+\contentsline {paragraph}{Memory Input Equations}{160}
+\contentsline {paragraph}{Output Equations}{160}
+\contentsline {section}{\numberline {7.7}Exercises}{161}
+\contentsline {chapter}{\numberline {8}Datapath and Control}{175}
+\contentsline {section}{\numberline {8.1}Conversion}{176}
+\contentsline {subsection}{\numberline {8.1.1}Word Statement to Algorithm}{176}
+\contentsline {subsection}{\numberline {8.1.2}Algorithm to Circuit}{177}
+\contentsline {subsection}{\numberline {8.1.3}Control Word}{181}
+\contentsline {section}{\numberline {8.2}Minimum Search}{182}
+\contentsline {section}{\numberline {8.3}Timing}{190}
+\contentsline {subsection}{\numberline {8.3.1}Increasing Parallelism}{191}
+\contentsline {section}{\numberline {8.4}Two-Line Handshake}{192}
+\contentsline {section}{\numberline {8.5}RAM counter}{195}
+\contentsline {section}{\numberline {8.6}Keyboard Scancode Reader}{197}
+\contentsline {section}{\numberline {8.7}Light Show}{202}
+\contentsline {section}{\numberline {8.8}Exercises}{209}
+\contentsline {chapter}{\numberline {9}Digital gates}{221}
+\contentsline {section}{\numberline {9.1}Data Sheet}{221}
+\contentsline {subsection}{\numberline {9.1.1}Page 1}{222}
+\contentsline {subsection}{\numberline {9.1.2}Page 2}{222}
+\contentsline {subsection}{\numberline {9.1.3}Page 3+}{222}
+\contentsline {section}{\numberline {9.2}Noise Margin}{225}
+\contentsline {section}{\numberline {9.3}Fan Out}{225}
+\contentsline {section}{\numberline {9.4}I/O Impedance}{226}
+\contentsline {section}{\numberline {9.5}Open Collector}{227}
+\contentsline {chapter}{\numberline {10}Building Blocks}{229}
+\contentsline {section}{\numberline {10.1}Normally Open (N.O.) Pushbutton}{229}
+\contentsline {subsection}{\numberline {10.1.1}Switch Bouncing}{230}
+\contentsline {subsection}{\numberline {10.1.2}Switch Interfacing}{231}
+\contentsline {section}{\numberline {10.2}Rotary Encoder}{233}
+\contentsline {section}{\numberline {10.3}Keyboard}{234}
+\contentsline {section}{\numberline {10.4}Keypad}{236}
+\contentsline {section}{\numberline {10.5}Light Emitting Diodes}{237}
+\contentsline {subsection}{\numberline {10.5.1}Pulse Width Modulation}{239}
+\contentsline {section}{\numberline {10.6}Alphanumeric display}{240}
+\contentsline {section}{\numberline {10.7}UltraSonic Range Finder}{241}
+\contentsline {section}{\numberline {10.8}DC Motor}{242}
+\contentsline {section}{\numberline {10.9}Stepper motor}{244}
+\contentsline {section}{\numberline {10.10}Servo motor}{245}
+\contentsline {section}{\numberline {10.11}Liquid Crystal Display}{246}
+\contentsline {section}{\numberline {10.12}Remote control decoder}{247}
+\contentsline {section}{\numberline {10.13}Cathode Ray Tube}{248}
+\contentsline {section}{\numberline {10.14}Exercises}{250}
+\contentsline {chapter}{\numberline {A}74LS00 Data Sheets}{261}

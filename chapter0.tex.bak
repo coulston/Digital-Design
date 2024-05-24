@@ -1,0 +1,40 @@
+\chapter{Introduction}
+
+\section{The Design Process}
+%% Here we talk about transfroming an idea into a working system.
+%% contrast against analysis which is the process of taking a 
+%% system and determining its constituent parts.
+\pagebreak
+
+\section{Digital Systems}
+%% In this section I will discuss what it means for something to be
+%% a system.  Basically, anything that transforms an input into a
+%% output, similar to a function or a relation.  The concept of digital
+%% and analog systems is introduced.  The realization that we can
+%% enumerate every combination of possible inputs should be mentioned.
+\pagebreak
+
+\section{Relizations}
+%% the design process requires that we transform and idea into a working
+%% system.  There are a varity of media with which we can realize the
+%% final system.  
+
+\subsection{Discrete Components}
+%% Digital systems can be realized using a set of chips, each chip 
+%% realizing some standard component.  74xx
+\pagebreak
+
+\subsection{FPGA}
+%% Discrete realizations are going by the way-side in favor of FPGA
+%% based realization.  the advantage is that the wiring of the components
+%% is completely accomplished in software.`
+\pagebreak
+
+\subsection{VLSI}
+%% The disadvantage of the two preceeding media are that they require
+%% a large amount of space and are slow.  These two problems are solved
+%% when a VLSI circuit is created.  The drawback is the engineering time
+%% and cost required to design, test, and fabricate a custom chip.
+\pagebreak
+
+\section{Exercises}
