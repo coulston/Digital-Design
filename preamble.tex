@@ -1,0 +1,104 @@
+%%------------------------------------------------------
+%% Document formatting standards.
+%% references labels			figure:<camelCase>
+%%						\tableofcontents:<camelCase>
+%%						section:<dash seperated>
+%%						index:<camelCase>
+%%						example:<camelCase> 
+%%						equ:<camelCase>
+%%------------------------------------------------------
+
+\usepackage{graphicx}
+\usepackage{imakeidx}			% Enables Index functionality
+\usepackage{wrapfig}
+
+%% Lots of packages needed for tables
+\usepackage{xcolor,colortbl}	% Enable colors in tables
+\usepackage{mdframed}
+
+\usepackage{multirow}
+\usepackage{hhline}			% allows partial hlines in multirow tables
+\usepackage{longtable}			%Enables multipage tables
+\usepackage{makecell}			% deal with parboxes inside tables
+
+\usepackage{amssymb}			%% Enables a range of useful  math notation
+\usepackage{amsmath}
+
+\usepackage{soul}
+
+\usepackage{tikz}			% Enable drawing simples shapes over text
+\usepackage{subcaption}	% Enables tables to not have a caption but to increment the table counter
+
+
+% This allows conditional formatting of the problem/solution manual
+%	\showanswers
+%	\hideanswers
+\usepackage{probsoln}		% For problems and solutions
+\usepackage{dirtree}		% For the body of knowledge
+
+% Legacy packages from first release
+%\usepackage{makeidx, graphics, textcomp, setspace}
+
+
+\usepackage{hyperref}			% Enable hyperlinks to email and URLs
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    menucolor=blue,
+    pdftitle={Digital Design, A Datapath and Control Approach}
+}
+
+%\newcommand{\ul}{\underline}	%superceeded by soul package
+\definecolor{Gray}{gray}{0.85}
+\newcolumntype {g} {>{\columncolor{Gray}}c}
+
+% Draws a item list bullet, helps create fake lists in table (tightens up the list)
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+%Adding this before the "\\" in a table line will give you some more room below 
+\newcommand\B{\rule[-2.5ex]{0pt}{0pt}} 		% Bottom strut
+%Adding this before the first row item will give you some room above
+\newcommand\T{\rule{0pt}{4ex}}       % Top strut
+
+% I want all quotes to be in italics
+\newenvironment{itquote}
+{\begin{quote}\itshape}
+{\end{quote}}
+
+
+
+% Based on the ideas: https://tex.stackexchange.com/questions/241013/mdframed-or-shaded-inside-mdframed
+\newcounter{example}
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+\newenvironment{example}[1] 
+{
+\refstepcounter{example}
+\begin{mdframed}[
+    frametitle={ \textbf{Example \theexample} #1 \vspace{12pt} },
+    frametitlerule=false,
+    innertopmargin=-0.7em, innerleftmargin=0.4em,
+    hidealllines=true, leftline=true,
+    linewidth=10pt,
+    linecolor=gray!80,
+    backgroundcolor=blue!10
+]%
+}{%
+\end{mdframed}
+}
+
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\Tplh}{${\rm T}_{\rm plh} \ $}
+\newcommand{\Tphl}{${\rm T}_{\rm phl} \ $}
+\newcommand{\VCC}{${\rm V}_{\rm CC} \ $}
+\newcommand{\VIH}{${\rm V}_{\rm IH} \ $}
+\newcommand{\VIL}{${\rm V}_{\rm IL} \ $}
+\newcommand{\IOH}{${\rm I}_{\rm OH} \ $}
+\newcommand{\IOL}{${\rm I}_{\rm OL} \ $}
+\newcommand{\TA}{${\rm T}_{\rm A} \ $}
+\newcommand{\VOH}{${\rm V}_{\rm OH} \ $}
+\newcommand{\VOL}{${\rm V}_{\rm OL} \ $}
+\newcommand{\IIH}{${\rm I}_{\rm IH} \ $}
+\newcommand{\IIL}{${\rm I}_{\rm IL} \ $}
+\newcommand{\Ra}{${\rm R}_{\rm a} \ $}
+\newcommand{\Rb}{${\rm R}_{\rm b} \ $}

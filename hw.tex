@@ -1,34 +1,36 @@
 %% Author:      Chris Coulston
 %% Purp:        Here are the homework problems and their solutions.
 
-\documentclass[11pt,psfig]{book}
-\usepackage{graphics}
+%%\documentclass[11pt,psfig]{book}
+\documentclass[letterpaper, 10pt]{memoir}
+\chapterstyle{ger}
+\settrims{0pt}{0pt}
+\semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
+
+
+% To keep the book.tex file clean, I pulled all the formating and package 
+% includes into the preamble.tex file
+\include{preamble}
+
+\makeindex
 
 \begin{document}
-\newcommand{\bs}{\backslash}
-\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
-\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
-\newcommand{\Tplh}{${\rm T}_{\rm plh} \ $}
-\newcommand{\Tphl}{${\rm T}_{\rm phl} \ $}
-\newcommand{\mod}{\rm mod}
-%% This will show the solutions
-\newenvironment{solution}[1]{\it  #1}{}
 
 
-\title{{\Huge Digital Design} \\
-A Datapath and Control Approach \\
-{\small The answers}}
-\author{Chris Coulston}
-\date{}
-\maketitle
+\frontmatter
+ \title{Digital Design, A Datapath and Control Approach - The Solutions Manual}
+ \author{Chris Coulston}
+ \date{}
+ \maketitle
 
-\chapter{}	\input{hw1}
-\chapter{}	\input{hw2}
-\chapter{}	\input{hw3}
-\chapter{}	\input{hw4}
-\chapter{}	\input{hw5}
-\chapter{}	\input{hw6}
-\chapter{}	\input{hw7}
-\chapter{}	\input{hw8}
-\chapter{}	\input{hw10}
+\includegraphics{./Fig/cover}
+\showanswers
+%%\hideanswers 
+
+\tableofcontents
+\mainmatter
+
+\chapter{Numbering Systems}
+\include{./chapter01/hw1}
+
 \end{document} 
