@@ -7,8 +7,7 @@ gradually through the text.
 
 # Features
 * PowerPoint<sup>TM</sup> presentations.
-* End of Chapter Problems. They demonstrate both comprehension and application of the material. In addition, there are problems 
-		that are directly applicable to capstone design projects.
+* End of Chapter Problems. 
 * Instructor’s Manual containing solutions to the end-of-chapter problems.
 * Laboratory Manual containing 13 projects suitable for implementation on many development boards.
 * Numerous Examples. Many examples demonstrating application of the material are contained throughout the text. 
