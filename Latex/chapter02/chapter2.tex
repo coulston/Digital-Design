@@ -41,18 +41,18 @@ without having to expend much engineering effort.  Also, because
 word statements have no prescribed form, there is a great deal 
 of flexibility in structuring a word statements.  Because of its
 potential ambiguity and unclear boundaries, the word statement's step 
-in the design process diagram shown in Figure~\ref{fig:Design} is 
+in the design process diagram shown in Figure~\ref{fig:representationsDesign} is 
 drawn inside a puffy cloud.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig2/Design}}
+\includegraphics{Design}
 \caption{The steps in the design of a digital system.}
-\label{fig:Design}
+\label{fig:representationsDesign}
 \end{figure}
 
-Each of the four design stages shown in Figure~\ref{fig:Design} 
+Each of the four design stages shown in Figure~\ref{fig:representationsDesign} 
 is a description of a digital system.  The arrows in 
-Figure~\ref{fig:Design} are 
+Figure~\ref{fig:representationsDesign} are 
 transformations described in this chapter.  
 
 After the word statement, all subsequent stages of the design process
@@ -65,7 +65,7 @@ an infinite number of potential values exists.  However, when working
 with digital phenomena, each signal can have only one of two possible values,
 making it quite easy to enumerate them all.  When working with a
 digital system with three bits of inputs, like that shown in 
-Figure~\ref{fig:sys}, there are only eight
+Figure~\ref{fig:numberingSys}, there are only eight
 different combinations of the inputs.  For each of these input 
 combinations, a truth table specifies what the output should be.  
 
@@ -90,7 +90,7 @@ will be built from a small pallet of fundamental digital hardware
 components, called the elementary logical functions.
 
 \section{Elementary Logical Functions}
-
+\label{section:representationsElementaryLogicalFunction}
 Elementary logical functions get their name because they are 
 the fundamental (elementary) building blocks of digital design, they 
 use the logical operators like AND, OR, and NOT (logical), and 
@@ -120,7 +120,7 @@ Truth Table &
 	1 & 0 & 0   \\ \hline
 	1 & 1 & 1   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{./Fig2/and} \\
+Circuit Diagram & \includegraphics{and} \\
 %% \end{tabular} \\ \hline \hline
 \end{tabular} \\ 
 \end{tabular}
@@ -143,7 +143,7 @@ Truth Table &
 	1 & 0 & 1   \\ \hline
 	1 & 1 & 1   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{./Fig2/or} \\
+Circuit Diagram & \includegraphics{or} \\
 \end{tabular} \\ \hline \hline
 
 {\huge NOT} & 
@@ -160,7 +160,7 @@ Truth Table &
 	0 & 1   \\ \hline
 	1 & 0   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{./Fig2/not} \\
+Circuit Diagram & \includegraphics{not} \\
 \end{tabular} \\ \hline \hline
 
 {\huge NAND} & 
@@ -180,7 +180,7 @@ Truth Table &
 	1 & 0 & 1   \\ \hline
 	1 & 1 & 0   \\
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{./Fig2/nand} \\
+Circuit Diagram & \includegraphics{nand} \\
 \end{tabular} \\ \hline \hline
 \end{tabular}
 
@@ -202,7 +202,7 @@ Truth Table &
 	1 & 0 & 0   \\ \hline
 	1 & 1 & 0   \\
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{./Fig2/nor} \\
+Circuit Diagram & \includegraphics{nor} \\
 \end{tabular} \\ \hline \hline
 
 {\huge XOR} & 
@@ -223,7 +223,7 @@ Truth Table &
 	1 & 0 & 1   \\ \hline
 	1 & 1 & 0   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{./Fig2/xor} \\
+Circuit Diagram & \includegraphics{xor} \\
 \end{tabular} \\ \hline \hline
 %% \caption{The elementary logical functions.}
 %% \label{table:elf}
@@ -231,7 +231,7 @@ Circuit Diagram & \includegraphics{./Fig2/xor} \\
 \label{page:elf2}
 
 The physical elements for the elementary logical functions are
-typically called {\it gates}.   Thus, the physical circuit for 
+typically called \textit{gates}.   Thus, the physical circuit for 
 the AND logical function is called an AND gate.
 
 The AND/OR functions can be enlarged to handle more than
@@ -242,7 +242,7 @@ this AND gate would look just like a 2-input AND gate with
 two additional inputs.
 
 \section{Conversion Between Representations}
-Figure~\ref{fig:forms} shows the four representations of a digital system
+Figure~\ref{fig:representationsForms} shows the four representations of a digital system
 along with the different transformations covered in this section.  
 The arrows are numbered by the subsection in which the transformation is
 covered.  The design process shown in Figure~\ref{fig:Design} is captured
@@ -251,62 +251,77 @@ section enable designs to be optimized as well as to explore
 the relationships between the representations.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig2/forms}}
+\includegraphics{forms}
 \caption{The four representations of a logical function.  The
 numbered arrows are the transformations examined in this chapter.}
-\label{fig:forms}
+\label{fig:representationsForms}
 \end{figure}
 
 \subsection{Circuit Diagram to Truth Table}
 
 The first transformation is the circuit diagram to truth table.  
 Where the circuit diagram came from is unimportant for now.
-Figure~\ref{fig:CD-TT} is a circuit diagram with three bits of 
+Figure~\ref{fig:representationsCD-TT} is a circuit diagram with three bits of 
 input labeled $A,B,C$ and one bit of output $F(A,B,C)$ that will
 be transformed into a truth table.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig2/cd-tt}}
+\includegraphics{cd-tt}
 \caption{A simple 3-input, 1-output circuit.}
-\label{fig:CD-TT}
+\label{fig:representationsCD-TT}
 \end{figure}
 
 Before starting with the transformation there are some important
-observations to make about Figure~\ref{fig:CD-TT}.  The gates in a circuit 
-may have different numbers of inputs.  For example, this circuit contains 
+observations to make about Figure~\ref{fig:representationsCD-TT}. 
+\begin{enumerate}
+\item The gates in a circuit  may have different numbers of inputs.  For example, this circuit contains 
 two AND gates with two bits of input and an AND gate with three bits of
-input.  Next, the lines drawn in the figure represent physical wire.
-When a voltage is applied to one end of the wire by an external source
+input.  
+\item The lines drawn in the figure represent physical wire.
+\item When a voltage is applied to one end of the wire by an external source
 or by one of the gates, it is assumed to propagate instantaneously to 
-all points on the wire.  The black dots on intersecting wires means 
-that the two wires are connected.  For example, the vertical wire
+all points on the wire.  
+\item The black dots on intersecting wires means  that the two wires are 
+connected.  For example, the vertical wire
 labeled ``$A$" is connected to the second and third AND gates. 
- Wires that cross one another and do not have a dot are assumed not
+\item Wires that cross one another and do not have a dot are assumed not
 to be connected.  For example, the $C$ signal does not go into the
-second AND gates.  The output from a gate is always connected to the
-input of another gate.  Outputs are never connected directly together, because 
-they could create a short-circuit destroying the participating gates.  Inputs 
-are always tied to some signal source. Otherwise their values
-would float between logic 0 and logic 1, and cause unpredictable 
-behavior in the circuit.  Since
-the three external inputs in Figure~\ref{fig:CD-TT} do not have sources shown,
+second AND gates.  
+\item Outputs are never connected directly together, because 
+they could create a short-circuit destroying the participating gates.  
+\item  Inputs are always tied to some signal source, usually the
+output of a gate.
+\item A gate output may drive the inputs of many different gates.
+\end{enumerate}
+
+Since
+the three external inputs in Figure~\ref{fig:representationsCD-TT} do not have sources shown,
 they must be provided by some external user.  The output 
 from a gate can provide input to multiple, different inputs.  For example, 
 the output of the NOT gate
 associated with the $C$ input feeds the first and third AND gates. 
 
-The first step in transforming a circuit diagram into a truth table is
-to identify the inputs and outputs of the circuit.
+
+\begin{example}{Circuit Diagram to Truth Table}
+\label{example:representationCDtoTT}
+
+\emph{\textbf{\ul{Problem:}}}
+Convert the circuit diagram in Figure~\ref{fig:representationsCD-TT}
+into a truth table.
+
+\noindent\emph{\textbf{\ul{Solution:}}} 
+
+\textbf{Step 1:} Identify the inputs and outputs of the circuit.
 Any wire which is not being driven by some source is an input and 
 any output which is not driving a source is an output.  In the case of 
-Figure~\ref{fig:CD-TT}, $A,B,C$ are inputs and $F(A,B,C)$ is an output.
+Figure~\ref{fig:representationsCD-TT}, $A,B,C$ are inputs and $F(A,B,C)$ is an output.
 
-The second step in the transformation is to build the shell of the truth 
-table to hold the solution.  
+
+\textbf{Step 2:} Build the shell of the truth table to hold the solution.  
 Remember that, ``A truth table is a listing of every possible  input to the 
 digital system and the corresponding output."  For example $A=1$, $B=0$ and 
 $C=1$ is a possible input to the circuit.  All the 
-potential inputs to the circuit could be listed in a {\it ad-hoc} 
+potential inputs to the circuit could be listed in a \textit{ad-hoc} 
 manner, but a much more organized approach is shown below.
 
 \label{page:TTshell}
@@ -332,8 +347,7 @@ when the $A,B,C$ variables in each row are interpreted as a
 3-bit binary number, they form consecutive integers.  This approach
 makes finding a particular input/output much easier.
 
-The third step in the transformation of a circuit diagram into a 
-truth table is to determine the values in the $F(A,B,C)$ column.  
+\textbf{Step 3:} Determine the values in the $F(A,B,C)$ column.  
 In order to do this each input is applied, one at a time, to 
 the circuit and determine the output of the circuit.  This step is also
 referred to as evaluating the output of the circuit.  
@@ -343,30 +357,30 @@ the bits are flowing down hill from the inputs to the outputs.  A
 gate computes its output only when the values of all its inputs
 are known.  The output of a gate is determined from the truth tables
 given on pages \pageref{page:elf1} through \pageref{page:elf2}.  For example,
-in Figure~\ref{fig:cd-tt2}A, the input $A=B=C=0$ is applied
+in Figure~\ref{fig:representationsCd-tt2}A, the input $A=B=C=0$ is applied
 to the input.  The third AND gate cannot compute its output until
 it receives the output from the NOT gate associated with the $C$ 
 input.  The outputs from each gate are shown on the signals in
-Figure~\ref{fig:cd-tt2}B.  Due to size constraints, the AND gate 
+Figure~\ref{fig:figrepresentationsCd-tt2}B.  Due to size constraints, the AND gate 
 inputs are written inside the gate.  
 
-\begin{figure}[ht]
-\center{\includegraphics{./Fig2/cd-tt2}}
-\caption{A) The circuit diagram from Figure~\ref{fig:CD-TT} with
-input $A=B=C=0$.  B) The effect of this input shown on the wires.}
-\label{fig:cd-tt2}
-\end{figure}
+%\begin{figure}[ht]
+\includegraphics{cd-tt2}
+\fakefigure{fig:representationsCd-tt2}
 
-Figures \ref{fig:CD-TT} and \ref{fig:cd-tt2} 
+\textbf{Figure:}~\ref{fig:representationsCd-tt2} A) The circuit diagram from Figure~\ref{fig:representationsCD-TT} with input $A=B=C=0$.  B) The effect of this input shown on the wires.
+%\end{figure}
+
+Figures \ref{fig:representationsCD-TT} and \ref{fig:representationsCd-tt2} 
 illustrate a subtle notational convention. 
-Why is the output of the circuit shown in Figure~\ref{fig:CD-TT} 
-labeled $F(A,B,C)$ and in Figure~\ref{fig:cd-tt2}A this same output is
+Why is the output of the circuit shown in Figure~\ref{fig:representationsCD-TT} 
+labeled $F(A,B,C)$ and in Figure~\ref{fig:representationsCd-tt2}A this same output is
 labeled  $F(0,0,0)$?  It is because the variables $A,B,C$ in $F(A,B,C)$ 
 are placeholders for the actual values of the variables.  Since these
-variables are given the values $A,B,C = 0,0,0$ in Figure~\ref{fig:cd-tt2}A, 
+variables are given the values $A,B,C = 0,0,0$ in Figure~\ref{fig:representationsCd-tt2}A, 
 this notational change is acknowledged by labeling the output $F(0,0,0)$.
 
-Since Figure~\ref{fig:cd-tt2}B shows that $F(0,0,0) = 0$, then
+Since Figure~\ref{fig:representationsCd-tt2}B shows that $F(0,0,0) = 0$, then
 a 0 is placed in the top row of the truth table for this 
 function.  The remaining seven rows of the truth table are computed 
 using this same method.  The resulting truth table is shown below.
@@ -382,6 +396,7 @@ A & B & C & F(A,B,C) \\ \hline \hline
 1 & 1 & 0 & 1  \\ \hline
 1 & 1 & 1 & 0  \\
 \end{array}$$
+\end{example}
 
 While this transformation provides an excellent introduction to a variety
 of important concepts, it is not a practical way to derive the truth table 
@@ -400,16 +415,16 @@ instead of bits flow through the circuit.  The symbolic output of
 a gate is written out only when symbolic inputs are present on all of the 
 gate's input.  The output of a gate is determined from the symbolic forms
 given on pages \pageref{page:elf1} and \pageref{page:elf2}.  For example, in 
-order to determine the output of the AND gates in Figure~\ref{fig:basic}A, the
+order to determine the output of the AND gates in Figure~\ref{fig:representationsBasic}A, the
 symbolic outputs of the NOT gates must first be determined.  These are
-$A', B', C'$ as shown in Figure~\ref{fig:basic}B.
+$A', B', C'$ as shown in Figure~\ref{fig:representationsBasic}B.
 
 \begin{figure}[ht]
 %% scalebox{0.5}{stuff}
-\center{\includegraphics{./Fig2/basic}}
+\includegraphics{basic}
 \caption{A) A circuit diagram.  B) The input variables propagated through
 to the output.}
-\label{fig:basic}
+\label{fig:representationsBasic}
 \end{figure}
 
 Since the inputs to the top AND gate are $A'$ and $B$, the output of the AND
@@ -420,7 +435,7 @@ of dropping the ``*" symbol when it is used
 as the multiplication operator in regular algebra.  When two Boolean 
 variables appear next to one another it is assumed that they are ANDed together.
 After labeling the output of the other AND gate, the output of the OR gate 
-is labeled $A'B + AB'C'$ as shown in Figure~\ref{fig:basic}B.
+is labeled $A'B + AB'C'$ as shown in Figure~\ref{fig:representationsBasic}B.
 
 It was earlier suggested that in order to determine the truth table for a
 circuit diagram, it is easier to first determine the symbolic form for
@@ -466,7 +481,7 @@ $F(0,1)=0$.  The evaluation of more complex expressions requires
 a firm grasp on the rules of operator precedence in Boolean Algebra.
 
 The symbolic expressions are written in 
-{\it Boolean Algebra}, \index{Boolean Algebra} an algebra where variables
+\textit{Boolean Algebra}, \index{Boolean Algebra} an algebra where variables
 represent the values 0 and 1 and which are joined together using operators 
 like AND, OR and NOT.  The symbolic expressions written in a 
 high school algebra class have variables which represent real numbers and
@@ -529,7 +544,7 @@ way to evaluate the two subexpression.
 In order to efficiently evaluate an expression for all of the rows of a 
 truth table the number of questions asked about the expression must
 be reduced.  This can be done for product terms.
-A {\it product term} \index{product term} is a group of variables 
+A \textit{product term} \index{product term} is a group of variables 
 (or variables negated) which are ANDed together.   For example, $A'B$ and  
 $AB'C'$ are both product terms.  Instead of evaluating a product term for each
 row of a truth table, ask, ``what input(s) cause the product term to 
@@ -578,7 +593,7 @@ subexpressions together.  Since OR evaluates to 1 when any of its inputs equals
 1 and put a 1 for the output for $F$.  All other rows will equal 0.  The result 
 is shown in Table~\ref{table:SymToTT}.
 
-The words {\it realize} and {\it implement} \index{realize} \index{implement} 
+The words \textit{ realize} and \textit{implement} \index{realize} \index{implement} 
 are used somewhat interchangeably to mean executing the design
 process in order to build a circuit -- to make the digital system real.  
 Since this text focuses on the logical 
@@ -643,7 +658,7 @@ with a high precedence.  Consequently, when an expression consists of
 a single set of parenthesis containing a subexpression, the parenthesis
 can be removed and parsing resumed with the subexpression.  Inside the 
 parenthesis, the lowest precedence operation of $B+C'$ is the OR gate 
-labeled ``3" in Figure~\ref{fig:advance}.  Removing the OR from the 
+labeled ``3" in Figure~\ref{fig:representationsAdvance}.  Removing the OR from the 
 $B+C'$ expression yields a variable $B$ which is connected to one of the
 OR gate's inputs and the expression $C'$.  The NOT operation is the lowest
 precedence operation, and drawn on the circuit diagram (labeled with ``4").
@@ -653,13 +668,13 @@ precedence operation in this expression is AND, drawn on the circuit
 diagram (labeled ``5"), and its output connected to the available input 
 of its parent gate, the OR.  Removing AND from the expression, yields two
 child expressions, the $C$ variable being an input to the AND gate, and the
-$B'$ which contributes the NOT gate, labeled ``6" in Figure~\ref{fig:advance}.  
+$B'$ which contributes the NOT gate, labeled ``6" in Figure~\ref{fig:representationsAdvance}.  
 
 \begin{figure}[ht]
 %% scalebox{0.5}{stuff}
-\center{\includegraphics{./Fig2/advance}}
+\includegraphics{advance}
 \caption{The circuit diagram for $F(A,B,C)=A(B+C')+B'C$.}
-\label{fig:advance}
+\label{fig:representationsAdvance}
 \end{figure}
 
 During the parsing process, it is critically important to keep track of which 
@@ -675,7 +690,7 @@ The laws of ``regular" algebra are used to discover relationships
 between expressions, and to manipulate expressions into more convenient forms.  
 Boolean Algebra has a set of laws which can be employed to manipulate 
 symbolic expressions.  The nine laws of Boolean Algebra are listed in 
-Table~\ref{table:laws}.
+Table~\ref{table:representationsLaws}.
 
 \begin{table}
 \begin{center}
@@ -692,14 +707,14 @@ Law	&	Primary &	Dual	\\ \hline
 9.	&	(x+y)'=x'*y'  	& (x*y)'=x'+y' \\ \hline
 \end{tabular}
 \caption{The laws of Boolean Algebra using the Boolean variables $x,y,x$.}
-\label{table:laws}
+\label{table:representationsLaws}
 \end{center}
 \end{table}
 
 Notice that all laws (except Number 4) have a dual.  A dual of a 
 symbolic expression is formed by swapping all ANDs and ORs and all 0s 
 and 1s.  Boolean Algebra expresses the 
-{\it duality principle}: \index{duality principle}
+\textit{duality principle}: \index{duality principle}
 If a statement $S$ is true, then the dual of $S$ is 
 also true. Later, it will be convenient to identify which law is used
 to manipulate a symbolic expression.  In these cases, write
@@ -707,7 +722,7 @@ down the law's number followed by D if it is a dual.  For example, if
 the property $x*x=x$ is used to manipulate a symbolic expression, then
 indicate that Law 3D was used to manipulate the symbolic expression.
 
-The laws in Table~\ref{table:laws} can be verified as true
+The laws in Table~\ref{table:representationsLaws} can be verified as true
 by plugging in every possible combination of bits and checking if the two sides
 of the equation are equal.  For example, to check Law 3D, set $x=0$, 
 yielding $0*0=0$ which is true, and then set $x=1$ and verify that $1*1=1$.
@@ -745,7 +760,7 @@ $A(A+B)$	& huh?	& $A(1+B)$	& Law 2	\\
 		&		& $A$		& \\
 \end{tabular}
 
-The {\it expansion trick} can be used to show that two expressions are 
+The \textit{expansion trick} can be used to show that two expressions are 
 equal to one another.
 \index{trick!expansion}  The first step in the expansion trick is
 to remove all the parenthesis using Law 8 and reduce the expression
@@ -754,18 +769,18 @@ expansion trick is to add the ``missing" variables to each product
 in the expression.  This second step is illustrated in the following
 derivation.
 
-{\bf Show:} $A'B'C' + B'C + ABC = A'B' + AC$
+\textbf{Show:} $A'B'C' + B'C + ABC = A'B' + AC$
 
-{\bf Derivation:} 
+\textbf{Derivation:} 
 
 $\begin{array}[ht]{ll}
-A'B'C' + B'C + ABC =		& {\rm Law\ 1D} \\
-A'B'C' + 1B'C + ABC = 		& {\rm Law\ 3} \\
-A'B'C' + (A+A')B'C + ABC = 	& {\rm Law\ 8} \\
-A'B'C' + AB'C +A'B'C + ABC = 	& {\rm Law\ 6} \\
-A'B'C' + A'B'C +AB'C + ABC = 	& {\rm Law\ 8} \\
-A'B'(C' + C) +AC(B' + B) = 	& {\rm Law\ 5} \\
-A'B'1 +AC1 = 			& {\rm Law\ 1D} \\
+A'B'C' + B'C + ABC =		& \text{Law 1D} \\
+A'B'C' + 1B'C + ABC = 		& \text{Law 3} \\
+A'B'C' + (A+A')B'C + ABC = 	& \text{Law 8} \\
+A'B'C' + AB'C +A'B'C + ABC = 	& \text{Law 6} \\
+A'B'C' + A'B'C +AB'C + ABC = 	& \text{Law 8} \\
+A'B'(C' + C) +AC(B' + B) = 	& \text{Law 5} \\
+A'B'1 +AC1 = 			& \text{Law 1D} \\
 A'B' +AC = 				&  \\
 \end{array}$
 
@@ -797,20 +812,20 @@ of terms in parenthesis, the distribution process becomes tedious
 and error prone. The following derivation utilizes Laws
 4 and 9 to avoid this problem.
 
-{\bf Show:} $(A+B)(A'+B)(B+C) = B$
+\textbf{Show:} $(A+B)(A'+B)(B+C) = B$
 
-{\bf Derivation:}
+\textbf{Derivation:}
 
 $\begin{array}[ht]{ll}
-(A+B)(A'+B)(B+C) = 			& {\rm Law\ 4} \\
-\left[ (A+B)(A'+B)(B+C) \right] '' =& {\rm Law\ 9D} \\
-\left[ (A+B)'+(A'+B)'+(B+C)' \right]' = & {\rm Law\ 9} \\
-\left[ A'B'+AB'+B'C' \right]' = 	& {\rm Law\ 8} \\
-\left[ B'(A'+A)+B'C' \right]' = 	& {\rm Law\ 5} \\
-\left[ [B'1+ B'C' \right]' = 		& {\rm Law\ 1D} \\
-\left[ B'(1+C') \right]' = 		& {\rm Law\ 2} \\
-\left[ B'1 \right]' = 			& {\rm Law\ 1} \\
-\left[ B' \right]' = 			& {\rm Law\ 4} \\
+(A+B)(A'+B)(B+C) = 			& \text{Law 4} \\
+\left[ (A+B)(A'+B)(B+C) \right] '' =& \text{Law 9D} \\
+\left[ (A+B)'+(A'+B)'+(B+C)' \right]' = & \text{Law 9} \\
+\left[ A'B'+AB'+B'C' \right]' = 	& \text{Law 8} \\
+\left[ B'(A'+A)+B'C' \right]' = 	& \text{Law 5} \\
+\left[ [B'1+ B'C' \right]' = 		& \text{Law 1D} \\
+\left[ B'(1+C') \right]' = 		& \text{Law 2} \\
+\left[ B'1 \right]' = 			& \text{Law 1} \\
+\left[ B' \right]' = 			& \text{Law 4} \\
 B  &  
 \end{array}$
 
@@ -843,7 +858,7 @@ with number 1, the member with number 4, the member with number 6,
 and the member with number 7.
 
 The squad members in this analogy are circuit elements called 
-{\it minterms}. \index{minterm!definition} A minterm for a function 
+\textit{minterms}. \index{minterm!definition} A minterm for a function 
 is a Boolean expression evaluating to logic 1 for a single 
 combination of the inputs and evaluates to logic 0 for every 
 other input.  A cheering squad member corresponds to a minterm with 
@@ -876,7 +891,7 @@ be inverted to 1 before being ANDed.
 
 In order to make generating 
 the remaining six minterms easier, formalize the observation 
-just made and call it the {\it minterm trick}.  
+just made and call it the \textit{minterm trick}.  
 \index{trick!minterm} \label{page:MinTrick}
 A minterm for a particular input needs to include all the variables.
 If a variable's value is equal to 0, the variable should be negated in 
@@ -934,7 +949,7 @@ minterms in the symbolic expression for $F$ evaluate to 0 because
 none of them recognize this input.  Thus, $F(1,1,0)=0$ as expected.
 
 When a function is constructed by ORing together minterms, it is
-said to be in {\it canonical sum of products} 
+said to be in \textit{canonical sum of products} 
 \index{SOP!canonical} form or canonical SOP form.  A symbolic
 expression is said to be in SOP form when it consists
 exclusively of a collection of product terms ORed together.  
@@ -959,7 +974,7 @@ a different kind of building block, the maxterm.
 
 \paragraph{Maxterms}
 \index{maxterm!definition}
-A {\it maxterm} for a function is a symbolic expression evaluating
+A \textit{maxterm} for a function is a symbolic expression evaluating
 to 0 for a single combination of the inputs and evaluates to 1 for 
 every other input.  Before constructing symbolic expressions for
 a truth table, it is necessary to examine the structure of maxterms.
@@ -970,7 +985,7 @@ Many different expressions can be derived which equal 0 only for
 this input, but the simplest is $A+B+C$.  This maxterm is
 abbreviated $M_0$, the uppercase $M$ signifying a maxterm 
 and the 0 denoting the decimal representation of the input which 
-causes this maxterm to equal 0.  The {\it maxterm trick} 
+causes this maxterm to equal 0.  The \textit{maxterm trick} 
 \index{trick!maxterm} is used to simplify the process of creating
 maxterms.  
 
@@ -1031,7 +1046,7 @@ maxterms in the symbolic expression for $F$ evaluate to 1 because
 none of them recognize this input.  Thus $F(1,1,1)=1$ as expected.
 
 \index{POS!canonical}
-This representation of $F$ is called its {\it canonical product of sums} 
+This representation of $F$ is called its \textit{canonical product of sums} 
 form or canonical POS form, because $F$ is represented in its most
 elementary form as the AND (product) of a collection of OR (sum) terms.  
 The canonical POS representation in the example can be abbreviated by 
@@ -1071,7 +1086,7 @@ may be the most technically challenging, it is certainly not the
 most difficult.  This title belongs to the transformation of a word
 statement into a truth table.  The difficulty of this transformation
 has its origin in the puffy cloud outline of a word statement shown in
-Figures \ref{fig:Design} \ref{fig:forms}. Words can be ambiguous and 
+Figures \ref{fig:representtationsDesign} \ref{fig:representationsForms}. Words can be ambiguous and 
 the ability of authors to convey precisely what the digital system
 needs to accomplish depends on their skill with the English language.
 
@@ -1262,14 +1277,14 @@ a single output, but this is would be incorrect because the word
 statement asked for three separate outputs.  The correct way to build
 the circuit diagram is to build each of the circuits separately, give
 each its own output, and have them share the same inputs.  A rough
-sketch of the circuit is shown in Figure~\ref{fig:ThreeOutputs}.
+sketch of the circuit is shown in Figure~\ref{fig:representationsThreeOutputs}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig2/ThreeOutputs}}
+\includegraphics{ThreeOutputs}
 \caption{The circuit diagram for a circuit which compares the 
 magnitude of the two inputs $A=a_1 a_0$ and $B=b_1 b_0$.  Many of 
 the internal details have been omitted.}
-\label{fig:ThreeOutputs}
+\label{fig:representationsThreeOutputs}
 \end{figure}
 
 Notice that the three output circuits share the same inputs, but otherwise
@@ -1287,7 +1302,7 @@ representing these logic levels.  In order to observe the behavior
 of a physical digital system, an engineer typically uses a
 logic analyzer or oscilloscope.  The waveforms drawn by the logic
 analyzer when applying inputs and examining the outputs is called
-a {\it timing diagram}.  A timing diagram is a graph of the logic value 
+a \textit{timing diagram}.  A timing diagram is a graph of the logic value 
 of a signal versus time.  Typically, several signals are combined on the
 same timing diagram to save space and in order to clearly 
 show the relationship between the signals.
@@ -1296,13 +1311,13 @@ It is imperative to check if the digital system implemented
 behaves according to its specification. Hence, an understanding of
 timing diagrams is essential.  With a small circuit it is reasonable
 to apply every possible combination of inputs and examine the 
-output of the circuit.  For example, Figure~\ref{fig:time} shows
+output of the circuit.  For example, Figure~\ref{fig:represenationsTime} shows
 the timing diagram for $F(A,B,C) = A'B+AB'C$.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig2/time}}
+\includegraphics{time}
 \caption{A timing diagram for $F(A,B,C) = A'B + AB'C$.}
-\label{fig:time}
+\label{fig:represenationsTime}
 \end{figure}
 
 Observe that the time intervals are spaced 10 units apart.  For
@@ -1322,7 +1337,7 @@ functional behavior of the circuit.
 Notice that when the inputs change at time=20, the output $F$ 
 transitions from 0 to 1 a little after time=20. This delay in the 
 output transition is a manifestation of a real physical effect 
-called {\it propagation delay}.  
+called \textit{propagation delay} \index{propagation delay}.  
 \begin{quote}
 Propagation delay is the time difference between the application of 
 inputs and when the outputs becoming valid. 
@@ -1350,25 +1365,7 @@ analysis, the largest maximum delay can be used as a single value
 for the propagation delay.  For example, it is safe to assume that
 the outputs of a 74LS32 will switch in 22nS. 
 
-\subsection{Hazards}
-\pagebreak
-.
-\pagebreak
-.
-
-\section{VHSIC Hardware Description Language}
-\pagebreak
-.
-\subsection{Entity and Architecture}
-\pagebreak
-.
-\pagebreak
-.
-\subsection{Concurrent Signal Assignment Statements}
-\pagebreak
-.
-\pagebreak
-.
-
-\section{Exercises}
-\input{hw2}
+%\subsection{Hazards}
+%\section{VHSIC Hardware Description Language}
+%\subsection{Entity and Architecture}
+%\subsection{Concurrent Signal Assignment Statements}

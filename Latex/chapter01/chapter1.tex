@@ -10,17 +10,17 @@ is a number composed of bits, or binary digits.  A bit is equal to
 0 or 1.  Generally, bits are represented by voltages, a 0 by a ground 
 potential and a 1 by a 3.3v or 5v potential.  However, for most of this 
 text, the physical representation of bits will take a back seat to the
-the logical representation.  Figure~\ref{fig:chap01sys} shows 
+the logical representation.  Figure~\ref{fig:numberingSys} shows 
 a digital system with three bits of input and two bits of output.
 
 \begin{figure}[ht]
-\center{\includegraphics{sys}}
+\includegraphics{sys}
 \caption{An abstract digital system with three bits of input
 labeled A,B,C and two bits of output, F(A,B,C) and G(A,B,C).}
-\label{fig:chap01sys}
+\label{fig:numberingSys}
 \end{figure}
 
-The letters $A,B,C$ in Figure~\ref{fig:chap01sys} represent \textit{ Boolean variables}, 
+The letters $A,B,C$ in Figure~\ref{fig:numberingSys} represent \textit{ Boolean variables}, 
 \index{Boolean variable} variables which are only allowed to assume the values 
 0 or 1.  The notation $F(A,B,C)$ means that the output depends on the values 
 of $A,B,C$. 
@@ -36,6 +36,7 @@ familiar decimal numbering system is used to illustrate the main concepts
 in positional numbering system.
 
 \section{Decimal}
+\label{chapter:numberingDecimal}
 The goal of any numbering system (this includes both
 decimal and binary) is to represent quantities using a fixed set of
 symbols.  One feature which distinguishes numbering systems is 
@@ -62,6 +63,7 @@ digit and the rightmost digit is called the least
 significant digit.  
 
 \section{Binary}
+\label{chapter:numberingBinary}
 Binary is a base-2 numbering system where quantities are expressed using
 two symbols $\{0,1\}$.  When verbally communicating a binary value like $101_2$,
 do not say ``one hundred and one base two".  The term \textit{ hundred} is a decimal 
@@ -166,6 +168,7 @@ $2^{N}-1$ are included in the range.
 
 
 \section{Hexadecimal}
+\label{chapter:numberingHexadecimal}
 Hexadecimal is a base-16 numbering system where quantities are expressed using
 16 symbols $\{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\}$.  The symbols
 $\{A \ldots F \}$ represent quantities just like the symbols $\{0 \ldots 9 \}$.
@@ -226,8 +229,9 @@ pad the number with zeros.  For example, convert  $1110101011_2$ into
 hexadecimal. $1110101011_2 = 0011~1010~1011 = 3AB_{16}$.
 
 To understand why this conversion works, consider the binary 
-number $1110101011_2$.  Start by writing down this number using the 
-technique from the previous section and then convert it to hexadecimal.
+number $1110101011_2$.  Start by writing down this number as the sum of
+powers of two, group the powers of two into sets of 4.  The remaining steps
+are shown in the derivation below.
 \\ \\
 {\tiny
 $\begin{array}{l}
@@ -243,7 +247,8 @@ $\begin{array}{l}
 } 
 
 
-\section{Addition of Binary Numbers}
+\section{Binary Addition}
+\label{chapter:numberingAddition}
 \label{page:addition}
 The fact that the addition of binary numbers is similar to the 
 addition of decimal numbers should not come as a surprise as both
@@ -307,6 +312,7 @@ two main interpretations, binary numbering and 2's complement,
 predominate.
  
 \section{Negative Numbers}
+\label{chapter:numberingNegativeNumbers}
 The binary numbering systems is often called an \textit{ unsigned}
 numbering representation.  The term unsigned arises from the 
 fact that there is no need to write a sign symbol in front of
@@ -362,17 +368,17 @@ Flipping the bits, 0101, then adding 1, results in 0110.
 This is the representation for 6, so the original 2's-complement 
 number 1010 represent -6.
 
-Figure~\ref{fig:chap012wheel} shows every combination of four bits
+Figure~\ref{fig:numbering2wheel} shows every combination of four bits
 and their associated 2's-complement representation.
 
 \begin{figure}[ht]
 \center{\includegraphics{2wheel}}
 \caption{All possible combinations of four bits and their 2's-complement
 interpretations.}
-\label{fig:chap012wheel}
+\label{fig:numbering2wheel}
 \end{figure}
 
-Clearly, half of the numbers in Figure~\ref{fig:chap012wheel} have
+Clearly, half of the numbers in Figure~\ref{fig:numbering2wheel} have
 a leading 0 as their MSB, and are positive; 0 is considered 
 a positive number.  The other half of the numbers have their
 MSB equal to 1 and are negative.  Since 0 is considered a 
@@ -484,19 +490,12 @@ on 2-bit 2's-complement numbers.
 \end{center}
 \end{table}
 
-\section{Other codes}
-
-\subsection{Octal}
-
-\subsection{Grey Code}
-
-\subsection{Ones Hot}
-
-\subsection{ASCII}
-
-\subsection{BCD}
-
-\subsection{Fixed Point}
-
-\subsection{Floating Point}
-
+% TBD there is room for contribution here
+%\section{Other codes}
+%\subsection{Octal}
+%\subsection{Grey Code}
+%\subsection{Ones Hot}
+%\subsection{ASCII}
+%\subsection{BCD}
+%\subsection{Fixed Point}
+%\subsection{Floating Point}

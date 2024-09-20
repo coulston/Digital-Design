@@ -1,10 +1,8 @@
+\chapter{Representations of Logical Functions}
+\label{chapter:RepresentationsOfLogicalFunctions}
+\graphicspath{ {./chapter02/FigWork} }
 
-\section{Chapter 2 -- Representations of Logical Functions}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Here are the helpfull stuff
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Helpfull Stuff}
+\section{Helpfull Stuff}
 
 \begin{tabular}{lll}
 	\begin{tabular}{c|c||c}
@@ -31,7 +29,7 @@
 \end{tabular} 
 \vspace{0.2in}
 
-\includegraphics{./Fig2/forms}
+\includegraphics{../Fig/forms}
 \vspace{0.2in}
 
 \begin{tabular}[ht]{l|l|l}
@@ -61,25 +59,27 @@ Axiom	&	Primary &	Dual	\\ \hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Here are terms that the students define
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Definitions}
+\section{Definitions}
+Define each of the following. Some of the definitions should use terms you've defined.
 \begin{description}
-\item[Expansion Trick]
-\item[Minterm Trick]
 \item[Minterm]
 \item[Maxterm]
+\item[Minterm Trick]
+\item[Expansion Trick]
 \end{description}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Here are the problems
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Problems}
-Here is a list of problems.
+\section{Problems}
+Solve the following problems in the space provided.
 
-{\bf Circuit Diagram to Truth Table}
+\begin{enumerate}
+\item Given the circuit diagram below, produce the corresponding truth table.
 
 \begin{tabular}{ll}
-	\includegraphics{./Fig2/cd-tt}
+	\includegraphics{../Fig/cd-tt}
 &
 	\begin{tabular}{c|c|c||c}
 	A & B & C & F(A,B,C) \\ \hline \hline
@@ -91,8 +91,12 @@ Here is a list of problems.
 	1 & 0 & 1 &   \\ \hline
 	1 & 1 & 0 &   \\ \hline
 	1 & 1 & 1 &   \\
-	\end{tabular}	\\
+	\end{tabular}	
 \end{tabular}
+
+\begin{onlysolution}
+This problem has not been solved yet.  Please go into the work2.tex \LaTeX file and create the solution.
+\end{onlysolution}
 
 %% \item[Determine the symbolic for the circuit.]
 %% \includegraphics{./FigWork/cd-sym-easy}
@@ -100,24 +104,30 @@ Here is a list of problems.
 %% \item[Determine the symbolic for the circuit.]
 %% \includegraphics{./FigWork/cd-sym-hard}
 
+\item Given the symbolic expression below, produce the corresponding circuit diagram.
 
-{\bf Symbolic to Circuit Diagram Easy}
 \begin{tabular}{lp{2in}}
 F(A,B,C)=AB'+A(B'+C)  & \\
 \end{tabular}
-\vspace{0.5in}
+\begin{onlysolution}
+This problem has not been solved yet.  Please go into the work2.tex \LaTeX file and create the solution.
+\end{onlysolution}
+\vspace{3cm}
 
-{\bf Symbolic to Circuit Diagram Hard}
+\item Given the symbolic expression below, produce the corresponding circuit diagram.
+
 \begin{tabular}{lp{2in}}
 F(A,B,C,D)=A(BC+A(C'+D)')' + B'CD'  & \\
 \end{tabular}
-\vspace{0.5in}
+\begin{onlysolution}
+This problem has not been solved yet.  Please go into the work2.tex \LaTeX file and create the solution.
+\end{onlysolution}
+\vspace{3cm}
 
-\pagebreak
-{\bf Symbolic to Truth Table Easy.}
+\item Given the symbolic expression below, produce the corresponding truth table.
 
-\begin{tabular}{ll}
-	F(A,B,C) = AB'+A(B'+C) & \\
+F(A,B,C) = AB'+A(B'+C)
+	
 	\begin{tabular}{c|c|c|c|c||c}
 	A & B & C &   &    &  F(A,B,C) \\ \hline \hline
 	0 & 0 & 0 &   &    &    \\ \hline
@@ -128,16 +138,13 @@ F(A,B,C,D)=A(BC+A(C'+D)')' + B'CD'  & \\
 	1 & 0 & 1 &   &    &    \\ \hline
 	1 & 1 & 0 &   &    &    \\ \hline
 	1 & 1 & 1 &   &    &    \\
-	\end{tabular} \\ 
-\end{tabular}
+	\end{tabular} 
 
-\vspace{0.2in}
+\item Given the symbolic expression below, produce the corresponding truth table.
 
-{\bf Symbolic to Truth Table Hard}
+F(A,B,C,D)=A(BC+A(C'+D)')' + B'CD' 
 
-\begin{tabular}{ll}
-	F(A,B,C,D)=A(BC+A(C'+D)')' + B'CD'  & \\
-	\begin{tabular}{c|c|c|c||p{0.1in}|p{0.2in}|p{0.2in}|p{0.2in}|p{0.2in}||c}
+\begin{tabular}{c|c|c|c||p{0.1in}|p{0.2in}|p{0.2in}|p{0.2in}|p{0.2in}||c}
 	A & B & C & D &   &    &  &  &  & F(A,B,C,D) \\ \hline \hline
 	0 & 0 & 0 & 0 &   &    &  &  &  &   \\ \hline
 	0 & 0 & 0 & 1 &   &    &  &  &  &   \\ \hline
@@ -155,12 +162,10 @@ F(A,B,C,D)=A(BC+A(C'+D)')' + B'CD'  & \\
 	1 & 1 & 0 & 1 &   &    &  &  &  &   \\ \hline
 	1 & 1 & 1 & 0 &   &    &  &  &  &   \\ \hline
 	1 & 1 & 1 & 1 &   &    &  &  &  &   \\ 
-	\end{tabular} \\ 
-\end{tabular}
+	\end{tabular} 
 
-\pagebreak
 
-{\bf Truth Table to Symbolc}
+\item Given the truth table below, produce the corresponding symbolic expression.
 
 \begin{tabular}{c|c|c||c|c|c}
 A & B & C & F(A,B,C)	& minterm & maxterm	\\ \hline
@@ -173,15 +178,15 @@ A & B & C & F(A,B,C)	& minterm & maxterm	\\ \hline
 1 & 1 & 0 & 0		& 		&	\\ \hline
 1 & 1 & 1 & 1		& 		&	\\ 
 \end{tabular}
+\vspace{1cm}
 
-\vspace{0.2in}
+\item Given the word state below, produce the corresponding truth table.
+Design a circuit with two 2-bit inputs called $A = a_1 a_0$ and  $B = b_1 b_0$
+The single bit output $F$ should equal 1 when A+B $>$ 6, otherwise $F$ 
+should equal 0.
 
-{\bf Word Statement to Truth Table}
-
-Build 2 2-bit inputs A and B reprenting decimal numbers.  The single bit
-output should equal 1 when A+B $>$ 6.
-$$\begin{array}{c|c|c|c||c|c||c}
-a_1 & a_0 & b_1 & b_0 & A  & B & F(a_1, a_0, b_1, b_0) 	\\ \hline
+\begin{tabular}{c|c|c|c||c|c||c}
+$a_1$ & $a_0$ & $b_1$ & $b_0$ & A  & B & $F(a_1, a_0, b_1, b_0)$ 	\\ \hline
 0 & 0 & 0 & 0 &  &  &   \\ \hline
 0 & 0 & 0 & 1 &  &  &   \\ \hline
 0 & 0 & 1 & 0 &  &  &   \\ \hline
@@ -198,8 +203,9 @@ a_1 & a_0 & b_1 & b_0 & A  & B & F(a_1, a_0, b_1, b_0) 	\\ \hline
 1 & 1 & 0 & 1 &  &  &   \\ \hline
 1 & 1 & 1 & 0 &  &  &   \\ \hline
 1 & 1 & 1 & 1 &  &  &   \\ 
-\end{array}$$
+\end{tabular}
 
 
-%% \index[Complete the timing diagraqm for the function $F(A,B,C) = A'B + AB'C$.]
+%% \index[Complete the timing diagram for the function $F(A,B,C) = A'B + AB'C$.]
 %% \includegraphics{./FigWork/time}
+\end{enumerate}

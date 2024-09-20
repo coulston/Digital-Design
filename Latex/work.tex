@@ -20,10 +20,12 @@
 \settrims{0pt}{0pt}
 \semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
 
-
-% To keep the book.tex file clean, I pulled all the formating and package 
+% To keep the root LaTex file clean, I pulled all the formating and package 
 % includes into the preamble.tex file
 \include{preamble}
+
+%%\showanswers
+\hideanswers 
 
 \makeindex
 
@@ -34,10 +36,6 @@
 \title{}
  \includegraphics{./Fig/colorCover}
  \maketitle
-
-
-\showanswers
-%%\hideanswers 
 
 \tableofcontents
 \mainmatter

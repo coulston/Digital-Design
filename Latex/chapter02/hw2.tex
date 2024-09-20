@@ -1,9 +1,15 @@
+\section{Exercises}
+\label{section:representationsExercises}
+\graphicspath{ {./chapter02/FigHw} }
+
 \begin{enumerate}
-\item {\bf(2 pts. each)} Given: $F(A,B,C,D) = (AB' + (C+(AD)')(BD))'$
+\item \textbf{(2 pts. each)} Given: $F(A,B,C,D) = (AB' + (C+(AD)')(BD))'$
+
 \begin{enumerate}
 	\item Determine the truth table for $F(A,B,C,D)$
 
-\begin{solution}{ 
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 Let T3 = C+(AD)'\\
 T4 = BD\\
 T1 = AB'
@@ -28,28 +34,31 @@ T5 = T3 * T4\\
  1 &  1 &  1 &  0 &  0 &  1 &  1 &  0 & 0 &  0 &  1  \\ \hline
  1 &  1 &  1 &  1 &  0 &  0 &  1 &  1 & 1 &  1 &  0  \\  
 \end{tabular} 
-} \end{solution}
+\end{onlysolution}
 
 	\item Draw a schematic of the logic circuit which realizes $F$ as
 	shown, i.e. do not use Boolean Algebra on $F$.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
 	\begin{figure}[ht]
-	\center{\includegraphics{./FigHw2/Sol2-1}}
+	\includegraphics{Sol2-1}
 	\end{figure}
-}\end{solution}
+\end{onlysolution}
 \end{enumerate}
 
 
-\item {\bf(2 pts. each)} For the circuit in Figure~\ref{fig:hw2}: 
+\item \textbf{(2 pts. each)} For the circuit in Figure~\ref{fig:representationsHwCir2Bool}
 \begin{enumerate}
 	\item Write a Boolean expression for the function.
 
-	\begin{solution}{ F(A,B,C,D) = (AB+C)D'+ABD'}\end{solution}
+	\begin{onlysolution}  \textbf{Solution} \itshape 
+	F(A,B,C,D) = (AB+C)D'+ABD'\end{onlysolution}
+	
 \item Draw the truth table for the function.
 
 
-	\begin{solution}{
+	\begin{onlysolution}  \textbf{Solution} \itshape
+	
 	\begin{tabular}{l|l|l|l|l|l|l|l}
 	 A &  B &  C &  D & AB+C  & (AB+C)D' & ABD'  &  F  \\ \hline
 	 0 &  0 &  0 &  0 &  0 &  0 &  0 &  0  \\ \hline
@@ -69,28 +78,29 @@ T5 = T3 * T4\\
 	 1 &  1 &  1 &  0 &  1 &  0 &  1 &  1  \\ \hline
 	 1 &  1 &  1 &  1 &  1 &  0 &  0 &  0  \\ 
 	\end{tabular}
-}\end{solution}
+\end{onlysolution}
 \end{enumerate}
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw2/Prob2-3}}
+\includegraphics{Prob2-3}
 \caption{The circuit for Problems 2 and 3.}
-\label{fig:hw2}
+\label{fig:representationsHwCir2Bool}
 \end{figure}
 
-\item {\bf(2 pts.)} For the circuit in Figure~\ref{fig:hw2}, show what 
+\item \textbf{(2 pts.)} For the circuit in Figure~\ref{fig:representationsHwCir2Bool}, show what 
 happens when the input (A,B,C,D)=0010 is switched to (A,B,C,D)=1101.
 Assume the first input (0010) has been held steady
 for a long time.  Use a timing diagram and assume that 
 the propagation delay of each gate is 2nS.
 
-	\begin{solution}{ Skipped, a glitch is created for sure.}\end{solution}
+	\begin{onlysolution}  \textbf{Solution} \itshape Skipped, a glitch is created for sure.\end{onlysolution}
 
-\item {\bf (2 pts. each)} For the functions F,G,H,I defined by the 
+\item \textbf{ (2 pts. each)} For the functions F,G,H,I defined by the 
 truth table shown below:
 \begin{enumerate}
 	\item Determine the canonical SOP and POS realization for $F,G,H,I$.
 
-	\begin{solution}{
+	\begin{onlysolution}  \textbf{Solution} \itshape
+	
 F(A,B,C) = (A+B+C)(A+B'+C')(A'+B+C')(A'+B'+C)  =
 A'B'C + A'BC' + AB'C' + ABC \\
 
@@ -102,16 +112,16 @@ A'B'C' + A'B'C + ABC' \\
 
 I(A,B,C) = (A+B+C)(A+B'+C)(A'+B+C)(A'+B'+C) =\\
 A'B'C + A'BC + AB'C + ABC \\
-}\end{solution}
+\end{onlysolution}
 
 	\item Draw the circuit diagram for the canonical SOP and POS 
 		realization.
 
-	\begin{solution}{
+	\begin{onlysolution}  \textbf{Solution} \itshape
 	\begin{figure}[ht]
-	\center{\includegraphics{./FigHw2/Sol2-4}}
+	\includegraphics{Sol2-4}
 	\end{figure}
-}\end{solution}
+\end{onlysolution}
 \end{enumerate}
 Treat each output independently of the other.  For example when
 working with function $I$, cover up the columns $F,G$ and $H$.
@@ -128,33 +138,36 @@ $$\begin{array}{c|c|c||c|c|c|c}
  	1 & 1 & 1 & 1 & 0 & 0 & 1 \\
 \end{array}$$
 
-\item  {\bf (2 pts. each)} Prove the validity of the following 
+\item  \textbf{ (2 pts. each)} Prove the validity of the following 
 statements using the laws of Boolean Algebra. For each step of 
 the proof, identify which law was used.
 \begin{enumerate}
 	\item $X'Y' + XY + X'Y = X' + Y$
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 \begin{tabular}{lr}
 X'Y' + XY + X'Y = 	& 3D\\
 X'Y' + X'Y + XY+ X'Y =	& 8 \\
 X'(Y' + Y )+ Y(X+ X')Y=	& 5 \\
 X' + Y 			& QED \\
-\end{tabular} }\end{solution}
+\end{tabular} \end{onlysolution}
 
 	\item $(X+Y')X'Y' = X'Y'$
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 \begin{tabular}{lr}
 (X+Y')X'Y' = 	& 8 \\
 XX'Y + X'Y'Y' = & 5D \\
 0+X'Y'= 	& 1 \\
 X'Y' 		& QED \\
-\end{tabular}}\end{solution}
+\end{tabular}\end{onlysolution}
 
 	\item $(X+Y)(X'+Z) = XZ + X'Y$
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 \begin{tabular}{lr}
 (X+Y)(X'+Z) = 		& 8 \\
 (X+Y)X' + (X+Y)Z = 	& 8 \\
@@ -164,11 +177,12 @@ YX' + XZ + XYZ + X'YZ =	& 6  \\
 X'Y + X'YZ + XZ + XYZ =	& 1D, 8 \\
 X'Y(1+Z) + XZ(1+Y) =  	& 2, 1D \\
 X'Y + XZ 		& QED \\
-\end{tabular} }\end{solution}
+\end{tabular} \end{onlysolution}
 
 	\item $X'Y' + (X+Y)Z = X'Y' + Z$
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 \begin{tabular}{lr}
 X'Y' + (X+Y)Z = 				& 8\\
 X'Y' + XZ + YZ = 				& 1D,5 \\
@@ -179,11 +193,12 @@ X'Y'(Z+Z') + XZ(1+Y) + X'Z(Y'+Y) =  		& 5,1D \\
 X'Y' + XZ + X'Z  =  				& 8 \\
 X'Y' + Z(X+X') =  				& 5, 1D\\
 X'Y' + Z 					& QED \\
-\end{tabular} }\end{solution}
+\end{tabular} \end{onlysolution}
 
 	\item $A'C+BC+AB = A'C+AB$
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 \begin{tabular}{lr}
 A'C + BC+AB =  					& 1D, 5 \\
 A'C + (A+A')BC + AB(C+C') 			& 8  \\
@@ -191,10 +206,11 @@ A'C + ABC + A'BC + ABC + ABC'= 			& 3\\
 A'C + A'BC + ABC + ABC'= 			& 8\\
 A'C(1+B) + AB(C+C')= 				& 5, 1D\\
 A'C + AB 					& QED \\
-\end{tabular} }\end{solution}
+\end{tabular} \end{onlysolution}
 	\item $A(B+C)=AB+AB'C$
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 \begin{tabular}{lr}
 AB+AB'C= 					& 1D,5\\
 AB(C+C') + AB'C= 				& 8 \\
@@ -203,10 +219,11 @@ ABC + ABC + ABC' + AB'C= 			& 6\\
 ABC + ABC' + ABC + AB'C= 			& 8\\
 AB(C+C'+C) + AB'C = 				& 8\\	
 AB + AB'C= 					& QED\\
-\end{tabular}	}\end{solution}
+\end{tabular}	\end{onlysolution}
 	\item $(A+B+C)(A+B+C')(A'+B+C')(A'+B'+C') = (A+B)(A'+C')$
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 \begin{tabular}{lr}
 (A+B+C)(A+B+C')(A'B+C')(A'+B'+C')= 		& 4\\
 ((A+B+C)(A+B+C')(A'B+C')(A'+B'+C'))''= 		& 9D\\
@@ -214,16 +231,17 @@ AB + AB'C= 					& QED\\
 (A'B'(C+C') + AC(B'+B))'= 			& 5, 1D\\
 (A'B' + AC)'= 					& 9 \\
 (A+B)(A'+C')= 					& QED \\
-\end{tabular}	}\end{solution}
+\end{tabular}	\end{onlysolution}
 \end{enumerate}
 
-\item {\bf (4 pts.)} Design a circuit called MUX2.  MUX2 has three bits 
+\item \textbf{ (4 pts.)} Design a circuit called MUX2.  MUX2 has three bits 
 of input $S, y_0, y_1$ and one bit of output $F$.  If $S=0$, then 
 $F=y_0$; else if $S=1$, then $F=y_1$.
 \begin{enumerate}
 	\item Write down the truth table for the MUX2 function.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 	\begin{tabular}{l|l|l|l}
 	S & y0 &  y1 & F \\ \hline
 	0 & 0  &  0  & 0 \\ \hline
@@ -235,15 +253,17 @@ $F=y_0$; else if $S=1$, then $F=y_1$.
 	1 & 1  &  0  & 0 \\ \hline
 	1 & 1  &  1  & 1 \\ 
 	\end{tabular}
-}\end{solution}
+\end{onlysolution}
 
 	\item Determine the canonical SOP realization for MUX2; 
 		do not simplify.
 
-\begin{solution}{F = S'y0y1' + S'y0y1 + Sy0'y1 + Sy0y1}\end{solution}
+\begin{onlysolution}  \textbf{Solution} \itshape 
+F = S'y0y1' + S'y0y1 + Sy0'y1 + Sy0y1
+\end{onlysolution}
 \end{enumerate}
 
-\item {\bf (6 pts.)} Design a circuit called MUX4.  MUX4 has six bits of input 
+\item \textbf{ (6 pts.)} Design a circuit called MUX4.  MUX4 has six bits of input 
 $S_1 S_0, y_0, y_1, y_2, y_3$ and one bit of output $F$.  \\
 If      $S_1 S_0 = 00$ then $F=y_0$  \\
 else if $S_1 S_0 = 01$ then $F=y_1$ \\
@@ -253,7 +273,8 @@ Without writing down the truth table determine a SOP expression
 to realize F by listing all possible inputs which will cause F to equal 1.
 Then try to simplify your expression using Boolean Algebra.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 The output F only equals one in the following cases.
 \begin{description}
 \item S1=0 S0=0 and y0=1
@@ -267,15 +288,16 @@ that equal 1 only for that input.  ORing together these product terms
 will give us the solution to the problem.
 
 $F = S_1'S_0'y_0 + S_1'S_0 y_1 + S_1 S_0'y_2 + S_1 S_0 y_3$
-} \end{solution}
+\end{onlysolution}
 
-\item  {\bf (4 pts.)} Design a logic circuit called {\it MAJ} which 
+\item  \textbf{ (4 pts.)} Design a logic circuit called \textit{MAJ} which 
 has three inputs $A,B,C$ and one output $Z$. The output equals 1 
 when a majority of the inputs are equal to 1, otherwise the output is 0.
 \begin{enumerate}
 	\item Write the truth table for the MAJ function.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 	\begin{tabular}{l|l|l||l} \\ 
 	A & B & C &  F \\ \hline
 	0 & 0 & 0 &  0 \\ \hline
@@ -287,14 +309,17 @@ when a majority of the inputs are equal to 1, otherwise the output is 0.
 	1 & 1 & 0 &  1 \\ \hline
 	1 & 1 & 1 &  1 \\ 
 	\end{tabular}
-}\end{solution}
+\end{onlysolution}
+
 	\item Determine the canonical SOP realization for the MAJ
 	function, do not simplify.
 
-\begin{solution}{ F = A'BC + AB'C+ABC'+ABC} \end{solution}
+\begin{onlysolution}  \textbf{Solution} \itshape
+ F = A'BC + AB'C+ABC'+ABC
+\end{onlysolution}
 \end{enumerate}
 
-\item {\bf (4 pts.)} Let $X$ and $Y$ each be 2-bit signals whose 
+\item \textbf{ (4 pts.)} Let $X$ and $Y$ each be 2-bit signals whose 
 elements are $x_1 x_0$ and $y_1 y_0$ respectively.  Determine the 
 $\sum m$ and $\prod M$ expression for a circuit whose 1-bit 
 output $z$ is defined by the following statement.
@@ -302,8 +327,8 @@ output $z$ is defined by the following statement.
 	if (X == Y) then z = 1 else z =0
 \end{verbatim}
 
-\begin{solution}{
-The truth table for the solution is shown below.
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 $$\begin{array}{c|c|c|c||c|c||c}
 a_1 & a_0 & b_1 & b_0 & A  & B & z  \\ \hline
 0 & 0 & 0 & 0 & 0 & 0 & 1  \\ \hline
@@ -324,13 +349,13 @@ a_1 & a_0 & b_1 & b_0 & A  & B & z  \\ \hline
 1 & 1 & 1 & 1 & 3 & 3 & 1  \\
 \end{array}$$
 
-The solution is shown below.
+Yielding
 
 $z = \sum m(0,5,10,15) = \prod M(1,2,3,4,6,7,8,9,11,12,13,14)$
-} \end{solution}
+\end{onlysolution}
 
 
-\item {\bf (4 pts.)} Let $X$ and $Y$ each be 2-bit signals whose 
+\item \textbf{ (4 pts.)} Let $X$ and $Y$ each be 2-bit signals whose 
 elements are $x_1 x_0$ and $y_1 y_0$, respectively.  Determine the 
 $\sum m$ and $\prod M$ expressions for a circuit whose 1-bit
 output $z$ is defined by the following statement.
@@ -338,8 +363,8 @@ output $z$ is defined by the following statement.
         if (X + Y > 3) then z = 0 else z =1
 \end{verbatim}
 
-\begin{solution}{
-The truth table for the problem is shown below
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 $$\begin{array}{c|c|c|c||c|c||c}
 a_1 & a_0 & b_1 & b_0 & A  & B & z  \\ \hline
 0 & 0 & 0 & 0 & 0 & 0 & 1  \\ \hline
@@ -359,54 +384,58 @@ a_1 & a_0 & b_1 & b_0 & A  & B & z  \\ \hline
 1 & 1 & 1 & 0 & 3 & 2 & 0  \\ \hline
 1 & 1 & 1 & 1 & 3 & 3 & 0  \\
 \end{array}$$
-Leading to this answer
+Leading to the answer
 $ z = \sum m(0,1,2,3.4,5,6,8,12) = \prod M(7,9,10,11,13,14,15)$
-}\end{solution}
+\end{onlysolution}
 
 	
 
-\item {\bf (3 pts.)} Determine the canonical SOP and POS expression for 
+\item \textbf{ (3 pts.)} Determine the canonical SOP and POS expression for 
 $F(A,B,C) = \prod M (0,1,4,5)$  Hint, compose the truth table for $F$.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 F(A,B,C)=A'BC' + A'BC +ABC' +ABC  \\
 F(A,B,C)=(A+B+C)(A+B+C')(A'+B+C)(A'+B+C')
-}\end{solution}
+\end{onlysolution}
 
-\item {\bf (3 pts.)} Determine the canonical SOP and POS expression for 
+\item \textbf{ (3 pts.)} Determine the canonical SOP and POS expression for 
 $F(A,B,C,D) = \sum m(0,4,12,15)$ Hint, write out the truth table for $F$.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
+
 F(A,B,C)=A'B'C'D' + A'BC'D' + ABC'D' + ABCD  \\
 F(A,B,C)=(A+B+C+D')(A+B+C'+D)(A+B+C'+D') (A+B'+C+D')(A+B'+C'+D) \\
 (A+B'+C'+D')(A'+B+C+D)(A'+B+C+D') (A'+B+C'+D)(A'+B+C'+D')(A'+B'+C+D')\\
 (A'+B'+C'+D)
-}\end{solution}
+\end{onlysolution}
 
-\item {\bf (4 pts.)} For the function $F(A,B,C)= BC+AB'C'$,  draw
+\item \textbf{ (4 pts.)} For the function $F(A,B,C)= BC+AB'C'$,  draw
 a timing diagram for an input sequence that follows the same order 
 as the rows of the truth table.  Assume a propagation delay for NOT, 
 AND and OR gate are all 10nS.
 
-	\begin{solution}{skipped for now}\end{solution}
+\begin{onlysolution}  \textbf{Solution} \itshape 
+skipped for now
+\end{onlysolution}
 
-\item {\bf (4 pts.)} Complete the timing diagram in Figure~\ref{fig:HWtime}
+\item \textbf{ (4 pts.)} Complete the timing diagram in Figure~\ref{fig:HWtime}
 for the functions
 $F(A,B,C) = AB' + BC + ABC'$ and $G(A,B,C) = (A+B')C + (BC')'$
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw2/Prob2-14}}
+\includegraphics{Prob2-14}
 \caption{The timing diagram for two functions, $F$ and $G$.}
 \label{fig:HWtime}
 \end{figure}
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw2/Sol2-14}}
+\includegraphics{Sol2-14}
 \end{figure}
-}\end{solution}
+\end{onlysolution}
 
-\item{\bf (16 pts.)} Design a circuit to control
+\item\textbf{ (16 pts.)} Design a circuit to control
 the water pump of a washing machine.  The pump will not pump 
 water if
 \begin{description}
