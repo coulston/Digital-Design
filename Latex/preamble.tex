@@ -39,6 +39,9 @@
 % Legacy packages from first release
 %\usepackage{makeidx, graphics, textcomp, setspace}
 
+% Table of contents for processes
+\usepackage{tocbibind} 
+\usepackage{tocloft}
 
 \usepackage{hyperref}			% Enable hyperlinks to email and URLs
 \hypersetup{
@@ -64,6 +67,53 @@
 \newenvironment{itquote}
 {\begin{quote}\itshape}
 {\end{quote}}
+
+
+
+\newcommand{\listofdataextractsname}{List of Data}
+%\newlistof[chapter]{dataextracts}{dat}{\listofdataextractsname}
+\newenvironment{data}[1]{%
+  \par%
+  \addvspace{\baselineskip}%
+  \refstepcounter{dataextracts}%
+  {\centering {Extract \thedataextracts: #1}\par}%
+  \addcontentsline{dat}{dataextracts}{\protect\numberline{\thedataextracts}#1}%
+  \addvspace{0.5\baselineskip}%
+  % \\%
+}{%
+  \par%
+  \addvspace{0.5\baselineskip}%
+}%
+
+
+
+
+
+
+
+% Based on the ideas: https://tex.stackexchange.com/questions/241013/mdframed-or-shaded-inside-mdframed
+\newcounter{process}
+\renewcommand{\theprocess}{\thechapter.\arabic{process}}
+
+\newenvironment{process}[1]  {
+	\par%
+	\addvspace{\baselineskip}	
+	
+	\addcontentsline{pro}{processextract}{\protect\numberline{\theprocess}#1}	
+	  	
+	\refstepcounter{process}
+	\begin{mdframed}[
+	    frametitle={ \textbf{Process \theprocess}: #1 \vspace{12pt} },
+	    frametitlerule=false,
+	    innertopmargin=-0.7em, innerleftmargin=0.4em,
+	    hidealllines=true, leftline=true,
+	    linewidth=10pt,
+	    linecolor=gray!80,
+	    backgroundcolor=blue!10
+	]
+	}{
+	\end{mdframed}
+}
 
 
 

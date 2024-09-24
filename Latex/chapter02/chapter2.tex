@@ -246,7 +246,7 @@ Figure~\ref{fig:representationsForms} shows the four representations of a digita
 along with the different transformations covered in this section.  
 The arrows are numbered by the subsection in which the transformation is
 covered.  The design process shown in Figure~\ref{fig:Design} is captured
-in Steps 7, 6, and 3.  The other transformations introduced in this 
+in Steps 7, 6, and 4.  The other transformations introduced in this 
 section enable designs to be optimized as well as to explore 
 the relationships between the representations.
 
@@ -302,22 +302,23 @@ the output of the NOT gate
 associated with the $C$ input feeds the first and third AND gates. 
 
 
-\begin{example}{Circuit Diagram to Truth Table}
-\label{example:representationCDtoTT}
 
-\emph{\textbf{\ul{Problem:}}}
-Convert the circuit diagram in Figure~\ref{fig:representationsCD-TT}
+\begin{process}{Circuit Diagram to Truth Table}
+\label{process:representationCDtoTT}
+\label{page:representationCDtoTT}
+
+To lend context to the discussion of the conversion process, let's describe this
+process by converting the circuit diagram in Figure~\ref{fig:representationsCD-TT}
 into a truth table.
 
-\noindent\emph{\textbf{\ul{Solution:}}} 
 
-\textbf{Step 1:} Identify the inputs and outputs of the circuit.
+\textbf{Step 1:  Identify the inputs and outputs of the circuit diagram.}
 Any wire which is not being driven by some source is an input and 
 any output which is not driving a source is an output.  In the case of 
 Figure~\ref{fig:representationsCD-TT}, $A,B,C$ are inputs and $F(A,B,C)$ is an output.
 
 
-\textbf{Step 2:} Build the shell of the truth table to hold the solution.  
+\textbf{Step 2: Build the shell of the truth table to hold the solution. }
 Remember that, ``A truth table is a listing of every possible  input to the 
 digital system and the corresponding output."  For example $A=1$, $B=0$ and 
 $C=1$ is a possible input to the circuit.  All the 
@@ -347,7 +348,7 @@ when the $A,B,C$ variables in each row are interpreted as a
 3-bit binary number, they form consecutive integers.  This approach
 makes finding a particular input/output much easier.
 
-\textbf{Step 3:} Determine the values in the $F(A,B,C)$ column.  
+\textbf{Step 3: Determine the values in the output column. }
 In order to do this each input is applied, one at a time, to 
 the circuit and determine the output of the circuit.  This step is also
 referred to as evaluating the output of the circuit.  
@@ -364,12 +365,23 @@ input.  The outputs from each gate are shown on the signals in
 Figure~\ref{fig:figrepresentationsCd-tt2}B.  Due to size constraints, the AND gate 
 inputs are written inside the gate.  
 
-%\begin{figure}[ht]
+
+{\setlength{\fboxsep}{0pt}
+\centering  
+\framebox{%
+\setlength{\fboxsep}{6pt}%
+ \colorbox{white}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
+{\centering 
+
 \includegraphics{cd-tt2}
 \fakefigure{fig:representationsCd-tt2}
+\textbf{Figure:}~\ref{fig:representationsCd-tt2} A) The circuit diagram from Figure~\ref{fig:representationsCD-TT} with input $A=B=C=0$.  B) The effect 
+of this input shown on the wires.
 
-\textbf{Figure:}~\ref{fig:representationsCd-tt2} A) The circuit diagram from Figure~\ref{fig:representationsCD-TT} with input $A=B=C=0$.  B) The effect of this input shown on the wires.
-%\end{figure}
+ \par}}%
+}
+\par}\vspace{0.2cm}
+
 
 Figures \ref{fig:representationsCD-TT} and \ref{fig:representationsCd-tt2} 
 illustrate a subtle notational convention. 
@@ -396,7 +408,7 @@ A & B & C & F(A,B,C) \\ \hline \hline
 1 & 1 & 0 & 1  \\ \hline
 1 & 1 & 1 & 0  \\
 \end{array}$$
-\end{example}
+\end{process}
 
 While this transformation provides an excellent introduction to a variety
 of important concepts, it is not a practical way to derive the truth table 
@@ -409,24 +421,32 @@ much less tedious and less error-prone method to determine the truth table
 from a circuit diagram.
 
 \subsection{Circuit Diagram to Symbolic}
+
+\begin{process}{Circuit Diagram to Symbolic}
+\label{process:representationdCdToSym}
+
 The transformation of a circuit diagram into a symbolic expression 
 is very similar to evaluating the output of the circuit, except symbols
-instead of bits flow through the circuit.  The symbolic output of 
-a gate is written out only when symbolic inputs are present on all of the 
+instead of bits flow through the circuit.  To lend context to the discussion 
+of the conversion process, let's describe this process by converting the 
+circuit diagram in Figure~\ref{fig:representationsBasic}into a symbolic form.
+
+\textbf{Step 1:  Identify the inputs and outputs of the circuit diagram.}
+See Step 1 of Process~\ref{process:representationdCdToTT}.
+
+\textbf{Step 2: Build the shell of the truth table to hold the solution. }
+See Step of Process~\ref{process:representationdCdToTT}.
+
+
+\textbf{Step 3: Determine the values in the output column. }
+The symbolic output of a gate is written out only when symbolic inputs 
+are present on all of the 
 gate's input.  The output of a gate is determined from the symbolic forms
-given on pages \pageref{page:elf1} and \pageref{page:elf2}.  For example, in 
+given on pages \pageref{page:elf1} and \pageref{page:elf2}.  
+For example, in 
 order to determine the output of the AND gates in Figure~\ref{fig:representationsBasic}A, the
 symbolic outputs of the NOT gates must first be determined.  These are
 $A', B', C'$ as shown in Figure~\ref{fig:representationsBasic}B.
-
-\begin{figure}[ht]
-%% scalebox{0.5}{stuff}
-\includegraphics{basic}
-\caption{A) A circuit diagram.  B) The input variables propagated through
-to the output.}
-\label{fig:representationsBasic}
-\end{figure}
-
 Since the inputs to the top AND gate are $A'$ and $B$, the output of the AND
 gate is labeled $A'B$.  The output was not labeled ``A'*B" because the
 ``*" is often dropped from the symbolic expressions involving AND 
@@ -436,6 +456,26 @@ as the multiplication operator in regular algebra.  When two Boolean
 variables appear next to one another it is assumed that they are ANDed together.
 After labeling the output of the other AND gate, the output of the OR gate 
 is labeled $A'B + AB'C'$ as shown in Figure~\ref{fig:representationsBasic}B.
+
+{\setlength{\fboxsep}{0pt}
+\centering  
+\framebox{%
+\setlength{\fboxsep}{6pt}%
+ \colorbox{white}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
+{\centering 
+%\begin{figure}[ht]
+\includegraphics[width=0.9\textwidth]{basic}
+\fakefigure{fig:representationsBasic}
+\textbf{Figure:}~\ref{fig:representationsCd-tt2} 
+A) A circuit diagram.  B) The input variables propagated through to the output. }
+%\end{figure}
+ \par}%
+}
+\par}\vspace{0.2cm}
+
+
+
+\end{process}
 
 It was earlier suggested that in order to determine the truth table for a
 circuit diagram, it is easier to first determine the symbolic form for
@@ -447,15 +487,24 @@ form into a truth table.
 
 \subsection{Symbolic to Truth Table}
 
+\begin{process}{Symbolic to Truth Table}
+\label{process:representationSymToTT}
+
+To lend context to the discussion of the conversion process, let's describe this
+process by converting the symbolic expression
+$F(A,B,C) = A'B + AB'C'$ into a truth table.
+
+
+\textbf{Step 1:  Identify the inputs and outputs of the circuit diagram.}
 Like the transformation of a circuit diagram to a truth table, the
 first step in this transformation is to identify the inputs and outputs 
 of the circuit.  Normally, the variable on the left-hand side
 of the equal sign in an equation is the output and any variables 
-which appear on the 
-right-hand side are inputs.  For example, in the equation 
+which appear on the right-hand side are inputs.  In the symbolic expression
 $F(A,B,C) = A'B + AB'C'$, $F$ is the output and $A,B,C$ are the inputs.
 
-The second step is to write down the shell of the truth table using the
+\textbf{Step 2:  Build the shell of the truth table to hold the solution.}
+Write down the shell of the truth table using the
 ordering given on page~\pageref{page:TTshell}.  The basic structure of the
 truth table is the same no matter how many variables the symbolic 
 expression has.  
@@ -469,8 +518,8 @@ truth table has 16 rows.  This should not come as a surprise since,
 from page~\pageref{page:two-to-N}, there are 
 $2^4=16$ different combinations of four input bits.
 
-The third step in the transformation is to evaluate the symbolic 
-expression for each combination of inputs.  Evaluation is the process
+\textbf{Step 3: Evaluate the symbolic expression for each combination of inputs.}
+ Evaluation is the process
 of substituting each variable's value into the equation and applying 
 the operators to the values.  For example, evaluate $F(A,B) = (A+B)'$
 for $(A,B) = (0,1)$.  Substituting in the values for the variables
@@ -479,6 +528,7 @@ result 1.  Applying the NOT operator to the result of the OR operator yields 0.
 Thus, $F(A,B)$ evaluated at $(A,B)=(0,1)$ equals 0.  In other words,
 $F(0,1)=0$.  The evaluation of more complex expressions requires 
 a firm grasp on the rules of operator precedence in Boolean Algebra.
+\end{process}
 
 The symbolic expressions are written in 
 \textit{Boolean Algebra}, \index{Boolean Algebra} an algebra where variables
