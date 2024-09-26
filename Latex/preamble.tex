@@ -36,12 +36,10 @@
 \usepackage{probsoln}		% For problems and solutions
 \usepackage{dirtree}		% For the body of knowledge
 
-% Legacy packages from first release
-%\usepackage{makeidx, graphics, textcomp, setspace}
-
 % Table of contents for processes
-\usepackage{tocbibind} 
 \usepackage{tocloft}
+
+\usepackage{multicol}
 
 \usepackage{hyperref}			% Enable hyperlinks to email and URLs
 \hypersetup{
@@ -70,40 +68,28 @@
 
 
 
-\newcommand{\listofdataextractsname}{List of Data}
-%\newlistof[chapter]{dataextracts}{dat}{\listofdataextractsname}
-\newenvironment{data}[1]{%
-  \par%
-  \addvspace{\baselineskip}%
-  \refstepcounter{dataextracts}%
-  {\centering {Extract \thedataextracts: #1}\par}%
-  \addcontentsline{dat}{dataextracts}{\protect\numberline{\thedataextracts}#1}%
-  \addvspace{0.5\baselineskip}%
-  % \\%
-}{%
-  \par%
-  \addvspace{0.5\baselineskip}%
-}%
-
-
-
-
-
-
 
 % Based on the ideas: https://tex.stackexchange.com/questions/241013/mdframed-or-shaded-inside-mdframed
-\newcounter{process}
-\renewcommand{\theprocess}{\thechapter.\arabic{process}}
+
+% Credit to: https://tex.stackexchange.com/questions/270598/creating-list-of-examples-using-tocloft-in-memoir-class
+\newcounter{processcounter}
+\newcommand\listprocessesname{List of Processes}
+\newlistof{listofprocesses}{lop}{\listprocessesname}
+\newlistentry[chapter]{processcounter}{lop}{0}
+\newcommand{\pdescription}[1]{%
+\refstepcounter{processcounter}
+\par\noindent\textbf{Process \theprocesscounter~(#1).} }
+%\addcontentsline{lop}{section}{\protect\numberline{\theprocesscounter}#1}}
 
 \newenvironment{process}[1]  {
 	\par%
 	\addvspace{\baselineskip}	
-	
-	\addcontentsline{pro}{processextract}{\protect\numberline{\theprocess}#1}	
-	  	
-	\refstepcounter{process}
+
+	\addcontentsline{lop}{section}{\protect\numberline{\thechapter.\theprocesscounter}#1}
+
+	\refstepcounter{processcounter}
 	\begin{mdframed}[
-	    frametitle={ \textbf{Process \theprocess}: #1 \vspace{12pt} },
+	    frametitle={ \textbf{Process \thechapter.\theprocesscounter}: #1 \vspace{12pt} },
 	    frametitlerule=false,
 	    innertopmargin=-0.7em, innerleftmargin=0.4em,
 	    hidealllines=true, leftline=true,
@@ -116,31 +102,13 @@
 }
 
 
-
-% Based on the ideas: https://tex.stackexchange.com/questions/241013/mdframed-or-shaded-inside-mdframed
-\newcounter{example}
-\renewcommand{\theexample}{\thechapter.\arabic{example}}
-\newenvironment{example}[1] 
-{
-\refstepcounter{example}
-\begin{mdframed}[
-    frametitle={ \textbf{Example \theexample} #1 \vspace{12pt} },
-    frametitlerule=false,
-    innertopmargin=-0.7em, innerleftmargin=0.4em,
-    hidealllines=true, leftline=true,
-    linewidth=10pt,
-    linecolor=gray!80,
-    backgroundcolor=blue!10
-]%
-}{%
-\end{mdframed}
-}
-
 % This allows you to fake a figure environment inside
 % the example environment
 \newcommand{\fakefigure}[1]% #1 = label name
 {\refstepcounter{figure}\label{#1}}
 
+\newcommand{\faketable}[1]% #1 = label name
+{\refstepcounter{table}\label{#1}}
 
 
 \newcommand{\SOPmin}{$\text{ SOP}_\text{ min} \ $}

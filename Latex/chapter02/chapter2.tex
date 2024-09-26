@@ -375,7 +375,7 @@ inputs are written inside the gate.
 
 \includegraphics{cd-tt2}
 \fakefigure{fig:representationsCd-tt2}
-\textbf{Figure:}~\ref{fig:representationsCd-tt2} A) The circuit diagram from Figure~\ref{fig:representationsCD-TT} with input $A=B=C=0$.  B) The effect 
+\textbf{Figure}~\ref{fig:representationsCd-tt2}: A) The circuit diagram from Figure~\ref{fig:representationsCD-TT} with input $A=B=C=0$.  B) The effect 
 of this input shown on the wires.
 
  \par}}%
@@ -432,11 +432,10 @@ of the conversion process, let's describe this process by converting the
 circuit diagram in Figure~\ref{fig:representationsBasic}into a symbolic form.
 
 \textbf{Step 1:  Identify the inputs and outputs of the circuit diagram.}
-See Step 1 of Process~\ref{process:representationdCdToTT}.
+See Step 1 of Process~\ref{process:representationCDtoTT}.
 
 \textbf{Step 2: Build the shell of the truth table to hold the solution. }
-See Step of Process~\ref{process:representationdCdToTT}.
-
+See Step of Process~\ref{process:representationCDtoTT}.
 
 \textbf{Step 3: Determine the values in the output column. }
 The symbolic output of a gate is written out only when symbolic inputs 
@@ -466,8 +465,9 @@ is labeled $A'B + AB'C'$ as shown in Figure~\ref{fig:representationsBasic}B.
 %\begin{figure}[ht]
 \includegraphics[width=0.9\textwidth]{basic}
 \fakefigure{fig:representationsBasic}
-\textbf{Figure:}~\ref{fig:representationsCd-tt2} 
+\textbf{Figure}~\ref{fig:representationsBasic}:
 A) A circuit diagram.  B) The input variables propagated through to the output. }
+
 %\end{figure}
  \par}%
 }
@@ -528,7 +528,6 @@ result 1.  Applying the NOT operator to the result of the OR operator yields 0.
 Thus, $F(A,B)$ evaluated at $(A,B)=(0,1)$ equals 0.  In other words,
 $F(0,1)=0$.  The evaluation of more complex expressions requires 
 a firm grasp on the rules of operator precedence in Boolean Algebra.
-\end{process}
 
 The symbolic expressions are written in 
 \textit{Boolean Algebra}, \index{Boolean Algebra} an algebra where variables
@@ -609,7 +608,7 @@ Since the product term does not equal 1 for these rows, the only alternative
 is for it to equal 0.  Consequently, the remaining seven rows of the truth 
 table equal 0 as shown in Table~\ref{table:SymToTT}.
 
-\begin{table}
+
 $$\begin{array}{c|c|c||c|c||c}
 A & B & C & A'B & AB'C' & F(A,B,C) \\ \hline \hline
 0 & 0 & 0 & 0  &  0 &  0  \\ \hline
@@ -621,10 +620,9 @@ A & B & C & A'B & AB'C' & F(A,B,C) \\ \hline \hline
 1 & 1 & 0 & 0  &  0 &  0  \\ \hline
 1 & 1 & 1 & 0  &  0 &  0 
 \end{array} $$
-\caption{The truth table for $F(A,B,C) = A'B + AB'C'$ and its 
-two subexpressions.}
-\label{table:SymToTT}
-\end{table}
+\textbf{Table}~\ref{table:SymToTT}: The truth table for $F(A,B,C) = A'B + AB'C'$ and its  two subexpressions.
+\faketable{table:SymToTT}
+
 
 What inputs cause the product term $A'B$ to equal 1?  Clearly, $A=0$ and $B=1$.
 While filling out the truth table for this product term there may be some
@@ -642,13 +640,14 @@ subexpressions together.  Since OR evaluates to 1 when any of its inputs equals
 1, then it suffices to look for rows where either of the two subexpressions equal
 1 and put a 1 for the output for $F$.  All other rows will equal 0.  The result 
 is shown in Table~\ref{table:SymToTT}.
+\end{process}
 
 The words \textit{ realize} and \textit{implement} \index{realize} \index{implement} 
 are used somewhat interchangeably to mean executing the design
 process in order to build a circuit -- to make the digital system real.  
 Since this text focuses on the logical 
 behavior of circuits, not their physical behavior, the design process ends with
-a circuit diagram, see Figure~\ref{fig:Design}.  In general, when asked
+a circuit diagram, see Figure~\ref{fig:representDesign}.  In general, when asked
 to realize or implement a circuit make it as real as 
 possible.  Along similar lines, the realization or implementation of a circuit 
 is its physical manifestation.  In order to answer questions about a 
@@ -657,78 +656,122 @@ physical implementation.  In the next section the last step in the realization
 of of digital systems, symbolic to circuit diagram, is examined.
 
 
-\subsection{Symbolic to Circuit Diagram}
+\begin{process}{Symbolic to Circuit Diagram}
+The transformation of a symbolic expression into a circuit diagram is a recursive journey
+from the output to the input parsing the expressions along the
+way.  To (loosely) paraphrasing Meriam Webster, \index{parsing}
+\href{https://www.merriam-webster.com/dictionary/parse}{parsing} is the process
+of dividing an expression into subexpressions and identifying the relationship
+between the expression and subexpresions.  An \textit{expression} \index{expression} is 
+a collection of boolean variables connected properly to one another by 
+elementary logical functions. 
 
-The transformation of a symbolic expression into a circuit diagram is a journey
-from the output of the circuit towards the input.  When a symbolic expression
-is evaluated, some operation is always performed last, yielding
+To lend context to the discussion of the conversion process, let's parse
+$F(A,B,C) = A*(B+C')+B'C$ into a circuit diagram.
+
+%because all the higher precedence 
+%operations have already been performed.  This lowest precedence operator
+%is the gate which generates the output of the circuit diagram.  Draw this gate
+%and label its output with the name of the function.  
+%Now, remove this lowest precedence operator from the parent symbolic 
+%expression.  This change may create one 
+%or more child subexpressions, each of which contributes an input to the 
+%parent gate.  Now, look at each of these child subexpressions, and in turn and 
+%parse them in the same way the parent process was parsed.  The parsing is a 
+%4-step process.
+%%%\begin{enumerate}
+%\item Identify the lowest precedence operator in the subexpression,
+%\item Draw the gate of this lowest precedence operator,
+%\item Connect this gate's output to an input of its parent gate, and
+%\item Remove the operation from the subexpression creating one or more 
+%child subexpressions.
+%\end {enumerate}
+%%%The parsing process is repeated on the child expressions until the child
+%expressions consist of an input variable.  At this point, the parsing process
+%stops with the input variable being connected to the parent gate.
+
+\textbf{Step 1: Indentify the lowest precedence operator in the expression.}
+When a symbolic expression is evaluated, some operation is always performed last, yielding
 the single-bit output of the function.  This operation is the lowest 
-precedence operator of the expression because all the higher precedence 
-operations have already been performed.  This lowest precedence operator
-is the gate which generates the output of the circuit diagram.  Draw this gate
-and label its output with the name of the function.  
+precedence operator of the expression.  In the expression for $F(A,B,C)$,
+ the lowest precedence operation is the
+OR between the subexpressions $A*(B+C')$ and $B'C$. 
 
-Now, remove this lowest precedence operator from the parent symbolic 
-expression.  This change may create one 
-or more child subexpressions, each of which contributes an input to the 
-parent gate.  Now, look at each of these child subexpressions, and in turn and 
-parse them in the same way the parent process was parsed.  The parsing is a 
-4-step process.
+\textbf{Step 2: Draw the gate of the lowest precedence operator in the expression.}
+This pretty simple, we draw the OR gate, labeled ``1" in 
+Figure~\ref{fig:represenationsAdvance}.  
 
-\begin{enumerate}
-\item Identify the lowest precedence operator in the subexpression,
-\item Draw the gate of this lowest precedence operator,
-\item Connect this gate's output to an input of its parent gate, and
-\item Remove the operation from the subexpression creating one or more 
-child subexpressions.
-\end {enumerate}
+\textbf{Step 3: Connect the lowest precedence operator's output to the parent.}
+Paraphrasing Mariam Webster, a 
+\href{https://merriam-webster.com/dictionary/parent}{parent} \index{parent}
+is an entity from which other subordinates (children) arise.
 
-The parsing process is repeated on the child expressions until the child
-expressions consist of an input variable.  At this point, the parsing process
-stops with the input variable being connected to the parent gate.
+In this parsing process a \textit{parent expression} \index{expression:parent}
+is broken down into zero or more \textit{child expressions} \index{expression:child expression}
+in Step 2 by removing gate from the parent expression.
 
-To better understand how this parsing process works, consider the expression 
-$F(A,B,C) = A*(B+C')+B'C$.  The lowest precedence operation is OR, so
-an OR gate is drawn and its output labeled $F(A,B,C)$.  This OR gate
-is labeled ``1" in Figure~\ref{fig:advance}.  Removing the OR operator
-from the expression, yields two child expressions, $A*(B+C')$, and
-$B'C$.  The choice of which to consider first is arbitrary, so for 
-no good reasons, start to parse $A*(B+C')$ first.  The lowest precedence
-operation in this expression, AND, is drawn (labeled with a ``2"
-in Figure~\ref{fig:advance}), and its output connected to one of its 
-parent's inputs.  Removing the AND from this expression yields two 
-subexpressions, $A$, and $(B+C')$.  Since $A$ is an input variable,
-it is connected to one of the AND gates inputs.  The lowest precedence
-operation of $(B+C')$ is the parenthesis.  
+In this example we started \textbf{Step 1} by parsing 
+$F(A,B,C)$ so this is the parent expression.  So we will connect the output 
+of the OR gate we removed from the circuit in \textbf{Step 2} to $F(A,B,C)$
 
-Parenthesis are special
-operators which have no circuit representations.  They are place holders,
-allowing operations with low precedence to be evaluated before operations 
-with a high precedence.  Consequently, when an expression consists of
-a single set of parenthesis containing a subexpression, the parenthesis
-can be removed and parsing resumed with the subexpression.  Inside the 
-parenthesis, the lowest precedence operation of $B+C'$ is the OR gate 
-labeled ``3" in Figure~\ref{fig:representationsAdvance}.  Removing the OR from the 
-$B+C'$ expression yields a variable $B$ which is connected to one of the
-OR gate's inputs and the expression $C'$.  The NOT operation is the lowest
-precedence operation, and drawn on the circuit diagram (labeled with ``4").
-Its input is clearly the $C$ variable.  The parsing process now resumes
-with the other half of the OR gate ``1", the expression $B'C$.  The lowest
-precedence operation in this expression is AND, drawn on the circuit 
-diagram (labeled ``5"), and its output connected to the available input 
-of its parent gate, the OR.  Removing AND from the expression, yields two
-child expressions, the $C$ variable being an input to the AND gate, and the
-$B'$ which contributes the NOT gate, labeled ``6" in Figure~\ref{fig:representationsAdvance}.  
+\item {Step 4: Remove the lowest precedence operation from the expression 
+creating zero or more child subexpressions.}
+Removing the OR operator from $A*(B+C')+B'C$ yields two subexpressions, 
+$A*(B+C')$, and $B'C$.  
 
-\begin{figure}[ht]
-%% scalebox{0.5}{stuff}
-\includegraphics{advance}
-\caption{The circuit diagram for $F(A,B,C)=A(B+C')+B'C$.}
-\label{fig:representationsAdvance}
-\end{figure}
+\item {Step 5: Parse each child subexpression independently.}
+Each of the subexpressions created in \textbf{Step 4} need to be parsed independently.
+This means that we must parse $A*(B+C')$, and $B'C$.  This means that we will 
+use $A*(B+C')$ as the starting expression at \textbf{Step 1}.  The output of the
+(child) expression $A*(B+C')$ is an input to the parent expression of $A*(B+C')$
+which is OR gate formed when we parsed $A*(B+C')+B'C$.  We now proceed to 
+complete the parsing process below.
+\vspace{0.2cm}
+
+\begin{tabular}{m{5cm} | m{5cm}}
+$A*(B+C')$		&			$B'C$ \\ \hline
+\textbf{Step 1:}  The lowest precedence
+operation in this expression, AND between
+$A$ and $B+C'$.  &
+\textbf{Step 1:}  The lowest precedence
+operation in this expression, AND between
+$B'$ and $C$. \\ \hline
+\textbf{Step 2:}   Draw the AND gate labeled 2 Figure~\ref{fig:represenationsAdvance}.   &
+\textbf{Step 2:}   Draw the AND gate labeled 5 Figure~\ref{fig:represenationsAdvance}.   \\ \hline
+\textbf{Step 3:}   Connect the output of AND gate labeled 2 to the input of the OR gate labeled 1. &
+\textbf{Step 3:}   Connect the output of AND gate labeled 5 to the input of the OR gate labeled 1. \\ \hline
+\textbf{Step 4:}  Remove the AND from $A*(B+C')$ producing two child subexpressions $A$ and $(B+C')$ &
+\textbf{Step 4:}  Remove the AND from $B'C$ producing two child subexpressions $B'$ and $C$ \\ \hline
+
+\end{tabular}
+
+{\setlength{\fboxsep}{0pt}
+\centering  
+\framebox{%
+\setlength{\fboxsep}{6pt}%
+ \colorbox{white}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}%
+{\centering 
+\includegraphics[width=0.9\textwidth]{advance}
+\fakefigure{fig:representationsAdvance}
+\textbf{Figure}~\ref{fig:representationsBasic}: The circuit diagram for $F(A,B,C)=A(B+C')+B'C$.}
+ \par}%
+}
+\par}\vspace{0.2cm}
+\end{process}
+
+Two simplications were made during the parsing process which deserve some attention
+leaves and \textit{paraenthesis}.  When there the parsing process can go no
+further, there are no more operators in the expression, that expression is called a \textit{leaf} \index{leaf}.
+Examples of leafs include input variables and logic 0 and logic 1.  You can think of these as leaves on a
+metaphorical parse tree.
+
+Parenthesis are special operators which have no circuit representations.  They allow us a notation that
+enables low precedence operators to be evaluated before higher precendence operators.
+onsequently, when an expression consists of a single set of parenthesis containing a 
+expression, the parenthesis can be removed and parsing resumed with the expression.  
 
 During the parsing process, it is critically important to keep track of which 
-parts of the expressions have been realized and which have not.  To 
+parts of the expressions have been parsed and which have not.  To 
 do this, add lines under each of the subexpressions as they are created.
 After correctly parsing the expression, each variable should have a little
 line underneath it.  This parsing-management can be a dizzying process 
@@ -743,7 +786,7 @@ symbolic expressions.  The nine laws of Boolean Algebra are listed in
 Table~\ref{table:representationsLaws}.
 
 \begin{table}
-\begin{center}
+
 \begin{tabular}[ht]{|c|c|c|}\hline
 Law	&	Primary &	Dual	\\ \hline
 1.	&	x+0=x	&	x*1=x	\\ \hline
@@ -758,7 +801,7 @@ Law	&	Primary &	Dual	\\ \hline
 \end{tabular}
 \caption{The laws of Boolean Algebra using the Boolean variables $x,y,x$.}
 \label{table:representationsLaws}
-\end{center}
+
 \end{table}
 
 Notice that all laws (except Number 4) have a dual.  A dual of a 
