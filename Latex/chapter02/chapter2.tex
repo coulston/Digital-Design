@@ -487,9 +487,72 @@ form into a truth table.
 
 \subsection{Symbolic to Truth Table}
 
+Before we get started with this transformation you will need 
+to understand and apply the concept of evaluation.
+
+Evaluation is the process
+of substituting each variable's value into the equation and applying 
+the operators to the values.  For example, evaluate $F(A,B) = (A+B)'$
+for $(A,B) = (0,1)$.  Substituting in the values for the variables
+yields $F(0,1) = (0+1)'$.  Applying the OR operation to 0 and 1 gives the 
+result 1.  Applying the NOT operator to the result of the OR operator yields 0.
+Thus, $F(A,B)$ evaluated at $(A,B)=(0,1)$ equals 0.  In other words,
+$F(0,1)=0$.  The evaluation of more complex expressions requires 
+you to apply the rules of operator precedence in Boolean Algebra.
+
+Operator precedence specifies the order in which the
+operations of an expression are evaluated.  Operations with higher precedence
+are performed before operations with lower precedence.  The rules of operator 
+precedence are listed for both algebras in the following table.
+
+\begin{tabular}[ht]{l|l|l}
+			& Regular Algebra			& Boolean Algebra \\ \hline \hline
+High precedence	& Parenthesis			& Parenthesis	\\ \hline
+			& Exponents				& Not			\\ \hline
+			& Multiplication/Division	& And			\\ \hline
+Low precedence	& Addition/Subtraction 		& Or 			\\
+\end{tabular}
+
+For example, if you given the Boolean function F(A,B,C,D) = (A + B(C' + D))'
+and asked to evaluate $F(0,1,0,0)$ you would first substitute the values of
+the variables into the expression. To do this look at the left to right order 
+of the Boolean variables in the $F(A,B,C,D)$ expression and match them to the 
+left to right order of the bit values in $F(0,1,0,0)$.  Thus everywhere you see a
+$A$ you will substitute the value 0.  $B$ will get replaced with 1, $C$ with 0
+and $D$ with 0.  This will produce the expression:
+
+$$(0 + 1(0' + 0))'$$
+
+You need to apply operator precedence to determine which operation to perform
+first.  Since parenthesis are the highest precedence operation, we to ``look'' inside the
+outer most parenthesis and evaluate:
+
+$$0 + 1(0' + 0)$$
+
+Since parenthesis are the highest precedence operator, we must evaluate what is inside the
+parenthesis first:
+$$0' + 0$$
+
+Since NOT has a higher precedence than OR, we perform the NOT before performing OR.
+$$0' + 0 = 1$$
+
+We then go back and put this value into expression where the original parenthesis expression. 
+This gives us
+
+$$0 + 1*1$$
+
+Since AND has a higher precedence than OR, we get
+$$0 + 1*1 = 1$$
+
+Substituting this value into expression where the original parenthesis expression gives us:
+$$1' = 0$$
+
+Thus, $F(0,1,0,0) = 0$
+\vspace{0.2cm}
+
+
 \begin{process}{Symbolic to Truth Table}
 \label{process:representationSymToTT}
-
 To lend context to the discussion of the conversion process, let's describe this
 process by converting the symbolic expression
 $F(A,B,C) = A'B + AB'C'$ into a truth table.
@@ -519,56 +582,33 @@ from page~\pageref{page:two-to-N}, there are
 $2^4=16$ different combinations of four input bits.
 
 \textbf{Step 3: Evaluate the symbolic expression for each combination of inputs.}
- Evaluation is the process
-of substituting each variable's value into the equation and applying 
-the operators to the values.  For example, evaluate $F(A,B) = (A+B)'$
-for $(A,B) = (0,1)$.  Substituting in the values for the variables
-yields $F(0,1) = (0+1)'$.  Applying the OR operation to 0 and 1 gives the 
-result 1.  Applying the NOT operator to the result of the OR operator yields 0.
-Thus, $F(A,B)$ evaluated at $(A,B)=(0,1)$ equals 0.  In other words,
-$F(0,1)=0$.  The evaluation of more complex expressions requires 
-a firm grasp on the rules of operator precedence in Boolean Algebra.
-
-The symbolic expressions are written in 
-\textit{Boolean Algebra}, \index{Boolean Algebra} an algebra where variables
-represent the values 0 and 1 and which are joined together using operators 
-like AND, OR and NOT.  The symbolic expressions written in a 
-high school algebra class have variables which represent real numbers and
-are joined together using operators like addition and multiplication.  In 
-both algebras, operator precedence must be understood in order to evaluate
-complex expressions.  Operator precedence specifies the order in which the
-operations of an expression are evaluated.  Operations with higher precedence
-are performed before operations with lower precedence.  The rules of operator 
-precedence are listed for both algebras in the following table.
-
-\begin{tabular}[ht]{l|l|l}
-			& Regular Algebra			& Boolean Algebra \\ \hline \hline
-High precedence	& Parenthesis			& Parenthesis	\\ \hline
-			& Exponents				& Not			\\ \hline
-			& Multiplication/Division	& And			\\ \hline
-Low precedence	& Addition/Subtraction 		& Or 			\\
-\end{tabular}
-\\ \\
-Operator precedence is examined by considering the problem of
-deriving the truth table for the $F(A,B,C) = A'B + AB'C'$.  This expression
-has three input variables and one output variable.  An empty shell of the 
-truth table is exactly the same as the one shown on 
-page~\pageref{page:TTshell}.  
-
-Next, the expression is evaluated for every possible input.  In 
-other words, determine $F(0,0,0) \ldots F(1,1,1)$.  Start with 
-the first row of the truth table and determine $F(0,0,0)$ by
+ 
+We will evaluate $F(A,B,C) = A'B + AB'C'$ for every combination of $(A,B,C)$  Let's
+start with the first row of the truth table and determine $F(0,0,0)$ by
 substituting $0,0,0$ for every occurrence of $A,B,C$ in the symbolic 
 expression.  This yields $0'*0+0*0'*0'$.  In order to evaluate this expression, 
 perform the highest precedence operator first.  In this case, evaluate 
 the three NOTs yielding, $1*0+0*1*1$.  The next highest 
 precedence operator is AND, evaluating the two ANDs in the expression 
 yields, $0+0$.   Evaluating the remaining OR yields 0.  Hence, $F(0,0,0)=0$.
+Now continue this process for the remaining 7 row to produce the finished
+truth table.
 
-Continuing this procedure of evaluating the function for the remaining seven
-inputs, would result in the same problems encountered when converting  a
-circuit diagram into a truth table namely, that the
-process is tedious and error prone.  In order to make good on the 
+$$\begin{array}{c|c|c||c}
+A & B & C & F(A,B,C) \\ \hline \hline
+0 & 0 & 0 &  0  \\ \hline
+0 & 0 & 1 &  0  \\ \hline
+0 & 1 & 0 &  1  \\ \hline
+0 & 1 & 1 &  1  \\ \hline
+1 & 0 & 0 &  1  \\ \hline
+1 & 0 & 1 &  0  \\ \hline
+1 & 1 & 0 &  0  \\ \hline
+1 & 1 & 1 &  0 
+\end{array} $$
+\end{process}
+
+This process of evaluating the function for large numbers of inputs is 
+tedious and error prone.  In order to make good on the 
 promise to produce an efficient transformation of a circuit diagram 
 to a truth table, a better method is needed to complete the truth table
 from the symbolic form.
@@ -640,7 +680,6 @@ subexpressions together.  Since OR evaluates to 1 when any of its inputs equals
 1, then it suffices to look for rows where either of the two subexpressions equal
 1 and put a 1 for the output for $F$.  All other rows will equal 0.  The result 
 is shown in Table~\ref{table:SymToTT}.
-\end{process}
 
 The words \textit{ realize} and \textit{implement} \index{realize} \index{implement} 
 are used somewhat interchangeably to mean executing the design
@@ -714,36 +753,79 @@ In this example we started \textbf{Step 1} by parsing
 $F(A,B,C)$ so this is the parent expression.  So we will connect the output 
 of the OR gate we removed from the circuit in \textbf{Step 2} to $F(A,B,C)$
 
-\item {Step 4: Remove the lowest precedence operation from the expression 
+\textbf {Step 4: Remove the lowest precedence operation from the expression 
 creating zero or more child subexpressions.}
 Removing the OR operator from $A*(B+C')+B'C$ yields two subexpressions, 
 $A*(B+C')$, and $B'C$.  
 
-\item {Step 5: Parse each child subexpression independently.}
+\textbf {Step 5: Parse each child subexpression independently.}
 Each of the subexpressions created in \textbf{Step 4} need to be parsed independently.
 This means that we must parse $A*(B+C')$, and $B'C$.  This means that we will 
 use $A*(B+C')$ as the starting expression at \textbf{Step 1}.  The output of the
 (child) expression $A*(B+C')$ is an input to the parent expression of $A*(B+C')$
 which is OR gate formed when we parsed $A*(B+C')+B'C$.  We now proceed to 
-complete the parsing process below.
+complete the parsing process below starting with the two subexpression
+$A*(B+C')$	and $B'C$.
 \vspace{0.2cm}
 
-\begin{tabular}{m{5cm} | m{5cm}}
-$A*(B+C')$		&			$B'C$ \\ \hline
-\textbf{Step 1:}  The lowest precedence
-operation in this expression, AND between
-$A$ and $B+C'$.  &
-\textbf{Step 1:}  The lowest precedence
-operation in this expression, AND between
-$B'$ and $C$. \\ \hline
-\textbf{Step 2:}   Draw the AND gate labeled 2 Figure~\ref{fig:represenationsAdvance}.   &
-\textbf{Step 2:}   Draw the AND gate labeled 5 Figure~\ref{fig:represenationsAdvance}.   \\ \hline
-\textbf{Step 3:}   Connect the output of AND gate labeled 2 to the input of the OR gate labeled 1. &
-\textbf{Step 3:}   Connect the output of AND gate labeled 5 to the input of the OR gate labeled 1. \\ \hline
-\textbf{Step 4:}  Remove the AND from $A*(B+C')$ producing two child subexpressions $A$ and $(B+C')$ &
-\textbf{Step 4:}  Remove the AND from $B'C$ producing two child subexpressions $B'$ and $C$ \\ \hline
+\begin{tabular}{m{2.5cm} | m{3cm} | m{2.5cm} | m{3cm}}
 
+\rowcolor{gray}
+\multicolumn{2}{l|}{Parse $A*(B+C')$}		& 	\multicolumn{2}{l}{Parse $B'C$} \\ \hline
+
+\multicolumn{2}{l|}{\makecell[l]{\textbf
+{Step 1:}  The lowest precedence \\
+operation in this expression, \\
+AND between $A$ and $(B+C')$.}}  &
+\multicolumn{2}{l}{\makecell[l]{\textbf
+{Step 1:}  The lowest precedence\\
+operation in this expression, \\
+AND between $B'$ and $C$.}} \\ \hline
+
+\multicolumn{2}{l|}{\makecell[l]{\textbf
+{Step 2:}   Draw the AND gate \\
+labeled 2 in Figure~\ref{fig:representationsAdvance}.}}   &
+\multicolumn{2}{l}{\makecell[l]{\textbf
+{Step 2:}   Draw the AND gate \\
+labeled 5 in Figure~\ref{fig:representationsAdvance}.}}  \\ \hline
+
+\multicolumn{2}{l|}{\makecell[l]{\textbf
+{Step 3:}   Connect the output \\
+of AND gate labeled 2 to the input \\
+of the OR gate labeled 1.}} &
+\multicolumn{2}{l}{\makecell[l]{\textbf
+{Step 3:}   Connect the output of \\
+AND gate labeled 5 to the input of \\
+the OR gate labeled 1.}} \\ \hline
+
+\multicolumn{2}{l|}{\makecell[l]{\textbf
+{Step 4:}  Remove the AND from \\
+$A*(B+C')$ producing two child \\
+subexpressions $A$ and $(B+C')$.}} &
+\multicolumn{2}{l}{\makecell[l]{\textbf
+{Step 4:}  Remove the AND from \\
+$B'C$ producing two child \\
+subexpressions $B'$ and $C$.}} \\ \hline
+
+\rowcolor{gray}
+Parse $A$ & Parse $(B+C')$ & Parse $B'$ & Parse $C$ \\ \hline
+leaf & \textbf{1:} OR $B+C'$ & \textbf{1:} NOT $B'$ & leaf \\ \hline
+   & \textbf{2:} OR gate 3 &   NOT gate 6 & \\ \hline
+   & \textbf{3:} Connect 3 to 2 & \textbf{3:} Connect 6 to 5 & \\ \hline
+    & \textbf{4:} $B$ and $C'$ & \textbf{4:} $B$ & \\ \hline
+
+\rowcolor{gray}
+Parse $B$ & Parse $C'$ & Parse $B$ & \\ \hline    
+leaf & \textbf{1:} NOT $C'$ & leaf & \\ \hline
+   & \textbf{2:} NOT gate 4 &   & \\ \hline
+   & \textbf{3:} Connect 4 to 3 &  & \\ \hline
+    & \textbf{4:} $C$ & & \\ \hline    
+
+\rowcolor{gray}
+    & Parse $C$  &  & \\ \hline    
+    & leaf  &  & \\ \hline    
 \end{tabular}
+\vspace{0.2cm}
 
 {\setlength{\fboxsep}{0pt}
 \centering  
@@ -753,21 +835,21 @@ $B'$ and $C$. \\ \hline
 {\centering 
 \includegraphics[width=0.9\textwidth]{advance}
 \fakefigure{fig:representationsAdvance}
-\textbf{Figure}~\ref{fig:representationsBasic}: The circuit diagram for $F(A,B,C)=A(B+C')+B'C$.}
+\textbf{Figure}~\ref{fig:representationsAdvance}: The circuit diagram for $F(A,B,C)=A(B+C')+B'C$.}
  \par}%
 }
 \par}\vspace{0.2cm}
 \end{process}
 
-Two simplications were made during the parsing process which deserve some attention
-leaves and \textit{paraenthesis}.  When there the parsing process can go no
+Two simplification were made during the parsing process which deserve some attention
+leaves and \textit{parenthesis}.  When there the parsing process can go no
 further, there are no more operators in the expression, that expression is called a \textit{leaf} \index{leaf}.
 Examples of leafs include input variables and logic 0 and logic 1.  You can think of these as leaves on a
 metaphorical parse tree.
 
 Parenthesis are special operators which have no circuit representations.  They allow us a notation that
-enables low precedence operators to be evaluated before higher precendence operators.
-onsequently, when an expression consists of a single set of parenthesis containing a 
+enables low precedence operators to be evaluated before higher precedence operators.
+consequently, when an expression consists of a single set of parenthesis containing a 
 expression, the parenthesis can be removed and parsing resumed with the expression.  
 
 During the parsing process, it is critically important to keep track of which 
@@ -785,8 +867,7 @@ Boolean Algebra has a set of laws which can be employed to manipulate
 symbolic expressions.  The nine laws of Boolean Algebra are listed in 
 Table~\ref{table:representationsLaws}.
 
-\begin{table}
-
+\begin{table}[ht]
 \begin{tabular}[ht]{|c|c|c|}\hline
 Law	&	Primary &	Dual	\\ \hline
 1.	&	x+0=x	&	x*1=x	\\ \hline
@@ -801,7 +882,6 @@ Law	&	Primary &	Dual	\\ \hline
 \end{tabular}
 \caption{The laws of Boolean Algebra using the Boolean variables $x,y,x$.}
 \label{table:representationsLaws}
-
 \end{table}
 
 Notice that all laws (except Number 4) have a dual.  A dual of a 
@@ -853,29 +933,143 @@ $A(A+B)$	& huh?	& $A(1+B)$	& Law 2	\\
 		&		& $A$		& \\
 \end{tabular}
 
+\begin{process}{Expansion Trick}
+\label{process:representationsExpansionTrick}
+\index{trick!expansion}
 The \textit{expansion trick} can be used to show that two expressions are 
-equal to one another.
-\index{trick!expansion}  The first step in the expansion trick is
-to remove all the parenthesis using Law 8 and reduce the expression
-to a set of product terms ORed together. The second step in the 
-expansion trick is to add the ``missing" variables to each product 
-in the expression.  This second step is illustrated in the following
-derivation.
+equal to one another.  To do this we will make the expression on the 
+left-hand side (LHS) of the ``='' sign equal to the expression on the
+right-hand side (RHS).  
 
-\textbf{Show:} $A'B'C' + B'C + ABC = A'B' + AC$
+To lend context to the discussion of the expansion trick process, let's prove 
+that $$B' + A'(B'C + C) = (AB + BC')'$$.
 
-\textbf{Derivation:} 
+\textbf{Step 1: Convert the LHS and RHS expressions into SOP form.}
+The LHS has a single set of parenthesis, so we distribute the $A$ term to each
+term inside the parenthesis.  We leave the $B'$ term alone because it is already
+in a (degenerate) SOP form.  Thus we are left with the SOP expression 
+$$B' + A'B'C + A'C$$
+
+The RHS is more difficult because we will have to ``distribute'' the negation outside the 
+parenthesis using \textbf{Law 9} using the following sequence of steps.
+
+\begin{tabular}[ht]{ll}
+ $(AB + BC')'$ 					& Law 9	\\ 
+ $(AB)' (BC')'=$					& Law 9D 	\\ 
+ $(A' + B') (B' + C'') =$			& Law 4 	\\ 
+ $(A' + B') (B' + C) =$				& Law 8 	\\ 
+ $(A' + B') B' + (A' + B') C =$		& Law 8 	\\ 
+$A'B' + B'B' + A'C + B'C =$		& Law 3 	\\ 
+$A'B' + B' + A'C + B'C $				&  	\\ 
+\end{tabular}
+
+Thus after this step our original proof now looks like:
+$$B' + A'B'C + A'C = A'B' + B' + A'C  + B'C $$
+
+\textbf{Step 2: Identify the missing variables for each product term.}
+A couple of definitions are needed to understand the term ``missing variable''
+
+\begin{description}
+   \item[Working Set] The set of variables in an expression. The working set in our example is ${A, B, C}$.
+   \item[Canonical Product Term] A product term that contains all the variables (or their negation) in the working set.
+   For example, the product term $A'B'C$ on the LHS is a canonical product term.
+   \item[Missing variable] The set of variable, that when ANDed to non-complete product term, makes the product term canonical.
+   For example, the missing variable for the product term $B'$ are $A$ and $C$.
+\end{description}
+
+Putting all this together we get:
+
+\begin{tabular}[ht]{l|l}
+Term		& Missing variable(s)		\\ \hline
+$B'$		& $A$ and $C$			\\ \hline
+$A'B'C$	& None					\\ \hline
+$A'C$		& $B$						\\ \hline
+
+$A'B'$		& $C$						\\ \hline
+$B'$		& $A$ and $C$			\\ \hline
+$A'C$		& $B$						\\ \hline
+$B'C$		& $A$						\\ \hline
+\end{tabular}
+
+\textbf{Step 3: AND the missing variable and its complement to each product term.}
+This step relies on Law 5 and La 1D from Boolean Algebra.  Let's see how this work for the 
+product term $A'C$ on the LHS.  
+
+Law 1D of Boolean Algebra states that $X*1 = X$. Since the 
+equality sign, ``='' works both ways, we could also say that Law 1D of Boolean Algebra states
+that $X = X*1$.  In our case we will let $X$ be the term $A'C$.  Applying Law 1D, we have 
+$A'C = A'C*1$.
+
+Law 5 of Boolean Algebra states that $X+X' = 1$.  We could also interpret this as saying that 
+$1 = X+X'$  In this case we will let $X$ be the missing variable $B$.  So we have
+$1 = B+B'$.
+
+Combining these two ideas together, we get that $A'C = 1*A'C = (B+B')A'C = A'BC + A'B'C$
+The table below shows how each term is converted when it's missing variable(s) are inserted.
+
+\begin{tabular}[ht]{m{1cm}|m{2cm}|m{3cm}|m{3cm}}
+Term		& Missing variable(s)	&	Insert missing variable	&	\\ \hline
+$B'$		& $A$ and $C$		&	$B'(A + A')(C + C')$		&	$AB'C+AB'C' + A'B'C+A'B'C'$		\\ \hline
+$A'B'C$		& None				&								&		\\ \hline
+$A'C$		& $B$					&	$A'C(B+B')$				&	$A'BC+A'B'C$	\\ \hline
+
+$A'B'$		& $C$					&	$A'B'(C+C')$ 				&	$A'B'C+A'B'C'$	\\ \hline
+$B'$		& $A$ and $C$		&	$B'(A + A')(C + C')$		&	$AB'C+AB'C' + A'B'C+A'B'C'$		\\ \hline
+$A'C$		& $B$					&	$A'C(B+B')$				&	$A'BC+A'B'C$	\\ \hline
+$B'C$		& $A$					&	$B'C(A+A')$				&	$AB'C+A'B'C$	\\ \hline
+\end{tabular}
+
+$$ AB'C + AB'C' + A'B'C + A'B'C' + A'B'C + A'BC + A'B'C = $$
+$$A'B'C + A'B'C' +      AB'C + AB'C' + A'B'C + A'B'C'                               A'BC + A'B'C + AB'C + A'B'C$$
+
+\textbf{Step 4: Remove redundant product terms from each side.}
+This step relies on Law 3 of Boolean Algebra which states that $X+X = X$.  In our case, $X$ will be
+a product term that is repeated on the LHS or RHS.  For example the product term $A'B'C$ is repeated on the 
+LHS as the $3^{rd}$ and $5^{th}$ terms.  We could rearrange the terms on the LHS to look like 
+$A'B'C + A'B'C$.  Law 3 tells us that $A'B'C + A'B'C = A'B'C$. This may be unintuitive because in
+regular algebra $x+x = 2x$.  But then again, in regular algebra ``+'' means addition not logical OR
+and regular algebra has the symbol 2 while Boolean Algebra has 0 and 1.  Using Law 3 on both the LHS and RHS sides
+yields:
+
+$$ AB'C + AB'C' + A'B'C + A'B'C' + A'BC = A'B'C + A'B'C' +      AB'C + AB'C' + A'BC $$
+
+\textbf{Step 5: Rearrange the terms so that LHS and RHS have the same order.}
+This step relies on Law 6 of Boolean algebra which states that $X+Y = Y+X$.  In our 
+context $X$ and $Y$ are the term in the LHS and RHS.  It is a good idea to leave the terms
+on the LHS alone and move the terms on the RHS to get the same order.  This let's you check
+that you have in fact the same terms on both side and have not made an error in your derivation.
+
+$$ AB'C + AB'C' + A'B'C + A'B'C' + A'BC =  AB'C + AB'C' + A'B'C + A'B'C' + A'BC$$
+
+
+\textbf{Step 6: Write out the proof.}
+A formal proof requires us to manipulate one side of the equality into the
+other using the proper laws of Boolean algebra.  The wqay that we will accomplish
+this is to transform the LHS into 
+$$ AB'C + AB'C' + A'B'C + A'B'C' + A'BC$$ 
+using the first 5 steps of this process.  You must then continue the derrivation with
+the RHS by tracing your steps backwards from step 5 to step 1.  This process is 
+shown in the following proof that that $B' + A'(B'C + C) = (AB + BC')'$
 
 $\begin{array}[ht]{ll}
-A'B'C' + B'C + ABC =		& \text{Law 1D} \\
-A'B'C' + 1B'C + ABC = 		& \text{Law 3} \\
-A'B'C' + (A+A')B'C + ABC = 	& \text{Law 8} \\
-A'B'C' + AB'C +A'B'C + ABC = 	& \text{Law 6} \\
-A'B'C' + A'B'C +AB'C + ABC = 	& \text{Law 8} \\
-A'B'(C' + C) +AC(B' + B) = 	& \text{Law 5} \\
-A'B'1 +AC1 = 			& \text{Law 1D} \\
-A'B' +AC = 				&  \\
+B' + A'(B'C + C) =													& \text{Law 1D} \\
+B' + A'B'C + A'C = 												& \text{Law 3} \\
+B'*1*1 + A'B'C + A'1C = 											& \text{Law 3} \\
+(A+A')B'(C+C') + A'B'C + A'(B+B') =								& \text{Law 3} \\
+AB'C + AB'C' + A'B'C + A'B'C' + A'B'C + A'BC + A'B'C = 		& \text{Law 3} \\
+AB'C + AB'C' + A'B'C + A'B'C' + A'BC =							& \text{Law 3} \\
+A'B'C + A'B'C' + AB'C + AB'C' + A'BC =							& \text{Law 3} \\
+A'B'C + A'B'C' + AB'C + AB'C' + A'B'C + A'B'C' + A'BC + 		&				\\
+A'B'C + AB'C + A'B'C = 											& \text{Law 3} \\
+A'B'(C+C') + B'(A + A')(C + C') + A'C(B+B') + B'C(A+A') =		& \text{Law 3} \\
+A'B' + B' + A'C + B'C =											& \text{Law 3} \\
+A'B' + B'B' + A'C + B'C =											& \text{Law 3} \\
+(A' + B')(B' + C) =													& \text{Law 3} \\
+(AB + BC')'		& Q.E.D. \\
 \end{array}$
+
+\end{process}
+
 
 Since both expressions consist of product terms, Law 8 need not be applied.
  The second step of the expansion trick,
@@ -885,19 +1079,7 @@ into $A'B'C + AB'C$.  In this case, the $B'C$ product term is
 with $B'C$, then replacing 1 with $(A+A')$, and finally
 distributing $B'C$.  
 
-Finishing this formal derivation is 
-straightforward, but requires some scratch work.  Start by 
-expanding the right-hand side of the derivation $A'B' + AC$,
-using the expansion trick, into $A'B'C' + AB'C +A'B'C + ABC$ 
-on some scratch paper.  Now, 
-write the second to last step of the scratch work derivation underneath 
-the $A'B'C' + AB'C +A'B'C + ABC$ expression in the formal 
-derivation.  Then, write the third to last step of the scratch 
-work derivation as the next step of the formal derivation.
-Continue until $A'B'+AC$ is written as the last step in
-the formal derivation.  This idea is similar to a common maze-solving 
-strategy, work at both ends of the maze and try to meet 
-in the middle. 
+
 
 The expansion trick runs into problems when there are a large
 number of terms in parenthesis.  With a large number
@@ -934,7 +1116,7 @@ back in the first step of the proof is combined with the $B'$
 inside the brackets, yielding the desired result.
 
 \subsection{Truth Table to Symbolic}
-\label{sec:TTtoSymb}
+\label{sec:representationsTTtoSymb}
 
 The most technical transformation in the design process is transforming 
 a truth table to symbolic expression.  The idea behind this conversion is 
