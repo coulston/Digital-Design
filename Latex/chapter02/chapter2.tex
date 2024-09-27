@@ -1,4 +1,4 @@
-\chapter{Representations of Logical Functions}
+\chapter{Representations of Logical Functions}Wo
 \label{chapter:Representations of Logical Functions}
 \graphicspath{ {./chapter02/Fig} }
 
@@ -244,7 +244,7 @@ two additional inputs.
 \section{Conversion Between Representations}
 Figure~\ref{fig:representationsForms} shows the four representations of a digital system
 along with the different transformations covered in this section.  
-The arrows are numbered by the subsection in which the transformation is
+The arrows are numbered by the process in which the transformation is
 covered.  The design process shown in Figure~\ref{fig:Design} is captured
 in Steps 7, 6, and 4.  The other transformations introduced in this 
 section enable designs to be optimized as well as to explore 
@@ -257,7 +257,7 @@ numbered arrows are the transformations examined in this chapter.}
 \label{fig:representationsForms}
 \end{figure}
 
-\subsection{Circuit Diagram to Truth Table}
+\section{Circuit Diagram to Truth Table}
 
 The first transformation is the circuit diagram to truth table.  
 Where the circuit diagram came from is unimportant for now.
@@ -301,8 +301,7 @@ from a gate can provide input to multiple, different inputs.  For example,
 the output of the NOT gate
 associated with the $C$ input feeds the first and third AND gates. 
 
-
-
+\section{Circuit Diagram to Truth Table}
 \begin{process}{Circuit Diagram to Truth Table}
 \label{process:representationCDtoTT}
 \label{page:representationCDtoTT}
@@ -420,7 +419,7 @@ form for this circuit's output and then determining the truth table is a
 much less tedious and less error-prone method to determine the truth table
 from a circuit diagram.
 
-\subsection{Circuit Diagram to Symbolic}
+\section{Circuit Diagram to Symbolic}
 
 \begin{process}{Circuit Diagram to Symbolic}
 \label{process:representationdCdToSym}
@@ -482,10 +481,10 @@ circuit diagram, it is easier to first determine the symbolic form for
 the circuit diagram, and then determine the truth table from this symbolic 
 form.  Determining the symbolic form of a circuit's output is eight times
 easier than determining all eight rows of the truth table.
-The next subsection will show how to transform a symbolic 
+The next section will show how to transform a symbolic 
 form into a truth table.
 
-\subsection{Symbolic to Truth Table}
+\section{Symbolic to Truth Table}
 
 Before we get started with this transformation you will need 
 to understand and apply the concept of evaluation.
@@ -549,6 +548,7 @@ $$1' = 0$$
 
 Thus, $F(0,1,0,0) = 0$
 \vspace{0.2cm}
+
 
 
 \begin{process}{Symbolic to Truth Table}
@@ -825,7 +825,7 @@ leaf & \textbf{1:} NOT $C'$ & leaf & \\ \hline
     & Parse $C$  &  & \\ \hline    
     & leaf  &  & \\ \hline    
 \end{tabular}
-\vspace{0.2cm}
+\vspace{0.3cm}
 
 {\setlength{\fboxsep}{0pt}
 \centering  
@@ -860,7 +860,7 @@ line underneath it.  This parsing-management can be a dizzying process
 jumping between different levels of the parsing process to resume 
 parsing pieces of the expression left unrealized.
 
-\subsection{Symbolic to Symbolic}
+\section{Symbolic to Symbolic}
 The laws of ``regular" algebra are used to discover relationships
 between expressions, and to manipulate expressions into more convenient forms.  
 Boolean Algebra has a set of laws which can be employed to manipulate 
@@ -988,7 +988,7 @@ $A'C$		& $B$						\\ \hline
 $A'B'$		& $C$						\\ \hline
 $B'$		& $A$ and $C$			\\ \hline
 $A'C$		& $B$						\\ \hline
-$B'C$		& $A$						\\ \hline
+$B'C$		& $A$						\\ 
 \end{tabular}
 
 \textbf{Step 3: AND the missing variable and its complement to each product term.}
@@ -1008,7 +1008,7 @@ Combining these two ideas together, we get that $A'C = 1*A'C = (B+B')A'C = A'BC 
 The table below shows how each term is converted when it's missing variable(s) are inserted.
 
 \begin{tabular}[ht]{m{1cm}|m{2cm}|m{3cm}|m{3cm}}
-Term		& Missing variable(s)	&	Insert missing variable	&	\\ \hline
+Term		& Missing variable(s)	& Add missing variable	& Expand expression\\ \hline
 $B'$		& $A$ and $C$		&	$B'(A + A')(C + C')$		&	$AB'C+AB'C' + A'B'C+A'B'C'$		\\ \hline
 $A'B'C$		& None				&								&		\\ \hline
 $A'C$		& $B$					&	$A'C(B+B')$				&	$A'BC+A'B'C$	\\ \hline
@@ -1016,7 +1016,7 @@ $A'C$		& $B$					&	$A'C(B+B')$				&	$A'BC+A'B'C$	\\ \hline
 $A'B'$		& $C$					&	$A'B'(C+C')$ 				&	$A'B'C+A'B'C'$	\\ \hline
 $B'$		& $A$ and $C$		&	$B'(A + A')(C + C')$		&	$AB'C+AB'C' + A'B'C+A'B'C'$		\\ \hline
 $A'C$		& $B$					&	$A'C(B+B')$				&	$A'BC+A'B'C$	\\ \hline
-$B'C$		& $A$					&	$B'C(A+A')$				&	$AB'C+A'B'C$	\\ \hline
+$B'C$		& $A$					&	$B'C(A+A')$				&	$AB'C+A'B'C$	\\ 
 \end{tabular}
 
 $$ AB'C + AB'C' + A'B'C + A'B'C' + A'B'C + A'BC + A'B'C = $$
@@ -1115,13 +1115,13 @@ is simplified.  In the final step, the second negation introduced
 back in the first step of the proof is combined with the $B'$ 
 inside the brackets, yielding the desired result.
 
-\subsection{Truth Table to Symbolic}
+\section{Truth Table to Symbolic}
 \label{sec:representationsTTtoSymb}
 
 The most technical transformation in the design process is transforming 
 a truth table to symbolic expression.  The idea behind this conversion is 
 captured by the following analogy.  Imagine eight members of the college 
-cheer squad, each have a number between $0 \ldots 7$ pinned to his/her
+cheer squad, each have a number between $0 \ldots 7$ pinned to their
 uniform, are gathered together.  Whenever members of the squad hears
 the number pinned to their uniform they give a cheer.  If a member hears
 any other number, they do nothing, even if someone else is cheering like crazy.
@@ -1196,25 +1196,50 @@ will equal 1 causing the output of the OR gate to become 1.  Note,
 that at most one of the OR gates inputs will equal 1, since only one 
 of the minterms will recognize its input.  If none of the minterms 
 recognizes the input, all the inputs of the OR gate will equal 0, 
-causing the output of the OR gate to equal 0.  To better understand
-these concepts, consider the function $F(A,B,C)$ defined below.
+causing the output of the OR gate to equal 0.  
 
-\begin{tabular}{c|c|c||c|c|c}
-A & B & C & F(A,B,C)	& minterm & symbol	\\ \hline
-0 & 0 & 0 & 0		& A'B'C'  & $m_0$	\\ \hline
-0 & 0 & 1 & 1		& A'B'C   & $m_1$	\\ \hline
-0 & 1 & 0 & 1		& A'BC'   & $m_2$	\\ \hline
-0 & 1 & 1 & 1		& A'BC    & $m_3$	\\ \hline
-1 & 0 & 0 & 1		& AB'C'   & $m_4$	\\ \hline
-1 & 0 & 1 & 0		& AB'C    & $m_5$	\\ \hline
-1 & 1 & 0 & 0		& ABC'    & $m_6$	\\ \hline
-1 & 1 & 1 & 1		& ABC     & $m_7$	\\ 
+\begin{process}{Truth Table to Symbolic}
+\label{process:representationTTtoSymbolic}
+
+To lend context to the discussion of the conversion process, let's describe this
+process by converting the truth table shown below into a symbolic expression.
+
+\begin{tabular}{c|c|c||c}
+A & B & C & F(A,B,C)		\\ \hline
+0 & 0 & 0 & 0		\\ \hline
+0 & 0 & 1 & 1		\\ \hline
+0 & 1 & 0 & 1		\\ \hline
+0 & 1 & 1 & 1		\\ \hline
+1 & 0 & 0 & 1		\\ \hline
+1 & 0 & 1 & 0		\\ \hline
+1 & 1 & 0 & 0		\\ \hline
+1 & 1 & 1 & 1		\\ 
 \end{tabular}
-\\ \\
+
+\textbf{Step 1: Write out the minterms for each input.}
+While you only \textul{need} to write out the minterms for the product
+terms where the output equals 1, it does us no harm in writing out the minterms
+for all the rows of the truth table as shown in the truth table below.
+
+\begin{tabular}{c|c|c||c|c}
+A & B & C & F(A,B,C)	& minterm	\\ \hline
+0 & 0 & 0 & 0		& A'B'C'  	\\ \hline
+0 & 0 & 1 & 1		& A'B'C		\\ \hline
+0 & 1 & 0 & 1		& A'BC'   	\\ \hline
+0 & 1 & 1 & 1		& A'BC   	\\ \hline
+1 & 0 & 0 & 1		& AB'C'  	\\ \hline
+1 & 0 & 1 & 0		& AB'C  		\\ \hline
+1 & 1 & 0 & 0		& ABC'		\\ \hline
+1 & 1 & 1 & 1		& ABC  		\\ 
+\end{tabular}
+\vspace{0.2mm}
+
+\textbf{Step 2: OR together the minterms where the function equals 1.}
 There are five inputs for which $F(A,B,C)$ equals 1, so the symbolic
 expression for $F$ will include the five minterms from the rows where
 $F$ equals 1.  Hence, 
 $$F(A,B,C) =  A'B'C + A'BC' + A'BC + AB'C' + ABC$$
+
 Now, examine what happens to $F$ for the input $(A,B,C)=(0,0,1)$.  
 The minterm $m_1=A'B'C$ evaluates to 1 while all the other minterms 
 evaluate to 0.  Since the OR function evaluates to 1 when any of 
@@ -1222,6 +1247,7 @@ the inputs are equal 1, $F$ equals to 1. Hence, $F(0,0,1)=1$ as
 expected.  When $(A,B,C)=(1,1,0)$ is applied, all the
 minterms in the symbolic expression for $F$ evaluate to 0 because
 none of them recognize this input.  Thus, $F(1,1,0)=0$ as expected.
+\end{process}
 
 When a function is constructed by ORing together minterms, it is
 said to be in \textit{canonical sum of products} 
@@ -1365,75 +1391,19 @@ Figures \ref{fig:representtationsDesign} \ref{fig:representationsForms}. Words c
 the ability of authors to convey precisely what the digital system
 needs to accomplish depends on their skill with the English language.
 
-\subsection{Word Statement to Truth Table}
+\section{Word Statement to Truth Table}
 There is no algorithmic approach guaranteed to transform a word statement 
 into a truth table.  That said, the following list outlines essential
 information to obtain from the word statement in order to
 have any hope of transforming it into a truth table.
 
-\begin{description}
-\item [Step 1] Understand the number and meaning of the
-inputs and the outputs of the digital system.  The meaning of inputs
-will vary from system to system.  Typically, the inputs are broken into
-collections of bits.  Each collection will have its own meaning attached
-to it.
 
-\item [Step 2] Write down an empty truth table.  If
-the digital system has $N$ bits of input, then the truth table
-has $2^N$ rows.  
 
-\item [Step 3] Use the word statement to determine the output for 
-each input, one row at a time.  This requires understanding what the inputs 
-and outputs mean and then determining the relationship between each
-input and output pair.
-\end{description}
+\begin{process}{Word Statement to Truth Table}
+\label{process:representationWStoTT}
 
-The following example shows how to apply these steps to a word statement.
-
-\begin{quote}
-Determine the truth table for 
-a function with two bits of input and one bit of output.  The
-output equals 1 when all the inputs are equal to 1.
-\end{quote}
-
-The 3-step process for transforming a word statement into a 
-truth table are shown below.
-
-\begin{description}
-\item [Step 1] The function has two bits of input and one bit of output.  
-Since the inputs and output were not given names, use the default labels
-$A,B$ for the inputs and $F$ for the output.
-
-\item [Step 2] The truth table for a 2-variable function has four 
-rows.
-
-	\begin{tabular}{c|c||c}
-	A & B & F \\ \hline \hline
-	0 & 0 &   \\ \hline
-	0 & 1 &   \\ \hline
-	1 & 0 &   \\ \hline
-	1 & 1 &   \\
-	\end{tabular}
-
-\item [Step 3] The only row of the truth table where $A$ and $B$ both
-equal to 1 is the last row; set this row's output equal to 1.  
-All the other rows of the table have $F=0$ because they have
-at least one input which equals 0.
-
-	\begin{tabular}{c|c||c}
-	A & B & F \\ \hline \hline
-	0 & 0 & 0  \\ \hline
-	0 & 1 & 0  \\ \hline
-	1 & 0 & 0  \\ \hline
-	1 & 1 & 1  \\
-	\end{tabular}
-\end{description}
-
-This should be recognizable as the AND function.  In the
-AND example, each of the bits was a distinct input by itself.  
-Sometimes, the inputs work together to form some larger unit of
-information, like a binary number.  This is the case in the next
-example.
+To lend context to the discussion of the conversion process, let's describe this
+process by converting the following word statement into a truth table.
 
 \begin{quote}
 Determine the truth table for a function with three bits of input and
@@ -1441,8 +1411,9 @@ one bit of output.  The output of the function should equal 1 when
 the 3-bit binary input represents a binary number greater than 4.
 \end{quote}
 
-\begin{description}
-\item [Step 1] The function has three bits of input and one bit of output.  
+\textbf{Step 1: Identify the inputs and outputs and their meaning}
+
+The function has three bits of input and one bit of output.  
 Since the inputs and outputs were not given names, use the default labels
 $a_2,a_1,a_0$ for the inputs and $F$ for the output.  The input
 variables are given subscripts because they are working together to 
@@ -1450,12 +1421,13 @@ form a 3-bit binary number.  The binary number is referred to as
 $A$ and its individual bits as $a_2$, $a_1$, and $a_0$.  Hence,
 when $(a_2,a_1,a_0) = (1,0,1)$ then $A=5$.
 
-\item [Step 2] Many 3-variable truth tables have been shown in this
+\textbf{Step 2: Write out the skeleton of the truth table.}
+ Many 3-variable truth tables have been shown in this
 chapter.  The notable point in this example is that the output is 
 abbreviated as $F(A)$ to save space.
 
 $\begin{array}[ht]{l|l|l||l}
-a_2 & a_1 & a_0 & F(A)		\\ \hline
+a_2 & a_1 & a_0 & F(a_2, a_1, a_0)		\\ \hline
 0   & 0   & 0   &		\\ \hline
 0   & 0   & 1   &		\\ \hline
 0   & 1   & 0   &		\\ \hline
@@ -1466,13 +1438,19 @@ a_2 & a_1 & a_0 & F(A)		\\ \hline
 1   & 1   & 1   &		\\ 
 \end{array}$
 
-\item [Step 3] The output of the function equals 0 for all inputs
-less than or equal to $(a_2,a_1,a_0) = (1,0,0)$ and equals 1 for 
-inputs greater or equal to $(a_2,a_1,a_0) = (1,0,1)$.  This yields
-the following truth table.
+\textbf{Step 3: Fill out the truth table.}
+This example requires us to interpret all the inputs bits together as a single value.
+For example, we will look at the input $(a,b,c) = (1,1,0)$ not as three separate bits
+but as the binary number $110_2$ which is equal to $6_{10}$. With this in mind,
+let's try filling up the truth table.
+
+Since the output should equals 0 for inputs less than or equal to $4 = 100_2$, 
+we should  list the output for inputs $(0,0,0)$ to $(1,0,0)$ with 0.  Likewise we
+should fill in the output with 1 for inputs $(1,0,1)$ to $(1,1,1)$ as shown in
+the following table.
 
 $\begin{array}[ht]{l|l|l||l}
-a_2 & a_1 & a_0 & F(A)		\\ \hline
+a_2 & a_1 & a_0 & F(a_2, a_1, a_0)		\\ \hline
 0   & 0   & 0   &	0	\\ \hline
 0   & 0   & 1   &	0	\\ \hline
 0   & 1   & 0   &	0	\\ \hline
@@ -1483,11 +1461,11 @@ a_2 & a_1 & a_0 & F(A)		\\ \hline
 1   & 1   & 1   &	1	\\ 
 \end{array}$
 
-\end{description}
+\end{process}
 
-In the third and final example, there are two twists.  The truth
-table will describe a function with four variables and the function
-has three bits of output.  For the sake of brevity, the second and the 
+Before moving on, let's consider one final problem with two
+twists; the truth table will describe a function with four variables 
+truth table has three bits of output.  For the sake of brevity, the second and the 
 third steps of the transformation process are combined.
 
 \begin{quote}
@@ -1608,39 +1586,6 @@ and the output is 0.  Every combination of the inputs has been
 applied to the circuit allowing the test engineer to verify the 
 functional behavior of the circuit.
 
-\subsection{Propagation Delay}
-Notice that when the inputs change at time=20, the output $F$ 
-transitions from 0 to 1 a little after time=20. This delay in the 
-output transition is a manifestation of a real physical effect 
-called \textit{propagation delay} \index{propagation delay}.  
-\begin{quote}
-Propagation delay is the time difference between the application of 
-inputs and when the outputs becoming valid. 
-\end{quote}
-The physical basis of propagation delay is due to the finite amount 
-of time required to charge or discharge a capacitor.  Propagation delay
-is a limiting factor in processor speeds and has been know to cause
-logical errors in circuit behavior.  It is so important that parts vendors
-state the propagation delays of their circuits.  For example, 
-consulting the technical documents for the Texas Instruments
-74LS32, an OR gate, reveals four different values for propagation
-delay: A typical, and a maximum value for both \Tphl and \Tplh.
-
-\begin{tabular}{c|c|c}
-         & TYPICAL & MAX  \\ \hline
-\Tplh    & 10nS    & 15nS \\ 
-\Tphl    & 14nS    & 22nS \\
-\end{tabular}
-\\ \\
-\Tphl stands for the propagation delay to switch the output from
-logic 1 to logic 0.  Likewise, \Tplh stands for the propagation delay 
-to switch the output from 0 to 1. The TYPICAL and MAX columns 
-give the tolerances the manufacture guarantees.  To simplify
-analysis, the largest maximum delay can be used as a single value
-for the propagation delay.  For example, it is safe to assume that
-the outputs of a 74LS32 will switch in 22nS. 
-
-%\subsection{Hazards}
 %\section{VHSIC Hardware Description Language}
 %\subsection{Entity and Architecture}
 %\subsection{Concurrent Signal Assignment Statements}
