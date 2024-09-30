@@ -1,4 +1,7 @@
 \chapter{Minimization of Logical Functions}
+\label{chapter:Minimization of Logical Functions}
+\graphicspath{ {./chapter03/Fig} }
+
 The intent of this chapter is to explore how to realize 
 circuits efficiently.  Efficiency can be measured in
 many different ways; number of gates, speed, power
@@ -55,12 +58,9 @@ derivation.  This observation forms the basis of the
 {\it simplification trick}: \index{trick!simplification}
 
 \begin{quote}
-If a function has two minterms whose inputs differ by a single bit, 
-then only one product term is needed to realize the function.  This
-product term contains the variables which are the same in both minterms
-and excludes the variable which changes.  If a variable is equal 
-to 0 in both minterms, it appears negated in the product term,
-otherwise it appears as itself.
+Two minterms whose inputs differ by a single bit may be replaced by
+a single product term that contains the variables which are the same in 
+both minterms and excludes the variable which changes.  
 \end{quote}
 
 
@@ -143,14 +143,14 @@ to one another, but are separated on the Kmap.  To do this,
 imagine a 3-variable Kmap residing on the surface of a 
 torus (doughnut) \index{doughnut}.  The process of manipulating a 
 3-variable Kmap onto the surface of a torus is shown in 
-Figure~\ref{fig:Torus}.
+Figure~\ref{fig:minimizationTorus}.
 
 \begin{figure}[ht]
 \center{\includegraphics{./Fig3/Torus}}
 \caption{The folding and stretching required to transform
 a 3-variable Kmap onto the surface of a torus.  The shaded
 numbers are on the back side of the surface.}
-\label{fig:Torus}
+\label{fig:minimizationTorus}
 \end{figure}
 
 When a Kmap is solved correctly the resulting SOP expression
@@ -160,11 +160,19 @@ to as a \SOPmin \index{SOP!\SOPmin} expression.
 
 \section{Karnaugh Maps}
 Using a Kmap to determine a \SOPmin realization of a function
-is a 4-step process.  This process is examined by 
+is a 4-step process. 
+
+\begin{process:minimizationKmap}
+\label{process:minimizationKmap}
+ This process is examined by 
 determining the \SOPmin expression for the function 
 $G(A,B,C)=\sum m(1,2,5,6)$.  Note, this expression is the
-same function minimized earlier.  The first step is to draw
-an empty Kmap using the input variables of the function $A,B,C$.
+same function minimized earlier.  
+
+\textbf{Step 1: Draw an empty kmap}
+The first step is to draw an empty Kmap using the input variables of the function $A,B,C$.
+
+
 The second step is to place 1s in the Kmap for those inputs
 for which the function is to equal 1.  Typically, the 0s of
 the function are not put into the Kmap -- a blank space
@@ -299,7 +307,7 @@ would make the circuit larger by one more AND gate than necessary.
 \end{array} $$ 
 {\rm Kmap for }J }
 Grouping can be made over the edge of the Kmap using the doughnut
-\index{doughnut} (torus) property illustrated in Figure~\ref{fig:Torus}.
+\index{doughnut} (torus) property illustrated in Figure~\ref{fig:minimizationTorus}.
 Notice, the minterms in the grouping on the upper row 
 differ in the $B$ bit.
 
@@ -594,12 +602,12 @@ connection the two circuits have to each other is their inputs, both
 share the same $(A,B,C)$.  Thus, when $(A,B,C) = (1,0,1)$ 
 $F=1$ and $G=0$ just as expected according to
 the truth table.  The circuit diagram of the $F$ and $G$ 
-functions is shown in Figure~\ref{fig:MultiOut}.
+functions is shown in Figure~\ref{fig:minimizationMultiOut}.
 
 \begin{figure}[ht]
 \center{\includegraphics{./Fig3/MultiOut}}
 \caption{Two functions, $F$ and $G$, which share inputs.}
-\label{fig:MultiOut}
+\label{fig:minimizationMultiOut}
 \end{figure}
 
 When more than one function shares the same input, 
@@ -629,12 +637,12 @@ the margins.  Notice that the grouping $B'C$ appears in both
 \SOPmin expressions.  This AND gate need appear only once in the
 circuit diagram because its output can be directed to both OR gates 
 which form the outputs for $H$ and $I$.  The circuit diagram for 
-these two functions is shown in Figure~\ref{fig:Share}.
+these two functions is shown in Figure~\ref{fig:minimizationShare}.
 
 \begin{figure}[ht]
 \center{\includegraphics{./Fig3/Share}}
 \caption{Two functions which share the product term $B'C$.}
-\label{fig:Share}
+\label{fig:minimizationShare}
 \end{figure}
 
 \section{``Don't Cares"}
@@ -1215,24 +1223,16 @@ Symbolically, the solution found by Espresso is:
 \end{itemize}
 
 The circuit diagram of the realization for the three functions is
-shown in Figure~\ref{fig:Share}.  Notice, the connections --
+shown in Figure~\ref{fig:minimizationShare}.  Notice, the connections --
 denoted by dots -- between the inputs and the AND gates has a pattern
 which is similar to the PLA description of the product terms by
 Espresso.  Likewise, the pattern formed by the connections of the AND
 gates and OR gates is similar to the rightmost three columns of the
 Espresso output.  This similarity is no accident; the designers of Espresso 
 used a generalized layout of the of the circuit diagram in 
-Figure~\ref{fig:Share} as a template to describe the output.
+Figure~\ref{fig:minimizationShare} as a template to describe the output.
 
-\section{Minimizing Multiple Output Functions}
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
+%\section{Minimizing Multiple Output Functions}
 
 \section{Exercises}
 \input{hw3}

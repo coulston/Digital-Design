@@ -102,13 +102,13 @@ circuit diagram are presented.
 \label{page:elf1}
 \begin{tabular}{ll}
 
-{\huge AND} & 
+\rotatebox{90}{{\huge AND}} & 
 \begin{tabular}{l|l}
 Word Statement &  
-\begin{tabular}{l}
-AND is a logical function with two inputs and   \\
-one output.  The output equals 1 only when all the \\
-inputs are equal to 1, otherwise the output   \\
+\begin{tabular}{m{10cm}}
+AND is a logical function with two inputs and   
+one output.  The output equals 1 only when all the 
+inputs are equal to 1, otherwise the output   
 equals 0. 
 \end{tabular} \\ \hline
 Symbolic  & A*B \\ \hline
@@ -120,19 +120,18 @@ Truth Table &
 	1 & 0 & 0   \\ \hline
 	1 & 1 & 1   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{and} \\
-%% \end{tabular} \\ \hline \hline
-\end{tabular} \\ 
+Circuit Diagram & \includegraphics{and} 
+\end{tabular} \\ \hline \hline
 \end{tabular}
 
 \begin{tabular}{ll}
-{\huge OR} &
+\rotatebox{90}{{\huge OR}} & 
 \begin{tabular}{l|l}
 Word Statement &
-\begin{tabular}{l}
-OR is a logical function with two inputs and one  \\
-output.  The output equals 1 when any input  \\
-is equal to 1, otherwise the output equals 0. \\
+\begin{tabular}{m{10cm}}
+OR is a logical function with two inputs and one  
+output.  The output equals 1 when any input  
+is equal to 1, otherwise the output equals 0. 
 \end{tabular} \\ \hline
 Symbolic &  A+B \\ \hline
 Truth Table &
@@ -143,15 +142,15 @@ Truth Table &
 	1 & 0 & 1   \\ \hline
 	1 & 1 & 1   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{or} \\
+Circuit Diagram & \includegraphics{or} 
 \end{tabular} \\ \hline \hline
 
-{\huge NOT} & 
+\rotatebox{90}{{\huge NOT}} & 
 \begin{tabular}{l|l}
 Word Statement &
-\begin{tabular}{l}
-NOT is a logical function with one input and one  \\
-output.  The output is not equal to the input. \\
+\begin{tabular}{m{10cm}}
+NOT is a logical function with one input and one  
+output.  The output is not equal to the input. 
 \end{tabular} \\ \hline
 Symbolic & A' \\ \hline
 Truth Table &
@@ -160,16 +159,16 @@ Truth Table &
 	0 & 1   \\ \hline
 	1 & 0   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{not} \\
+Circuit Diagram & \includegraphics{not} 
 \end{tabular} \\ \hline \hline
 
-{\huge NAND} & 
+\rotatebox{90}{{\huge NAND}} & 
 \begin{tabular}{l|l}
 Word Statement &
-\begin{tabular}{l}
-NAND is a logical function with two inputs and \\
-one output.  The output equals 1 when any input \\
-is equal to 0, otherwise the output equals 0. \\
+\begin{tabular}{m{10cm}}
+NAND is a logical function with two inputs and 
+one output.  The output equals 1 when any input 
+is equal to 0, otherwise the output equals 0. 
 \end{tabular} \\ \hline
 Symbolic &  (A*B)' \\ \hline
 Truth Table & 
@@ -180,18 +179,18 @@ Truth Table &
 	1 & 0 & 1   \\ \hline
 	1 & 1 & 0   \\
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{nand} \\
+Circuit Diagram & \includegraphics{nand} 
 \end{tabular} \\ \hline \hline
 \end{tabular}
 
 \begin{tabular}{ll}
-{\huge NOR} & 
+\rotatebox{90}{{\huge NOR}} & 
 \begin{tabular}{l|l}
 Word Statement & 
-\begin{tabular}{l}
-NOR is a logical function with two inputs and  \\
-one output.  The output equals 0 when any input  \\
-is equal to 1, otherwise the output equals 0. \\
+\begin{tabular}{m{10cm}}
+NOR is a logical function with two inputs and  
+one output.  The output equals 0 when any input  
+is equal to 1, otherwise the output equals 0. 
 \end{tabular} \\ \hline
 Symbolic & (A+B)' \\ \hline
 Truth Table &
@@ -202,16 +201,16 @@ Truth Table &
 	1 & 0 & 0   \\ \hline
 	1 & 1 & 0   \\
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{nor} \\
+Circuit Diagram & \includegraphics{nor}
 \end{tabular} \\ \hline \hline
 
-{\huge XOR} & 
+\rotatebox{90}{{\huge XOR}} & 
 \begin{tabular}{l|l}
 Word Statement &
-\begin{tabular}{l}
-XOR is a logical function with two inputs and  \\
-one output.  The output equals 1 when the inputs  \\
-are different, otherwise the output is equal  \\
+\begin{tabular}{m{10cm}}
+XOR is a logical function with two inputs and  
+one output.  The output equals 1 when the inputs  
+are different, otherwise the output is equal  
 to 0.
 \end{tabular} \\ \hline
 Symbolic & $A \oplus B$ \\ \hline
@@ -223,11 +222,10 @@ Truth Table &
 	1 & 0 & 1   \\ \hline
 	1 & 1 & 0   \\ 
 	\end{tabular} \\ \hline
-Circuit Diagram & \includegraphics{xor} \\
+Circuit Diagram & \includegraphics{xor} 
 \end{tabular} \\ \hline \hline
-%% \caption{The elementary logical functions.}
-%% \label{table:elf}
 \end{tabular}
+
 \label{page:elf2}
 
 The physical elements for the elementary logical functions are
@@ -301,7 +299,7 @@ from a gate can provide input to multiple, different inputs.  For example,
 the output of the NOT gate
 associated with the $C$ input feeds the first and third AND gates. 
 
-\section{Circuit Diagram to Truth Table}
+
 \begin{process}{Circuit Diagram to Truth Table}
 \label{process:representationCDtoTT}
 \label{page:representationCDtoTT}
@@ -810,7 +808,7 @@ subexpressions $B'$ and $C$.}} \\ \hline
 \rowcolor{gray}
 Parse $A$ & Parse $(B+C')$ & Parse $B'$ & Parse $C$ \\ \hline
 leaf & \textbf{1:} OR $B+C'$ & \textbf{1:} NOT $B'$ & leaf \\ \hline
-   & \textbf{2:} OR gate 3 &   NOT gate 6 & \\ \hline
+   & \textbf{2:} OR gate 3 & \textbf{2:}  NOT gate 6 & \\ \hline
    & \textbf{3:} Connect 3 to 2 & \textbf{3:} Connect 6 to 5 & \\ \hline
     & \textbf{4:} $B$ and $C'$ & \textbf{4:} $B$ & \\ \hline
 
@@ -823,7 +821,7 @@ leaf & \textbf{1:} NOT $C'$ & leaf & \\ \hline
 
 \rowcolor{gray}
     & Parse $C$  &  & \\ \hline    
-    & leaf  &  & \\ \hline    
+    & leaf  &  & \\  
 \end{tabular}
 \vspace{0.3cm}
 
@@ -942,10 +940,15 @@ left-hand side (LHS) of the ``='' sign equal to the expression on the
 right-hand side (RHS).  
 
 To lend context to the discussion of the expansion trick process, let's prove 
-that $$B' + A'(B'C + C) = (AB + BC')'$$.
+the following.
+
+\begin{equation}
+\label{equ:representationsBullDozerStep0}
+B' + A'(B'C + C) = (AB + BC')'
+\end{equation}
 
 \textbf{Step 1: Convert the LHS and RHS expressions into SOP form.}
-The LHS has a single set of parenthesis, so we distribute the $A$ term to each
+The LHS has a single set of parenthesis, so we distribute the $A'$ term to each
 term inside the parenthesis.  We leave the $B'$ term alone because it is already
 in a (degenerate) SOP form.  Thus we are left with the SOP expression 
 $$B' + A'B'C + A'C$$
@@ -964,18 +967,22 @@ $A'B' + B' + A'C + B'C $				&  	\\
 \end{tabular}
 
 Thus after this step our original proof now looks like:
-$$B' + A'B'C + A'C = A'B' + B' + A'C  + B'C $$
+\begin{equation}
+\label{equ:representationsBullDozerStep1}
+B' + A'B'C + A'C = A'B' + B' + A'C  + B'C 
+\end{equation}
 
 \textbf{Step 2: Identify the missing variables for each product term.}
 A couple of definitions are needed to understand the term ``missing variable''
 
-\begin{description}
-   \item[Working Set] The set of variables in an expression. The working set in our example is ${A, B, C}$.
-   \item[Canonical Product Term] A product term that contains all the variables (or their negation) in the working set.
+   \tabitem \textbf{Working Set} The set of variables in an expression. The working set in our example is ${A, B, C}$.
+   
+   \tabitem \textbf{Canonical Product Term} A product term that contains all the variables (or their negation) in the working set.
    For example, the product term $A'B'C$ on the LHS is a canonical product term.
-   \item[Missing variable] The set of variable, that when ANDed to non-complete product term, makes the product term canonical.
+   
+   \tabitem \textbf{Missing variable} The set of variable, that when ANDed to non-complete product term, makes the product term canonical.
    For example, the missing variable for the product term $B'$ are $A$ and $C$.
-\end{description}
+
 
 Putting all this together we get:
 
@@ -990,6 +997,7 @@ $B'$		& $A$ and $C$			\\ \hline
 $A'C$		& $B$						\\ \hline
 $B'C$		& $A$						\\ 
 \end{tabular}
+\vspace{0.2cm}
 
 \textbf{Step 3: AND the missing variable and its complement to each product term.}
 This step relies on Law 5 and La 1D from Boolean Algebra.  Let's see how this work for the 
@@ -1005,22 +1013,28 @@ $1 = X+X'$  In this case we will let $X$ be the missing variable $B$.  So we hav
 $1 = B+B'$.
 
 Combining these two ideas together, we get that $A'C = 1*A'C = (B+B')A'C = A'BC + A'B'C$
-The table below shows how each term is converted when it's missing variable(s) are inserted.
+The table below shows how each term is converted when its missing variable(s) are inserted.
 
 \begin{tabular}[ht]{m{1cm}|m{2cm}|m{3cm}|m{3cm}}
-Term		& Missing variable(s)	& Add missing variable	& Expand expression\\ \hline
+Term		& Missing variable(s)	& Add missing variable	& Expand expression						\\ \hline
 $B'$		& $A$ and $C$		&	$B'(A + A')(C + C')$		&	$AB'C+AB'C' + A'B'C+A'B'C'$		\\ \hline
-$A'B'C$		& None				&								&		\\ \hline
-$A'C$		& $B$					&	$A'C(B+B')$				&	$A'BC+A'B'C$	\\ \hline
+$A'B'C$	& None			&						&							\\ \hline
+$A'C$		& $B$			&	$A'C(B+B')$				&	$A'BC+A'B'C$				\\ \hline
 
-$A'B'$		& $C$					&	$A'B'(C+C')$ 				&	$A'B'C+A'B'C'$	\\ \hline
+$A'B'$	& $C$			&	$A'B'(C+C')$ 			&	$A'B'C+A'B'C'$				\\ \hline
 $B'$		& $A$ and $C$		&	$B'(A + A')(C + C')$		&	$AB'C+AB'C' + A'B'C+A'B'C'$		\\ \hline
-$A'C$		& $B$					&	$A'C(B+B')$				&	$A'BC+A'B'C$	\\ \hline
-$B'C$		& $A$					&	$B'C(A+A')$				&	$AB'C+A'B'C$	\\ 
+$A'C$		& $B$			&	$A'C(B+B')$				&	$A'BC+A'B'C$				\\ \hline
+$B'C$		& $A$			&	$B'C(A+A')$				&	$AB'C+A'B'C$	\\ 
 \end{tabular}
 
-$$ AB'C + AB'C' + A'B'C + A'B'C' + A'B'C + A'BC + A'B'C = $$
-$$A'B'C + A'B'C' +      AB'C + AB'C' + A'B'C + A'B'C'                               A'BC + A'B'C + AB'C + A'B'C$$
+Substituting these expanded expressions into Equation~\ref{equ:representationsBullDozerStep1}, we get a
+the rather long expression shown below.
+
+\begin{multline}
+\label{equ:representationsBullDozerStep3}
+AB'C + AB'C' + A'B'C + A'B'C' + A'B'C + A'BC + A'B'C = \\
+A'B'C + A'B'C' + AB'C + AB'C' + A'B'C + A'B'C' + A'BC + A'B'C + AB'C + A'B'C
+\end{multline}
 
 \textbf{Step 4: Remove redundant product terms from each side.}
 This step relies on Law 3 of Boolean Algebra which states that $X+X = X$.  In our case, $X$ will be
@@ -1030,8 +1044,11 @@ $A'B'C + A'B'C$.  Law 3 tells us that $A'B'C + A'B'C = A'B'C$. This may be unint
 regular algebra $x+x = 2x$.  But then again, in regular algebra ``+'' means addition not logical OR
 and regular algebra has the symbol 2 while Boolean Algebra has 0 and 1.  Using Law 3 on both the LHS and RHS sides
 yields:
-
-$$ AB'C + AB'C' + A'B'C + A'B'C' + A'BC = A'B'C + A'B'C' +      AB'C + AB'C' + A'BC $$
+\begin{multline}
+\label{equ:representationsBullDozerStep4}
+AB'C + AB'C' + A'B'C + A'B'C' + A'BC = \\
+A'B'C + A'B'C' + AB'C + AB'C' + A'BC
+\end{multline}
 
 \textbf{Step 5: Rearrange the terms so that LHS and RHS have the same order.}
 This step relies on Law 6 of Boolean algebra which states that $X+Y = Y+X$.  In our 
@@ -1039,46 +1056,45 @@ context $X$ and $Y$ are the term in the LHS and RHS.  It is a good idea to leave
 on the LHS alone and move the terms on the RHS to get the same order.  This let's you check
 that you have in fact the same terms on both side and have not made an error in your derivation.
 
-$$ AB'C + AB'C' + A'B'C + A'B'C' + A'BC =  AB'C + AB'C' + A'B'C + A'B'C' + A'BC$$
-
+\begin{multline}
+\label{equ:representationsBullDozerStep5}
+$$ AB'C + AB'C' + A'B'C + A'B'C' + A'BC =  \\
+AB'C + AB'C' + A'B'C + A'B'C' + A'BC$$
+\end{multline}
 
 \textbf{Step 6: Write out the proof.}
 A formal proof requires us to manipulate one side of the equality into the
-other using the proper laws of Boolean algebra.  The wqay that we will accomplish
-this is to transform the LHS into 
-$$ AB'C + AB'C' + A'B'C + A'B'C' + A'BC$$ 
-using the first 5 steps of this process.  You must then continue the derrivation with
-the RHS by tracing your steps backwards from step 5 to step 1.  This process is 
-shown in the following proof that that $B' + A'(B'C + C) = (AB + BC')'$
+other using the proper laws of Boolean algebra.  The way that we will accomplish
+this is to transform the LHS of Equation~\ref\label{equ:representationsBullDozerStep0} into 
+the LHS of Equation~\ref{\label{equ:representationsBullDozerStep5}
+using the first 5 steps of this process.   You then continue the derivation starting
+with the RHS of Equation~\ref\label{equ:representationsBullDozerStep5} and proceed
+back up the process steps to the RHS of Equation~\ref\label{equ:representationsBullDozerStep0}.
+
 
 $\begin{array}[ht]{ll}
-B' + A'(B'C + C) =													& \text{Law 1D} \\
-B' + A'B'C + A'C = 												& \text{Law 3} \\
-B'*1*1 + A'B'C + A'1C = 											& \text{Law 3} \\
-(A+A')B'(C+C') + A'B'C + A'(B+B') =								& \text{Law 3} \\
+B' + A'(B'C + C) =									& \text{Law 8} \\
+B' + A'B'C + A'C = 								& \text{Law 1D} \\
+B'*1*1 + A'B'C + A'1C = 							& \text{Law 5} \\
+(A+A')B'(C+C') + A'B'C + A'(B+B') =						& \text{Law 8} \\
 AB'C + AB'C' + A'B'C + A'B'C' + A'B'C + A'BC + A'B'C = 		& \text{Law 3} \\
-AB'C + AB'C' + A'B'C + A'B'C' + A'BC =							& \text{Law 3} \\
-A'B'C + A'B'C' + AB'C + AB'C' + A'BC =							& \text{Law 3} \\
+AB'C + AB'C' + A'B'C + A'B'C' + A'BC =					& \text{Law 6} \\
+A'B'C + A'B'C' + AB'C + AB'C' + A'BC =					& \text{Law 3} \\
 A'B'C + A'B'C' + AB'C + AB'C' + A'B'C + A'B'C' + A'BC + 		&				\\
-A'B'C + AB'C + A'B'C = 											& \text{Law 3} \\
-A'B'(C+C') + B'(A + A')(C + C') + A'C(B+B') + B'C(A+A') =		& \text{Law 3} \\
-A'B' + B' + A'C + B'C =											& \text{Law 3} \\
-A'B' + B'B' + A'C + B'C =											& \text{Law 3} \\
-(A' + B')(B' + C) =													& \text{Law 3} \\
+A'B'C + AB'C + A'B'C = 								& \text{Law 8} \\
+A'B'(C+C') + B'(A + A')(C + C') + A'C(B+B') + B'C(A+A') =		& \text{Law 5} \\
+A'B'*1 + B'*1*1 + A'C*1 + B'C*1 =						& \text{Law 1} \\
+A'B' + B' + A'C + B'C =								& \text{Law 3D} \\
+A'B' + B'B' + A'C + B'C =							& \text{Law 3} \\
+A'B' + B'B' + A'C + B'C =							& \text{Law 8} \\
+B'(A' + B') + C(A' + B') = 							& \text{Law 8} \\
+(A' + B')(B' + C) =									& \text{Law 3} \\
+(A''B)'(B''C')' = 									& \text{Law 9D} \\
+(AB)'(BC')' = 									& \text{Law 9} \\
 (AB + BC')'		& Q.E.D. \\
 \end{array}$
 
 \end{process}
-
-
-Since both expressions consist of product terms, Law 8 need not be applied.
- The second step of the expansion trick,
-adding the missing variable occurs when $B'C$ is expanded 
-into $A'B'C + AB'C$.  In this case, the $B'C$ product term is 
-``missing" the $A$ variable.  It is included by first ANDing 1 
-with $B'C$, then replacing 1 with $(A+A')$, and finally
-distributing $B'C$.  
-
 
 
 The expansion trick runs into problems when there are a large
