@@ -67,7 +67,8 @@
 {\end{quote}}
 
 
-
+\newcounter{helpfulStuffcounter}
+\newcommand{\helpfulStuff}[1]{\refstepcounter{helpfulStuffcounter}\label{#1}}
 
 % Based on the ideas: https://tex.stackexchange.com/questions/241013/mdframed-or-shaded-inside-mdframed
 
@@ -107,6 +108,10 @@
 
 \newcommand{\faketable}[1]% #1 = label name
 {\refstepcounter{table}\label{#1}}
+
+% Margins need to be wider when you put a kmap in them
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
 
 
 \newcommand{\SOPmin}{$\text{ SOP}_\text{ min} \ $}
