@@ -107,6 +107,14 @@ is called a {\it Karnaugh-map} or Kmap for short.  A
 Kmap for a function with three input variables $A,B,C$ is 
 shown in the leftmost Kmap.
 
+\begin{figure}
+\label{figure:minimiztionThreeVarKmapShell}
+\caption{A) The empty shell for a 3-variable kmap.   Note it has
+8 empty cells for the output of the function for the corresponding
+input. B) The 8 cells of the kmap filled in with the decimal equivalent
+of the 3-bit input corresponding to that cell.  Note the bit order is
+A as the MSB and C as the LSB.
+
 $$ \begin{array}{ccc}
 	\begin{array} {c||c|c|c|c}
         A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
@@ -121,6 +129,8 @@ $$ \begin{array}{ccc}
 	\end{array} \\
 \end{array}
 $$
+A & B \\
+\end{figure}
 
 Each of the cells in the Kmap corresponds to a row of the truth 
 table and consequently has a unique combination of $A,B,C$ 
@@ -164,19 +174,28 @@ is a 4-step process.
 
 \begin{process:minimizationKmap}
 \label{process:minimizationKmap}
- This process is examined by 
+
+This process is examined by 
 determining the \SOPmin expression for the function 
 $G(A,B,C)=\sum m(1,2,5,6)$.  Note, this expression is the
 same function minimized earlier.  
 
 \textbf{Step 1: Draw an empty kmap}
 The first step is to draw an empty Kmap using the input variables of the function $A,B,C$.
+Since there are three input variables, this will be a three-variable kmap and 
+look exactly like that in Table~\ref{figure:minimiztionThreeVarKmapShell}.
+Note that you should draw \textul{all} 3-variable kmaps using this rectangular tabular format with
+the variables o the function in question in the upper left corner of the table.
+$$ \begin{array} {c||c|c|c|c}
+	A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
+	0        &    &    &    &    \\ \hline
+	1        &    &    &    &    \\ 
+\end{array} $$
 
 
-The second step is to place 1s in the Kmap for those inputs
-for which the function is to equal 1.  Typically, the 0s of
-the function are not put into the Kmap -- a blank space
-in a Kmap occurs when the function is equal to 0.  The Kmap
+\textbf{Step 2: Place 1s in the Kmap for those inputs for which the function is to equal 1.}
+Typically, the 0s of the function are omitted from the Kmap.  It is understood that if
+you see a blank space in a Kmap, the function equals 0 for that input.  The Kmap
 below shows the Kmap for $G$.
 
 $$ \begin{array} {c||c|c|c|c}
@@ -185,22 +204,36 @@ $$ \begin{array} {c||c|c|c|c}
 	1        &    & 1  &    & 1  \\ 
 \end{array} $$
 
-The third step when using a Kmap is to identify pairs of
-adjacent 1s in the Kmap, circle them, and then write down
-the Boolean expression for the grouping.
-In the example, the 1s in cell 1 and cell 5 are adjacent.  The
-Boolean expression for this group is formed by applying
-the minterm trick \label{trick!minterm}
-(see page~\pageref{page:MinTrick}) to the variables which do 
-not change.  Notice that $B=0$ for both cells and $C=1$ for 
+\textbf{Step 3: Identify pairs of adjacent 1s in the Kmap}
+By adjacent, we mean cells whose inputs differ by a single
+bit.  Since these neighbors lie up, down, let and right, we
+sometimes call these Manhattan neighbors, because in the
+epynomiously named city, streets are laid out in a clean grid 
+and blocks consider neighboring when they share a street.
+Once you have found a pair of adjacent cells, circle them.
+Let's circle the pair of 1's in cell 1 and 5.
+
+\textbf{Step 4: Write the Boolean expression for the  circled cells.}
+The Boolean expression for a pair of adjacent 1 is formed by applying
+the simplification trick.  Remember that this
+technique asks us to write down the input variables which do 
+not change and discard the input variable which does change.
+In our exmple, $B=0$ for both cells and $C=1$ for 
 both cells.  Since the $A$ variable changes, its value between
 the two cells it will not be included in the product.  The 
-Boolean expression for this grouping is $B'C$.  Circle 
-this pair of cells indicating they have been covered.
-Likewise, cell 2 and cell 6 can be combined resulting in the 
-product term $BC'$.  The fourth step when using a Kmap 
-is to OR together the products formed in the third step.  
-This yields: $G(A,B,C) = B'C + BC'$.
+Boolean expression for this grouping is $B'C$.  
+
+\textbf{Step 5: Continue finding adjacent pairs of 1's until every 1 is contained in a group.}
+In our example, let's circle the pair of 1's in cell 2 and cell 6.  This
+yields the product term $BC'$.  
+
+
+\textbf{OR together the Boolean expression found in steps 4 and 5.}
+Since we OR together the minterms when forming a canonical SOP 
+expression, it makes sense that we should OR together the product
+terms found using the simplification trick.
+In our example, this step yields the \SOPmin expression  $G(A,B,C) = B'C + BC'$.
+\end{process}
 
 To explore more fully how to solve Kmaps, consider the
 following truth table which lists seven functions $F \ldots M$ 
