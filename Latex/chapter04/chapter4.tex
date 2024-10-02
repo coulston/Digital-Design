@@ -1,6 +1,8 @@
 \chapter{Combinational Logic Building Blocks}
+\label{chapter:Combinational Building Blocks}
+\graphicspath{ {./chapter04/Fig} }
 
-In Chapter 1, Figure~\ref{fig:sys}, a digital system was defined 
+In Chapter 1, Figure~\ref{fig:comboBBsys}, a digital system was defined 
 as a box that transforms binary inputs to binary output.  This definition 
 of a digital system was sufficient to introduce  a wide variety of 
 concepts but is a handicap, now. Following is a more detailed 
@@ -11,17 +13,17 @@ specified by the control inputs.  The status outputs indicate any
 exceptional events occurring during the processing of the data.
 \end{quote}
 
-Figure~\ref{fig:Asys} shows a digital system with these four types
+Figure~\ref{fig:comboBBAsys} shows a digital system with these four types
 of input and output, namely, data input, control input, data output, status output.
 This classification of inputs and outputs aids in the
 construction of complex digital systems using the datapath and
 control methodology.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/Asys}}
+\center{\includegraphics{Asys}}
 \caption{A modified diagram of a digital system showing the classification
 of the inputs and outputs.}
-\label{fig:Asys}
+\label{fig:comboBBAsys}
 \end{figure}
 
 Some basic building blocks of digital systems are introduced.  
@@ -46,17 +48,17 @@ Behavior:      & $y_s = D$ all other outputs equal 0	\\ \hline
 \label{page:dec}
 \\ \\
 To understand this definition, examine an
-instance of a 3:8 decoder shown at left in Figure~\ref{fig:3:8}.
+instance of a 3:8 decoder shown at left in Figure~\ref{fig:comboBB3:8}.
 Normally, the arrows indicating the direction of the information 
 flow in to and out from the decoder are not drawn.  
 To understand the behavior of the decoder, its
-truth table is shown to the right of Figure~\ref{fig:3:8}. 
+truth table is shown to the right of Figure~\ref{fig:comboBB3:8}. 
 Due to space constraints, only part of the entire truth
 table is shown.
 
 \begin{figure}[ht]
 \begin{tabular}[b]{p{1.0in}p{0.5in}l}
-\includegraphics[0mm,20mm][12mm,12mm]{./Fig4/3:8.eps} & &
+\includegraphics[0mm,20mm][12mm,12mm]{3_8} & &
 $\begin{array}{c|c|c|c||c|c|c}
 s_2 & s_1 & s_0 & D & y_0 & y_1 & y_2\\ \hline
 0 & 0 & 0 & 0 	& 0  &   0 &   0\\ \hline
@@ -72,7 +74,7 @@ s_2 & s_1 & s_0 & D & y_0 & y_1 & y_2\\ \hline
 \end{array}$ \\
 \end{tabular}
 \caption{A 3:8 decoder (left) and part of its truth table (right).}
-\label{fig:3:8}
+\label{fig:comboBB3:8}
 \end{figure}
 
 From the behavior listed in the description of the decoder, 
@@ -103,13 +105,13 @@ $(s_2, s_1, s_0) = (0, 0, 0)$ and $D=1$.  Borrowing the minterm
 trick from page~\pageref{page:MinTrick}, $y_0=s_2's_1's_0'D$ results.
 Every other output shares the characteristic that its output is
 equal to 1 for a single input. Thus, each output is represented
-by a minterm as shown in Figure~\ref{fig:3:8Guts}.
+by a minterm as shown in Figure~\ref{fig:comboBB3:8Guts}.
 
 \begin{figure}[ht]
 %% scalebox
-\center{\scalebox{0.5}{\includegraphics{./Fig4/3:8Guts}}}
+\center{\scalebox{0.5}{\includegraphics{3_8Guts}}}
 \caption{The internal organization of a 3:8 decoder.}
-\label{fig:3:8Guts}
+\label{fig:comboBB3:8Guts}
 \end{figure}
 
 In some digital applications, the need arises to build a larger decoder
@@ -118,28 +120,28 @@ in a tree-like structure.  The following 4:16 decoder shows how a larger decoder
 built from several smaller 2:4 decoders. 
 
 In order to accommodate the 16 outputs, four 2:4 decoders are stacked
-on top of one another as shown in Figure~\ref{fig:BigDecoder}.  These
+on top of one another as shown in Figure~\ref{fig:comboBBBigDecoder}.  These
 four 2:4 decoders have a total of four bits of input.  These four bits
 are sourced by the output of a single 2:4 decoder.  The
 single data input of this decoder is the input of the overall 4:16
 decoder.  
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./Fig4/BigDecoder}}}
+\center{\scalebox{0.7}{\includegraphics{BigDecoder}}}
 \caption{A 4:16 decoder built from 2:4 decoders.} 
-\label{fig:BigDecoder}
+\label{fig:comboBBBigDecoder}
 \end{figure}
 
 Having organized the structure of the 2:4 decoders, all that remains 
 is to route the select lines.  The outputs of the decoder labeled 
-{\bf 3} in Figure~\ref{fig:BigDecoder} corresponds to outputs 
+\textbf{ 3} in Figure~\ref{fig:comboBBBigDecoder} corresponds to outputs 
 $y_{15} y_{14} y_{13} y_{12}$ 
 of the 4:16 decoder.  Each of these outputs requires four bits of 
 select with the form $s_3 s_2 s_1 s_0 = 11xx$.  Hence, $s_3 s_2 = 11$ 
-must route the data input, $D$, to decoder {\bf 3}.  Hence, $s_3 s_2$ 
+must route the data input, $D$, to decoder \textbf{ 3}.  Hence, $s_3 s_2$ 
 must be the select to the first level decoder in 
-Figure~\ref{fig:BigDecoder}.   A similar argument for the 2:4 decoders 
-labeled {\bf 0,1,2} reinforces the fact that $s_3 s_2$ must be the select 
+Figure~\ref{fig:comboBBBigDecoder}.   A similar argument for the 2:4 decoders 
+labeled \textbf{ 0,1,2} reinforces the fact that $s_3 s_2$ must be the select 
 to the first level decoder.  
 
 Data routed to output $y_{12}$ has $s_3 s_2 s_1 s_0 = 1100$.  Thus, routing
@@ -166,7 +168,7 @@ Behavior:      & $F = y_s$				\\ \hline
 \label{page:mux}
 \\ \\
 To understand this definition, examine an
-instance of an 8:1 mux shown on the left in Figure~\ref{fig:8:1}.
+instance of an 8:1 mux shown on the left in Figure~\ref{fig:comboBB8:1}.
 From the behavior listed in the description of the multiplexer, 
 the $i^{th}$ data input is routed to the data
 output where the binary code of the select inputs is $i$.
@@ -176,7 +178,7 @@ $F=1$.
 \\ \\
 \begin{figure}[ht]
 \begin{tabular}{p{1.5in}p{0.5in}l}
-\includegraphics[0mm,20mm][12mm,12mm]{./Fig4/8:1.eps} & &
+\includegraphics[0mm,20mm][12mm,12mm]{8_1} & &
 $\begin{array}{c|c|c||c}
 s_2 & s_1 & s_0 & F \\ \hline
 0 & 0 & 0 & y_0 \\ \hline
@@ -190,10 +192,10 @@ s_2 & s_1 & s_0 & F \\ \hline
 \end{array}$
 \end{tabular}
 \caption{An 8:1 mux (left) and its truth table (right).}
-\label{fig:8:1}
+\label{fig:comboBB8:1}
 \end{figure}
 
-The unusual form of the truth table shown in Figure~\ref{fig:8:1}
+The unusual form of the truth table shown in Figure~\ref{fig:comboBB8:1}
 results from the fact that an 8:1 mux has a total of 11 
 inputs.  There are a total of $2^{11}$ rows in this truth table
 making it infeasible to list every combination of the inputs.
@@ -206,13 +208,13 @@ for this input.  Each of the other outputs has a similar
 minterm form.  Since only one of these ``minterms" can equal
 1 for a particular select input, the minterms are ORed
 together to form the output. The resulting internal 
-organization of an 8:1 mux is shown in Figure~\ref{fig:8:1Guts}.
+organization of an 8:1 mux is shown in Figure~\ref{fig:comboBB8:1Guts}.
 
 \begin{figure}[ht]
 %% scalebox
-\center{\scalebox{0.5}{\includegraphics{./Fig4/8:1Guts}}}
+\center{\scalebox{0.5}{\includegraphics{8_1Guts}}}
 \caption{The internal organization of an 8:1 mux.}
-\label{fig:8:1Guts}
+\label{fig:comboBB8:1Guts}
 \end{figure}
 
 As with decoders, situations arise when a larger
@@ -221,25 +223,25 @@ inputs from smaller muxes to a single output.  For example, construct
 a 16:1 mux from several 4:1 muxes.  
 
 In order to accommodate the 16 inputs, four 4:1 muxes are stacked
-on top of one another as shown in Figure~\ref{fig:BigMux}.  These
+on top of one another as shown in Figure~\ref{fig:comboBBBigMux}.  These
 four 4:1 muxes have a total of four bits of output.  These four bits
 can nicely be routed by the inputs of a single 4:1 mux.  The
 single data output of this mux is the input of the overall 16:1 mux.
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./Fig4/BigMux.eps}}}
+\center{\scalebox{0.7}{\includegraphics{BigMux}}}
 \caption{The construction of a 16:1 mux from 4:1 muxes.}
-\label{fig:BigMux}
+\label{fig:comboBBBigMux}
 \end{figure}
 
 The select lines are assigned to the 4:1 muxes based on the following 
-argument.  The inputs of the mux labeled {\bf 3} in
-Figure~\ref{fig:BigMux} corresponds to inputs $y_{15} y_{14} y_{13} y_{12}$ 
+argument.  The inputs of the mux labeled \textbf{ 3} in
+Figure~\ref{fig:comboBBBigMux} corresponds to inputs $y_{15} y_{14} y_{13} y_{12}$ 
 of the 16:1 mux.  Each of these inputs requires four bits of 
 select with the form $s_3 s_2 s_1 s_0 = 11xx$.  Hence, $s_3 s_2 = 11$ 
-must be the select for the output mux {\bf 4}.  
+must be the select for the output mux \textbf{ 4}.  
 A similar argument for the 4:1
-muxes labeled {\bf 0,1,2} reinforces the fact that $s_3 s_2$ must be 
+muxes labeled \textbf{ 0,1,2} reinforces the fact that $s_3 s_2$ must be 
 the select to the output mux.
 
 In order to route $y_{12}$ to the output, the select must equal
@@ -250,12 +252,12 @@ inputs reinforces this assumption.
 Occasionally the need arises to construct a mux to handle
 ``wide" data inputs, that is data inputs which consist of more than
 a single bit.  A mux that can handle many bits is referred to 
-as a {\it multibit mux}.  \label{multibit mux} A M-bit N:1 mux is 
+as a \textit{ multibit mux}.  \label{multibit mux} A M-bit N:1 mux is 
 defined as a N:1 mux whose data inputs and data outputs are M-bits
-wide.  For example, the 4-bit 2:1 mux shown in Figure~\ref{fig:4x2x1mux} 
+wide.  For example, the 4-bit 2:1 mux shown in Figure~\ref{fig:comboBB4x2x1mux} 
 has two data inputs and one data output each 4-bits wide.  The internal
 organization of this mux is shown on the right-hand side of 
-Figure~\ref{fig:4x2x1mux}.  Four, 2:1 muxes are needed to 
+Figure~\ref{fig:comboBB4x2x1mux}.  Four, 2:1 muxes are needed to 
 accommodate all the data.  Since the data inputs are to 
 be handled as a single whole, they must be routed to the
 same input on each of the 2:1 muxes.
@@ -263,10 +265,10 @@ same input on each of the 2:1 muxes.
 
 \begin{figure}[ht]
 %% scalebox
-\center{\includegraphics{./Fig4/4x2x1mux}}
+\center{\includegraphics{4x2x1mux}}
 \caption{The organization of a 4-bit 2:1 mux.  The slash labeled ``4" 
 denotes the fact that these signals are 4-bits wide.}
-\label{fig:4x2x1mux}
+\label{fig:comboBB4x2x1mux}
 \end{figure}
 \index{multiplexer|)}
 
@@ -299,21 +301,21 @@ error-prone, producing a realization with a large number of
 gates.  Instead of building the circuit as one monolithic piece, a module 
 is designed that adds one set of bits together.  Four of these modules are
 then connected in series to add four bits together.
-For example, in Figure~\ref{fig:add} $A=1011$ and $B=0001$ are added
+For example, in Figure~\ref{fig:comboBBadd} $A=1011$ and $B=0001$ are added
 together using the approach of page~\pageref{page:addition}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/add}}
+\center{\includegraphics{add}}
 \caption{An addition problem and the values of one of its
 bit slices placed on a full adder.}
-\label{fig:add}
+\label{fig:comboBBadd}
 \end{figure}
 
-This addition problem contains four {\it bit-slices} \index{bit-slice}.
+This addition problem contains four \textit{ bit-slices} \index{bit-slice}.
 Each bit-slice adds one bit's worth of the overall addition problem.  
 The addition circuit is then constructed by stringing together four
 of these bit-slice adders (called full-adders).  In the example shown
-in Figure~\ref{fig:add}, the second bit-slice of the addition problem 
+in Figure~\ref{fig:comboBBadd}, the second bit-slice of the addition problem 
 is outlined.  The inputs and outputs of this bit-slice are placed on 
 a full adder.  The full adder has three bits of input and two bits of output.
 To build a 4-bit adder, four full adders are strung together in series
@@ -356,14 +358,14 @@ sum=a b' c' + a'b'c + abc + a'bc'		\\
 The \SOPmin expression for the outputs is arrived at by
 solving Kmaps for each of the outputs.  Once, the internal
 organization of a full adder is complete, four of them
-are connected together as shown in Figure~\ref{fig:adder}
+are connected together as shown in Figure~\ref{fig:comboBBadder}
 to build a 4-bit adder.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/adder}}
+\center{\includegraphics{adder}}
 \caption{The arrangement of full adders to create a multi-bit
 adder.}
-\label{fig:adder}
+\label{fig:comboBBadder}
 \end{figure}
 \label{page:add}
 
@@ -404,23 +406,23 @@ is that $B$ must be negated.  Since both the addition and the subtraction
 problem
 require an adder, all that is required is to pass either $B$ or $-B$ to the
 adder depending on which operation is to be performed.  This idea is
-presented in Figure~\ref{fig:AddSub}.
+presented in Figure~\ref{fig:comboBBAddSub}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/AddSub}}
+\center{\includegraphics{AddSub}}
 \caption{The idea behind the creation of an adder subtractor circuit.}
-\label{fig:AddSub}
+\label{fig:comboBBAddSub}
 \end{figure}
 
-The ``Complement or Pass" box in Figure~\ref{fig:AddSub} produces 
+The ``Complement or Pass" box in Figure~\ref{fig:comboBBAddSub} produces 
 either $B$ when $f=0$ (addition) or $-B$ when $f=1$ (subtraction).
 The process of complementing $B$ is to flip the bits and to add 1.
 To avoid adding a second adder to perform the ``add 1" 
-operation the adder shown in Figure~\ref{fig:AddSub} performs 
+operation the adder shown in Figure~\ref{fig:comboBBAddSub} performs 
 both $A+B$ and the ``add 1".  This little piece of magic is 
 accomplished by hijacking the carry-in to the least significant 
-bit of the full adder chain shown Figure~\ref{fig:adder}.  Instead
-of hardwiring $cin$ shown in Figure~\ref{fig:AddSub} to 0, $cin$ is 
+bit of the full adder chain shown Figure~\ref{fig:comboBBadder}.  Instead
+of hardwiring $cin$ shown in Figure~\ref{fig:comboBBAddSub} to 0, $cin$ is 
 connected to $f$.  
 When $f=1$, an extra 1 will be added to sum. The 2's-complement of
 $B$ is computed in two separate steps: The ``Complement or Pass" box 
@@ -446,14 +448,14 @@ b & f & out \\ \hline
 
 Solving the truth table yields $out = b'f + bf' = b \oplus f$.
 Each of these bit-slices is organized along with the components
-in Figure~\ref{fig:AddSub} yielding the circuit diagram in
-Figure~\ref{fig:TotalAddSub}.
+in Figure~\ref{fig:comboBBAddSub} yielding the circuit diagram in
+Figure~\ref{fig:comboBBTotalAddSub}.
 
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/TotalAddSub}}
+\center{\includegraphics{TotalAddSub}}
 \caption{The construction of 4-bit adder subtractor.}
-\label{fig:TotalAddSub}
+\label{fig:comboBBTotalAddSub}
 \end{figure}
 \label{page:as}
 
@@ -462,8 +464,8 @@ According to page~\pageref{page:Ovf}, overflow in a 2's-complement
 operation occurs when the carry-in and carry-out to the most
 significant bit-slice of the addition disagree.  In order to 
 build a circuit to check this condition, the ``Adder" box shown in 
-Figure~\ref{fig:TotalAddSub} must be opened revealing
-the chain of full adders as shown in Figure~\ref{fig:AddSub}.
+Figure~\ref{fig:comboBBTotalAddSub} must be opened revealing
+the chain of full adders as shown in Figure~\ref{fig:comboBBAddSub}.
 The derivation of the truth table and the circuit realization
 is left as an exercise at the end of the chapter.
 \index{adder subtractor|)}
@@ -510,7 +512,7 @@ are equal, then continue to the next least significant bit.  Otherwise,
 either $X$ or $Y$ is larger, and the comparison is over.
 
 Large comparators are constructed by stringing together a series
-of modified 1-bit comparators as shown in Figure~\ref{fig:Compare}.  
+of modified 1-bit comparators as shown in Figure~\ref{fig:comboBBCompare}.  
 Each bit-slice has as input a pair 
 of bits from $X$ and $Y$, and $Ein$, $Gin$ and $Lin$ signals from a
 more significant bit-slice.  $Ein$, $Lin$ and $Gin$ tell a bit-slice the 
@@ -519,9 +521,9 @@ its left.  Each bit-slice has three bits of output, $Eout$, $Lout$, and
 $Gout$, communicating the relative magnitude of the inputs so far.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/Compare}}
+\center{\includegraphics{Compare}}
 \caption{The arrangement of the bit-slices for the comparator.}
-\label{fig:Compare}
+\label{fig:comboBBCompare}
 \end{figure}
 
 The truth table for a bit-slice of the comparator has five inputs, 
@@ -555,7 +557,7 @@ two inputs are still equal.  The remainder of the truth table will
 be completed in an exercise at the end of the chapter.
 
 The final question that must be answered is ``What should $Ein$, $Lin$,
-and $Gin$, on the far left of the Figure~\ref{fig:Compare}, be assigned?"
+and $Gin$, on the far left of the Figure~\ref{fig:comboBBCompare}, be assigned?"
 The answer is that the $Ein, Lin,Gin$ inputs to the most significant bit-slice
 should be set to 1,0,0 because $X$ and $Y$ are initially assumed to be equal.
 From the preceding paragraph, observe that whenever it is determined
@@ -586,12 +588,12 @@ a data bus, it is important for every device to be capable of
 asserting data onto the bus, but only one device at a time
 actually asserts data.  This effect can only be accomplished if each
 device is capable of electrically disconnecting itself from the
-bus.  The three-state buffer shown in Figure~\ref{fig:tsb} does
+bus.  The three-state buffer shown in Figure~\ref{fig:comboBBtsb} does
 this under the control of the $c$ signal.
                                                                                 
 \begin{figure}[ht]
 \begin{tabular}[b]{p{1.0in}p{0.5in}l}
-\includegraphics[10mm,10mm][12mm,12mm]{./Fig4/tsb} & &
+\includegraphics[10mm,10mm][12mm,12mm]{tsb} & &
                                                                                 
 $\begin{array}{c|c||c}
 X & C & Y \\ \hline
@@ -601,7 +603,7 @@ x & 0 & Z \\ \hline
 \end{array}$
 \end{tabular}
 \caption{The symbol and truth table for a three-state buffer.}
-\label{fig:tsb}
+\label{fig:comboBBtsb}
 \end{figure}
 
 Notice, when $C=1$, then $Y=X$; the output equals the
@@ -632,10 +634,10 @@ of related signals that move information between any pair
 of devices on the bus.  Allowing a bus to be used by many
 different devices increases its utilization at the expense 
 of increased complexity.  Look at the example bus in 
-Figure~\ref{fig:bus} which connects a CPU, RAM, and Disk.
+Figure~\ref{fig:comboBBbus} which connects a CPU, RAM, and Disk.
 Each of these devices may want data to be sent or
 received from any of the others.  The shaded box in each device 
-(CPU, RAM, Disk) is called out on the right side of Figure~\ref{fig:bus}.
+(CPU, RAM, Disk) is called out on the right side of Figure~\ref{fig:comboBBbus}.
 The input register latches data from the bus and the output
 register holds the data to be asserted on the bus.  The 
 three-state buffer can disconnect the output register from the bus 
@@ -644,10 +646,10 @@ It is important, and fairly obvious, that only one device at a
 time can assert data on the bus.  
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/bus}}
+\center{\includegraphics{bus}}
 \caption{Three devices on a bus.  The internal circuitry in
 each device to make it work.}
-\label{fig:bus}
+\label{fig:comboBBbus}
 \end{figure}
 \index{three-state buffer|)}
 
@@ -785,7 +787,7 @@ example.
 The solution to the conditional assignment statement utilizes 
 a comparator to determine the relative magnitudes of \verb+a+ 
 and \verb+4+.  It is important to note in the solution shown in
-Figure~\ref{fig:cond} which of the 
+Figure~\ref{fig:comboBBcond} which of the 
 comparator's inputs is $x$ and $y$.  Of the three status outputs, 
 the $L$ signal is used as the select on the multiplexer's inputs.  The 
 other two comparator outputs should not be shown since they are
@@ -793,14 +795,14 @@ not used.
 
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/cond}}
+\center{\includegraphics{cond}}
 \caption{A combination of components to realize a conditional assignment
 statement.}
-\label{fig:cond}
+\label{fig:comboBBcond}
 \end{figure}
 
 Each of the arithmetic operations in the algorithm is realized 
-by its own adder. Notice in Figure~\ref{fig:cond} that both 
+by its own adder. Notice in Figure~\ref{fig:comboBBcond} that both 
 adders compute their values, and the job of the multiplexer is to 
 select one of the adder outputs based on the results of the $L$ output 
 from the comparator.    Since the LHS of both assignment statements
@@ -818,12 +820,12 @@ can be removed from the circuit by noting that in the RHS of both
 assignments, the variable $y$ has either 3 or 7 added to it.  
 Consequently, a mux can be used to switch through either a 3 or
 7 and then to add this mux's output to $y$ as shown in 
-Figure~\ref{fig:cond2}.
+Figure~\ref{fig:comboBBcond2}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig4/cond2}}
+\center{\includegraphics{cond2}}
 \caption{A better realization of the conditional assignment statement.}
-\label{fig:cond2}
+\label{fig:comboBBcond2}
 \end{figure}
 
 Make it a habit to identify ways to reduce the complexity
@@ -831,5 +833,3 @@ of a circuit whenever possible.  After all, one of the core
 principles of engineering is always endeavor to do the most with 
 the least.
 
-\section{Exercises}
-\input{hw4}

@@ -882,10 +882,10 @@ Starting   &                    &  Ending \\
 Form       &                    &  Form   \\ 
 \end{tabular}
 \\ \\
-Eight potential transforms need to be
-explored.  For each transformation, a plan is developed;
-a series of steps.  The following five facts 
-become the steps in all these plans.
+Eight potential transforms need to be explored.  For each transformation, a plan is developed;
+a series of steps.  The following five helpful facts become the steps in all these plans.
+
+\textbf{Helpful Facts}
 
 \begin{description}
 \item [1]
@@ -999,12 +999,6 @@ Form	  & $\sum m(\ldots)$ & Kmap & Kmap' & \SOPmin & \POSmin \\ \hline
 \end{tabular}
 \vspace{0.2cm}
 
-In Steps 1 and 2 of the plan, the function, $F$, is placed into a Kmap.
-In Step 3, the Kmap is inverted (all the 1s replaced with 0s and 
-0s replaced with 1s).  With this inversion, the 
-\SOPmin expression for $F'$ determined from the Kmap 
-can be negated, yielding a \POSmin expression for $F''=F$.  
-
 An example shows how this plan is put into practice.
 Determine the \POSmin expression for $F(A,B,C) = \sum m(3,4,5)$.
 
@@ -1017,14 +1011,16 @@ $$ \begin{array} {c||c|c|c|c}
         1        & 1  & 1  &    &    \\ 
 \end{array} $$
 
-\textbf{Step 3} The Kmap for $F'$ 
+\textbf{Step 3} This step relies on helpful fact~\ref{helpful:negateKmap}, 
+inverting the entries in a kmap, negates the function.  Thus, the Kmap for $F'$ 
 $$ \begin{array} {c||c|c|c|c}
         A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
         0        & 1  & 1  &    & 1  \\ \hline
         1        &    &    & 1  & 1  \\ 
 \end{array} $$
 
-\textbf{Step 4} $F'(A,B,C)= A'B'+AB+BC'$  
+\textbf{Step 4} Requires that we solve the kmap for F' yielding:
+$$F'(A,B,C)= A'B'+AB+BC'$$
 
 \textbf{Step 5} Relies on helpful fact~\ref{helpful:negateSOP},
 negating a SOP expression for $F$ yields a POS expression
@@ -1042,13 +1038,12 @@ $F''(A,B,C) = F(A,B,C)$		& 	$= (A'B'+AB+BC')'$			\\
 % 3 \label{helpful:negatePOS}
 % 4 \label{helpful:prodToSum}
  % 5 \label{helpful:doubleNegate}
-
-The \POSmin expression for $F$ can be checked to make sure that
-it generates the correct outputs, by plugging in values for $A,B,C$.
-The \SOPmin expression
-for $F$ can be determined from the Kmap in Step 2 as
-$F(A,B,C)=AB'+A'BC$.  This fact demonstrates, in general,
-the \SOPmin and \POSmin realizations have different costs.
+ 
+If you have doubts about this process, I invite you to plug in values
+for (A,B,C), evaluate the \POSmin expression for $F$ and compare 
+your answers to the kmap you produced in Step 2.  This process will
+bolster your confidence that these very different looking forms produce
+the same logical output for all A,B,C combinations.
 
 \begin{process}{Determine \POSmin given a SOP expression.}
 \label{process:minimizationSOPToPOS}
@@ -1061,8 +1056,8 @@ Form	  & SOP & Kmap & Kmap' & \SOPmin & \POSmin \\ \hline
 \end{tabular}
 \vspace{0.2cm}
 
-This transformation is the same as the $\sum m(\ldots)$ to \POSmin
-transformation from Step 2 onward.
+This transformation is the same as the $\sum m(\ldots)$ to \POSmin,
+process~\ref{process:minimizationSumToPOS} from Step 2 onward.
 \end{process}
 
 \begin{process}{Determine the \POSmin given a $\prod M(\ldots)$ expression.}
