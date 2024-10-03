@@ -1,11 +1,15 @@
+\section{Exercises}
+\label{section:datapathControl}
+\graphicspath{ {./chapter08/FigHw} }
+
 \begin{enumerate}
-\item {\bf (4 pts.)}
+\item \textbf{ (4 pts.)}
 Show how to eliminate the 4-bit 2:1 mux in the bit counter by
 assuming that the Y register had an asynchronous active low reset input.
 Consider the fact that the external world still needs the ability to hit
 a single button to reset the state of the entire circuit. 
 
-\item  {\bf (6 pts.)}
+\item  \textbf{ (6 pts.)}
 A control unit has been built with the following control word:
 
 \begin{tabular}{|c|c|c|c|c|}  \hline
@@ -36,7 +40,7 @@ to straighten out the bum control signals.  There is one error can be
 fixed by changing something in the datapath, no extra hardware is 
 required.  Identify this error and its solution.
 
-\item {\bf (8 pts.)}
+\item \textbf{ (8 pts.)}
 Modify the algorithm for the bit counting circuit so that it uses a 
 two-line handshake to transmit the Y register.  The circuit should take
 the role of an active producer in the transmission of Y.  The circuit
@@ -48,7 +52,7 @@ If the outside world reads the value of Y before the circuit's signals
 are valid (via the send\_REQ signal) then its their own dumb fault.
 Just send the Y signal outside the datapath as is.
 
-\item {\bf (16 pts.)} 
+\item \textbf{ (16 pts.)} 
 A 8kx32 RAM is full of integer data.  Design a circuit to scan
 the RAM and find its smallest value.  Assume that the RAM 
 returns data within 1 clock cycle.  
@@ -60,7 +64,7 @@ output equations.
 The control unit is to be implemented using a ones hot encoding.
 
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 A 8kx32 RAM is full of integer data.  Design a
 circuit that determines the sum of the integers {\em between} addresses
 A and B.  The values of A and B are to be read in using a two-line
@@ -73,9 +77,9 @@ the memory input equations, and
 output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
-\begin{solution} {
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
-{\bf Algorithm}
+\textbf{ Algorithm}
 
 while(REQ==0); \\
 A = datain; \\
@@ -93,16 +97,16 @@ for(i=A; i<B; i++)  { \\
  S=S+MBR; \\
 } // end for \\
 
-{\bf DP \& CU}
+\textbf{ DP \& CU}
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./FigHw8/Sol8-5}}}
+\center{\scalebox{0.7}{\includegraphics{Sol8-5}}}
 \caption{The datapath and control to determine the sum between
 addresses A and B.}
 \end{figure}
 
 
-{\bf Control Word}
+\textbf{ Control Word}
 
 \begin{tabular}{l|l|l|l|l|l|l}
 STATE & A      & B      &MUX          &S      &MBR    &counter	\\ \hline
@@ -121,7 +125,7 @@ Inc   & 0      & 0      &1            &1      &0      &00	\\ \hline
 Done  & 0      & 0      &0            &0      &0      &00	\\ 
 \end{tabular}
 
-{\bf MIEs and OEs}
+\textbf{ MIEs and OEs}
 
 \begin{tabular}{ll}
 MIE					&	OE			\\
@@ -137,9 +141,9 @@ $D_{Inc  } = Q_{Read}$			& 		\\
 $D_{Done } = Q_{For}LB'$		&  		\\
 \end{tabular}
 
-} \end{solution}
+} \end{onlysolution} 
 
-\item  {\bf (16 pts.)}
+\item  \textbf{ (16 pts.)}
 Design a circuit that repetitively looks at a 1-bit input X.
 Anytime X changes logic values increment an 8-bit
 register Y.  
@@ -150,7 +154,7 @@ the memory input equations, and
 output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 A 256x8 RAM is full of data.  Design a circuit that jumps
 around in memory.  It does this by fetching a word and using the
 retrieved word as the next address to jump to.  The circuit is to 
@@ -168,12 +172,12 @@ jump to address 3F then 28, 53, 3F and continue cycling
 for ever amount these three addresses.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Prob8-7}}
+\center{\includegraphics{Prob8-7}}
 \caption{A 256x8 RAM loaded with some data.}
 \label{fig:RAMhopper}
 \end{figure}
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 A 256x8 RAM is full of data.  Design a circuit that jumps 
 around in memory.   The current address should be stored in a
 register called PC.  If the MSB of the fetched word is 1, then the 
@@ -197,21 +201,21 @@ into a never ending cycle.   Make sure the solution identifies how
 to add the least significant seven bits to an 8-bit PC.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Prob8-8}}
+\center{\includegraphics{Prob8-8}}
 \caption{A 256x8 RAM loaded with some data.}
 \label{fig:RAMhopper2}
 \end{figure}
 
-\begin{solution} {
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Sol8-8}}
+\center{\includegraphics{Sol8-8}}
 \caption{The datapath and control to conditionally hop around
 in RAM.}
 \end{figure}
 
 
-{\bf Control Word}
+\textbf{ Control Word}
 
 \begin{tabular}{l|l|l|l|l|l|l}
 STATE & RE     & CS     &MUX          &MBR    & PC	\\ \hline
@@ -224,7 +228,7 @@ INC   & 0      & 0      & 0           & 0     & 1	\\ \hline
 MBR   & 0      & 0      & 1           & 0     & 1	\\ \hline
 \end{tabular}
 
-{\bf MIEs and OEs}
+\textbf{ MIEs and OEs}
 
 \begin{tabular}{ll}
 MIE					&	OE			\\
@@ -234,10 +238,10 @@ $D_{inc}= Q_{msb} m'$			&  $Z_{MUX} = Q_{mbr}$		\\
 $D_{mbr}= Q_{msb} m$			&  $Z_{mbr} = Q_{read}$		\\
 \end{tabular}
 
-} \end{solution}
+} \end{onlysolution} 
 
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 Modify the circuit in the previous problem as follows.  Anytime
 an external input, called IRQ, is asserted the circuit is to stop
 jumping around and assert and ACK.  The outside world will then read
@@ -250,9 +254,9 @@ the memory input equations, and
 output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
-\item  {\bf (16 pts.)} Design a circuit that reads successive words from 
+\item  \textbf{ (16 pts.)} Design a circuit that reads successive words from 
 a 1kx12 RAM and
-updates a 12-bit register called {\bf ACC} based on the upper two bits of the 
+updates a 12-bit register called \textbf{ ACC} based on the upper two bits of the 
 memory word.  The address of the current memory word should be contained
 in a register called PC (Program Counter).  Since the words read from the
 RAM will tell us what operation to perform on the ACC, the memory word will
@@ -272,9 +276,9 @@ The PC is to be initialized to 0.  After the each memory word is read
 and the appropriate operation performed on ACC, the PC should be
 incremented.
 
-\begin{solution} {
+\begin{onlysolution}  \textbf{Solution} \itshape{ 
 
-{\bf Algorithm}
+\textbf{ Algorithm}
 %% \begin{verbatim}
 %% PC = 0;
 %% while(1) {
@@ -291,13 +295,13 @@ incremented.
 %% }
 %% \end{verbatim}
 
-{\bf Datapath and Control}
+\textbf{ Datapath and Control}
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./FigHw8/Sol8-10}}}
+\center{\scalebox{0.7}{\includegraphics{Sol8-10}}}
 \end{figure}
 
-{\bf Control Word}
+\textbf{ Control Word}
 
 \tiny{
 \begin{tabular}{l|l|l|l|l|l|l|l|l}
@@ -318,7 +322,7 @@ Inc   & xx	& 0	& 0	& 0	& 10	&	x	& 0	& x	\\
 }
 
 
-{\bf MIEs and OEs}
+\textbf{ MIEs and OEs}
 
 \begin{tabular}{ll}
 MIE                                     &       OE                      \\
@@ -334,9 +338,9 @@ $D_{Inc } = Q_{For}LB$                 &   $Z_{CS} = Q_{Read}+Q_{Stor}+Q_{Load}$
 					&   $Z_{RW} = Q_{Read}+Q_{Load}$            \\
 \end{tabular}
 
-}\end{solution}
+}\end{onlysolution} 
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 Design a circuit that moves $M$ consecutive words from address $S$ (source) to
 address $D$ (destination).  For example, if $M=4$, $S=3EA$ and $D=1FE$ then the 
 circuit would move words 3EA, 3EB, 3EC and 3ED to address 1FE, 1FF, 200 and 201.
@@ -349,10 +353,10 @@ control word, MIEs and OEs.  These circuit will need a three-state buffer to
 be able to both read and write to the RAM.  Do not worry about the sizes of the
 registers or RAM.
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 Design a circuit that determines how many times a user
-specified 8-bit value, called {\bf key}, occurs in an 1kx8 RAM.  
-{\bf key} is to be read using a two-line handshake; the circuit 
+specified 8-bit value, called \textbf{ key}, occurs in an 1kx8 RAM.  
+\textbf{ key} is to be read using a two-line handshake; the circuit 
 is the passive consumer.
 Turn in; an algorithm
 the datapath and control unit,
@@ -361,8 +365,8 @@ the memory input equations, and
 output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
-\item {\bf (16 pts.)} Design a circuit that records the number of times that it
-has seen an 8-bit, user specified value, {\bf key}.  The key will
+\item \textbf{ (16 pts.)} Design a circuit that records the number of times that it
+has seen an 8-bit, user specified value, \textbf{ key}.  The key will
 is shown to the circuit, at most, 16 times.  The collection of 
 keys is stored in a 1kx12 RAM.  The RAM is larger
 than it needs to be because it is thought that in the future
@@ -383,7 +387,7 @@ the memory input equations, and
 output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
-\item {\bf (36 pts.)}
+\item \textbf{ (36 pts.)}
 Design a digital circuit to control access to an
 automated parking garage containing 828 parking spaces.  
 Drivers pull up to the garages gate and insert 
@@ -397,7 +401,7 @@ into a card reader.  The digital circuit then raises the exit gate bar,
 a pressure sensor at the exit tells the circuit when it is OK to close
 the exit gate.  See Figure~\ref{fig:Garage}.
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Prob8-14}}
+\center{\includegraphics{Prob8-14}}
 \caption{The layout of an automated garage.}
 \label{fig:Garage}
 \end{figure}
@@ -433,7 +437,7 @@ gain access in-to and out-of the garage.  The count will be checked and
 reset once a month.  Cars pass into and out of the garage at most 4
 times a day.
 
-To implement this circuit use a {\it single} RAM.  Each word of the
+To implement this circuit use a \textit{ single} RAM.  Each word of the
 RAM must be divided into three fields; ID, Ins and Outs corresponding to
 the pass ID number, number of times into the garage and number of times
 out of the garage respectively.   The digital circuit will scan successive
@@ -443,7 +447,7 @@ item back into the RAM.  A major issue in this design is determining
 the sizes of the data items.  Use the information in the word statement
 to make the design as space efficient as possible.
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Prob8-14b}}
+\center{\includegraphics{Prob8-14b}}
 \caption{The format of the RAM in the garage circuit problem.}
 \label{fig:GarRAM}
 \end{figure}
@@ -454,7 +458,7 @@ the memory input equations, and
 output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
-\item {\bf (16 pts.)} Design a circuit that converts a 6-bit binary number into a 2 
+\item \textbf{ (16 pts.)} Design a circuit that converts a 6-bit binary number into a 2 
 digit BCD representation.  The circuit acquires a 6-bit number through
 a two-line handshake where the circuit is a passive consumer.  The 
 circuit is then to convert this 6-bit number into two BCD digits and
@@ -467,7 +471,7 @@ subtraction should increment a tens digit counter.
 Make sure to identify the size of all the signals in the datapath
 and the size of any register, counters, etc...
  
-\item {\bf (8 pts.)}
+\item \textbf{ (8 pts.)}
 Design a circuit that converts a 2 digit BCD number into a
 binary number.  The circuit acquires the BCD digits through 2 read
 operations most significant digit first.  Each read operation takes 
@@ -483,7 +487,7 @@ For example, the adder in Figure~\ref{fig:NineTimes} generates the value
 of 9*X from a 4-bit register by adding X, shifted left by three bits, to X.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Prob8-16}}
+\center{\includegraphics{Prob8-16}}
 \caption{A simple circuit to compute 9*X.}
 \label{fig:NineTimes}
 \end{figure}
@@ -491,7 +495,7 @@ of 9*X from a 4-bit register by adding X, shifted left by three bits, to X.
 Make sure to identify the size of all the signals in the datapath
 and the size of any register, counters, etc...
  
-\item {\bf (36 pts.)}
+\item \textbf{ (36 pts.)}
 Design a digital circuit that plays a game of
 roulette, allows betting and keeps track of total earnings.
 The roulette wheel has 8 slots, labeled $1 \ldots 8$.  The player
@@ -499,7 +503,7 @@ can play one of the numbers straight or play even or odd.
 The player starts with \$10. 
 The layout of the machine is shown in Figure~\ref{fig:Roulette}.
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Prob8-17}}
+\center{\includegraphics{Prob8-17}}
 \caption{The layout of the roulette playing machine.  
 The two 7-segment displays at the top are used for a variety
 of purposes.}
@@ -549,9 +553,9 @@ the memory input equations, and
 output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
-{\bf Algorithm}
+\textbf{ Algorithm}
 
 %% cash = 10; 
 %% left_seven = blank; 
@@ -590,17 +594,17 @@ The control unit is to be implemented using a ones hot encoding.
 %% led_array = 0 0 0 1;    // The user is out of money 
 %% while(1);		// Halt the machine 
  
-{\bf Datapath and Control}
+\textbf{ Datapath and Control}
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw8/Sol8-16}}
+\center{\includegraphics{Sol8-16}}
 \end{figure}
 
 Note from the figure that, the user may acquire
 up to 0xFF cash.  Each hex digit of the users total cash will 
 be displayed on its own 7-segment display.
 
-{\bf Control Word}
+\textbf{ Control Word}
 
 {\tiny
 \begin{tabular}{l|l|l|l|l|l|l|l|l|l|l}
@@ -629,7 +633,7 @@ wn    & 00      & 0      &  0     & x	      & x        &  0     &  x     & 00   
 \end{tabular}
 }
 
-{\bf MIEs and OEs}
+\textbf{ MIEs and OEs}
 
 $$
 \begin{array}{ll}
@@ -649,9 +653,9 @@ D_{loose} = Q_{comp}*GE'			& Z_{rseg0} = Q_{init,guess,wg2,wb1,bet,wb2}\\
 D_{wn2} = Q_{wn}*roll + Q_{win}*roll + Q_{loose}*roll & Z_{lseg1} = Q_{init}  \\
 \end{array} $$
 
-} \end{solution}
+} \end{onlysolution} 
 
-\item {\bf (20 pts.)}
+\item \textbf{ (20 pts.)}
 Design a tone generator.  The tone generator is a box with two buttons
 on it labeled ``Up" and ``Down" and a 1-bit output.  At start-up the tone 
 generator outputs

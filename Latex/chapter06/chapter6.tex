@@ -1,4 +1,6 @@
 \chapter{Sequential Building Blocks}
+\label{chapter:Sequential Building Blocks}
+\graphicspath{ {./chapter06/Fig} }
 
 In order to design complex systems, a suitable 
 abstraction is required for building them.  This requirement stems from the
@@ -36,7 +38,7 @@ blocks are different from those presented in Chapter 4 because
 they have memory. 
 
 Like the combinational building blocks shown in 
-Figure~\ref{fig:Asys} each of the sequential basic building 
+Figure~\ref{fig:sequentialBBAsys} each of the sequential basic building 
 blocks have control and data inputs, and status and
 data outputs.  In addition, being sequential devices, most
 also have an edge-sensitive clock input.  First to be examined is 
@@ -74,7 +76,7 @@ asynchronous active low reset line to 0 causes the stored value
 and the outputs to remain at 0 regardless of the value on any other
 input; the reset input has priority over all other inputs.
 
-A timing diagram for a 4-bit register is shown in Figure~\ref{fig:RegTime}.
+A timing diagram for a 4-bit register is shown in Figure~\ref{fig:sequentialBBRegTime}.
 The initial value of the register is arbitrarily set to $A_{16}=0001_2$.  
 Since the value of $Q$ is represented using four bits, its value on the timing
 diagram is shown as a wide trace.  This reflects the fact that $Q$ is 
@@ -89,9 +91,9 @@ register because $C=0$, hence the register holds its stored value.  The change
 in the $Q$ output at $time 50$ results from the rising clock edge and $C=1$.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig6/RegTime}}
+\center{\includegraphics{RegTime}}
 \caption{A timing diagram for a 4-bit register.}
-\label{fig:RegTime}
+\label{fig:sequentialBBRegTime}
 \end{figure}
 \index{timing!register}
 \index{register|)}
@@ -106,20 +108,20 @@ described in the register's state table.  As a general rule,
 avoid modifying the clock signal unless it is absolutely necessary.
 
 The correct construction of an N-bit register is shown in 
-Figure~\ref{fig:reg}.   Two modes are present for this circuit, 
+Figure~\ref{fig:sequentialBBreg}.   Two modes are present for this circuit, 
 corresponding to $C=0$ and $C=1$.  When $C=1$, the four multiplexers 
-shown in Figure~\ref{fig:reg}, all route the data input $D_i$ 
+shown in Figure~\ref{fig:sequentialBBreg}, all route the data input $D_i$ 
 to the input of the D flip flop.  When a clock edge arrives,
 each $D_i$ is loaded into its respective flip flop and
 soon thereafter appears on the $Q$ output. 
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig6/reg}}
+\center{\includegraphics{reg}}
 \caption{The internal organization of a 4-bit register.}
-\label{fig:reg}
+\label{fig:sequentialBBreg}
 \end{figure}
 
-When $C=0$, the four multiplexers shown in Figure~\ref{fig:reg}, 
+When $C=0$, the four multiplexers shown in Figure~\ref{fig:sequentialBBreg}, 
 all route their data output $Q_i$ back to the input of the 
 D flip flop.  When a clock edge arrives, each $Q_i$ is  
 loaded into its respective flip flop and soon thereafter appears 
@@ -275,13 +277,13 @@ LSB of $Q$ should be ``glued" to the most significant three bits of
 $Q$.
 
 The circuit for the circular shift register is shown in 
-Figure~\ref{fig:ShiftReg} and consists of two major components, D flip 
+Figure~\ref{fig:sequentialBBShiftReg} and consists of two major components, D flip 
 flops and 4:1 muxes.  
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig6/ShiftReg}}
+\center{\includegraphics{ShiftReg}}
 \caption{The internal organization of a 4-bit circular shift register.}
-\label{fig:ShiftReg}
+\label{fig:sequentialBBShiftReg}
 
 \end{figure}
 
@@ -342,7 +344,7 @@ For example, a 4-bit counter rolls-over to 0 when it tries
 to count up at 15.  This behavior is similar to the behavior of the digits of
 a car's odometer rolling over from 9 to 0. 
 
-A timing diagram for a 4-bit counter is shown in Figure~\ref{fig:CountTime}.
+A timing diagram for a 4-bit counter is shown in Figure~\ref{fig:sequentialBBCountTime}.
 The initial value of the counter was arbitrarily set to $E_{16}=1110_2$.
 At time=10, a positive edge of the clock arrives.  Since the $C$ input
 is equal to $10_2$ at time=10, then the counter counts up to $F_{16}=1111_2$.
@@ -352,13 +354,13 @@ At time=30, the $C$ input is equal to $00_2$ so the counter holds the current
 count value.  At time=50, the $C$ input is equal $10_2$ so the counter counts up
 rolling over to $0_{16}$. At time=70 the counter counts up to $1_{16}=0001_2$.
 At time=90, the counter loads $7_{16}=0111_2$.  Notice, as in 
-Figure~\ref{fig:RegTime}, the counter timing diagram shows a small 
+Figure~\ref{fig:sequentialBBRegTime}, the counter timing diagram shows a small 
 propagation delay for the $Q$ output.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig6/CountTime}}
+\center{\includegraphics{CountTime}}
 \caption{A timing diagram for a 4-bit counter.}
-\label{fig:CountTime}
+\label{fig:sequentialBBCountTime}
 \end{figure}
 \index{timing!counter}
 
@@ -370,15 +372,15 @@ used to add 1 to the outputs of the flip flops (current count value).
 If the overflow output of the adder is ignored, then the adder has the 
 advantage of rolling over to 0 when the count value is at the 
 maximum.  It is easy to verify that 111...1 + 1 = 000...0.  The 
-entire circuit is shown in Figure~\ref{fig:counter}.
+entire circuit is shown in Figure~\ref{fig:sequentialBBcounter}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig6/counter}}
+\center{\includegraphics{counter}}
 \caption{The internal organization of a 4-bit counter.}
-\label{fig:counter}
+\label{fig:sequentialBBcounter}
 \end{figure}
 
-Notice, the data inputs to the mux shown in Figure~\ref{fig:counter}
+Notice, the data inputs to the mux shown in Figure~\ref{fig:sequentialBBcounter}
 all have a slash through them with
 the number 4.  This notation indicates each of the data inputs is a four
 bit wide
@@ -398,7 +400,7 @@ to store ``lots" of data.  One of the downfalls of a cassette tape is the
 sequential nature of data access.  That is, the time to access a piece of 
 data depends on its position on the tape and the current position of the
 tape.  RAMs are not sequential devices; the amount of time to access any
-{\it random location} is the same.  
+\textit{ random location} is the same.  
 
 A wide variety of random access memories are available to meet the wide
 variety of applications in which users need to store data.  For situations where
@@ -460,15 +462,15 @@ of a RAM:
 
 \end{tabular}
 
-Assume the contents of the RAM are shown in Figure~\ref{fig:ram}.
+Assume the contents of the RAM are shown in Figure~\ref{fig:sequentialBBram}.
 If $A=101_2=5_{10}$ and $CS=R/W'=1$ then a little while later $D=0001$.  
 
 \begin{figure}[ht]
 
-\center{\includegraphics{./Fig6/ram}}
+\center{\includegraphics{ram}}
 \caption{A 8x4 RAM has eight words each containing four bits.  The addresses
 (which are not stored in the RAM) are shown to the left.}
-\label{fig:ram}
+\label{fig:sequentialBBram}
 
 \end{figure}
 
@@ -487,7 +489,7 @@ Writing data into a RAM is a 3-step process:
 
 \end{tabular}
 
-Consider the contents of the RAM shown in Figure~\ref{fig:ram}.
+Consider the contents of the RAM shown in Figure~\ref{fig:sequentialBBram}.
 If $A=110_2=6_{10}$, $CS=1$, $R/W'=0$, and $D=0101$, then a little while 
 later the memory word at address 6 would be changed from $1101$ to
 $0101$.  
@@ -526,12 +528,12 @@ each RAM chip gets all the address lines and handles some portion of
 the data lines.  Structurally, this transformation is accomplished by
 placing several RAM chips side-by-side as shown. For example, in order 
 to construct a 256kx32 RAM from 256kx8 RAM chips, then four, 256kx8 RAM are 
-placed side-by-side as shown in Figure~\ref{fig:ram}.
+placed side-by-side as shown in Figure~\ref{fig:sequentialBBram}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig6/wide}}
+\center{\includegraphics{wide}}
 \caption{The construction of a 256kx32 RAM from 256kx8 RAM chips.}
-\label{fig:wide}
+\label{fig:sequentialBBwide}
 \end{figure}
 
 Each of the four chips have the same address lines and control
@@ -553,13 +555,13 @@ the two bits as select, and routes a chip select signal to one of its four outpu
 which are attached to the chip select lines of each 64k RAM.  Since a decoder
 routes the chip select to only one of the RAMs, there is no potential 
 conflicts on the data lines and they can safely be tied together. 
-Figure~\ref{fig:deep} shows the complete circuit diagram.
+Figure~\ref{fig:sequentialBBdeep} shows the complete circuit diagram.
 
 \begin{figure}[ht]
 
-\center{\includegraphics{./Fig6/deep}}
+\center{\includegraphics{deep}}
 \caption{The construction of a 256kx4 RAM from 64kx4 RAM chips.}
-\label{fig:deep}
+\label{fig:sequentialBBdeep}
 
 \end{figure}
 \index{RAM|)}
@@ -583,7 +585,7 @@ an output.  The outputs of the combinational logic flow into the
 register inputs.  The next rising edge of the clock causes the 
 registers to latch these new values.  This process then proceeds 
 into the next clock cycle.  In order to understand this discussion, 
-consider the simplified datapath shown in Figure~\ref{fig:simple}.  
+consider the simplified datapath shown in Figure~\ref{fig:sequentialBBsimple}.  
 In this datapath, an adder is sandwiched between three registers.  
 Here, the control inputs on all three registers are assumed to be 
 hardwired to 1, causing them to load on every positive edge.  The 
@@ -592,10 +594,10 @@ external agent.
   
 \begin{figure}[ht]
 
-\center{\scalebox{0.8}{\includegraphics{./Fig6/simple}}}
+\center{\scalebox{0.8}{\includegraphics{simple}}}
 \caption{A simple datapath and the timing diagram describing its
 behavior.}
-\label{fig:simple}
+\label{fig:sequentialBBsimple}
 
 \end{figure}
 
@@ -637,7 +639,7 @@ input to the $S$ register to become valid.  Thus, the $S_{in}$
 signal becomes valid after the positive clock edge at time=0.
 
 When the positive clock edge at time=10 arrives at the circuit in 
-Figure~\ref{fig:simple}, registers $A/B/S$ latch the values on their 
+Figure~\ref{fig:sequentialBBsimple}, registers $A/B/S$ latch the values on their 
 inputs, 6/3/7, respectively.  The new outputs of $A$ and $B$ are 
 sent to the adder causing $S_{in} = 9$.  This value cannot be 
 latched into the $S$ register until the next rising edge of the 
@@ -678,19 +680,19 @@ Why 9?  Because if the value is compared against 10, then the
 \verb+count+ value would have to reach 10 in order for the $L$ 
 output of the comparator to change, by which time it would be too 
 late to stop the \verb+count+ value from reaching 10.  The completed 
-circuit and a timing diagram is shown in Figure~\ref{fig:comb1}.
+circuit and a timing diagram is shown in Figure~\ref{fig:sequentialBBcomb1}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig6/comb1}}
+\center{\includegraphics{comb1}}
 \caption{A circuit to count between 3 and 9 and its associated timing diagram.}
-\label{fig:comb1}
+\label{fig:sequentialBBcomb1}
 
 \end{figure}
 
 The $L$ output of the comparator is used because the condition checked is 
 \verb+count < 10+.  This single-bit output cannot be directly connected to the
 counter's 2-bit control input because there just are not enough bits.  The
-``glue" box shown in Figure~\ref{fig:comb1} contains glue-logic, a
+``glue" box shown in Figure~\ref{fig:sequentialBBcomb1} contains glue-logic, a
 combinational logic circuit which interfaces or glues together two pieces
 of logic.  When the counter's output is less than 10, $L=1$, and the
 counter is supposed to count up by 1.  According to 
@@ -761,27 +763,13 @@ input of the min register comes from the data output of the MBR
 register.  The control of the MBR register should also be controlled 
 by the counter comparator so that the MBR register stops loading when 
 the count value is greater or equal to 99.  The circuit diagram is 
-shown in Figure~\ref{fig:min} 
+shown in Figure~\ref{fig:sequentialBBmin} 
 
 \begin{figure}[ht]
-\center{\scalebox{0.8}{\includegraphics{./Fig6/min}}}
+\center{\scalebox{0.8}{\includegraphics{min}}}
 \caption{A circuit to find the smallest value in a RAM.  The min 
 register is initialized to 0xFF.}
-\label{fig:min}
+\label{fig:sequentialBBmin}
 \end{figure}
 
-\section{Timing}
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
-
-\section{Exercises}
-\input{hw6}
-
+%%\section{Timing}

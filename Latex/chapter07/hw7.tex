@@ -1,36 +1,40 @@
+\section{Exercises}
+\label{section:finiteStateMachines}
+\graphicspath{ {./chapter07/FigHw} }
+
 \begin{enumerate}
 \item A finite state machine has been implemented with four
 flip-flops, two inputs and three outputs. 
 	\begin{enumerate}
 	\item What are the minimum and maximum number of states in the diagram?
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 Since there are three flip flops we can have a maximum of 8 states.  The minimum
 number of states is a bit tricky.  A practical answer is 5, because if you
 had fewer states you would use fewer flip flops.  However, the question
 asks for a minimum, in which case you could have 1 state.  Note, that a
 1 state FSM would only generate a single output and hence would not be a
 very interesting circuit.
-}\end{solution}
+}\end{onlysolution} 
 	\item What are the minimum and maximum number of transition arrows 
 		starting at a particular state?
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 These values are the same.  Since there are two bits of input there are four
 different inputs that can be applied at each state.  Thus, four arrows must
 leave each state.
-}\end{solution}
+}\end{onlysolution} 
 	\item What are the minimum and maximum number of transition arrows 
 		ending in a particular state?
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 In a typical design your systems will have a reset state, it normal for such
 states to have NO input arcs.  You only visit them when the power is turned on.
 This is the minimum number of arcs that can terminate at a state.  On the
 other hand, I could image a machine where   transition arc points to a
 particular state (not a very interesting FSM).  Hence all 32 arcs could point
 to a single state.
-}\end{solution}
+}\end{onlysolution} 
 	\item What are the minimum and maximum number of different binary patterns
 		that are displayed on the outputs? 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 this is a tricky question, you need to determine which of the inputs and outputs
 constrains the number of distinct patterns on the output.  You should consult
 figure 7.1 for some guidance.  There are three bits of output which have the possibility
@@ -38,11 +42,11 @@ of generating 8 different outputs.  There are a total of six bits of input to th
 combinational logic box, more than enough to cope with the 8 different output.  On
 the other end of the scale, I can imagine a FSM which only produces a single output,
 it would however, not be very interesting.
-}\end{solution}
+}\end{onlysolution} 
 	\end{enumerate}
 
 
-\item {\bf (20 points)}
+\item \textbf{ (20 points)}
 The state assignment for a FSM influences the amount of
 combinational logic required in the realization.  In the following
 problem this phenomena is investigated.  Determine the MIEs 
@@ -104,7 +108,7 @@ Submit:
 \begin{enumerate}
 \item Shared steps of the design process.
 \item Derive the MIEs for each of the two realizations.
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
 State Assignment 1
 
@@ -136,12 +140,12 @@ $D_1 = Q_2'Q_1Q_0'X' + Q_2'Q_1'Q_0'X + Q_2Q_1X+Q_1Q_0X + Q_1'Q_0X'$\\
 $D_0 = Q_1'X + Q_2'X + Q_2Q_0$					\\
 $Z   = Q_1Q_0' + Q_2$						\\
 
-}\end{solution}
+}\end{onlysolution} 
 
 
 \item Determine the cost of each of the two realizations.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 \begin{tabular}{l|l|l}
 	& State Assignment 1	& State Assignment 2 \\ \hline
 $D_2$	& 	15		&	22	\\ \hline
@@ -150,19 +154,19 @@ $D_0$	&	17		&	9	\\ \hline
 $Z$	&	13		&	4	\\ \hline
 Total	& 6*3 + 59 = 77 		& 6*3 + 57 = 75	\\ 
 \end{tabular}
-}\end{solution}
+}\end{onlysolution} 
 \item Determine the cost of each of the two realizations using Espresso.
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 Espresso cost 77 for state assignment  1 \\
 Espresso cost 75 for state assignment  2
-}\end{solution}
+}\end{onlysolution} 
 \end{enumerate}
 
-\item {\bf (8 pts.)} Realize the FSM in the previous problem using 
+\item \textbf{ (8 pts.)} Realize the FSM in the previous problem using 
 a one-hot encoding.  Determine
 the MIEs and the cost of the circuit using the same metric.
 It is helpful to convert the state table into a state diagram.
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 \begin{description}
 \item $D_A = Q_AX' + Q_DX'$
 \item $D_B = Q_AX$
@@ -176,31 +180,31 @@ It is helpful to convert the state table into a state diagram.
 \end{description}
 
 The cost of this solution is 6*8 + 6 + 2 + 9 + 6 + 6 + 9 + 6 + 2 + 5 = 48 + 51 = 99
-}\end{solution}
+}\end{onlysolution} 
 
-\item {\bf (8 points)}
+\item \textbf{ (8 points)}
 Enhance the vending machine discussed in this chapter as follows.
-Add two buttons for a beverage selection; {\it regular} soda and {\it diet}
+Add two buttons for a beverage selection; \textit{ regular} soda and \textit{ diet}
 soda, see Figure~\ref{fig:Vend}.  This machine will have a change dispenser.  
 If the user deposits more than 35\textcent, the circuit should send a signal to
-either the {\it nickel change} dispenser or the {\it dime change} dispenser, 
+either the \textit{ nickel change} dispenser or the \textit{ dime change} dispenser, 
 a single bit sent for one clock cycle to a dispenser will yield a single coin.
 When the user deposits 35\textcent (or more) the machine gives any change and 
 then waits for one of the two buttons to be depressed.  Depending on the 
 selection, the circuit should send a signal to either the 
-{\it regular dispenser} or
-the {\it diet dispenser} mechanism.  The dispenser need only get a signal for
+\textit{ regular dispenser} or
+the \textit{ diet dispenser} mechanism.  The dispenser need only get a signal for
 one clock cycle.  After the dispensing, go back to the reset state.
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Prob7-10}}
+\center{\includegraphics{Prob7-10}}
 \caption{A basic vending machine.}
 \label{fig:Vend}
 \end{figure}
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Sol7-9}}
+\center{\includegraphics{Sol7-9}}
 \end{figure}
 
 Note, that in the figure if a input does not appear on
@@ -226,11 +230,11 @@ state & nickel change	& diet dispense & regular dispense      \\ \hline
 d     & 0		& 1		& 0			\\ \hline
 r     & 0		& 0		& 1			\\ \hline
 \end{tabular}
-}\end{solution}
+}\end{onlysolution} 
 
 
 
-\item {\bf (6 pts.)}
+\item \textbf{ (6 pts.)}
 Build a FSM for a car alarm.  The input to the FSM
 comes from a tilt sensor.  The tilt-sensor outputs 1 when the 
 car has been physically displaced by a preset amount, otherwise the
@@ -243,7 +247,7 @@ stop sounding.
 Draw the state diagram and from this determine the MIEs and OEs.
 
 
-\item {\bf (12 pts.)}
+\item \textbf{ (12 pts.)}
 Build a FSM which displays the revolutions per second
 (RPS) of a motor.  The output shaft of the motor is attached to 
 a sensor whose output pulses to logic 1 every time the motor's shaft
@@ -300,7 +304,7 @@ encoding of the states.
 \end{enumerate}
 
 
-\item {\bf (12 pts.)}
+\item \textbf{ (12 pts.)}
 Build a digital circuit which controls an automatic garage door opener.  
 The garage door circuit has three bits of input.  The first input, called 
 $button$, comes from a the main control button used to open or close the 
@@ -324,7 +328,7 @@ Construct the FSM assuming a one-hot encoding of the states.
 Determine the memory input equations and output equations.
 
 
-\begin{solution} {
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
 \paragraph{Control unit}
 The control unit includes so called wait states.  Waits states are
@@ -342,7 +346,7 @@ for the garage door to open and close the FSM must wait for a
 button press.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig7/GarageFSM}}
+\center{\includegraphics{../Fig/GarageFSM}}
 \caption{The FSM for the garage door controller.}
 \end{figure}
 
@@ -396,10 +400,10 @@ $Z_{m1} = Q_{opening}$ \\
 $Z_{m0} = Q_{closing}$ \\
 \end{tabular}
 
-}\end{solution}
+}\end{onlysolution} 
 
 
-\item {\bf (8 pts.)}
+\item \textbf{ (8 pts.)}
 Build a digital circuit to control a single traffic light.  The circuit
 has three outputs, $Rlight, Ylight$ and $ Glight$.  When
 $Rlight=1$ the red light illuminates otherwise the light is off.
@@ -460,12 +464,12 @@ use the output table.
 \end{tabular}
 \end{enumerate}
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 Build a FSM which make the hexapod robot shown in Figure~\ref{fig:hexapod}
 walk forward.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Prob7-11}}
+\center{\includegraphics{Prob7-11}}
 \caption{A hexapod walking robot.}
 \label{fig:hexapod}
 \end{figure}
@@ -492,7 +496,7 @@ robot which is moving to the right.  The dotted legs are assumed to be in
 the air, solid legs are in contact with the ground.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Prob7-11b}}
+\center{\includegraphics{Prob7-11b}}
 \caption{The walking gait of the hexapod robot.}
 \label{fig:hexgate}
 \end{figure}
@@ -502,10 +506,10 @@ cycle.  Define each state as a position of the legs in
 Figure~\ref{fig:hexgate}. Draw the state diagram,
 and determine the memory input and output equations.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Sol7-11}}
+\center{\includegraphics{Sol7-11}}
 \end{figure}
 
 Note that the states have been given numbers to simplify the
@@ -520,7 +524,7 @@ State  & $Aw_1$ & $Aw_0$ & $Bw_1$ & $Bw_0$  \\ \hline
 4	& 0	& 1	 & 1	  & 0		\\ 
 \end{tabular}
 
-{\bf MIEs and OEs}
+\textbf{ MIEs and OEs}
 
 \begin{tabular}{ll}
 MIEs		&	OEs			\\
@@ -530,24 +534,24 @@ $D_3 = D_2$	&	$Z_{Bw_1} = Q_1 + Q_4$	\\
 $D_4 = D_3$	&	$Z_{Bw_0} = Q_1 + Q_2$	\\
 \end{tabular}
 
-}\end{solution}
+}\end{onlysolution} 
 
-\item {\bf (12 pts.)}
+\item \textbf{ (12 pts.)}
 \label{item:robot}
 Build a FSM which makes the simple robot shown in Figure~\ref{fig:Robot}
 move along (track) the black line crossing two intersections.
 \begin{figure}[ht]
-\center{\scalebox{0.8}{\includegraphics{./FigHw7/Prob7-12}}}
+\center{\scalebox{0.8}{\includegraphics{Prob7-12}}}
 \caption{A simple line-tracking robot that must cross two intersections.}
 \label{fig:Robot}
 \end{figure}
 
-The FSM has two inputs, a left sensor, denoted {\it ls}, and a right 
-sensor, denoted {\it rs}.  These two sensors look down at the ground.  
+The FSM has two inputs, a left sensor, denoted \textit{ ls}, and a right 
+sensor, denoted \textit{ rs}.  These two sensors look down at the ground.  
 When a sensor sees white, it outputs 0; when it see black, it outputs 1.  
 The sensors are spaced far enough apart that they can straddle the black 
 line and see white on either side.  The FSM has two outputs, a left
-motor, denoted {\it lm} and a right motor, denoted {\it rm}.  A motor
+motor, denoted \textit{ lm} and a right motor, denoted \textit{ rm}.  A motor
 rotates when it is sent a 1 and does not rotate when it is sent a 0.
 The FSM should constantly check that the robot is straddling the line.
 If it is not the FSM should take corrective action by stopping one of
@@ -556,9 +560,9 @@ the wheels.
 Submit the state diagram for the FSM,  MIEs and OEs using 
 a one-hot encoding of the states.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Sol7-11}}
+\center{\includegraphics{Sol7-11}}
 \end{figure}
 
 \begin{tabular}{l|l|l|l}
@@ -574,16 +578,16 @@ OnLine   & 1		  & 1			\\ \hline
 Up	 & 1		  & 1			\\ \hline
 Stop	 & 0		  & 0			\\ 
 \end{tabular}
-} \end{solution} 
+} \end{onlysolution}  
 
-\item {\bf (16 pts.)}
+\item \textbf{ (16 pts.)}
 Make the robot from Problem \ref{item:robot} cross 63 intersections.
 The problem is that the number of states will grow to large to handle
 with a FSM by itself.  Additional hardware, in the form of a counter 
 and comparator, are added to the FSM to address this problem.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Prob7-13}}
+\center{\includegraphics{Prob7-13}}
 \caption{The innards of a intersection counting, line tracking robot.}
 \label{fig:linecounter}
 \end{figure}
@@ -602,20 +606,20 @@ input is 0, then the counter holds its current count value.
 Submit the state diagram for the FSM, OEs and MIEs for a one-hot 
 encoding of the states.  
 
-\begin{solution} {
+\begin{onlysolution}  \textbf{Solution} \itshape{
 \pagebreak
 If you encoded 64 line crossing using only a FSM you would have
 on the order of 256 states, 4 for each line crossing.  The solution
 is to use a counter to keep track of how many lines have been crossed.
 The states below explain.
 
-{\bf DP \& CU}
+\textbf{ DP \& CU}
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Sol7-12}}
+\center{\includegraphics{Sol7-12}}
 \end{figure}
 
-{\bf Control Word}
+\textbf{ Control Word}
 
 \begin{tabular}{l|l|l|l}
 State & lm		  & rm			& counter \\ \hline
@@ -632,13 +636,13 @@ Stop	 & 0		  & 0			& 00	  \\
 \end{tabular}
 
 One could easily derive the MIEs and OEs for the FSM.
-} \end{solution}
+} \end{onlysolution} 
 
-\item {\bf (24 pts.)}
+\item \textbf{ (24 pts.)}
 Construct a digital circuit to control the operation of a
 simple washing machine, see Figure ~\ref{fig:Wash}.
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Prob7-14}}
+\center{\includegraphics{Prob7-14}}
 \caption{A humble washing machine with a close-up of the start
 button and temperature switch.}
 \label{fig:Wash}
@@ -693,7 +697,7 @@ state & hot     & cold    & motor      & timer in   & drain 	\\ \hline
       & 0 close & 0 close & 00 off     & 00 hold    & 0 close	\\ \hline
       & 1 open  & 1 open  & 01 agitate & 01 reset   & 1 open	\\ \hline
       &		&         & 10 spin    & 10 run     &		\\ \hline \hline
-{\bf S1}    &	&	  &	       &	    &		\\ \hline
+\textbf{ S1}    &	&	  &	       &	    &		\\ \hline
 \end{tabular}
 
 Draw the state diagram for the FSM to control the washing machine.  
@@ -701,12 +705,12 @@ Label the arcs of the state diagram with the input (or its negation)
 that causes the transition.  Use simple Boolean expressions on these 
 arcs, for example (start and hot).
 For each state define the output using a table similar to the one above.
-For example, if {\bf S1} is a state fill in the bit values for the o
-outputs depending on what state {\bf S1} is supposed to do.
+For example, if \textbf{ S1} is a state fill in the bit values for the o
+outputs depending on what state \textbf{ S1} is supposed to do.
 Determine the memory input equations and output equations assuming a one-hot 
 encoding.
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 	\begin{enumerate}
 	\item No control table (-6)
 	\item Disposable washing machine (-1)
@@ -715,7 +719,7 @@ encoding.
 	\item no complements on arcs (-2)
 	\end{enumerate}
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Sol7-13}}
+\center{\includegraphics{Sol7-13}}
 \caption{The FSM for a washing machine.}
 \end{figure}
 
@@ -754,10 +758,10 @@ The memory input equations are a snap.
 \item $D_{spin} = Q_{drain2}*empty + Q_{spin}*time' $
 \end{description}
 
-}\end{solution}
+}\end{onlysolution} 
 
 
-\item {\bf (36 pts.)}
+\item \textbf{ (36 pts.)}
 Construct a digital circuit to control the movement of an elevator
 in a four-story building.  The elevator will always wait on its current floor
 until a call button is pressed; see Figure~\ref{fig:elevator}.  The elevator
@@ -769,7 +773,7 @@ elevator control panel, then the door close and the elevator moves to the
 desired floor.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Prob7-15}}
+\center{\includegraphics{Prob7-15}}
 \caption{The layout of an elevator in a four story tall building.}
 \label{fig:elevator}
 \end{figure}
@@ -821,12 +825,12 @@ Motor                   &  00 stop &    01 up   & 10 down \\ \hline
 Submit; an algorithm the datapath and control unit,
 the control word table, the memory input equations, and output equations.
 
-\item {\bf (36 pts.)}
+\item \textbf{ (36 pts.)}
 Construct a digital circuit to control the movement of traffic
 at the four way intersection shown in Figure~\ref{fig:crossroad}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Prob7-16}}
+\center{\includegraphics{Prob7-16}}
 \caption{The layout of a four way intersection.}
 \label{fig:crossroad}
 \end{figure}
@@ -896,10 +900,10 @@ the memory input equations, and
 output equations.
 
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw7/Sol7-16}}
+\center{\includegraphics{Sol7-16}}
 \caption{The FSM for a traffic light controller.}
 \end{figure}
 
@@ -953,5 +957,5 @@ The output equations
 \item $Z_{ew1} = Q_{RGset15} + Q_{RGwait15} $
 \item $Z_{ew0} = Q_{RGset15} + Q_{RGwait15} $
 \end{description}
-}\end{solution}
+}\end{onlysolution} 
 \end{enumerate}

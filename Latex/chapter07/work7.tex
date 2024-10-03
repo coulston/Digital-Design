@@ -1,10 +1,12 @@
-\section{Chapter 7 -- Finite State Machines}
+\section{Finite State Machines}
+\graphicspath{ {./chapter07/FigWork} }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Here are the helpfull stuff
+%% Here are the helpful stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Helpful Stuff}
 
-\includegraphics{./Fig7/GenFSM}
+\includegraphics{../Fig/GenFSM}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,7 +25,7 @@
 The input variable is $X$.
 
 \begin{tabular}{ll}
-\includegraphics{./FigWork/StateDiagram} &
+\includegraphics{StateDiagram} &
 \begin{tabular}{c||c|c}
 CURRENT STATE	& X=0	& X=1	\\ \hline
 A		& 	& 	\\ \hline
@@ -59,7 +61,7 @@ $Q_2 Q_1 \bs Q_0 X$	& 00	& 01	& 11	& 10	\\ \hline
 	& entries should be $Q_2^+ Q_1^+ Q_0^+$
 \end{tabular}
 
-\item[Determine the memory input equations.]  Use the transistion
+\item[Determine the memory input equations.]  Use the transition
 kmap given in the previous problem.
 
 $$\begin{array}{c}
@@ -94,7 +96,7 @@ $$\begin{array}{c}
 \item[Write the MIEs]  Assume a 1's hot encoding of the states.
 
 \begin{tabular}{ll}
-\includegraphics{./FigWork/StateDiagram}  &
+\includegraphics{StateDiagram}  &
 	\begin{tabular}{l}
 	$D_A$= \\
 	$D_B$= \\
@@ -146,7 +148,7 @@ State & ND=00 & ND = 01 & ND=11 & ND=10 \\ \hline
 &
 
 $\begin{array}{c|c|c|c}
-{\rm state} & Q_2 & Q_1 & Q_0 \\ \hline
+\text{ state} & Q_2 & Q_1 & Q_0 \\ \hline
 0  & 0 & 0 & 0 \\ \hline
 5  & 0 & 0 & 1 \\ \hline
 10 & 0 & 1 & 0 \\ \hline
@@ -175,7 +177,7 @@ $$\begin{array}{cc}
         10              &  &  &  &  \\
 \end{array} \\
 Q_2=0 & Q_2=1 \\
-\multicolumn{2}{c}{{\rm Entries\ are\ } Q_2^+ Q_1^+ Q_0^+}
+\multicolumn{2}{c}{\text{ Entries\ are\ } Q_2^+ Q_1^+ Q_0^+}
 \end{array} $$
 
 {\tiny
@@ -196,7 +198,7 @@ $$\begin{array}{cc}
         10        	&   &   &   &   \\
 \end{array} \\
 Q_2=0 & Q_2=1 \\
-\multicolumn{2}{c}{{\rm Entries\ are\ } Q_2^+=D_2}
+\multicolumn{2}{c}{\text{ Entries\ are\ } Q_2^+=D_2}
 \end{array} $$
 
 $$\begin{array}{cc}
@@ -216,7 +218,7 @@ $$\begin{array}{cc}
         10        	&   &   &   &   \\
 \end{array} \\
 Q_2=0 & Q_2=1 \\
-\multicolumn{2}{c}{{\rm Entries\ are\ } Q_1+=D_1}
+\multicolumn{2}{c}{\text{ Entries\ are\ } Q_1+=D_1}
 \end{array} $$
 
 
@@ -237,14 +239,8 @@ $$\begin{array}{cc}
         10        	&   &   &   &   \\
 \end{array} \\
 Q_2=0 & Q_2=1 \\
-\multicolumn{2}{c}{{\rm Entries\ are\ } Q_0+=D_0}
+\multicolumn{2}{c}{\text{ Entries\ are\ } Q_0+=D_0}
 \end{array} $$
 }
-\pagebreak
-
-
-
-
-
 
 \end{description}

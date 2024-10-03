@@ -1,4 +1,7 @@
-\chapter{Peripheral Components}
+\chapter{Common Peripheral Components}
+\label{chapter:Common Peripheral Components}
+\graphicspath{ {./chapter10/Fig} }
+
 The number and variety of devices available on the market
 is truly astounding.  In this chapter you will be introduced
 to some basic building blocks that you may want to use for
@@ -27,16 +30,16 @@ A push button is perhaps the simplest input device that you will
 utilize in digital design.  Unfortunately you cannot just pop
 a pushbutton into a design by itself, it (like many other devices
 in this chapters) requires some support circuitry.  
-Figure~\ref{fig:pushbutton} shows how to wire a normally open
+Figure~\ref{fig:commonPeripheralComponentspushbutton} shows how to wire a normally open
 pushbutton so that it outputs a logic 0 when pressed, otherwise 
 it outputs a logic 1.  The term normally open refers to the fact
 that the terminals of the button normally form an open circuit.
 When pressed the terminals form a short circuit.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/pushbutton.eps}}
+\center{\includegraphics{pushbutton.eps}}
 \caption{A push button with a pull-up resistor.}
-\label{fig:pushbutton}
+\label{fig:commonPeripheralComponentspushbutton}
 \end{figure}
 
 Usually, the button of a normally open push button will be colored
@@ -55,17 +58,17 @@ then $X=1$.
 No discussion of buttons (and switches) would be complete without
 mentioning signal bouncing.  In an ideal world when the button
 \index{switch bouncing|(}
-shown in Figure~\ref{fig:pushbutton} was pressed then output $X$
+shown in Figure~\ref{fig:commonPeripheralComponentspushbutton} was pressed then output $X$
 would go solidly from 5 volts to ground.  Unfortunately, pushbuttons
 are mechanical devices with real mechanical limitations.  The contacts
 inside the pushbutton will literally bounce when contact is first 
 made.  This bouncing will cause the voltage to oscillate as shown
-in Figure~\ref{fig:bounce}.
+in Figure~\ref{fig:commonPeripheralComponentsbounce}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/bounce}}
+\center{\includegraphics{bounce}}
 \caption{Signal bounce out of a pushbutton pressed at time $t$.}
-\label{fig:bounce}
+\label{fig:commonPeripheralComponentsbounce}
 \end{figure}
 
 Switch bouncing can be a major problem in digital circuits because
@@ -90,13 +93,13 @@ circuits involved operate at dramatically different frequencies.
 This time difference becomes important when a FSM must respond to 
 human inputs.  For example, consider a circuit which counts the number
 of times that a button has been pressed using the circuit shown in 
-Figure~\ref{fig:push7button}.  Assume that the clock is running at
+Figure~\ref{fig:commonPeripheralComponentspush7button}.  Assume that the clock is running at
 8Mhz.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/pushbutton_dp}}
+\center{\includegraphics{pushbutton_dp}}
 \caption{A circuit to count the number of times a button is pushed.}
-\label{fig:push7button}
+\label{fig:commonPeripheralComponentspush7button}
 \end{figure}
 
 The output of the FSM drives the control inputs of an 8-bit counter.
@@ -104,32 +107,32 @@ The output of the counter is sent to two hex to seven segment converts
 which send their output to a pair of 7-segment displays.
 The FSM needs to sample the button and on each push tell the counter
 to count up by 1.  At all other times the FSM should tell the counter
-to hold its count value.   Figure~\ref{fig:pushfsm}
+to hold its count value.   Figure~\ref{fig:commonPeripheralComponentspushfsm}
 shows two possible state diagrams for the FSM.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/pushfsm}}
+\center{\includegraphics{pushfsm}}
 \caption{Two state diagrams for the pushbutton circuit.}
-\label{fig:pushfsm}
+\label{fig:commonPeripheralComponentspushfsm}
 \end{figure}
 
 Lets first examine the incorrect state diagram on the left.  It
-contains two states {\bf open, press}.  When the FSM is in state
-{\bf open} it outputs a 2-bit control signal to the counter
-telling it to hold.  When the FSM is in state {\bf press} the
+contains two states \textbf{ open, press}.  When the FSM is in state
+\textbf{ open} it outputs a 2-bit control signal to the counter
+telling it to hold.  When the FSM is in state \textbf{ press} the
 2-bit output tells the counter to count up.  This seems to be
 what the word statement asked for, except for one subtle point; digital
 circuits are much faster than humans.  This fact implies that
 a momentary button push by a human could easily last, say
 a million clock cycles for the FSM.  This implies that the FSM
-would stay in the {\bf press} state for a million clock cycles.
+would stay in the \textbf{ press} state for a million clock cycles.
 Hence, the circuit would count up a million times.  We wanted
 our circuit to count up once for each button push.  Obviously,
 the state diagram on the left is not what we wanted.
 
 The solution to this problem is shown in the state diagram to
 the right.  The difference in this state diagram is the introduction
-of a third state, {\bf release}.  This state is entered when the
+of a third state, \textbf{ release}.  This state is entered when the
 push button is released and is exited on the next clock cycle.
 Thus, we spend only one clock cycle in the state in which the
 counter is told to increment.  The memory input equations and
@@ -147,11 +150,7 @@ frequency equal to twice the frequency of the fastest event your
 circuit should be expected to see.   In this way the circuit
 will not miss any events of interest.
 
-\section{Switch Types}
-\pagebreak
-.
-\pagebreak
-.
+%\section{Switch Types}
 
 \section{Rotary Encoder}
 \index{rotary encoder|(}
@@ -181,18 +180,18 @@ same value, say 00, when it is in a detent.  When the knob is moved
 from one detent to the next the output of the encoder moves through
 a gray coded sequence.  The direction of the knob twist determine whether the
 output sequence is 00,01,11,10 or 00,10,11,01.   \index{gray code|(} 
-Figure~\ref{fig:encoder}A shows the physical appearance of a rotary 
+Figure~\ref{fig:commonPeripheralComponentsencoder}A shows the physical appearance of a rotary 
 encoder and the support circuitry necessary to operate one.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/encoder}}
+\center{\includegraphics{encoder}}
 \caption{a) A physical rotary encoder.  B) The support circuitry for
 the encoder.}
-\label{fig:encoder}
+\label{fig:commonPeripheralComponentsencoder}
 \end{figure}
 
 Clearly, a rotary encoder is not able to produce logic levels out 
-of thin air.   Figure~\ref{fig:encoder}B shows the support 
+of thin air.   Figure~\ref{fig:commonPeripheralComponentsencoder}B shows the support 
 circuitry consisting of resistors and capacitors connected to 
 \VCC and GND.  In this schematic the rotary encoder is shown as the
 pair of switches in the shaded box.  The upper switch is closed
@@ -228,19 +227,19 @@ data line a keyboard also outputs a clock signal.  Nominally, both the
 clock and data lines are held high (they are both open collector, the 
 pull-up resistor being inside the keyboard).  The act of pressing and releasing 
 a key causes three discrete packages of information to be transmitted from
-the keyboard as shown at the top of Figure~\ref{fig:keyboard}.
+the keyboard as shown at the top of Figure~\ref{fig:commonPeripheralComponentskeyboard}.
 
 \begin{figure}[ht]
-\center{\scalebox{0.8}{\includegraphics{./Fig10/keyboard}}}
+\center{\scalebox{0.8}{\includegraphics{keyboard}}}
 \caption{A timing diagram shown the relationship between the
 clock and data signals.}
-\label{fig:keyboard}
+\label{fig:commonPeripheralComponentskeyboard}
 \end{figure}
 
 When you press a key on your keyboard the make code of the key is 
 transmitted.  When the key is released a break code is sent immediately 
 followed by the scan code of the key.  Each of these packets consists
-of 11-bits as shown in the lower half of Figure~\ref{fig:keyboard}.
+of 11-bits as shown in the lower half of Figure~\ref{fig:commonPeripheralComponentskeyboard}.
 The data from the keyboard is always valid on the falling edge of the
 clock signal; data is typically changed on or around the rising edge
 of the clock.  The 11-bit data packet always starts with a start-bit
@@ -318,7 +317,7 @@ the corresponding row and column. \\ \hline
 
 You probably used a keypad the last time that you dialed a phone.
 Keypads generally are laid out in a grid.
-For example, on the left side of Figure~\ref{fig:keypad} 
+For example, on the left side of Figure~\ref{fig:commonPeripheralComponentskeypad} 
 is a keypad with 4 rows and 4 columns.  The internal organization
 of this keypad is shown to the right in this figure.  A keypad is
 nothing more than a set of switches, when a key is pressed a connection
@@ -327,9 +326,9 @@ the "6" key is pressed a connection is made between row 2 and column
 3.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/keypad}}
+\center{\includegraphics{keypad}}
 \caption{A keypad and its internal circuit.}
-\label{fig:keypad}
+\label{fig:commonPeripheralComponentskeypad}
 \end{figure}
 
 The operation of the keypad is straight forward.  Building a circuit
@@ -359,11 +358,11 @@ Behavior:      & When 2V is applied from the anode to the cathode the LED lights
 \end{tabular}
 
 An LED is arguably the simplest output device.  Foremost a LED
-is a diode (see Figure~\ref{fig:led}A) which means that it is a 
+is a diode (see Figure~\ref{fig:commonPeripheralComponentsled}A) which means that it is a 
 two terminal device which operates
-in two modes.  When {\it forward biased} a higher voltage is applied
+in two modes.  When \textit{ forward biased} a higher voltage is applied
 to the anode and a lower voltage applied to the cathode producing a 
-current flow through the diode.  In {\it reverse biased} mode the voltage
+current flow through the diode.  In \textit{ reverse biased} mode the voltage
 on the anode is not sufficiently higher than the voltage on the cathode,
 hence no current flows.   The amount of current flowing through an LED
 determines its brightness.
@@ -375,13 +374,13 @@ output around 2mcd at 10mA.  Another important parameter of an LED is the
 amount of voltage dropped across it when it is forward biased, termed $V_f$.
 For a normal LED, $V_f=2.0V$ whereas for a normal diode this value is 
 typically 0.7V.  A typical application of an LED is shown in 
-Figure~\ref{fig:led}B.
+Figure~\ref{fig:commonPeripheralComponentsled}B.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/led}}
+\center{\includegraphics{led}}
 \caption{A) The schematic representation of an LED.  B) Two LEDs wired
 to the output of a TTL device.}
-\label{fig:led}
+\label{fig:commonPeripheralComponentsled}
 \end{figure}
 
 The LED configurations driven by out1 and out2 are denoted active 
@@ -394,10 +393,10 @@ hence no light is emitted.  When out1 is at ground then there is
 a 2V drop across the LED and a 3V drop across the resistor $R_1$.  
 Since current is 
 flowing into the chip when out1 is low we say that out1 is 
-{\it sinking} current when the output is low.  Now, out2 works in
+\textit{ sinking} current when the output is low.  Now, out2 works in
 completely the opposite manner.  When out2 is high there is a 
 2V drop across the LED and a 3V drop across $R_2$.  Since current 
-flows out of out2 we say that out2 {\it sources} current when its 
+flows out of out2 we say that out2 \textit{ sources} current when its 
 output is high.  Since active high outputs are the most intuitive
 way to configure an LED, most students wonder why anyone would 
 wire up an LE in an active low configuration.  The answer lies on
@@ -428,7 +427,7 @@ the world in terms of 0/1, true/false and on/off.  However, there are
 techniques that can be used to  give a digital output a more "analog"
 feel.  Pulse width modulation (PWM) is one of these techniques whereby
 the average power delivered to a device is altered by changing the 
-duty cycle of the driving voltage.  For example, in Figure~\ref{fig:pulse}
+duty cycle of the driving voltage.  For example, in Figure~\ref{fig:commonPeripheralComponentspulse}
 a LED is connected to a TTL device in an active high configuration.  To the
 right in this figure is the timing diagram of the devices output which has
 a 25\% duty cycle.  The average power delivered to the LED for
@@ -445,9 +444,9 @@ formula relating the pulse width $pw$ to the average power dissipated by the
 LED, $D$, is $D = pw*12.8mW$.  
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/pulse}}
+\center{\includegraphics{pulse}}
 \caption{An active high LED and the waveform driving it.}
-\label{fig:pulse}
+\label{fig:commonPeripheralComponentspulse}
 \end{figure}
 
 The only point that remains is to discuss the fundamental frequency of
@@ -480,15 +479,15 @@ The 14-segment alphanumeric display is just a variation on the
 7-segment display discussed on page \pageref{page:7seg}.  The addition
 of 7 extra illuminating segments to the 7-segment display gives
 it the capability of displaying a range of letters as well as
-numbers.  Figure~\ref{fig:alpha}A shows the arrangement of segments
-and their designations.  In Figure~\ref{fig:alpha}B three displays
+numbers.  Figure~\ref{fig:commonPeripheralComponentsalpha}A shows the arrangement of segments
+and their designations.  In Figure~\ref{fig:commonPeripheralComponentsalpha}B three displays
 are used together to form the word "BIT".
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/alpha}}
+\center{\includegraphics{alpha}}
 \caption{A) The arrangement of segments and their designations.  B) Three
 displays forming the word "BIT".}
-\label{fig:alpha}
+\label{fig:commonPeripheralComponentsalpha}
 \end{figure}
 
 Its important to note that both the 7 and 14 segment displays are
@@ -499,15 +498,15 @@ tied together
 and routed outside the package.  If all the cathodes are collected
 together then the displays is called a common cathode display.  If
 all the anodes are collected together then the displays is referred
-to as a common anode.  Figure~\ref{fig:common} shows a common
+to as a common anode.  Figure~\ref{fig:commonPeripheralComponentscommon} shows a common
 cathode display.
 \index{common anode|(}
 \index{common cathode|(}
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/common}}
+\center{\includegraphics{common}}
 \caption{A schematic of a 14-segment common cathode display.}
-\label{fig:common}
+\label{fig:commonPeripheralComponentscommon}
 \end{figure}
 
 
@@ -542,15 +541,15 @@ range regardless of the lighting conditions.   As their name implies,
 an ultrasonic range finder does this by sending out a sound wave
 and then listening for the return echo.  This sound can be heard (and
 felt) by humans and will be refereed to as a chirp.
-Figure~\ref{fig:ultra} shows the transducer generating a chirp in
+Figure~\ref{fig:commonPeripheralComponentsultra} shows the transducer generating a chirp in
 response to enable going high, the resulting sound striking the 
 hexagon and then returning back to the transducer.  This return
 sound would cause the echo signal to go to logic 1.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/ultra}}
+\center{\includegraphics{ultra}}
 \caption{An ultrasonic range finder.}
-\label{fig:ultra}
+\label{fig:commonPeripheralComponentsultra}
 \end{figure}
 
 Given that the transducer is performing both transmit and receive
@@ -612,18 +611,18 @@ far beyond the capabilities of a digital circuit.  A specific
 type of amplifier called an H-bridge can be used as an interface 
 between digital electronics and a DC motor.  An H-bridge can be
 constructed from MOSFETs as shown in 
-Figure~\ref{fig:hbridge}.  An H-bridge derives its name from
+Figure~\ref{fig:commonPeripheralComponentshbridge}.  An H-bridge derives its name from
 this  H-shaped schematic.  The main function of an H-bridge is 
 to allow the potential across the motor to be either positive,
 negative, or zero.  Lets assume that the MOSFETs shown in 
-Figure~\ref{fig:hbridge} have a low resistance between source and
+Figure~\ref{fig:commonPeripheralComponentshbridge} have a low resistance between source and
 drain when the gate is at logic 1 and have a high resistance 
 otherwise.  If $L_1,L_0 = 1,0$ and $R_1,R_0 = 0,1$ then the
 potential difference is $V_l - V_r > 0$.
-Figure~\ref{fig:hbridge}B shows the resulting flow of current.
+Figure~\ref{fig:commonPeripheralComponentshbridge}B shows the resulting flow of current.
 If $L_1,L_0 = 0,1$ and $R_1,R_0 = 1,0$ then the
 potential difference $V_l - V_r < 0$.  The resulting flow of
-current is shown in Figure~\ref{fig:hbridge}C.
+current is shown in Figure~\ref{fig:commonPeripheralComponentshbridge}C.
 If $L_1,L_0 = 0,0$ and $R_1,R_0 = 0,0$ then the potential difference 
 $V_l - V_r < 0$. When none of the H-bridge arms is active we say that
 the motor is coasting because the output shaft 
@@ -633,14 +632,14 @@ to run a DC motor at variable speed the control signals should be PWM
 between the required direction and coast.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/hbridge}}
+\center{\includegraphics{hbridge}}
 \caption{An H-bridge driving a DC motor.}
-\label{fig:hbridge}
+\label{fig:commonPeripheralComponentshbridge}
 \index{motor!H-bridge}
 \end{figure}
 
 There are at least two problems with the schematic in
-Figure~\ref{fig:hbridge} which would prevent it form working.
+Figure~\ref{fig:commonPeripheralComponentshbridge} which would prevent it form working.
 First, 0 and 5 volts may be insufficient to turn on the MOSFETs.
 This problem can be resolved by amplifying the digital signal
 using a single-rail op-amp (LM364) in an open loop configuration.
@@ -682,13 +681,13 @@ attracting the opposite pole of the permanent magnet, turning
 the motors axle.  The trick with a stepper motor is generating
 the correct sequence to turn the motor.  Knowing what's inside
 the stepper motor will help in developing the drive sequence.  
-Figure~\ref{fig:stepper} shows the internal organization of a
+Figure~\ref{fig:commonPeripheralComponentsstepper} shows the internal organization of a
 stepper moor.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig10/stepper}}
+\center{\includegraphics{stepper}}
 \caption{The internal organization of a stepper motor.}
-\label{fig:stepper}
+\label{fig:commonPeripheralComponentsstepper}
 \end{figure}
 
 The permanent magnet on the rotor seeks the induced magnetic field
@@ -697,7 +696,7 @@ when the user applies a positive or negative voltage.  Lets assume
 that a logic 1 on the stator input creates a south magnetic field facing the rotor
 and north field facing outwards from the motor.  A logic 0 on an input
 will create a north magnetic field towards the rotor and a south magnetic
-field orient away from the motor.  In Figure ~\ref{fig:stepper} 
+field orient away from the motor.  In Figure ~\ref{fig:commonPeripheralComponentsstepper} 
 the input $x,x',y,y' = 0,1,0,1$ causes the associated stators to generate
 $N,S,N,S$ magnetic fields towards the rotor.  Since opposite magnetic
 fields attract then the rotor in the figure will feel a counterclockwise 
@@ -759,7 +758,7 @@ Pulse width & angle	\\	\hline \hline
 2.5ms		& 180 degrees	\\	
 \end{tabular}
 
-Each pulse of the control signal is said to {\it refresh} the servo's 
+Each pulse of the control signal is said to \textit{ refresh} the servo's 
 output.  Typically, the output of a servo motor is refreshed at around 
 20Hz.  Between consecutive refreshes the servo motors' output shaft
 may be deflected by the load. Thus, the refresh rate must be sufficient
@@ -963,59 +962,19 @@ scanline, you should wait 0.35mS before strobing vsynch low, ending the
 current frame of video.
 
 %% Circuits
-%% \section{GALs}
-%% \section{FPGAs}
-
 %% communication
 %% \section{InfraRed transmitter/receiver}
 %% \section{IrDA}
-\section{Analog to Digital Converter}
-\pagebreak
-.
-\pagebreak
-.
-
-\section{Digital to Analog Converter}
-\pagebreak
-.
-\pagebreak
-.
-
-\section{Programmable Logic Arrays}
-%% Pull up some of those old HC11 documents where we used a PAL
-%% to do some of the address decoding?
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
-
-\section{Protocols}
-\pagebreak
-.
-\subsection{RS232}
-\pagebreak
-.
-\subsection{I2C}
-\pagebreak
-.
-\pagebreak
-.
-\subsection{Universal Serial Bus}
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
-\pagebreak
-.
-
+%\section{Analog to Digital Converter}
+%\section{Digital to Analog Converter}
+% Arb Logic circuits
+	%\section{Field Programmable Gate Arrays}
+	%% \section{GALs}
+	%% \section{PLAs}
+%\section{Protocols}
+	%\subsection{RS232}
+	%\subsection{I2C}
+	%\subsection{Universal Serial Bus}
 %% Physical environment
 %% \section{Thermometer}
 %% \section{Photoresistor}
-
-
-\section{Exercises}
-\input{hw10}

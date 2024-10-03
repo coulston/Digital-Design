@@ -1,4 +1,9 @@
+\chapter{Optimizing Finite State Machines}
+\label{chapter:Optimize Finite State Machines}
+\graphicspath{ {./chapter11/Fig} }
+
 \chapter{Refining FSM}
+
 The primary purpose of digital design is to construct a circuit that
 actualizes some specified word statement.  As an engineer
 your secondary goal should be to realize this design in the
@@ -19,7 +24,7 @@ assignment.
 
 \section{State Minimization}
 The purpose of state minimization is to reduce the number
-of states in the state table yielding a {\it minimal state
+of states in the state table yielding a \textit{ minimal state
 table}.  For a FSM designed with a dense 
 encoding of the states this optimization will, in general, have 
 very little effect. Since a FSM with $N$ states has 
@@ -179,7 +184,7 @@ then can state Q4 be moved into equivalence class B?  No, state
 Q4 has different outputs from the states in equivalence class B,
 that is why it was put into a different class initially.  In this phase
 (steps 2,3) of the state minimization process the equivalence class are
-only made smaller, class are {\it never} merged.
+only made smaller, class are \textit{ never} merged.
 
 \item [Step 4]
 Since states were moved in step 3 we must go back to step 2 with
@@ -395,11 +400,11 @@ Given the preceding discussion, it should come as no surprise
 that determining a state assignment which minimizes the 
 amount of combinational logic is, in practice, not feasible.
 Thus, if we want an assignment that minimizes the amount
-of combinational logic then we must be guided by {\it heuristics}.
+of combinational logic then we must be guided by \textit{ heuristics}.
 A heuristic is a rule of thumb.
 
 The heuristics for the state assignment problems are based on assigning
-pairs of states {\it adjacent} assignments.  Two states are adjacent if
+pairs of states \textit{ adjacent} assignments.  Two states are adjacent if
 their binary representation differ by a single bit.
 
 The following pairs of states should be given adjacent state assignments.

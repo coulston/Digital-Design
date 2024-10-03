@@ -1,6 +1,10 @@
+\section{Exercises}
+\label{section:commonperipheralComponents}
+\graphicspath{ {./chapter10/FigHw} }
+
 \begin{enumerate}
 
-\item {\bf (8 pts.)}
+\item \textbf{ (8 pts.)}
 Design a digital circuit to debounce a pushbutton.  Your circuit
 will have one input $X$ (see Figure~\ref{fig:pushbutton}) and
 one (debounced) output $Z$. Your circuit will run off a 1MHz clock.  
@@ -13,7 +17,7 @@ the debouncer should not change until there is compelling evidence to
 in the form of complete and consistent disagreement to the current
 output.
 
-\item{\bf (16 pts.)} Design a digital circuit to keep track of the
+\item\textbf{ (16 pts.)} Design a digital circuit to keep track of the
 number of net detents turned through on a rotary encoder.  The circuit
 is to add CW rotation and subtract CCW rotations.  The count value
 saturates at -128 or +127 as described in the 4-bit saturation
@@ -38,10 +42,10 @@ should equal 1. \\ \hline
 Show your datapath and control, define the CW and write the binary control
 word for each state.
 
-\item{\bf (8 pts.)} Build a circuit which outputs the control sequence
+\item\textbf{ (8 pts.)} Build a circuit which outputs the control sequence
 to a stepper motor.
 
-\item{\bf (32 pts.)} Build a digital stopwatch.
+\item\textbf{ (32 pts.)} Build a digital stopwatch.
 
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Stopwatch         \\ \hline
@@ -57,7 +61,7 @@ Behavior:      & Keep track of elapsed time. \\ \hline
 
 The stopwatch will have 2 bits of input provided by the
 push buttons called left and right.  Your circuit will also have as 
-input a 12Mhz ($12{\rm x}10^6$ hz) clock signal.   The output of the stop 
+input a 12Mhz ($12\text{ x}10^6$ hz) clock signal.   The output of the stop 
 watch will be displayed on three seven segment displays.  Two 
 displays will show seconds and one will show minutes.   The signal
 BLINK is connected to an LED (or to the 7-segment display decimal points)
@@ -65,7 +69,7 @@ to indicate when the main TIMER is running.  The overall
 architecture of the stopwatch is shown in Figure~\ref{fig:stopwatch_dp}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw10/Prob10-4}}
+\center{\includegraphics{Prob10-4}}
 \caption{The high level architecture of the stopwatch.}
 \label{fig:stopwatch_dp}
 \end{figure}
@@ -101,7 +105,7 @@ than a single clock cycles.  See page~\pageref{page:push_dp}
 for more details.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw10/Prob10-4b}}
+\center{\includegraphics{Prob10-4b}}
 \caption{The users view of the stopwatch FSM.}
 \label{fig:stopwatch_fsm}
 \end{figure}
@@ -126,7 +130,7 @@ output equations.
 The control unit is to be implemented using a ones hot encoding.
 
 
-\item{\bf (32 pts.)} Create a circuit that displays a fancy light 
+\item\textbf{ (32 pts.)} Create a circuit that displays a fancy light 
 pattern that is "programmed" in by the user and then displayed
 automatically by the digital circuit.  The fancy lights circuit
 has an 8-bit data output on which are arranged 8 active high LEDs.
@@ -164,7 +168,7 @@ output equations.
 The control unit is to be implemented using a ones hot encoding.
 
 
-\item {\bf(32 pts.)}
+\item \textbf{(32 pts.)}
 Build a sound manipulator using the stereo codec available on the
 XESS corporation's XS40 or XSA-100 boards.  A stereo codec is a digital
 devices which manipulates analog stereo audio waveforms.  A stereo audio signal
@@ -187,7 +191,7 @@ plate provides a solid mounting point for the diaphragm as well as a point
 of attachment for the speaker.
 
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw10/Prob10-6}}
+\center{\includegraphics{Prob10-6}}
 \caption{The main parts of a speaker.}
 \label{fig:speaker}
 \end{figure}
@@ -223,7 +227,7 @@ shows the codec\_intfc consisting of hardware and firmware
 building blocks. 
 
 \begin{figure}[ht]
-\center{ \scalebox{0.75}{\includegraphics{./FigHw10/Prob10-6b}} }
+\center{ \scalebox{0.75}{\includegraphics{Prob10-6b}} }
 \caption{A schematic showing the relationship between the stereo codec,
 the Xilinx FPGA, the codec\_intfc and your digital circuit.}
 \label{fig:codec}
@@ -253,7 +257,7 @@ Status:        & radc\_rdy, ladc\_rdy, rdac\_rdy, ldac\_rdy     \\ \hline
 Physical Input:& stereo audio input signal        \\ \hline
 Physical Output:& stereo audio output signal        \\ \hline
 Others:        & none					\\ \hline
-Behavior:      & \scalebox{0.75}{\includegraphics{./FigHw10/Prob10-6c}}	\\ \hline
+Behavior:      & \scalebox{0.75}{\includegraphics{Prob10-6c}}	\\ \hline
 \end{tabular}
 
 The behavior of the stereo codec is driven by the four status signals
@@ -315,7 +319,7 @@ called $\mathcal{F}$.  $\mathcal{F}$ should be a low frequency signal
 \end{enumerate}
 
 
-\item {\bf (18 pts.)}
+\item \textbf{ (18 pts.)}
 Build the VGA\_SYNCH component.
 The VGA interface of the VGA\_SYNCH component has 5-bits of output
 1-bits each for the red, green and

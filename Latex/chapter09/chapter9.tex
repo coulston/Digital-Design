@@ -1,4 +1,6 @@
-\chapter{Digital gates}
+\chapter{Analog Foundation of Digital Circuits}
+\label{chapter:Analog Foundation}
+\graphicspath{ {./chapter09/Fig} }
 
 One of the greatest skills in a computer engineers repertoire 
 is their skill with electrical concepts.  Happily, a few 
@@ -7,32 +9,14 @@ through even the most technical assignment.  In this chapter
 you will be introduced to the analog aspect of basic gates
 introduced in chapter 2.  
 
-\section{Prerequisite Concepts}
-\pagebreak
-.
-
-\subsection{Voltage Sources}
-
-\subsection{Thevenin Equivalence}
-\pagebreak
-.
-
-\subsection{RC delay}
-\pagebreak
-.
-
-\subsection{Transistors}
-\pagebreak
-.
-
-\section{Logic Families}
-
-\subsection{TTL}
-\pagebreak
-.
-
-
-\subsection{CMOS}
+%\section{Prerequisite Concepts}
+%\subsection{Voltage Sources}
+%\subsection{Thevenin Equivalence}
+%\subsection{RC delay}
+%\subsection{Transistors}
+%\section{Logic Families}
+%\subsection{TTL}
+%\subsection{CMOS}
 
 
 The nomenclature used to identify basic gates  is
@@ -48,7 +32,7 @@ level design and fabrication processes used to construct the chip.
 Two of the most common technologies are the LS and HC.  LS technology 
 is often referred to as TTL and the HC technology is referred to as 
 CMOS.  Only if you are looking for very specific device characteristics
-do you need to worry about the technology.  Otherwise the tradeoffs 
+do you need to worry about the technology.  Otherwise the trade offs 
 between these two two technologies results in either being a fine 
 choice for most university projects.  The final part of a 
 devices identification is its number.  Commonly used parts have two 
@@ -66,7 +50,7 @@ takes it one page at a time and discuss what we see along the way.
 
 %% \subsection{Page 1}
 The first page describes the devices behavior.  The text under
-the {\bf description} heading tells it all,
+the \textbf{ description} heading tells it all,
 \begin{quote}
 	"These devices contain four independent 2-input NAND gates."
 \end{quote}
@@ -98,7 +82,7 @@ real meat-and-potatoes section.  Most logic devices, be they
 FPGAs or PALs will have a page listing the recommended operating conditions,
 electrical characteristics and switching characteristics.  Lets walk
 through this third page from top to bottom starting with the 
-{\bf recommended operating conditions} section.  
+\textbf{ recommended operating conditions} section.  
 A portion of the recommended operating conditions table is duplicated
 below with an additional figure to the right showing the I/O values
 relevant to the listed parameter as well as an equivalent circuit 
@@ -108,10 +92,10 @@ the listed parameter.
 \begin{tabular}{l|l|lll|l||l}
 Name& Definition		& Min & Nom & Max & units & Equivlent Circuit 	\\ \hline
 \VCC & Supply Voltage		& 4.75& 5   & 5.25& V     &	\\ \hline
-\VIH & High-level input voltage	& 2   &     &     & V     &\includegraphics{./Fig9/vih} \\ \hline
-\VIL & Low-level input voltage	&     &     & 0.8 & V     &\includegraphics{./Fig9/vil} \\ \hline
-\IOH & High-level output current&     &     &-1.0 & mA    &\includegraphics{./Fig9/ioh} \\ \hline
-\IOL & Low-level output current	&     &     &20.0 & mA    &\includegraphics{./Fig9/iol} \\ 
+\VIH & High-level input voltage	& 2   &     &     & V     &\includegraphics{vih} \\ \hline
+\VIL & Low-level input voltage	&     &     & 0.8 & V     &\includegraphics{vil} \\ \hline
+\IOH & High-level output current&     &     &-1.0 & mA    &\includegraphics{ioh} \\ \hline
+\IOL & Low-level output current	&     &     &20.0 & mA    &\includegraphics{iol} \\ 
 \end{tabular}
 
 Starting at the top of the table
@@ -136,17 +120,17 @@ should be clear from the Thevenin's equivalent circuit that current flows
 to ground, hence into the output of the nand gate.
 
 The next table on page 3 is titled 
-{\bf electrical characteristics over recommended operating free-air
+\textbf{ electrical characteristics over recommended operating free-air
 temperature range}.  As before select rows will be accompanied by
 a figure describing the electrical behavior of the gate for the 
 specified parameter.
 
 \begin{tabular}{l|l|lll|l||l}
 Name& Definition		& Min & Nom & Max & units &  	\\ \hline
-\VOH & High-level output voltage& 2.7 & 3.4 &     & V     &\includegraphics{./Fig9/voh} \\ \hline
-\VOL & Low-level output voltage	&     &     & 0.5 & V     &\includegraphics{./Fig9/vol} \\ \hline
-\IIH & High-level input  current&     &     & 0.05& mA    &\includegraphics{./Fig9/iih} \\ \hline
-\IIL & Low-level input  current	&     &     &-2.0 & mA    &\includegraphics{./Fig9/iil} \\
+\VOH & High-level output voltage& 2.7 & 3.4 &     & V     &\includegraphics{voh} \\ \hline
+\VOL & Low-level output voltage	&     &     & 0.5 & V     &\includegraphics{vol} \\ \hline
+\IIH & High-level input  current&     &     & 0.05& mA    &\includegraphics{iih} \\ \hline
+\IIL & Low-level input  current	&     &     &-2.0 & mA    &\includegraphics{iil} \\
 \end{tabular}
 
 \VOH is the minimum voltage that a nand gate will produce as a 
@@ -156,7 +140,7 @@ highest voltage a nand gate will output in the guise of logic 0.
 Typically, a logic 0 output is close to ground but can increase if
 a lot of current is dumped into the output (see \IOL above).  \IIL is
 the maximum amount of current consumed by the nand gate when a logic
-0 is applied to the input.  Its somewhat counterintuitive to think
+0 is applied to the input.  Its somewhat counter intuitive to think
 about current flowing out of an input.  However the equivalent circuit
 shows that the input is attached to \VCC consequently current flows
 out of the input.  \IIH is the amount current consumed by an input
@@ -177,7 +161,7 @@ configuration is relaxed to mean that the inputs and outputs of a
 74ls devices come from and go to other 74LS type devices.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig9/cascade}}
+\center{\includegraphics{cascade}}
 \caption{A cascade sequence of nand gates.}
 \label{fig:cascade_conf}
 \end{figure}
@@ -247,7 +231,7 @@ the nand gate to the left is trying to transmit logic 1 to the
 nand gate to the right.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig9/impedance}}
+\center{\includegraphics{impedance}}
 \caption{The Thevenin's equivalence of an nand gates output feeding the
 input impedance of a nand gate.}
 \label{fig:impedance}
@@ -281,8 +265,8 @@ case this still seems inefficient.  In the third case let
 is less than but close to 1.  Hence a majority of the voltage
 generated by the nand gate A would be seen at the input of nand gate
 B. This is just what we want, hence we arrive at the following
-rule. {\it Generally, digital devices are built with small output
-impedances and large input impedance so that the signal
+rule. \textit{ Generally, digital devices are built with small output
+impedance and large input impedance so that the signal
 generated by a source is dropped across the destination}.
 
 \section{Open Collector}
@@ -304,7 +288,7 @@ connected directly to ground forcing the output to logic 0.  In order
 to force the output to logic 1 the values on both bases are inverted.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig9/transistor}}
+\center{\includegraphics{transistor}}
 \caption{A simplified 74ls00 output with the terminals of the 
 transistor labeled.}
 \label{fig:transistor}
@@ -316,5 +300,3 @@ but cannot be connected to \VCC.  In order to make an open collector
 output operate properly, the output line must be tied to \VCC via
 a resistor; typically 5k$\Omega$.
 
-\section{Exercises}
-\input{hw9}

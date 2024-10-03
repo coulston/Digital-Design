@@ -1,4 +1,6 @@
 \chapter{Finite State Machines}
+\label{chapter:Finite State Machines}
+\graphicspath{ {./chapter07/Fig} }
 
 In Chapter 5 the exploration began with sequential circuits, circuits
 whose output is a function of the input and current state, and by examining
@@ -14,28 +16,28 @@ complex system, it may be necessary to build a control word table to
 determine the output equations.  Otherwise, the output equations are derived
 directly from the state diagram.  In order to make this discussion more 
 concrete, all the FSMs to be designed in this chapter have the 
-structure shown in Figure~\ref{fig:GenFSM}.
+structure shown in Figure~\ref{fig:sequentialFSMGenFSM}.
 
 \begin{figure}[ht]
-\center{\scalebox{1.0}{\includegraphics{./Fig7/GenFSM}}}
+\center{\scalebox{1.0}{\includegraphics{GenFSM}}}
 \caption{The standard structure of a FSM for the current chapter.}
-\label{fig:GenFSM}
+\label{fig:sequentialFSMGenFSM}
 \end{figure}
 \label{page:GenFSM}
 
 Each of the signals $X,Y,Q,Z$ is a vector, consisting of zero or more bits.  
 The $X$ signal is the input to the FSM from the system being controlled.  
 The $Z$ signal is the output from the FSM to the system being controlled.
-The combinational logic circuit generating $Z$ is called the {\it output 
+The combinational logic circuit generating $Z$ is called the \textit{ output 
 equations} (OE).  The state of the FSM is carried on the $Q$ 
 lines.  Each bit of $Q$ is the output of a D flip flop. Thus, if $Q$ is
 six bits wide, then the FSM has six D flip flops.  The $Y$ signals are 
 called the 
 memory inputs; they are the data inputs to the D flip flops.  The combinational
-logic circuit generating the $Y$ signals is called the {\it memory input
+logic circuit generating the $Y$ signals is called the \textit{ memory input
 equations} (MIEs). In order to improve the readability of circuit 
 diagrams, from now on, the clock signal will not be shown.
-With respect to Figure~\ref{fig:GenFSM}, the design 
+With respect to Figure~\ref{fig:sequentialFSMGenFSM}, the design 
 of a FSM requires three questions be answered: What are the MIEs; what 
 are the OEs; and how many D flip flops are required?  These questions are  
 answered by first understanding how to convert a word statement into a state
@@ -91,7 +93,7 @@ the next state exists.
 In order to transform an abstract state diagram into a real circuit, the 
 symbolic state names in the state diagram must be given some binary encoding.  
 When the FSM is in a particular state, $S$, the binary coding for $S$ 
-is present on the outputs of the flip flops; $Q$ in Figure~\ref{fig:GenFSM}.
+is present on the outputs of the flip flops; $Q$ in Figure~\ref{fig:sequentialFSMGenFSM}.
 Many different ways can be proposed to choose the encoding of states.  The two most 
 popular are dense and one-hot.
 
@@ -156,7 +158,7 @@ arc contributes a term $P*c$ to the MIE for state $S$.  If  more
 than one arc terminates at state $S$, then the MIE for $S$ is the logical
 OR of the terms from each arc.
 
-For example, in the state diagram shown in Figure~\ref{fig:ones}, three 
+For example, in the state diagram shown in Figure~\ref{fig:sequentialFSMones}, three 
 arcs terminate at state $S$.  Consequently, the MIE for state $S$ 
 consists of three terms, one from each of the arcs.  The arc from state $A$
 contributes the term $Q_Ax'y$, the arc from state $B$ contributes $Q_Bx'$,
@@ -164,14 +166,14 @@ and the arc from state $C$ contributes $Q_C(x+y')$.  Putting all these terms
 together yields the memory input equation $D_S = Q_Ax'y + Q_Bx' + Q_C(x+y')$.
 
 \begin{figure}[ht]
-\center{\scalebox{0.8}{\includegraphics{./Fig7/Ones}}}
+\center{\scalebox{0.8}{\includegraphics{Ones}}}
 \caption{A state diagram and its FSM.}
-\label{fig:ones}
+\label{fig:sequentialFSMones}
 \end{figure}
 
 The third step in the transformation of a state diagram into a circuit
 diagram requires the elaboration of the output bits and the definition of their
-value for each state forming an output table.  From Figure~\ref{fig:GenFSM}, 
+value for each state forming an output table.  From Figure~\ref{fig:sequentialFSMGenFSM}, 
 see that the OEs are dependent only on the state.  Remember the
 output from the flip flop associated with $S$, $Q_S$, equals 1 when the 
 FSM is in state $S$.  Consequently, if an output $Z$ equals 1 when the 
@@ -183,7 +185,7 @@ is the logical OR of these states.
 
 The furnace controller circuit first introduced in Chapter 5 is 
 revisited to better understand the concepts illustrated in 
-Figure~\ref{fig:ones}.
+Figure~\ref{fig:sequentialFSMones}.
 
 
 %%----------------FURNACE CONTROLLER------------
@@ -198,31 +200,31 @@ the low threshold, then $T_{low}$ outputs 1; otherwise it outputs 0.
 The output from the FSM controls a furnace.  When the FSM outputs a 
 1, the furnace turns on, warming the house.  When the FSM outputs a 0, 
 the furnace is turned off, causing the house to cool down.  A graph
-of this controller's behavior is given in Figure~\ref{fig:HysteresisGraph}.
+of this controller's behavior is given in Figure~\ref{fig:sequentialFSMHysteresisGraph}.
 
 \paragraph{State Diagram}
 The FSM has two bits of input and one bit of
-output. The state diagram, shown in Figure~\ref{fig:FurnaceSD}, has
-an asterisk in the state {\bf OFF} implying that this state is the reset state. 
-Hence, for start-up, the furnace controller is set in the {\bf OFF}
+output. The state diagram, shown in Figure~\ref{fig:sequentialFSMFurnaceSD}, has
+an asterisk in the state \textbf{ OFF} implying that this state is the reset state. 
+Hence, for start-up, the furnace controller is set in the \textbf{ OFF}
 state.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig7/FurnaceSD}}
+\center{\includegraphics{FurnaceSD}}
 \caption{A state diagram describing the furnace controller.}
-\label{fig:FurnaceSD}
+\label{fig:sequentialFSMFurnaceSD}
 \end{figure}
 
 \paragraph{Circuit Diagram}
-The circuit for the FSM shown in Figure~\ref{fig:FurnaceSD} requires 
+The circuit for the FSM shown in Figure~\ref{fig:sequentialFSMFurnaceSD} requires 
 two flip flops because it has two states.  These flip flops can be called
 ON and OFF, their inputs $D_{on}$ and $D_{off}$, and their outputs
 $Q_{on}$ and $Q_{off}$.
 
 The MIEs are derived directly from the state diagram.  Two arcs
-terminate at the {\bf ON} state, thus the MIE for this state  has
+terminate at the \textbf{ ON} state, thus the MIE for this state  has
 two terms, $D_{on} = Q_{off}*T_{low}' + Q_{on}*T_{hi}'$.  Likewise, the
-MIE for the {\bf OFF} state has two terms, 
+MIE for the \textbf{ OFF} state has two terms, 
 $D_{off} = Q_{on}*T_{hi} + Q_{off}*T_{low}$.
 
 In order to determine the OEs, an output table is constructed.  The 
@@ -239,23 +241,23 @@ OFF		& 0		\\
 
 \end{tabular}
 \\ \\
-Since the single output equals 1 when the FSM is in the {\bf ON} state, 
+Since the single output equals 1 when the FSM is in the \textbf{ ON} state, 
 $Z_{furnace} = Q_{on}$.
 Putting all this together yields the complete circuit diagram for the furnace 
-controller FSM as shown in Figure~\ref{fig:FurnaceCircuit}.
+controller FSM as shown in Figure~\ref{fig:sequentialFSMFurnaceCircuit}.
 
 \begin{figure}[ht]
 
-\center{\includegraphics{./Fig7/FurnaceCir}}
+\center{\includegraphics{FurnaceCir}}
 \caption{The circuit diagram for the furnace controller.}
-\label{fig:FurnaceCircuit}
+\label{fig:sequentialFSMFurnaceCircuit}
 
 \end{figure}
 
 One final note needs to be made about the circuit diagram in 
-Figure~\ref{fig:FurnaceCircuit}; its reset configuration.  According
-to the state diagram shown in Figure~\ref{fig:FurnaceSD}, the
-{\bf OFF} state is the reset state.  Hence, the reset signal
+Figure~\ref{fig:sequentialFSMFurnaceCircuit}; its reset configuration.  According
+to the state diagram shown in Figure~\ref{fig:sequentialFSMFurnaceSD}, the
+\textbf{ OFF} state is the reset state.  Hence, the reset signal
 is wired to the asynchronous active low set input of the 
 OFF D flip flop so that its output goes to logic 1 when the
 reset is activated.  All the other flip flops are 
@@ -301,30 +303,30 @@ example timing diagram,  the sequence of events
 occurring  inside the FSM needs to be understood.
 
 The events occurring in the FSM are referenced to the clock input of the 
-D flip flops inside the FSM; see Figure~\ref{fig:GenTime}.  Since flip
+D flip flops inside the FSM; see Figure~\ref{fig:sequentialFSMGenTime}.  Since flip
 flops sample their inputs on the positive edge of the clock, this point is the
 beginning of the timing analysis, denoted as Event 1 in 
-Figure~\ref{fig:GenTime}.  The propagation delay of the flip flops means 
+Figure~\ref{fig:sequentialFSMGenTime}.  The propagation delay of the flip flops means 
 a small delay occurs between the clock edge and the flip flop outputs, $Q$,
-becoming valid, Event 2 in Figure~\ref{fig:GenTime}.  The propagation delay 
+becoming valid, Event 2 in Figure~\ref{fig:sequentialFSMGenTime}.  The propagation delay 
 of the flip flops is denoted $T_{FF}$.  In order to maximize the clocking 
 frequency of the FSM, the new inputs, $X$, to the FSM should be applied at the
 same moment that the flip flop outputs are becoming valid.  This event is Event 3
-in Figure~\ref{fig:GenTime}. According to Figure~\ref{fig:GenFSM}, changing
+in Figure~\ref{fig:sequentialFSMGenTime}. According to Figure~\ref{fig:sequentialFSMGenFSM}, changing
 $Q$ and $X$ has two effects, the outputs $Z$ change and the memory
 inputs $Y$ change.  The delay between the application of the new inputs to
 the MIE logic and $Y$ is the propagation delay of the combination logic, denoted
-$T_{combo}$ in Figure~\ref{fig:GenTime}.  Event 4 denotes the instant in time
+$T_{combo}$ in Figure~\ref{fig:sequentialFSMGenTime}.  Event 4 denotes the instant in time
 when $Y$ becomes valid.  When the $Y$ values are valid, a small
 delay occurs while the flip flops register their new inputs, denoted $T_{su}$.  After 
 this setup time, the FSM is ready for another clock edge.  
 
 \begin{figure}[ht]
 
-\center{\includegraphics{./Fig7/GenTime}}
+\center{\includegraphics{GenTime}}
 \caption{A timing diagram showing the sequence of events in a FSM.
 The circled numbers refer to the sequence of events in a FSM.}
-\label{fig:GenTime}
+\label{fig:sequentialFSMGenTime}
 
 \end{figure}
 \label{page:GenTime}
@@ -339,43 +341,43 @@ of a FSM is $F_{max} = 1/T_{total}$.
 
 Consider the operation of the furnace controller through time.
 To do this, consult the memory input equations of the
-FSM in Figure~\ref{fig:FurnaceCircuit}.  A timing diagram, Figure~\ref{fig:FurnaceTime}, 
+FSM in Figure~\ref{fig:sequentialFSMFurnaceCircuit}.  A timing diagram, Figure~\ref{fig:sequentialFSMFurnaceTime}, 
 shows a sequence of inputs applied and the
 behavior of the circuit. At some time before time=0, the reset signal is
 asserted to logic 0.  This reset event causes the FSM to go into the 
-{\bf OFF} state.  The 
-reset signal is released prior to time=0, but the FSM stays in the {\bf OFF}
+\textbf{ OFF} state.  The 
+reset signal is released prior to time=0, but the FSM stays in the \textbf{ OFF}
 state because it has not seen a positive clock edge.  At time=0, a positive
 clock edge arrives  while the 
 temperature is below the low threshold. Hence, the furnace transitions
-into the {\bf ON} state.  The furnace starts producing heat, so the 
+into the \textbf{ ON} state.  The furnace starts producing heat, so the 
 temperature in the house increases. At 
 time=15 the temperature goes above the lower threshold, causing 
 $T_{low}=1$, but the temperature is still below the higher threshold, so $T_{hi}=0$.
 The $Q_{on}*T_{hi}'$ term in $D_{on}$ will equal 1, causing the FSM
-to transition into the {\bf ON} state, during the next clock edge at time=20; 
+to transition into the \textbf{ ON} state, during the next clock edge at time=20; 
 not much of a transition really.  Since the furnace remains on, it is
 still producing heat and increasing the temperature in the house.
 At time=25, the high temperature threshold is exceeded causing
 $T_{hi}=1$ as well as $T_{low}=1$.  The $Q_{on}*T_{hi}$ term of
-$D_{off}$ will equal 1, causing the FSM to transition into the {\bf OFF}
+$D_{off}$ will equal 1, causing the FSM to transition into the \textbf{ OFF}
 state at the next positive clock edge at time=30.  With the furnace
 off, the temperature in the house starts to drop.  At time=35, the
 temperature drops below the high threshold causing $T_{high}=0$,
 but still remains above the low threshold causing $T_{low}=1$.
 The $Q_{off}*T_{low}$ term of $D_{off}$ equals 1 causing the
-FSM to transition into the {\bf OFF} state at the next clock edge at
+FSM to transition into the \textbf{ OFF} state at the next clock edge at
 time=40.  Again, this change is not much of a transition because the FSM stays
 in the same state.  At time=45, the temperature drops below the low 
 threshold.  This change causes the $Q_{off}*T_{low}'$ term of $D_{on}$ to 
-equal 1, causing the FSM to transition to the {\bf ON} state at the next 
+equal 1, causing the FSM to transition to the \textbf{ ON} state at the next 
 clock edge at time=50.
 
 \begin{figure}[ht]
 
-\center{\includegraphics{./Fig7/FurnaceTime}}
+\center{\includegraphics{FurnaceTime}}
 \caption{A timing diagram for the furnace controller.}
-\label{fig:FurnaceTime}
+\label{fig:sequentialFSMFurnaceTime}
 
 \end{figure}
 
@@ -414,13 +416,13 @@ MIEs.  Hence, use the second approach and move on to
 defining the states.  The FSM has eight states:  
 0\textcent, 5\textcent, $\ldots$ 35\textcent~each representing the total
 amount of money deposited so far.  Clearly, 0\textcent~should be the 
-reset state.  The complete FSM is shown in Figure~\ref{fig:vend}.
+reset state.  The complete FSM is shown in Figure~\ref{fig:sequentialFSMvend}.
 
 \begin{figure}[ht]
 
-\center{\includegraphics{./Fig7/VendSD}}
+\center{\includegraphics{VendSD}}
 \caption{The state diagram for the vending machine.}
-\label{fig:vend}
+\label{fig:sequentialFSMvend}
 
 \end{figure}
 
@@ -452,9 +454,9 @@ number of flip flops, determining the MIEs, and determining the OEs.
 Since the FSM has eight states, the FSM will have eight flip flops, 
 labeled 0\textcent, 5\textcent, $\ldots$ 35\textcent.  
 
-In writing the MIEs, remember every state {\bf S} that has an outgoing 
+In writing the MIEs, remember every state \textbf{ S} that has an outgoing 
 arc labeled $N$, also has an undrawn arc labeled $N'$.  This undrawn 
-arc leaves state {\bf S} and returns to state {\bf S}.  That is, if a nickel
+arc leaves state \textbf{ S} and returns to state \textbf{ S}.  That is, if a nickel
 is not deposited, then the FSM stays in the same state.  Likewise
 every state which has an outgoing arc labeled $D$, has an undrawn self arc
 labeled $D'$.  For example, three arcs terminate at state 5\textcent.
@@ -534,12 +536,12 @@ into the barn is controlled by two gates at either end of the chute.  Each
 gate is controlled by a single bit. To lift a gate, this input must be 
 held at logic 1; to lower a gate, the input must be held at a logic 0.
 The sequence of raising and lowering the gates in order to control the 
-flow of cows is illustrated in Figure~\ref{fig:daisy}.
+flow of cows is illustrated in Figure~\ref{fig:sequentialFSMdaisy}.
 
 \begin{figure}[ht]
-\center{\scalebox{0.5}{\includegraphics{./Fig7/Daisy}}}
+\center{\scalebox{0.5}{\includegraphics{Daisy}}}
 \caption{The sequence of steps to gate a cow through the RFID reader chute.}
-\label{fig:daisy}
+\label{fig:sequentialFSMdaisy}
 \end{figure}
 
 In Step 1, $gate1$ is lifted allowing cow $A$ to enter the chute.
@@ -625,32 +627,32 @@ status input is represented by the variable $t$.
 
 \begin{figure}[ht]
 
-\center{\scalebox{0.7}{\includegraphics{./Fig7/DaisySD}}}
+\center{\scalebox{0.7}{\includegraphics{DaisySD}}}
 \caption{The state diagram for the DAISY system.}
-\label{fig:daisySD}
+\label{fig:sequentialFSMdaisySD}
 
 \end{figure}
 
 In some cases the FSM combines a couple of the items
 in the list together into a single state.  For example,
 Item 1 and Item 2 on the list, ``open gate1" and ``wait for cow 
-to enter chute" are performed in the {\bf WaitEnter} state.  The
+to enter chute" are performed in the \textbf{ WaitEnter} state.  The
 ``Open gate1" action is performed by asserting the $gate1$
 output while in this state.  The ``Wait for cow" action is
 performed by the self arc labeled $c'$.  That is, while $c'$ is
-true (while $c=0$), the FSM waits in the {\bf WaitEnter} state.
+true (while $c=0$), the FSM waits in the \textbf{ WaitEnter} state.
 After a cow moves into the chute, the system moves into state
-{\bf WaitRead}.  This state handles Item 3 and Item 4 in the list, 
+\textbf{ WaitRead}.  This state handles Item 3 and Item 4 in the list, 
 ``Close gate1" and ``Wait for RFID to read cow".  Closing the gate
 is handled by asserting 0 on the $gate1$ output, while
 waiting for the RFID reader is handled by the self arc labeled
 $r'$.  When the RFID reader has checked in the cow, the 
-FSM transitions to the state {\bf  Set30} where a 30-second count-down is
+FSM transitions to the state \textbf{  Set30} where a 30-second count-down is
 set.  The FSM then waits for the timer to time-out or for
 the cow to leave.
 
 The combinations of timer status and cow present while in the 
-state {\bf WaitLeave} deserves some attention. The state has four 
+state \textbf{ WaitLeave} deserves some attention. The state has four 
 combinations of these two inputs which effect the next state.  
 In order to reason out the consequences of each input 
 combination, structuring the analysis can be achieved by putting all 
@@ -669,7 +671,7 @@ Timer Status 	& Cow Present 	& Action		& Next State	\\ \hline \hline
 \end{tabular}
 \end{table}
 
-The pair of transitions which lead to the {\bf WaitEnter} state can be
+The pair of transitions which lead to the \textbf{ WaitEnter} state can be
 simplified by noting that in both cases, the cow present status
 bit is 0 (denoted by $c'$ on the state diagram).
 
@@ -690,7 +692,7 @@ $D_{Goose}	= Q_{Set3} +  Q_{Goose}t'$ \\
 
 \paragraph{Output Equations}
 The output table is shown in Table~\ref{table:daisy}.  The table is
-referred to as the {\it control word} table.  The term 
+referred to as the \textit{ control word} table.  The term 
 ``control" is used because the table describes how the FSM controls 
 its associated hardware.  The term ``word" is used to indicate 
 the control is formed from a collection of bits.
@@ -703,12 +705,12 @@ State		& Gate1		& Gate2		& Timer Control			& Air		\\ \hline \hline
 		& 0 - gate down	& 0 - gate down	& 01 Set timer to 30 seconds	& 1 - open	\\ \hline
 		&			&			& 10 Set timer to 3 seconds	&		\\ \hline
 		&			&			& 11 Run timer			& 		\\ \hline \hline
-{\bf WaitEnter}	& 1			& 0			& 00					& 0		\\ \hline
-{\bf WaitRead}	& 0			& 0			& 00					& 0		\\ \hline
-{\bf Set30}		& 0			& 0			& 01					& 0		\\ \hline
-{\bf WaitLeave}	& 0			& 1			& 00					& 0		\\ \hline
-{\bf Set3}		& 0			& 0			& 10					& 0		\\ \hline
-{\bf Goose}		& 0			& 0			& 11					& 1		\\
+\textbf{ WaitEnter}	& 1			& 0			& 00					& 0		\\ \hline
+\textbf{ WaitRead}	& 0			& 0			& 00					& 0		\\ \hline
+\textbf{ Set30}		& 0			& 0			& 01					& 0		\\ \hline
+\textbf{ WaitLeave}	& 0			& 1			& 00					& 0		\\ \hline
+\textbf{ Set3}		& 0			& 0			& 10					& 0		\\ \hline
+\textbf{ Goose}		& 0			& 0			& 11					& 1		\\
 \end{tabular}
 }
 \label{table:daisy}
@@ -720,7 +722,7 @@ output equation by asking, ``What states cause this
 output to go to 1?"  ORing together these states produced
 the output equation for the corresponding output.  For 
 example, the $Gate1$ output only goes to logic 1 when the 
-FSM is in the {\bf WaitEnter} state, hence 
+FSM is in the \textbf{ WaitEnter} state, hence 
 $Z_{Gate1} = Q_{WaitEnter}$.  The complete list of output 
 equations is given below.
 
@@ -732,6 +734,3 @@ $Z_{Timer1}	= Q_{Set3} + Q_{Goose}$ \\
 $Z_{Timer0}	= Q_{Set30} + Q_{Goose}$ \\
 $Z_{Air}	= Q_{Goose}$ \\
 \end{tabular}
-
-\section{Exercises}
-\input{hw7}

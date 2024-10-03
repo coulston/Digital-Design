@@ -1,15 +1,19 @@
+\section{Exercises}
+\label{section:sequentialCircuitsExercises}
+\graphicspath{ {./chapter05/FigHw} }
+
 \begin{enumerate}
 
-\item {\bf (8 pts.)}Determine the state table for the circuit in Figure~\ref{fig:NANDs}.
+\item \textbf{ (8 pts.)}Determine the state table for the circuit in Figure~\ref{fig:sequentialCirNANDs}.
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw5/Prob5-1}}
+\center{\includegraphics{Prob5-1}}
 \caption{}
-\label{fig:NANDs}
+\label{fig:sequentialCirNANDs}
 \end{figure}
 
 
-\begin{solution}{
-The analysis of the cross-coupled NANDs show in Figure~\ref{fig:nand} is
+\begin{onlysolution}  \textbf{Solution} \itshape{
+The analysis of the cross-coupled NANDs show in Figure~\ref{fig:sequentialCirnand} is
 almost exactly the same as that for the cross coupled NORs.  Start with
 the truth table for an NAND gate:
 
@@ -35,20 +39,20 @@ A & B & $F^+$ & $G^+$ \\ \hline
 For the cross coupled NANDs the output holds when the input $A,B=1,1$ occurs.
 In fact if you compare this table to that of the cross coupled NORs, you will
 notice that $A,B = S',R'$ and $F,G = Q,Q'$.
-} \end{solution}
+} \end{onlysolution} 
 
-\item {\bf (8 pts.)} Determine the state table for the circuit 
-in Figure~\ref{fig:DLatch}.  Which basic memory element does it act 
+\item \textbf{ (8 pts.)} Determine the state table for the circuit 
+in Figure~\ref{fig:sequentialCirDLatch}.  Which basic memory element does it act 
 like?  Hint, one of the inputs is acting like a clock.  Additional
 hint, in order to simplify the analysis, replace a portion of the 
 circuit with a component from this chapter.
 \begin{figure}[ht]
-\center{\includegraphics{./FigHw5/Prob5-2}}
+\center{\includegraphics{Prob5-2}}
 \caption{}
-\label{fig:DLatch}
+\label{fig:sequentialCirDLatch}
 \end{figure}
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 The main idea in this problem is to simplify the cross coupled NOR gates into
 an SR latch.  Then use the state table for the SR latch.  This substitution
 will simplify the analysis of this circuit.  Since the lower NOR gate is denoted
@@ -66,55 +70,55 @@ A & B & S & R & comment & $Q^+$ \\ \hline
 \end{tabular}
 
 It is behaving exactly like a D clocked latch, where $A=clk$ and $B=D$.
-} \end{solution}
+} \end{onlysolution} 
 
-\item {\bf (8 pts.)} Complete the timing diagram for the circuit 
-shown in Figure~\ref{fig:DMS}.  Which basic memory element 
+\item \textbf{ (8 pts.)} Complete the timing diagram for the circuit 
+shown in Figure~\ref{fig:sequentialCirDMS}.  Which basic memory element 
 does this circuit act like? 
 
 \begin{figure}[ht]
-\label{fig:nand}
-\center{\scalebox{0.8}{\includegraphics{./FigHw5/Prob5-3}}}
+\label{fig:sequentialCirnand}
+\center{\scalebox{0.8}{\includegraphics{Prob5-3}}}
 \caption{A 2-stage sequential circuit.}
-\label{fig:DMS}
+\label{fig:sequentialCirDMS}
 \end{figure}
 
-\item {\bf (15 pts.)} Complete the timing diagram for the basic memory 
-elements in Figure~\ref{fig:ExTim}.  The clock cycle is 20 ns. When 
+\item \textbf{ (15 pts.)} Complete the timing diagram for the basic memory 
+elements in Figure~\ref{fig:sequentialCirExTim}.  The clock cycle is 20 ns. When 
 necessary, assume that $Q$ is initialized to 0 and the output settles to 
 0 after a period of rapid toggling. 
 
 \begin{figure}[ht]
-\center{\scalebox{0.5}{\includegraphics{./FigHw5/Prob5-4}}}
+\center{\scalebox{0.5}{\includegraphics{Prob5-4}}}
 \caption{A variety of basic memory elements and the signals applied to them.}
-\label{fig:ExTim}
+\label{fig:sequentialCirExTim}
 \end{figure}
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 \begin{figure}[ht]
-\center{\scalebox{0.5}{\includegraphics{./FigHw5/Sol5-4}}}
+\center{\scalebox{0.5}{\includegraphics{Sol5-4}}}
 \end{figure}
-} \end{solution}
+} \end{onlysolution} 
 
 
-\item {\bf (15 pts.)} Complete the timing diagram for the basic memory elements in 
-Figure~\ref{fig:ExTim2}.  The clock cycle is 20 ns. When necessary, 
+\item \textbf{ (15 pts.)} Complete the timing diagram for the basic memory elements in 
+Figure~\ref{fig:sequentialCirExTim2}.  The clock cycle is 20 ns. When necessary, 
 assume that Q is initialized to 0 and the output settles to 0 after 
 a period of rapid toggling. 
 \begin{figure}[ht]
-\center{\scalebox{0.5}{\includegraphics{./FigHw5/Prob5-5}}}
+\center{\scalebox{0.5}{\includegraphics{Prob5-5}}}
 \caption{}
-\label{fig:ExTim2}
+\label{fig:sequentialCirExTim2}
 \end{figure}
 
-\begin{solution}{
+\begin{onlysolution}  \textbf{Solution} \itshape{
 \begin{figure}[ht]
-\center{\scalebox{0.5}{\includegraphics{./FigHw5/Sol5-5}}}
+\center{\scalebox{0.5}{\includegraphics{Sol5-5}}}
 \end{figure}
-} \end{solution}
+} \end{onlysolution} 
 
 
-\item {\bf (4 pts.)} Consider the furnace 
+\item \textbf{ (4 pts.)} Consider the furnace 
 controller discussed at the beginning of this chapter.  Determine 
 which state the controller should transition into when in a particular state
 and given a particular combination of inputs.  
@@ -134,7 +138,7 @@ Current State $\bs T_{hi} T_{low}$& 00	& 01	& 11	& 10	\\ \hline \hline
 }
 \end{table}
  
-\item {\bf (8 pts.)} Derive the next state equations for each 
+\item \textbf{ (8 pts.)} Derive the next state equations for each 
 type (D, T, SR, and JK) of basic memory element.  The next state equation 
 is a symbolic equation describing the next state ($Q^+$) 
 as a function of the inputs (D,T,SR, or JK) and state ($Q$).
@@ -144,7 +148,7 @@ $Q$, $J$, and $K$ as the inputs.  The entries in the Kmap should
 be $Q^+$.  Solving this Kmap will yield the next state equation.
 Show all work for full credit.
 
-\item {\bf (16 pts.)} Derive the transition list for each
+\item \textbf{ (16 pts.)} Derive the transition list for each
 type (D, T, JK, and SR) of basic memory element.  A transition 
 list describes the input(s) necessary to elicit a particular 
 change in state.  For example, imagine that a D flip flop output

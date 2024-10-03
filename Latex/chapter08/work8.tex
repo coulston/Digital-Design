@@ -1,10 +1,12 @@
-\section{Chapter 8 -- Datapath and Control}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Here are the helpfull stuff
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Helpfull Stuff}
+\section{Datapath and Control}
+\graphicspath{ {./chapter08/FigWork} }
 
-\scalebox{0.7}{\includegraphics{./Fig8/Abstract}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here are the helpful stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Helpful Stuff}
+
+\scalebox{0.7}{\includegraphics{../Fig/Abstract}}
 
 
 Mini-C statements
@@ -48,10 +50,10 @@ N-bit Bus transceiver     & N bits & N bits & & 2 bit  \\ \hline
 %%% \end{description}
 
 \begin{tabular}{|l|l|} \hline
-\includegraphics{./Fig8/For}    & \includegraphics{./Fig8/IfThen}      \\ 
+\includegraphics{../Fig/For}    & \includegraphics{../Fig/IfThen}      \\ 
 \verb-for(i=A; i<B; i++) BODY-  & \verb+if(condition) BODY1 else BODY2+\\ \hline
 
-\includegraphics{./Fig8/While}	& \includegraphics{./Fig8/Op}	\\
+\includegraphics{../Fig/While}	& \includegraphics{../Fig/Op}	\\
 \verb+while(condition} BODY+	& \verb+x=value+ 		\\ \hline
 \end{tabular}
 
@@ -81,7 +83,7 @@ RAM is preloaded with data.
 \end{verbatim}
 
 
-\scalebox{0.7}{\includegraphics{./Fig8/MinSearch}}
+\scalebox{0.7}{\includegraphics{../Fig/MinSearch}}
 
 
 \begin{tabular}{c||c|c|c|c|c|c|c}  
@@ -115,18 +117,18 @@ $D_{D} = $	&	$Z_{MBR} =$ 		\\
 Shade the active FF and any BBBs which are read or written.
 
 \begin{tabular}{ll}
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} & 
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} \\
-1. State {\bf InitMin} \vspace{10mm}        & 5. State {\bf CompM} \\
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} & i
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} \\
-2. State {\bf InitI}   \vspace{10mm}        & 6. State {\bf NewMin} \\
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} & 
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} \\
-3. State {\bf CompC}   \vspace{10mm}          & 7. State {\bf Inc} \\
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} & 
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2}} \\
-4. State {\bf Read}                                  & 8. State {\bf CompC} \\
+\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & 
+	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+1. State \textbf{ InitMin} \vspace{10mm}        & 5. State \textbf{ CompM} \\
+\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & i
+	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+2. State \textbf{ InitI}   \vspace{10mm}        & 6. State \textbf{ NewMin} \\
+\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & 
+	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+3. State \textbf{ CompC}   \vspace{10mm}          & 7. State \textbf{ Inc} \\
+\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & 
+	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+4. State \textbf{ Read}                                  & 8. State \textbf{ CompC} \\
 \end{tabular}
 
 \pagebreak
@@ -157,7 +159,7 @@ in a new value of X.
 13  } // end while
 \end{verbatim}
 
-\scalebox{0.7}{\includegraphics{./Fig8/BitCount1}}
+\scalebox{0.7}{\includegraphics{../Fig/BitCount1}}
 
 \begin{tabular}{c||c|c|c|c|c}  
 State   & ACK       &   X         &  Reg Y    & Y mux         & Counter       \\ \hline
@@ -218,7 +220,7 @@ with data.  Your circuit should do this task forever.
 14.    } // end while
 \end{verbatim}
 
-\scalebox{0.5}{\includegraphics{./Fig8/RAMmatch}}
+\scalebox{0.5}{\includegraphics{../Fig/RAMmatch}}
 
 {\tiny
 \begin{tabular}{c||c|c|c|c|c|c|c|c|c}  

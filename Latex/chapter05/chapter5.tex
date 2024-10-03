@@ -1,5 +1,8 @@
 \chapter{Sequential Circuits}
-The preceding four chapters have focused on {\it combinational
+\label{chapter:Sequential Circuits}
+\graphicspath{ {./chapter05/Fig} }
+
+The preceding four chapters have focused on \textit{ combinational
 circuits}, digital systems whose output depends solely on 
 the input.  That is, 
 
@@ -13,7 +16,7 @@ circuits remembers events in the past and adjusts
 their outputs to reflect these events.
 
 
-The output of a {\it sequential circuit} to a given input
+The output of a \textit{ sequential circuit} to a given input
 depends on what inputs were applied in the past.  A good 
 example of a sequential circuit is a counter: a 
 digital circuit that outputs a count value, increasing
@@ -48,12 +51,12 @@ The input to the furnace controller comes
 from a temperature sensor which outputs a 0 when the temperature 
 is below $T_{set}$ and outputs a 1 when the temperature 
 is above $T_{set}$.  This behavior is captured in the graph shown 
-in Figure~\ref{fig:SimpleFurnace}.
+in Figure~\ref{fig:sequentialCirSimpleFurnace}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/SimpleFurnace}}
+\center{\includegraphics{SimpleFurnace}}
 \caption{A simple furnace controller for a house.}
-\label{fig:SimpleFurnace}
+\label{fig:sequentialCirSimpleFurnace}
 \end{figure}
 
 The y-axis of this graph describes the state of the furnace; 
@@ -99,12 +102,12 @@ drops below $T_{low}$ and turns off the furnace when the house temperature
 rises above $T_{hi}$.  When the temperature is between $T_{hi}$ and 
 $T_{low}$, the furnace continues whatever it was doing.
 The behavior of the new controller is described by the graph shown in 
-Figure~\ref{fig:HysteresisGraph}.
+Figure~\ref{fig:sequentialCirHysteresisGraph}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/HysteresisGraph}}
+\center{\includegraphics{HysteresisGraph}}
 \caption{A more complex furnace controller for a house.}
-\label{fig:HysteresisGraph}
+\label{fig:sequentialCirHysteresisGraph}
 \end{figure}
 
 The y-axis of this graph describes the state of the furnace; either it is 
@@ -116,37 +119,37 @@ behavior of the furnace depends on what it was doing before the
 temperature reached this value.  If the furnace was on, then it continues
 to be on while it passes through the region $T_{low}$ to $T_{hi}$. This behavior
 is the upper horizontal line with the right-facing arrow in 
-Figure~\ref{fig:HysteresisGraph}.  If the furnace was off, then it continues 
+Figure~\ref{fig:sequentialCirHysteresisGraph}.  If the furnace was off, then it continues 
 to be off while in the region $T_{low}$ to $T_{hi}$.  This behavior is the 
-horizontal line with the left-facing arrow in Figure~\ref{fig:HysteresisGraph}.
+horizontal line with the left-facing arrow in Figure~\ref{fig:sequentialCirHysteresisGraph}.
 
-The graph in Figure~\ref{fig:HysteresisGraph} describes a relation because 
+The graph in Figure~\ref{fig:sequentialCirHysteresisGraph} describes a relation because 
 for a given $x$ value there can be more than one $y=f(x)$ value.  In order to
 describe the relationship between the input and output, a variable 
-storing the {\it state} of the furnace is needed.  The output of the controller 
+storing the \textit{ state} of the furnace is needed.  The output of the controller 
 is then a function of the input and the state.  Instead of using the graph
-shown in Figure~\ref{fig:HysteresisGraph} to describe the behavior of the
-furnace controller, digital designers utilize {\it state diagrams}.
+shown in Figure~\ref{fig:sequentialCirHysteresisGraph} to describe the behavior of the
+furnace controller, digital designers utilize \textit{ state diagrams}.
 \index{state diagram}
 
 A state diagram is a diagram which describes the behavior of a sequential
 circuit (a digital system with states).  In a state diagram, each of the
 states is given a name and placed inside a circuit.  States are then 
-connected together with arcs. States {\bf A} and {\bf B} are connected together 
-with an arc pointing from {\bf A} to {\bf B} if there is an input which causes 
-the system to transition from state {\bf A} to state {\bf B}.  
+connected together with arcs. States \textbf{ A} and \textbf{ B} are connected together 
+with an arc pointing from \textbf{ A} to \textbf{ B} if there is an input which causes 
+the system to transition from state \textbf{ A} to state \textbf{ B}.  
 
 The furnace controller has two states, ``on" and ``off" as shown in
-Figure~\ref{fig:HysteresisSD}.  The arc from ``on" to ``off" is labeled
+Figure~\ref{fig:sequentialCirHysteresisSD}.  The arc from ``on" to ``off" is labeled
 $T_{hi}$ because when $T_{hi}$ is true the furnace is turned off.  
 The ``*" in the off state indicates that it is the reset state; the 
 state the system starts in when first turned on.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/HysteresisSD}}
+\center{\includegraphics{HysteresisSD}}
 \caption{A state diagram describing the furnace controller of
-Figure~\ref{fig:HysteresisGraph}.}
-\label{fig:HysteresisSD}
+Figure~\ref{fig:sequentialCirHysteresisGraph}.}
+\label{fig:sequentialCirHysteresisSD}
 \end{figure}
 
 In general, when building a state diagram, visit each state
@@ -155,12 +158,12 @@ input combination.  For example, ``What state should the controller go into
 when it is currently in the on state and $T_{hi}$ is false and $T_{low}$ is 
 false?" Since this case means that the temperature is below $T_{low}$, 
 the furnace should stay in the on state.  Notice that this 
-transition is not shown in Figure~\ref{fig:HysteresisSD}.  This is an 
+transition is not shown in Figure~\ref{fig:sequentialCirHysteresisSD}.  This is an 
 instance of the general principle used in the construction of all state 
 diagrams; any input combination not explicitly shown on the state diagram 
 is assumed to not cause a change of state. This principle helps reduce the 
 clutter on state diagrams by removing a multitude of arcs beginning and ending
-in the same state.  The state diagram in Figure~\ref{fig:HysteresisSD} also
+in the same state.  The state diagram in Figure~\ref{fig:sequentialCirHysteresisSD} also
 exhibits two other properties, completeness and consistency, necessary
 for its correctness.
 
@@ -170,19 +173,19 @@ for its correctness.
 arcs must equal 1.  This implies that every possible combination of the 
 variables used on the outgoing arcs has been described.  In other words,
 the transitions out of a state have been completely specified.  For 
-example, state {\bf A} in Figure~\ref{fig:SDproperties} 
+example, state \textbf{ A} in Figure~\ref{fig:sequentialCirSDproperties} 
 is complete because $x + x'y + x'y' = x + x'(y+y') = x + x' = 1$.  State 
-{\bf B} in Figure~\ref{fig:SDproperties} is not complete because 
+\textbf{ B} in Figure~\ref{fig:sequentialCirSDproperties} is not complete because 
 $x + xy + x'y' = x(1+y) + x'y' = x + x'y' \ne 1$.
 
 \item[Unequivocal] - The logic AND of the conditions on any pair of arcs
 must equal 0.  This implies that no pair of arcs include the same input
 condition.  If two arcs included the same input condition, then
 this would make the decision of which state to go to next ambiguous or
-equivocal.  For example, state {\bf A} in Figure~\ref{fig:SDproperties}
+equivocal.  For example, state \textbf{ A} in Figure~\ref{fig:sequentialCirSDproperties}
 is unequivocal because $(x)(x'y) = 0$, and $(x)(x'y')=0$, and
-$(x'y)(x'y') = 0$.  State {\bf B} in Figure~\ref{fig:SDproperties} is not
-unequivocal because $(x)(xy) = xy$.  If the circuit was in state {\bf B} and 
+$(x'y)(x'y') = 0$.  State \textbf{ B} in Figure~\ref{fig:sequentialCirSDproperties} is not
+unequivocal because $(x)(xy) = xy$.  If the circuit was in state \textbf{ B} and 
 the input $(x,y)=(1,1)$ arrived, then the arc labeled $x$ and the arc
 labeled $xy$ are both true and would both be taken.  However, the
 circuit may only be in one state at a time, leaving it to decide which
@@ -190,11 +193,11 @@ true condition to accept.
 \end{description}
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/SDproperties}}
+\center{\includegraphics{SDproperties}}
 \caption{A portion of a state diagram showing two states.
-State {\bf A} is complete and unequivocal, while state {\bf B} is
+State \textbf{ A} is complete and unequivocal, while state \textbf{ B} is
 neither complete nor unequivocal.}
-\label{fig:SDproperties}
+\label{fig:sequentialCirSDproperties}
 \end{figure}
 
 A state diagram in which every state is complete and unequivocal 
@@ -216,10 +219,10 @@ There are a variety of basic memory elements; they are
 differentiated by two fundamental characteristics:
 
 \begin{enumerate}
-\item {\bf Clock} - Basic memory elements are characterized by 
+\item \textbf{ Clock} - Basic memory elements are characterized by 
 when they sample their inputs.  Having tight restrictions on the
 times when a memory element can sample its inputs greatly 
-simplifies the design of sequential circuits.  A {\it clock}
+simplifies the design of sequential circuits.  A \textit{ clock}
 input is used to tell the basic memory element when it should sample 
 its data input(s).  A digital clock is a signal which 
 changes its logic level between 0 and 1 with a fixed frequency.
@@ -245,7 +248,7 @@ the flip flop does not change the currently stored bit.
 \end{enumerate}
 
 
-\item {\bf Data} - Basic memory elements are characterized by 
+\item \textbf{ Data} - Basic memory elements are characterized by 
 their data inputs and how the inputs are transformed into the 
 stored bit value; the clock is not considered a data input.
 A basic memory element can be either a D, T, SR, or JK device.
@@ -261,7 +264,7 @@ D & Q+   \\ \hline
 \end{tabular}
 }
 A D memory element has a single data input called $D$;
-the D stands for {\it data}.  When the
+the D stands for \textit{ data}.  When the
 D memory device samples its input, it stores this value.  
 
 \item 
@@ -273,7 +276,7 @@ T & Q+   \\ \hline
 \end{tabular}
 }
 A T memory element has a single data input called T;
-the T stands for {\it toggle}.  If $T=1$ when the input
+the T stands for \textit{ toggle}.  If $T=1$ when the input
 is sampled, then the T device toggles (flips) its stored bit.
 If $T=0$ when the input is sampled, then the T device holds its 
 current stored bit.
@@ -289,13 +292,13 @@ S & R & Q+   \\ \hline
 \end{tabular}
 }
 A SR memory element has two data inputs called SR;
-the S stands for {\it set} and the R for {\it reset}.
+the S stands for \textit{ set} and the R for \textit{ reset}.
 If $SR=00$ when the input is sampled, then the SR device retains
-its stored bit; the device {\it holds} its stored bit.
+its stored bit; the device \textit{ holds} its stored bit.
 If $SR=01$ when the input is sampled, then the SR device stores a 0;
-the device {\it resets} its stored bit.
+the device \textit{ resets} its stored bit.
 If $SR=10$ when the input is sampled, then the SR device stores a 1;
-the device {\it sets} its stored bit.
+the device \textit{ sets} its stored bit.
 The input of a SR device should never be set to 11.
 
 \item 
@@ -311,11 +314,11 @@ J & K & Q+   \\ \hline
 A JK memory element has two data inputs called $J$ and $K$. They have
 no good acronym, but act very much like $S$ and $R$, respectively.
 If $JK=00$ when the input is sampled, then the JK device retains
-its stored bit; {\it holds}.
-If $JK=01$ when the input is sampled, then the JK device stores a 0; {\it resets}.
-If $JK=10$ when the input is sampled, then the JK device stores a 1; {\it sets}.
+its stored bit; \textit{ holds}.
+If $JK=01$ when the input is sampled, then the JK device stores a 0; \textit{ resets}.
+If $JK=10$ when the input is sampled, then the JK device stores a 1; \textit{ sets}.
 If $JK=11$ when the input is sampled, then the JK device toggles its
-stored bit value; {\it toggles}.
+stored bit value; \textit{ toggles}.
 \end{enumerate}
 \end{enumerate}
 
@@ -332,17 +335,17 @@ circuit diagram is indicated by the labels present on the data inputs and the
 notation present on the clock input.  A latch does not have a clock
 input, a clocked latch has the label ``clk" on its clock input,
 while a flip flop's clock input has a triangular notch accompanying 
-the label ``clk".  Figure~\ref{fig:devices} shows a D latch, 
+the label ``clk".  Figure~\ref{fig:sequentialCirdevices} shows a D latch, 
 D clocked latch, and a D flip flop.  Whenever an input is accompanied
-by a triangular notch it means that the input is {\it edge sensitive}
+by a triangular notch it means that the input is \textit{ edge sensitive}
 \index{edge sensitive}.  
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/devices}}
-\caption{Different symbols are used to describe {\it when} a basic
+\center{\includegraphics{devices}}
+\caption{Different symbols are used to describe \textit{ when} a basic
 memory element samples its input.  A) D latch. B) D clocked latch.  
 C) D flip flop.}
-\label{fig:devices}
+\label{fig:sequentialCirdevices}
 \end{figure}
 
 Edge sensitive means that the input responds (or is sensitive)
@@ -354,7 +357,7 @@ level.  An input sensitive to a negative edge responds to an input
 transition from logic 1 to logic 0, a negative change in the logic 
 level.  Input which are sensitive to negative edges have a inversion
 ``bubble" placed to the left of the triangular notch, like that shown
-in Figure~\ref{fig:DFF}.
+in Figure~\ref{fig:sequentialCirDFF}.
 
 Forming every combination of the two characteristics of basic
 memory elements yields 12 variations.  These variations are
@@ -395,13 +398,13 @@ $Q$ output does not change.
 
 To better understand the behavior of the D clocked latch, 
 examine how the device responds to inputs through 
-the timing diagram in Figure~\ref{fig:DCL}.
+the timing diagram in Figure~\ref{fig:sequentialCirDCL}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/DCL}}
+\center{\includegraphics{DCL}}
 \caption{A timing diagram showing the behavior of a D clocked latch.
 The shaded regions describe when the latch samples its data inputs.}
-\label{fig:DCL}
+\label{fig:sequentialCirDCL}
 \end{figure}
 
 Initially, the value of $Q$ is given as 0.  The initial value
@@ -427,13 +430,13 @@ unchanged, hence $Q$ remains unchanged.
 
 The behavior of the JK flip flop can be better understood
 by examining how it responds to inputs through time in the 
-timing diagram of Figure~\ref{fig:JKFF}.  
-The timing diagram of Figure~\ref{fig:JKFF}
+timing diagram of Figure~\ref{fig:sequentialCirJKFF}.  
+The timing diagram of Figure~\ref{fig:sequentialCirJKFF}
 is used to explain its behavior.
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/JKFF}}
+\center{\includegraphics{JKFF}}
 \caption{A timing diagram showing the behavior of a JK flip flop.}
-\label{fig:JKFF}
+\label{fig:sequentialCirJKFF}
 \end{figure}
 
 Since a flip flop only samples its inputs during the rising edge 
@@ -462,7 +465,7 @@ to as a falling edge for similar reasons.
 One indicates the polarity 
 of the clock is inverted by placing a ``bubble" in front of 
 the clock input on the schematic representation as shown
-in Figure~\ref{fig:DFF}.  The bubble is reminiscent 
+in Figure~\ref{fig:sequentialCirDFF}.  The bubble is reminiscent 
 of the bubble on the output side of an inverter and 
 represents inversion of the clock input. Beside the fact 
 that a negative edge-triggered D flip flop samples its 
@@ -471,13 +474,13 @@ a D flip flop in all other respects.
 
 To better understand the behavior of the negative edge-triggered 
 D flip flop its behavior is observed when subjected to the inputs 
-shown in Figure~\ref{fig:DFF}.
+shown in Figure~\ref{fig:sequentialCirDFF}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/DFF}}
+\center{\includegraphics{DFF}}
 \caption{A timing diagram showing the behavior of a 
 negative edge triggered D flip flop.}
-\label{fig:DFF}
+\label{fig:sequentialCirDFF}
 \end{figure}
 
 The negative edge-triggered D flip flop samples its inputs on the
@@ -500,13 +503,13 @@ combination.
 
 The behavior of the SR latch can be better understood
 by examining how it responds to inputs through time in the 
-timing diagram in Figure~\ref{fig:SRLtime}.
+timing diagram in Figure~\ref{fig:sequentialCirSRLtime}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/SRLtime}}
+\center{\includegraphics{SRLtime}}
 \caption{A timing diagram showing the behavior of a 
 SR latch.}
-\label{fig:SRLtime}
+\label{fig:sequentialCirSRLtime}
 \end{figure}
 
 Initially, at time=0, the SR latch is in a set condition, so its
@@ -526,7 +529,7 @@ the circuit for a SR latch realizes the state table for a SR
 device.  
 
 Consider the circuit realization of an SR latch 
-given in Figure~\ref{fig:SRL}.  Three important
+given in Figure~\ref{fig:sequentialCirSRL}.  Three important
 observations can be made about this figure. First, the SR 
 latch is a simple circuit, sometimes referred to as cross-coupled 
 NORs for obvious reasons.  Second, the circuit contains feedback;
@@ -537,12 +540,12 @@ $Q$ and $Q'$ outputs.  In most, but not all cases, these
 outputs will have opposing values.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/SRL}}
+\center{\includegraphics{SRL}}
 \caption{The circuit inside a SR latch.}
-\label{fig:SRL}
+\label{fig:sequentialCirSRL}
 \end{figure}
 
-The behavior of the circuit in Figure~\ref{fig:SRL} is governed
+The behavior of the circuit in Figure~\ref{fig:sequentialCirSRL} is governed
 by the behavior of a NOR gate.  Thus, it makes sense to start with
 the truth table for a NOR gate.
 
@@ -556,10 +559,10 @@ A  & B  & (A+B)'  \\ \hline
 
 From this truth table, a simple observation should be made:  
 Whenever the input to a NOR gate equals 1, the output equals 0.
-This will be referred to as the {\it NOR gate heuristic}.
+This will be referred to as the \textit{ NOR gate heuristic}.
 
 To understand the behavior of the circuit shown in 
-Figure~\ref{fig:SRL}, start by examining what happens when 
+Figure~\ref{fig:sequentialCirSRL}, start by examining what happens when 
 $S=1$ and $R=0$.  According to the NOR gate heuristic, the output
 associated with the top NOR gate will output 0, hence $Q'=0$.  
 The $Q'$ output is an input to the bottom NOR gate.  Since both
@@ -572,16 +575,16 @@ identical except the roles of the top and bottom NOR gates
 are interchanged.  Consequently, the device is reset causing
 $Q$ to output 0 and its negation, $Q'$ to output 1.
 
-The behavior of the circuit shown in Figure~\ref{fig:SRL},
+The behavior of the circuit shown in Figure~\ref{fig:sequentialCirSRL},
 is more complicated when $S=0$ and $R=0$ because the output 
 depends on what has happened in the past. (See time=18 and time=32
-in Figure~\ref{fig:SRLtime}.)  Furthermore, the NOR gate 
+in Figure~\ref{fig:sequentialCirSRLtime}.)  Furthermore, the NOR gate 
 heuristic does not help, at least initially, because neither 
 input is 1.  
 
 In order to make some headway into the analysis, start
 by assuming the SR latch is being reset ($S=0$ and $R=1$),
-causing $Q=0$ and $Q'=1$.  Figure~\ref{fig:SRL1}A shows what 
+causing $Q=0$ and $Q'=1$.  Figure~\ref{fig:sequentialCirSRL1}A shows what 
 happens in the instant after the R input is changed to 0.
 The inputs to the upper NOR gate, labeled TOP, are both 0.
 Hence, the output of the upper NOR gate is 1, consistent with 
@@ -594,7 +597,7 @@ $S=0$ and $R=0$, the output remains unchanged.  Now, change this
 assumption and start by setting the SR latch and see what happens
 when the inputs are changed to $S=0$ and $R=0$.
 
-If $S=1$ and $R=0$, then $Q=1$ and $Q'=0$.  Figure~\ref{fig:SRL1}B
+If $S=1$ and $R=0$, then $Q=1$ and $Q'=0$.  Figure~\ref{fig:sequentialCirSRL1}B
 shows what happens in the instant after $S=0$.  The inputs to 
 the upper NOR gate, labeled TOP, are 1 and 0.  By the NOR
 gate heuristic, $Q'=0$, consistent with its value.  The 
@@ -602,10 +605,10 @@ inputs to the lower NOR gate, labeled BOT, are both 0. Hence,
 $Q=0$, consistent with its existing value of $Q$.  
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/SR1}}
+\center{\includegraphics{SR1}}
 \caption{The analysis of the SR latch when the S and R
 inputs are both 0.}
-\label{fig:SRL1}
+\label{fig:sequentialCirSRL1}
 \end{figure}
 
 In either case when $S=0$ and $R=0$, the outputs $Q$ and $Q'$ retain 
@@ -665,7 +668,7 @@ may result in the stored bit being undetermined.
 Setup time, \index{setup time} \label{page:setup} denoted $T_{su}$, is the
 amount of time before the rising edge of the clock when the data
 inputs must be stable, graphically illustrated in 
-Figure~\ref{fig:ff-time}.  Hold time, \index{hold time} denoted $T_h$, 
+Figure~\ref{fig:sequentialCirff-time}.  Hold time, \index{hold time} denoted $T_h$, 
 is the amount of time after the rising edge of the clock when the data
 input must be stable.  Finally, propagation delay, denoted $T_p$,
 \index{propagation delay!flip flop} \index{flip flop!propagation delay} 
@@ -673,9 +676,9 @@ is the amount of time after the rising edge of the clock required for the
 new $Q$ value to become valid. 
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/ff-time}}
+\center{\includegraphics{ff-time}}
 \caption{The significant time intervals for flip flop inputs and outputs.}
-\label{fig:ff-time}
+\label{fig:sequentialCirff-time}
 \end{figure}
 
 Typical values for a D flip flop are shown in the following
@@ -709,20 +712,20 @@ the device.  To address this problem, manufacturers often equip
 basic memory elements with \index{flip flop!asynchronous set, reset}
 asynchronous active low set and 
 asynchronous active low reset inputs, shown at the top 
-and bottom on the D flip flop in Figure~\ref{fig:DFFSR}
+and bottom on the D flip flop in Figure~\ref{fig:sequentialCirDFFSR}
 as $S$ and $R$ respectively.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig5/DFFSR}}
+\center{\includegraphics{DFFSR}}
 \caption{A D flip flop with asynchronous active low set and asynchronous
 active low reset inputs, labeled $S$ and $R$ respectively.}
-\label{fig:DFFSR}
+\label{fig:sequentialCirDFFSR}
 \end{figure}
 
 To understand what these inputs do, examine each word in its
-name in turn.  {\it Asynchronous} means that the $S$ and $R$ inputs 
-function without regard to the clock.  {\it Active low} means that these 
-inputs elicit their behavior when the signal value equals 0.  {\it Set 
+name in turn.  \textit{ Asynchronous} means that the $S$ and $R$ inputs 
+function without regard to the clock.  \textit{ Active low} means that these 
+inputs elicit their behavior when the signal value equals 0.  \textit{ Set 
 and reset} means that these inputs either set $Q=1$ or reset $Q=0$.
 Thus, when $R=1$, the output is $Q=0$ -- regardless of what the clock is doing.
 Consider the $S$ and $R$ inputs to have the highest priority 
@@ -739,6 +742,3 @@ together to form a set net.  Often, the reset net (and the set net)
 is connected to a special output from the system power supply.  This
 power supply output holds the system in reset until the power 
 supply has reached its operating output voltage.
-
-\section{Exercises}
-\input{hw5}

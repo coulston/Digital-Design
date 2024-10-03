@@ -1,4 +1,7 @@
 \chapter{Datapath and Control}
+\label{chapter:Datapath and Control}
+\graphicspath{ {./chapter08/Fig} }
+
 The datapath and control design methodology break the design
 of digital systems into two components: a datapath and a control 
 unit.  The datapath is responsible for all the data manipulations
@@ -9,16 +12,16 @@ a FSM.
 
 A digital system built using the datapath and control design approach
 is still a digital system whose inputs and outputs can be categorized
-using the terminology introduced Figure~\ref{fig:Asys}.  The 
+using the terminology introduced Figure~\ref{fig:datapathControlAsys}.  The 
 digital system shown in this figure is broken down into two components,
 a datapath and a control unit.  The addition of a clock and a reset signal for the 
-sequential logic elements yields Figure~\ref{fig:Abstract}.
+sequential logic elements yields Figure~\ref{fig:datapathControlAbstract}.
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./Fig8/Abstract}}}
+\center{\scalebox{0.7}{\includegraphics{Abstract}}}
 \caption{An abstract digital system constructed from a datapath and
 a control unit.}
-\label{fig:Abstract}
+\label{fig:datapathControlAbstract}
 \end{figure}
 \label{page:Abstract}
 
@@ -111,25 +114,25 @@ is false, then \verb^BODY_2^ is executed.  \verb^BODY_1^ and \verb^BODY_2^
 contain 0 or more statements.  Typically, the datapath computes 
 the condition using a comparator.  In such a case, the datapath 
 requires a comparator, the output of which is
-the status signal shown in Figure~\ref{fig:IfThen}.  
+the status signal shown in Figure~\ref{fig:datapathControlIfThen}.  
 
-While the control unit is in state {\bf IfThen}, the condition 
+While the control unit is in state \textbf{ IfThen}, the condition 
 is being evaluated, the status signal
 is being communicated to the control unit, and the control
 unit is deciding whether to transition to either the 
-{\bf BODY}$_1$ or {\bf BODY}$_2$ states.  When the clock 
+\textbf{ BODY}$_1$ or \textbf{ BODY}$_2$ states.  When the clock 
 edge arrives, the control unit will transition to its next state.
-The {\bf BODY}$_1$ or {\bf BODY}$_2$ states contain the entire 
+The \textbf{ BODY}$_1$ or \textbf{ BODY}$_2$ states contain the entire 
 collection of states derived by parsing all the statements in 
 their respective bodies.  Regardless of which path the control 
-unit takes, both threads return to the {\bf Next} state, which 
+unit takes, both threads return to the \textbf{ Next} state, which 
 is the next statement after the if/then/else statement in the algorithm.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/IfThen}}
+\center{\includegraphics{IfThen}}
 \caption{The datapath and control components required to realize
 an if/then/else structure.}
-\label{fig:IfThen}
+\label{fig:datapathControlIfThen}
 \end{figure}
 
 \item[]\verb^for(i=A; i<B; i+=1) BODY^
@@ -138,7 +141,7 @@ When a for loop is encountered in a program, \verb^BODY^ is
 executed B-A times and the value of \verb^i^ is available 
 for use inside \verb^BODY^.  \verb^BODY^ contains 
 zero or more statements.  A for statement requires a counter and a 
-comparator arranged as shown in Figure~\ref{fig:For}.  The initial
+comparator arranged as shown in Figure~\ref{fig:datapathControlFor}.  The initial
 value of the for loop is the data input to the counter.  The 
 output of the counter is the \verb+i+ variable of the for loop.  The
 \verb+i+ variable is compared to the terminal value of the for loop.
@@ -148,30 +151,30 @@ when the counter has reached its terminal value.
 
 The control unit sequences the actions of the hardware in the
 datapath.  The execution of the for loop begins with an 
-initialization of the counter in the {\bf Init} state.  In this state,
+initialization of the counter in the \textbf{ Init} state.  In this state,
 the control unit asserts a load signal on the control lines to
 the counter causing the counter to be initialized to A.  On the
 next clock edge, the counter loads A and the control unit
-transitions to the {\bf Comp} state.  In this state, the control unit
+transitions to the \textbf{ Comp} state.  In this state, the control unit
 does nothing, giving the comparator time to determine the 
 relative magnitude of i and B, and to assert its L output
 to the control unit in the form of a status signal. The control
 unit uses the status signal to either execute the body of 
 the for loop, or to exit the for loop and proceed with
-the next instruction after the for loop.  The {\bf Body} state 
+the next instruction after the for loop.  The \textbf{ Body} state 
 represents the collection of states derived by parsing all 
 the statements in the body of the for loop.  At the end of the 
-for loop's body, the control unit enters the {\bf Inc} state where the 
+for loop's body, the control unit enters the \textbf{ Inc} state where the 
 control unit asserts an increment signal on the control lines 
 to the counter.  This assertion causes the counter to count up on the 
 next edge which also causes the control unit to transition
-back to the {\bf Comp} state.
+back to the \textbf{ Comp} state.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/For}}
+\center{\includegraphics{For}}
 \caption{The datapath and control components required to realize
 a for loop.}
-\label{fig:For}
+\label{fig:datapathControlFor}
 \end{figure}
 
 \item[]\verb+while(condition) BODY+
@@ -181,24 +184,24 @@ When a while loop is encountered in a program, \verb^Body^ is executed
 while the condition is true.  Typically, 
 the datapath computes the condition using a comparator, the 
 output of which is the status signal shown in 
-Figure~\ref{fig:While}.  While the control unit is in state
-{\bf Comp}, the condition is being evaluated, the status signal is
+Figure~\ref{fig:datapathControlWhile}.  While the control unit is in state
+\textbf{ Comp}, the condition is being evaluated, the status signal is
 being communicated to the control unit, and the control unit 
-deciding on whether to transition to either the {\bf Body} or 
-{\bf Next} states.  The {\bf Body} state represents the 
+deciding on whether to transition to either the \textbf{ Body} or 
+\textbf{ Next} states.  The \textbf{ Body} state represents the 
 collection of states derived by parsing all the statements 
 in the body of the while loop.
 
 In some cases the status signal may be determined by some external 
-source.  Then, the status line shown in Figure~\ref{fig:While} 
+source.  Then, the status line shown in Figure~\ref{fig:datapathControlWhile} 
 as emanating from the datapath would in fact be sent in from the 
-external world as shown in Figure~\ref{fig:Abstract}.
+external world as shown in Figure~\ref{fig:datapathControlAbstract}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/While}}
+\center{\includegraphics{While}}
 \caption{The datapath and control components required to realize
-a {\bf while} statement.}
-\label{fig:While}
+a \textbf{ while} statement.}
+\label{fig:datapathControlWhile}
 \end{figure}
 
 \item[]\verb^X = value^
@@ -208,10 +211,10 @@ When an assignment statement is encountered in a program,
 placing a register in the datapath whose input is the 
 value on the right-hand side of the assignment statement.  
 In order to make the assignment, the control unit
-enters the {\bf Op} state, where it asserts a load signal on the
+enters the \textbf{ Op} state, where it asserts a load signal on the
 registers control input.  On the next positive edge of the 
 clock, the register loads its value and the control unit
-moves on to the {\bf Next} state.
+moves on to the \textbf{ Next} state.
 
 The size of the register storing X is determined by the range
 of values  required to be stored in X.  In some
@@ -222,19 +225,19 @@ value range.
 Statements like \verb^X = X+Y^ often occur in 
 algorithms.  In cases when a variable appears on both the left-hand
 and right-hand side of an assignment statement, feedback must
-be employed as shown in Figure~\ref{fig:Op}.  In this case, the 
+be employed as shown in Figure~\ref{fig:datapathControlOp}.  In this case, the 
 output from the X register is added to Y, the output of the summation
 is sent to the data input of the X register.  The control unit
 asserts a load signal on the X register's control input when
-it is in the {\bf Op} state.  Most likely, the control unit would assert
+it is in the \textbf{ Op} state.  Most likely, the control unit would assert
 a hold signal on the Y register's control input while it
-was in the {\bf Op} state.
+was in the \textbf{ Op} state.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/Op}}
+\center{\includegraphics{Op}}
 \caption{The datapath and control components required to realize
 an assignment statement of the form X+Y.}
-\label{fig:Op}
+\label{fig:datapathControlOp}
 \end{figure}
 
 What prevents the X register from rapidly adding Y to itself 
@@ -251,18 +254,18 @@ of two assignments.  Since the variable \verb^X^ is stored in a register
 which has a single input, a problem occurs because there are two 
 different sources for the input.  This conflict is resolved by
 inserting a mux between the two data sources and the single
-data input of the X register as shown in Figure~\ref{fig:2Source}.
+data input of the X register as shown in Figure~\ref{fig:datapathControl2Source}.
 The control unit aids in resolving this conflict by asserting 
 control$_1$ to route the correct value to the data input of 
 register X when the control unit asserts a load signal on the 
 control$_2$ line.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/2Source}}
+\center{\includegraphics{2Source}}
 \caption{The datapath and control components required to resolve
 the problem of a register requiring two different sources of
 data input.}
-\label{fig:2Source}
+\label{fig:datapathControl2Source}
 \end{figure}
 
 \end{description}
@@ -279,7 +282,7 @@ comes from the definition of the control word for each state.
 
 \begin{quote}
 A control word is a complete listing of the names and meanings of 
-all the control signals sent {\bf from} the control unit {\bf to} the
+all the control signals sent \textbf{ from} the control unit \textbf{ to} the
 datapath.  
 \end{quote}
 
@@ -366,79 +369,79 @@ Now the translation of this algorithm to hardware proceeds by examining
 line-by-line the algorithm and transforming each statement into some datapath
 and control.
 
-{\bf Line 1.} The min register is initialized to the largest 8-bit integer,
+\textbf{ Line 1.} The min register is initialized to the largest 8-bit integer,
 in this case hexadecimal FF.  When this assignment statement is parsed
-according to Figure~\ref{fig:Op}, one state is added to
+according to Figure~\ref{fig:datapathControlOp}, one state is added to
 the control unit and a register to the datapath.  The state is called
-{\bf InitMin}. Other initialization states in the 
+\textbf{ InitMin}. Other initialization states in the 
 control unit are to be expected and each should be given a distinct name.  An 8-bit 
 register, labeled min, is placed in the datapath.  Since min is on the 
 LHS of two assignment statements (Line 1 and Line 5), place a 8-bit 2:1 
-mux in front of the min register; see Figure~\ref{fig:2Source}.  When
-the control unit is in the {\bf InitMin} state, it asserts a load
+mux in front of the min register; see Figure~\ref{fig:datapathControl2Source}.  When
+the control unit is in the \textbf{ InitMin} state, it asserts a load
 signal on the min register's control input and should route 0xFF through
 the min register's mux.
 
-{\bf Line 2.} The for loop is used to search every address in the 
+\textbf{ Line 2.} The for loop is used to search every address in the 
 RAM looking for the smallest value.  When this for loop is parsed 
-according to Figure~\ref{fig:For}, three states are added to
+according to Figure~\ref{fig:datapathControlFor}, three states are added to
 the control unit and a counter and comparator is added to the datapath. In 
-Figure~\ref{fig:MinSearch}, the {\bf InitI, CompC, Inc} states correspond 
-to the {\bf Init, Comp, Inc} in Figure~\ref{fig:For}, respectively. The 
-body of the for loop is composed of Lines 3-5.  The {\bf Body} state of 
-the for loop in Figure~\ref{fig:For} is composed of the 
-{\bf Read, CompM, NewMin} states in Figure~\ref{fig:MinSearch}.  The
+Figure~\ref{fig:datapathControlMinSearch}, the \textbf{ InitI, CompC, Inc} states correspond 
+to the \textbf{ Init, Comp, Inc} in Figure~\ref{fig:datapathControlFor}, respectively. The 
+body of the for loop is composed of Lines 3-5.  The \textbf{ Body} state of 
+the for loop in Figure~\ref{fig:datapathControlFor} is composed of the 
+\textbf{ Read, CompM, NewMin} states in Figure~\ref{fig:datapathControlMinSearch}.  The
 output of the counter is sent to a comparator whose output, labeled
 IC, is sent to the control unit so, allowing the for loop to acknowledge when
 completed. 
 
-When the control unit is in the {\bf InitI} state, it asserts a load
-signal on the counter's control input.  In the {\bf CompC} state, the control unit
-should have the counter hold its value.  In the {\bf Inc} state, the control
+When the control unit is in the \textbf{ InitI} state, it asserts a load
+signal on the counter's control input.  In the \textbf{ CompC} state, the control unit
+should have the counter hold its value.  In the \textbf{ Inc} state, the control
 unit should assert an increment signal on the counter's control input.
 
-{\bf Line 3.} In this line, the RAM is read and its value is stored in the MBR.  When this
-assignment statement is parsed according to Figure~\ref{fig:Op}, one state is added 
+\textbf{ Line 3.} In this line, the RAM is read and its value is stored in the MBR.  When this
+assignment statement is parsed according to Figure~\ref{fig:datapathControlOp}, one state is added 
 to the control unit, and a register and RAM is added to the 
-datapath. The state {\bf Read} in Figure~\ref{fig:MinSearch} corresponds to the state
-{\bf OP} in Figure~\ref{fig:Op}.  Since the expression \verb+RAM[i]+ is on the RHS
+datapath. The state \textbf{ Read} in Figure~\ref{fig:datapathControlMinSearch} corresponds to the state
+\textbf{ OP} in Figure~\ref{fig:datapathControlOp}.  Since the expression \verb+RAM[i]+ is on the RHS
 of the assignment statement, the RAM provides the data to the 
-MBR register.  When the control unit is in the {\bf Read} state, 
+MBR register.  When the control unit is in the \textbf{ Read} state, 
 a read signal is asserted on the RAM's control input and a load signal is asserted 
 on the MBR register's control input.
 
-{\bf Line 4.}  The output of MBR is compared to min.  When the if/then/else statement
-is parsed according to Figure~\ref{fig:IfThen}, one state is added
-to the control unit and a comparator is added to the datapath.  The state {\bf CompM} in 
-Figure~\ref{fig:MinSearch} plays the role of the state {\bf IfThen} in Figure~\ref{fig:IfThen}.
+\textbf{ Line 4.}  The output of MBR is compared to min.  When the if/then/else statement
+is parsed according to Figure~\ref{fig:datapathControlIfThen}, one state is added
+to the control unit and a comparator is added to the datapath.  The state \textbf{ CompM} in 
+Figure~\ref{fig:datapathControlMinSearch} plays the role of the state \textbf{ IfThen} in Figure~\ref{fig:datapathControlIfThen}.
 This state uses the output of the comparator labeled MC to determine which 
 state to enter next.  If min is less than the MBR, MC=1 and the 
 control unit 
-goes to the state {\bf NewMin} in the next clock cycle.  Otherwise, the control goes 
-to the state {\bf Inc}.
+goes to the state \textbf{ NewMin} in the next clock cycle.  Otherwise, the control goes 
+to the state \textbf{ Inc}.
 
-{\bf Line 5.}  The line of code is only executed if MBR is less than min.  
-When the assignment statement is parsed according to Figure~\ref{fig:Op},
+\textbf{ Line 5.}  The line of code is only executed if MBR is less than min.  
+When the assignment statement is parsed according to Figure~\ref{fig:datapathControlOp},
 one state is added to the control unit and no additional hardware
 to the datapath because the min and MBR registers are already in the datapath.
-The state {\bf NewMin} in Figure~\ref{fig:MinSearch} corresponds to the state
-{\bf OP} in Figure~\ref{fig:Op}.  When the control unit is in the {\bf NewMin}
+The state \textbf{ NewMin} in Figure~\ref{fig:datapathControlMinSearch} corresponds to the state
+\textbf{ OP} in Figure~\ref{fig:datapathControlOp}.  When the control unit is in the \textbf{ NewMin}
 state, a load signal is asserted on the min registers control input 
 and routes MBR through the min register's mux.
 
-{\bf Line 6.}  The line of code halts the machine.  When the while loop is parsed,
+\textbf{ Line 6.}  The line of code halts the machine.  When the while loop is parsed,
 one state is added to the control unit and no hardware to the 
-datapath.  The {\bf Done} state in Figure~\ref{fig:MinSearch} corresponds to 
-the state {\bf Comp} in Figure~\ref{fig:While}.  The unconditional self arc
-to/from the {\bf Done} state halts a FSM when it gets to the {\bf Done}
+datapath.  The \textbf{ Done} state in Figure~\ref{fig:datapathControlMinSearch} corresponds to 
+the state \textbf{ Comp} in Figure~\ref{fig:datapathControlWhile}.  The unconditional self arc
+to/from the \textbf{ Done} state halts a FSM when it gets to the \textbf{ Done}
 state.  However, in most cases the circuit will restart its primary 
 operation from the beginning when it has completed one iteration. 
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./Fig8/MinSearch}}}
+\center{\scalebox{0.7}{\includegraphics{MinSearch}}}
 \caption{The datapath and control components required to implement
 the minimum search circuit.}
-\label{fig:MinSearch}
+\label{fig:datapathControlMinSearch}
 \end{figure}
 
 The dotted lines representing the status information are generated in the 
@@ -473,7 +476,7 @@ D_{I}  = Q_{NM} + Q_{CM}*MC' \\
 
 The control word for the circuit is determined by listing every control
 input in the datapath along with its associated action.  In 
-Figure~\ref{fig:MinSearch}, the collection of dashed lines forms the 
+Figure~\ref{fig:datapathControlMinSearch}, the collection of dashed lines forms the 
 control word.  It is a good idea to form the control word while parsing 
 the algorithm's statements.  By using the table on 
 page~\pageref{page:boxlist}, the control input to each 
@@ -486,19 +489,19 @@ the actions each state performs and is discussed next.
 
 \begin{table}
 \begin{tabular}{c||c|c|c|c|c|c}  
-{\bf State}   & CS       & R/W'   &  Reg Min  & Min mux       & Counter & MBR	\\ \hline
+\textbf{ State}   & CS       & R/W'   &  Reg Min  & Min mux       & Counter & MBR	\\ \hline
         & 0 off    & 0 write&  0 hold   & 0 load FF     & 00 hold & 0 hold	\\ \hline
         & 1 active & 1 read &  1 load   & 1 load RAM    & 01 load & 1 load	\\ \hline
         &          &        &           &               & 10 count& 		\\ \hline
         &          &        &           &               & 11 reset& \\ \hline \hline
-{\bf InitMin } & 0        &    x   & 1         & 0             & 00      & 0   \\ \hline
-{\bf InitI }  & 0        &    x   & 0         & x             & 01      & 0   \\ \hline
-{\bf CompC }  & 0        &    x   & 0         & x             & 00      & 0   \\ \hline
-{\bf Read  }  & 1        &    1   & 0         & x             & 00      & 1   \\ \hline
-{\bf CompM }  & 0        &    x   & 0         & x             & 00      & 0   \\ \hline
-{\bf NewMin }  & 0        &    x   & 1         & 1             & 01      & 0   \\ \hline
-{\bf Inc  }   & 0        &    x   & 0         & x             & 10      & 0   \\ \hline
-{\bf Done }   & 0        &    x   & 0         & x             & 00      & 0   \\ 
+\textbf{ InitMin } & 0        &    x   & 1         & 0             & 00      & 0   \\ \hline
+\textbf{ InitI }  & 0        &    x   & 0         & x             & 01      & 0   \\ \hline
+\textbf{ CompC }  & 0        &    x   & 0         & x             & 00      & 0   \\ \hline
+\textbf{ Read  }  & 1        &    1   & 0         & x             & 00      & 1   \\ \hline
+\textbf{ CompM }  & 0        &    x   & 0         & x             & 00      & 0   \\ \hline
+\textbf{ NewMin }  & 0        &    x   & 1         & 1             & 01      & 0   \\ \hline
+\textbf{ Inc  }   & 0        &    x   & 0         & x             & 10      & 0   \\ \hline
+\textbf{ Done }   & 0        &    x   & 0         & x             & 00      & 0   \\ 
 \end{tabular}
 \caption{The control word for the minimum search circuit and its values for each state.}
 \label{table:MinSearch}
@@ -507,7 +510,7 @@ the actions each state performs and is discussed next.
 Determining the values of the control-word bits for each state 
 requires understanding what is supposed to happen in each 
 state.  For example, parsing Line 1 resulted in adding the 
-{\bf NewMin} state.  In this state, the min register was
+\textbf{ NewMin} state.  In this state, the min register was
 to be assigned the value 0xFF.  The datapath can accomplish
 this by asserting a ``load" to min register and a ``load FF" on the 
 Min mux control lines.  All the other basic building blocks 
@@ -542,7 +545,7 @@ the counter requires two bits of control, giving
 eight, total control bits.  The output equation for a control bit is the
 OR of the states which cause the output to equal 1.  For example, the 
 R/W' output of the control unit equals 1 when the control unit is in the 
-{\bf Read} state. Hence, $Z_{RW} = Q_{Read}$.  
+\textbf{ Read} state. Hence, $Z_{RW} = Q_{Read}$.  
 All the OEs are summarized in the list below.
 
 $\begin{array}{l}
@@ -571,59 +574,59 @@ circuit in one state; the name of the state is written
 underneath the circuit diagram.
 
 The operation of the minimum search circuit starts at time=1
-in the {\bf InitMin} state, shown in the upper left of 
-Figure~\ref{fig:mintable}.  The flip flop labeled IM ({\bf InitMin}) 
+in the \textbf{ InitMin} state, shown in the upper left of 
+Figure~\ref{fig:datapathControlmintable}.  The flip flop labeled IM (\textbf{ InitMin}) 
 is shaded grey because its output, $Q_{IM}=1$; it is the current state.  
-The control word for the {\bf InitMin} state asserts ``load" on the 
+The control word for the \textbf{ InitMin} state asserts ``load" on the 
 min register' control input and ``route FF" to the min mux. Hence, 
 these control signals are drawn as solid lines.
 The MIE, $D_{II} = Q_{IM}$, means that when the clock edge 
-arrives, the control unit transitions to the {\bf InitI} 
+arrives, the control unit transitions to the \textbf{ InitI} 
 state and the min register will latch the value FF.
 
-When the control unit is in the {\bf InitI} state, $Q_{II}=1$
+When the control unit is in the \textbf{ InitI} state, $Q_{II}=1$
 causes the OEs to assert a ``load" on the counter's control
-input.  The control unit transitions into state {\bf CompC},
+input.  The control unit transitions into state \textbf{ CompC},
 where the IC output of the comparator is used
-to send the control unit to the {\bf Read} state.
+to send the control unit to the \textbf{ Read} state.
 During this state, the counter is used as the address to
 the RAM, which sends its data output to the MBR.  When the 
 positive edge of the clock arrives, the MBR latches its
-value and the control unit transitions into the {\bf CompM} 
+value and the control unit transitions into the \textbf{ CompM} 
 state.  While in this state, the MC output of the comparator
 is being used by the control unit to determine whether it 
-should transition into the {\bf NewMin} or the {\bf Inc} state
-(see Figure~\ref{fig:MinSearch}).  It is assumed that the 
+should transition into the \textbf{ NewMin} or the \textbf{ Inc} state
+(see Figure~\ref{fig:datapathControlMinSearch}).  It is assumed that the 
 value stored at address 0 in the RAM is less than 0xFF, so
 the MC output is 1 and the control unit transitions to the 
-{\bf NewMin} state.  In this state, the control 
-unit loads the MBR into the min register.  When it is in the {\bf Inc}
+\textbf{ NewMin} state.  In this state, the control 
+unit loads the MBR into the min register.  When it is in the \textbf{ Inc}
 state, the control unit is getting ready to enter another loop of the
 for loop, by incrementing the counter.  It then transitions
-back into the {\bf CompC} state on the next positive clock edge.
+back into the \textbf{ CompC} state on the next positive clock edge.
 
 
 \begin{figure}
 
 \begin{tabular}{ll}
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2a}} & 
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2e}} \\
-1. State {\bf InitMin}                               & 5. State {\bf CompM} \\
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2b}} & 
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2f}} \\
-2. State {\bf InitI}                                 & 6. State {\bf NewMin} \\
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2c}} & 
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2g}} \\
-3. State {\bf CompC}                                 & 7. State {\bf Inc} \\
-\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2d}} & 
-	\scalebox{0.3}{\includegraphics{./Fig8/MinSearch2h}} \\
-4. State {\bf Read}                                  & 8. State {\bf CompC} \\
+\scalebox{0.3}{\includegraphics{MinSearch2a}} & 
+	\scalebox{0.3}{\includegraphics{MinSearch2e}} \\
+1. State \textbf{ InitMin}                               & 5. State \textbf{ CompM} \\
+\scalebox{0.3}{\includegraphics{MinSearch2b}} & 
+	\scalebox{0.3}{\includegraphics{MinSearch2f}} \\
+2. State \textbf{ InitI}                                 & 6. State \textbf{ NewMin} \\
+\scalebox{0.3}{\includegraphics{MinSearch2c}} & 
+	\scalebox{0.3}{\includegraphics{MinSearch2g}} \\
+3. State \textbf{ CompC}                                 & 7. State \textbf{ Inc} \\
+\scalebox{0.3}{\includegraphics{MinSearch2d}} & 
+	\scalebox{0.3}{\includegraphics{MinSearch2h}} \\
+4. State \textbf{ Read}                                  & 8. State \textbf{ CompC} \\
 \end{tabular}
 
 \caption{A sequence of figures showing the operation of 
 the minimum search circuit through time.  Active components 
 are shaded.}
-\label{fig:mintable}
+\label{fig:datapathControlmintable}
 \end{figure}
 
 Before moving on with another example, a more
@@ -636,10 +639,10 @@ of the circuit is considered.
 \section{Timing}
 The timing analysis of a datapath and control circuit is
 based on the behavior of the general model of its organization
-shown in Figure~\ref{fig:Abstract}.  Since the control unit in
+shown in Figure~\ref{fig:datapathControlAbstract}.  Since the control unit in
 this figure is just a FSM, understanding
 the timing analysis of the FSM presented in 
-Figure~\ref{fig:GenTime} on page~\pageref{page:GenTime} is imperative.  The goal 
+Figure~\ref{fig:datapathControlGenTime} on page~\pageref{page:GenTime} is imperative.  The goal 
 of this analysis is to determine the maximum clock frequency at which
 a datapath and control circuit can operate. In order to do 
 this, the worst case delay, called the 
@@ -651,14 +654,14 @@ in the circuit, the D flip flops latching their values, occurs.
 The positive clock edge has two primary effects: It causes the 
 FSM to transition into a new state and it causes the registers in
 the datapath to latch new values.  The propagation delay of the
-flip flops is referred to as $T_p(A)$ in Figure~\ref{fig:DPTime}.  Since
+flip flops is referred to as $T_p(A)$ in Figure~\ref{fig:datapathControlDPTime}.  Since
 the datapath requires a valid control word before it can begin, 
 the critical path includes the output equation logic. 
 
 The D flip flops which store the state of the control unit's FSM
-are the input of the OEs; see Figure~\ref{fig:GenFSM}.  The delay
+are the input of the OEs; see Figure~\ref{fig:datapathControlGenFSM}.  The delay
 between the application of a valid $Q$ to when the OEs assert their new
-values is referred to as $T_p(B)$ in Figure~\ref{fig:DPTime}.
+values is referred to as $T_p(B)$ in Figure~\ref{fig:datapathControlDPTime}.
 
 The OEs of the FSM are the control word of the datapath and
 control circuit, telling the elements in the datapath what operation
@@ -674,23 +677,23 @@ combinational logic is on the critical path because its delay
 constrains the maximum clocking frequency.  The time difference 
 between the application of a valid control word to the datapath
 and the status input to the control unit becoming valid is referred 
-to as $T_p(C)$ in Figure~\ref{fig:DPTime}.
+to as $T_p(C)$ in Figure~\ref{fig:datapathControlDPTime}.
 
 The status input to the control unit are routed to the MIE logic;
-see Figure~\ref{fig:GenFSM}.  The delay between the status inputs
+see Figure~\ref{fig:datapathControlGenFSM}.  The delay between the status inputs
 becoming valid and the MIEs becoming valid is referred to as $T_p(D)$ 
-in Figure~\ref{fig:DPTime}.
+in Figure~\ref{fig:datapathControlDPTime}.
 
 Once the memory inputs have stabilized, they must be allowed
 some setup time, (see page~\pageref{page:setup}), before the next
 clock edge.  The setup time is referred to as $T_p(E)$ in 
-Figure~\ref{fig:DPTime}.
+Figure~\ref{fig:datapathControlDPTime}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/DPTime}}
+\center{\includegraphics{DPTime}}
 \caption{A clock waveform annotated with the delays on the
 critical path of a datapath and control circuit.}
-\label{fig:DPTime}
+\label{fig:datapathControlDPTime}
 \end{figure}
 \index{timing!datapath and control}
 
@@ -730,23 +733,23 @@ Following some common sense rules accomplishes the change.
 Two or more assignment statements can be combined if there are 
 no conflicts in the hardware resources required for the operations
 or if there is no conflict in the order of operations.
-For example, the {\bf InitMin} and {\bf InitI} states in the 
+For example, the \textbf{ InitMin} and \textbf{ InitI} states in the 
 minimum search circuit can be performed at the same time because
 they operate on separate pieces of hardware.  
 
 Successive ``branches" of the control unit can be combined when
-their values are available as shown in Figure~\ref{fig:Branch}.  
-In Figure~\ref{fig:Branch}, notice when $X=1$ and $Y=1$,
-the control unit moves from state {\bf A} to state {\bf D} via the
-state {\bf B}.  If states {\bf B} and {\bf C} do not perform any
+their values are available as shown in Figure~\ref{fig:datapathControlBranch}.  
+In Figure~\ref{fig:datapathControlBranch}, notice when $X=1$ and $Y=1$,
+the control unit moves from state \textbf{ A} to state \textbf{ D} via the
+state \textbf{ B}.  If states \textbf{ B} and \textbf{ C} do not perform any
 operations, then they can be eliminated by transitioning directly
-from state {\bf A} to state {\bf D} via an arc labeled $XY$.
+from state \textbf{ A} to state \textbf{ D} via an arc labeled $XY$.
 
 \begin{figure}[ht]
-\center{\scalebox{0.6}{\includegraphics{./Fig8/Branch}}}
+\center{\scalebox{0.6}{\includegraphics{Branch}}}
 \caption{Consecutive branches by the control unit can be combined
 using AND.}
-\label{fig:Branch}
+\label{fig:datapathControlBranch}
 \end{figure}
 
 
@@ -760,8 +763,8 @@ reliable transfer of data can be performed in this circumstance, consider the fo
 scenario of a producer trying to deliver a packet of candies to a
 consumer.
 
-Two participants associate in the scenario called {\it producer} and 
-{\it consumer}.  The producer has a bag of 32 candies; (the number of 
+Two participants associate in the scenario called \textit{ producer} and 
+\textit{ consumer}.  The producer has a bag of 32 candies; (the number of 
 candies in the bag really does not matter). The candies are to be given to
 the consumer and the producer is to receive an acknowledgment from the consumer of their receipt.
 Unfortunately, the producer is blind-folded 
@@ -785,7 +788,7 @@ stops calling ``Candies" and walks out of the room.
 calling out ``Candies," stops calling out ``Received."
 \end{enumerate}
 
-Figure~\ref{fig:ProdConTime} shows a timing diagram for this scenario.
+Figure~\ref{fig:datapathControlProdConTime} shows a timing diagram for this scenario.
 During the time interval labeled 1, both the producer and consumer are
 quiet.  Perhaps the producer is negotiating through the 
 consumer's rooms.  During time interval 2, the producer is calling out 
@@ -805,9 +808,9 @@ producer knows that the consumer got the box of candies  because the
 producer has acknowledged the consumer's thanks by being quiet.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/ProdConTime}}
+\center{\includegraphics{ProdConTime}}
 \caption{A timing diagram of a data transfer between a producer and a consumer.}
-\label{fig:ProdConTime}
+\label{fig:datapathControlProdConTime}
 \end{figure}
 \index{timing!producer consumer}
 
@@ -833,34 +836,34 @@ digital circuit which is the passive consumer is shown below.
 
 In Line 1 and Line 4, the body of the while loops are empty; there is nothing
 to do but wait.  Furthermore, with respect to the external world, (see
-Figure~\ref{fig:Abstract}), the ACK and REQ signals act as status and 
+Figure~\ref{fig:datapathControlAbstract}), the ACK and REQ signals act as status and 
 command bits, respectively.  The algorithm above is translated into
-datapath and control in Figure~\ref{fig:2Line}.
+datapath and control in Figure~\ref{fig:datapathControl2Line}.
 
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/2Line}}
+\center{\includegraphics{2Line}}
 \caption{The datapath and control components required to implement
 a two-line handshake where the digital system is the passive consumer.}
-\label{fig:2Line}
+\label{fig:datapathControl2Line}
 \end{figure}
 
 The most important feature of the control unit are the two self-arcs
-at states {\bf Wait$_1$ and Wait$_2$}.  In state {\bf Wait$_1$}, the
+at states \textbf{ Wait$_1$ and Wait$_2$}.  In state \textbf{ Wait$_1$}, the
 control unit does nothing except check the value of the REQ signal.
 As long as REQ=0, the control unit waits.  As soon as REQ=1,
-the control unit proceeds to state {\bf Get} where it enables
+the control unit proceeds to state \textbf{ Get} where it enables
 the register to load the external data.  The control unit spends a single 
-clock cycle in this state before moving to state {\bf Wait$_2$}.  In
-state {\bf Wait$_2$}, the control unit asserts and acknowledges,
+clock cycle in this state before moving to state \textbf{ Wait$_2$}.  In
+state \textbf{ Wait$_2$}, the control unit asserts and acknowledges,
 (ACK=1), and waits for the REQ signal to drop.  It is important
 to assert an acknowledge only after latching the data into
-the register.  If an acknowledge is sent in the {\bf Get} state,
+the register.  If an acknowledge is sent in the \textbf{ Get} state,
 then it is possible for a very fast external world to be
 able to change the data signal before the end of the circuit's 
 clock cycle, giving the wrong data.  When the REQ signal is 
-dropped, the control unit goes to state {\bf Next} which represents 
+dropped, the control unit goes to state \textbf{ Next} which represents 
 some further actions expected of the digital system to perform. In 
-state {\bf Next}, (and in all other states except {\bf Wait$_2$}), 
+state \textbf{ Next}, (and in all other states except \textbf{ Wait$_2$}), 
 the ACK signal should be set to 0.  
 
 Notice that no matter how different the clock speeds are between the
@@ -917,37 +920,37 @@ match is incremented.
 14. } // end while
 \end{verbatim}
 
-{\bf Lines 2-6.} The two-line handshake is formed.  The datapath and control
-are similar to Figure~\ref{fig:2Line} with the register being 
+\textbf{ Lines 2-6.} The two-line handshake is formed.  The datapath and control
+are similar to Figure~\ref{fig:datapathControl2Line} with the register being 
 named key.
 
-{\bf Line 8.} The for loop generates the address of each word in RAM.  
+\textbf{ Line 8.} The for loop generates the address of each word in RAM.  
 This line of code adds several states to the control unit and adds
 a counter and a comparator to the datapath.  The data output from
 the counter provides the address input of the RAM.
 
-{\bf Line 9.} The assignment statement takes the data output from the
+\textbf{ Line 9.} The assignment statement takes the data output from the
 RAM and sends it to the MBR register.  While in this state, the 
 control unit should read from the memory and assert load on the
 MBR's control input.
 
-{\bf Line 10.}  The comparison adds a state to the control unit
+\textbf{ Line 10.}  The comparison adds a state to the control unit
 in which the E output from the comparator is used in the 
 datapath to determine if it should increment the match.
 
-{\bf Line 11.}  The assignment statement increments the number of 
+\textbf{ Line 11.}  The assignment statement increments the number of 
 matches if the key is equal to the current memory word.  There
 are two reasonable hardware solutions for the match register,
 a counter or a register with an adder.  The solution chosen
 largely is a matter of preference or of available hardware.
 In the solution presented, the register with an adder 
 combination is used.  The completed datapath and control is shown in 
-Figure~\ref{fig:RAMmatch}.
+Figure~\ref{fig:datapathControlRAMmatch}.
 
 \begin{figure}[ht]
-\center{\scalebox{0.4}{\includegraphics{./Fig8/RAMmatch}}}
+\center{\scalebox{0.4}{\includegraphics{RAMmatch}}}
 \caption{The datapath and control for the RAM match circuit.}
-\label{fig:RAMmatch}
+\label{fig:datapathControlRAMmatch}
 \end{figure}
 
 The control word, shown in Table~\ref{table:RAMmatch},
@@ -957,19 +960,19 @@ listing their values for each state in the control unit.
 \begin{table}
 {\tiny
 \begin{tabular}{c||c|c|c|c|c|c|c|c}  
-{\bf State }  & ACK   & mux       &  Reg match& Reg KEY & Counter     & MBR    & CS       & R/W'    \\ \hline
+\textbf{ State }  & ACK   & mux       &  Reg match& Reg KEY & Counter     & MBR    & CS       & R/W'    \\ \hline
         & 0     & 0 pass 0  &  0 hold   & 0 hold  & 00 hold     & 0 hold & 0 NULL   & 0 write \\ \hline
         &       &           &           &         & 01 load     &        &          &         \\ \hline
         & 1     & 1 match+1 &  1 load   & 1 load  & 10 count    & 1 load & 1 active & 1 read  \\ \hline \hline
-{\bf Wait$_1$ }  & 0     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
-{\bf Get   }  & 0     & x         & 0         & 1       & 00          & 0      & 0        & x       \\ \hline
-{\bf Wait$_2$ }  & 1     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
-{\bf match }   & 0     & 0         & 1         & 0       & 00          & 0      & 0        & x       \\ \hline
-{\bf Init }   & 0     & x         & 0         & 0       & 01          & 0      & 0        & x       \\ \hline
-{\bf For  }   & 0     & x         & 0         & 0       & 10          & 0      & 0        & x       \\ \hline
-{\bf Read }   & 0     & x         & 0         & 0       & 00          & 1      & 1        & 1       \\ \hline
-{\bf Comp }   & 0     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
-{\bf Inc }    & 0     & 1         & 1         & 0       & 00          & 0      & 0        & x       \\ 
+\textbf{ Wait$_1$ }  & 0     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
+\textbf{ Get   }  & 0     & x         & 0         & 1       & 00          & 0      & 0        & x       \\ \hline
+\textbf{ Wait$_2$ }  & 1     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
+\textbf{ match }   & 0     & 0         & 1         & 0       & 00          & 0      & 0        & x       \\ \hline
+\textbf{ Init }   & 0     & x         & 0         & 0       & 01          & 0      & 0        & x       \\ \hline
+\textbf{ For  }   & 0     & x         & 0         & 0       & 10          & 0      & 0        & x       \\ \hline
+\textbf{ Read }   & 0     & x         & 0         & 0       & 00          & 1      & 1        & 1       \\ \hline
+\textbf{ Comp }   & 0     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
+\textbf{ Inc }    & 0     & 1         & 1         & 0       & 00          & 0      & 0        & x       \\ 
 \end{tabular}
 }
 \caption{The control word for the RAM match circuit and its value for each state.}
@@ -1014,14 +1017,14 @@ scan code reader does not write to the keyboard, it assumes that the
 clock and data signals are outputs from the keyboard.
 
 When a keyboard key is pressed, the keyboard sends one 
-packet of information as shown at the top of Figure~\ref{fig:Keyboard}.
+packet of information as shown at the top of Figure~\ref{fig:datapathControlKeyboard}.
 The 8-bit data contained in this make code is the scan code of the 
 key pressed.  The relationship between the keys and their scan codes
 is not at all obvious and is not based on ASCII. The exact codes are
 immaterial to the discussion; the curious reader can perform a quick 
 Internet search on ``PS/2 keyboard scan codes" to get a complete listing.
 When a key is released, two packets are transmitted as shown at the 
-top of Figure~\ref{fig:Keyboard}.  The break code is almost always 
+top of Figure~\ref{fig:datapathControlKeyboard}.  The break code is almost always 
 equal to 0xF0.  The final packet is the scan code of the released 
 key.  
 
@@ -1034,7 +1037,7 @@ its break code and scan code to be transmitted, followed by the break
 and scan code for the ``shift" key.
 
 Each of these packets consists of 11 bits as shown in the lower half 
-of Figure~\ref{fig:Keyboard}.  The data from the keyboard is always 
+of Figure~\ref{fig:datapathControlKeyboard}.  The data from the keyboard is always 
 valid on the falling edge of the clock signal.  The keyboard asserts
 new data on or around the rising edge of the clock.  The 11-bit data 
 packet always begins with a start bit equal to 0.  Following the
@@ -1049,10 +1052,10 @@ errors in transmission.   Following the parity bit, the final bit of
 the data packet, the stop bit, is sent and is always equal to 1.
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./Fig8/Keyboard}}}
+\center{\scalebox{0.7}{\includegraphics{Keyboard}}}
 \caption{The behavior of the keyboard clock and data lines to a 
 key press event.}
-\label{fig:Keyboard}
+\label{fig:datapathControlKeyboard}
 \end{figure}
 
 The keyboard scan code reader circuit assumes only one key is
@@ -1107,48 +1110,48 @@ clock net resources and it makes integrating
 clock debouncing circuits easier.  The keyboard scan algorithm is converted
 into datapath and control by parsing it line-by-line.
 
-{\bf Line 1.} The while loop formed by Line 1 and Line 9 means the scan code reader 
+\textbf{ Line 1.} The while loop formed by Line 1 and Line 9 means the scan code reader 
 is expected to operate forever.	This statement is responsible for the 
-{\bf start} state in Figure ~\ref{fig:kbscan}.
+\textbf{ start} state in Figure ~\ref{fig:datapathControlkbscan}.
 
-{\bf Line 2.} The assignment statement can be handled with the control unit
+\textbf{ Line 2.} The assignment statement can be handled with the control unit
 because busy is a single bit.  Thus, the assignment state does not introduce
 any states in the control unit.
 
-{\bf Line 3.} The delay loop waits for the falling edge of the keyboard clock.
+\textbf{ Line 3.} The delay loop waits for the falling edge of the keyboard clock.
 Introducing a 1-bit comparator in the datapath to check if kb\_clk is equal
 to 1 is wasteful because the E output of the comparator is equal to kb\_clk
 itself.  Hence, the kb\_clk signal is sent directly to the control unit as
-a status signal.  The while loop is responsible for the {\bf while} state 
-in Figure ~\ref{fig:kbscan}.
+a status signal.  The while loop is responsible for the \textbf{ while} state 
+in Figure ~\ref{fig:datapathControlkbscan}.
 
-{\bf Line 4.} The statement is incorporated into the control word.  Its
+\textbf{ Line 4.} The statement is incorporated into the control word.  Its
 value is assigned in the states which make up the surrounding statements.
 
-{\bf Line 5.} This line of code requires  a 6-bit counter and a 6-bit 
+\textbf{ Line 5.} This line of code requires  a 6-bit counter and a 6-bit 
 comparator to be added to the datapath.  The statement is responsible 
-for the {\bf clear}, {\bf inc} and {\bf done?} states in 
-Figure ~\ref{fig:kbscan}.  Note that the {\bf done?} state closes the 
+for the \textbf{ clear}, \textbf{ inc} and \textbf{ done?} states in 
+Figure ~\ref{fig:datapathControlkbscan}.  Note that the \textbf{ done?} state closes the 
 infinite loop started in Line 1.
 
-{\bf Line 6.} The delay loop in Line 3 is used to distinguish the start of a 
+\textbf{ Line 6.} The delay loop in Line 3 is used to distinguish the start of a 
 keypress event and consequently, when to set the busy bit to 1.  The 
 delay loop on Line 6 indicates the presence of a negative edge on the 
 keyboard clock and hence a valid data bit.  This statement is responsible 
-for the {\bf wait1} state in Figure ~\ref{fig:kbscan}.
+for the \textbf{ wait1} state in Figure ~\ref{fig:datapathControlkbscan}.
 
-{\bf Line 7.} In order to get to Line 7, a negative edge on kb\_clk occurred.
+\textbf{ Line 7.} In order to get to Line 7, a negative edge on kb\_clk occurred.
 Hence, the keyboard data is latched up into a shift register.  This 
-statement is responsible for the {\bf shift} state in Figure ~\ref{fig:kbscan}.
+statement is responsible for the \textbf{ shift} state in Figure ~\ref{fig:datapathControlkbscan}.
 
-{\bf Line 8.} A delay loop is waiting for the rising edge of the keyboard clock.  
+\textbf{ Line 8.} A delay loop is waiting for the rising edge of the keyboard clock.  
 As with Line 3 and Line 6, this statement requires no hardware in the datapath.  
-The statement is responsible for the {\bf wait0} state in Figure ~\ref{fig:kbscan}.
+The statement is responsible for the \textbf{ wait0} state in Figure ~\ref{fig:datapathControlkbscan}.
 
 \begin{figure}[ht]
-\center{\scalebox{0.7}{\includegraphics{./Fig8/Kbscan}}}
+\center{\scalebox{0.7}{\includegraphics{Kbscan}}}
 \caption{The datapath and control for the kbscan circuit.}
-\label{fig:kbscan}
+\label{fig:datapathControlkbscan}
 \end{figure}
 
 The control word is formed by writing down the control settings for 
@@ -1158,20 +1161,20 @@ in Table~\ref{table:kscan}.
 
 \begin{table}
 \begin{tabular}{c||c|c|c}  
-{\bf State }  & Counter	& Shift Reg	&  Busy  		\\ \hline
+\textbf{ State }  & Counter	& Shift Reg	&  Busy  		\\ \hline
         & 00 hold	& 00 hold	& 0 valid output	\\ \hline
         & 01 load	& 01 load	& 1 invalid output	\\ \hline
         & 10 count	& 10 shift left	& 			\\ \hline
         &      		& 11 shift right&			\\ \hline \hline
-{\bf start }	&	01	&	00	&	0	\\ \hline
-{\bf while }	&	00	&	00	&	0	\\ \hline
-{\bf start }	&	00	&	00	&	0	\\ \hline
-{\bf clear }	&	01	&	00	&	1	\\ \hline
-{\bf done? }	&	00	&	00	&	1	\\ \hline
-{\bf wait1 }	&	00	&	00	&	1	\\ \hline
-{\bf shift }	&	00	&	11	&	1	\\ \hline
-{\bf wait0 }	&	00	&	00	&	1	\\ \hline
-{\bf inc }	&	10	&	00	&	1	\\ 
+\textbf{ start }	&	01	&	00	&	0	\\ \hline
+\textbf{ while }	&	00	&	00	&	0	\\ \hline
+\textbf{ start }	&	00	&	00	&	0	\\ \hline
+\textbf{ clear }	&	01	&	00	&	1	\\ \hline
+\textbf{ done? }	&	00	&	00	&	1	\\ \hline
+\textbf{ wait1 }	&	00	&	00	&	1	\\ \hline
+\textbf{ shift }	&	00	&	11	&	1	\\ \hline
+\textbf{ wait0 }	&	00	&	00	&	1	\\ \hline
+\textbf{ inc }	&	10	&	00	&	1	\\ 
 \end{tabular}
 \caption{The control word for the keyboard scan circuit and its values for each state.}
 \label{table:kscan}
@@ -1192,35 +1195,35 @@ creates a light show by specifying the number of frames in the show, editing
 those frames, and then instructing the circuit to cycle through the frames. 
 The input to the circuit comes from a standard PS/2 keyboard. The output of 
 the circuit is displayed on a LED bar graph and a 7-segment display. The 
-behavior of the Light Show circuit is given in Figure~\ref{fig:LSbehavior}.
+behavior of the Light Show circuit is given in Figure~\ref{fig:datapathControlLSbehavior}.
  
 \begin{figure}[ht]
-\center{\includegraphics{./Fig8/Behavior}}
+\center{\includegraphics{Behavior}}
 \caption{A state diagram describing the behavior of the Light Show circuit.}
-\label{fig:LSbehavior}
+\label{fig:datapathControlLSbehavior}
 \end{figure}
 
 The Light Show circuit changes state when the users presses a key on 
-the keyboard. For example, pressing ``M" while in the {\bf index } state causes 
-the circuit to transition into the {\bf modify state}. The behavior of the 
+the keyboard. For example, pressing ``M" while in the \textbf{ index } state causes 
+the circuit to transition into the \textbf{ modify state}. The behavior of the 
 Light Show circuit in each of its states is described in 
 Table~\ref{table:LSbehavior}.
 
 \begin{table}
 \begin{tabular}{l|l|l|p{2.0in}}
-{\bf State }	& LED bar graph	& 7-segment	& Behavior 				\\ \hline \hline
-{\bf reset }	& blank		& blank		& All sequential elements are reset 	\\ \hline
-{\bf prompt }	& blank		& ``P"		& Waiting for user input		\\ \hline
-{\bf limit }	& blank		& current limit	& The number of frames in the light show is called 
+\textbf{ State }	& LED bar graph	& 7-segment	& Behavior 				\\ \hline \hline
+\textbf{ reset }	& blank		& blank		& All sequential elements are reset 	\\ \hline
+\textbf{ prompt }	& blank		& ``P"		& Waiting for user input		\\ \hline
+\textbf{ limit }	& blank		& current limit	& The number of frames in the light show is called 
 	the limit. If the user enters a hex value between 0-F it is stored as the new limit. \\  \hline
-{\bf index }	& current frame	& current index	& Each frame in the show has an index which defines 
+\textbf{ index }	& current frame	& current index	& Each frame in the show has an index which defines 
 	its position in the show. If the user enters a hex value between 0-F, this frame will 
-	be edited in the {\bf modify } state. 						\\ \hline
-{\bf modify }	& current frame	& current index	& Each frame has eight bits which specify the state of 
+	be edited in the \textbf{ modify } state. 						\\ \hline
+\textbf{ modify }	& current frame	& current index	& Each frame has eight bits which specify the state of 
 	the 8 LEDs on the bar graph.  These bits are toggled by pressing the corresponding 
 	key. For example, if LED 5 is on, pressing ``5", causes LED 5 
 	to go off.								\\ \hline
-{\bf show }	& cycle through frames & current index & Consecutive frames are displayed on the 
+\textbf{ show }	& cycle through frames & current index & Consecutive frames are displayed on the 
 	LED bar graph at around 4Hz. After the last frame is displayed, the circuit loops 
 	back to the 0th frame. 							\\ 
 \end{tabular}
@@ -1287,164 +1290,164 @@ to be created in order to perform the tasks required of the datapath.  Descripti
 these components are provided, but the structure of their internal organization 
 is left to the reader to determine.
 
-{\bf Line 1.} The infinite loop formed by Line 1 and Line 35 means that the outermost loop 
-in the control unit cycles in the {\bf prompt} state in Figure~\ref{fig:LightShowCir} 
+\textbf{ Line 1.} The infinite loop formed by Line 1 and Line 35 means that the outermost loop 
+in the control unit cycles in the \textbf{ prompt} state in Figure~\ref{fig:datapathControlLightShowCir} 
 until something happens.
 
-{\bf Line 2.} From the word statement, the 7-segment display shows ``P" or a numerical value.
+\textbf{ Line 2.} From the word statement, the 7-segment display shows ``P" or a numerical value.
 A 2:1 mux in the datapath resolves this conflict. Since the assignment statement
 is performed without the need to actually assign a value to a register, no 
 explicit state is required.  The control unit selects the ``P" input when in the 
-{\bf prompt} state.  
+\textbf{ prompt} state.  
 
-{\bf Line 3.} The busy signal is generated by the kbscan component in the datapath.  
+\textbf{ Line 3.} The busy signal is generated by the kbscan component in the datapath.  
 The functional notation ``IsL(ScanCode)" is just short-hand for the IsL output from 
 the ScanDecode component in the datapath.  The ScanDecode component takes in the
 8-bit scan code from the kbscan component and outputs 1 when the scan code corresponds
 to the scan code for the letter ``l".  The ANDing of busy' and IsL signals is handled 
 by the internal logic in the control unit.  When the condition is true, the control 
-unit transitions to the {\bf set limit} state.
+unit transitions to the \textbf{ set limit} state.
 
-{\bf Line 4.} The condition of the while statement is checked in the {\bf set limit} 
-state.  When the user presses a ``p" in the {\bf set limit} state, the control 
-unit transitions back to the {\bf prompt} state.  See page \pageref{page:IsScan}
+\textbf{ Line 4.} The condition of the while statement is checked in the \textbf{ set limit} 
+state.  When the user presses a ``p" in the \textbf{ set limit} state, the control 
+unit transitions back to the \textbf{ prompt} state.  See page \pageref{page:IsScan}
 for more details regarding the scan code recognizer circuit.
 
-{\bf Line 5.} Two different numerical values can be displayed on the 
+\textbf{ Line 5.} Two different numerical values can be displayed on the 
 7-segment display, limit and index (Line 13).  The 2:1 multiplexer in front of 
 the Hex2Seven component allows the control unit to select which of these two values is 
 converted and sent onto the display.  The control unit asserts its control 
 outputs to route the limit register's output to the 7-segment display in 
-the {\bf set limit} state.
+the \textbf{ set limit} state.
 
-{\bf Line 6.} The LED bargraph displays two different values on its output, 0x00 and 
+\textbf{ Line 6.} The LED bargraph displays two different values on its output, 0x00 and 
 RAM[index], (Line 21).  The 2:1 multiplexer placed in front of the LED bargraph 
 resolves this conflict.  The control unit selects 0x00 when it is in the 
-{\bf set limit} state.
+\textbf{ set limit} state.
 
-{\bf Line 7.} If the control unit detects a hexadecimal character has arrived while 
-in the {\bf set limit} state, the control unit transitions to the {\bf load 
+\textbf{ Line 7.} If the control unit detects a hexadecimal character has arrived while 
+in the \textbf{ set limit} state, the control unit transitions to the \textbf{ load 
 limit} state.  The datapath already contains the hardware necessary to check 
 this condition.
 
-{\bf Line 8.} This assignment is performed in the {\bf load limit} state where the control 
+\textbf{ Line 8.} This assignment is performed in the \textbf{ load limit} state where the control 
 unit asserts a load command to the limit register.  The data input to the limit 
 register comes from the converted scan code via the Scan2Hex component.  The Scan2Hex
 component takes in an 8-bit scan code corresponding to a key representing a hexadecimal
 character and converts it into its 4-bit value. See page \pageref{page:ScanDecode}
 for more details.
 
-{\bf Line 9.}  After loading the limit register, the control unit immediately transitions 
-to the {\bf wait limit} state.  Then, the control unit waits for some keyboard activity 
-before transitioning back to the {\bf set limit} state.  This action is done in order to prevent 
+\textbf{ Line 9.}  After loading the limit register, the control unit immediately transitions 
+to the \textbf{ wait limit} state.  Then, the control unit waits for some keyboard activity 
+before transitioning back to the \textbf{ set limit} state.  This action is done in order to prevent 
 the limit register from being continuously loaded while waiting for keyboard activity.
 Such repetitive loading is considered bad form.  While waiting in this state the control 
 unit should display the new limit register on the 7-segment display.
 
-{\bf Line 10.} The If/Then statement started on Line 3 is terminated.
+\textbf{ Line 10.} The If/Then statement started on Line 3 is terminated.
 
-{\bf Line 11.} This statement causes the control unit to transition to the {\bf set index}
+\textbf{ Line 11.} This statement causes the control unit to transition to the \textbf{ set index}
  state.
 
-{\bf Line 12.} The while statement returns the control unit transition to the {\bf prompt} state when 
+\textbf{ Line 12.} The while statement returns the control unit transition to the \textbf{ prompt} state when 
 ``p" is pressed.
 
-{\bf Line 13.} When the control unit is in the {\bf set index} state, the 7-segment display 
+\textbf{ Line 13.} When the control unit is in the \textbf{ set index} state, the 7-segment display 
 should show the current index by asserting the correct control signals.
 
-{\bf Line 14.} When the control unit is in the {\bf set index} state and a hexadecimal 
-character is typed, the control unit should transition to the {\bf load index} state.
+\textbf{ Line 14.} When the control unit is in the \textbf{ set index} state and a hexadecimal 
+character is typed, the control unit should transition to the \textbf{ load index} state.
 
-{\bf Line 15.} Since the primary purpose of the index is to walk through the memory 
+\textbf{ Line 15.} Since the primary purpose of the index is to walk through the memory 
 during a light show, it is stored in a counter.  The control unit signals the 
-counter to load the index in the {\bf load index} state.
+counter to load the index in the \textbf{ load index} state.
 
-{\bf Line 16.} After loading the index register, the control unit transitions to the {\bf wait 
+\textbf{ Line 16.} After loading the index register, the control unit transitions to the \textbf{ wait 
 limit} state where it waits for keyboard activity before transitioning back 
-to the {\bf set index} state.
+to the \textbf{ set index} state.
 
-{\bf Line 17.} Closes the if/then statement from Line 14.
+\textbf{ Line 17.} Closes the if/then statement from Line 14.
 
-{\bf Line 18.} When the control unit is in the {\bf set index} state, a keypress of ``m" 
-causes it to transition to the {\bf modify} state.
+\textbf{ Line 18.} When the control unit is in the \textbf{ set index} state, a keypress of ``m" 
+causes it to transition to the \textbf{ modify} state.
 
-{\bf Line 19.} When the control unit is in the {\bf modify} state, a keypress of ``i" 
-causes it to transition to the {\bf set index} state.  Otherwise the control 
-unit transitions to the {\bf read} state.  
+\textbf{ Line 19.} When the control unit is in the \textbf{ modify} state, a keypress of ``i" 
+causes it to transition to the \textbf{ set index} state.  Otherwise the control 
+unit transitions to the \textbf{ read} state.  
 
-{\bf Line 20.} When in the {\bf read} state, the control unit should route the current 
+\textbf{ Line 20.} When in the \textbf{ read} state, the control unit should route the current 
 index to the 7-segment display.
 
-{\bf Line 21.} When in the {\bf read} state the control unit instructs the bargraph register 
+\textbf{ Line 21.} When in the \textbf{ read} state the control unit instructs the bargraph register 
 to load the current frame from the RAM.
 
 
-{\bf Line 22.} After reading the current frame, the control unit transitions 
-to the {\bf wait! busy} state where it displays the frame on the LED bargraph 
+\textbf{ Line 22.} After reading the current frame, the control unit transitions 
+to the \textbf{ wait! busy} state where it displays the frame on the LED bargraph 
 and waits for a keypress event.
 
-{\bf Line 23.} The control unit waits for a key press event in order 
-to leave the {\bf wait busy} state.
+\textbf{ Line 23.} The control unit waits for a key press event in order 
+to leave the \textbf{ wait busy} state.
 
-{\bf Line 24.} If the keypress event was an octal digit, the control 
-unit transitions to the {\bf write} state, otherwise it goes to the 
-{\bf modify} state to check if the keypress was an ``i".
+\textbf{ Line 24.} If the keypress event was an octal digit, the control 
+unit transitions to the \textbf{ write} state, otherwise it goes to the 
+\textbf{ modify} state to check if the keypress was an ``i".
 
-{\bf Line 25.}  In the {\bf write} state, one of the current frame's 
+\textbf{ Line 25.}  In the \textbf{ write} state, one of the current frame's 
 bits are flipped and then the altered frame is stored back into the 
 RAM.  The lower three bits of the converted scan code tell the flip 
 component which bit of the frame to invert.  Refer to 
 page \pageref{page:flipbox} for further details regarding the flip 
-component.  After this, the control unit goes to the {\bf read} state 
+component.  After this, the control unit goes to the \textbf{ read} state 
 which started the while loop on Line 19.
 
-{\bf Line 26.} The preceding control structures are terminated, ending with the if/then on Line 11.
+\textbf{ Line 26.} The preceding control structures are terminated, ending with the if/then on Line 11.
 
-{\bf Line 27.} This statement causes the control unit to transition to the 
-{\bf reset index} state.
+\textbf{ Line 27.} This statement causes the control unit to transition to the 
+\textbf{ reset index} state.
 
-{\bf Line 28.} When in the {\bf reset index} state, the control unit instructs the index 
+\textbf{ Line 28.} When in the \textbf{ reset index} state, the control unit instructs the index 
 counter to synchronously reset its value to 0.
 
-{\bf Line 29.} Pressing ``p" stops the light show and returns the control unit to the 
-{\bf prompt} state.  This check is performed during the first state, {\bf load frame}, 
+\textbf{ Line 29.} Pressing ``p" stops the light show and returns the control unit to the 
+\textbf{ prompt} state.  This check is performed during the first state, \textbf{ load frame}, 
 of the while loop.
 
-{\bf Line 30.} The bargraph register is loaded with the current frame during the 
-{\bf load frame} state.
+\textbf{ Line 30.} The bargraph register is loaded with the current frame during the 
+\textbf{ load frame} state.
 
-{\bf Line 31.} The control unit should display the current index on the 7-segment display 
+\textbf{ Line 31.} The control unit should display the current index on the 7-segment display 
 during all the states which make up the while loop of the light show.  In preparation for 
-the loop in the next line, the timer counter is reset to 0 in the {\bf load frame}
+the loop in the next line, the timer counter is reset to 0 in the \textbf{ load frame}
  state.
 
-{\bf Line 32.} In the {\bf wait frame} state, the control unit increments the 
+\textbf{ Line 32.} In the \textbf{ wait frame} state, the control unit increments the 
 delay counter from 0 to 4,000,000.  The comparator on the delay counters output 
 signals to the control unit when this happens.  Since the clock is running at 
-16MHz, this count value will hold the control unit in the {\bf wait frame} state
+16MHz, this count value will hold the control unit in the \textbf{ wait frame} state
 for 1/4 of a second.
 
-{\bf Line 33.}  When in the {\bf inc index} state, the control unit increments 
+\textbf{ Line 33.}  When in the \textbf{ inc index} state, the control unit increments 
 the index of the current frame.
 
-{\bf Line 34.} When the control unit is in the {\bf comp index} state, it checks 
+\textbf{ Line 34.} When the control unit is in the \textbf{ comp index} state, it checks 
 the index equals the limit.  If it does, the control unit transitions to 
-the {\bf reset index} state, otherwise the next frame is loaded in the 
-{\bf load frame} state.
+the \textbf{ reset index} state, otherwise the next frame is loaded in the 
+\textbf{ load frame} state.
 
-{\bf Line 35.}  The program is closed.
+\textbf{ Line 35.}  The program is closed.
 
 The net accumulation of the states and hardware added in the parsing of the Light Show 
-algorithm are shown in Figure~\ref{fig:LightShowCir}.
+algorithm are shown in Figure~\ref{fig:datapathControlLightShowCir}.
  
 \begin{figure}[ht]
-\center{\scalebox{0.6}{\includegraphics{./Fig8/LightShowCir}}}
+\center{\scalebox{0.6}{\includegraphics{LightShowCir}}}
 \caption{The datapath and control for the Light show circuit.}
-\label{fig:LightShowCir}
+\label{fig:datapathControlLightShowCir}
 \end{figure}
 
 The next step in the design of Light Show circuit is to define the control word and 
-its value for each of the states shown in Figure~\ref{fig:LightShowCir}.  The control 
+its value for each of the states shown in Figure~\ref{fig:datapathControlLightShowCir}.  The control 
 word is the set of signals from the control unit to the control inputs of the 
 components in the datapath.  The top row of Table~\ref{table:LightShow} lists all 
 the components in the datapath which have control inputs.  The resulting 11-bit control 
@@ -1454,29 +1457,29 @@ are determined from the line-by-line analysis of the light show algorithm.
 \begin{table}
 {\tiny
 \begin{tabular}{c||c|c|c|c|c|c|c|c|c|c|c}
-{\bf State } 	& bar & 7-seg & hex & index & delay & limit    & bargraph & CS & R/W' & tsb & flip \\  
+\textbf{ State } 	& bar & 7-seg & hex & index & delay & limit    & bargraph & CS & R/W' & tsb & flip \\  
 	& mux & mux   & mux & count & count & register & register &       &       & &      \\  \hline \hline
 	& 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold & 0 off & 0 write & 0 tri & 0 pass \\ 
 	& 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load & 1 on    &  1 read & 1 pass & 1 flip \\
 	& 	&     &     & 10 load & 10 load & & & & & \\
 	& 	&     &	    & 11 reset	& 11 reset & & & & \\ \hline \hline
-{\bf prompt } 	 & 	0 &	x &	1 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf set limit }  & 	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf load limit } &	0 &	1 &	0 &	00 &	00 &	1 &	0 &	0 & x &	0 & x \\ \hline
-{\bf waitlimit } &	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf reset index } &	1 &	0 & 	0 &	11 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf load frame } &	1 &	0 &	0 &	00 &	11 &	0 &	1 &	1 & 1 & 0 & x \\ \hline
-{\bf wait frame } &	1 &	0 &	0 &	00 &	01 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf inc index } &	1 &	0 &	0 &	01 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf comp index } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf set index } &	0 &	0 &	0 &	00 & 	00 &	0 & 	0 &	0 & x &	0 & x \\ \hline
-{\bf load index } &	0 &	0 & 	0 &	10 &	00 &	0 &	0 &	0 & x & 0 & x \\ \hline
-{\bf wait index } &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf modify	} &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf modify read} &	1 &	0 &	0 &	00 &	00 &	0 &	1 &	1 & 1 &	1 & x \\ \hline
-{\bf modify write } &	1 &	0 &	0 &	00 &	00 &	0 &	0 & 	1 & 0 &	0 & 1 \\ \hline
-{\bf wait !busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-{\bf wait busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ 
+\textbf{ prompt } 	 & 	0 &	x &	1 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ set limit }  & 	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ load limit } &	0 &	1 &	0 &	00 &	00 &	1 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ waitlimit } &	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ reset index } &	1 &	0 & 	0 &	11 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ load frame } &	1 &	0 &	0 &	00 &	11 &	0 &	1 &	1 & 1 & 0 & x \\ \hline
+\textbf{ wait frame } &	1 &	0 &	0 &	00 &	01 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ inc index } &	1 &	0 &	0 &	01 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ comp index } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ set index } &	0 &	0 &	0 &	00 & 	00 &	0 & 	0 &	0 & x &	0 & x \\ \hline
+\textbf{ load index } &	0 &	0 & 	0 &	10 &	00 &	0 &	0 &	0 & x & 0 & x \\ \hline
+\textbf{ wait index } &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ modify	} &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ modify read} &	1 &	0 &	0 &	00 &	00 &	0 &	1 &	1 & 1 &	1 & x \\ \hline
+\textbf{ modify write } &	1 &	0 &	0 &	00 &	00 &	0 &	0 & 	1 & 0 &	0 & 1 \\ \hline
+\textbf{ wait !busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
+\textbf{ wait busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ 
 \end{tabular} 
 }
 \caption{The control word for the LightShow circuit and its value for each state.}
@@ -1484,5 +1487,4 @@ are determined from the line-by-line analysis of the light show algorithm.
 \end{table}
 
 The reader is left to derive the MIEs and OEs for the control unit.
-\section{Exercises}
-\input{hw8}
+
