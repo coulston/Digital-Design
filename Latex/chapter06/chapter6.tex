@@ -389,8 +389,8 @@ page~\pageref{page:wmu}.  Additionally, the $y_3$ input is unused.  This
 inefficiency is the cost of using a generalized building block.  
 \index{counter|)}
 
-\section{The Read Only Memory}
-\pagebreak
+%\section{The Read Only Memory}
+%\pagebreak
 
 \section{The Static RAM}
 Random Access Memory (RAM) is an unfortunate name for a digital circuit 
@@ -399,13 +399,63 @@ days of computing when engineers used cassette tapes as an inexpensive way
 to store ``lots" of data.  One of the downfalls of a cassette tape is the
 sequential nature of data access.  That is, the time to access a piece of 
 data depends on its position on the tape and the current position of the
-tape.  RAMs are not sequential devices; the amount of time to access any
-\textit{ random location} is the same.  
+tape.  RAMs do not suffer from the limits of a sequential access devices; the 
+amount of time to access any \textit{ random location} is the same.  
+
+In order to understand how RAMs work, you will need to understand a few
+concepts first, so let's start.
+
+A RAM is a device that stores and retrieves bundles of bits, called 
+a word, from an address.  You can envision a RAM as tower 
+of binary numbers like that shown in Figure~\ref{fig:sequentialBBram}.
+The width of a RAM is called the \textbf{word size}.  In Figure~\ref{fig:sequentialBBram}
+the word size is 4-bits.  Each set of 4-bits is called a word.  In 
+Figure~\ref{fig:sequentialBBram}, the words are organized in rows.
+Each word in the RAM has an address. By convention addressing
+starts at location 0.  In Figure~\ref{fig:sequentialBBram}, the word at
+address 5 is 0011.  Retrieving information from a RAM is called a
+\textbf{read} operation.  Storing information into a RAM is called a \textbf{write}
+operation.  The terms read/write should invoke the idea that the RAM is a
+book or ledger that you are reading with your eyes or writing into it with a pen.
+
+\begin{figure}[ht]
+\center{\includegraphics{ram}}
+\caption{A 8x4 RAM has eight words each containing four bits.  The addresses
+are shown to the left.}
+\label{fig:sequentialBBram}
+\end{figure}
+
+
+
+While there is no relationship between the word size and the number of 
+words stored in the RAM, there is a relationship between the number
+of words stored in the RAM and the number of address bits:
+The number of bits in the address must be sufficient to assign 
+each word a unique binary address.  In Figure~\ref{fig:sequentialBBram}, the 
+addresses range from 0 to 7, hence the address is a 3-bit value.   In general, 
+if a RAM has $2^N$ words, it requires a  $N$ bit address so that each word 
+is assigned a unique/distinct address.  
+
+The number of words in a RAM is often described using the metric system notation.
+
+\begin{tabular}{ccc}
+1k & $2^{10}$ & kilo \\ 
+1M & $2^{20}$ & mega \\ 
+1G & $2^{30}$ & giga \\ 
+1T & $2^{40}$ & tera \\ 
+\end{tabular}
+
+The metric names are only close approximations to the actual, binary values
+they describe.  For example, 1 kilometer is a 1,000 meters, but 
+1k bytes of memory is $2^{10}$ bytes, or $1024$ bytes.  The number of 
+address bits can be determined quickly from the metric abbreviations.
+For example, a 256k RAM has $256k=2^8*2^{10}=2^{18}$ words, or 18 bits 
+of address.
 
 A wide variety of random access memories are available to meet the wide
 variety of applications in which users need to store data.  For situations where
 data needs to be retained even though power is removed, non-volatile memories are employed.  
-The memories typically trade-off access and storage speed for the 
+These memories typically trade-off access and storage speed for the 
 convenience of non-volatility.  Volatile memories, memories which lose
 their contents when power is removed, can be either static/dynamic, or 
 synchronous/asynchronous.  
@@ -415,109 +465,70 @@ consequently require periodic refreshing in order to retain their values.  These
 are typically the highest density memories available, but the refresh circuitry
 adds to their complexity.  Static memories store data in an arrangement
 of transistors which does not need refreshing.  Static memories generally 
-consume much less power than their dynamic counterparts.  
+faster, more expensive, and consume lesas power than their dynamic counterparts.  
 
 Access to a synchronous memory requires a clock and is reminiscent of a flip flop.
 Asynchronous memories require the control and data signals be applied
-for certain minimum durations in order for the operations to take effect.
+for certain minimum duration in order for the operations to take effect.
 
-In order to convey the behavior and utilization of a RAM, consider one
-of the most simple and utilitarian memories, the asynchronous static RAM.
-The input, output, and behavior of asynchronous RAM is defined by the following table.
+In order to convey the behavior and utilization of a RAM we consider a popular
+type of RAM used in many FPGAs, synchronous static RAM.
+The input, output, and behavior of a synchronous static RAM is defined by the following table.
 
 \index{RAM|(}
 
-\begin{tabular}{|l|p{3.5in}|} \hline
+\begin{tabular}{|p{2cm}|p{12cm}|} \hline
 
 Nomenclature:  & NxM RAM (random access memory)    \\ \hline
 Data Input:    &  M-bit vector $D=d_{M-1} \ldots d_1 d_0$  
 		$log_2(N)$-bit address $A=a_{log_2(N)-1} \ldots a_1 a_0$ \\ \hline
 Data Output:   & M-bit vector $D=d_{M-1} \ldots d_1 d_0$	 \\ \hline
-Control:       & 1-bit $CS$ (chip select), $R/W'$ (Read Write),        \\ \hline
+Control:       & 1-bit $enb$ (read enable), 1-bit $wen$ (write enable),        \\ \hline
 Status:        & none                                   \\ \hline
-Others:        & none                 \\ \hline
-Behavior:      &
-			\begin{tabular}{c|c|c||c|l}
-			$A$ & $CS$  & $R/W'$ & $D$  	& Note   	       \\ \hline
-			x   & 0     & x      & $Z$  	& RAM deactivated      \\ \hline
-			$A$ & 1     & 0      & $D$  	& RAM[$A$] = $D$ (write) \\ \hline
-			$A$ & 1     & 1      & RAM[$A$]	& $D$ = RAM[$A$] (read)  \\
-			\end{tabular} \\ \hline
+Others:        & 1-bit edge sensitive clock                 \\ \hline
+Behavior:      & \vspace{0.2cm}
+			\begin{tabular}{c|c|c|c|c|c||l}
+			clk			&	enb		&	wen		&	$A$	&	$D_{in}$	&   $D_{out}^+$		&	Note   	       			\\ \hline
+			0, 1 falling		& 	x 		&	x 		& 	x 	& 	x 		&    $D_{out}$		& no clock edge 				\\ \hline
+			rising 		& 	0		&	0 		& 	x	& 	x 		&    $D_{out}$		& hold 					\\ \hline			
+			rising 		& 	1		&	0 		& 	$A$	& 	x 		&    ram[$A$]		& Read 					\\ \hline
+			rising 		& 	0		&	1 		& 	$A$	& 	$D_{in}$ 	&    $D_{out}$		& ram[$A$] $\Leftarrow D_{in}$  	\\ \hline
+			rising 		& 	1		&	1 		& 	$A$	& 	$D_{in}$ 	&    $D_{in}$		& ram[$A$] $\Leftarrow D_{in}$ 	\\ \hline
+			\end{tabular} 
+			\vspace{0.2cm} \\ \hline
 
 \end{tabular}
 \label{page:ram}
 
-A RAM is a storage device that stores and retrieves bundles of bits, called 
-a word, stored at an address.  Envision a RAM as an array
-of binary numbers.  The width of a RAM is called
-the word size.  Each word in the RAM has an address. By convention addressing
-starts at Location 0. The following process is used in order to read data out 
-of a RAM:
+there are many subtleties burred in this truth table that we will explore in the following example.  Before we delve into this example, 
+take a close look at the column headed with $D_{out}^+$  The ``+'' reference in this column is meant to elicit ideas we explored
+in Chapter 5, the next state of a basic memory element.  In this case, the ``+'' in $D_{out}^+$ means that this is the value of the
+$D_{out}$ signal after the clock edge.  The behavior of this
 
-\begin{tabular}{l}
+!!!!PICK UP HERE!!!!
 
-1. Assert the address $A$, $CS$ and $R/W'=1$ \\
-2. Wait \\
-3. Read $data$ \\
-
-\end{tabular}
-
-Assume the contents of the RAM are shown in Figure~\ref{fig:sequentialBBram}.
-If $A=101_2=5_{10}$ and $CS=R/W'=1$ then a little while later $D=0001$.  
+Let's examine how the truth table for a RAM is applied to the timing diagram shown in Figure~\ref{fig:sequentialBBRamReadWrite}.
 
 \begin{figure}[ht]
-
-\center{\includegraphics{ram}}
-\caption{A 8x4 RAM has eight words each containing four bits.  The addresses
-(which are not stored in the RAM) are shown to the left.}
-\label{fig:sequentialBBram}
-
+\center{\includegraphics[width=\textwidth]{wavedromRamReadWrite}}
+\caption{A simulation of the behavior of a 8x4 RAM whose initial values are given in Figure~\ref{fig:sequentialBBram}  .}
+\label{fig:sequentialBBRamReadWrite}
 \end{figure}
 
-The notation \verb^ D = RAM[A]^ used to describe the read operation
-in the RAM's truth table is reminiscent of array access in a 
-typical programming language.  Notice, the data 
-$D$ is used as both input and output.  Hence, a RAM can either read 
-or write over the same set of lines, but not both at the same time. 
-Writing data into a RAM is a 3-step process:
+\begin{description}
+\item[time = 300ns] Read
 
-\begin{tabular}{l}
+\item[time = 400ns] Write
 
-1. Assert $data$ and the address $A$. \\
-2. Assert $CS$ and $R/W'=0$ \\
-3. Wait \\
+\item[time = 600ns...1,000ns]  Consectutive reads.
 
-\end{tabular}
+\item[time = 1,200ns] Simultanous read/write 
 
-Consider the contents of the RAM shown in Figure~\ref{fig:sequentialBBram}.
-If $A=110_2=6_{10}$, $CS=1$, $R/W'=0$, and $D=0101$, then a little while 
-later the memory word at address 6 would be changed from $1101$ to
-$0101$.  
+\item[time = 1,400ns...1,800ns] Consectutive writes.
 
-While there is no relationship between the word size and the number of 
-words stored in the RAM, there is a relationship between the number
-of words stored in the RAM and the number of address bits:
-The number of bits in the address must be sufficient to assign 
-each word a unique binary address.  The $N$ address bits can be arranged 
-in $2^N$ different ways.  Hence, a RAM with $N$ address lines can have 
-up to $2^N$ words.  The number of words in a RAM is often described 
-using the metric system notation.
+\end{description}
 
-\begin{tabular}{ccc}
 
-1k & $2^{10}$ & kilo \\ 
-1M & $2^{20}$ & mega \\ 
-1G & $2^{30}$ & giga \\ 
-1T & $2^{40}$ & tera \\ 
-
-\end{tabular}
-
-The metric names are only close approximations to the actual, binary values
-they describe.  For example, 1 kilometer is a 1,000 meters, but 
-1k bytes of memory is $2^{10}$ bytes, or $1024$ bytes.  The number of 
-address bits can be determined quickly from the metric abbreviations.
-For example, a 256k RAM has $256k=2^8*2^{10}=2^{18}$ words, or 18 bits 
-of address.
 
 Cases occur when it is necessary to build a larger RAM from several
 smaller RAMs.  RAMs have two dimensions which can be increased: (1) the word size or 
