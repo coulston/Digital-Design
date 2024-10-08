@@ -54,13 +54,10 @@ Just send the Y signal outside the datapath as is.
 
 \item \textbf{ (16 pts.)} 
 A 8kx32 RAM is full of integer data.  Design a circuit to scan
-the RAM and find its smallest value.  Assume that the RAM 
-returns data within 1 clock cycle.  
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+the RAM and find its smallest value.  
+
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
 
@@ -70,11 +67,8 @@ circuit that determines the sum of the integers {\em between} addresses
 A and B.  The values of A and B are to be read in using a two-line
 handshake where the circuit is to act as a passive consumer.  
 The sum is to be placed in a 32-bit register S.
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
 \begin{onlysolution}  \textbf{Solution} \itshape{
@@ -147,24 +141,20 @@ $D_{Done } = Q_{For}LB'$		&  		\\
 Design a circuit that repetitively looks at a 1-bit input X.
 Anytime X changes logic values increment an 8-bit
 register Y.  
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
+
 
 \item \textbf{ (16 pts.)}
 A 256x8 RAM is full of data.  Design a circuit that jumps
 around in memory.  It does this by fetching a word and using the
 retrieved word as the next address to jump to.  The circuit is to 
 start at address 0. 
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
+
 
 To desired behavior of the circuit is illustrates in 
 Figure~\ref{fig:RAMhopper}.  If the address=0 then the circuit will
@@ -184,11 +174,8 @@ register called PC.  If the MSB of the fetched word is 1, then the
 remaining seven bits represent a 7-bit 2's complement number;  add these 
 seven bits to the PC.  If the MSB of the fetched word is 0 then just 
 increment the PC.  Repeat this process forever.
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
 
 The desired behavior of the circuit is illustrated in 
@@ -247,12 +234,10 @@ an external input, called IRQ, is asserted the circuit is to stop
 jumping around and assert and ACK.  The outside world will then read
 the PC (which must be routed outside the datapath) and then drop the 
 IRQ.  The circuit should then drop the ACK and resume jumping.
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
+
 
 \item  \textbf{ (16 pts.)} Design a circuit that reads successive words from 
 a 1kx12 RAM and
@@ -275,6 +260,10 @@ two bits of IR are:
 The PC is to be initialized to 0.  After the each memory word is read
 and the appropriate operation performed on ACC, the PC should be
 incremented.
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
+The control unit is to be implemented using a ones hot encoding.
+
 
 \begin{onlysolution}  \textbf{Solution} \itshape{ 
 
@@ -347,10 +336,11 @@ circuit would move words 3EA, 3EB, 3EC and 3ED to address 1FE, 1FF, 200 and 201.
 Each of $M,S,D$ is preloaded into a register.  While this problem appears simple,
 its really rather treacherous.  The circuit will have to handle cases where 
 $S+M > D$.  In such a case the order of the data movement must be carefully planned.
-In order to simplify the design, assume that $S<D$.  Turn in an algorithm, 
-datapath and control, the 
-control word, MIEs and OEs.  These circuit will need a three-state buffer to
-be able to both read and write to the RAM.  Do not worry about the sizes of the
+In order to simplify the design, assume that $S<D$.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
+The control unit is to be implemented using a ones hot encoding.
+Do not worry about the sizes of the
 registers or RAM.
 
 \item \textbf{ (16 pts.)}
@@ -358,12 +348,10 @@ Design a circuit that determines how many times a user
 specified 8-bit value, called \textbf{ key}, occurs in an 1kx8 RAM.  
 \textbf{ key} is to be read using a two-line handshake; the circuit 
 is the passive consumer.
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
+
 
 \item \textbf{ (16 pts.)} Design a circuit that records the number of times that it
 has seen an 8-bit, user specified value, \textbf{ key}.  The key will
@@ -378,14 +366,11 @@ handshake; the circuit is the passive consumer.  The circuit
 should then scan the RAM looking for a matching key; a match, if
 it exists, will only occur once in the RAM.  If a match is 
 found then increment the lower four bit and store the key and the
-incremented hit count back to RAM.  This design will require tristate 
-buffers.
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+incremented hit count back to RAM.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
+
 
 \item \textbf{ (36 pts.)}
 Design a digital circuit to control access to an
@@ -451,12 +436,10 @@ to make the design as space efficient as possible.
 \caption{The format of the RAM in the garage circuit problem.}
 \label{fig:GarRAM}
 \end{figure}
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
+
 
 \item \textbf{ (16 pts.)} Design a circuit that converts a 6-bit binary number into a 2 
 digit BCD representation.  The circuit acquires a 6-bit number through
@@ -470,6 +453,10 @@ subtraction should increment a tens digit counter.
 
 Make sure to identify the size of all the signals in the datapath
 and the size of any register, counters, etc...
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
+The control unit is to be implemented using a ones hot encoding.
+
  
 \item \textbf{ (8 pts.)}
 Design a circuit that converts a 2 digit BCD number into a
@@ -494,6 +481,10 @@ of 9*X from a 4-bit register by adding X, shifted left by three bits, to X.
 
 Make sure to identify the size of all the signals in the datapath
 and the size of any register, counters, etc...
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
+The control unit is to be implemented using a ones hot encoding.
+
  
 \item \textbf{ (36 pts.)}
 Design a digital circuit that plays a game of
@@ -546,12 +537,10 @@ Set reasonable bounds on the maximum winnings.  Values may be displayed
 in hexadecimal (assume there is a hex to 7-segment display converter
 available).  See page~\pageref{page:7seg} for more
 information.
-Turn in; an algorithm
-the datapath and control unit,
-the control word table,
-the memory input equations, and
-output equations.  
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
 The control unit is to be implemented using a ones hot encoding.
+
 
 \begin{onlysolution}  \textbf{Solution} \itshape{
 
@@ -668,6 +657,9 @@ the circuit should decrease the frequency by 7/128 of its current value.  Assume
 that the master clock frequency of the circuit is 4Mhz.  Turn in 
 any relevant calculations, algorithm, datapath and control, control word,
 MIEs, OEs and the maximum tone frequency of the circuit.
+Turn in; an algorithm the datapath and control unit, the control word 
+table, the memory input equations, and output equations.  
+The control unit is to be implemented using a ones hot encoding.
 
 
 \end{enumerate}

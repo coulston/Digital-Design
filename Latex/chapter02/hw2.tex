@@ -455,4 +455,79 @@ Take the P' column from truth table and invert all the entries
 to generate a new output column called P (because
 the negation of P' is P).  Determine the canonical SOP
 realization for P using this new column.
+
+\item\textbf{Lab}
+Design a hexadecimal-to-seven-segment display (hex2Seven) digital circuit.  The hex2Seven circuit 
+converts a 4-bit input that represents a hexadecimal digit to  a 7-bit output that displays the hexadecimal 
+digit on a 7-segment display.  A 7-segment display is an figure-8 shaped arrangement of 7 LEDs that can 
+be individually illuminated.  Each of the 7 LEDs is associated with the output from the hex2Seven circuit 
+as shown in Figure~\ref{figure:dataPathControlSevenSegmentLayout}A.  Active high LEDs illuminate when
+their input is logic 1 and turn-off when their input of logic 0.  If the LEDs of a 7-segment display are active
+then a binary input of 1100110 would display the pattern shown in  Figure~\ref{figure:dataPathControlSevenSegmentLayout}B 
+
+\begin{figure}[ht]
+\includegraphics{sevenSegmentLayout}
+\caption{A) The individual segments of a 7-segment display and their bit position in the 7-bit output from the he2Seven circuit. 
+b) The illumination patter for the digit ``4'' }
+\label{figure:dataPathControlSevenSegmentLayout}
+\end{figure}
+
+Since there are many different ways to illuminate the 7 segments to form the characters 0 \ldots F, we will standardize our
+pattern to those shown in Figure~\ref{figure:dataPathControlSevenSegmentPatterns}.
+
+\begin{figure}[ht]
+\includegraphics{sevenSegmentPattern}
+\caption{The illuminated patterns for all 16 inputs. }
+\label{figure:dataPathControlSevenSegmentPatterns}
+\end{figure}
+
+Now, lets turn our attention to the hex2Seven circuit.  The input and 
+outputs are shown in Figure~\rer{figure:he2SevenToDisplay}.
+
+\begin{figure}[ht]
+\includegraphics{hex2SevenToDisplay}
+\caption{The connection beteen the 4-bit input nd the 7-segment display. }
+\label{figure:he2SevenToDisplay}
+\end{figure}
+
+The truth table for the he2Seven circuit is started below.  Complete the
+truth table.
+
+$$\begin{array}{l|l|l|l|l|l|l|l}
+x 	   & seg[6] & seg[5] & seg[4] & seg[3] & seg[2] & seg[1] & seg[0]  \\ \hline
+0000 &           &             &            &           &            &            &   \\ \hline
+0001 &           &             &            &           &            &            &   \\ \hline
+0010 &           &             &            &           &            &            &   \\ \hline
+0011 &           &             &            &           &            &            &   \\ \hline
+0100 &   0        &    0       &     1     &     1    &     10    &      0     &  1  \\ \hline
+0101 &           &             &            &           &            &            &   \\ \hline
+0110 &           &             &            &           &            &            &   \\ \hline
+0111 &           &             &            &           &            &            &   \\ \hline
+1000 &           &             &            &           &            &            &   \\ \hline
+1001 &           &             &            &           &            &            &   \\ \hline
+1010 &           &             &            &           &            &            &   \\ \hline
+1011 &           &             &            &           &            &            &   \\ \hline
+1100 &           &             &            &           &            &            &   \\ \hline
+1101 &           &             &            &           &            &            &   \\ \hline
+1110 &           &             &            &           &            &            &   \\ \hline
+1111 &           &             &            &           &            &            &   \\ 
+\end{array}$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{enumerate}

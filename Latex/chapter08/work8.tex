@@ -33,7 +33,7 @@ N bit register      & N bits & N bits &  & 1 bit  \\ \hline
 N bit shift register &  N bits & N bits &  & 2 bits  \\ \hline
 N bit counter       & N bits & N bits &  & 2 bits  \\ \hline
 Three state buffer    & N bits & N bits & & 1 bit  \\ \hline
-N:M RAM             & $\log_2(N)$ bits, M bits & M bit & & 3 bits  \\ \hline
+N:M RAM             & $\log_2(N)$ bits, M bits & M bit & & 2 bits  \\ \hline
 N-bit Bus transceiver     & N bits & N bits & & 2 bit  \\ \hline
 \end{tabular}
 \label{page:boxlist}
@@ -86,31 +86,31 @@ RAM is preloaded with data.
 \scalebox{0.7}{\includegraphics{../Fig/MinSearch}}
 
 
-\begin{tabular}{c||c|c|c|c|c|c|c}  
-State   & CS       & RE     &  WE      &  Reg Min  & Min mux       & Counter & MBR	\\ \hline
-        & 0 off    & 0 idle & 0 idle   &  0 hold   & 0 load FF     & 00 hold & 0 hold	\\ \hline
-        & 1 active & 1 read & 1 write  &  1 load   & 1 load MBR    & 01 load & 1 load	\\ \hline
-        &          &       &           &           &               & 10 count& 		\\ \hline
-        &          &       &           &           &               & 11 reset& \\ \hline \hline
-InitMin &         &      &          &          &              &       &    \\ \hline
-InitI   &         &      &          &          &              &       &    \\ \hline
-CompC   &         &      &          &          &              &       &    \\ \hline
-Read    &         &      &          &          &              &       &    \\ \hline
-CompM   &         &      &          &          &              &       &    \\ \hline
-NewMin  &         &      &          &          &              &       &    \\ \hline
-Inc     &         &      &          &          &              &       &    \\ \hline
-Done    &         &      &          &          &              &       &    \\ 
+\begin{tabular}{c||c|c|c|c|c}  
+State   & enb       &  Reg Min  & Min mux       & Counter & MBR	\\ \hline
+        & 0     &  0 hold   & 0 load FF     & 00 hold & 0 hold	\\ \hline
+        & 1 read  &  1 load   & 1 load MBR    & 01 load & 1 load	\\ \hline
+        &                 &           &               & 10 count& 		\\ \hline
+        &                &           &               & 11 reset& \\ \hline \hline
+InitMin &            &          &              &       &    \\ \hline
+InitI   &              &          &              &       &    \\ \hline
+CompC   &             &          &              &       &    \\ \hline
+Read    &             &          &              &       &    \\ \hline
+CompM   &           &          &              &       &    \\ \hline
+NewMin  &             &          &              &       &    \\ \hline
+Inc     &             &          &              &       &    \\ \hline
+Done    &             &          &              &       &    \\ 
 \end{tabular}
 
 \begin{tabular}{p{2in}p{1in}}
-$D_{IM} =$	&	$Z_{CS} =$  		\\
-$D_{II} =$ 	&	$Z_{RE} =$ 		\\
-$D_{CC} =$	&	$Z_{WE} =$  		\\
-$D_{R} = $	&	$Z_{RM} =$ 		\\
-$D_{CM} =$ 	&	$Z_{MM} =$ 		\\
-$D_{NM} =$ 	&	$Z_{C1} =$ 		\\
-$D_{I} = $	&	$Z_{C0} =$ 		\\
-$D_{D} = $	&	$Z_{MBR} =$ 		\\
+$D_{IM} =$	&	$Z_{ENB} =$  		\\
+$D_{II} =$ 	&	$Z_{RM} =$ 		\\
+$D_{CC} =$	&	$Z_{MM} =$  		\\
+$D_{R} = $	&	$Z_{C1} =$ 		\\
+$D_{CM} =$ 	&	$Z_{C0} =$ 		\\
+$D_{NM} =$ 	&	$Z_{MBR} =$ 		\\
+$D_{I} = $	&	 		\\
+$D_{D} = $	&			\\
 \end{tabular}
 
 \pagebreak
@@ -223,19 +223,19 @@ with data.  Your circuit should do this task forever.
 \scalebox{0.5}{\includegraphics{../Fig/RAMmatch}}
 
 {\tiny
-\begin{tabular}{c||c|c|c|c|c|c|c|c|c}  
-State   & ACK   & mux       &  Reg match& Reg KEY & Counter     & MBR    & CS       & RE     & WE       \\ \hline
-        & 0     & 0 pass 0  &  0 hold   & 0 hold  & 00 hold     & 0 hold & 0 NULL   & 0 NULL & 0 NULL   \\ \hline
-        &       &           &           &         & 01 load     &        &          &        &          \\ \hline
-        & 1     & 1 match+1 &  1 load   & 1 load  & 10 count    & 1 load & 1 active & 1 read & 1 write  \\ \hline \hline
-Wait1   &      &          &          &        &           &       &         &       &          \\ \hline
-Get     &      &          &          &        &           &       &         &       &          \\ \hline
-Wait2   &      &          &          &        &           &       &         &       &          \\ \hline
-For     &      &          &          &        &           &       &         &       &          \\ \hline
-Read    &      &          &          &        &           &       &         &       &          \\ \hline
-Comp    &      &          &          &        &           &       &         &       &          \\ \hline
-Add1    &      &          &          &        &           &       &         &       &          \\ \hline
-Inc     &      &          &          &        &           &       &         &       &          \\ 
+\begin{tabular}{c||c|c|c|c|c|c|c}  
+State   & ACK   & mux       &  Reg match& Reg KEY & Counter     & MBR    & enb             \\ \hline
+        & 0     & 0 pass 0  &  0 hold   & 0 hold  & 00 hold     & 0 hold & 0      \\ \hline
+        &       &           &           &         & 01 load     &        &               \\ \hline
+        & 1     & 1 match+1 &  1 load   & 1 load  & 10 count    & 1 load & 1 read  \\ \hline \hline
+Wait1   &      &          &          &        &           &       &               \\ \hline
+Get     &      &          &          &        &           &       &             \\ \hline
+Wait2   &      &          &          &        &           &       &             \\ \hline
+For     &      &          &          &        &           &       &           \\ \hline
+Read    &      &          &          &        &           &       &             \\ \hline
+Comp    &      &          &          &        &           &       &             \\ \hline
+Add1    &      &          &          &        &           &       &        \\ \hline
+Inc     &      &          &          &        &           &       &            \\ 
 \end{tabular} }
 
 \pagebreak

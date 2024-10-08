@@ -308,7 +308,7 @@ N-bit shift register & \pageref{page:shi} & N bits & N-bits &  & 2 bits  \\ \hli
 N-bit counter & \pageref{page:counter}        & N bits & N bits &  & 2 bits  \\ \hline
 Three state buffer& \pageref{page:tsb}      & N bits & N bits & & 1 bit  \\ \hline
 N:M RAM & \pageref{page:ram}              & $\log_2(N)$ bits, M bits & M bit & & 2 bits  \\ \hline
-N-bit Bus transceiver & \pageref{page:bus}      & N bits & N bits & & 2 bit  \\ \hline
+N-bit Bus transceiver & \pageref{page:bus}      & N bits & N bits & & 2 bits \\ \hline
 \end{tabular}
 }
 \caption{The list of all the basic building blocks and some of their attributes.}
@@ -407,7 +407,7 @@ datapath. The state \textbf{ Read} in Figure~\ref{fig:datapathControlMinSearch} 
 \textbf{ OP} in Figure~\ref{fig:datapathControlOp}.  Since the expression \verb+RAM[i]+ is on the RHS
 of the assignment statement, the RAM provides the data to the 
 MBR register.  When the control unit is in the \textbf{ Read} state, 
-a read signal is asserted on the RAM's control input and a load signal is asserted 
+the enb signal is asserted on the RAM's control input and a load signal is asserted 
 on the MBR register's control input.
 
 \textbf{ Line 4.}  The output of MBR is compared to min.  When the if/then/else statement
@@ -488,20 +488,20 @@ word table.  The values filled in for each state are determined by examining
 the actions each state performs and is discussed next.
 
 \begin{table}
-\begin{tabular}{c||c|c|c|c|c|c}  
-\textbf{ State}   & CS       & R/W'   &  Reg Min  & Min mux       & Counter & MBR	\\ \hline
-        & 0 off    & 0 write&  0 hold   & 0 load FF     & 00 hold & 0 hold	\\ \hline
-        & 1 active & 1 read &  1 load   & 1 load RAM    & 01 load & 1 load	\\ \hline
-        &          &        &           &               & 10 count& 		\\ \hline
-        &          &        &           &               & 11 reset& \\ \hline \hline
-\textbf{ InitMin } & 0        &    x   & 1         & 0             & 00      & 0   \\ \hline
-\textbf{ InitI }  & 0        &    x   & 0         & x             & 01      & 0   \\ \hline
-\textbf{ CompC }  & 0        &    x   & 0         & x             & 00      & 0   \\ \hline
-\textbf{ Read  }  & 1        &    1   & 0         & x             & 00      & 1   \\ \hline
-\textbf{ CompM }  & 0        &    x   & 0         & x             & 00      & 0   \\ \hline
-\textbf{ NewMin }  & 0        &    x   & 1         & 1             & 01      & 0   \\ \hline
-\textbf{ Inc  }   & 0        &    x   & 0         & x             & 10      & 0   \\ \hline
-\textbf{ Done }   & 0        &    x   & 0         & x             & 00      & 0   \\ 
+\begin{tabular}{c||c|c|c|c|c}  
+\textbf{ State}   & enb      	&  Min Reg & Min mux       & Counter & MBR Reg	\\ \hline
+        			& 0     		&  0 hold   & 0 load FF     & 00 hold & 0 hold	\\ \hline
+        			& 1 read 	&  1 load   & 1 load RAM    & 01 load & 1 load	\\ \hline
+        			&          	 &           &               		& 10 count& 		\\ \hline
+        			&         		 &           &              		 & 11 reset& \\ \hline \hline
+\textbf{ InitMin } & 0        	 & 1         & 0          		   & 00      & 0   \\ \hline
+\textbf{ InitI }  	& 0        	& 0         & x           		  & 01      & 0   \\ \hline
+\textbf{ CompC }  & 0        & 0         & x             		& 00      & 0   \\ \hline
+\textbf{ Read  }  & 1       	& 0         & x             		& 00      & 1   \\ \hline
+\textbf{ CompM }  & 0        & 0         & x             		& 00      & 0   \\ \hline
+\textbf{ NewMin }  & 0      & 1         & 1             		& 01      & 0   \\ \hline
+\textbf{ Inc  }   & 0        	& 0         & x             		& 10      & 0   \\ \hline
+\textbf{ Done }   & 0        	& 0         & x             		& 00      & 0   \\ 
 \end{tabular}
 \caption{The control word for the minimum search circuit and its values for each state.}
 \label{table:MinSearch}
@@ -544,13 +544,12 @@ While seven bits of control may seem correct, remember
 the counter requires two bits of control, giving 
 eight, total control bits.  The output equation for a control bit is the
 OR of the states which cause the output to equal 1.  For example, the 
-R/W' output of the control unit equals 1 when the control unit is in the 
-\textbf{ Read} state. Hence, $Z_{RW} = Q_{Read}$.  
+ENB output of the control unit equals 1 when the control unit is in the 
+\textbf{ Read} state. Hence, $Z_{ENB} = Q_{R}$.  
 All the OEs are summarized in the list below.
 
 $\begin{array}{l}
-Z_{CS} = Q_{CM} + Q_{NM} \\
-Z_{RW} = Q_{R} \\
+Z_{ENB} = Q_{R} \\
 Z_{RM} = Q_{IM}  + Q_{NM} \\
 Z_{MM} = Q_{NM} \\
 Z_{C1} = Q_{I} \\
@@ -959,20 +958,20 @@ listing their values for each state in the control unit.
 
 \begin{table}
 {\tiny
-\begin{tabular}{c||c|c|c|c|c|c|c|c}  
-\textbf{ State }  & ACK   & mux       &  Reg match& Reg KEY & Counter     & MBR    & CS       & R/W'    \\ \hline
-        & 0     & 0 pass 0  &  0 hold   & 0 hold  & 00 hold     & 0 hold & 0 NULL   & 0 write \\ \hline
-        &       &           &           &         & 01 load     &        &          &         \\ \hline
-        & 1     & 1 match+1 &  1 load   & 1 load  & 10 count    & 1 load & 1 active & 1 read  \\ \hline \hline
-\textbf{ Wait$_1$ }  & 0     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
-\textbf{ Get   }  & 0     & x         & 0         & 1       & 00          & 0      & 0        & x       \\ \hline
-\textbf{ Wait$_2$ }  & 1     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
-\textbf{ match }   & 0     & 0         & 1         & 0       & 00          & 0      & 0        & x       \\ \hline
-\textbf{ Init }   & 0     & x         & 0         & 0       & 01          & 0      & 0        & x       \\ \hline
-\textbf{ For  }   & 0     & x         & 0         & 0       & 10          & 0      & 0        & x       \\ \hline
-\textbf{ Read }   & 0     & x         & 0         & 0       & 00          & 1      & 1        & 1       \\ \hline
-\textbf{ Comp }   & 0     & x         & 0         & 0       & 00          & 0      & 0        & x       \\ \hline
-\textbf{ Inc }    & 0     & 1         & 1         & 0       & 00          & 0      & 0        & x       \\ 
+\begin{tabular}{c||c|c|c|c|c|c|c}  
+\textbf{ State }  & ACK   & mux       &  Reg match& Reg KEY & Counter     & MBR    & enb     \\ \hline
+        & 0     & 0 pass 0  &  0 hold   & 0 hold  					& 00 hold     & 0 hold  & 0 inactive \\ \hline
+        &       &           &           &         							& 01 load     &        	&                 \\ \hline
+        & 1     & 1 match+1 &  1 load   & 1 load  				& 10 count    & 1 load & 1 read  \\ \hline \hline
+\textbf{ Wait$_1$ }  & 0     & x         & 0         & 0       & 00          & 0      & 0             \\ \hline
+\textbf{ Get   }  & 0     & x         & 0         & 1       & 00          & 0      & 0              \\ \hline
+\textbf{ Wait$_2$ }  & 1     & x         & 0         & 0       & 00          & 0      & 0       \\ \hline
+\textbf{ match }   & 0     & 0         & 1         & 0       & 00          & 0      & 0         \\ \hline
+\textbf{ Init }   & 0     & x         & 0         & 0       & 01          & 0      & 0            \\ \hline
+\textbf{ For  }   & 0     & x         & 0         & 0       & 10          & 0      & 0         \\ \hline
+\textbf{ Read }   & 0     & x         & 0         & 0       & 00          & 1      & 1           \\ \hline
+\textbf{ Comp }   & 0     & x         & 0         & 0       & 00          & 0      & 0           \\ \hline
+\textbf{ Inc }    & 0     & 1         & 1         & 0       & 00          & 0      & 0           \\ 
 \end{tabular}
 }
 \caption{The control word for the RAM match circuit and its value for each state.}
@@ -1456,30 +1455,30 @@ are determined from the line-by-line analysis of the light show algorithm.
 
 \begin{table}
 {\tiny
-\begin{tabular}{c||c|c|c|c|c|c|c|c|c|c|c}
-\textbf{ State } 	& bar & 7-seg & hex & index & delay & limit    & bargraph & CS & R/W' & tsb & flip \\  
-	& mux & mux   & mux & count & count & register & register &       &       & &      \\  \hline \hline
-	& 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold & 0 off & 0 write & 0 tri & 0 pass \\ 
-	& 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load & 1 on    &  1 read & 1 pass & 1 flip \\
-	& 	&     &     & 10 load & 10 load & & & & & \\
-	& 	&     &	    & 11 reset	& 11 reset & & & & \\ \hline \hline
-\textbf{ prompt } 	 & 	0 &	x &	1 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ set limit }  & 	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ load limit } &	0 &	1 &	0 &	00 &	00 &	1 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ waitlimit } &	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ reset index } &	1 &	0 & 	0 &	11 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ load frame } &	1 &	0 &	0 &	00 &	11 &	0 &	1 &	1 & 1 & 0 & x \\ \hline
-\textbf{ wait frame } &	1 &	0 &	0 &	00 &	01 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ inc index } &	1 &	0 &	0 &	01 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ comp index } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ set index } &	0 &	0 &	0 &	00 & 	00 &	0 & 	0 &	0 & x &	0 & x \\ \hline
-\textbf{ load index } &	0 &	0 & 	0 &	10 &	00 &	0 &	0 &	0 & x & 0 & x \\ \hline
-\textbf{ wait index } &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ modify	} &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ modify read} &	1 &	0 &	0 &	00 &	00 &	0 &	1 &	1 & 1 &	1 & x \\ \hline
-\textbf{ modify write } &	1 &	0 &	0 &	00 &	00 &	0 &	0 & 	1 & 0 &	0 & 1 \\ \hline
-\textbf{ wait !busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ \hline
-\textbf{ wait busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 & x &	0 & x \\ 
+\begin{tabular}{c||c|c|c|c|c|c|c|c|c|c}
+\textbf{ State } 	& bar & 7-seg & hex & index & delay & limit    & bargraph & enb & wen   & flip \\  
+	                & mux & mux   & mux & count & count & register & register &          &         &       \\  \hline \hline
+	& 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold   & 0       & 0       &0 pass \\ 
+	& 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load              & 1 read & write   & 1 flip \\
+	& 	&     &     & 10 load & 10 load & & &  \\
+	& 	&     &	    & 11 reset	& 11 reset & & \\ \hline \hline
+\textbf{ prompt } 	 & 	0 &	x &	1 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ set limit }  & 	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ load limit } &	0 &	1 &	0 &	00 &	00 &	1 &	0 &	0 &	0 & x \\ \hline
+\textbf{ waitlimit } &	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ reset index } &	1 &	0 & 	0 &	11 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ load frame } &	1 &	0 &	0 &	00 &	11 &	0 &	1 &	1 &	0 & x \\ \hline
+\textbf{ wait frame } &	1 &	0 &	0 &	00 &	01 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ inc index } &	1 &	0 &	0 &	01 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ comp index } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ set index } &	0 &	0 &	0 &	00 & 	00 &	0 & 	0 &	0 &	0 & x \\ \hline
+\textbf{ load index } &	0 &	0 & 	0 &	10 &	00 &	0 &	0 &	0 & 0 & x \\ \hline
+\textbf{ wait index } &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ modify	} &	0 &	0 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ modify read} &	1 &	0 &	0 &	00 &	00 &	0 &	1 &	1 &	0 & x \\ \hline
+\textbf{ modify write } &	1 &	0 &	0 &	00 &	00 &	0 &	0 & 	1 &	1 & 1 \\ \hline
+\textbf{ wait !busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
+\textbf{ wait busy } &	1 &	0 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ 
 \end{tabular} 
 }
 \caption{The control word for the LightShow circuit and its value for each state.}

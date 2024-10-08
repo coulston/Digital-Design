@@ -487,13 +487,13 @@ Control:       & 1-bit $enb$ (read enable), 1-bit $wen$ (write enable),        \
 Status:        & none                                   \\ \hline
 Others:        & 1-bit edge sensitive clock                 \\ \hline
 Behavior:      & \vspace{0.2cm}
-			\begin{tabular}{c|c|c|c|c|c||l}
-			clk			&	enb		&	wen		&	$A$	&	$D_{in}$	&   $D_{out}^+$		&	Note   	       			\\ \hline
-			0, 1 falling		& 	x 		&	x 		& 	x 	& 	x 		&    $D_{out}$		& no clock edge 				\\ \hline
-			rising 		& 	0		&	0 		& 	x	& 	x 		&    $D_{out}$		& hold 					\\ \hline			
-			rising 		& 	1		&	0 		& 	$A$	& 	x 		&    ram[$A$]		& Read 					\\ \hline
-			rising 		& 	0		&	1 		& 	$A$	& 	$D_{in}$ 	&    $D_{out}$		& ram[$A$] $\Leftarrow D_{in}$  	\\ \hline
-			rising 		& 	1		&	1 		& 	$A$	& 	$D_{in}$ 	&    $D_{in}$		& ram[$A$] $\Leftarrow D_{in}$ 	\\ \hline
+			\begin{tabular}{c|c|c|c|c|c||l|l}
+			clk			&	enb		&	wen		&	$A$	&	$D_{in}$	&   $D_{out}^+$		&	Internal  & Note   	       			\\ \hline
+			0, 1 falling		& 	x 		&	x 		& 	x 	& 	x 		&    $D_{out}$		& 			&  				\\ \hline
+			rising 		& 	0		&	0 		& 	x	& 	x 		&    $D_{out}$		& 			& hold 					\\ \hline			
+			rising 		& 	1		&	0 		& 	$A$	& 	x 		&    ram[$A$]		& 			& read 					\\ \hline
+			rising 		& 	0		&	1 		& 	$A$	& 	$D_{in}$ 	&    $D_{out}$		& ram[$A$] $\Leftarrow D_{in}$  	& write \\ \hline
+			rising 		& 	1		&	1 		& 	$A$	& 	$D_{in}$ 	&    $D_{in}$		& ram[$A$] $\Leftarrow D_{in}$ 	& read/write \\ 
 			\end{tabular} 
 			\vspace{0.2cm} \\ \hline
 
@@ -503,41 +503,74 @@ Behavior:      & \vspace{0.2cm}
 there are many subtleties burred in this truth table that we will explore in the following example.  Before we delve into this example, 
 take a close look at the column headed with $D_{out}^+$  The ``+'' reference in this column is meant to elicit ideas we explored
 in Chapter 5, the next state of a basic memory element.  In this case, the ``+'' in $D_{out}^+$ means that this is the value of the
-$D_{out}$ signal after the clock edge.  The behavior of this
+$D_{out}$ signal after the clock edge.  A digital designer can implement this behavior using an output register to
+hold the value of Dout.  This output register is enabled anytime there is a read operation, enb = 1.  
 
-!!!!PICK UP HERE!!!!
+A write operation changes the internal values stored inside the RAM which is not always explicitly obvious.  Hence a 
+``Internal'' column was included to make these changes clear.  During write operations, the the RAM location given by
+the addr input has its contents modified to the value on Din.
+
 
 Let's examine how the truth table for a RAM is applied to the timing diagram shown in Figure~\ref{fig:sequentialBBRamReadWrite}.
 
+\begin{landscape}
 \begin{figure}[ht]
-\center{\includegraphics[width=\textwidth]{wavedromRamReadWrite}}
-\caption{A simulation of the behavior of a 8x4 RAM whose initial values are given in Figure~\ref{fig:sequentialBBram}  .}
+\center{\includegraphics[width=\textheight]{wavedromRamReadWrite}}
+
+\begin{tikzpicture}[overlay]
+\draw[red,ultra thick,rounded corners] 			(-4.2,0.4) rectangle (-4,8.6);
+\draw[orange,ultra thick,rounded corners] 		(-3.5,0.4) rectangle (-3.3,8.6);
+\draw[lime,ultra thick,rounded corners] 		(-2.1,0.4) rectangle (0.8,8.6);
+\draw[green,ultra thick,rounded corners] 		(2.0,0.4) rectangle (2.2,8.6);
+\draw[blue,ultra thick,rounded corners] 		(3.3,0.4) rectangle (6.3,8.6);
+\end{tikzpicture}
+
+\caption{The behavior of a 8x4 RAM whose initial values are given in Figure~\ref{fig:sequentialBBram}.
+Time is in units of nanoseconds (ns).}
 \label{fig:sequentialBBRamReadWrite}
 \end{figure}
 
-\begin{description}
-\item[time = 300ns] Read
 
-\item[time = 400ns] Write
 
-\item[time = 600ns...1,000ns]  Consectutive reads.
+\color{red}
+\textbf{time = 3ns} Just before the rising edge of the clock  enb=1, wen=0 so this is a read operation.  
+Since addr = $101_2 = 5_{10}$ on the rising edge of the clock, the value contained in ram[5] (which is
+0001) is latched into dout after the rising edge of the clock.
 
-\item[time = 1,200ns] Simultanous read/write 
+\color{orange}
+\textbf{time = 4ns} Just before the rising edge of the clock  enb=0, wen=1 so this is a write operation.  
+Since addr = $011_2 = 3_{10}$ on the rising edge of the clock, the value of din (which is 1110) is stored
+in ram[3]  after the rising edge of the clock.
 
-\item[time = 1,400ns...1,800ns] Consectutive writes.
+\color{lime}
+\textbf{time = 6ns to ...10ns}  During this interval,  enb=1, wen=0 on consecutive clock edges so this 
+is a series of read operations.  The address is incremented from 2 to 5, so dout get the contents of 
+ram[2] through ram[5].
 
-\end{description}
+\color{green}
+\textbf{time = 12ns} Just before the rising edge of the clock  enb=1, wen=1 so this is a simultaneous read/write operation.  
+Since addr = $110_2 = 6_{10}$ on the rising edge of the clock, the value of din (which is 1010) is stored
+in ram[6] and latched into dout after the rising edge of the clock.
 
+\color{blue}
+\textbf{time = 14ns...18ns} During this interval, enb=0, wen=1 on consecutive clock edges so this 
+is a series of write operations.  The address is incremented from 0 to 3, so ram[0] through ram[2] have 
+their values changed on consecutive clocked edges.
+
+\color{black}
+
+\end{landscape}
 
 
 Cases occur when it is necessary to build a larger RAM from several
 smaller RAMs.  RAMs have two dimensions which can be increased: (1) the word size or 
 (2) the number of words.  
 
+\subsection{Increase the word size of a RAM}
 Increasing the word size of a RAM is fairly straightforward because 
 each RAM chip gets all the address lines and handles some portion of 
 the data lines.  Structurally, this transformation is accomplished by
-placing several RAM chips side-by-side as shown. For example, in order 
+placing several RAM chips side-by-side. For example, in order 
 to construct a 256kx32 RAM from 256kx8 RAM chips, then four, 256kx8 RAM are 
 placed side-by-side as shown in Figure~\ref{fig:sequentialBBram}.
 
@@ -548,37 +581,42 @@ placed side-by-side as shown in Figure~\ref{fig:sequentialBBram}.
 \end{figure}
 
 Each of the four chips have the same address lines and control
-lines $R/W'$, and $CS$.  Thus, all the RAM chips behave in exactly the same 
+lines $enb$, and $wen$.  Thus, all the RAM chips behave in exactly the same 
 fashion, each handling its own set of eight bits.  Their actions are coordinated
 by the common address and control signals.
 
+\subsection{Increase number of words stored in RAM}
 Combining RAM chips to increase the number of words involves some manipulation
 of addresses.  For example, consider the problem of using 64kx8 RAM chips to 
 construct a circuit which behaves like a 256kx8 RAM.  Stacking four, 64kx8 RAM
 chips above one another would create the required depth of 256k words.  However,
 each of the 64k RAMs would have 16 address lines, but the 256k RAM being 
 constructed requires 18 address lines.  How is this discrepancy of the extra 
-two address bits resolved?  The 18 bits of address are split into two 
+two address bits resolved?  The solution depends on whether you are 
+performing a read or write operation.
+
+Figure~\ref{fig:sequentialBBdeep} shows how a write operation is performed.
+The 18 bits of address are split into two 
 components; the lower 16 bits are sent to all four of the 64kx8 RAMs 
 and the upper two bits are used to decide which of the four 64k RAM chips 
-is activated.  A decoder uses
-the two bits as select, and routes a chip select signal to one of its four outputs
-which are attached to the chip select lines of each 64k RAM.  Since a decoder
-routes the chip select to only one of the RAMs, there is no potential 
-conflicts on the data lines and they can safely be tied together. 
-Figure~\ref{fig:sequentialBBdeep} shows the complete circuit diagram.
+is being written.  A decoder uses the upper two address bits as select, and routes 
+the $wen$ signal to one of the four 64k RAMs.
+
+The read operation is not shown in Figure~\ref{fig:sequentialBBdeep} and is left
+as an exercise.  The solution partitions the address in the same way as the
+write operation.  But instead of a decoder, a multiplexer is used.  In order to
+latch dout, a register also needs to be added to the output.
+
 
 \begin{figure}[ht]
 
 \center{\includegraphics{deep}}
-\caption{The construction of a 256kx4 RAM from 64kx4 RAM chips.}
+\caption{An, incomplete 256kx4 RAM from 64kx4 RAM chips.}
 \label{fig:sequentialBBdeep}
 
 \end{figure}
 \index{RAM|)}
 
-\section{The Dynamic RAM}
-\pagebreak
 
 \section{Register Transfer}
 A digital system designed using the datapath and control approach 
@@ -750,31 +788,59 @@ in front of ``0xFF" is used in many program languages to signify that
 \label{page:minsearch} 
 
 \begin{verbatim}
-    // assume that min is initialized to 0xFF
-    for(i=0; i<100; i++) {
-        MBR = RAM[i];
-        if (MBR < min) MBR = min;
-    }
+1.    // assume that min is initialized to 0xFF
+2.    for(i=0; i<100; i++) {
+3.        MBR = RAM[i];
+4.        if (MBR < min) MBR = min;
+5.    }
 \end{verbatim}
 
-The variable \verb+MBR+, standing for memory buffer register, is a generic
+The complete solution is shown in Figure~\ref{fig:sequentialBBmin}.  When working through 
+a solution, you should work your way through the algorithm from beginning to the end
+adding and connecting hardware as you proceed.  Before starting this process a few notes
+are in order. The variable \verb+MBR+, standing for memory buffer register, a generic
 term applied to a register used to buffer data operations between a RAM and 
-a datapath.  The line \\
-\verb^for(i=0; i<100; i++)^ will be implemented with a 
-counter and a comparator.  The comparator examines the counter's output and  
-stops the counter when the count value reaches 99.  The line 
-\verb+MBR = RAM[i];+ is implemented with a RAM and a register.  The address
-of the RAM \verb+[i]+ comes from the counter, and the data output of the RAM
-is sent to the data input of a register called MBR.  The line 
-\verb+if (MBR < min) MBR = min;+ is realized with a comparator and 
+a datapath.  The enb and wen lines on the RAM are connected to logic levels because
+we only need to read from the RAM.  This is called ``hardwiring'' the inputs.  This is 
+done when the input never changes, so simplifying the design.  This sort of things 
+occurs often enough in digital design we have a name for it - you may have to 
+hardwire inputs in your homework solutions.
+
+\textbf{Line 2:} is implemented with a 
+counter and a comparator.  The comparator examines the counter's output, called $i$, 
+and stops the counter when the count value reaches 99.  The truth table for the 
+glue logic box is given by:
+
+\begin{tabular}{c||c|c}
+L & counter & MBR register 	\\ \hline \hline
+0 & count up & load 		\\ \hline
+1 & hold 	& hold 		\\ 
+\end{tabular}
+
+Note, you do not need to look-up the control values for the counter and
+register.  It is easier to understand if you write the action that the counter 
+and register in the truth table. Only if you wanted to determine the logic gates
+inside the glue logic block, you would need to look up the control word
+values to perform these actions.
+
+
+\textbf{Line 3:} is implemented with a RAM and a 
+register.  The address of the RAM \verb+[i]+ comes from the counter, and the 
+data output of the RAM is sent to the data input of a register whose output is called MBR.  
+
+\textbf{Line 4: }
+ is realized with a comparator and 
 a register.  The comparator compares the output of the MBR and the min
 registers and asserts its $L$ output when MBR is less than min.  This 
 $L$ output runs to the control input of the min register.  The data 
 input of the min register comes from the data output of the MBR 
-register.  The control of the MBR register should also be controlled 
-by the counter comparator so that the MBR register stops loading when 
-the count value is greater or equal to 99.  The circuit diagram is 
-shown in Figure~\ref{fig:sequentialBBmin} 
+register.  The control of the MBR register should stop loading when 
+the count value is greater or equal to 99 - this was completed in
+the truth table described in Line 2.
+
+The circuit diagram is  shown in Figure~\ref{fig:sequentialBBmin}.  Since the 
+problem statement did not include information about the word sizes, we have
+ignored them in our design.  
 
 \begin{figure}[ht]
 \center{\scalebox{0.8}{\includegraphics{min}}}
