@@ -1581,27 +1581,68 @@ It is imperative to check if the digital system implemented
 behaves according to its specification. Hence, an understanding of
 timing diagrams is essential.  With a small circuit it is reasonable
 to apply every possible combination of inputs and examine the 
-output of the circuit.  For example, Figure~\ref{fig:represenationsTime} shows
-the timing diagram for $F(A,B,C) = A'B+AB'C$.
+output of the circuit.  
+
+To clairfy these concepts, let's look at a timing diagram for digital circuit
+with 3 bits of input $A, B, C$ and 1 bit of output $F(A,B,C)$ shown in
+Figure~\ref{fig:represenationsTime}.
 
 \begin{figure}[ht]
-\includegraphics{time}
-\caption{A timing diagram for $F(A,B,C) = A'B + AB'C$.}
+\includegraphics{wavedromTiming}
+\caption{A timing diagram for a function with 3-bits of input and 1-bit of output.}
 \label{fig:represenationsTime}
 \end{figure}
 
-Observe that the time intervals are spaced 10 units apart.  For
-now, the meaning of the units is unimportant.  Most likely, they would
-be nanoseconds.  In practice, the timing behavior of a circuit
-may be very important because circuits must not only have the 
-correct output, but the circuit must meet strict timing constraints.
+A few observations about this timing diagram are in order:
+\begin{itemize}
+\item The vertical axis for each waveform represents the logic level of that
+waveform.  There are two levels low (logic 0) or high (logic 1).
 
-At time=5 the input $(A,B,C)=(0,0,0)$ and the output in response
-to this input is 0.  At time=15 the input is $(0,0,1)$, and the
-output due to this input is 0.  At time=75 the input is $(1,1,1)$
-and the output is 0.  Every combination of the inputs has been 
-applied to the circuit allowing the test engineer to verify the 
-functional behavior of the circuit.
+\item It takes a finite amount of time for a waveform to change logic 
+levels.  This is shown by sloped transitions between logic levels.  You do
+not need to show this slope in your hand-drawn timing diagrams.
+
+\item A positive edge occurs when a waveform changes from logic 0 to logic 1.  
+You can remember this by associating ``positive'' with the slope of the change.
+
+\item A negative edge occurs when a waveform changes from logic 1 to logic 0. 
+You can remember this by associating ``negative'' with the slope of the change.
+
+\item The positive and negative edges occur slightly after the time divisions.
+There is nothing special to read into this. This is just the way the waveDrom software 
+draws waveforms.
+
+\item The input waveforms go through all combination of the inputs.
+While there are many ways the input waveforms could be sequenced 
+to do this, it is convention to sequenced the inputs in truth table order.
+
+\item When ``reading'' information off a timing diagram focus on
+the regions where the signals a steady, not where they are changing.
+In our example, the signals are steady half way between the time 
+divisions.
+
+\item The units on the time axis are unimportant for the time being.
+That said, time units in the nanosecond range would be reasonable.  
+\end{itemize}
+
+At time=0.5 the input $(A,B,C)=(0,0,0)$ and the output in response to this input is 0.  
+At time=2.5 the input is $(0,1,0)$ and the output is 1.  
+Continue reading inputs and outputs off the timing diagram to verify
+that you get the information in the following truth table.
+
+\begin{tabular}{c|c|c||c}
+A & B & C & F(A,B,C)\ \\ \hline
+0 & 0 & 0  & 0  \\ \hline
+0 & 0 & 1  & 0  \\ \hline
+0 & 1 & 0  & 1  \\ \hline
+0 & 1 & 1  & 1  \\ \hline
+1 & 0 & 0  & 0  \\ \hline
+1 & 0 & 1  & 1  \\ \hline
+1 & 1 & 0  & 0  \\ \hline
+1 & 1 & 1  & 0  \\ 
+\end{tabular}
+
+
 
 %\section{VHSIC Hardware Description Language}
 %\subsection{Entity and Architecture}
