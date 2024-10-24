@@ -1,26 +1,5 @@
 %%------------------------------------
-%% To backup the book
-%% tar -cvf book.tar *.tex ./Fig*/*.fig ./Fig*/*.eps
-%%
-%% To make the book
-%% unix% latex book.tex
-%% unix% makeindex book
-%% unix% latex book.tex
-%% unix% dvips book.dvi -o book.ps
-%% unix% ghostview book.ps &
-%%
-%% To make an index entry
-%% \index{word!subword}
-%%
-%% To make a multipage index
-%% \index{word|(}
-%% \index{word|)}
-%%
-%% To make a page reference
-%% \label{page:topic}
-%% \pageref{page:topic}
-%%
-%% xfig libraries: /usr/X386/lib/X11/xfig/Libraries/Digital
+%% Digital Design by Christopher Coulston
 %%------------------------------------
 
 %%------------------------------------------------------
@@ -47,6 +26,15 @@
 %% figure order, caption then label
 %%------------------------------------------------------
 
+%%------------------------------------------------------
+%% To check for missing reference:
+%%		Edit -> preferences 
+%%		In Typesetting tab, click Processing tools
+%%			pdfLaTeX+MakeIndex+BibTex select Edit...
+%%			Remove --clean
+%%		Typeset document
+%%		open .log file search for ``LaTeX Warning:''
+%%------------------------------------------------------
 
 %%\documentclass[11pt,psfig]{book}
 \documentclass[letterpaper, 10pt]{memoir}
@@ -55,15 +43,14 @@
 \semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
 
 
+
+\makeindex
+
+\begin{document}
 % To keep the book.tex file clean, I pulled all the formating and package 
 % includes into the preamble.tex file
 \include{preamble}
 
-
-\makeindex
-
-
-\begin{document}
 
 \frontmatter
  \title{}
@@ -74,21 +61,18 @@
 \include{copyright}
 \tableofcontents
 \listofprocesses
-
-\include{bodyOfKnowledge}
+\listofbuildingblocks
 
 %\showanswers
 \hideanswers 
 
 \mainmatter
 
-
 \include{./chapter01/chapter1}
 \include{./chapter01/hw1}
 
 \include{./chapter02/chapter2}
 \include{./chapter02/hw2}
-
 
 \include{./chapter03/chapter3}
 \include{./chapter03/hw3}

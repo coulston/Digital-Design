@@ -1,4 +1,5 @@
 \chapter{Sequential Building Blocks}
+\addcontentsline{lobb}{chapter}{\thechapter \hspace{0.2cm} Sequential Logic Building Blocks}
 \label{chapter:Sequential Building Blocks}
 \graphicspath{ {./chapter06/Fig} }
 
@@ -45,6 +46,8 @@ also have an edge-sensitive clock input.  First to be examined is
 the most basic sequential basic building block, the register.
 
 \section{The Register}
+
+\begin{buildingblock}{Register}
 \index{register|(}
 \label{page:reg}
 \begin{tabular}{|l|p{3.5in}|} \hline
@@ -64,7 +67,8 @@ Behavior:      &
 			1     & rising       & 1 & D & D     &  load \\
 			\end{tabular} \\ \hline
 \end{tabular}
-\\ \\
+\end{buildingblock}
+
 An N-bit register is very much like a wide D flip flop.  It samples
 its N data inputs, denoted $D$ on the rising edge of the clock input.
 Depending on the control input, $C$, the register either holds its current 
@@ -138,7 +142,8 @@ A shift register is a register with the additional capability
 of shifting its stored bits to the left or to the right.  The input,
 output, and behavior of a shift register are shown in the
 following table.
-\\ \\
+
+\begin{buildingblock}{Shift Register}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & N-bit shift register with parallel load     \\ \hline
 Data Input:    & N-bits vector $D=d_{N-1} \ldots d_1 d_0$.          \\ \hline
@@ -159,7 +164,7 @@ Behavior:      &
                         \end{tabular} \\ \hline
 \end{tabular}
 \label{page:shi}
-
+\end{buildingblock}
 
 If $Q=0110$ then shifting $Q$ to the left, denoted $Q<<1$, 
 yields 1100.  The symbol ``$<<$" denotes a shift left and the ``1"
@@ -306,11 +311,12 @@ respective flip flop.
 \index{register!shift|)}
 
 \section{The Counter}
+\index{counter|(}
 A counter is a simple but surprisingly versatile piece of hardware.
 Its behavior is obvious from its name; it counts up when instructed
 to do so.
 
-\index{counter|(}
+\begin{buildingblock}{Counter}
 \begin{tabular}{|l|p{3.5in}|} \hline
 
 Nomenclature:  & N-bit counter with parallel load                  \\ \hline
@@ -335,6 +341,7 @@ $reset$ & $clk$          & $C$  & $D$   & $Q^+$  & comment     \\ \hline
 \end{tabular}	\\  \hline
 \end{tabular}  
 \label{page:counter}
+\end{buildingblock}
 
 When the 2-bit control input equals 10 and a clock edge arrives, the
 counter counts up.  Since number of bits are limited, the 
@@ -476,7 +483,7 @@ type of RAM used in many FPGAs, synchronous static RAM.
 The input, output, and behavior of a synchronous static RAM is defined by the following table.
 
 \index{RAM|(}
-
+\begin{buildingblock}{RAM}
 \begin{tabular}{|p{2cm}|p{12cm}|} \hline
 
 Nomenclature:  & NxM RAM (random access memory)    \\ \hline
@@ -499,6 +506,7 @@ Behavior:      & \vspace{0.2cm}
 
 \end{tabular}
 \label{page:ram}
+\end{buildingblock}
 
 there are many subtleties burred in this truth table that we will explore in the following example.  Before we delve into this example, 
 take a close look at the column headed with $D_{out}^+$  The ``+'' reference in this column is meant to elicit ideas we explored

@@ -1061,8 +1061,8 @@ This transformation is the same as the $\sum m(\ldots)$ to \POSmin,
 process~\ref{process:minimizationSumToPOS} from Step 2 onward.
 \end{process}
 
-\begin{process}{Determine the \POSmin given a $\prod M(\ldots)$ expression.}
-\label{process:minimizationProdToPOS}
+\begin{process}{Determine the \SOPmin given a $\prod M(\ldots)$ expression.}
+\label{process:minimizationProdToSOP}
 \textbf{The Plan:}
 
 \begin{tabular}{|c|c|c|c|c|}\hline
@@ -1077,11 +1077,11 @@ list of 0s for a list of 1s.  This step confuses many first time students so
 lets work an example to show how this plan is put into practice.
 Determine the \POSmin expression for $F(A,B,C) = \sum m(0,1,2,6,7)$.
 
-\textbf{Step 1} $F(A,B,C) = \sum M(0,1,2,6,7)$.
+\textbf{Step 1} $F(A,B,C) = \prod M(0,1,2,6,7)$.
 
 \textbf{Step 2} $F(A,B,C) = \sum m(3,4,5)$.
 
-\textbf{Step 3} Follow steps 2 onward in process~\ref{process:minimizationSumToPOS}.
+\textbf{Step 3} Follow steps 2 onward in process~\ref{process:minimizationSumToSOP}.
 \end{process}
 
 

@@ -85,7 +85,7 @@
 	\par%
 	\addvspace{\baselineskip}	
 	\refstepcounter{processcounter}
-	\addcontentsline{lop}{section}{\protect\numberline{\thechapter.\theprocesscounter}#1}
+	\addcontentsline{lop}{section}{\protect\numberline{\thechapter.\theprocesscounter} #1}
 	\begin{mdframed}[
 	    frametitle={ \textbf{Process \thechapter.\theprocesscounter}: #1 \vspace{12pt} },
 	    frametitlerule=false,
@@ -95,8 +95,33 @@
 	    linecolor=gray!80,
 	    backgroundcolor=blue!10
 	]
+	}{
+	\end{mdframed}
+}
 
 
+% Credit to: https://tex.stackexchange.com/questions/270598/creating-list-of-examples-using-tocloft-in-memoir-class
+\newcounter{buildingblockcounter}
+\newcommand\listbuildingblockname{List of Basic Building Blocks}
+\newlistof{listofbuildingblocks}{lobb}{\listbuildingblockname}
+\newlistentry[chapter]{buildingblockcounter}{lobb}{0}
+\newcommand{\bdescription}[1]{%
+\par\noindent\textbf{BuildingBlock \thebuildingblockcounter~(#1).} }
+
+\newenvironment{buildingblock}[1]  {
+	\par%
+	\addvspace{\baselineskip}	
+	\refstepcounter{buildingblockcounter}
+	\addcontentsline{lobb}{section}{\protect\numberline{\thechapter.\thebuildingblockcounter} #1}
+	\begin{mdframed}[
+	    frametitle={ \textbf{Building Block}: #1 \vspace{12pt} },
+	    frametitlerule=false,
+	    innertopmargin=-0.7em, innerleftmargin=0.4em,
+	    hidealllines=true, leftline=true,
+	    linewidth=10pt,
+	    linecolor=gray!80,
+	    backgroundcolor=green!10
+	]
 	}{
 	\end{mdframed}
 }

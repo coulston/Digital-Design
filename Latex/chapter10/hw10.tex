@@ -17,6 +17,51 @@ the debouncer should not change until there is compelling evidence to
 in the form of complete and consistent disagreement to the current
 output.
 
+\item\textbf{ (5 pts.)} Build a 4-bit bus transceiver.  A bus transceiver
+is defined by the following truth table.
+                                                                                
+\index{bus transceiver}
+\label{page:bustranciever}
+\begin{tabular}{|l|p{3.5in}|} \hline
+Nomenclature:  & N-bit bus transceiver.                    \\ \hline
+Data:          & two bidirectional N-bits vectors $X=x_{N-1} \ldots x_1 x_0$.                                                                                 
+                        $Y=y_{N-1} \ldots y_1 y_0$.          \\ \hline
+Control:       & 1-bit $F$ and $R$             \\ \hline
+Status:        & none                                   \\ \hline
+Behavior:      &
+                        \begin{tabular}{c|c|c|c||c}
+                        F  & R  & X & Y & comment \\ \hline
+                        0  & 0  & Z & Z & X and Y tristate \\ \hline
+                        0  & 1  & Y & Y & X = Y  \\ \hline
+                        1  & 0  & X & X & Y = X  \\ \hline
+                        1  & 1  & x & x & never applied \\
+                        \end{tabular} \\ \hline
+\end{tabular}
+\label{page:bus}
+\\ \\
+Flow is determined by the $F$ and $R$ signals denoting forward and reverse
+respectively.  When $F=1$, data flows from $X$ to $Y$.  In this case,
+$X$ is acting like and input and $Y$ is acting like an output.  When
+$R=1$, data flows from the $Y$ input to the $X$ output.  This design
+relies heavily on tristate buffers.
+                                                                                
+\begin{onlysolution} \textbf{Solutions} \itshape {
+\begin{figure}[ht]
+\center{\includegraphics{Prob4-16}}
+\end{figure}
+} \end{onlysolution} 
+                                                                                
+\item\textbf{ (3 pts.)} Build a 2:1 mux using some tristate buffers and an inverter.                                                                                
+\item\textbf{ (3 pts.)} Build a 4:1 mux using some tristate buffers and two inverters.
+                                                                                
+\begin{onlysolution} \textbf{Solutions} \itshape {
+\begin{figure}[ht]
+\center{\includegraphics{Prob4-17}}
+\end{figure}
+} \end{onlysolution} 
+
+
+
 \item\textbf{ (16 pts.)} Design a digital circuit to keep track of the
 number of net detents turned through on a rotary encoder.  The circuit
 is to add CW rotation and subtract CCW rotations.  The count value

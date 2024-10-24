@@ -1,4 +1,5 @@
 \chapter{Combinational Logic Building Blocks}
+\addcontentsline{lobb}{chapter}{\thechapter \hspace{0.2cm} Combinational Logic Building Blocks}
 \label{chapter:Combinational Building Blocks}
 \graphicspath{ {./chapter04/Fig} }
 
@@ -36,6 +37,9 @@ blocks is a device that routes one bit of data to one of several
 outputs based on an address.
 
 \section{Decoder}
+
+\begin{buildingblock}{Decoder}
+\label{buildingblock:decoder}
 \index{decoder|(}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & N:M decoder				\\ \hline
@@ -46,7 +50,8 @@ Status:        & none					\\ \hline
 Behavior:      & $y_s = D$ all other outputs equal 0	\\ \hline
 \end{tabular}
 \label{page:dec}
-\\ \\
+\end{buildingblock}
+
 To understand this definition, examine an
 instance of a 3:8 decoder shown at left in Figure~\ref{fig:comboBB3:8}.
 Normally, the arrows indicating the direction of the information 
@@ -155,7 +160,9 @@ the outputs.
 A multiplexer, often referred to as a mux, is data routing device 
 which behaves exactly opposite of a decoder.  Its structure and
 behavior is defined in the following table.
-\\ \\
+
+\begin{buildingblock}{Multiplexer}
+\label{buildingblock:multiplexer}
 \index{multiplexer|(}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & N:1 multiplexer                        \\ \hline
@@ -166,7 +173,8 @@ Status:        & none                                   \\ \hline
 Behavior:      & $F = y_s$				\\ \hline
 \end{tabular}
 \label{page:mux}
-\\ \\
+\end{buildingblock}
+
 To understand this definition, examine an
 instance of an 8:1 mux shown on the left in Figure~\ref{fig:comboBB8:1}.
 From the behavior listed in the description of the multiplexer, 
@@ -278,6 +286,8 @@ An N-bit adder is a circuit which adds two N-bit binary numbers
 $A,B$ together generating an N-bit sum $S$ and an overflow 
 indication, Ovf.   
 
+\begin{buildingblock}{Adder}
+\label{buildingblock:adder}
 \index{adder|(}
 \begin{tabular}{|l|p{3.5in}|} \hline                    
 Nomenclature:  & N-bit adder				\\ \hline
@@ -287,7 +297,8 @@ Control:       & none					\\ \hline
 Status:        & 1-bit ovf 				\\ \hline
 Behavior:      & $sum = A+B$				\\ \hline
 \end{tabular}
-\\ \\
+\end{buildingblock}
+
 The behavior of the adder is exactly as expected after reading
 page~\pageref{page:addition}.  Furthermore, the overflow output is asserted 
 when the adder output is greater than or equal to $2^N$.  The construction 
@@ -380,13 +391,15 @@ carry-out from the most significant full adder indicates overflow.
 \index{adder|)}
 
 \section{The Adder Subtractor}
-\index{adder subtractor|(}
+
 As its name implies, an adder subtractor can perform two separate
 functions.  From a black-box perspective, the only difference between
 this module and an adder is the presence of a control input to select
 which function the adder subtractor performs.
  
-
+\begin{buildingblock}{Adder Subtractor}
+\label{buildingblock:adderSubtractor}
+\index{adder subtractor|(}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & N-bit adder subtractor                 \\ \hline
 Data Input:    & two N-bit vectors $A$ and $B$           \\ \hline  
@@ -395,7 +408,8 @@ Control:       & 1-bit $f$                     \\ \hline
 Status:        & 1-bit ovf 				\\ \hline
 Behavior:      & if c=0 then $s = A+B$ else $s=A-B$     \\ \hline
 \end{tabular}
-\\ \\
+\end{buildingblock}
+
 For now, assume the inputs and output of an adder subtractor are
 2's-complement numbers.  Addition of 2's-complement numbers proceeds 
 like the addition of regular binary numbers.  For now, 
@@ -471,10 +485,13 @@ is left as an exercise at the end of the chapter.
 \index{adder subtractor|)}
 
 \section{The Comparator}
+\index{comparator|(}
 A comparator is a device which determines the relative magnitude
 of its two inputs.
 
-\index{comparator|(}
+\begin{buildingblock}{Comparator}
+\label{buildingblock:comparator}
+
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & N-bit comparator                \\ \hline
 Data Input:    & two N-bit vectors $X$ and $Y$           \\ \hline  
@@ -491,6 +508,7 @@ Behavior:      &
 \end{tabular}
 \label{page:com}
 \index{comparator!truth table}
+\end{buildingblock}
 
 Comparators are rather unique because they lack data output.  That is
 not to say, comparators do not have any output. Rather, their status outputs are quite
@@ -568,90 +586,7 @@ is to realize that any binary number can be considered to have an infinite
 number of leading 0s, all of which are equal.
 \index{comparator|)}
 
-\section{Three-State Buffer}
-\index{three-state buffer|(}
-\begin{tabular}{|l|p{3.5in}|} \hline
-Nomenclature:  & Three-state buffer	\\ \hline
-Data Input:    & 1-bit X		\\ \hline
-Data Output:   & 1-bit Y		\\ \hline
-Control:       & 1-bit $c$              \\ \hline
-Status:        & none			\\ \hline
-Others:        & none			\\ \hline
-Behavior:      & The output equals the input when 
-		$C=1$ otherwise the output is 
-		disconnected from input. \\ \hline                                                                               
-\end{tabular}
-\label{page:tsb}
-\\ \\
-When several devices share a common signaling pathway, as with
-a data bus, it is important for every device to be capable of 
-asserting data onto the bus, but only one device at a time
-actually asserts data.  This effect can only be accomplished if each
-device is capable of electrically disconnecting itself from the
-bus.  The three-state buffer shown in Figure~\ref{fig:comboBBtsb} does
-this under the control of the $c$ signal.
-                                                                                
-\begin{figure}[ht]
-\begin{tabular}[b]{p{1.0in}p{0.5in}l}
-\includegraphics[10mm,10mm][12mm,12mm]{tsb} & &
-                                                                                
-$\begin{array}{c|c||c}
-X & C & Y \\ \hline
-x & 0 & Z \\ \hline
-0 & 1 & 0 \\ \hline
-1 & 1 & 1 \\
-\end{array}$
-\end{tabular}
-\caption{The symbol and truth table for a three-state buffer.}
-\label{fig:comboBBtsb}
-\end{figure}
 
-Notice, when $C=1$, then $Y=X$; the output equals the
-input.  But, when $C=0$, the output equals $Z$.  $Z$ is
-a symbol commonly used in electrical engineering
-to refer to impedance (reciprocal of resistance).  The
-$Z$ means the output is not connected to anything.
-
-It is common to see $N$ three-state buffers organized together to
-produce an N-bit three-state buffer.  In such an arrangement, 
-each bit of input is routed to its own three-state buffer,
-and the control input is routed to all of the three-state 
-buffers.  Each three-state buffer contributes its one bit 
-of output to the overall output from the N-bit three-state
-buffer.
- 
-
-Directly connecting together outputs of two gates creates
-a situation where the two gates may produce different outputs
-resulting in a short circuit.  This connection will
-eventually lead to the failure of one or both of the gates.
-Clearly, a system should not be designed with such a flaw.
-However, cases arise when it makes sense to want to wire
-together the outputs of several gates.
-
-The bus \index{bus} in a computer is a collection
-of related signals that move information between any pair
-of devices on the bus.  Allowing a bus to be used by many
-different devices increases its utilization at the expense 
-of increased complexity.  Look at the example bus in 
-Figure~\ref{fig:comboBBbus} which connects a CPU, RAM, and Disk.
-Each of these devices may want data to be sent or
-received from any of the others.  The shaded box in each device 
-(CPU, RAM, Disk) is called out on the right side of Figure~\ref{fig:comboBBbus}.
-The input register latches data from the bus and the output
-register holds the data to be asserted on the bus.  The 
-three-state buffer can disconnect the output register from the bus 
-allowing one of the other devices to assert data on the bus.  
-It is important, and fairly obvious, that only one device at a 
-time can assert data on the bus.  
-
-\begin{figure}[ht]
-\center{\includegraphics{bus}}
-\caption{Three devices on a bus.  The internal circuitry in
-each device to make it work.}
-\label{fig:comboBBbus}
-\end{figure}
-\index{three-state buffer|)}
 
 \section{Wire Logic}
 \index{wire logic|(}

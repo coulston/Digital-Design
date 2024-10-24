@@ -1,4 +1,5 @@
 \chapter{Common Peripheral Components}
+\addcontentsline{lobb}{chapter}{\thechapter \hspace{0.2cm} Common Peripheral Components}
 \label{chapter:Common Peripheral Components}
 \graphicspath{ {./chapter10/Fig} }
 
@@ -12,6 +13,7 @@ your projects in the future.
 \section{Pushbutton}
 \index{push button|(}
 \label{page:pushbutton}
+\begin{buildingblock}{Push Button}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Pushbutton         \\ \hline
 Data Input:    & none         \\ \hline
@@ -25,6 +27,7 @@ Behavior:      & When the button is pressed a short circuit is created
 between the two terminals, otherwise there is an open circuit between
 the two terminals. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 A push button is perhaps the simplest input device that you will
 utilize in digital design.  Unfortunately you cannot just pop
@@ -150,11 +153,109 @@ frequency equal to twice the frequency of the fastest event your
 circuit should be expected to see.   In this way the circuit
 will not miss any events of interest.
 
+
+
+\section{Three-State Buffer}
+\begin{buildingblock}{Three State Buffer}
+\label{buildingblock:threeStateBuffer}
+\index{three-state buffer|(}
+\begin{tabular}{|l|p{3.5in}|} \hline
+Nomenclature:  & Three-state buffer	\\ \hline
+Data Input:    & 1-bit X		\\ \hline
+Data Output:   & 1-bit Y		\\ \hline
+Control:       & 1-bit $c$              \\ \hline
+Status:        & none			\\ \hline
+Others:        & none			\\ \hline
+Behavior:      & The output equals the input when 
+		$C=1$ otherwise the output is 
+		disconnected from input. \\ \hline                                                                               
+\end{tabular}
+\label{page:tsb}
+\end{buildingblock}
+
+When several devices share a common signaling pathway, as with
+a data bus, it is important for every device to be capable of 
+asserting data onto the bus, but only one device at a time
+actually asserts data.  This effect can only be accomplished if each
+device is capable of electrically disconnecting itself from the
+bus.  The three-state buffer shown in Figure~\ref{fig:comboBBtsb} does
+this under the control of the $c$ signal.
+                                                                                
+\begin{figure}[ht]
+\begin{tabular}[b]{p{1.0in}p{0.5in}l}
+\includegraphics[10mm,10mm][12mm,12mm]{tsb} & &
+                                                                                
+$\begin{array}{c|c||c}
+X & C & Y \\ \hline
+x & 0 & Z \\ \hline
+0 & 1 & 0 \\ \hline
+1 & 1 & 1 \\
+\end{array}$
+\end{tabular}
+\caption{The symbol and truth table for a three-state buffer.}
+\label{fig:comboBBtsb}
+\end{figure}
+
+Notice, when $C=1$, then $Y=X$; the output equals the
+input.  But, when $C=0$, the output equals $Z$.  $Z$ is
+a symbol commonly used in electrical engineering
+to refer to impedance (reciprocal of resistance).  The
+$Z$ means the output is not connected to anything.
+
+It is common to see $N$ three-state buffers organized together to
+produce an N-bit three-state buffer.  In such an arrangement, 
+each bit of input is routed to its own three-state buffer,
+and the control input is routed to all of the three-state 
+buffers.  Each three-state buffer contributes its one bit 
+of output to the overall output from the N-bit three-state
+buffer.
+ 
+
+Directly connecting together outputs of two gates creates
+a situation where the two gates may produce different outputs
+resulting in a short circuit.  This connection will
+eventually lead to the failure of one or both of the gates.
+Clearly, a system should not be designed with such a flaw.
+However, cases arise when it makes sense to want to wire
+together the outputs of several gates.
+
+The bus \index{bus} in a computer is a collection
+of related signals that move information between any pair
+of devices on the bus.  Allowing a bus to be used by many
+different devices increases its utilization at the expense 
+of increased complexity.  Look at the example bus in 
+Figure~\ref{fig:comboBBbus} which connects a CPU, RAM, and Disk.
+Each of these devices may want data to be sent or
+received from any of the others.  The shaded box in each device 
+(CPU, RAM, Disk) is called out on the right side of Figure~\ref{fig:comboBBbus}.
+The input register latches data from the bus and the output
+register holds the data to be asserted on the bus.  The 
+three-state buffer can disconnect the output register from the bus 
+allowing one of the other devices to assert data on the bus.  
+It is important, and fairly obvious, that only one device at a 
+time can assert data on the bus.  
+
+\begin{figure}[ht]
+\center{\includegraphics{bus}}
+\caption{Three devices on a bus.  The internal circuitry in
+each device to make it work.}
+\label{fig:comboBBbus}
+\end{figure}
+\index{three-state buffer|)}
+
+
+
+
+
+
+
+
 %\section{Switch Types}
 
 \section{Rotary Encoder}
 \index{rotary encoder|(}
 \label{page:rotary}
+\begin{buildingblock}{Rotary Encoder}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Rotary Encoder                           \\ \hline
 Data Input:    & none         \\ \hline
@@ -169,6 +270,7 @@ vector $A$ produces an increasing gray code $00, 01, 11, 10, 00, ...$.
 If the know is rotated CCW then the vector produces a decreasing gray
 code $00,10,11,01,00, ...$. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 Rotary encoders are commonly used as the tuner knob on car radios.
 They have a distinctive feel, when turned they click into 
@@ -204,6 +306,7 @@ switch bouncing.
 \section{Keyboard}
 \index{keyboard|(}
 \label{page:keyboad}
+\begin{buildingblock}{PS2 Keyboard}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Keyboard                           \\ \hline
 Data Input:    & none        \\ \hline
@@ -217,6 +320,7 @@ Behavior:      & When a key is pressed the keyboard sends a make code.
 When a key is released the keyboard sends a break code followed by the
 keys scan code. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 Computers are ubiquitous in today's society.  Despite being its primary 
 data input mechanism, most people know very little about how a computers
@@ -302,6 +406,7 @@ in order to differentiate between the upper and lower case z.
 \section{Keypad}
 \index{keypad|(}
 \label{page:keypad}
+\begin{buildingblock}{Keypad}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & 16-button keypad                           \\ \hline
 Data Input:    & 4-bit row        \\ \hline
@@ -314,6 +419,7 @@ Others:        & none                   \\ \hline
 Behavior:      & When a key is pressed a connection is made between
 the corresponding row and column. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 You probably used a keypad the last time that you dialed a phone.
 Keypads generally are laid out in a grid.
@@ -345,6 +451,7 @@ detected.
 \section{Light Emitting Diodes}
 \index{led|(}
 \label{page:led}
+\begin{buildingblock}{Light Emitting Diode}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature: & LED \\ \hline
 Data input:    & none     \\ \hline
@@ -356,6 +463,7 @@ Physical Output:& light		\\ \hline
 Others:        & An anode and a cathode                 \\ \hline
 Behavior:      & When 2V is applied from the anode to the cathode the LED lights up. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 An LED is arguably the simplest output device.  Foremost a LED
 is a diode (see Figure~\ref{fig:commonPeripheralComponentsled}A) which means that it is a 
@@ -462,6 +570,7 @@ LED increases so does the perceived illumination level.
 \section{Alphanumeric Display}
 \index{alphanumeric display|(}
 \label{page:alpha}
+\begin{buildingblock}{Alphanumeric Display }
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & 14-segment Alphanumeric Display  \\ \hline
 Data Input:    & 14-bits A,B,...,N     \\ \hline
@@ -474,6 +583,7 @@ Others:        & none                   \\ \hline
 Behavior:      & when data input is high corresponding segment 
 is illuminated. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 The 14-segment alphanumeric display is just a variation on the
 7-segment display discussed on page \pageref{page:7seg}.  The addition
@@ -511,16 +621,15 @@ cathode display.
 
 
 \section{Hall Effect Sensor}
-\pagebreak
-.
+TBD
 
 \section{Infrared Range Finder}
-\pagebreak
-.
+TBD
 
 \section{Ultrasonic Range Finder}
 \index{Ultrasonic sensor|(}
 \label{page:ultrasonic}
+\begin{buildingblock}{Ultrasonic Range Finder}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & ultrasonic sensor  \\ \hline
 Data Input:    & 1-bit Enable     \\ \hline
@@ -534,6 +643,7 @@ Behavior:      & When enable make a positive edge transition
 a ultrasonic chirp is generated by the transducer.  When the 
 transducer detects an echo it sends the corresponding output hi. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 Ultrasonic range finders are useful when you need a device which
 can detect the absence or presence of an object over a 20 foot
@@ -585,6 +695,7 @@ object and back, whereas X/2 is the time required to reach the object.
 \section{DC Motor}
 \index{motor!dc}
 \label{page:dvmotor}
+\begin{buildingblock}{DC motor}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & DC motor  \\ \hline
 Data input:    & none    \\ \hline
@@ -598,6 +709,7 @@ Behavior:      & When $V_l-V_r > 0$ the output shaft rotates clockwise,
 when $V_l-V_r < 0$ the output shaft rotates counterclockwise, otherwise the
 output shaft does not rotate. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 Because of the way that a DC motor is built, its speed is determined
 by the potential difference between its leads.  Reversing the
@@ -657,6 +769,7 @@ current directly to the power supply.
 \section{Stepper motor}
 \index{motor!stepper}
 \label{page:stepper}
+\begin{buildingblock}{Stepper Motor}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & stepper motor \\ \hline
 Data Input:    & none     \\ \hline
@@ -669,6 +782,7 @@ Others:        & none                   \\ \hline
 Behavior:      & when controls are sequenced correctly the
 motor turns CW or CCW. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 All electric motors operate on two basic principles; 
 current flowing through a loop of wire creates a magnetic
@@ -732,6 +846,7 @@ choice for the main drive motors in robots.
 \section{Servo motor}
 \index{motor!servo}
 \label{page:servo}
+\begin{buildingblock}{Servo Motor}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & servo motor  \\ \hline
 Data input:    & none    \\ \hline
@@ -744,6 +859,7 @@ Others:        & \VCC and GND     \\ \hline
 Behavior:      & The angular position of the axle is set by the time
 high of the control signal. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 Servo motors can only move their output shafts through 180 degrees.
 They are not manufactured to turn continuously like a DC or stepper motor
@@ -773,6 +889,8 @@ and send in  a control signal to control the motors position.
 \section{Liquid Crystal Display}
 \index{LCD}
 \label{page:lcd}
+
+\begin{buildingblock}{Liquid Crystal Display}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Liquid Crystal Display  \\ \hline
 Data input:    & 8-data bits  \\ \hline
@@ -785,7 +903,7 @@ Others:        & \VCC and Gnd     \\ \hline
 Behavior:      & Displays the ASCII character sent or
 performs some display configuration. \\ \hline
 \end{tabular}
-
+\end{buildingblock}
 
 What you take for a LCD really consists of two parts; a LCD and a controller 
 chip.   The LCD is the glass that you see 
@@ -819,6 +937,7 @@ command.
 \section{Remote Control Decoder}
 \index{Remote control}
 \label{page:remote}
+\begin{buildingblock}{Remote Control Decoder}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Remote control decoder  \\ \hline
 Data input:    & none  \\ \hline
@@ -831,6 +950,7 @@ Others:        & \VCC and GND     \\ \hline
 Behavior:      & Decodes a serial data packet sent by
 a remote control. \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 Remote control signals are sent by encoding bursts of infrared light.  A logic
 0 is sent by pulsing infrared (940nm to be precise) light on and off at 38KHz;
@@ -873,6 +993,7 @@ bright pulse of radiation which can be detected far away.
 \section{CRT}
 \index{crt}
 \label{page:crt}
+\begin{buildingblock}{Cathode Ray Tube}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Cathode Ray Tube  \\ \hline
 Data input:    & Red, Green, Blue (RGB)   \\ \hline
@@ -885,7 +1006,7 @@ Others:        & 120 VAC     \\ \hline
 Behavior:      & The RGB colors are painted across the display 1 row 
 at a time according to vsynch and hsynch. \\ \hline
 \end{tabular}
-
+\end{buildingblock}
 
 Since 1980 the Video Graphics Array or VGA standard has been the 
 standard interface to computer displays. This standard has enjoyed 

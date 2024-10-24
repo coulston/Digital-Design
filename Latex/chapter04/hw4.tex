@@ -137,6 +137,7 @@ Thus $ovf = c_{in}' c_{out} + c_{in} c_{out}' =  c_{in} \oplus c_{out} $
 \item \textbf{ (10 pts.)}Build a BCD to 7-Segment Display converter using 
 Espresso.  
 
+\begin{buildingblock}{BCD to 7-segment}
 \index{bcd to 7-segment}
 \label{page:7seg}
 \begin{tabular}{|l|p{3.5in}|} \hline
@@ -148,6 +149,7 @@ Status:        & none                                   \\ \hline
 Behavior:      & The output drives a 7-segment display pattern
 		 representing the BCD digit.  \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 A binary coded digit (BCD) is a 4-bit binary number that is constrained
 to assume the values of 0-9. That is, 1010 ... 1111 are illegal BCD digits.
@@ -406,6 +408,7 @@ Do not use any AND or OR gates; it will tempting in the later problems.
 
 \item \textbf{ (10 pts.)} Build a 4-bit priority encoder.
 
+\begin{buildingblock}{Priority Encoder}
 \index{priority encoder}
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & N-bit priority encoder                \\ \hline
@@ -418,6 +421,7 @@ Behavior:      & $F = i$ where $i$ is the highest indexed input
 			0, the output is a ``don't care".  \\ \hline
 \end{tabular}
 \label{page:prior}
+\end{buildingblock}
 
 The idea is for the outputs to represent (in binary code) the highest
 input index which equals 1.  For example, a 4-bit priority encoder
@@ -455,6 +459,7 @@ resulting sum is less than 15.  If the sum is
 greater than 15, the saturation adders outputs 15.  The
 following table summarizes.
 
+\begin{buildingblock}{Saturation Adder}
 \index{saturation adder}
 \label{page:saturation}
 \begin{tabular}{|l|p{3.5in}|} \hline
@@ -470,6 +475,7 @@ Behavior:      &
 				\end{verbatim}
 		 \\ \hline
 \end{tabular}
+\end{buildingblock}
 
 Submit a schematic showing the basic building blocks, their
 data status, and control interconnections.  Show any truth
@@ -636,48 +642,7 @@ convert the result to decimal.
 
 \end{enumerate}
 
-\item\textbf{ (5 pts.)} Build a 4-bit bus transceiver.  A bus transceiver
-is defined by the following truth table.
-                                                                                
-\index{bus transceiver}
-\label{page:bustranciever}
-\begin{tabular}{|l|p{3.5in}|} \hline
-Nomenclature:  & N-bit bus transceiver.                    \\ \hline
-Data:          & two bidirectional N-bits vectors $X=x_{N-1} \ldots x_1 x_0$.                                                                                 
-                        $Y=y_{N-1} \ldots y_1 y_0$.          \\ \hline
-Control:       & 1-bit $F$ and $R$             \\ \hline
-Status:        & none                                   \\ \hline
-Behavior:      &
-                        \begin{tabular}{c|c|c|c||c}
-                        F  & R  & X & Y & comment \\ \hline
-                        0  & 0  & Z & Z & X and Y tristate \\ \hline
-                        0  & 1  & Y & Y & X = Y  \\ \hline
-                        1  & 0  & X & X & Y = X  \\ \hline
-                        1  & 1  & x & x & never applied \\
-                        \end{tabular} \\ \hline
-\end{tabular}
-\label{page:bus}
-\\ \\
-Flow is determined by the $F$ and $R$ signals denoting forward and reverse
-respectively.  When $F=1$, data flows from $X$ to $Y$.  In this case,
-$X$ is acting like and input and $Y$ is acting like an output.  When
-$R=1$, data flows from the $Y$ input to the $X$ output.  This design
-relies heavily on tristate buffers.
-                                                                                
-\begin{onlysolution} \textbf{Solutions} \itshape {
-\begin{figure}[ht]
-\center{\includegraphics{Prob4-16}}
-\end{figure}
-} \end{onlysolution} 
-                                                                                
-\item\textbf{ (3 pts.)} Build a 2:1 mux using some tristate buffers and an inverter.                                                                                
-\item\textbf{ (3 pts.)} Build a 4:1 mux using some tristate buffers and two inverters.
-                                                                                
-\begin{onlysolution} \textbf{Solutions} \itshape {
-\begin{figure}[ht]
-\center{\includegraphics{Prob4-17}}
-\end{figure}
-} \end{onlysolution} 
+
                                                                                 
 \item \textbf{ (10 pts.)}
 \label{page:flipbox}
