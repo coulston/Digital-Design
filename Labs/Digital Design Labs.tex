@@ -1,0 +1,31 @@
+%%------------------------------------
+%% Digital Design Lab Manual 
+%%  Christopher Coulston
+%%------------------------------------
+
+%%\documentclass[11pt,psfig]{book}
+\documentclass[letterpaper, 10pt]{memoir}
+\chapterstyle{ger}
+\settrims{0pt}{0pt}
+\semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
+
+\makeindex
+
+% To keep the book.tex file clean, I pulled all the formating and package 
+% includes into the preamble.tex file
+
+\include{preamble}
+
+\begin{document}
+
+\renewcommand{\chaptername}{Laboratory}
+
+\title{}
+ 
+\tableofcontents
+When clicking on a link in Adobe use alt+arrow left to return to where you started.
+
+\include{./Lab01SimpleVerilog/lab01}
+\include{./Lab02HexToSeven/lab02}
+
+\end{document} 
