@@ -10,7 +10,7 @@
 The objective of this lab is to use the concepts learned to build a
 digital system to play a game of rock, paper, scissors.
 
-\textbf{Rock Paper, Scissors}
+\subsubsection{Rock Paper, Scissors}
 
 The game of rock, paper, scissors is a two-player game whose goal is to
 beat the throw of the opposing player. Traditionally, each player throws
@@ -21,7 +21,9 @@ the shape of the object.
 
 The rules of the game state that:
 
-Rock beats scissors Scissors beats paper Paper beats rock
+\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+Rock beats scissors  & Scissors beats paper & Paper beats rock \\
+\end{tabular}
 
 Since prior knowledge of your opponent's throw would provide an unfair
 advantage, the two players make their throws at the same time. You goal 
@@ -53,7 +55,7 @@ display will reflect their choice as shown in Figure~\ref{figure:play7seg}. Thes
 are supposed to vaguely resemble the objects.
 
 \begin{figure}[ht]
-\includegraphics{ image3.png}
+\includegraphics[width=0.5\paperwidth]{image3.png}
 \caption{Illuminated patters for the different plays.}
 \label{figure:play7seg}
 \end{figure}
@@ -69,7 +71,8 @@ display is blank.
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
-\caption{The output for every combination of player 1 (P1) and player 2 (P2) throws.} 
+\caption{The output for every combination of player 1 (P1) and player 2 (P2) throws.}  
+\label{table:gameLogic}
 \tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -103,7 +106,7 @@ Rock & d & 2 & 1 & 1 \\ \hline
 Paper & 1 & d & 2 & 1 \\ \hline
 Scissors & 2 & 1 & d & 1 \\ \hline
 Invalid & 2 & 2 & 2 & d \\
-\label{table:gameLogic}
+
 \end{longtable}
 
 \textbf{System design}
@@ -364,7 +367,7 @@ into your playToSeven Verilog module:
 
 \begin{itemize}
 \item
-  Use the module declaration: module playToSeven (pPlay, sevenSeg);
+  Use the module declaration: \verb+module playToSeven (pPlay, sevenSeg);+
 \item
   Use a vector for the input pPlay and a vector for the sevenSeg output.
 \item
@@ -468,23 +471,20 @@ Note
 
 \protect\hypertarget{winLoose_Verilog}{}{}Incorporate the following into
 your winLose Verilog module: Use the module and port names given in
-Figure 3.
+Figure~\ref{fig:sysArch}.
 
 \begin{itemize}
 \item
   Use the module declaration:
-\end{itemize}
+\verb+ module winLose(p1Play, p2Play, playButton, sevenSeg);+
 
-module winLose(p1Play, p2Play, playButton, sevenSeg);
-
-\begin{itemize}
 \item
   Use vectors for the p1Play and p2Play inputs.
 \item
   Use a vector for the sevenSeg output.
 \item
-  Make the input port types ``wire''. Make the output port types
-  ``reg''.
+  Make the input port types ``wire''. Make the output port types  ``reg''.
+
 \item
   You will use a case statement, embedded in an always statement to
   realize this module.
@@ -493,16 +493,23 @@ module winLose(p1Play, p2Play, playButton, sevenSeg);
   \item
     Use brackets to make the vector for the case statement. For example,
     if button was a 1-bit signal and play was a 2-bit signal, then
+    
+\begin{lstlisting}[language=Verilog, frame=single]
+case ({button, play})
+    3'b000:  seg = 7'b1000000;    // display ``0''
+    3'b001:  seg = 7'b1111001;    // display ``1''
+    3'b010:   seg = 7'b0100100;    // display ``2''
+    3'b011:   seg = 7'b0110000;    // display ``3''
+    default:  seg = 7'b1111111;    // blank 7-seg
+endcase
+    \end{lstlisting}
+    
   \end{itemize}
-\end{itemize}
 
-\begin{quote}
 This code snippet will use the 3-bit value (button as MSB and play as
 least significant 2-bits) to select one of the rows. Note that the
 default case handles all the combinations where button is 1.
-\end{quote}
 
-\begin{itemize}
 \item
   Use a default case (last in the list) to handle all the situations
   where the button is not pressed. The default case catches any
@@ -513,11 +520,9 @@ default case handles all the combinations where button is 1.
   1's throw, player 2's throw and the output that is displayed on the
   7-segment display. For example, in my program the first case row has a
   comment that looks like:
-\end{itemize}
 
-// P1: Rock P2:Rock Draw
+\verb+ // P1: Rock P2:Rock Draw +
 
-\begin{itemize}
 \item
   Use the hex2Seven module from lab 2 as the starting point for this
   module.
@@ -543,9 +548,9 @@ bullet point item in the list below. For this module, I want you to:
   will need to keep this consistent with the pin assignment that you
   will complete next.
 \item
-  The playButton input is not a vector.
+  The \verb+playButton+ input is not a vector.
 \item
-  Use a vector for the winLoseSeg output.
+  Use a vector for the \verb+winLoseSeg+ output.
 \item
   Make the input and output port types ``wire''.
 \item
@@ -553,7 +558,7 @@ bullet point item in the list below. For this module, I want you to:
   find wires that begin and end inside the rpsGame module. These are the
   vectors.
 \item
-  Name the module instances using the names provided in Figure 3.
+  Name the module instances using the names provided in Figure~\ref{fig:sysArch}.
 \item
   When you instantiate a module
 
@@ -654,7 +659,7 @@ Key{[}0{]}
 \end{minipage} \\
 \midrule()
 \endhead
-\bottomrule()
+%\bottomrule()
 \end{longtable}
 
 Note, each push-button provides a high logic level when it is not
