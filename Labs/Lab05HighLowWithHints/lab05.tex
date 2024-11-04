@@ -37,7 +37,7 @@ assignment with the exception of the \textbf{hotCold} button and
 \textbf{clue} 7-segment display.
 
 \begin{figure}
-\includegraphics[width=5.58333in,height=1.46181in]{ image1.png}
+\includegraphics[width=0.8\paperwidth]{ image1.png}
 \caption{The input and output you should use to realize your digital system.}
 \label{fig:iOonDevBorad}
 \end{figure}
@@ -63,7 +63,7 @@ and coldThreshold as shown in Figure~\ref{fig:guessThreshold}.
 \end{itemize}
 
 \begin{figure}[ht]
-\includegraphics[width=6.5in,height=2.06458in]{ image2.png}
+\includegraphics{ image2.png}
 \caption{The interpretation of the quality of a guess in terms of thresholds.}
 \label{fig:guessThreshold}
 \end{figure}
@@ -77,9 +77,9 @@ between guess, secret number and the Quality of the guess by completing
 Table~\ref{table:applyGuessIntervals}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}@{}}
 \caption{Determine the quality of a guess at the secret number.
 Your answer may be a number, pair of numbers, a range or a pair of
@@ -108,14 +108,14 @@ Quality
 difference
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Quality
-\end{minipage} \\
+\end{minipage} \\ \hline
 \midrule()
 \endhead
-14 & 11 & & \\
-8 & 12 & & \\
-4 & 14 & & \\
-8 & & 2 & Hot \\
-& 8 & {[}4 to 9{]} & Warm \\
+14 & 11 & & \\ \hline
+8 & 12 & & \\ \hline
+4 & 14 & & \\ \hline
+8 & & 2 & Hot \\ \hline
+& 8 & {[}4 to 9{]} & Warm \\ \hline
 & 2 & {[}10 to 15{]} & Cold \\
 \bottomrule()
 \end{longtable}
@@ -125,7 +125,7 @@ user's guess to the user. It will do this by displaying `C' if the guess
 is \textbf{\uline{C}}old, `A' if the guess is w\textbf{\uline{A}}rm, `H'
 if the guess is \textbf{\uline{H}}ot.
 
-\subsubsetion{System design}
+\subsubsection{System design}
 
 There are an almost unlimited number of ways that you could implement
 this digital system. For this lab, I want you to use the system
@@ -149,7 +149,7 @@ used in this schematic are in order.
 \caption{System architecture for the guessing game with hint. The select
 inputs on the big and small 2x1 muxes is intentionally not shown -- you
 will need to figure this out.}
-\caption{fig:guessWithHintSystemArch}
+\label{fig:guessWithHintSystemArch}
 \end{figure}
 
 The new circuitry is shown in the middle of Figure~\ref{fig:guessWithHintSystemArch} starting with the
@@ -160,8 +160,8 @@ This comparator is needed to determine the difference between
 \emph{randNum} and \emph{guess} as follows.
 
 The difference between the \emph{guess} and \emph{secret number} (called
-\emph{randNum} in Figure~\re{fig:guessWithHintSystemArch})that you computed 
-in Table~\re{table:applyGuessIntervals} is 
+\emph{randNum} in Figure~\ref{fig:guessWithHintSystemArch})that you computed 
+in Table~\ref{table:applyGuessIntervals} is 
 the absolute
 value of the difference between \emph{guess} and the \emph{secret
 number}. We will realize this functionality by placing the larger of
@@ -217,7 +217,7 @@ the inputs and output are interpreted as binary numbers, the uovf output
 equals 1 when the computation results in an overflow.
 
 \begin{figure}
-\includegraphics[width=2.30596in,height=1.89552in]{ image4.png}
+\includegraphics[width=0.3\paperwidth]{ image4.png}
 \caption{A schematic representation of a N-bit adder subtractor.}
 \label{fig:adderSubSymbol}
 \end{figure}
@@ -237,15 +237,15 @@ explains the pair of empty fields at the end of the module instantiation
 shown in Listing 2.
 
 \begin{lstlisting}[language=Verilog,
- caption={Top, module definition for a 2:1 mux.  Bottom, module instantation 
- of a 2:1 mux in Figure~\ref{fig:guessGameSysArch}.},
+ caption={Top, module definition for an adder subtractor.  Bottom, module instantation 
+ of the adder subtractor in Figure~\ref{fig:guessWithHintSystemArch}.},
  label={listing:2x1muxVerilog},
  frame=single]
 // Module definition for the comparator
 module genericAdderSubtractor(a, b, fnc, sumDiff, sovf, uovf);
 
 // Module instantiation for an adder subtractor in hiLow digital circuit
-genericAdderSubtractor #(4) prox(big, small, 1’b1, difference, , );
+genericAdderSubtractor #(4) prox(big, small, 1'b1, difference, , );
 \end{lstlisting}
 
 
@@ -269,12 +269,12 @@ comparator. The other comparator will be called the cold comparator for
 obvious reasons.
 
 The warm and cold comparators generate a total of 6 signals sent to the
-``discrete logic'' box in Figure~\re{fig:guessWithHintSystemArch}, but the logic in ``discrete logic''
+``discrete logic'' box in Figure~\ref{fig:guessWithHintSystemArch}, but the logic in ``discrete logic''
 does not need all of them. To get a better handle on this, let's look at
 some examples to help uncover the relationship between the magnitude of
 the difference between the \emph{guess} and \emph{randNum} and the
 output of the warm and cold comparators. Note, that in the system
-architecture shown in Figure~\re{fig:guessWithHintSystemArch}, \emph{difference} is applied to the x
+architecture shown in Figure~\ref{fig:guessWithHintSystemArch}, \emph{difference} is applied to the x
 input of the comparators and the \emph{warmThresh} and \emph{coldThresh}
 are applied to the y inputs.
 
@@ -297,21 +297,19 @@ equals 9 and this is between the warm and cold thresholds, the quality
 of the guess should set warm = 1 and hot and cold to 0.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1110}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1005}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1005}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0957}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0957}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0951}}@{}}
+| >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1110}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1005}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1004}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1005}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0957}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0957}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0951}}@{}|}
 \caption{Complete the following table to determine which
 comparator outputs are needed to determine the quality of a guess. Let
-warmThresh = 4 and coldThresh = 10.}
-\label{table:fillInCompareOperations}
-\tabularnewline
+warmThresh = 4 and coldThresh = 10.}\label{table:fillInCompareOperations}\tabularnewline
 \toprule()
 \multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
 \emph{difference}
@@ -332,7 +330,7 @@ Warm
 \end{minipage}} &
 \multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
 Cold
-\end{minipage}} \\
+\end{minipage}} \\ \cline{2-7}
 & \begin{minipage}[b]{\linewidth}\raggedright
 wGT
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -345,7 +343,7 @@ cGT
 cEQ
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 cLT
-\end{minipage} \\
+\end{minipage} \\ \cline{2-7}
 \midrule()
 \endfirsthead
 \toprule()
@@ -356,7 +354,7 @@ cLT
 \begin{minipage}[b]{\linewidth}\raggedright
 warmThresh comparator
 \end{minipage}} &
-\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3012} + 4\tabcolsep}}{%
+\multicolumn{3}{|>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3012} + 4\tabcolsep}|}{%
 \begin{minipage}[b]{\linewidth}\raggedright
 coldThresh comparator
 \end{minipage}} &
@@ -381,7 +379,7 @@ cGT
 cEQ
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 cLT
-\end{minipage} \\
+\end{minipage} \\ 
 \midrule()
 \endhead
 3 & & & & & & & & & \\ \hline
@@ -401,9 +399,9 @@ output equals 1.
 
 \protect\hypertarget{hotWarmCold_Logic}{}{}
 \begin{verbatim}
-	Cold =				// write logic description
-	Warm =				// write logic description
-	Hot =				// write logic description
+	Cold =								// write logic description
+	Warm =								// write logic description
+	Hot =								// write logic description
 \end{verbatim}
 
 For this block of code:
@@ -435,9 +433,8 @@ hotWarmCold block should be blank when the \textbf{hotCold} button is
 unpressed.
 
 \begin{figure}
-\includegraphics[width=4.33913in,height=1.77523in]{ image5.png}
-\caption{The illuminated patterns to inform the guesser about the
-magnitude of their guess.}
+\includegraphics{ image5.png}
+\caption{The illuminated patterns to inform the guesser about the magnitude of their guess.}
 \label{figure:hiLoHintSevenSeg}
 \end{figure}
 
@@ -459,16 +456,52 @@ For this block of code:
   possible output. An example is given in Listing 3.
 \end{itemize}
 
+\begin{lstlisting}[language=Verilog,
+ caption={A comment block describing the pattern of illuminated segment for each guess hint..},
+ label={listing:hotColdGuess},
+ frame=single]
+//*********************************************
+// Logic to display the quality of the guess
+//	Hot  = `H' = <show binary code>
+//	wArm = `A' = <show binary code>
+//	Cold = `C' = <show binary code>
+//
+//		 hex[0]
+//		 -----
+//	hex[5]	|	|	hex[1]
+//		|	|	
+//		 -----	hex[6]
+//	hex[4]	|	|
+//		|	|	hex[2]
+//		 -----
+//		 hex[3]
+//*********************************************
+\end{lstlisting}
+
 \hypertarget{hilow-module}{%
 \section{hiLow module:}\label{hilow-module}}
 
 \uline{If you were not able to get the previous lab working}, just
 implement the functionality identified in this assignment and make the
 \emph{randNum} come directly from the seed switch. In this case, you
-should use the top module declaration in Listing 4. If you got the
+should use the top module declaration in Listing~\ref{listing:hiLowModule}. If you got the
 previous lab working correctly, then you should use the bottom
-declaration in Listing 4.
+declaration in Listing~\ref{listing:hiLowModule}.
 
+
+
+\begin{lstlisting}[language=Verilog,
+ caption={The module declaration for the enhanced hiLow module if you did or did 
+ not get the previous lab working.},
+ label={listing:hiLowModule},
+ frame=single]
+ // Didn't get previous lab working, then use this module declaration
+module hiLow(seedSwitch, guessSwitch, hotColdBut, hotColdSeg);
+
+// Did you complete the previous lab successfully?  Then use this module declaration.
+module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hotColdBut, hiLowBut, randMsbSeg, randLsbSeg, greenLEDs, hotColdSeg, hiLowSeg);
+ \end{lstlisting}
+ 
 I intentionally left out the connection between the \emph{randNum} and
 \emph{guess} comparator and the pair of 2:1 muxes that route the larger
 of \emph{randNum} and \emph{guess} to the x input of the adder
@@ -505,292 +538,61 @@ For this block of code:
 The testbench for this module checks hot, warm and cold for guesses that
 are too high and too low. I carefully selected these values to check the
 edge cases, meaning on either side of the warm and cold thresholds.
+\begin{verbatim}
+	warmThresh = 4'b0110 = 4
+	coldThresh = 4'b0110 = 10
+\end{verbatim}
 
-warmThresh = 4'b0110 = 4
-
-coldThresh = 4'b0110 = 10
-
-Table 3 contains the values that you will use to test your circuit.
+Table~\ref{table:hiLowTestbenchValues} contains the values that you will use to test your circuit.
 Before using the testbench, you need to understand what your circuit
-should output. The signal names in the top row of Table 3 are borrowed
-from the system architecture in Figure~\re{fig:guessWithHintSystemArch}. Fill in the missing binary and
+should output. The signal names in the top row of Table~\ref{table:hiLowTestbenchValues} are borrowed
+from the system architecture in Figure~\ref{fig:guessWithHintSystemArch}. Fill in the missing binary and
 decimal values for the cells in the guess, big, small and difference
 columns. In the Comment column, put the quality of the guess as either
 ``Hot'', ``Warm'' or ``Cold''.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0742}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1258}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1258}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1174}}@{}}
-\caption{Table : The values used in the hiLow testbench.}\tabularnewline
+| >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0742}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1258}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1258}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1392}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1174}}@{}|}
+\caption{Table : The values used in the hiLow testbench.}\label{table:hiLowTestbenchValues}\tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{test}{%
-\section{Test}\label{test}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{seed}{%
-\section{seed}\label{seed}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{randnum}{%
-\section{randNum}\label{randnum}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{guess}{%
-\section{guess}\label{guess}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{big}{%
-\section{big}\label{big}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{small}{%
-\section{small}\label{small}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{difference}{%
-\section{Difference}\label{difference}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{comment}{%
-\section{Comment}\label{comment}}
-\end{minipage} \\
+Test & seed & randNum & guess & big & small & Difference & Comment \\ 
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{test}{%
-\section{Test}\label{test}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{seed}{%
-\section{seed}\label{seed}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{randnum}{%
-\section{randNum}\label{randnum}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{guess}{%
-\section{guess}\label{guess}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{big}{%
-\section{big}\label{big}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{small}{%
-\section{small}\label{small}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{difference}{%
-\section{Difference}\label{difference}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{comment}{%
-\section{Comment}\label{comment}}
-\end{minipage} \\
+Test & seed & randNum & guess & big & small & Difference & Comment \\ 
 \midrule()
 \endhead
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-2}{%
-\section{1}\label{section-2}}
-\end{minipage} &
-\multirow{5}{*}{\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1010}{%
-\section{4'b1010}\label{b1010}}
+1  &
+	\multirow{5}{*}{4'b1010} & 
+	\multirow{5}{*}{4'b0100 } &
+	4'b1111 &  &
+	\multirow{5}{*}{} & &  				\\ \cline{1-1}\cline{4-5}\cline{7-8}
+2 & & & =14 		&  & &  & 		\\ \cline{1-1}\cline{4-5}\cline{7-8}
+3 & & & 4'b1101 = 	&  & &  &  		\\ \cline{1-1}\cline{4-5}\cline{7-8}
+4 & & & 4'b1000 =	& & &  &  		\\ \cline{1-1}\cline{4-5}\cline{7-8}
+5 & & & 4'b0111 = 	&  & &  &  		\\ \hline
 
-\hypertarget{section-3}{%
-\section{10}\label{section-3}}
-\end{minipage}} &
-\multirow{5}{*}{\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b0100}{%
-\section{4'b0100}\label{b0100}}
+6 & 
+	\multirow{6}{*}{4'b1111} &
+	\multirow{6}{*}{4'b1110} & 
+	4'b0011 &
+	\multirow{6}{*}{} &  &  &  \\ \cline{1-1}\cline{4-4}\cline{6-8}
 
-4
-\end{minipage}} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1111-15}{%
-\section{4'b1111 =15}\label{b1111-15}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-4}{%
-\section{}\label{section-4}}
-\end{minipage} &
-\multirow{5}{*}{\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-5}{%
-\section{}\label{section-5}}
-\end{minipage}} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-6}{%
-\section{}\label{section-6}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-7}{%
-\section{}\label{section-7}}
-\end{minipage} \\
-2 & & & =14 & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-8}{%
-\section{}\label{section-8}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-9}{%
-\section{}\label{section-9}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-10}{%
-\section{}\label{section-10}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-11}{%
-\section{3}\label{section-11}}
-\end{minipage} & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1101}{%
-\section{4'b1101 =}\label{b1101}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-12}{%
-\section{}\label{section-12}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-13}{%
-\section{}\label{section-13}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-14}{%
-\section{}\label{section-14}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-15}{%
-\section{4}\label{section-15}}
-\end{minipage} & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1000}{%
-\section{4'b1000 =}\label{b1000}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-16}{%
-\section{}\label{section-16}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-17}{%
-\section{}\label{section-17}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-18}{%
-\section{}\label{section-18}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-19}{%
-\section{5}\label{section-19}}
-\end{minipage} & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b0111}{%
-\section{\texorpdfstring{4'b0111 = }{4'b0111 = }}\label{b0111}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-20}{%
-\section{}\label{section-20}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-21}{%
-\section{}\label{section-21}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-22}{%
-\section{}\label{section-22}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-23}{%
-\section{6}\label{section-23}}
-\end{minipage} &
-\multirow{6}{*}{\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1111}{%
-\section{4'b1111}\label{b1111}}
-
-\hypertarget{section-24}{%
-\section{15}\label{section-24}}
-\end{minipage}} &
-\multirow{6}{*}{\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1110}{%
-\section{4'b1110}\label{b1110}}
-
-\hypertarget{section-25}{%
-\section{14}\label{section-25}}
-\end{minipage}} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b0011-3}{%
-\section{4'b0011 =3}\label{b0011-3}}
-\end{minipage} &
-\multirow{6}{*}{\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-26}{%
-\section{}\label{section-26}}
-\end{minipage}} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-27}{%
-\section{}\label{section-27}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-28}{%
-\section{}\label{section-28}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-29}{%
-\section{}\label{section-29}}
-\end{minipage} \\
-7 & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-30}{%
-\section{\texorpdfstring{ =4}{ =4}}\label{section-30}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-31}{%
-\section{}\label{section-31}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-32}{%
-\section{}\label{section-32}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-33}{%
-\section{}\label{section-33}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-34}{%
-\section{8}\label{section-34}}
-\end{minipage} & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-35}{%
-\section{\texorpdfstring{ =5}{ =5}}\label{section-35}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-36}{%
-\section{}\label{section-36}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-37}{%
-\section{}\label{section-37}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-38}{%
-\section{}\label{section-38}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-39}{%
-\section{9}\label{section-39}}
-\end{minipage} & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1010-1}{%
-\section{\texorpdfstring{4'b1010 = }{4'b1010 = }}\label{b1010-1}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-40}{%
-\section{}\label{section-40}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-41}{%
-\section{}\label{section-41}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-42}{%
-\section{}\label{section-42}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-43}{%
-\section{10}\label{section-43}}
-\end{minipage} & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1011}{%
-\section{4'b1011 =}\label{b1011}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-44}{%
-\section{}\label{section-44}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-45}{%
-\section{}\label{section-45}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-46}{%
-\section{}\label{section-46}}
-\end{minipage} \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-47}{%
-\section{11}\label{section-47}}
-\end{minipage} & & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{b1110-1}{%
-\section{4'b1110 =}\label{b1110-1}}
-\end{minipage} & & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-48}{%
-\section{}\label{section-48}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-49}{%
-\section{}\label{section-49}}
-\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{section-50}{%
-\section{}\label{section-50}}
-\end{minipage} \\
+7  & & &  =4 & &  &  & \\ \cline{1-1}\cline{4-4}\cline{6-8}
+8  & & & =5 & & &  & \\ \cline{1-1}\cline{4-4}\cline{6-8}
+9  & & & 4'b1010 = & &  & &  \\ \cline{1-1}\cline{4-4}\cline{6-8}
+10 & & & 4'b1011 = & & & & \\ \cline{1-1}\cline{4-4}\cline{6-8}
+11 & & & 4'b1110 = & & & & \\
 \bottomrule()
 \end{longtable}
 
-\hypertarget{section-51}{%
-\section{}\label{section-51}}
 
 \hypertarget{pin-assignment}{%
 \section{Pin Assignment:}\label{pin-assignment}}
@@ -800,9 +602,9 @@ in the User Guide to determine the FPGA pins associated with the input
 and output devices used by the hiLow module.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2571}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2814}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2430}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2571}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2814}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2430}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2185}}@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -816,20 +618,20 @@ hiLowSeg
 \end{minipage} \\
 \midrule()
 \endhead
-seg{[}6{]} & AC22 & & Y18 \\
-seg{[}5{]} & AC23 & & Y19 \\
-seg{[}4{]} & AC24 & & Y20 \\
-seg{[}3{]} & AA22 & & W18 \\
-seg{[}2{]} & AA23 & & V17 \\
-seg{[}1{]} & Y23 & & V18 \\
+seg{[}6{]} & AC22 & & Y18 \\ \hline
+seg{[}5{]} & AC23 & & Y19 \\ \hline
+seg{[}4{]} & AC24 & & Y20 \\ \hline
+seg{[}3{]} & AA22 & & W18 \\ \hline
+seg{[}2{]} & AA23 & & V17 \\ \hline
+seg{[}1{]} & Y23 & & V18 \\ \hline
 seg{[}0{]} & Y24 & & V19 \\
 \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2596}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2505}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2542}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2596}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2505}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2542}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2357}}@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -842,21 +644,20 @@ guessSwitch
 \end{minipage} \\
 \midrule()
 \endhead
-slide{[}3{]} & AE19 & N/A & AC8 \\
-slide{[}2{]} & Y11 & N/A & AD13 \\
-slide{[}1{]} & AC10 & AB10 & AE10 \\
+slide{[}3{]} & AE19 & N/A & AC8 \\ \hline
+slide{[}2{]} & Y11 & N/A & AD13 \\ \hline
+slide{[}1{]} & AC10 & AB10 & AE10 \\ \hline
 slide{[}0{]} & V10 & W11 & AC9 \\
 \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{randbut}{%
-\section{randBut}\label{randbut}}
+randBut
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Key{[}3{]}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -865,20 +666,18 @@ Y16
 \midrule()
 \endhead
 \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{hotcoldbut}{%
-\section{hotColdBut}\label{hotcoldbut}}
+hotColdBut
 \end{minipage} & Key{[}2{]} & \\
 \begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{hilowbut}{%
-\section{hiLowBut}\label{hilowbut}}
+hiLowBut
 \end{minipage} & Key{[}0{]} & P11 \\
 \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -908,21 +707,21 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\textbf{System Architecture}
+\subsubsection{System Architecture}
+\begin{itemize}
+\item Complete Table~\ref{table:applyGuessIntervals}.
+\end{itemize}
 
-Complete Table~\re{table:applyGuessIntervals}.
+\subsubsection{Discrete Logic block:}
+\begin{itemize}
+\item Complete Table~\ref{table:fillInCompareOperations}
 
-\hypertarget{discrete-logic-block-1}{%
-\section{Discrete Logic block:}\label{discrete-logic-block-1}}
-
-Complete Table~\ref{table:fillInCompareOperations}
-
-\protect\hyperlink{hotWarmCold_Logic}{Link} Logic for hot, warm, and
+\item \protect\hyperlink{hotWarmCold_Logic}{Link} Logic for hot, warm, and
 cold signals
+\end{itemize}
 
-\hypertarget{hilow-module-1}{%
-\section{\texorpdfstring{hiLow Module:
-}{hiLow Module: }}\label{hilow-module-1}}
+
+\subsubsection{hiLow Module:}
 
 \begin{itemize}
 \item
@@ -930,7 +729,7 @@ cold signals
   the hiLow module (courier 8-point font single spaced), leave out
   header comments.
 \item
-  Complete Table 3.
+  Complete Table~\ref{table:hiLowTestbenchValues}.
 \item
   \protect\hyperlink{hilow_tb-module}{Link} Run the testbench for the
   hiLow module provided on Canvas. Produce a timing diagram with the
@@ -938,61 +737,52 @@ cold signals
   with the waveform. Color inputs green and outputs red. Order the
   traces from top to bottom as
 
-  \begin{itemize}
-  \item
-    seedSwitch radix unsigned Green trace
-  \item
-    randNum radix unsigned Lime green trace
-  \item
-    GuessSwitch radix unsigned Lime green trace
-  \item
-    Big radix unsigned Cyan trace
-  \item
-    Small radix unsigned Cyan trace
-  \item
-    Difference radix unsigned Blue trace
-  \item
-    hotWire default Orange trace
-  \item
-    warmWire default Orange trace
-  \item
-    coldWire default Orange trace
-  \item
-    hotColdSeg hexadecimal Red trace
-  \end{itemize}
-\end{itemize}
+  \begin{tabular}{p{4cm}p{4cm}p{4cm}}
+    seedSwitch  & radix unsigned & Green trace \\
+    randNum  & radix unsigned  & Lime green trace \\
+    GuessSwitch  & radix unsigned  & Lime green trace \\
+    Big radix  & unsigned &  Cyan trace \\
+    Small  & radix unsigned &  Cyan trace \\
+    Difference  & radix unsigned &  Blue trace \\
+    hotWire  & default &  Orange trace \\
+    warmWire  & default &  Orange trace \\
+    coldWire  & default &  Orange trace \\
+    hotColdSeg  & hexadecimal &  Red trace \\
+\end{tabular}
 
 I do not want the signals from the testbench, but rather the signals
 from inside the hiLow module. You can do this in ModelSim, by expanding
-the hiLow\_tb instance in the left ModelSim pane shown in Figure 6 and
+the hiLow\_tb instance in the left ModelSim pane shown in Figure~\ref{fig:hierarchyTestbench} and
 selecting ``uut''. Since uut is an instance of the hiLow module, all the
 signals accessible in the hiLow module are shown in the center Object
-pane in Figure 6. You can add any of these signals by clicking on them
-and dragging them into the rightmost Wave pane shown in Figure 6.
+pane in Figure~\ref{fig:hierarchyTestbench}. You can add any of these signals by clicking on them
+and dragging them into the rightmost Wave pane shown in Figure~\ref{fig:hierarchyTestbench}.
 
-\includegraphics[width=4.19903in,height=1.91656in]{ image6.png}
-
-Figure : Use the design hierarchy to add signals to the testbench.
+\begin{figure}
+\includegraphics{ image6.png}
+\caption{Use the design hierarchy to add signals to the testbench.}
+\label{fig:hierarchyTestbench}
+\end{figure}
 
 When compete, your testbench should look like the timing diagram in
-Figure 7.
+Figure~\ref{fig:guessTiming}.
 
-\includegraphics[width=6.50278in,height=1.38472in]{ image7.png}
+\begin{figure}
+\includegraphics{ image7.png}
+\caption{A partially obscured timing diagram generated by the testbench.}
+\label{fig:guessTiming}
+\end{figure}
+\end{itemize}
 
-Figure : A partially obscured timing diagram generated by the testbench.
+\subsubsection{Demo:}
+\begin{itemize}
+\item Demonstrate your completed circuit by the start of next week's lab.
+\end{itemize}
 
-\hypertarget{demo}{%
-\section{Demo:}\label{demo}}
-
-Demonstrate your completed circuit by the start of next week's lab.
-
-\textbf{\hfill\break
-}
-
-\textbf{Clearing errors, tips from the professor}
+\subsection{Clearing errors - Tips from the professor}
 
 When my program executed successfully, I got the warnings shown in
-Figure 8. These are mainly the result of the unused overflow outputs
+Figure~\ref{fig:messageConsole}. These are mainly the result of the unused overflow outputs
 from the adder subtractor. You can filter out all the compile messages
 by clicking on the yellow triangle (with the blue three in this case) on
 the top line of the console window. Note, if there are several related
@@ -1000,21 +790,24 @@ warnings, they will have one top-level warning with all the instances
 accessible by clicking the expander arrow (it looks like
 ``\textgreater'') to the left of the warning triangle.
 
-\includegraphics[width=6.50278in,height=0.81042in]{ image8.png}
-
-Figure : The messages console filtered by warnings.
+\begin{figure}
+\includegraphics{image8.png}
+\caption{The messages console filtered by warnings.}
+\label{fig:messageConsole}
+\end{figure}
 
 I have found the Connectivity Checks folder in the Compilation Report to
 help me quickly track down errors. To use it, open the Connectivity
 Checks folder, click on a Port Connectivity Checks item and read the
-report in the right pane. In the report shown in Figure 9, I selected
+report in the right pane. In the report shown in Figure~\ref{fig:connectivityCheck}, I selected
 the genericAdderSubtractor and note I hardwired fnc to 1 so that it
 always subtracts. This report also shows that the overflow outputs are
 unconnected because we left them open using a pair of commas talked
 about earlier.
 
-\includegraphics[width=6.50278in,height=2.69653in]{ image9.png}
+\begin{figure}
+\includegraphics{ image9.png}
+\caption{Connectivity Checks report for a working hiLow circuit.}
+\label{fig:connectivityCheck}
+\end{figure}
 
-Figure : Connectivity Checks report for a working hiLow circuit.
-
-\end{document}
