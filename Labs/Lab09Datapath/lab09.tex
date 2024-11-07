@@ -5,12 +5,12 @@
 
 
 \hypertarget{objective}{%
-\section{Objective}\label{setion:swObjective}}
+\section{Objective}\label{section:swObjective}}
 
 The objective of this lab is to design a datapath to store and
 manipulate the information need to run a stopwatch.
 
-\setion{Discussion}
+\section{Discussion}
 
 A stopwatch is a device that is used to measure time intervals, usually
 in competitive events. The stopwatch that you will be designing gets its
@@ -23,8 +23,8 @@ stopwatch is limited to measuring intervals of time from 0.1 second to
 The stopwatch's behavior is dictated by its 2 buttons called S1 and S2
 according to the finite state machine shown in Figure~\ref{fig:swDPbehavior}.
 
-\begin{figure}
-\includegraphics{image1.png}
+\begin{figure}[ht]
+\includegraphics[width=0.5\paperwidth]{image1.png}
 \caption{A digital stopwatch gets its input from 2 buttons and displays
 its output on a 7-segment display. The behavior of the stopwatch can be
 described by this finite state machine (FSM).}
@@ -99,13 +99,13 @@ To summarize:
   displayed time.
 \end{itemize}
 
-\setion{Datapath Architecture}
+\section{Datapath Architecture}
 
 The datapath for the stopwatch is shown in Figure~\ref{fig:dpSWdatpath}. The behavior of the
 datapath to perform the functions of a stopwatch follows.
 
-\begin{Figure}
-\includegraphics[width=6.50278in,height=6.66181in]{ image2.jpg}
+\begin{figure}[ht]
+\includegraphics{ image2.jpg}
 \caption{The datapath for the stopwatch has a 6-bit control word and
 displays the time on three 7-segment displays.}
 \label{fig:dpSWdatpath}
@@ -166,7 +166,7 @@ potential as an engineer.
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|@{}}
-\caption{Control word table for the datapath shown in Figure~\re{fig:dpSWdatpath
+\caption{Control word table for the datapath shown in Figure~\ref{fig:dpSWdatpath}}
 \label{table:swDPcontrolWord}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -263,7 +263,7 @@ Verilog code for the datapath. For the datapath module, I want you to:
   \end{itemize}
 \end{itemize}
 
-\textbf{3 Datapath Simulation}
+\section{Datapath Simulation}
 
 Before you download your completed datapath to the Development Board,
 you are going to perform extensive simulations to uncover as many bugs
@@ -282,11 +282,10 @@ modify the following:
 
 \begin{itemize}
 \item
-  localparam \textbf{tenthSecondConstant} to 4\textquotesingle h000002
+Set \verb+ localparam tenthSecondConstant+ to 4\textquotesingle h000002
   (an arbitrary small constant)
 \item
-  parameter \textbf{N} to 4, this sets the word size of the
-  counter/comparator hardware.
+  Set the parameter \verb+N+ to 4, this sets the word size of the counter/comparator hardware.
 \end{itemize}
 
 You can use the parameter \textbf{N} as the generic parameter in
@@ -296,8 +295,7 @@ the parameter value \#(N) as the width of the counter is legal syntax in
 Verilog.
 
 \begin{verbatim}
-genericCounter \#(N) tenthSecondCounter(clk, resetn, zero24,
-cw{[}1:0{]}, clkCount);
+genericCounter #(N) tenthSecondCounter(clk, resetn, zero24, cw{[}1:0{]}, clkCount);
 \end{verbatim}
 
 Make a note to yourself to modify \textbf{N} and
@@ -323,7 +321,6 @@ line of the simulation is reached. Including these statements helps you
 to understand where your simulation is at and what behavior to expect.
 
 \begin{landscape}
-\begin{figure}
 \includegraphics{ image4.png}
 
 \includegraphics{ image5.png}
@@ -333,6 +330,8 @@ to understand where your simulation is at and what behavior to expect.
 \includegraphics{ image7.png}
 
 \includegraphics{ image8.png}
+
+\begin{figure}[ht]
 \caption{Complete the timing diagram using the control words found in the testbench.}
 \label{figure:swDPtiming}
 \end{figure}
@@ -343,16 +342,16 @@ Run the testbench for the datapathLab09\_tb module using the do file
 provided. Produce a timing diagram ordered from top to bottom as:
 
 \begin{tabular}{p{3cm}p{3cm}p{3cm}}
-  clk 		& default 	& green trace
-  resetn 		& default 	& green trace
-  cw 		& hex 		& yellow trace
-  tenth 		& default 	& gold trace
-  clkCnt 		& hex 		& red trace
-  tenthDigit 	& hex 		& green trace
-  tenthDisp 	& hex 		& green trace
-  unitDigit 	& hex 		& greenyellow trace
-  unitDisp 	& hex 		& greenyellow trace
-\end{itemize}
+  clk 		& default 	& green trace \\
+  resetn 		& default 	& green trace \\
+  cw 		& hex 		& yellow trace \\
+  tenth 		& default 	& gold trace \\
+  clkCnt 		& hex 		& red trace \\
+  tenthDigit 	& hex 		& green trace \\
+  tenthDisp 	& hex 		& green trace \\
+  unitDigit 	& hex 		& greenyellow trace \\
+  unitDisp 	& hex 		& greenyellow trace \\
+\end{tabular}
 
 In order to simplify the process of setting up the waveforms, you can
 script all the wave adds, assignment of radix and colors using the
@@ -361,6 +360,7 @@ provided DO file as follows:
 \begin{itemize}
 \item
   Download ``datapath\_tbWaveSetup.do'' into the:
+  
   \textless projectDirectory\textgreater\textbackslash\textless projectname\textgreater\textbackslash simulation\textbackslash modelsim
 \item
   Open datapath\_tbWaveSetup.do file using Notepad. The syntax is pretty
@@ -377,7 +377,7 @@ provided DO file as follows:
 \end{itemize}
 
 
-\includegraphics{ image9.png}
+\includegraphics[width=0.5\paperwidth]{ image9.png}
 
 
 \begin{itemize}
@@ -413,7 +413,7 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\subsubsetion{Datapath}
+\subsubsection{Datapath}
 
 \begin{itemize}
 \item
