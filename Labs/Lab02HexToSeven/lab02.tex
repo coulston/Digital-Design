@@ -1,5 +1,5 @@
 \chapter{Hexadecimal to Seven-Segment Converter}
-\label{HexToSeven}
+\label{chapter:HexToSeven}
 \graphicspath{ {./Lab02HexToSeven/Fig} }
 
 
@@ -7,15 +7,12 @@
 \section{Objective }
 \label{hex2Seven:objective}}
 
-The objective of this lab is to become familiar with the always
-statement used to implement truth tables, how to combine bits into
-vectors and how to download synthesized code onto the development board.
+The objective of this lab is to introduce you to two new Verilog concepts, vectors,and always/case statement.
+You will learn how to assign pins to your module ports in a process called pin-assignment.  Finally, you
+will download a module+pin-assignment to the development board.
 
-Today's laboratory will require to learn about two new Verilog concepts,
-The Always statement and Vectors. Let's look at the easier of these two,
-Vectors, first.
 
-\subsubsection{Vectors}
+\section{Verilog: Vectors}
 
 A vector is simply a collection of bits, very similar to an array in a
 regular programming language. You might use a vector to represent a
@@ -27,7 +24,7 @@ are illustrated in Figure~\ref{fig:combinVector}.
 
 \begin{figure}[ht]
 \includegraphics{image1.png}
-\caption{A schematic illustration of combining bits into a vector, f,
+\caption{A schematic illustration of combining bits into a vector, f, 
 and then accessing the individual bits of f.}
 \label{fig:combinVector}
 \end{figure}
@@ -76,7 +73,7 @@ hardcoding, using the 3b'010; notation. The first number, 3, is the
 length of the vector, b' means that this is a bit vector and the 010 is
 the 3-bit value.
 
-\subsubsection{Always}
+\section{Verilog: Always/Case statements}
 
 We will use the Verilog \emph{always} statement to implement a function
 using its truth table. Listing~\ref{listing:3in3outVerilog} shows an always statement that uses the
@@ -118,8 +115,7 @@ be a gate or the output of a module. If a signal does not have an
 explicit gate or module driving its value, it needs to be typed reg.
 
 \hypertarget{part-1-combine-lab-1-functions.}{%
-\section{Combine lab 1
-functions.}\label{part-1-combine-lab-1-functions.}}
+\section{A Multiple Output Functions.}\label{part-1-combine-lab-1-functions.}}
 
 Let's explore vectors and the always statement by combining the three
 functions created in last weeks assignment into one function.
@@ -140,7 +136,7 @@ functions created in last weeks assignment into one function.
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
 \caption{The Truth Table for the combinedLab01 function. This
-function has a 3-bit input and 3-bits output.}\tabularnewline
+function has a 3-bit input and 3-bits output.}\label{table:combinedLab01}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 a
@@ -182,7 +178,6 @@ f02
 1 & 1 & 0 & & & \\ \hline
 1 & 1 & 1 & & & \\
 %\bottomrule()
-\label{table:combinedLab01}
 \end{longtable}
 
 \begin{enumerate}
@@ -219,7 +214,7 @@ f02
   diagram to that you generated in Table~\ref{table:combinedLab01}.
 \end{enumerate}
 
-\subsubsection{Bridging the divide between logical and physical}
+\section{FPGA: Pin-Assignment}
 
 The process of converting your Verilog code to a form which you will
 download onto the development board is called \emph{synthesis}. In order
@@ -278,52 +273,22 @@ will use this assignment in the next section.
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1430}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1430}}|@{}}
-\caption{\protect\hypertarget{CombinedLab01_Pin_assignment}{}{}
-Pin Assignment Table for combinedLab01.}\tabularnewline
+\caption{Pin Assignment Table for combinedLab01.}\label{CombinedLab01_Pin_assignment}\tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Port
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-a
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-b
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-c
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-f{[}2{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-f{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-f{[}0{]}
-\end{minipage} \\ \hline
+Port & a & b & c & f{[}2{]} & f{[}1{]} & f{[}0{]}   \\ 
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Port
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-a
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-b
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-c
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-f{[}2{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-f{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-f{[}0{]}
-\end{minipage} \\ \hline
+Port & a & b & c & f{[}2{]} & f{[}1{]} & f{[}0{]}   \\ 
 \midrule()
 \endhead
-Signal name & SW{[}2{]} & SW{[}1{]} & SW{[}0{]} & LEDR{[}2{]} &
-LEDR{[}1{]} & LEDR{[}0{]} \\ \hline
-FPGA Pin No. & & & PIN\_AC9 & & & \\
+Signal name 	& SW{[}2{]} & SW{[}1{]} & SW{[}0{]} 	& LEDR{[}2{]} & LEDR{[}1{]} & LEDR{[}0{]} \\ \hline
+FPGA Pin No. 	& 		& 		& PIN\_AC9 & 		& 			& \\
 \bottomrule()
 \label{table:pinAssignmentCombinedLab01}
 \end{longtable}
 
-\subsubsection{Synthesizing a Verilog Module}
+\section{FPGA: Synthesizing a Verilog Module}
 
 It's time to realize the \emph{combinedLab01} Verilog file to FPGA. To
 do this follow these steps:
@@ -406,8 +371,7 @@ combinedLab01 Verilog file.}
 \end{figure}
 
 \hypertarget{part-2-hexadecimal-to-7-segment-converter}{%
-\section{Hexadecimal to 7-segment
-Converter}\label{part-2-hexadecimal-to-7-segment-converter}}
+\section{Hexadecimal to 7-segment Converter}\label{part-2-hexadecimal-to-7-segment-converter}}
 
 While working on the previous problem, you probably noticed that the
 development Board has four 7-segment display. These figure 8 shaped
@@ -423,7 +387,7 @@ asserting a logic 0 on the pin attached to a segment will cause that
 segment to illuminate.}
 
 \begin{figure}[ht]
-\includegraphics[width=0.5\paperwidth]{image8.png}
+\includegraphics[width=0.3\paperwidth]{image8.png}
 \caption{Left, the proper numbering of the segments. Right,
 illuminating segments to form the number 4.}
 \label{fig:sevenSeg}
@@ -441,7 +405,7 @@ or seg = 7'b0011001
 
 Figure~\ref{fig:sevenSegChars} shows the proper formatting for all the values between 0 -- f.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image9.png}
 \caption{The proper arrangement of LEDs to form hexadecimal characters.}
 \label{fig:sevenSegChars}
@@ -452,7 +416,7 @@ circuit that converts a 4-bit input, representing a hexadecimal value,
 into the binary values to illuminate a 7-segment display with active low
 LEDs.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image10.png}
 \caption{The hexToSevenSeg Verilog module driving a 7-segment display.}
 \label{fig:hex2SevenSeg}
@@ -468,54 +432,21 @@ LEDs.
 \end{enumerate}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1241}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1241}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1252}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1252}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1252}}@{}}
-\caption{\protect\hypertarget{Hex2Seven_TruthTable}{}{}Truth
-table or the hexToSevenSeg component.}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1252}}|@{}}
+\caption{Truth table for the hexToSevenSeg component.}\label{Hex2Seven_TruthTable} \tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-x
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}6{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}5{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}4{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}3{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}2{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}0{]}
-\end{minipage} \\ \hline
+x & seg{[}6{]} & seg{[}5{]} & seg{[}4{]} &  seg{[}3{]} & seg{[}2{]} & seg{[}1{]} &  seg{[}0{]} \\ 
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-x
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}6{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}5{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}4{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}3{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}2{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seg{[}0{]}
-\end{minipage} \\ \hline
+x & seg{[}6{]} & seg{[}5{]} & seg{[}4{]} &  seg{[}3{]} & seg{[}2{]} & seg{[}1{]} &  seg{[}0{]} \\ 
 \midrule()
 \endhead
 0000 & & & & & & & \\ \hline
@@ -543,40 +474,19 @@ hexadecimal to seven segment converter given in
 Table~\ref{table:pinAssignmentHex2Seven}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}}@{}}
-\caption{\protect\hypertarget{Hex2Seven_PinAssignment}{}{}Pair
-of pin assignment tables for the hexToSevenSeg
-component.}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}}|@{}}
+\caption{Pairof pin assignment tables for the hexToSevenSegcomponent.}
+\label{Hex2Seven_PinAssignment}\tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Port
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}3{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}2{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}0{]}
-\end{minipage} \\ \hline
+Port & x{[}3{]} & x{[}2{]} & x{[}1{]} & x{[}0{]} \\ \hline
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Port
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}3{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}2{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-x{[}0{]}
-\end{minipage} \\ \hline
+Port & x{[}3{]} & x{[}2{]} & x{[}1{]} & x{[}0{]} \\ \hline
 \midrule()
 \endhead
 Signal name & SW{[}3{]} & SW{[}2{]} & SW{[}1{]} & SW{[}0{]} \\ \hline
@@ -596,22 +506,13 @@ FPGA Pin No. & & & & PIN\_AC9 \\
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
-Port
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg{[}6{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg{[}5{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg{[}4{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg{[}3{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg{[}2{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg{[}0{]}
-\end{minipage} \\ \hline
+Port &
+sevenSeg{[}6{]} &
+sevenSeg{[}5{]} &
+sevenSeg{[}4{]} &
+sevenSeg{[}3{]} &
+sevenSeg{[}2{]} &
+sevenSeg{[}1{]} \\ \hline
 \midrule()
 \endhead
 Signal name & HEX0{[}6{]} & HEX0{[}5{]} & HEX0{[}4{]} & HEX0{[}3{]} &
@@ -662,7 +563,7 @@ and download the module to the development board.
 \end{figure}
 
 \hypertarget{turn-in}{%
-\section{Turn in:}\label{turn-in}}
+\section{Turn in:}\label{section:h27turn-in}}
 
 Make a record of your response to numbered items below and turn them in
 a single copy as your team's solution on Canvas using the instructions
@@ -672,21 +573,17 @@ following listed items (below) is and how it was derived.
 
 \subsubsection{Combine lab 1} 
 \begin{itemize}
-\item \protect\hyperlink{CombinedLab01_Waveform}{Link} Truth Table for combinedLab01 function 
-(Table~\ref{table:combinedLab01})
+\item Truth Table for combinedLab01 function in Table~\ref{table:combinedLab01}
 \item \protect\hyperlink{CombinedLab01_Waveform}{Link} Timing diagram for combinedLab01 function
-\item \protect\hyperlink{CombinedLab01_Pin_assignment}{Link} Pin assignment for combinedLab01 
-(Table~\ref{table:pinAssignmentCombinedLab01})
+\item  Pin assignment for combinedLab01 in Table~\ref{table:pinAssignmentCombinedLab01}
 \end{itemize}
 
 \subsubsection{Hexadecimal to 7-segment}
 \begin{itemize}
-\item \protect\hyperlink{Hex2Seven_TruthTable}{Link} Truth Table for hexToSevenSeg function 
-(Table~\ref{table:hex2sevenTruthTable})
+\item  Truth Table for hexToSevenSeg function in Table~\ref{table:hex2sevenTruthTable}
 \item \protect\hyperlink{Hex2Seven_Verilog}{Link} Verilog code for hexToSevenSeg function -- just the always/case statement
 \item \protect\hyperlink{Hex2Seven_Waveform}{Link} Timing diagram for hexToSevenSeg function
-\item \protect\hyperlink{Hex2Seven_PinAssignment}{Link} Pin assignment tables for hexToSevenSeg 
-(Tables~\ref{table:pinAssignmentHex2Seven})
+\item Pin assignment tables for hexToSevenSeg  in Tables~\ref{table:pinAssignmentHex2Seven}
 \item Demonstrate working hexadecimal to seven segment module on development board.
 \end{itemize}
 

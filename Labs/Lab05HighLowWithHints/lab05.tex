@@ -11,7 +11,7 @@ functionality. The design requires utilization of basic building block
 and custom combinational logic blocks to realize a complex digital
 circuit.
 
-\textbf{The Guessing Game with Hints}
+\section{The Guessing Game with Hints}
 
 This week's assignment asks you to add some enhanced functionality to
 the guessing game. Since we are adding functionality to the guessing
@@ -195,12 +195,12 @@ the \textbf{hotCold} 7-segment display. You will derive this logic as
 you work through this lab.
 
 \hypertarget{mux-module}{%
-\section{2:1 Mux Module:}\label{mux-module}}
+\section{2:1 Mux Module:}\label{section:hiLowMux-module}}
 This module was discussed in Lab 4.
 
 
 \hypertarget{compare-module}{%
-\section{Compare Module:}\label{compare-module}}
+\section{Compare Module:}\label{section:hiLowCompare-module}}
 This module was discussed in Lab 4.
 
 \hypertarget{addsub-module}{%
@@ -239,7 +239,7 @@ shown in Listing 2.
 \begin{lstlisting}[language=Verilog,
  caption={Top, module definition for an adder subtractor.  Bottom, module instantation 
  of the adder subtractor in Figure~\ref{fig:guessWithHintSystemArch}.},
- label={listing:2x1muxVerilog},
+ label={listing:adderSubtractor},
  frame=single]
 // Module definition for the comparator
 module genericAdderSubtractor(a, b, fnc, sumDiff, sovf, uovf);
@@ -479,7 +479,7 @@ For this block of code:
 \end{lstlisting}
 
 \hypertarget{hilow-module}{%
-\section{hiLow module:}\label{hilow-module}}
+\section{hiLow module:}\label{section:hilow-module}}
 
 \uline{If you were not able to get the previous lab working}, just
 implement the functionality identified in this assignment and make the
@@ -595,7 +595,7 @@ Test & seed & randNum & guess & big & small & Difference & Comment \\
 
 
 \hypertarget{pin-assignment}{%
-\section{Pin Assignment:}\label{pin-assignment}}
+\section{Pin Assignment:}\label{sectionhHiLoPin-assignment}}
 
 Use the image of the Development Board in Figure~\ref{fig:iOonDevBorad} and the information
 in the User Guide to determine the FPGA pins associated with the input

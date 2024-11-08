@@ -1,5 +1,5 @@
 \chapter{High Low Guessing Game}
-\label{RPS}
+\label{chapter:RPS}
 \graphicspath{ {./Lab04HighLow/Fig} }
 
 \hypertarget{objective}{%
@@ -96,7 +96,7 @@ schematic are in order.
 \end{figure}
 
 \hypertarget{mux-module}{%
-\section{2:1 Mux Module:}\label{mux-module}}
+\section{Module: 2:1 Mux}\label{mux-module}}
 
 A 2:1 multiplexer, a mux for short, is a basic building block in many
 digital systems. The 2:1 mux shown in Figure~\ref{fig:2x1MuxSymbol} routes one of the two
@@ -160,7 +160,7 @@ see the following error report. Not much, but you have been warned.
 \end{figure}
 
 \hypertarget{compare-module}{%
-\section{Compare Module:}\label{compare-module}}
+\section{Module: Compare}\label{compare-module}}
 
 A N-bit comparator is a basic building block in many digital systems.
 The N-bit comparator shown in Figure~\ref{fig:comparatorSymbol} 
@@ -212,7 +212,7 @@ the default vector width for the inputs is 8-bits. Same warning about
 vector size mismatch applies to comparators.
 
 \hypertarget{hextosevenseg-module}{%
-\section{hexToSevenSeg Module:}
+\section{Module: hexToSevenSeg}
 \label{hextosevenseg-module}}
 You should use the hexToSevenSeg module you developed in a
 previous lab. Note, the name of this module was shortened in Figure~\ref{fig:guessGameSysArch}
@@ -221,7 +221,7 @@ hex27 in order to save space and make the schematic more
 readable.
 
 \hypertarget{decoder-module}{%
-\section{2:4 Decoder Module:}
+\section{Module: 2:4 Decoder}
 \label{decoder-module}}
 
 The module labeled 2:4 decoder interprets the 2-bit input
@@ -339,7 +339,7 @@ from an always/case statement must have the ``reg'' qualifier, not
 ``wire''.
 
 \hypertarget{lfsr-module}{%
-\section{LFSR Module:}\label{lfsr-module}}
+\section{Module: LFSR}\label{lfsr-module}}
 
 A linear feedback shift register (LFSR) is a digital circuit that
 generates a pseudo-random sequence of numbers starting from a seed
@@ -413,7 +413,6 @@ decimal
 & & & & \\ \hline
 & & & & \\
 \bottomrule()
-\label{table:lfsrOperations}
 \end{longtable}
 
 If you continued the output from the shift operation performed in Table~\ref{table:lfsrOperations} 
@@ -450,7 +449,7 @@ For the lfsr module, I want you to:
 \end{itemize}
 
 \hypertarget{hilow-module}{%
-\section{hiLow Module:}\label{hilow-module}}
+\section{Module: hiLow}\label{hilow-module}}
 
 The hiLow module stiches together all the modules created and provided
 to you. The hiLow module declaration contains all the signals shown in
@@ -541,21 +540,22 @@ module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hiLowBut,
   outputs red. Order the traces from top to bottom as
 
 \begin{tabular}{p{4cm}p{4cm}p{4cm}}
-    t\_seedSwitch & unsigned  & green trace \\
-    t\_guessSwitch & unsigned & green trace \\
-    t\_playSwitch & unsigned & green trace \\
-    t\_randBut & default & green trace \\
-    t\_hiLowBut & default & green trace \\
-    LFSR output & unsigned & yellow trace\\
-    t\_randSeg & hex & red trace \\
-    t\_hiLowSeg & hex & red trace \\
-    t\_greenLEDs & default & red trace \\
+signal & radix & color trace \\ \hline
+    t\_seedSwitch & unsigned  & green  \\
+    t\_guessSwitch & unsigned & green  \\
+    t\_playSwitch & unsigned & green  \\
+    t\_randBut & default & green  \\
+    t\_hiLowBut & default & green  \\
+    LFSR output & unsigned & yellow \\
+    t\_randSeg & hex & red  \\
+    t\_hiLowSeg & hex & red  \\
+    t\_greenLEDs & default & red  \\
   \end{tabular}
 \end{itemize}
 
 
 \hypertarget{pin-assignment}{%
-\section{Pin Assignment:}\label{pin-assignment}}
+\section{Pin Assignment:}\label{section:HiLoPin-assignment}}
 
 Use the image of the development board in 
 Figure~\ref{fig:inputOutputDevBoard} and the information
@@ -651,7 +651,7 @@ G{[}0{]}
 \end{longtable}
 
 \hypertarget{turn-in}{%
-\section{Turn in:}\label{turn-in}}
+\section{Turn in:}\label{section:hiLoTurn-in}}
 
 You may work in teams of at most two. Make a record of your response to
 the items below and turn them in a single copy as your team's solution
@@ -662,7 +662,7 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\subsubsection{LFSR Module: }
+\subsubsection{Module: LFSR }
 \begin{itemize}
 \item
   \protect\hyperlink{lfsr_verilog}{Link} Verilog code for the body of
@@ -680,7 +680,7 @@ section next week.
   -\textgreater{} unsigned).
 \end{itemize}
 
-\subsubsection{hiLow Module: }
+\subsubsection{Module: hiLow}
 
 
 \begin{itemize}
@@ -715,7 +715,7 @@ section next week.
 \end{itemize}
 
 
-\section{Debugging the Lab:}
+\section{Debugging the lab}
 This laboratory typically generates a variety of new errors that you 
 have not seen before.  As a result, I have added this section on 
 useful debugging techniques to help you more effectively 
