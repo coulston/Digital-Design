@@ -3,14 +3,14 @@
 \graphicspath{ {./Lab06Calculator/Fig} }
 
 \hypertarget{objective}{%
-\section{\texorpdfstring{Objective }{Objective }}\label{objective}}
+\section{Objective}\label{section:calcObjective}}
 
 The objective of this lab is to modify existing code to add increased
 functionality. The design requires utilization of basic building block
 and custom combinational logic blocks to realize a complex digital
 circuit.
 
-\subsubsetion{Basic Calculator}
+\subsubsection{Basic Calculator}
 
 This week you are going to build a very basic calculator that can add or
 subtract 4-bit values. On the surface, this should require nothing more
@@ -34,28 +34,28 @@ This will be explained in the next section. As we have only 4 7SDs on
 board, the same 7SD of operand Y will be used to show the operation
 result (yellow) when the \textbf{yOrResult} button is pressed.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{ image1.png}
 \caption{The input and output of the calculator digital circuit.}
 \label{fig:calcDevBoard}
 \end{figure}
 
 \hypertarget{system-architecture}{%
-\section{System Architecture:}\label{system-architecture}}
+\section{System Architecture}\label{system-architecture}}
 
 The system architecture shown in Figure~\ref{fig:sysArchCalc} shows the adder subtractor
 processing the xSlide and ySlide inputs. The 4-bit x, y and result
 values are processed by the sigUnsig box before being displayed on the
 7-segment displays. It is now time to turn our attention to this module.
 
-\begin{figure}
-\includegraphics[width=4.43476in,height=3.96969in]{ image2.png}
+\begin{figure}[ht]
+\includegraphics{ image2.png}
 \caption{The system architecture of the calculator.}
 \label{fig:sysArchCalc}
 \end{figure}
 
 \hypertarget{sigunsign-module}{%
-\section{sigUnsign Module:}\label{sigunsign-module}}
+\section{sigUnsign Module}\label{sigunsign-module}}
 
 The significant design problem in today's lab comes in this section,
 building the sigUnsig module. This module takes in a 4-bit value and
@@ -75,8 +75,8 @@ the logical arrangements of segments in a 7-segment display. Remember
 that the segments are active low, meaning a logic 0 illuminates a
 segment. Thus, the 7-bit code 7'b0100100 illuminates the pattern ``2''.
 
-\begin{figure}
-\includegraphics[width=2.60833in,height=1.54375in]{ image3.png}
+\begin{figure}[ht]
+\includegraphics{ image3.png}
 \caption{The logical arrangements of the segments in a 7-segment display.}
 \label{fig:calcSevenSeg}
 \end{figure}
@@ -88,11 +88,11 @@ for each of the inputs. Then write the binary and hexadecimal value to
 illuminate those patterns.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1458}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3170}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0745}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1458}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3170}}@{}}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1458}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3170}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0745}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1458}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3170}}|@{}}
 \caption{Table 1: For each set of inputs to the signUnsig module,
 determine the 7-segment display pattern.}\tabularnewline
 \toprule()
@@ -139,7 +139,7 @@ ovf = 0 &
 
 msDisplay = 7'b
 
-lsDisplay =7'b \\
+lsDisplay =7'b \\ \hline
 4'b1100
 
 interp = 0
@@ -158,7 +158,7 @@ ovf = 0 &
 
 msDisplay = 7'b
 
-lsDisplay =7'b \\
+lsDisplay =7'b \\ \hline
 4'b1100
 
 interp = 1
@@ -177,7 +177,7 @@ ovf = 1 &
 
 msDisplay = 7'b
 
-lsDisplay = 7'b \\
+lsDisplay = 7'b \\ \hline
 \bottomrule()
 \end{longtable}
 
@@ -197,11 +197,11 @@ assigning \emph{msDisplay} ``-'' and \emph{lsDisplay} ``4''. Complete
 the remaining rows of the table.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
 \caption{Table 2: The output of the sigUnsig module when
 ovf=0.}\tabularnewline
 \toprule()
@@ -251,20 +251,20 @@ lsDisplay
 \midrule()
 \endhead
 4'b0000 & blank & 0 & blank & 0 \\
-4'b0001 & & & & \\
-4'b0010 & & & & \\
-4'b0011 & & & & \\
-4'b0100 & & & & \\
-4'b0101 & & & & \\
-4'b0110 & & & & \\
-4'b0111 & & & & \\
-4'b1000 & & & & \\
-4'b1001 & & & & \\
-4'b1010 & & & & \\
-4'b1011 & & & & \\
-4'b1100 & 1 & 2 & - & 4 \\
-4'b1101 & & & & \\
-4'b1110 & & & & \\
+4'b0001 & & & & \\ \hline
+4'b0010 & & & & \\ \hline
+4'b0011 & & & & \\ \hline
+4'b0100 & & & & \\ \hline
+4'b0101 & & & & \\ \hline
+4'b0110 & & & & \\ \hline
+4'b0111 & & & & \\ \hline
+4'b1000 & & & & \\ \hline
+4'b1001 & & & & \\ \hline
+4'b1010 & & & & \\ \hline
+4'b1011 & & & & \\ \hline
+4'b1100 & 1 & 2 & - & 4 \\ \hline
+4'b1101 & & & & \\ \hline
+4'b1110 & & & & \\ \hline
 4'b1111 & & & & \\
 \bottomrule()
 \end{longtable}
@@ -311,11 +311,11 @@ determine which data inputs to associate with each of the muxes 4 data
 inputs. You should associate the overflow case with the y3 input.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
 \caption{Table 3: The input values to the 4:1 muxes in Figure
 4.}\tabularnewline
 \toprule()
@@ -346,8 +346,8 @@ y0
 \end{minipage} \\
 \midrule()
 \endhead
-digSel & 2'b11 & & & \\
-msDisplay & ``X'' & & 1 & \\
+digSel & 2'b11 & & & \\ \hline
+msDisplay & ``X'' & & 1 & \\ \hline
 lsDisplay & & & & x \\
 \bottomrule()
 \end{longtable}
@@ -376,11 +376,11 @@ Now, we can examine the contents of the glueLogic box. Do this by
 completing the truth table in Table 4.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
 \caption{Table 4: Truth table for the glueLogic box.}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -410,15 +410,14 @@ digSel
 \end{minipage} \\
 \midrule()
 \endhead
-1 & x & x & x & \\
-0 & 0 & x & 0 & \\
-0 & 0 & x & 1 & \\
-0 & 1 & 0 & x & \\
+1 & x & x & x & \\ \hline
+0 & 0 & x & 0 & \\ \hline
+0 & 0 & x & 1 & \\ \hline
+0 & 1 & 0 & x & \\ \hline
 0 & 1 & 1 & x & \\
 \bottomrule()
 \end{longtable}
 
-1
 
 It would make sense to use an always case statement to realize the logic
 in Listing 2. However, an always case statement requires each of the 16
@@ -483,11 +482,7 @@ always/casez statement. For this module, I want you to:
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section}{%
-\section{}\label{section}}
-
-\hypertarget{bonus-ovf-logic}{%
-\section{Bonus Ovf Logic:}\label{bonus-ovf-logic}}
+\section{Bonus Ovf Logic}
 
 The default configuration of the system architecture ignores any
 overflow generated by the adder subtractor. If you choose, you may
@@ -506,7 +501,7 @@ For example, if the x and y inputs are 1001 and the operation is
 addition, then both signed and unsigned LEDs will illuminate.
 
 \hypertarget{pin-assignment}{%
-\section{Pin Assignment:}\label{pin-assignment}}
+\section{Pin Assignment}\label{pin-assignment}}
 
 Use the image of the development board in Figure~\ref{fig:calcDevBoard} in and the
 information in the Cyclone V GX Kit User Manual (posted on the class web
@@ -514,11 +509,11 @@ page) to determine the FPGA pins associated with the input and output
 devices used by the calculator module
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1436}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1829}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1665}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2621}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2448}}@{}}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1436}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1829}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1665}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2621}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2448}}|@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Segment
@@ -533,12 +528,12 @@ lsYorRESdisplay
 \end{minipage} \\
 \midrule()
 \endhead
-seg{[}6{]} & & & & \\
-seg{[}5{]} & & & & \\
-seg{[}4{]} & & & & \\
-seg{[}3{]} & & & & \\
-seg{[}2{]} & & & & \\
-seg{[}1{]} & & & & \\
+seg{[}6{]} & & & & \\ \hline
+seg{[}5{]} & & & & \\ \hline
+seg{[}4{]} & & & & \\ \hline
+seg{[}3{]} & & & & \\ \hline
+seg{[}2{]} & & & & \\ \hline
+seg{[}1{]} & & & & \\ \hline
 seg{[}0{]} & & & & \\
 \bottomrule()
 \end{longtable}
@@ -556,9 +551,9 @@ y
 \end{minipage} \\
 \midrule()
 \endhead
-slide{[}3{]} & & \\
-slide{[}2{]} & & \\
-slide{[}1{]} & & \\
+slide{[}3{]} & & \\ \hline
+slide{[}2{]} & & \\ \hline
+slide{[}1{]} & & \\ \hline
 slide{[}0{]} & & \\
 \bottomrule()
 \end{longtable}
@@ -568,27 +563,15 @@ slide{[}0{]} & & \\
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\hypertarget{yorres}{%
-\section{YorRES}\label{yorres}}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Key{[}1{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
+YorRES & Key{[}1{]} & \\
 \midrule()
 \endhead
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{interp}{%
-\section{interp}\label{interp}}
-\end{minipage} & Key{[}2{]} & \\
-\begin{minipage}[t]{\linewidth}\raggedright
-\hypertarget{addsub}{%
-\section{addSub}\label{addsub}}
-\end{minipage} & Key{[}3{]} & \\
+interp & Key{[}2{]} & \\ \hline
+addSub & Key{[}3{]} & \\ \hline
 \bottomrule()
 \end{longtable}
 
-\textbf{Turn in:}
+\section{Turn in}
 
 You may work in teams of at most two. Make a record of your response to
 the items below and turn them in a single copy as your team's solution
@@ -599,9 +582,7 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\hypertarget{signunsig-module}{%
-\section{\texorpdfstring{signUnsig Module:
-}{signUnsig Module: }}\label{signunsig-module}}
+\subsubsection{signUnsig Module}
 
 \begin{itemize}
 \item

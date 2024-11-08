@@ -1,34 +1,32 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.2)  7 NOV 2024 11:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.13)  7 NOV 2024 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"C:/Users/coulston/Documents/GitHub/Digital-Design/Labs/Digital Design Labs.t
-ex"
+**"C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Digital Design Labs.tex"
 
-(C:/Users/coulston/Documents/GitHub/Digital-Design/Labs/Digital Design Labs.tex
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-05-27>
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/memoir\memoir.cls
+(C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Digital Design Labs.tex
+LaTeX2e <2024-06-01>
+L3 programming layer <2024-05-08>
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/memoir\memoir.cls
 Document Class: memoir 2024/01/26 v3.8.2 configurable book, report, article doc
 ument class
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2024-05-27 L3 programming layer (loader) 
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-05-08 L3 programming layer (loader) 
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
-pdftex.def
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count194
 \l__pdf_internal_box=\box52
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xp
-arse.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
 Package: xparse 2024-05-08 L3 Experimental document command parser
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count195
 ))
@@ -37,14 +35,13 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \xlvchars=\skip51
 \@memcnta=\count196
 \c@@memmarkcntra=\count197
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
 \trimtop=\skip52
 \trimedge=\skip53
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/memoir\mem10.clo
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/memoir\mem10.clo
 File: mem10.clo 2022/07/29 v0.5 memoir class 10pt size option
 )
 \binding=\skip54
@@ -135,8 +132,8 @@ File: mem10.clo 2022/07/29 v0.5 memoir class 10pt size option
 \midPoemTitleskip=\skip115
 \afterPoemTitleskip=\skip116
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen146
 \ar@mcellbox=\box53
 \extrarowheight=\dimen147
@@ -145,14 +142,14 @@ Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
 \backup@length=\skip118
 \ar@cellbox=\box54
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/tools\dcolumn.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/tools\dcolumn.sty
 Package: dcolumn 2023/07/08 v1.06 decimal alignment package (DPC)
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/tools\delarray.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/tools\delarray.sty
 Package: delarray 2014/10/28 v1.01 array delimiter package (DPC)
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
-Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
 \TX@col@width=\dimen148
 \TX@old@table=\dimen149
 \TX@old@col=\dimen150
@@ -161,8 +158,7 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@cols=\count282
 \TX@ftn=\toks19
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen153
 \lightrulewidth=\dimen154
@@ -219,35 +215,30 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 LaTeX Info: Redefining \em on input line 6932.
 LaTeX Info: Redefining \emph on input line 6940.
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
-r.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 ))
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
-titlestring.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
-sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.
-sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )))
 \c@section@level=\count293
@@ -320,17 +311,15 @@ LaTeX Info: Redefining \flushbottom on input line 7939.
 \c@pagenote=\count297
 \c@pagenoteshadow=\count298
 \mem@pn@lastkern=\skip181
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
-Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+ (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks23
 \verbatim@line=\toks24
 \verbatim@in@stream=\read2
 )
 \verbatimindent=\skip182
 \verbatim@out=\write3
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/base\shortvrb.sty
+ (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/base\shortvrb.sty
 Package: shortvrb 2024/04/26 v3.0p Standard LaTeX documentation package V3 (FMi
 )
 )
@@ -358,8 +347,7 @@ Package: shortvrb 2024/04/26 v3.0p Standard LaTeX documentation package V3 (FMi
 \c@lastsheet=\count314
 \c@lastpage=\count315
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/textcase\textcase.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/textcase\textcase.sty
 Package: textcase 2023/07/27 v1.04 Text only upper/lower case changing (DPC)
 Package textcase Info: Defining Legacy names on input line 20.
 )
@@ -406,58 +394,58 @@ Package verse [2008/07/23] emulated by memoir.
 \"Digital Design Labs"@idxfile=\write4
 \openout4 = `"Digital Design Labs.idx"'.
 
-
 Writing index file "Digital Design Labs".idx 
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
 e 17.
 
-(C:/Users/coulston/Documents/GitHub/Digital-Design/Labs\preamble.tex
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2024/05/23 v2.17q AMS math features
+(C:/Users/chris/Documents/GitHub/Digital-Design/Labs\preamble.tex
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip191
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks25
 \ex@=\dimen186
-)) (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
-y
+))
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen187
-) (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count320
-LaTeX Info: Redefining \frac on input line 233.
+LaTeX Info: Redefining \frac on input line 234.
 \uproot@=\count321
 \leftroot@=\count322
-LaTeX Info: Redefining \overline on input line 398.
-LaTeX Info: Redefining \colon on input line 409.
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
 \classnum@=\count323
 \DOTSCASE@=\count324
-LaTeX Info: Redefining \ldots on input line 495.
-LaTeX Info: Redefining \dots on input line 498.
-LaTeX Info: Redefining \cdots on input line 619.
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box58
 \strutbox@=\box59
-LaTeX Info: Redefining \big on input line 721.
-LaTeX Info: Redefining \Big on input line 722.
-LaTeX Info: Redefining \bigg on input line 723.
-LaTeX Info: Redefining \Bigg on input line 724.
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen188
-LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count325
-LaTeX Info: Redefining \bmod on input line 904.
-LaTeX Info: Redefining \pmod on input line 909.
-LaTeX Info: Redefining \smash on input line 939.
-LaTeX Info: Redefining \relbar on input line 969.
-LaTeX Info: Redefining \Relbar on input line 970.
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
 \c@MaxMatrixCols=\count326
 \dotsspace@=\muskip17
 \c@parentequation=\count327
@@ -480,18 +468,17 @@ LaTeX Info: Redefining \Relbar on input line 970.
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+)) (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -526,21 +513,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
-fg
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
-def
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.l
-tx)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -550,28 +534,24 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-)
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
-y
+) (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
-y
-Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
-s.cfg
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 106.
+Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen195
 \Gin@req@width=\dimen196
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count332
 \lst@gtempboxa=\box60
 \lst@token=\toks30
@@ -585,24 +565,21 @@ y
 \lst@lineno=\count337
 \lst@maxwidth=\dimen256
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
 \c@lstnumber=\count338
 \lst@skipnumbers=\count339
 \lst@framebox=\box61
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
-g
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2024/05/25 1.10b listings configuration
 ))
 Package: listings 2024/05/25 1.10b (Carsten Heinz)
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
-Package: longtable 2024-04-26 v4.20 Multi-page Table package (DPC)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \LTleft=\skip194
 \LTright=\skip195
 \LTpre=\skip196
@@ -620,14 +597,14 @@ Package: longtable 2024-04-26 v4.20 Multi-page Table package (DPC)
 \c@LT@chunks=\count344
 \LT@p@ftn=\toks31
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip198
 \multirow@cntb=\count345
 \multirow@dima=\skip199
 \bigstrutjot=\dimen258
-) (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count346
 \calc@Bcount=\count347
@@ -640,7 +617,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count348
 \calc@Cskip=\skip258
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
 \UL@box=\box67
 \UL@hyphenbox=\box68
 \UL@skip=\skip259
@@ -652,69 +629,62 @@ LaTeX Info: Redefining \addtolength on input line 81.
 Package: ulem 2019/11/18
 \ULdepth=\dimen263
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.
-sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-
-nometadata.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nom
+etadata.sty
 Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
 F (HO)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
-y
-Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2024-05-23 v7.01i Hypertext links for LaTeX
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
-inekeys.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
-e.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
-mds.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ))
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringen
-c.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen264
 \Hy@linkcounter=\count350
 \Hy@pagecounter=\count351
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
+ (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2024-05-23 v7.01i Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
-y
+) (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count352
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
+ (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2024-05-23 v7.01i Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -727,18 +697,18 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
 \c@Hy@tempcnt=\count353
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen265
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
-alc.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -753,8 +723,7 @@ Package hyperref Info: Link coloring OFF on input line 6062.
 Package hyperref Info: Link coloring with OCG OFF on input line 6067.
 Package hyperref Info: PDF/A mode OFF on input line 6072.
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.st
-y
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -763,12 +732,10 @@ package with kernel methods
 \c@Hfootnote=\count357
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2024-05-23 v7.01i Hyperref driver for pdfTeX
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.s
-ty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
@@ -776,12 +743,12 @@ with kernel methods
 \Fld@listcount=\count358
 \c@bookmark@seq@number=\count359
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
-filecheck.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
-uecounter.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -789,24 +756,24 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip260
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/memoir\memhfixc.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/memoir\memhfixc.sty
 Package: memhfixc 2023/09/10 v1.22 hyperref package fixes for memoir class
 \c@memhycontfloat=\count360
 \c@Hpagenote=\count361
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.
-def
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 )
 \BKM@id=\count362
-)) (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+)) (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 46.
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 9.
- (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 No file "Digital Design Labs".aux.
@@ -831,8 +798,8 @@ LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
-.mkii
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count363
 \scratchdimen=\dimen268
@@ -846,14 +813,14 @@ LaTeX Font Info:    ... okay on input line 19.
 \makeMPintoPDFobject=\count368
 \everyMPtoPDFconversion=\toks34
 )
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
-f-base.sty
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
-s.cfg
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count369
@@ -864,288 +831,2999 @@ No file "Digital Design Labs".toc.
 
 [1
 
-{C:/Users/coulston/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/c
-oulston/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
-\openout2 = `./Lab09Datapath/lab09.aux'.
+{C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/chri
+s/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+\openout2 = `./Lab01SimpleVerilog/lab01.aux'.
 
 
-(C:/Users\coulston\Documents\GitHub\Digital-Design\Labs\Lab09Datapath\lab09.tex
-
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab01SimpleVerilog\lab01.t
+ex
 
 [2
 
 
 ]
+LaTeX Font Info:    Trying to load font information for OML+lmr on input line 4
+5.
+ (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmr.fd
+File: omllmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+5.
 
-LaTeX Warning: Reference `fig:swDPbehavior' on page 3 undefined on input line 2
-4.
-
-<./Lab09Datapath/Fig/image1.png, id=15, 1059.96pt x 475.7775pt>
-File: ./Lab09Datapath/Fig/image1.png Graphic file (type png)
-<use ./Lab09Datapath/Fig/image1.png>
-Package pdftex.def Info: ./Lab09Datapath/Fig/image1.png  used on input line 27.
-
-(pdftex.def)             Requested size: 409.5334pt x 183.82465pt.
-
-LaTeX Warning: Reference `fig:swDPbehavior' on page 3 undefined on input line 3
-4.
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OML/lmr/m/it' in size <10> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 45.
 
 
-LaTeX Warning: Reference `fig:swDPbehavior' on page 3 undefined on input line 4
+[3{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
+c}]
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 1
+56.
+ (C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
+File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+156.
+
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 156.
+<./Lab01SimpleVerilog/Fig/image1.png, id=41, 341.02406pt x 153.57375pt>
+File: ./Lab01SimpleVerilog/Fig/image1.png Graphic file (type png)
+<use ./Lab01SimpleVerilog/Fig/image1.png>
+Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image1.png  used on input lin
+e 162.
+(pdftex.def)             Requested size: 281.86867pt x 126.93422pt.
+
+
+[4{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}]
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 183.
+<./Lab01SimpleVerilog/Fig/image2.png, id=78, 762.85pt x 255.95625pt>
+File: ./Lab01SimpleVerilog/Fig/image2.png Graphic file (type png)
+<use ./Lab01SimpleVerilog/Fig/image2.png>
+Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image2.png  used on input lin
+e 192.
+(pdftex.def)             Requested size: 359.52896pt x 120.63141pt.
+<./Lab01SimpleVerilog/Fig/image3.png, id=79, 395.4775pt x 168.63pt>
+File: ./Lab01SimpleVerilog/Fig/image3.png Graphic file (type png)
+<use ./Lab01SimpleVerilog/Fig/image3.png>
+Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image3.png  used on input lin
+e 215.
+(pdftex.def)             Requested size: 296.61342pt x 126.47475pt.
+
+
+[5 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab01SimpleVerilog/Fig/
+image1.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab01SimpleVer
+ilog/Fig/image2.png>]
+<./Lab01SimpleVerilog/Fig/image4.png, id=96, 584.93532pt x 118.94438pt>
+File: ./Lab01SimpleVerilog/Fig/image4.png Graphic file (type png)
+<use ./Lab01SimpleVerilog/Fig/image4.png>
+Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image4.png  used on input lin
+e 241.
+(pdftex.def)             Requested size: 359.54118pt x 73.11133pt.
+<./Lab01SimpleVerilog/Fig/image5.png, id=97, 867.24pt x 274.77657pt>
+File: ./Lab01SimpleVerilog/Fig/image5.png Graphic file (type png)
+<use ./Lab01SimpleVerilog/Fig/image5.png>
+Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image5.png  used on input lin
+e 254.
+(pdftex.def)             Requested size: 359.52737pt x 113.91273pt.
+
+
+[6 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab01SimpleVerilog/Fig/
+image3.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab01SimpleVer
+ilog/Fig/image4.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab01
+SimpleVerilog/Fig/image5.png>]
+
+[7]
+<./Lab01SimpleVerilog/Fig/image6.png, id=140, 453.94594pt x 265.74281pt>
+File: ./Lab01SimpleVerilog/Fig/image6.png Graphic file (type png)
+<use ./Lab01SimpleVerilog/Fig/image6.png>
+Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image6.png  used on input lin
+e 401.
+(pdftex.def)             Requested size: 409.53114pt x 239.74211pt.
+
+Overfull \hbox (15.00111pt too wide) in paragraph at lines 401--402
+[][] 
+ []
+
+
+
+[8 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab01SimpleVerilog/Fig/
+image6.png>])
+
+[9]
+\openout2 = `./Lab02HexToSeven/lab02.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab02HexToSeven\lab02.tex
+
+[10
+
+
+
+
+]
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 \label{hex2Seven:objective}}
+                                
+
+LaTeX Warning: Reference `fig:combinVector' on page 11 undefined on input line 
+26.
+
+<./Lab02HexToSeven/Fig/image1.png, id=188, 185.94469pt x 91.84312pt>
+File: ./Lab02HexToSeven/Fig/image1.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image1.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image1.png  used on input line 2
+9.
+(pdftex.def)             Requested size: 185.94987pt x 91.84567pt.
+
+LaTeX Warning: Reference `listing:vectorManipulation' on page 11 undefined on i
+nput line 35.
+
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 36.
+
+
+[11 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/im
+age1.png>]
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
+File: lstlang2.sty 2024/05/25 1.10b listings language file
+)
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
+File: lstlang3.sty 2024/05/25 1.10b listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 48.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+2.
+
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (4.47414pt too wide) in paragraph at lines 54--55
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: Reference `listing:3in3outVerilog' on page 12 undefined on input
+ line 82.
+
+
+
+[12{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+]
+
+LaTeX Warning: Reference `listing:3in3outVerilog' on page 13 undefined on input
+ line 112.
+
+
+LaTeX Warning: Reference `table:combinedLab01' on page 13 undefined on input li
+ne 132.
+
+
+Overfull \hbox (2.07458pt too wide) in alignment at lines 141--159
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.07458pt too wide) in alignment at lines 159--175
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.07458pt too wide) in alignment at lines 175--186
+ [] [] [] [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `table:combinedLab01' on page 13 undefined on input li
+ne 201.
+
+<./Lab02HexToSeven/Fig/image2.png, id=230, 1115.3019pt x 241.22554pt>
+File: ./Lab02HexToSeven/Fig/image2.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image2.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image2.png  used on input line 2
+14.
+(pdftex.def)             Requested size: 384.52429pt x 83.16768pt.
+
+
+[13]
+
+LaTeX Warning: Reference `table:combinedLab01' on page 14 undefined on input li
+ne 219.
+
+
+LaTeX Warning: Reference `fig:simpleVerilogDownload' on page 14 undefined on in
+put line 236.
+
+<./Lab02HexToSeven/Fig/image3.png, id=246, 551.81157pt x 319.1925pt>
+File: ./Lab02HexToSeven/Fig/image3.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image3.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image3.png  used on input line 2
+46.
+(pdftex.def)             Requested size: 409.54665pt x 236.90009pt.
+
+LaTeX Warning: Reference `fig:simpleVerilogDownload' on page 14 undefined on in
+put line 252.
+
+<./Lab02HexToSeven/Fig/image4.png, id=247, 698.61pt x 94.85437pt>
+File: ./Lab02HexToSeven/Fig/image4.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image4.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image4.png  used on input line 2
+60.
+(pdftex.def)             Requested size: 409.53267pt x 55.60463pt.
+
+Overfull \hbox (15.00264pt too wide) in paragraph at lines 260--261
+[][] 
+ []
+
+
+LaTeX Warning: Reference `table:pinAssignmentCombinedLab01' on page 14 undefine
+d on input line 270.
+
+
+Overfull \hbox (15.27715pt too wide) in alignment at lines 280--300
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (15.27715pt too wide) in alignment at lines 300--318
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (15.27715pt too wide) in alignment at lines 318--324
+ [] [] [] [] [] [] [] 
+ []
+
+
+
+[14 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/im
+age2.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/
+Fig/image4.png>]
+<./Lab02HexToSeven/Fig/image5.png, id=257, 1223.57124pt x 186.6975pt>
+File: ./Lab02HexToSeven/Fig/image5.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image5.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image5.png  used on input line 3
+47.
+(pdftex.def)             Requested size: 384.53082pt x 58.67328pt.
+
+
+[15 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/im
+age3.png>]
+<./Lab02HexToSeven/Fig/image6.png, id=270, 651.03226pt x 373.395pt>
+File: ./Lab02HexToSeven/Fig/image6.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image6.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image6.png  used on input line 3
+74.
+(pdftex.def)             Requested size: 384.5428pt x 220.55183pt.
+
+
+[16 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/im
+age5.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/
+Fig/image6.png>]
+<./Lab02HexToSeven/Fig/image7.png, id=287, 557.08125pt x 402.90524pt>
+File: ./Lab02HexToSeven/Fig/image7.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image7.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image7.png  used on input line 4
+04.
+(pdftex.def)             Requested size: 409.53906pt x 296.19633pt.
+<./Lab02HexToSeven/Fig/image8.png, id=288, 817.55438pt x 483.30562pt>
+File: ./Lab02HexToSeven/Fig/image8.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image8.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image8.png  used on input line 4
+26.
+(pdftex.def)             Requested size: 307.14351pt x 181.57101pt.
+
+
+[17 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/im
+age7.png>]
+
+LaTeX Warning: Reference `fig:sevenSeg' on page 18 undefined on input line 433.
+
+
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+435.
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
+File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+LaTeX Warning: Reference `fig:sevenSegChars' on page 18 undefined on input line
+ 442.
+
+<./Lab02HexToSeven/Fig/image9.png, id=300, 978.65625pt x 459.7175pt>
+File: ./Lab02HexToSeven/Fig/image9.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image9.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image9.png  used on input line 4
+45.
+(pdftex.def)             Requested size: 409.53952pt x 192.37856pt.
+
+LaTeX Warning: Reference `fig:hex2SevenSeg' on page 18 undefined on input line 
+450.
+
+<./Lab02HexToSeven/Fig/image10.png, id=301, 1165.35374pt x 483.30562pt>
+File: ./Lab02HexToSeven/Fig/image10.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image10.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image10.png  used on input line 
+456.
+(pdftex.def)             Requested size: 409.51585pt x 169.83797pt.
+
+LaTeX Warning: Reference `table:hex2sevenTruthTable' on page 18 undefined on in
+put line 464.
+
+
+Overfull \hbox (2.8396pt too wide) in alignment at lines 478--500
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.8396pt too wide) in alignment at lines 500--520
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.8396pt too wide) in alignment at lines 520--539
+ [] [] [] [] [] [] [] [] 
+ []
+
+[18{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc
+} <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/imag
+e8.png>]
+
+LaTeX Warning: Reference `table:pinAssignmentHex2Seven' on page 19 undefined on
+ input line 543.
+
+
+Overfull \hbox (1.57233pt too wide) in alignment at lines 550--567
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.57233pt too wide) in alignment at lines 567--581
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.57233pt too wide) in alignment at lines 581--586
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.36237pt too wide) in paragraph at lines 601--602
+[]\OT1/lmr/m/n/10 sevenSeg[6]  
+ []
+
+
+Overfull \hbox (2.36237pt too wide) in paragraph at lines 603--604
+[]\OT1/lmr/m/n/10 sevenSeg[5]  
+ []
+
+
+Overfull \hbox (2.36237pt too wide) in paragraph at lines 605--606
+[]\OT1/lmr/m/n/10 sevenSeg[4]  
+ []
+
+
+Overfull \hbox (5.29301pt too wide) in paragraph at lines 607--608
+[]\OT1/lmr/m/n/10 sevenSeg[3]  
+ []
+
+
+Overfull \hbox (13.30013pt too wide) in paragraph at lines 609--610
+[]\OT1/lmr/m/n/10 sevenSeg[2]  
+ []
+
+
+Overfull \hbox (13.30013pt too wide) in paragraph at lines 611--612
+[]\OT1/lmr/m/n/10 sevenSeg[1]  
+ []
+
+
+Overfull \hbox (13.30013pt too wide) in paragraph at lines 613--614
+[]\OT1/lmr/m/n/10 sevenSeg[0]  
+ []
+
+
+Overfull \hbox (2.8595pt too wide) in alignment at lines 596--616
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.71643pt too wide) in paragraph at lines 618--618
+[]|\OT1/lmr/m/n/10 HEX0[2]|  
+ []
+
+
+Overfull \hbox (1.71643pt too wide) in paragraph at lines 618--618
+[]|\OT1/lmr/m/n/10 HEX0[1]|  
+ []
+
+
+Overfull \hbox (1.71643pt too wide) in paragraph at lines 618--618
+[]|\OT1/lmr/m/n/10 HEX0[0]|  
+ []
+
+
+Overfull \hbox (2.8595pt too wide) in alignment at lines 616--622
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+
+[19]
+
+[20 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/im
+age9.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/
+Fig/image10.png>]
+<./Lab02HexToSeven/Fig/image11.png, id=331, 1233.408pt x 925.056pt>
+File: ./Lab02HexToSeven/Fig/image11.png Graphic file (type png)
+<use ./Lab02HexToSeven/Fig/image11.png>
+Package pdftex.def Info: ./Lab02HexToSeven/Fig/image11.png  used on input line 
+660.
+(pdftex.def)             Requested size: 409.529pt x 307.14674pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{turn-in}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.665 \section{Turn in:}\label{turn-in}}
+                                        
+
+LaTeX Warning: Reference `table:combinedLab01' on page 21 undefined on input li
+ne 676.
+
+
+
+[21 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab02HexToSeven/Fig/im
+age11.png>]
+
+LaTeX Warning: Reference `table:pinAssignmentCombinedLab01' on page 22 undefine
+d on input line 679.
+
+
+LaTeX Warning: Reference `table:hex2sevenTruthTable' on page 22 undefined on in
+put line 685.
+
+
+LaTeX Warning: Reference `table:pinAssignmentHex2Seven' on page 22 undefined on
+ input line 689.
+
+)
+
+[22]
+\openout2 = `./Lab03RockPaperScissor/lab03.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab03RockPaperScissor\lab0
+3.tex
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 \label{objective}}
+                      
+<./Lab03RockPaperScissor/Fig/image1.png, id=356, 584.1825pt x 274.77657pt>
+File: ./Lab03RockPaperScissor/Fig/image1.png Graphic file (type png)
+<use ./Lab03RockPaperScissor/Fig/image1.png>
+Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image1.png  used on input 
+line 20.
+(pdftex.def)             Requested size: 409.54001pt x 192.63156pt.
+
+Overfull \hbox (15.00998pt too wide) in paragraph at lines 20--21
+[][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+24.
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+
+
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+
+
+(C:\Users\chris\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Reference `figure:systemIO' on page 23 undefined on input line 3
 2.
 
 
 
-[3]
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-1.
- (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-71.
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-71.
-
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 71.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 71.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 71.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+[23
 
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
 
 
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab03RockPaperScissor/Fig
+/image1.png>]
+<./Lab03RockPaperScissor/Fig/image2.png, id=364, 793.46437pt x 329.73187pt>
+File: ./Lab03RockPaperScissor/Fig/image2.png Graphic file (type png)
+<use ./Lab03RockPaperScissor/Fig/image2.png>
+Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image2.png  used on input 
+line 40.
+(pdftex.def)             Requested size: 409.54071pt x 170.18863pt.
 
-LaTeX Warning: Reference `fig:dpSWdatpath' on page 4 undefined on input line 72
-.
 
-
-LaTeX Warning: Reference `fig:swDPbehavior' on page 4 undefined on input line 7
+LaTeX Warning: Reference `figure:play7seg' on page 24 undefined on input line 5
 4.
 
+<./Lab03RockPaperScissor/Fig/image3.png, id=365, 1492.07437pt x 596.2275pt>
+File: ./Lab03RockPaperScissor/Fig/image3.png Graphic file (type png)
+<use ./Lab03RockPaperScissor/Fig/image3.png>
+Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image3.png  used on input 
+line 58.
+(pdftex.def)             Requested size: 307.12943pt x 122.7278pt.
 
-LaTeX Warning: Reference `fig:dpSWdatpath' on page 4 undefined on input line 76
-.
+LaTeX Warning: Reference `table:gameLogic' on page 24 undefined on input line 6
+5.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-3.
-(C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+
+Overfull \hbox (1.56134pt too wide) in alignment at lines 73--90
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.56134pt too wide) in alignment at lines 90--104
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.56134pt too wide) in alignment at lines 104--110
+ [] [] [] [] [] 
+ []
+
+
+
+[24 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab03RockPaperScissor/
+Fig/image2.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab03RockP
+aperScissor/Fig/image3.png>]
+
+LaTeX Warning: Reference `fig:sysArch' on page 25 undefined on input line 116.
+
+
+LaTeX Warning: Reference `figure:systemIO' on page 25 undefined on input line 1
+17.
+
+<./Lab03RockPaperScissor/Fig/image4.png, id=373, 1051.67906pt x 489.32813pt>
+File: ./Lab03RockPaperScissor/Fig/image4.png Graphic file (type png)
+<use ./Lab03RockPaperScissor/Fig/image4.png>
+Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image4.png  used on input 
+line 129.
+(pdftex.def)             Requested size: 409.52734pt x 190.54599pt.
+
+
+[25 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab03RockPaperScissor/
+Fig/image4.png>]
+
+LaTeX Warning: Reference `table:onesToDense' on page 26 undefined on input line
+ 165.
+
+
+Overfull \hbox (1.56134pt too wide) in alignment at lines 192--207
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.56134pt too wide) in alignment at lines 207--221
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.56134pt too wide) in alignment at lines 221--231
+ [] [] [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `table:onesToDense' on page 26 undefined on input line
+ 236.
+
+
+LaTeX Warning: Reference `table:onesToDense' on page 26 undefined on input line
+ 238.
+
+
+
+[26]
+
+LaTeX Warning: Reference `figure:throw7seg' on page 27 undefined on input line 
+276.
+
+<./Lab03RockPaperScissor/Fig/image5.png, id=390, 469.755pt x 130.086pt>
+File: ./Lab03RockPaperScissor/Fig/image5.png Graphic file (type png)
+<use ./Lab03RockPaperScissor/Fig/image5.png>
+Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image5.png  used on input 
+line 279.
+(pdftex.def)             Requested size: 409.52937pt x 113.40811pt.
+
+LaTeX Warning: Reference `figure:throw7seg' on page 27 undefined on input line 
+285.
+
+
+LaTeX Warning: Reference `table:throwSevenSeg' on page 27 undefined on input li
+ne 286.
+
+
+LaTeX Warning: Reference `table:throwSevenSeg' on page 27 undefined on input li
+ne 288.
+
+
+Overfull \hbox (3.63206pt too wide) in alignment at lines 305--332
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.63206pt too wide) in alignment at lines 332--356
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.63206pt too wide) in alignment at lines 356--363
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+
+[27 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab03RockPaperScissor/
+Fig/image5.png>]
+
+LaTeX Warning: Reference `table:throwSevenSeg' on page 28 undefined on input li
+ne 380.
+
+
+LaTeX Warning: Reference `fig:winLose7seg' on page 28 undefined on input line 4
+00.
+
+<./Lab03RockPaperScissor/Fig/image6.png, id=399, 277.911pt x 111.3615pt>
+File: ./Lab03RockPaperScissor/Fig/image6.png Graphic file (type png)
+<use ./Lab03RockPaperScissor/Fig/image6.png>
+Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image6.png  used on input 
+line 403.
+(pdftex.def)             Requested size: 277.91031pt x 111.3612pt.
+
+LaTeX Warning: Reference `table:winLooseTt' on page 28 undefined on input line 
+408.
+
+
+LaTeX Warning: Reference `figure:throw7seg' on page 28 undefined on input line 
+413.
+
+
+
+[28 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab03RockPaperScissor/
+Fig/image6.png>]
+Overfull \hbox (4.00546pt too wide) in alignment at lines 420--436
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.00546pt too wide) in alignment at lines 436--450
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.00546pt too wide) in alignment at lines 450--470
+ [] [] [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `fig:sysArch' on page 29 undefined on input line 474.
+
+
+Overfull \hbox (22.38568pt too wide) in paragraph at lines 478--480
+[]\OT1/lmr/m/n/10 Use the mod-ule dec-la-ra-tion: [] []\OT1/lmtt/m/n/10 module 
+winLose(p1Play, p2Play, playButton, sevenSeg); 
+ []
+
+
+
+[29]
+
+LaTeX Warning: Reference `fig:sysArch' on page 30 undefined on input line 535.
+
+
+Overfull \hbox (45.96875pt too wide) in paragraph at lines 542--544
+[] []\OT1/lmtt/m/n/10 module rpsGame(p1Throw, p1SevenSeg, p2Throw, p2SevenSeg, 
+playButton, winLoseSeg); 
+ []
+
+
+LaTeX Warning: Reference `fig:sysArch' on page 30 undefined on input line 557.
+
+
+LaTeX Warning: Reference `fig:sysArch' on page 30 undefined on input line 561.
+
+
+LaTeX Warning: Reference `figure:systemIO' on page 30 undefined on input line 5
+85.
+
+
+Overfull \hbox (1.19998pt too wide) in alignment at lines 593--607
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19998pt too wide) in alignment at lines 607--619
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19998pt too wide) in alignment at lines 619--628
+ [] [] [] [] 
+ []
+
+
+
+[30]
+Overfull \hbox (0.84116pt too wide) in alignment at lines 633--642
+ [] [] [] 
+ []
+
+
+Overfull \hbox (0.84116pt too wide) in alignment at lines 642--647
+ [] [] [] 
+ []
+
+
+Overfull \hbox (0.75879pt too wide) in alignment at lines 652--661
+ [] [] [] 
+ []
+
+
+Overfull \hbox (0.75879pt too wide) in alignment at lines 661--663
+ [] [] [] 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{turn-in}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.670 \label{hex2seven_turn-in}}
+                                
+
+LaTeX Warning: Reference `table:throwSevenSeg' on page 31 undefined on input li
+ne 691.
+
+
+
+[31]
+
+LaTeX Warning: Reference `table:winLooseTt' on page 32 undefined on input line 
+698.
+
 )
-! Undefined control sequence.
-l.102 \setion
-             {Datapath Architecture}
-? c
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
-? 
 
-LaTeX Warning: Reference `fig:dpSWdatpath' on page 4 undefined on input line 10
-4.
+[32]
+\openout2 = `./Lab04HighLow/lab04.aux'.
 
 
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab04HighLow\lab04.tex
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7 \label{section:objectiveHighLowguess}}
+                                          
+<./Lab04HighLow/Fig/image1.png, id=455, 812.28468pt x 231.86626pt>
+File: ./Lab04HighLow/Fig/image1.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image1.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image1.png  used on input line 27.
+(pdftex.def)             Requested size: 409.52502pt x 116.8987pt.
 
-[4{C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.en
-c} <C:/Users/coulston/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/im
-age1.png>]
 
-! LaTeX Error: Environment Figure undefined.
+LaTeX Warning: Reference `fig:inputOutputDevBoard' on page 33 undefined on inpu
+t line 34.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+
+
+[33
+
+
+
+
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image1.p
+ng>]
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 34 undefined on input l
+ine 72.
+
+
+LaTeX Warning: Reference `fig:inputOutputDevBoard' on page 34 undefined on inpu
+t line 89.
+
+<./Lab04HighLow/Fig/image2.png, id=464, 593.96906pt x 577.40718pt>
+File: ./Lab04HighLow/Fig/image2.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image2.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image2.png  used on input line 93.
+(pdftex.def)             Requested size: 409.54907pt x 398.12946pt.
+
+LaTeX Warning: Reference `fig:2x1MuxSymbol' on page 34 undefined on input line 
+102.
+
+<./Lab04HighLow/Fig/image3.png, id=465, 511.9125pt x 241.65282pt>
+File: ./Lab04HighLow/Fig/image3.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image3.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image3.png  used on input line 111.
+
+(pdftex.def)             Requested size: 245.71521pt x 115.99202pt.
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 34 undefined on input l
+ine 116.
+
+
+LaTeX Warning: Reference `listing:2x1muxVerilog' on page 34 undefined on input 
+line 126.
+
+
+
+[34]
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 35 undefined on input l
+ine 132.
+
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 35 undefined on input l
+ine 132.
+
+
+LaTeX Warning: Reference `fig:2x1MuxSymbol' on page 35 undefined on input line 
+140.
+
+
+
+[35 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image
+2.png>]
+<./Lab04HighLow/Fig/image4.png, id=488, 1197.47375pt x 155.58125pt>
+File: ./Lab04HighLow/Fig/image4.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image4.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image4.png  used on input line 157.
+
+(pdftex.def)             Requested size: 409.52931pt x 53.2079pt.
+
+
+LaTeX Warning: Reference `fig:comparatorSymbol' on page 36 undefined on input l
+ine 166.
+
+<./Lab04HighLow/Fig/image5.png, id=489, 145.5255pt x 70.6275pt>
+File: ./Lab04HighLow/Fig/image5.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image5.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image5.png  used on input line 173.
+
+(pdftex.def)             Requested size: 145.52957pt x 70.62947pt.
+
+
+[36 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image
+3.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/im
+age4.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig
+/image5.png>]
+
+LaTeX Warning: Reference `fig:comparatorSymbol' on page 37 undefined on input l
+ine 198.
+
+
+LaTeX Warning: Reference `fig:comparatorSymbol' on page 37 undefined on input l
+ine 198.
+
+
+Overfull \hbox (4.47418pt too wide) in paragraph at lines 202--203
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 37 undefined on input l
+ine 218.
+
+<./Lab04HighLow/Fig/image6.png, id=499, 257.46187pt x 169.38281pt>
+File: ./Lab04HighLow/Fig/image6.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image6.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image6.png  used on input line 234.
+
+(pdftex.def)             Requested size: 245.7188pt x 161.6571pt.
+
+LaTeX Warning: Reference `table:decoderTruthTable' on page 37 undefined on inpu
+t line 240.
+
+
+Overfull \hbox (2.06393pt too wide) in alignment at lines 248--267
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.06393pt too wide) in alignment at lines 267--283
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.06393pt too wide) in alignment at lines 283--288
+ [] [] [] [] [] [] 
+ []
+
+
+
+[37]
+
+LaTeX Warning: Reference `fig:hiLowWinDisplay' on page 38 undefined on input li
+ne 306.
+
+<./Lab04HighLow/Fig/image7.png, id=518, 306.819pt x 121.2165pt>
+File: ./Lab04HighLow/Fig/image7.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image7.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image7.png  used on input line 312.
+
+(pdftex.def)             Requested size: 306.8229pt x 121.21803pt.
+
+LaTeX Warning: Reference `listing:hiLowWinVerilog' on page 38 undefined on inpu
+t line 321.
+
+
+LaTeX Warning: Reference `listing:hiLowWinVerilog' on page 38 undefined on inpu
+t line 322.
+
+
+
+[38 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image
+6.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/im
+age7.png>]
+Overfull \hbox (70.4748pt too wide) in paragraph at lines 330--331
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: Reference `fig:lfsrOperation' on page 39 undefined on input line
+ 348.
+
+<./Lab04HighLow/Fig/image8.png, id=527, 175.40532pt x 109.91063pt>
+File: ./Lab04HighLow/Fig/image8.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image8.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image8.png  used on input line 351.
+
+(pdftex.def)             Requested size: 175.41022pt x 109.91368pt.
+
+LaTeX Warning: Reference `fig:lfsrOperation' on page 39 undefined on input line
+ 356.
+
+
+LaTeX Warning: Reference `table:lfsrOperations' on page 39 undefined on input l
+ine 362.
+
+
+LaTeX Warning: Reference `fig:lfsrOperation' on page 39 undefined on input line
+ 364.
+
+
+LaTeX Warning: Reference `fig:lfsrOperation' on page 39 undefined on input line
+ 380.
+
+
+LaTeX Warning: Reference `fig:lfsrOperation' on page 39 undefined on input line
+ 380.
+
+
+Overfull \hbox (1.64404pt too wide) in alignment at lines 377--396
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.64404pt too wide) in alignment at lines 396--410
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.64404pt too wide) in alignment at lines 410--417
+ [] [] [] [] [] 
+ []
+
+
+
+[39 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image
+8.png>]
+
+LaTeX Warning: Reference `table:lfsrOperations' on page 40 undefined on input l
+ine 419.
+
+
+LaTeX Warning: Reference `fig:lfsrOperation' on page 40 undefined on input line
+ 424.
+
+
+LaTeX Warning: Reference `table:lfsrOperations' on page 40 undefined on input l
+ine 444.
+
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 40 undefined on input l
+ine 457.
+
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 40 undefined on input l
+ine 467.
+
+
+LaTeX Warning: Reference `fig:snippetFromSysArch' on page 40 undefined on input
+ line 468.
+
+<./Lab04HighLow/Fig/image9.png, id=542, 118.19156pt x 151.3153pt>
+File: ./Lab04HighLow/Fig/image9.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image9.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image9.png  used on input line 473.
+
+(pdftex.def)             Requested size: 118.19307pt x 151.31723pt.
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 40 undefined on input l
+ine 474.
+
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 40 undefined on input l
+ine 474.
+
+
+LaTeX Warning: Reference `fig:snippetFromSysArch' on page 40 undefined on input
+ line 479.
+
+
+
+[40]
+Overfull \hbox (45.96875pt too wide) in paragraph at lines 505--506
+[][] []\OT1/lmtt/m/n/10 genericMux2x1 #(7) muxHex(7\textquotesingle b1111111, R
+andHex, randBut, randSeg); 
+ []
+
+
+LaTeX Warning: Reference `fig:guessGameSysArch' on page 41 undefined on input l
+ine 509.
+
+
+
+[41 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image
+9.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{pin-assignmen
+t}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.558 ...n{Pin Assignment:}\label{pin-assignment}}
                                                   
-l.107 \begin{Figure}
-                    
-? 
-<./Lab09Datapath/Fig/image2.jpg, id=33, 580.3281pt x 594.5412pt>
+
+LaTeX Warning: Reference `fig:inputOutputDevBoard' on page 42 undefined on inpu
+t line 561.
+
+
+Overfull \hbox (0.79996pt too wide) in alignment at lines 569--579
+ [] [] [] 
+ []
+
+
+Overfull \hbox (0.79996pt too wide) in alignment at lines 579--588
+ [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 594--605
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 605--611
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (0.84116pt too wide) in alignment at lines 616--625
+ [] [] [] 
+ []
+
+
+Overfull \hbox (0.84116pt too wide) in alignment at lines 625--630
+ [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 636--648
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 648--651
+ [] [] [] [] 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{turn-in}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.654 \section{Turn in:}\label{turn-in}}
+                                        
+
+[42]
+
+LaTeX Warning: Reference `table:lfsrOperations' on page 43 undefined on input l
+ine 672.
+
+
+LaTeX Warning: Reference `table:lfsrOperations' on page 43 undefined on input l
+ine 676.
+
+
+
+[43]
+<./Lab04HighLow/Fig/image10.png, id=579, 1234.6125pt x 338.26375pt>
+File: ./Lab04HighLow/Fig/image10.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image10.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image10.png  used on input line 735
+.
+(pdftex.def)             Requested size: 409.53331pt x 112.20546pt.
+
+Overfull \hbox (15.00328pt too wide) in paragraph at lines 735--736
+[][] 
+ []
+
+<./Lab04HighLow/Fig/image11.png, id=580, 1029.8475pt x 243.91125pt>
+File: ./Lab04HighLow/Fig/image11.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image11.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image11.png  used on input line 742
+.
+(pdftex.def)             Requested size: 409.52744pt x 96.99333pt.
+
+Overfull \hbox (14.9974pt too wide) in paragraph at lines 742--743
+[][] 
+ []
+
+<./Lab04HighLow/Fig/image12.png, id=581, 770.88pt x 125.46875pt>
+File: ./Lab04HighLow/Fig/image12.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image12.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image12.png  used on input line 747
+.
+(pdftex.def)             Requested size: 409.52899pt x 66.65509pt.
+
+Overfull \hbox (14.99896pt too wide) in paragraph at lines 747--748
+[][] 
+ []
+
+<./Lab04HighLow/Fig/image13.png, id=582, 1036.87375pt x 316.18124pt>
+File: ./Lab04HighLow/Fig/image13.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image13.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image13.png  used on input line 752
+.
+(pdftex.def)             Requested size: 409.53691pt x 124.88298pt.
+
+Overfull \hbox (15.00688pt too wide) in paragraph at lines 752--753
+[][] 
+ []
+
+
+
+[44 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image
+10.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/i
+mage11.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/F
+ig/image12.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighL
+ow/Fig/image13.png>]
+<./Lab04HighLow/Fig/image14.png, id=587, 1067.99pt x 560.0925pt>
+File: ./Lab04HighLow/Fig/image14.png Graphic file (type png)
+<use ./Lab04HighLow/Fig/image14.png>
+Package pdftex.def Info: ./Lab04HighLow/Fig/image14.png  used on input line 760
+.
+(pdftex.def)             Requested size: 409.52336pt x 214.76881pt.
+)
+Overfull \hbox (14.99333pt too wide) in paragraph at lines 760--32
+[][] 
+ []
+
+
+
+[45 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab04HighLow/Fig/image
+14.png>]
+\openout2 = `./Lab05HighLowWithHints/lab05.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab05HighLowWithHints\lab0
+5.tex
+
+[46
+
+
+
+
+]
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7 \label{section:objectiveHighLowGuessHints}}
+                                               
+
+LaTeX Warning: Reference `fig:iOonDevBorad' on page 47 undefined on input line 
+35.
+
+<./Lab05HighLowWithHints/Fig/image1.png, id=596, 403.5075pt x 105.77016pt>
+File: ./Lab05HighLowWithHints/Fig/image1.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image1.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image1.png  used on input 
+line 40.
+(pdftex.def)             Requested size: 403.51883pt x 105.7731pt.
+
+
+[47 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighLowWithHints/
+Fig/image1.png>]
+
+LaTeX Warning: Reference `fig:guessThreshold' on page 48 undefined on input lin
+e 53.
+
+<./Lab05HighLowWithHints/Fig/image2.png, id=604, 640.19176pt x 202.95825pt>
+File: ./Lab05HighLowWithHints/Fig/image2.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image2.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image2.png  used on input 
+line 66.
+(pdftex.def)             Requested size: 409.52596pt x 129.83089pt.
+
+LaTeX Warning: Reference `fig:guessThreshold' on page 48 undefined on input lin
+e 73.
+
+
+LaTeX Warning: Reference `table:applyGuessIntervals' on page 48 undefined on in
+put line 77.
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 83--101
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 101--113
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 113--121
+ [] [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 48 undefined on 
+input line 132.
+
+
+
+[48 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighLowWithHints/
+Fig/image2.png>]
+
+LaTeX Warning: Reference `fig:iOonDevBorad' on page 49 undefined on input line 
+144.
+
+<./Lab05HighLowWithHints/Fig/image3.png, id=611, 1304.875pt x 888.31876pt>
+File: ./Lab05HighLowWithHints/Fig/image3.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image3.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image3.png  used on input 
+line 148.
+(pdftex.def)             Requested size: 469.95375pt x 319.93005pt.
+
+Overfull \hbox (60.42372pt too wide) in paragraph at lines 148--151
+[][] 
+ []
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 49 undefined on 
+input line 155.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 49 undefined on 
+input line 163.
+
+
+LaTeX Warning: Reference `table:applyGuessIntervals' on page 49 undefined on in
+put line 164.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 49 undefined on 
+input line 169.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 49 undefined on 
+input line 173.
+
+
+
+[49 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighLowWithHints/
+Fig/image3.png>]
+
+LaTeX Warning: Reference `listing:guessThresholds' on page 50 undefined on inpu
+t line 181.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{mux-module}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.198 \section{2:1 Mux Module:}\label{mux-module}}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{compare-modul
+e}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.203 ...n{Compare Module:}\label{compare-module}}
+                                                  
+
+LaTeX Warning: Reference `fig:adderSubSymbol' on page 50 undefined on input lin
+e 210.
+
+<./Lab05HighLowWithHints/Fig/image4.png, id=622, 505.13719pt x 415.5525pt>
+File: ./Lab05HighLowWithHints/Fig/image4.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image4.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image4.png  used on input 
+line 220.
+(pdftex.def)             Requested size: 184.2926pt x 151.60881pt.
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 50 undefined on 
+input line 232.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 50 undefined on 
+input line 243.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 50 undefined on 
+input line 243.
+
+
+
+[50]
+Overfull \hbox (22.47437pt too wide) in paragraph at lines 247--248
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 51 undefined on 
+input line 264.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 51 undefined on 
+input line 272.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 51 undefined on 
+input line 277.
+
+
+LaTeX Warning: Reference `table:fillInCompareOperations' on page 51 undefined o
+n input line 282.
+
+
+
+[51 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighLowWithHints/
+Fig/image4.png>]
+Overfull \hbox (8.41725pt too wide) in paragraph at lines 316--316
+[]\OT1/lmr/m/it/10 difference  
+ []
+
+
+Overfull \hbox (10.42746pt too wide) in alignment at lines 309--348
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (8.41725pt too wide) in paragraph at lines 352--352
+[]\OT1/lmr/m/it/10 difference  
+ []
+
+
+Overfull \hbox (10.42746pt too wide) in alignment at lines 348--384
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (10.42746pt too wide) in alignment at lines 384--392
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `table:fillInCompareOperations' on page 52 undefined o
+n input line 394.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 52 undefined on 
+input line 396.
+
+
+LaTeX Warning: Reference `figure:hiLoHintSevenSeg' on page 52 undefined on inpu
+t line 430.
+
+<./Lab05HighLowWithHints/Fig/image5.png, id=648, 314.046pt x 128.4435pt>
+File: ./Lab05HighLowWithHints/Fig/image5.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image5.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image5.png  used on input 
+line 436.
+(pdftex.def)             Requested size: 314.05481pt x 128.44708pt.
+
+
+[52]
+pdfTeX warning (ext4): destination with the same identifier (name{hilow-module}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.482 \section{hiLow module:}\label{hilow-module}}
+                                                  
+
+LaTeX Warning: Reference `listing:hiLowModule' on page 53 undefined on input li
+ne 487.
+
+
+LaTeX Warning: Reference `listing:hiLowModule' on page 53 undefined on input li
+ne 489.
+
+
+
+[53 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighLowWithHints/
+Fig/image5.png>]
+Overfull \hbox (4.47418pt too wide) in paragraph at lines 498--499
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (100.47516pt too wide) in paragraph at lines 501--502
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (418.4784pt too wide) in paragraph at lines 502--503
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+LaTeX Warning: Reference `table:hiLowTestbenchValues' on page 54 undefined on i
+nput line 546.
+
+
+LaTeX Warning: Reference `table:hiLowTestbenchValues' on page 54 undefined on i
+nput line 548.
+
+
+LaTeX Warning: Reference `fig:guessWithHintSystemArch' on page 54 undefined on 
+input line 549.
+
+
+Overfull \hbox (4.28162pt too wide) in paragraph at lines 565--566
+[]|\OT1/lmr/m/n/10 Comment|  
+ []
+
+
+Overfull \hbox (9.60486pt too wide) in alignment at lines 562--567
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.28162pt too wide) in paragraph at lines 569--570
+[]|\OT1/lmr/m/n/10 Comment|  
+ []
+
+
+Overfull \hbox (9.60486pt too wide) in alignment at lines 567--571
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (9.60486pt too wide) in alignment at lines 571--594
+ [] [] [] [] [] [] [] [] 
+ []
+
+[54]
+pdfTeX warning (ext4): destination with the same identifier (name{pin-assignmen
+t}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.598 ...n{Pin Assignment:}\label{pin-assignment}}
+                                                  
+
+LaTeX Warning: Reference `fig:iOonDevBorad' on page 55 undefined on input line 
+600.
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 608--620
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 620--629
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 635--646
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 646--652
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (0.84116pt too wide) in alignment at lines 657--667
+ [] [] [] 
+ []
+
+
+Overfull \hbox (0.84116pt too wide) in alignment at lines 667--675
+ [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 681--693
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.19995pt too wide) in alignment at lines 693--696
+ [] [] [] [] 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{turn-in}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.699 \section{Turn in:}\label{turn-in}}
+                                        
+
+[55]
+
+LaTeX Warning: Reference `table:applyGuessIntervals' on page 56 undefined on in
+put line 712.
+
+
+LaTeX Warning: Reference `table:fillInCompareOperations' on page 56 undefined o
+n input line 717.
+
+
+LaTeX Warning: Reference `table:hiLowTestbenchValues' on page 56 undefined on i
+nput line 732.
+
+
+LaTeX Warning: Reference `fig:hierarchyTestbench' on page 56 undefined on input
+ line 755.
+
+
+LaTeX Warning: Reference `fig:hierarchyTestbench' on page 56 undefined on input
+ line 758.
+
+
+LaTeX Warning: Reference `fig:hierarchyTestbench' on page 56 undefined on input
+ line 759.
+
+<./Lab05HighLowWithHints/Fig/image6.png, id=706, 1196.47pt x 546.04pt>
+File: ./Lab05HighLowWithHints/Fig/image6.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image6.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image6.png  used on input 
+line 762.
+(pdftex.def)             Requested size: 409.53291pt x 186.90092pt.
+
+LaTeX Warning: Reference `fig:guessTiming' on page 56 undefined on input line 7
+68.
+
+<./Lab05HighLowWithHints/Fig/image7.png, id=707, 873.2625pt x 185.94469pt>
+File: ./Lab05HighLowWithHints/Fig/image7.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image7.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image7.png  used on input 
+line 771.
+(pdftex.def)             Requested size: 409.52733pt x 87.20107pt.
+
+LaTeX Warning: Reference `fig:messageConsole' on page 56 undefined on input lin
+e 785.
+
+
+
+[56]
+<./Lab05HighLowWithHints/Fig/image8.png, id=718, 1046.91125pt x 130.4875pt>
+File: ./Lab05HighLowWithHints/Fig/image8.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image8.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image8.png  used on input 
+line 794.
+(pdftex.def)             Requested size: 409.52379pt x 51.04323pt.
+
+
+LaTeX Warning: Reference `fig:connectivityCheck' on page 57 undefined on input 
+line 802.
+
+
+
+[57 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighLowWithHints/
+Fig/image6.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighL
+owWithHints/Fig/image7.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Lab
+s/Lab05HighLowWithHints/Fig/image8.png>]
+<./Lab05HighLowWithHints/Fig/image9.png, id=728, 1229.59375pt x 509.905pt>
+File: ./Lab05HighLowWithHints/Fig/image9.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image9.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image9.png  used on input 
+line 809.
+(pdftex.def)             Requested size: 409.53838pt x 169.83305pt.
+)
+
+[58 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab05HighLowWithHints/
+Fig/image9.png>]
+\openout2 = `./Lab06Calculator/lab06.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab06Calculator\lab06.tex
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6 ...on{Objective}\label{section:calcObjective}}
+                                                  
+
+LaTeX Warning: Reference `fig:calcDevBoard' on page 59 undefined on input line 
+21.
+
+<./Lab06Calculator/Fig/image1.png, id=734, 961.5925pt x 350.30875pt>
+File: ./Lab06Calculator/Fig/image1.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image1.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image1.png  used on input line 3
+8.
+(pdftex.def)             Requested size: 409.52975pt x 149.19194pt.
+
+LaTeX Warning: Reference `fig:sysArchCalc' on page 59 undefined on input line 4
+6.
+
+<./Lab06Calculator/Fig/image2.png, id=735, 995.72pt x 891.33pt>
+File: ./Lab06Calculator/Fig/image2.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image2.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image2.png  used on input line 5
+2.
+(pdftex.def)             Requested size: 320.49051pt x 286.8907pt.
+
+
+[59
+
+
+
+
+]
+
+[60 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab06Calculator/Fig/im
+age1.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab06Calculator/
+Fig/image2.png>]
+
+LaTeX Warning: Reference `fig:calcSevenSeg' on page 61 undefined on input line 
+73.
+
+<./Lab06Calculator/Fig/image3.png, id=753, 1090.0725pt x 644.4075pt>
+File: ./Lab06Calculator/Fig/image3.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image3.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image3.png  used on input line 7
+9.
+(pdftex.def)             Requested size: 188.50343pt x 111.43573pt.
+<./Lab06Calculator/Fig/image4.png, id=754, 201.00093pt x 164.86594pt>
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 1
+29.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 1
+38.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+<./Lab06Calculator/Fig/image5.png, id=755, 201.00093pt x 164.86594pt>
+File: ./Lab06Calculator/Fig/image5.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image5.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image5.png  used on input line 1
+48.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 1
+57.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 1
+67.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 1
+76.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+[61 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab06Calculator/Fig/im
+age3.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab06Calculator/
+Fig/image4.png>] [62 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab06
+Calculator/Fig/image5.png>]
+<./Lab06Calculator/Fig/image6.png, id=770, 940.51375pt x 801.99625pt>
+File: ./Lab06Calculator/Fig/image6.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image6.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image6.png  used on input line 3
+03.
+(pdftex.def)             Requested size: 232.45856pt x 198.2224pt.
+
+
+[63 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab06Calculator/Fig/im
+age6.png>]
+
+[64]
+pdfTeX warning (ext4): destination with the same identifier (name{pin-assignmen
+t}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.509 ...n{Pin Assignment:}\label{pin-assignment}}
+                                                  
+
+LaTeX Warning: Reference `fig:calcDevBoard' on page 65 undefined on input line 
+511.
+
+
+
+[65]
+
+[66]
+<./Lab06Calculator/Fig/image7.png, id=807, 1292.57906pt x 338.01282pt>
+File: ./Lab06Calculator/Fig/image7.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image7.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image7.png  used on input line 6
+74.
+(pdftex.def)             Requested size: 516.8844pt x 135.16661pt.
+
+Overfull \hbox (122.35437pt too wide) in paragraph at lines 674--675
+[][] 
+ []
+
+)
+
+[67 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab06Calculator/Fig/im
+age7.png>]
+\openout2 = `./Lab07CellularAutomata/lab07.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab07CellularAutomata\lab0
+7.tex
+
+[68
+
+
+
+
+]
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6 ...on}{Objective }\label{section:caObjective}}
+                                                  
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 18.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 18.
+
+
+LaTeX Warning: Reference `fig:exampleCA' on page 69 undefined on input line 25.
+
+
+<./Lab07CellularAutomata/Fig/image1.png, id=818, 1889.0575pt x 248.93pt>
+File: ./Lab07CellularAutomata/Fig/image1.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image1.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image1.png  used on input 
+line 29.
+(pdftex.def)             Requested size: 409.51193pt x 53.9633pt.
+
+LaTeX Warning: Reference `fig:exampleCA' on page 69 undefined on input line 35.
+
+
+
+LaTeX Warning: Reference `table:caNextState' on page 69 undefined on input line
+ 47.
+
+
+LaTeX Warning: Reference `fig:exampleCA' on page 69 undefined on input line 48.
+
+
+
+
+[69 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07CellularAutomata/
+Fig/image1.png>]
+Overfull \hbox (13.99995pt too wide) in alignment at lines 57--71
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99995pt too wide) in alignment at lines 71--83
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99995pt too wide) in alignment at lines 83--93
+ [] [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `fig:caRule' on page 70 undefined on input line 107.
+
+<./Lab07CellularAutomata/Fig/image2.png, id=830, 650.43pt x 113.42375pt>
+File: ./Lab07CellularAutomata/Fig/image2.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image2.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image2.png  used on input 
+line 114.
+(pdftex.def)             Requested size: 409.53487pt x 71.41579pt.
+
+LaTeX Warning: Reference `table:caNextState' on page 70 undefined on input line
+ 124.
+
+
+LaTeX Warning: Reference `fig:caRule' on page 70 undefined on input line 133.
+
+
+LaTeX Warning: Reference `fig:caEvolution' on page 70 undefined on input line 1
+41.
+
+
+
+[70 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07CellularAutomata/
+Fig/image2.png>]
+<./Lab07CellularAutomata/Fig/image3.png, id=839, 997.7275pt x 473.77pt>
+File: ./Lab07CellularAutomata/Fig/image3.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image3.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image3.png  used on input 
+line 146.
+(pdftex.def)             Requested size: 409.52763pt x 194.46382pt.
+
+
+LaTeX Warning: Reference `fig:caDevBoard' on page 71 undefined on input line 15
+6.
+
+<./Lab07CellularAutomata/Fig/image4.png, id=840, 786.68906pt x 222.8325pt>
+File: ./Lab07CellularAutomata/Fig/image4.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image4.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image4.png  used on input 
+line 170.
+(pdftex.def)             Requested size: 409.5368pt x 116.00276pt.
+
+LaTeX Warning: Reference `fig:caSwitchBounce' on page 71 undefined on input lin
+e 179.
+
+
+
+[71 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07CellularAutomata/
+Fig/image3.png>]
+<./Lab07CellularAutomata/Fig/image5.png, id=849, 390.70969pt x 216.81pt>
+File: ./Lab07CellularAutomata/Fig/image5.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image5.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image5.png  used on input 
+line 187.
+(pdftex.def)             Requested size: 184.28937pt x 102.26462pt.
+
+
+LaTeX Warning: Reference `fig:caSRlatchDebouce' on page 72 undefined on input l
+ine 205.
+
+<./Lab07CellularAutomata/Fig/image6.png, id=850, 191.5155pt x 112.6755pt>
+File: ./Lab07CellularAutomata/Fig/image6.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image6.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image6.png  used on input 
+line 212.
+(pdftex.def)             Requested size: 191.51793pt x 112.67693pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{system-archit
+ecture}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.220 ...Architecture}\label{system-architecture}}
+                                                  
+
+LaTeX Warning: Reference `fig:caSysArch' on page 72 undefined on input line 222
+.
+
+<./Lab07CellularAutomata/Fig/image7.png, id=851, 1466.47874pt x 893.3375pt>
+File: ./Lab07CellularAutomata/Fig/image7.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image7.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image7.png  used on input 
+line 232.
+(pdftex.def)             Requested size: 409.5148pt x 249.46486pt.
+
+
+[72 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07CellularAutomata/
+Fig/image4.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07Cellu
+larAutomata/Fig/image5.png>]
+
+[73 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07CellularAutomata/
+Fig/image6.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07Cellu
+larAutomata/Fig/image7.png>]
+
+LaTeX Warning: Reference `fig:caSysArch' on page 74 undefined on input line 258
+.
+
+
+LaTeX Warning: Reference `fig:caSysArch' on page 74 undefined on input line 260
+.
+
+
+LaTeX Warning: Reference `fig:caSysArch' on page 74 undefined on input line 279
+.
+
+
+LaTeX Warning: Reference `fig:caSingleCell' on page 74 undefined on input line 
+281.
+
+
+LaTeX Warning: Reference `fig:caSysArch' on page 74 undefined on input line 282
+.
+
+
+LaTeX Warning: Reference `fig:caSysArch' on page 74 undefined on input line 283
+.
+
+<./Lab07CellularAutomata/Fig/image8.png, id=866, 700.6175pt x 783.92876pt>
+File: ./Lab07CellularAutomata/Fig/image8.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image8.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image8.png  used on input 
+line 286.
+(pdftex.def)             Requested size: 184.28366pt x 206.19707pt.
+
+LaTeX Warning: Reference `table:caInOutSingleCell' on page 74 undefined on inpu
+t line 294.
+
+
+LaTeX Warning: Reference `table:caInOutSingleCell' on page 74 undefined on inpu
+t line 300.
+
+
+LaTeX Warning: Reference `fig:caRule' on page 74 undefined on input line 301.
+
+
+LaTeX Warning: Reference `table:caInOutSingleCell' on page 74 undefined on inpu
+t line 301.
+
+
+LaTeX Warning: Reference `fig:caSingleCell' on page 74 undefined on input line 
+310.
+
+
+LaTeX Warning: Reference `fig:caSingleCell' on page 74 undefined on input line 
+310.
+
+
+Overfull \hbox (13.59407pt too wide) in alignment at lines 308--320
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.59407pt too wide) in alignment at lines 320--330
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.59407pt too wide) in alignment at lines 330--340
+ [] [] [] 
+ []
+
+[74]
+pdfTeX warning (ext4): destination with the same identifier (name{pin-assignmen
+t}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.379 ...on{Pin Assignment}\label{pin-assignment}}
+                                                  
+
+LaTeX Warning: Reference `fig:exampleCA' on page 75 undefined on input line 381
+.
+
+
+Overfull \hbox (14.39441pt too wide) in alignment at lines 391--404
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.39441pt too wide) in alignment at lines 404--419
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.64114pt too wide) in alignment at lines 424--433
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.64114pt too wide) in alignment at lines 433--441
+ [] [] [] 
+ []
+
+
+
+[75]
+Overfull \hbox (14.03412pt too wide) in alignment at lines 483--497
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.03412pt too wide) in alignment at lines 497--535
+ [] [] [] [] 
+ []
+
+
+
+[76 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07CellularAutomata/
+Fig/image8.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{turn-in}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.539 \section{Turn in}\label{section:caTurn-in}}
+                                                 
+
+LaTeX Warning: Reference `table:caNextState' on page 77 undefined on input line
+ 554.
+
+
+
+[77]
+
+LaTeX Warning: Reference `table:caInOutSingleCell' on page 78 undefined on inpu
+t line 565.
+
+
+LaTeX Warning: Reference `fig:caTimeDiag' on page 78 undefined on input line 59
+8.
+
+<./Lab07CellularAutomata/Fig/image9.png, id=898, 799.48688pt x 120.70094pt>
+File: ./Lab07CellularAutomata/Fig/image9.png Graphic file (type png)
+<use ./Lab07CellularAutomata/Fig/image9.png>
+Package pdftex.def Info: ./Lab07CellularAutomata/Fig/image9.png  used on input 
+line 601.
+(pdftex.def)             Requested size: 409.52618pt x 61.8274pt.
+)
+
+[78 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab07CellularAutomata/
+Fig/image9.png>]
+\openout2 = `./Lab08Mod10Counter/lab08.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab08Mod10Counter\lab08.te
+x
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7 ...n{Objective}\label{section:mod10objective}}
+                                                  
+
+LaTeX Warning: Reference `fig:mod10Symbol' on page 79 undefined on input line 3
+5.
+
+<./Lab08Mod10Counter/Fig/image1.png, id=906, 173.448pt x 102.8205pt>
+File: ./Lab08Mod10Counter/Fig/image1.png Graphic file (type png)
+<use ./Lab08Mod10Counter/Fig/image1.png>
+Package pdftex.def Info: ./Lab08Mod10Counter/Fig/image1.png  used on input line
+ 42.
+(pdftex.def)             Requested size: 173.4555pt x 102.82492pt.
+
+LaTeX Warning: Reference `table:mod10StateTable' on page 79 undefined on input 
+line 47.
+
+
+Overfull \hbox (14.77325pt too wide) in alignment at lines 61--79
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.77325pt too wide) in alignment at lines 79--95
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.77325pt too wide) in alignment at lines 95--103
+ [] [] [] [] [] [] 
+ []
+
+
+
+[79
+
+
+
+
+]
+
+LaTeX Warning: Reference `table:mod10Roll' on page 80 undefined on input line 1
+05.
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 116--116
+[]\OT1/lmr/m/n/10 Table 8.2: The truth ta-ble for the roll out-put from the
+ []
+
+
+Overfull \hbox (13.55878pt too wide) in alignment at lines 114--126
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.55878pt too wide) in alignment at lines 126--136
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.55878pt too wide) in alignment at lines 136--140
+ [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `fig:mod10sysArch' on page 80 undefined on input line 
+144.
+
+<./Lab08Mod10Counter/Fig/image2.jpeg, id=916, 215.8245pt x 187.902pt>
+File: ./Lab08Mod10Counter/Fig/image2.jpeg Graphic file (type jpg)
+<use ./Lab08Mod10Counter/Fig/image2.jpeg>
+Package pdftex.def Info: ./Lab08Mod10Counter/Fig/image2.jpeg  used on input lin
+e 147.
+(pdftex.def)             Requested size: 215.83382pt x 187.91013pt.
+
+LaTeX Warning: Reference `fig:mod10sysArch' on page 80 undefined on input line 
+153.
+
+
+Overfull \vbox (119.7352pt too high) has occurred while \output is active []
+
+
+
+[80 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab08Mod10Counter/Fig/
+image1.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab08Mod10Coun
+ter/Fig/image2.jpeg>]
+
+LaTeX Warning: Reference `table:mod10StateTable' on page 81 undefined on input 
+line 156.
+
+
+LaTeX Warning: Reference `table:mod10Roll' on page 81 undefined on input line 1
+56.
+
+
+LaTeX Warning: Reference `fig:mod10sysArch' on page 81 undefined on input line 
+157.
+
+
+LaTeX Warning: Reference `table:mod10alwaysCase' on page 81 undefined on input 
+line 157.
+
+
+Overfull \hbox (14.71988pt too wide) in alignment at lines 167--183
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.71988pt too wide) in alignment at lines 183--193
+ [] [] [] [] [] [] 
+ []
+
+
+LaTeX Warning: Reference `fig:mod10TimingDiamgram' on page 81 undefined on inpu
+t line 205.
+
+
+
+[81]
+<./Lab08Mod10Counter/Fig/image4.png, id=930, 710.5455pt x 146.511pt>
+File: ./Lab08Mod10Counter/Fig/image4.png Graphic file (type png)
+<use ./Lab08Mod10Counter/Fig/image4.png>
+Package pdftex.def Info: ./Lab08Mod10Counter/Fig/image4.png  used on input line
+ 210.
+(pdftex.def)             Requested size: 590.24051pt x 121.70468pt.
+<./Lab08Mod10Counter/Fig/image5.png, id=931, 1266.53175pt x 258.9675pt>
+File: ./Lab08Mod10Counter/Fig/image5.png Graphic file (type png)
+<use ./Lab08Mod10Counter/Fig/image5.png>
+Package pdftex.def Info: ./Lab08Mod10Counter/Fig/image5.png  used on input line
+ 212.
+(pdftex.def)             Requested size: 590.20668pt x 120.67943pt.
+
+
+[82
+
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab08Mod10Counter/Fig/ima
+ge4.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab08Mod10Counter
+/Fig/image5.png>]
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <6> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 250.
+
+
+LaTeX Warning: Reference `fig:mod10console' on page 83 undefined on input line 
+292.
+
+<./Lab08Mod10Counter/Fig/image6.png, id=937, 298.11375pt x 254.45062pt>
+File: ./Lab08Mod10Counter/Fig/image6.png Graphic file (type png)
+<use ./Lab08Mod10Counter/Fig/image6.png>
+Package pdftex.def Info: ./Lab08Mod10Counter/Fig/image6.png  used on input line
+ 295.
+(pdftex.def)             Requested size: 245.71489pt x 209.72633pt.
+
+
+[83
+
+]
+
+LaTeX Warning: Reference `table:mod10StateTable' on page 84 undefined on input 
+line 327.
+
+
+LaTeX Warning: Reference `table:mod10alwaysCase' on page 84 undefined on input 
+line 349.
+
+
+LaTeX Warning: Reference `fig:mod10TimingDiamgram' on page 84 undefined on inpu
+t line 349.
+
+
+
+[84 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab08Mod10Counter/Fig/
+image6.png>])
+
+[85]
+\openout2 = `./Lab09Datapath/lab09.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab09Datapath\lab09.tex
+
+[86
+
+
+
+
+]
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 ...tion{Objective}\label{section:swObjective}}
+                                                  
+
+LaTeX Warning: Reference `fig:swDPbehavior' on page 87 undefined on input line 
+24.
+
+<./Lab09Datapath/Fig/image1.png, id=972, 1059.96pt x 475.7775pt>
+File: ./Lab09Datapath/Fig/image1.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image1.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image1.png  used on input line 27.
+
+(pdftex.def)             Requested size: 307.13792pt x 137.86304pt.
+
+LaTeX Warning: Reference `fig:swDPbehavior' on page 87 undefined on input line 
+34.
+
+
+LaTeX Warning: Reference `fig:swDPbehavior' on page 87 undefined on input line 
+42.
+
+
+
+[87 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/imag
+e1.png>]
+
+LaTeX Warning: Reference `fig:dpSWdatpath' on page 88 undefined on input line 7
+2.
+
+
+LaTeX Warning: Reference `fig:swDPbehavior' on page 88 undefined on input line 
+74.
+
+
+LaTeX Warning: Reference `fig:dpSWdatpath' on page 88 undefined on input line 7
+6.
+
+
+LaTeX Warning: Reference `fig:dpSWdatpath' on page 88 undefined on input line 1
+04.
+
+<./Lab09Datapath/Fig/image2.jpg, id=981, 580.3281pt x 594.5412pt>
 File: ./Lab09Datapath/Fig/image2.jpg Graphic file (type jpg)
 <use ./Lab09Datapath/Fig/image2.jpg>
 Package pdftex.def Info: ./Lab09Datapath/Fig/image2.jpg  used on input line 108
 .
-(pdftex.def)             Requested size: 469.93921pt x 481.44873pt.
+(pdftex.def)             Requested size: 409.5387pt x 419.56891pt.
 
-! LaTeX Error: \caption outside float.
+LaTeX Warning: Reference `fig:dpSWdatpath' on page 88 undefined on input line 1
+15.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+
+LaTeX Warning: Reference `fig:swDPbehavior' on page 88 undefined on input line 
+123.
+
+
+
+[88]
+Underfull \vbox (badness 3735) has occurred while \output is active []
+
+
+
+[89 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/imag
+e2.jpg>]
+
+LaTeX Warning: Reference `fig:dpSWdatpath' on page 90 undefined on input line 1
+69.
+
+
+LaTeX Warning: Reference `fig:dpSWdatpath' on page 90 undefined on input line 1
+69.
+
+
+Overfull \hbox (14.72522pt too wide) in alignment at lines 168--195
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.72522pt too wide) in alignment at lines 195--220
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.72522pt too wide) in alignment at lines 220--234
+ [] [] [] [] [] [] 
+ []
+
+
+
+[90]
+
+LaTeX Warning: Reference `fig:dpSWdatpath' on page 91 undefined on input line 2
+74.
+
+
+Overfull \hbox (26.2187pt too wide) in paragraph at lines 298--298
+[]\OT1/lmtt/m/n/10 genericCounter #(N) tenthSecondCounter(clk, resetn, zero24, 
+cw{[}1:0{]}, clkCount);[] 
+ []
+
+
+LaTeX Warning: Reference `table:swDPcontrolWord' on page 91 undefined on input 
+line 306.
+
+
+
+[91]
+<./Lab09Datapath/Fig/image4.png, id=1003, 608.0535pt x 179.0325pt>
+File: ./Lab09Datapath/Fig/image4.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image4.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image4.png  used on input line 324
+.
+(pdftex.def)             Requested size: 590.24725pt x 173.7897pt.
+
+Overfull \hbox (15.04224pt too wide) in paragraph at lines 324--325
+[][] 
+ []
+
+<./Lab09Datapath/Fig/image5.png, id=1004, 603.126pt x 172.791pt>
+File: ./Lab09Datapath/Fig/image5.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image5.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image5.png  used on input line 326
+.
+(pdftex.def)             Requested size: 590.2588pt x 169.10463pt.
+
+Overfull \hbox (15.05379pt too wide) in paragraph at lines 326--327
+[][] 
+ []
+
+<./Lab09Datapath/Fig/image6.png, id=1005, 645.831pt x 176.076pt>
+File: ./Lab09Datapath/Fig/image6.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image6.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image6.png  used on input line 328
+.
+(pdftex.def)             Requested size: 590.22005pt x 160.9145pt.
+
+Overfull \hbox (15.01503pt too wide) in paragraph at lines 328--329
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[92
+
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/image4.
+png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/ima
+ge5.png>]
+<./Lab09Datapath/Fig/image7.png, id=1012, 645.831pt x 178.3755pt>
+File: ./Lab09Datapath/Fig/image7.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image7.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image7.png  used on input line 330
+.
+(pdftex.def)             Requested size: 590.22005pt x 163.016pt.
+
+Overfull \hbox (15.01503pt too wide) in paragraph at lines 330--331
+[][] 
+ []
+
+<./Lab09Datapath/Fig/image8.png, id=1013, 645.5025pt x 167.8635pt>
+File: ./Lab09Datapath/Fig/image8.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image8.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image8.png  used on input line 332
+.
+(pdftex.def)             Requested size: 590.20546pt x 153.48343pt.
+
+Overfull \hbox (15.00044pt too wide) in paragraph at lines 332--333
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[93 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/imag
+e6.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/
+image7.png>]
+
+[94 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/imag
+e8.png>]
+<./Lab09Datapath/Fig/image9.png, id=1023, 585.18625pt x 401.5pt>
+File: ./Lab09Datapath/Fig/image9.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image9.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image9.png  used on input line 380
+.
+(pdftex.def)             Requested size: 307.15594pt x 210.74164pt.
+
+
+[95
+
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/image9.
+png>]
+<./Lab09Datapath/Fig/image10.png, id=1028, 1364.09625pt x 248.93pt>
+File: ./Lab09Datapath/Fig/image10.png Graphic file (type png)
+<use ./Lab09Datapath/Fig/image10.png>
+Package pdftex.def Info: ./Lab09Datapath/Fig/image10.png  used on input line 40
+2.
+(pdftex.def)             Requested size: 409.52344pt x 74.73274pt.
+
+Overfull \hbox (14.99341pt too wide) in paragraph at lines 402--403
+[][] 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{turn-in}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.405 \section{Turn in:}\label{turn-in}}
+                                        
+
+LaTeX Warning: Reference `table:swDPcontrolWord' on page 96 undefined on input 
+line 420.
+
+
+LaTeX Warning: Reference `figure:swDPtiming' on page 96 undefined on input line
+ 425.
+
+)
+
+[96 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/imag
+e10.png>]
+\openout2 = `./Lab10ControlUnit/lab10.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab10ControlUnit\lab10.tex
+
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6 ...ective }\label{section:swControlObjective}}
                                                   
-l.109 \caption
-              {The datapath for the stopwatch has a 6-bit control word and
-? 
 
-Overfull \hbox (75.40918pt too wide) in paragraph at lines 108--112
+LaTeX Warning: Reference `fig:swCuHighLevel' on page 97 undefined on input line
+ 19.
+
+<./Lab10ControlUnit/Fig/image1.png, id=1035, 303.8625pt x 164.25pt>
+File: ./Lab10ControlUnit/Fig/image1.png Graphic file (type png)
+<use ./Lab10ControlUnit/Fig/image1.png>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image1.png  used on input line 
+22.
+(pdftex.def)             Requested size: 245.71461pt x 132.8187pt.
+
+LaTeX Warning: Reference `fig:swCuHighLevel' on page 97 undefined on input line
+ 29.
+
+
+
+[97
+
+
+
+
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/Fig/imag
+e1.png>]
+
+LaTeX Warning: Reference `fig:swCuButtons' on page 98 undefined on input line 3
+3.
+
+
+LaTeX Warning: Reference `fig:swCuHighLevel' on page 98 undefined on input line
+ 35.
+
+<./Lab10ControlUnit/Fig/image2.png, id=1045, 134.028pt x 121.545pt>
+File: ./Lab10ControlUnit/Fig/image2.png Graphic file (type png)
+<use ./Lab10ControlUnit/Fig/image2.png>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image2.png  used on input line 
+47.
+(pdftex.def)             Requested size: 134.0338pt x 121.55025pt.
+
+LaTeX Warning: Reference `fig:swCuButtons' on page 98 undefined on input line 5
+2.
+
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 98 undefined on input l
+ine 63.
+
+<./Lab10ControlUnit/Fig/image3.jpeg, id=1046, 437.562pt x 315.0315pt>
+File: ./Lab10ControlUnit/Fig/image3.jpeg Graphic file (type jpg)
+<use ./Lab10ControlUnit/Fig/image3.jpeg>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image3.jpeg  used on input line
+ 66.
+(pdftex.def)             Requested size: 409.55237pt x 294.8654pt.
+
+LaTeX Warning: Reference `fig:swCuImproperFsm' on page 98 undefined on input li
+ne 86.
+
+<./Lab10ControlUnit/Fig/image4.jpeg, id=1047, 261.1575pt x 88.038pt>
+File: ./Lab10ControlUnit/Fig/image4.jpeg Graphic file (type jpg)
+<use ./Lab10ControlUnit/Fig/image4.jpeg>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image4.jpeg  used on input line
+ 95.
+(pdftex.def)             Requested size: 261.15686pt x 88.03777pt.
+
+
+[98 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/Fig/i
+mage2.png>]
+
+LaTeX Warning: Reference `table:swCuControlWord' on page 99 undefined on input 
+line 101.
+
+
+LaTeX Warning: Reference `table:swCuControlWord' on page 99 undefined on input 
+line 105.
+
+
+
+[99 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/Fig/i
+mage3.jpeg> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUn
+it/Fig/image4.jpeg>]
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 100 undefined on input 
+line 131.
+
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 100 undefined on input 
+line 131.
+
+
+Overfull \hbox (14.72522pt too wide) in alignment at lines 129--156
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.72522pt too wide) in alignment at lines 156--181
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.72522pt too wide) in alignment at lines 181--202
+ [] [] [] [] [] [] 
+ []
+
+
+
+[100]
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 101 undefined on input 
+line 250.
+
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 101 undefined on input 
+line 251.
+
+
+LaTeX Warning: Reference `fig:swCuStopState' on page 101 undefined on input lin
+e 252.
+
+<./Lab10ControlUnit/Fig/image5.jpeg, id=1067, 199.3995pt x 100.1925pt>
+File: ./Lab10ControlUnit/Fig/image5.jpeg Graphic file (type jpg)
+<use ./Lab10ControlUnit/Fig/image5.jpeg>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image5.jpeg  used on input line
+ 256.
+(pdftex.def)             Requested size: 199.40509pt x 100.1953pt.
+
+LaTeX Warning: Reference `fig:swCuStopState' on page 101 undefined on input lin
+e 263.
+
+
+
+[101 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/Fig/
+image5.jpeg>]
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 102 undefined on input 
+line 316.
+
+
+LaTeX Warning: Reference `fig:swCuSimTiming' on page 102 undefined on input lin
+e 318.
+
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 102 undefined on input 
+line 320.
+
+
+LaTeX Warning: Reference `fig:swCuStateDiagram' on page 102 undefined on input 
+line 324.
+
+
+
+[102]
+<./Lab10ControlUnit/Fig/image7.png, id=1087, 572.1375pt x 128.27925pt>
+File: ./Lab10ControlUnit/Fig/image7.png Graphic file (type png)
+<use ./Lab10ControlUnit/Fig/image7.png>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image7.png  used on input line 
+330.
+(pdftex.def)             Requested size: 572.14482pt x 128.28088pt.
+<./Lab10ControlUnit/Fig/image8.png, id=1088, 625.1355pt x 140.9265pt>
+File: ./Lab10ControlUnit/Fig/image8.png Graphic file (type png)
+<use ./Lab10ControlUnit/Fig/image8.png>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image8.png  used on input line 
+332.
+(pdftex.def)             Requested size: 590.21245pt x 133.05367pt.
+
+Overfull \hbox (15.00743pt too wide) in paragraph at lines 332--333
+[][] 
+ []
+
+<./Lab10ControlUnit/Fig/image9.png, id=1089, 611.28375pt x 137.313pt>
+File: ./Lab10ControlUnit/Fig/image9.png Graphic file (type png)
+<use ./Lab10ControlUnit/Fig/image9.png>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image9.png  used on input line 
+335.
+(pdftex.def)             Requested size: 590.23024pt x 132.58372pt.
+
+Overfull \hbox (15.02522pt too wide) in paragraph at lines 335--336
+[][] 
+ []
+
+<./Lab10ControlUnit/Fig/image10.png, id=1090, 631.158pt x 141.52875pt>
+File: ./Lab10ControlUnit/Fig/image10.png Graphic file (type png)
+<use ./Lab10ControlUnit/Fig/image10.png>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image10.png  used on input line
+ 337.
+(pdftex.def)             Requested size: 590.22606pt x 132.3503pt.
+
+Overfull \hbox (15.02104pt too wide) in paragraph at lines 337--342
 [][]
  []
 
-! Extra }, or forgotten \endgroup.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.112 \end{figure}
-                  
-? 
-! Too many }'s.
-\color@endbox ->\color@endgroup \egroup 
-                                        
-l.112 \end{figure}
-                  
-? 
 
-! LaTeX Error: \begin{document} ended by \end{figure}.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+
+
+[103
+
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/Fig/imag
+e7.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/F
+ig/image8.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10Contro
+lUnit/Fig/image9.png>]
+
+[104 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/Fig/
+image10.png>]
+Overfull \hbox (11.9683pt too wide) in paragraph at lines 353--353
+[]|\OT1/lmr/m/n/10 resetn| 
+ []
+
+
+Overfull \hbox (8.82936pt too wide) in paragraph at lines 355--355
+[]|\OT1/lmr/m/n/10 tenth| 
+ []
+
+
+Overfull \hbox (10.88513pt too wide) in paragraph at lines 358--358
+[]|\OT1/lmr/m/n/10 states| 
+ []
+
+
+Overfull \hbox (93.79387pt too wide) in paragraph at lines 359--359
+[]|\OT1/lmr/m/n/10 stop/stop2reset/reset/stop2run| 
+ []
+
+
+Overfull \hbox (90.09807pt too wide) in paragraph at lines 360--360
+[]|\OT1/lmr/m/n/10 run/inc/run2lapRun/run2stop| 
+ []
+
+
+Overfull \hbox (152.20839pt too wide) in paragraph at lines 361--361
+[]|\OT1/lmr/m/n/10 lapRun/lapInc/lapRun2run/lapRun2lapStop| 
+ []
+
+
+Overfull \hbox (127.34799pt too wide) in paragraph at lines 362--362
+[]|\OT1/lmr/m/n/10 lapStop/lapStop2run/lapStop2LapRun| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--364
+
+ []
+
+
+LaTeX Warning: Reference `listing:swCuDoFileState' on page 105 undefined on inp
+ut line 373.
+
+
+LaTeX Warning: Reference `listing:swCuDoFileState' on page 105 undefined on inp
+ut line 379.
+
+
+LaTeX Warning: Reference `fig:swCuTestbenchTiming' on page 105 undefined on inp
+ut line 397.
+
+<./Lab10ControlUnit/Fig/image11.png, id=1105, 420.06938pt x 115.18031pt>
+File: ./Lab10ControlUnit/Fig/image11.png Graphic file (type png)
+<use ./Lab10ControlUnit/Fig/image11.png>
+Package pdftex.def Info: ./Lab10ControlUnit/Fig/image11.png  used on input line
+ 401.
+(pdftex.def)             Requested size: 368.58536pt x 101.0637pt.
+
+LaTeX Warning: Reference `listing:swCuDoFileState' on page 105 undefined on inp
+ut line 403.
+
+
+LaTeX Warning: Reference `listing:swCuDoFileState' on page 105 undefined on inp
+ut line 403.
+
+
+LaTeX Warning: Reference `fig:swCuSimTiming' on page 105 undefined on input lin
+e 407.
+
+
+LaTeX Warning: Reference `fig:swCuSimTiming' on page 105 undefined on input lin
+e 408.
+
+
+
+[105
+
+]
+
+LaTeX Warning: Reference `table:swCuControlWord' on page 106 undefined on input
+ line 426.
+
+
+LaTeX Warning: Reference `fig:swCuSimTiming' on page 106 undefined on input lin
+e 428.
+
+)
+
+[106 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab10ControlUnit/Fig/
+image11.png>]
+\openout2 = `./Lab11Stopwatch/lab11.aux'.
+
+
+(C:/Users\chris\Documents\GitHub\Digital-Design\Labs\Lab11Stopwatch\lab11.tex
+pdfTeX warning (ext4): destination with the same identifier (name{objective}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6 ...tion{Objective }\label{section:swComplete}}
                                                   
-l.112 \end{figure}
-                  
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.112 \end{figure}
-                  
-? 
 
-LaTeX Warning: Reference `fig:dpSWdatpath' on page 5 undefined on input line 11
-5.
+LaTeX Warning: Reference `fig:swHighLevel' on page 107 undefined on input line 
+19.
 
+<./Lab11Stopwatch/Fig/image1.png, id=1129, 247.689pt x 110.376pt>
+File: ./Lab11Stopwatch/Fig/image1.png Graphic file (type png)
+<use ./Lab11Stopwatch/Fig/image1.png>
+Package pdftex.def Info: ./Lab11Stopwatch/Fig/image1.png  used on input line 22
+.
+(pdftex.def)             Requested size: 247.68839pt x 110.37572pt.
 
-LaTeX Warning: Reference `fig:swDPbehavior' on page 5 undefined on input line 1
-23.
+LaTeX Warning: Reference `fig:swDevBoard' on page 107 undefined on input line 2
+9.
 
 
-Underfull \vbox (badness 6094) has occurred while \output is active []
+LaTeX Warning: Reference `fig:swHighLevel' on page 107 undefined on input line 
+29.
+
+<./Lab11Stopwatch/Fig/image2.png, id=1130, 828.09375pt x 263.48438pt>
+File: ./Lab11Stopwatch/Fig/image2.png Graphic file (type png)
+<use ./Lab11Stopwatch/Fig/image2.png>
+Package pdftex.def Info: ./Lab11Stopwatch/Fig/image2.png  used on input line 33
+.
+(pdftex.def)             Requested size: 409.53493pt x 130.30655pt.
+
+
+[107
 
 
 
-[5 <C:/Users/coulston/Documents/GitHub/Digital-Design/Labs/Lab09Datapath/Fig/im
-age2.jpg>])
-Runaway argument?
-{Control word table for the datapath shown in Figure~\re {fig:dpSWdat\ETC.
-! File ended while scanning use of \@xdblarg.
-<inserted text> 
-                \par 
-l.36 \include{./Lab09Datapath/lab09}
-                                    
-? q
-OK, entering \batchmode...
-! Misplaced \noalign.
-\newpage ->\noalign 
-                    {\break }
-l.36 \include{./Lab09Datapath/lab09}
-                                    
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
 
-! Misplaced \noalign.
-\newpage ->\noalign 
-                    {\break }
-l.36 \include{./Lab09Datapath/lab09}
-                                    
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab11Stopwatch/Fig/image1
+.png>]
 
-! Misplaced \noalign.
-\newpage ->\noalign 
-                    {\break }
-l.38 \end{document}
-                   
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+LaTeX Warning: Reference `fig:swArch' on page 108 undefined on input line 49.
 
+<./Lab11Stopwatch/Fig/image3.jpeg, id=1139, 470.0835pt x 188.8875pt>
+File: ./Lab11Stopwatch/Fig/image3.jpeg Graphic file (type jpg)
+<use ./Lab11Stopwatch/Fig/image3.jpeg>
+Package pdftex.def Info: ./Lab11Stopwatch/Fig/image3.jpeg  used on input line 5
+4.
+(pdftex.def)             Requested size: 409.54317pt x 164.56136pt.
+
+
+[108 <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab11Stopwatch/Fig/im
+age2.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab11Stopwatch/F
+ig/image3.jpeg>]
+
+LaTeX Warning: Reference `fig:swTiming' on page 109 undefined on input line 77.
+
+
+
+
+[109]
+<./Lab11Stopwatch/Fig/image5.png, id=1153, 1142.46825pt x 255.354pt>
+File: ./Lab11Stopwatch/Fig/image5.png Graphic file (type png)
+<use ./Lab11Stopwatch/Fig/image5.png>
+Package pdftex.def Info: ./Lab11Stopwatch/Fig/image5.png  used on input line 86
+.
+(pdftex.def)             Requested size: 590.21687pt x 131.91985pt.
+
+Overfull \hbox (15.01186pt too wide) in paragraph at lines 86--87
+[][] 
+ []
+
+<./Lab11Stopwatch/Fig/image6.png, id=1154, 1159.9335pt x 258.9675pt>
+File: ./Lab11Stopwatch/Fig/image6.png Graphic file (type png)
+<use ./Lab11Stopwatch/Fig/image6.png>
+Package pdftex.def Info: ./Lab11Stopwatch/Fig/image6.png  used on input line 88
+.
+(pdftex.def)             Requested size: 590.23083pt x 131.7753pt.
+
+Overfull \hbox (15.02582pt too wide) in paragraph at lines 88--93
+[][]
+ []
+
+
+
+[110
+
+ <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab11Stopwatch/Fig/image5
+.png> <C:/Users/chris/Documents/GitHub/Digital-Design/Labs/Lab11Stopwatch/Fig/i
+mage6.png>]
+
+LaTeX Warning: Reference `fig:swTiming' on page 111 undefined on input line 102
+.
+
+
+LaTeX Warning: Reference `listing:swtenthSecond' on page 111 undefined on input
+ line 114.
+
+
+LaTeX Warning: Reference `listing:swtenthSecond' on page 111 undefined on input
+ line 134.
+
+
+LaTeX Warning: Reference `fig:swDevBoard' on page 111 undefined on input line 1
+39.
+
+
+Overfull \hbox (13.64114pt too wide) in alignment at lines 145--150
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.64114pt too wide) in alignment at lines 150--155
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.99995pt too wide) in alignment at lines 161--173
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99995pt too wide) in alignment at lines 173--182
+ [] [] [] [] 
+ []
+
+[111
+
+]
+
+LaTeX Warning: Reference `fig:swTiming' on page 112 undefined on input line 201
+.
+
+
+LaTeX Warning: Reference `table:swPinAssignment' on page 112 undefined on input
+ line 220.
+
+)
+
+[112]
 \tf@toc=\write5
 \openout5 = `"Digital Design Labs.toc"'.
 
 
-! LaTeX Error: \begin{longtable} on input line 162 ended by \end{document}.
+
+! LaTeX Error: \begin{itemize} on input line 199 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.38 \end{document}
+l.41 \end{document}
                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Misplaced \noalign.
-\newpage ->\noalign 
-                    {\break }
-l.38 \end{document}
-                   
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
- (Digital Design Labs.aux (Lab09Datapath/lab09.aux))
+? 
+(Digital Design Labs.aux (Lab01SimpleVerilog/lab01.aux)
+(Lab02HexToSeven/lab02.aux) (Lab03RockPaperScissor/lab03.aux)
+(Lab04HighLow/lab04.aux) (Lab05HighLowWithHints/lab05.aux)
+(Lab06Calculator/lab06.aux) (Lab07CellularAutomata/lab07.aux)
+(Lab08Mod10Counter/lab08.aux) (Lab09Datapath/lab09.aux)
+(Lab10ControlUnit/lab10.aux) (Lab11Stopwatch/lab11.aux))
  ***********
-LaTeX2e <2024-06-01> patch level 2
+LaTeX2e <2024-06-01>
 L3 programming layer <2020/03/25>
  ***********
+
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-! You can't use `\end' in internal vertical mode.
-\enddocument ...cument/end}\deadcycles \z@ \@@end 
-                                                  
-l.38 \end{document}
-                   
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+ )
+(\end occurred inside a group at level 1)
 
-
-! LaTeX Error: \begin{longtable} on input line 162 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38 \end{document}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-! Emergency stop.
-<*> ...igital-Design/Labs/Digital Design Labs.tex"
-                                                  
-*** (job aborted, no legal \end found)
-
- 
+### semi simple group (level 1) entered at line 199 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 16068 strings out of 473904
- 248857 string characters out of 5725185
- 1935908 words of memory out of 5000000
- 38691 multiletter control sequences out of 15000+600000
- 595031 words of font info for 64 fonts, out of 8000000 for 9000
+ 18663 strings out of 473937
+ 306167 string characters out of 5727370
+ 1972893 words of memory out of 5000000
+ 40484 multiletter control sequences out of 15000+600000
+ 617763 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,11n,93p,434b,448s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 85i,12n,93p,886b,1955s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmbx10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmbx12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmbx7.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmmi10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmr6.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmr7.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+i10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+o10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
+y10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmt
+k10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmt
+t10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmt
+t8.pfb>
+Output written on "Digital Design Labs.pdf" (112 pages, 18325334 bytes).
+PDF statistics:
+ 1652 PDF objects out of 1728 (max. 8388607)
+ 668 named destinations out of 1000 (max. 500000)
+ 1144 words of extra memory for PDF output out of 10000 (max. 10000000)
+

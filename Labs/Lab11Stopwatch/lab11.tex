@@ -1,12 +1,12 @@
-\chapter{Stopwatch Control Unit}
-\label{chapter:stopControl}
+\chapter{Stopwatch Datapath and Control}
+\label{chapter:swDpAndCu}
 \graphicspath{ {./Lab11Stopwatch/Fig} }
 
 \hypertarget{objective}{%
 \section{Objective }\label{section:swComplete}}
 
 The objective of this lab is to unify the stopwatch datapath and control
-units into a working design that runs on the Cyclone V GX development
+units into a working design that runs on the FPGA development
 board.
 
 \section{Discussion}
@@ -36,9 +36,9 @@ development board.}
 \label{fig:swDevBoard}
 \end{figure}
 
-Two of the Cyclone V buttons will act as the stopwatch buttons
+Two of the buttons will act as the stopwatch buttons
 and 3 of the 7-segment displays will show the time. The reset signal is
-connected to a button and the 50MHz clock is on the Cyclone V GX
+connected to a button and the 50MHz clock is on the FPGA
 development board but does not require any user
 interaction.
 
@@ -58,7 +58,7 @@ controlUnit.}
 \end{figure}
 
 The only minor complication is combining the tenth output from the
-datapath with the S2 and S1 signals coming in from the Cyclone V GX
+datapath with the S2 and S1 signals coming in from the
 buttons into a 3-bit signal sent to the status word input of the control
 unit.
 
@@ -68,7 +68,7 @@ on Canvas, and make the testbench the top-level entity.
 
 \section{Stopwatch Simulation}
 
-Before you download your completed control unit to the Cyclone V boards,
+Before you download your completed control unit to the development boards,
 you are going to perform extensive simulations to uncover as many bugs
 as possible. Errors are much, much easier to find in a simulation. First
 you will need to understand what the testbench simulation is supposed to
@@ -96,7 +96,7 @@ The goal of the testbench was to cover every transition arc in the state
 diagram. This goal was not achieved; several transition arc was not
 taken in the testbench, which one was it? I'd suggest double checking
 this transition during the testing of the stopwatch when it is
-downloaded onto the Cyclone V GX development board.
+downloaded onto the FPGA development board.
 
 Run the testbench using the provided do file and compare the output
 against Figure~\ref{fig:swTiming} You will probably need to modify the do
@@ -111,10 +111,10 @@ simulations. Before you synthesize the datapath, you need to undo this.
 I would suggest leaving the relevant constants in your code and just
 comment them out. Immediately following each commented constant, put the
 constant that you need for the datapath to operate correctly on the
-Cyclone V GX board. I've summarized these changes in Listing~\ref{listing:swtenthSecond}.
+FPGA development board. I've summarized these changes in Listing~\ref{listing:swtenthSecond}.
 
 \begin{lstlisting}[language=Verilog,
- caption={Changes to the datapath that will allow it to run properly on the Cyclone V GX development board.},
+ caption={Changes to the datapath that will allow it to run properly on the FPGA development board.},
  label={listing:swtenthSecond},
  frame=single]
 // parameter N = 4;	
@@ -135,7 +135,7 @@ Listing~\ref{listing:swtenthSecond} did not create any warnings or errors
 
 The next step is to create the mapping of stopwatch module inputs and
 outputs to the pins of the FPGA and by extension the input and output
-devices on the Cyclone V GX board. Use the inputs and outputs shown in
+devices on the FPGA development board. Use the inputs and outputs shown in
 Figure~\ref{fig:swDevBoard} and the information in the FPGA development board User Guide to complete
 the following pin assignment tables.
 
@@ -143,6 +143,7 @@ the following pin assignment tables.
 | >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
+  \caption{Pin assignment for the stopwatch.}\label{table:swPinAssignment}\tabularnewline
 \toprule()
 S2 & Key{[}3{]} & Y16 \\
 \midrule()
@@ -197,39 +198,27 @@ section next week.
 
 \begin{itemize}
 \item
-  Completed Figure~\ref{fig:swTiming}. Please:
+  Completed Figure~\ref{fig:swTiming}. Please paste the images in landscape format into your solutions
 
-  \begin{itemize}
-  \item
-    Paste the images in landscape format into your solutions
-  \end{itemize}
 \item
-  Complete simulation. Please:
+  Show the screen shot of simulation timing diagram. Please compose the simulation in landscape 
+  format into your solutions and break the screen shot of the simulation into three parts,
 
   \begin{itemize}
-  \item
-    Screen shot the simulation into three parts,
-
-    \begin{itemize}
     \item
       from 0 to 400ps
     \item
       from 400ps to 800ps
     \item
       from 800ps to 1200ps
-    \end{itemize}
-  \item
-    Paste the simulation in landscape format into your solutions
-  \end{itemize}
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Stopwatch Synthesis}
 
 \begin{itemize}
 \item
-  Completed pin assignment table
+  Completed pin assignment from Table~\ref{table:swPinAssignment}.
 \item
   Demo working stopwatch
 \end{itemize}
-
-\end{document}
