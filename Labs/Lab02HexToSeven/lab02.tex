@@ -4,12 +4,18 @@
 
 
 \hypertarget{objective}{%
-\section{Objective }
-\label{hex2Seven:objective}}
+\section{Introduction}
+\label{hex2Seven:introduction}}
 
 The objective of this lab is to introduce you to two new Verilog concepts, vectors,and always/case statement.
 You will learn how to assign pins to your module ports in a process called pin-assignment.  Finally, you
 will download a module+pin-assignment to the development board.
+
+\subsection{Prerequisite concepts}
+\begin{itemize}
+	\item \hyperref[bok:REP_TruthTable]{Truth Table}
+	\item Truth Table
+\end{itemize}
 
 
 \section{Verilog: Vectors}
@@ -115,7 +121,7 @@ be a gate or the output of a module. If a signal does not have an
 explicit gate or module driving its value, it needs to be typed reg.
 
 \hypertarget{part-1-combine-lab-1-functions.}{%
-\section{A Multiple Output Functions.}\label{part-1-combine-lab-1-functions.}}
+\section{A Multiple Output Function}\label{part-1-combine-lab-1-functions.}}
 
 Let's explore vectors and the always statement by combining the three
 functions created in last weeks assignment into one function.
@@ -129,12 +135,12 @@ functions created in last weeks assignment into one function.
 \end{enumerate}
 
 \begin{longtable}[]{@{}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|@{}}
 \caption{The Truth Table for the combinedLab01 function. This
 function has a 3-bit input and 3-bits output.}\label{table:combinedLab01}\tabularnewline
 \toprule()
@@ -165,7 +171,7 @@ f04
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 f03
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-f02
+Muf02
 \end{minipage} \\ 
 \midrule()
 \endhead
@@ -505,7 +511,6 @@ FPGA Pin No. & & & & PIN\_AC9 \\
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
 Port &
 sevenSeg{[}6{]} &
 sevenSeg{[}5{]} &
