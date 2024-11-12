@@ -2,15 +2,22 @@
 \label{chapter:RPS}
 \graphicspath{ {./Lab04HighLow/Fig} }
 
-\hypertarget{objective}{%
-\section{\texorpdfstring{Objective }{Objective }}
-\label{section:objectiveHighLowguess}}
 
-The objective of this lab is to use a combination of basic building
-block and custom combinational logic blocks to realize a complex digital
-circuit.
 
-\subsubsection{The Guessing Game}
+\section{Outcomes and Objectives}
+
+The outcome of this lab is to instantiate a guessing game using 
+common logic building blocks.
+on the FPGA development board. 
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\itemsep=0em
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
+
+\section{The Guessing Game}
 
 The guessing game is a two-person game where, one player is the guesser
 and the other, an honest, secret keeper. The game starts with the secret
@@ -25,7 +32,7 @@ correctly identifies the \emph{secret number}.
 
 \begin{figure}[ht]
 \includegraphics{image1.png}
-\caption{The input and output you should use to realize your digital system.}
+\caption{The input and output you should use to realize the High/Low Guessing game.}
 \label{fig:inputOutputDevBoard}
 \end{figure}
 
@@ -65,7 +72,7 @@ equals \textbf{2}, then the right-most \textbf{2} green LEDs would be
 illuminated. You should illuminate LEDs starting from the right side and
 increasing towards the left side.
 
-\subsubsection{System design}
+\section{System Architecture}
 
 There are an unlimited number of ways that you could implement this
 digital system. For this lab, I want you to use the system architecture
@@ -90,13 +97,12 @@ schematic are in order.
 \end{enumerate}
 
 \begin{figure}[ht]
-\includegraphics{image2.png}
+\includegraphics[width=0.6\paperwidth]{image2.png}
 \caption{System architecture for the guessing game.}
 \label{fig:guessGameSysArch}
 \end{figure}
 
-\hypertarget{mux-module}{%
-\section{Module: 2:1 Mux}\label{mux-module}}
+\section{Module: 2:1 Mux}
 
 A 2:1 multiplexer, a mux for short, is a basic building block in many
 digital systems. The 2:1 mux shown in Figure~\ref{fig:2x1MuxSymbol} routes one of the two
@@ -211,18 +217,17 @@ from my hiLow module in the lower two lines in Listing 2. Like the mux,
 the default vector width for the inputs is 8-bits. Same warning about
 vector size mismatch applies to comparators.
 
-\hypertarget{hextosevenseg-module}{%
+
 \section{Module: hexToSevenSeg}
-\label{hextosevenseg-module}}
 You should use the hexToSevenSeg module you developed in a
 previous lab. Note, the name of this module was shortened in Figure~\ref{fig:guessGameSysArch}
 to
 hex27 in order to save space and make the schematic more
 readable.
 
-\hypertarget{decoder-module}{%
+
 \section{Module: 2:4 Decoder}
-\label{decoder-module}}
+
 
 The module labeled 2:4 decoder interprets the 2-bit input
 s\textsubscript{1}, s\textsubscript{0} as a 2-bit binary number that we
@@ -231,7 +236,7 @@ equal to \textbf{4-s} will have an output of 1. All the y outputs whose
 subscript is greater than \textbf{3-s} will have an output of 0.
 
 \begin{figure}[ht]
-\includegraphics[width=0.4\paperwidth]{image6.png}
+\includegraphics[width=0.3\paperwidth]{image6.png}
 \caption{A 2:4 decoder.}
 \label{fig:2x4decoderSymbol}
 \end{figure}
@@ -240,12 +245,12 @@ The first few rows for the truth table for the 2:4 decoder are shown in
 Table~\ref{table:decoderTruthTable}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1688}} |
+ | >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1688}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1688}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1696}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1696}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1617}} |
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1617}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1617}}|@{}}
 \caption{Partial truth table for the 2:4 decoder.}
 \label{table:decoderTruthTable}
 \tabularnewline
@@ -299,8 +304,8 @@ have a separate Verilog file for the 2:4 decoder.} Remember that the
 output type from an always/case statement must have the ``reg''
 qualifier, not ``wire''.
 
-\hypertarget{hilowwin}{%
-\section{hiLowWin:}\label{hilowwin}}
+
+\section{Module: hiLowWin}
 
 The hiLowWin functionality converts the output from the comparator into
 the illuminated patterns shown in Figure~\ref{fig:hiLowWinDisplay} 
@@ -338,8 +343,8 @@ separate Verilog file for the hiLowWin. Remember that the output type
 from an always/case statement must have the ``reg'' qualifier, not
 ``wire''.
 
-\hypertarget{lfsr-module}{%
-\section{Module: LFSR}\label{lfsr-module}}
+
+\section{Module: LFSR}
 
 A linear feedback shift register (LFSR) is a digital circuit that
 generates a pseudo-random sequence of numbers starting from a seed
@@ -370,14 +375,13 @@ decimal number, equals 13. Fill in the next blank row of Table 2 using
 decimal 13 as an input. Repeat for the last row of the table.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}} |
+ | >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}} |
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}}@{}}
-\caption{\protect\hypertarget{_Ref31885470}{}{}The first
-iteration of the LFSR shown in Figure~\ref{fig:lfsrOperation} when started at decimal
-14.}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}}|@{}}
+\caption{The first iteration of the LFSR shown in Figure~\ref{fig:lfsrOperation} 
+when started at decimal 14.}
 \label{table:lfsrOperations}
 \tabularnewline
 \toprule()
@@ -448,8 +452,7 @@ For the lfsr module, I want you to:
   unsigned).
 \end{itemize}
 
-\hypertarget{hilow-module}{%
-\section{Module: hiLow}\label{hilow-module}}
+\section{Module: hiLow}
 
 The hiLow module stiches together all the modules created and provided
 to you. The hiLow module declaration contains all the signals shown in
@@ -537,7 +540,8 @@ module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hiLowBut,
   Run the testbench for the hiLow module provided on Canvas. Produce a
   timing diagram with the following characteristics. Zoom to fill the
   available horizontal space with the waveform. Color inputs green and
-  outputs red. Order the traces from top to bottom as
+  outputs red. Order the traces from top to bottom as shown in the 
+  \hypertarget{hlgg:signalColor}{following table}.
 
 \begin{tabular}{p{4cm}p{4cm}p{4cm}}
 signal & radix & color trace \\ \hline
@@ -554,8 +558,7 @@ signal & radix & color trace \\ \hline
 \end{itemize}
 
 
-\hypertarget{pin-assignment}{%
-\section{Pin Assignment:}\label{section:HiLoPin-assignment}}
+\section{Pin-Assignment}
 
 Use the image of the development board in 
 Figure~\ref{fig:inputOutputDevBoard} and the information
@@ -564,17 +567,13 @@ input and output devices used by the hiLow module. Note, this is where I
 had most of my errors.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3396}}|
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3396}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3718}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2886}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2886}}|@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Segment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-randSeg
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-hiLowSeg
-\end{minipage} \\
+\caption{Pin-Assignment for the High Low Guessing Game.}
+\label{table:hlggPinAssignment} \tabularnewline
+Segment & randSeg & hiLowSeg \\
 \midrule()
 \endhead
 seg{[}6{]} & PIN\_AC22 & PIN\_Y18 \\ \hline
@@ -588,19 +587,12 @@ seg{[}0{]} & & \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2596}} |
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2596}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2505}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2542}} |
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2357}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2357}}|@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-seedSwitch
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-playSwitch
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-guessSwitch
-\end{minipage} \\
+ & seedSwitch & playSwitch & guessSwitch \\ 
 \midrule()
 \endhead
 slide{[}3{]} & PIN\_AE19 & N/A & \\  \hline
@@ -611,16 +603,12 @@ slide{[}0{]} & & & \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}} |
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}} |
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-randBut
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Key{[}3{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
+
+randBut & Key{[}3{]} & \\
 \midrule()
 \endhead
 \begin{minipage}[t]{\linewidth}\raggedright
@@ -630,10 +618,10 @@ hiLowBut
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}} |
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}} |
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}} |
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}|@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 G{[}3{]}
@@ -650,8 +638,8 @@ G{[}0{]}
 \bottomrule()
 \end{longtable}
 
-\hypertarget{turn-in}{%
-\section{Turn in:}\label{section:hiLoTurn-in}}
+
+\section{Turn in}
 
 You may work in teams of at most two. Make a record of your response to
 the items below and turn them in a single copy as your team's solution
@@ -668,8 +656,7 @@ section next week.
   \protect\hyperlink{lfsr_verilog}{Link} Verilog code for the body of
   the module (courier 8-point font single spaced), leave out header
   comments.
-\item
-  \protect\hyperlink{_Ref31885470}{Link} A completed Table~\ref{table:lfsrOperations}.
+\item A completed Table~\ref{table:lfsrOperations}.
 \item
   \protect\hyperlink{lfsr_testbench}{Link} Complete the testbench for
   the lfsr module. Create timing diagram that asserts the four inputs
@@ -685,33 +672,19 @@ section next week.
 
 \begin{itemize}
 \item
-  Link Verilog code for the body of the hiLow module (courier 8-point
+  Verilog code for the body of the hiLow module (courier 8-point
   font single spaced), leave out header comments.
 \item
-  Link Run the testbench for the hiLow module provided on Canvas.
-  Produce a timing diagram with the following characteristics. Zoom to
-  fill the available horizontal space with the waveform. Color inputs
-  green and outputs red. Order the traces from top to bottom as
-
-\begin{tabular}{p{4cm}p{4cm}p{4cm}}
-    t\_seedSwitch & unsigned  & green trace \\
-    t\_guessSwitch & unsigned & green trace \\
-    t\_playSwitch & unsigned & green trace \\
-    t\_randBut & default & green trace \\
-    t\_hiLowBut & default & green trace \\
-    LFSR output & unsigned & yellow trace\\
-    t\_randSeg & hex & red trace \\
-    t\_hiLowSeg & hex & red trace \\
-    t\_greenLEDs & default & red trace \\
-  \end{tabular}
+  Run the testbench for the hiLow module provided on Canvas.
+  Produce a timing diagram according to
+  \hyperlink{hlgg:signalColor}{this table}. Zoom to
+  fill the available horizontal space with the waveform. 
 \end{itemize}
 
-\subsubsection{Pin Assignment:}
+\subsubsection{Pin-Assignment}
 
 \begin{itemize}
-\item
-  Link Completed pin assignment table for all the signals in the hiLow
-  module.
+\item Completed pin assignment table for all the signals in the hiLow module in Table~\ref{table:hlggPinAssignment}.
 \end{itemize}
 
 

@@ -3,17 +3,30 @@
 \graphicspath{ {./Lab01SimpleVerilog/Fig} }
 
 
-\hypertarget{objective}{%
-\section{\texorpdfstring{Objective }{Objective }}
-\label{section:IntroVerilogObjective}}
+\section{Outcomes and Objective }
 
-The objective of this lab is to introduce you to the Quartus II
+The outcome of this lab is to introduce you to the Quartus II
 software, design entry using Verilog and circuit simulation.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\itemsep=0em
+	\item \Paste{bok:REP_Elfs}
+	\item \Paste{bok:REP_Convert}
+	\item \Paste{VER:CSA}
+	\item \Paste{VER:Logic}
+	\item\Paste{HDL:Time}
+\end{itemize}
 
+\section{FPGA: Creating a project in Quartus and running a testbench}
+In this section you will simulate applying inputs to a 2-input ND gate and
+observing the output on a timing diagram.  Since all this activity will
+take place in the memory of a computer and not on actual hardware,
+it is called a simulation.
 
-\hypertarget{part-1-setting-up-a-project-in-quartus-and-running-a-testbench}{%
-\section{Part 1: Setting up a project in Quartus and running a testbench}
-\label{part-1-setting-up-a-project-in-quartus-and-running-a-testbench}}
+will learn how to set up a project in Quartus and simulate
+a digital circuit using a piece of Verilog code called a testbench.  The output
+from this step
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -289,10 +302,8 @@ window into the graphics buffer.
   Close Project. Save if needed.
 \end{enumerate}
 
-\hypertarget{part-2-symbolic-to-verilog-timing-diagram-truth-table.}{%
-\section{Part 2: Symbolic to Verilog , Timing Diagram, Truth Table}
-\label{part-2-symbolic-to-verilog-timing-diagram-truth-table.}}
 
+\section{FPGA: Symbolic to Verilog , Timing Diagram, Truth Table}
 Write Verilog code to realize the function \emph{f02 = a' + bc'} Note
 that this symbolic expression is written using the notation used in
 class. This is not a valid Verilog expression.
@@ -331,10 +342,7 @@ class. This is not a valid Verilog expression.
   examples if you are unclear about how to setup a truth table.
 \end{enumerate}
 
-
-\hypertarget{part-3-verilog-to-symbolic-truth-table-circuit-diagram}{%
-\section{Part 3: Verilog to Symbolic, Truth Table, Circuit Diagram}
-\label{part-3-verilog-to-symbolic-truth-table-circuit-diagram}}
+\section{FPGA: Verilog to Symbolic, Truth Table, Circuit Diagram}
 
 The Verilog code in the file function03 contains a complete circuit for
 \emph{f03}. You will use the Quartus tools to get a timing diagram for
@@ -391,9 +399,9 @@ form and circuit diagram.
   \emph{function03.v} write down the symbolic form for \emph{f03}.
 \end{enumerate}
 
-\hypertarget{part-4-circuit-diagram-to-verilog-symbolic-truth-table}{%
-\section{Part 4: Circuit Diagram to Verilog, Symbolic, Truth Table}
-\label{part-4-circuit-diagram-to-verilog-symbolic-truth-table}}
+
+\section{FPGA: Circuit Diagram to Verilog, Symbolic, Truth Table}
+
 
 Write Verilog code to realize the function \emph{f04} shown in the
 circuit diagram below.
@@ -431,9 +439,9 @@ circuit diagram below.
   timing diagram, produce a truth table.
 \end{enumerate}
 
-\hypertarget{turn-in}{%
+
 \section{Turn in:}
-\label{turn-in}}
+
 
 Make a record of your response to numbered items below and turn them in
 a single copy as your team's solution on Canvas using the instructions
@@ -441,38 +449,31 @@ posted there. Include the names of both team members at the top of your
 solutions. Use complete English sentences to introduce what each of the
 following listed items (below) is and how it was derived.
 
-\textbf{Part 1:} \protect\hyperlink{Part_1_Step_23}{Step 23} Timing
-diagram of AND gate
+\subsubsection{FPGA: Creating a project in Quartus and running a testbench}
+\begin{itemize}
+	\item \protect\hyperlink{Part_1_Step_23}{Step 23} Timing diagram of AND gate
+\end{itemize}
 
-\textbf{Part 2:} \protect\hyperlink{Part_2_Step_4}{Step 4} Verilog code
-for \emph{f02}
+\subsubsection{FPGA: Symbolic to Verilog , Timing Diagram, Truth Table}
+\begin{itemize}
+	\item \protect\hyperlink{Part_2_Step_4}{Step 4} Verilog code for \emph{f02}
+	\item \protect\hyperlink{Part_2_Step_7}{Step 7} Timing diagram of \emph{f02}
+	\item \protect\hyperlink{Part_2_Step_8}{Step 8} Truth table of \emph{f02}
+\end{itemize}
 
-\textbf{Part 2:} \protect\hyperlink{Part_2_Step_7}{Step 7} Timing
-diagram of \emph{f02}
+\subsubsection{FPGA: Verilog to Symbolic, Truth Table, Circuit Diagram}
+\begin{itemize}
+	\item \protect\hyperlink{Part_3_Step_6}{Step 6} Timing diagram of \emph{f03}
+	\item \protect\hyperlink{Part_3_Step_7}{Step 7} Truth table of \emph{f03}
+	\item \protect\hyperlink{Part_3_Step_8}{Step 8} Circuit	Diagram of \emph{f03}
+	\item \protect\hyperlink{Part_3_Step_9}{Step 9} Symbolic form of \emph{f03}
+\end{itemize}
 
-\textbf{Part 2:} \protect\hyperlink{Part_2_Step_8}{Step 8} Truth table
-of \emph{f02}
-
-\textbf{Part 3:} \protect\hyperlink{Part_3_Step_6}{Step 6} Timing
-diagram of \emph{f03}
-
-\textbf{Part 3:} \protect\hyperlink{Part_3_Step_7}{Step 7} Truth table
-of \emph{f03}
-
-\textbf{Part 3:} \protect\hyperlink{Part_3_Step_8}{Step 8} Circuit
-Diagram of \emph{f03}
-
-\textbf{Part 3:} \protect\hyperlink{Part_3_Step_9}{Step 9} Symbolic form
-of \emph{f03}
-
-\textbf{Part 4:} \protect\hyperlink{Part_4_Step_4}{Step 4} Just the 4
-Verilog assign statement for \emph{o1}, \emph{a1}, \emph{a2}, and
-\emph{f04}.
-
-\textbf{Part 4:} \protect\hyperlink{Part_4_Step_7}{Step 7} Timing
-diagram of \emph{f04}
-
-\textbf{Part 4:} \protect\hyperlink{Part_4_Step_8}{Step 8} Truth table
-of \emph{f04}
-
+\subsubsection{FPGA: Circuit Diagram to Verilog, Symbolic, Truth Table}
+\begin{itemize}
+	\item \protect\hyperlink{Part_4_Step_4}{Step 4} Just the 4 Verilog assign statement 
+			for \emph{o1}, \emph{a1}, \emph{a2}, and \emph{f04}.
+	\item \protect\hyperlink{Part_4_Step_7}{Step 7} Timing diagram of \emph{f04}
+	\item \protect\hyperlink{Part_4_Step_8}{Step 8} Truth table of \emph{f04}
+\end{itemize}
 

@@ -1,43 +1,87 @@
-\chapter{Digital Design Body Of Knowledge}
-The focus of this text is a datapath and control approach.  
+\chapter{Objectives}
+These are the objectives of the lecture
+and homework sequence of the course.  They have been arranged
+to parallel the chapter/section sequence in the textbook.
 
 \dirtree{%
-	.1 \hypertarget{bok:Digital_Design}{Digital Design}.
-	.2 \hypertarget{bok:Numbering_systems}{Numbering Systems}.
-	.3 \hypertarget{bok:NS_Positional}{Positional Numbering Systems}.
-	.4 \hypertarget{bok:NS_POS_base10}{Base 10 - Decimal}.
-	.4 \hypertarget{bok:NS_POS_base2}{Base 2 - Binary}.
-	.4 \hypertarget{bok:NS_POS_base16}{Base 16 - Hexadecimal}.
-	.3 \hypertarget{bok:NS_baseConversion}{Between Bases}.
-	.3 \hypertarget{bok:NS_Word Size}{Word Size}.
-	.3 \hypertarget{bok:NS_Twos}{2's Complement}.	
-	.2 \hypertarget{bok:Respresentions}{Representation of Logical Function}.
-	.3 \hypertarget{bok:REP_Elfs}{Elementary Logical Functions}.
-	.3 \hypertarget{bok:REP_WordStatement}{Word Statement}.
-	.3 \hypertarget{bok:REP_TruthTable}{Truth Table}.
-	.3 \hypertarget{bok:REP_Symbolic}{Symbolic}.
-	.3 \hypertarget{bok:REP_CircuitDiagram}{Circuit Diagram}.
-	.3 \hypertarget{bok:REP_HDL}{Hardware Description Languages}.
-	.3 \hypertarget{bok:REP_Convert}{Conversion Between Representations}.
-	.3 \hypertarget{bok:REP_Timing}{Timing Diagrams}.
-	.2 \hypertarget{bok:LogicMin}{Logic Minimization}.
-	.3 \hypertarget{bok:LM_Kmap}{Karnaugh Maps (Kmaps)}.
-	.3 \hypertarget{bok:LM_MultiOut}{Kmaps for circuits with multiple outputs}.
-	.3 \hypertarget{bok:LM_KmapPos}{Kmaps to find POSmin}.
-	.3 \hypertarget{bok:LM_Soft}{Logic Minimization Software}.
-	.2 \hypertarget{bok:Com_Building_Blocks}{Combination Logic Building Blocks}.
-	.3 \hypertarget{bok:CC_Dec}{Decoder}.
-	.3 \hypertarget{bok:CC_Mux}{Multiplexers}.
-	.3 \hypertarget{bok:CC_Adder}{Adders}.
-	.3 \hypertarget{bok:CC_Compare}{Comparators}.
-	.3 \hypertarget{bok:CC_WireLogic}{Wire Logic}.
-	.3 \hypertarget{bok:CC_Combos}{Combination}.
-	.4 \hypertarget{bok:CC_ArthStatements}{Arithmetic Statements}.
-	.4 \hypertarget{bok:CC_ConditionalStatements}{Conditional Statements}.
-	.2 \hypertarget{bok:BasicMemoryElements}{Basic Memory Elements}.
-	.3 \hypertarget{bok:BME_Char}{Characteristics}.
-	.3 \hypertarget{bok:BME_Timing}{Timing}.
-	.3 \hypertarget{bok:BME_Asynch}{Asynchronous set/reset}.
-	.2 \hypertarget{bok:BMS_Memory}{Sequential Logic Building Blocks}.	
+	.1 \Copy{bok:Digital_Design}{Digital Design}.	
+	.2 \Copy{bok:Numbering_systems}{Numbering Systems}.
+	.3 \Copy{bok:NS_Positional}{Positional Numbering Systems}.
+	.4 \Copy{bok:NS_POS_base10}{Base 10 - Decimal}.
+	.4 \Copy{bok:NS_POS_base2}{Base 2 - Binary}.
+	.4 \Copy{bok:NS_POS_base16}{Base 16 - Hexadecimal}.
+	.3 \Copy{bok:NS_baseConversion}{Between Bases}.
+	.3 \Copy{bok:NS_Word Size}{Word Size}.
+	.3 \Copy{bok:NS_Twos}{2's Complement}.
+	.2 \Copy{bok:Respresentions}{Representation of Logical Function}.
+	.3 \Copy{bok:REP_Elfs}{Elementary Logical Functions}.
+	.3 \Copy{bok:REP_WordStatement}{Analyzing a word statement for a logic function}.
+	.3 \Copy{bok:REP_TruthTable}{Creating a truth table description for a logic function}.
+	.3 \Copy{bok:REP_Symbolic}{Creating a symbolic form for a logic function}.
+	.3 \Copy{bok:REP_CircuitDiagram}{Creating a circuit diagram for a logic function}.
+	.3 \Copy{bok:REP_HDL}{Creating Hardware Description Language statements for a logic function}.
+	.3 \Copy{bok:REP_Convert}{Conversion between two different representations of a logic function}.
+	.3 \Copy{bok:REP_MultiOut}{Describing a functions with multiple outputs}.	
+	.3 \Copy{bok:REP_Timing}{Timing Diagrams}.
+	.2 \Copy{bok:LogicMin}{Logic Minimization}.
+	.3 \Copy{bok:LM_Kmap}{Karnaugh Maps (Kmaps)}.
+	.3 \Copy{bok:LM_MultiOut}{Kmaps for circuits with multiple outputs}.
+	.3 \Copy{bok:LM_KmapPos}{Kmaps to find POSmin}.
+	.3 \Copy{bok:LM_Soft}{Using logic minimization software to describe a logic function}
+	.2 \Copy{bok:Com_Building_Blocks}{Combination Logic Building Blocks}.
+	.3 \Copy{bok:CC_Dec}{Decoder}.
+	.3 \Copy{bok:CC_Mux}{Multiplexers}.
+	.3 \Copy{bok:CC_Adder}{Adders}.
+	.3 \Copy{bok:CC_Compare}{Comparators}.
+	.3 \Copy{bok:CC_WireLogic}{Wire Logic}.
+	.3 \Copy{bok:CC_Combos}{Combination}.
+	.4 \Copy{bok:CC_ArthStatements}{Arithmetic Statements}.
+	.4 \Copy{bok:CC_ConditionalStatements}{Conditional Statements}.	
+	.2 \Copy{bok:BasicMemoryElements}{Basic Memory Elements}.
+	.3 \Copy{bok:BME_Char}{Characteristics}.
+	.3 \Copy{bok:BME_Timing}{Timing}.
+	.3 \Copy{bok:BME_Asynch}{Asynchronous set reset}.	
+	.2 \Copy{bok:BMS_Memory}{Sequential Logic Building Blocks}.	
+	.3 \Copy{bok:BMS_Reg}{Analysis, design and use of a register in a digital design}.
+	.3 \Copy{bok:BMS_ShitReg}{Shift Register}.
+	.3 \Copy{bok:BMS_Counter}{Counter}.
+	.3 \Copy{bok:BMS_Ram}{Static RAM}.
+	.3 \Copy{bok:BMS_RegTran}{Register Transfer}.	
+	.2 \Copy{bok:FSM}{Finite State Machines}.
+	.3 \Copy{bok:FSM_Hardware}{Hardware organization of a finite state machine}.
+	.3 \Copy{bok:FSM_StateDiagram}{State diagram for a finite state machine}.
+	.3 \Copy{bok:FSM_OneHot}{One's Hot Encoding}.
+	.3 \Copy{bok:FSM_design}{Design}.
+	.3 \Copy{bok:FSM_Timing}{Timing}.
+	.2 \Copy{bok:DaC}{Datapath and Control}.
+	.3 \Copy{bok:DaC_Architecture}{Datapath and Control Architecture}.
+	.3 \Copy{bok:DaC_Algorithm}{Algorithmic Language}.
+	.3 \Copy{bok:DaC_Design}{Design}.
+	.3 \Copy{bok:DaC_Timing}{Timing}.	
 }
 \vspace{0.5cm}
+
+These are the objectives of the lab sequence in this class broken down into Verilog  and FPGA.  Verilog
+objectives are agnostic to the hardware platform. FPGA objectives are specific to the
+hardware and software platformed used to implement the designs laid out in 
+these labs.  This organization should enable instructors to quickly identify units 
+which may need to be adapted
+to run the lab sequence on different hardware/software platform.
+\dirtree{%
+	.1 \Copy{VER}{Verilog }.
+	.2 \Copy{VER:CSA}{Writing concurrent signal assignment statements for a logic function}.
+	.2 \Copy{VER:Logic}{Writing a Verilog statement using primitive logic operations}.
+	.2 \Copy{VER:AlwaysCase}{Writing a Verilog statement using an Always/Case statement}.	
+	.2 \Copy{VER:Vectors}{Creating a Verilog statement that uses vectors}.
+	.2 \Copy{VER:Test}{Analyzing and designing a Verilog testbench}.
+	.2 \Copy{VER:Generics}{Definition and instantiation of Verilog generic modules}.	
+	.2 \Copy{VER:Module}{Definition o Verilog modules}.
+	.2 \Copy{VER:Instantiating}{Instantiation of Verilog Modules}.
+	.2 \Copy{VER:fsm}{Definition of Finite State Machines in Verilog}.	
+	.1 \Copy{HDL}{Hardware and Software Specifics}.
+	.2 \Copy{HDL:Time}{Creating a simulation timing diagram for a module}.
+	.2 \Copy{HDL:Pin}{Creating a pin assignment for a module}.
+	.2 \Copy{HDL:Do}{Creating a Do file to automate waveform setup}.
+	.2 \Copy{HDL:Synthesis}{Synthesizing a module on the FPGA development board}.
+}	
+		

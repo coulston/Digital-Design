@@ -3,14 +3,24 @@
 \graphicspath{ {./Lab03RockPaperScissor/Fig} }
 
 
-\hypertarget{objective}{%
-\section{Objective }
-\label{section:rpsObjective}}
+\section{Outcomes and Objectives}
 
-The objective of this lab is to use the concepts learned to build a
-digital system to play a game of rock, paper, scissors.
+The outcome of this lab is to instantiate a rock, paper scissors games
+on the FPGA development board. 
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\itemsep=0em
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+	\item \Paste{VER:CSA}
+	\item \Paste{VER:Module}
+	\item \Paste{VER:Instantiating}
+	\item \Paste{HDL:Pin}
+	\item \Paste{HDL:Synthesis}
+\end{itemize}
 
-\subsubsection{Rock Paper, Scissors}
+\section{The Rock Paper Scissors Game}
 
 The game of rock, paper, scissors is a two-player game whose goal is to
 beat the throw of the opposing player. Traditionally, each player throws
@@ -66,11 +76,11 @@ Table~\ref{table:gameLogic}. When the Throw button is un-pressed, the Win/Lose 7
 display is blank.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
 \caption{The output for every combination of player 1 (P1) and player 2 (P2) throws.}  
 \label{table:gameLogic}
 \tabularnewline
@@ -105,11 +115,11 @@ Invalid
 Rock & d & 2 & 1 & 1 \\ \hline
 Paper & 1 & d & 2 & 1 \\ \hline
 Scissors & 2 & 1 & d & 1 \\ \hline
-Invalid & 2 & 2 & 2 & d \\
+Invalid & 2 & 2 & 2 & d \\ \hline
 
 \end{longtable}
 
-\textbf{System design}
+\section{System Architecture}
 
 There are an almost unlimited number of ways that you could implement
 this digital system. Since this is your first lab building a system, you
@@ -185,38 +195,18 @@ table in Table~\ref{table:onesToDense} for the onesToDense function.
 \end{itemize}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
-\caption{\protect\hypertarget{_Ref30701520}{}{}The truth table for the onesToDense function.}\\
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
+\caption{The truth table for the onesToDense function.}\label{table:onesToDense}\tabularnewline 
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-r
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-p
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-s
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-play
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Note
-\end{minipage} \\ \hline
+r & p & s & play & Note \\ \hline
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-r
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-p
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-s
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-play
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Note
-\end{minipage} \\ \hline
+r & p & s & play & Note \\ \hline
 \midrule()
 \endhead
 0 & 0 & 0 & & \\ \hline
@@ -226,8 +216,7 @@ Note
 1 & 0 & 0 & 00 & Rock \\ \hline
 1 & 0 & 1 & & \\ \hline
 1 & 1 & 0 & & \\ \hline
-1 & 1 & 1 & & \\
-\label{table:onesToDense}
+1 & 1 & 1 & & \\ \hline
 \end{longtable}
 
 From this truth table, determine the canonical SOP expressions for
@@ -293,7 +282,7 @@ formed by concatenating the bits together. Use proper Verilog syntax to
 write this 7-bit vector.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1513}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1513}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
@@ -302,56 +291,14 @@ write this 7-bit vector.
   >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.2210}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1777}}@{}}
-\caption{\protect\hypertarget{_Ref30701476}{}{}Table to
-determine the bit values for the 7-segment display LEDs to produce the
-throw patterns.}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1777}}|@{}}
+\caption{The 7-segment display LEDs to produce the throw patterns.}\label{table:throwSevenSeg}\tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-pPlay
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-6
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-5
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-4
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-3
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-0
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Note
-\end{minipage} \\
+pPlay & 6 & 5 & 4 & 3 & 2 & 1 & 0 & sevenSeg & Note \\ \hline
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-pPlay
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-6
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-5
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-4
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-3
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-0
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Note
-\end{minipage} \\ \hline
+pPlay & 6 & 5 & 4 & 3 & 2 & 1 & 0 & sevenSeg & Note \\ \hline
 \midrule()
 \endhead
 00 & & & & & & & & & Rock \\ \hline
@@ -359,7 +306,6 @@ Note
 10 & & & & & & & & & Scissors \\ \hline
 11 & & & & & & & & 7'b1111111 & Invalid \\
 \bottomrule()
-\label{table:throwSevenSeg}
 \end{longtable}
 
 \protect\hypertarget{play2Seven_Verilog}{}{}Incorporate the following
@@ -413,39 +359,19 @@ the game. In the Note column put either ``1'', ``2'', ``Draw'', or
 bit order given in Figure~\ref{figure:throw7seg}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1723}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1723}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2093}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2055}}||
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2188}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1941}}@{}}
-\caption{\protect\hypertarget{_Ref30701411}{}{}Abbreviated
-truth table for the winLose module.}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1941}}|@{}}
+\caption{Abbreviated truth table for the winLose module.}\label{table:winLooseTt}\tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-button
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-p1Play
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-p2Play
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Note
-\end{minipage} \\
+
+button & p1Play & p2Play & sevenSeg & Note \\ \hline
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-button
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-p1Play
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-p2Play
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sevenSeg
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Note
-\end{minipage} \\ \hline
+button & p1Play & p2Play & sevenSeg & Note \\ \hline
 \midrule()
 \endhead
 0 & & & & \\ \hline
@@ -466,7 +392,6 @@ Note
 0 & & & & \\ \hline
 1 & xx (don't care) & xx (don't care) & 7'b1111111 & Blank \\
 \bottomrule()
-\label{table:winLooseTt}
 \end{longtable}
 
 \protect\hypertarget{winLoose_Verilog}{}{}Incorporate the following into
@@ -578,43 +503,24 @@ bullet point item in the list below. For this module, I want you to:
   \end{itemize}
 \end{itemize}
 
-
-\hypertarget{pin-assignment}{%
-\section{Pin Assignment:}\label{pin-assignment}}
+\section{Pin-Assignment}
 
 Use the image of the Development Board in Figure~\ref{figure:systemIO} and the information
 in the board User Guide to determine the FPGA pins associated with the
 input and output devices used by the rpsGame module.
 
 \begin{longtable}[]{@{}
+| >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
-\caption{\protect\hypertarget{rpsGame_PinAssignment}{}{}Pin
-assignment tables for the Rock Paper Scissor Game.}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|@{}}
+\caption{Pin assignment tables for the Rock Paper Scissor game.}\label{table:rpsPinAssignment}\tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Segment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Player 1 Throw
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Player 2 Throw
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Win/Lose
-\end{minipage} \\ \hline
+Segment & Player 1 Throw & Player 2 Throw & Win/Lose \\ \hline
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Segment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Player 1 Throw
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Player 2 Throw
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Win/Lose
-\end{minipage} \\ \hline
+Segment & Player 1 Throw & Player 2 Throw & Win/Lose \\ \hline
 \midrule()
 \endhead
 seg{[}6{]} & PIN\_Y18 & & \\ \hline
@@ -628,16 +534,11 @@ seg{[}0{]} & & & PIN\_AA18 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Player 1 Slide Switch
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Player 2 Slide Switch
-\end{minipage} \\ \hline
+ & Player 1 Slide Switch & Player 2 Slide Switch \\ \hline
 \midrule()
 \endhead
 slide{[}2{]} & & \\ \hline
@@ -647,16 +548,11 @@ slide{[}0{]} & PIN\_AC9 & \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+| >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2333}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2333}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Play Button
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Key{[}0{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
+Play Button & Key{[}0{]} & .\\ \hline
 \midrule()
 \endhead
 %\bottomrule()
@@ -665,11 +561,9 @@ Key{[}0{]}
 Note, each push-button provides a high logic level when it is not
 pressed, and provides a low logic level when pressed.
 
-\hypertarget{turn-in}{%
-\section{Turn in:}
-\label{hex2seven_turn-in}}
+\section{Turn in}
 
-You may work in tem of at most two. Make a record of your response to
+You may work in team of at most two. Make a record of your response to
 the items below and turn them in a single copy as your team's solution
 on Canvas using the instructions posted there. Include the names of both
 team members at the top of your solutions. Use complete English
@@ -678,37 +572,36 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\textbf{onesToDense Module:}
+\subsubsection{onesToDense Module}
 \begin{itemize}
-\item \protect\hyperlink{_Ref30701520}{link} Complete Table~ref{table:onesToDense} truth table for oneToDense module
-\item \protect\hyperlink{ones2Dense_CanonicalSOP}{link} Canonical SOP expressions for the play{[}1{]} and play{[}0{]} functions
-\item \protect\hyperlink{ones2Dense_Verilog}{link} Verilog code for the entire
+\item Complete Table~\ref{table:onesToDense} truth table for oneToDense module.
+\item \protect\hyperlink{ones2Dense_CanonicalSOP}{link} Canonical SOP expressions for the play{[}1{]} and play{[}0{]} functions.
+\item \protect\hyperlink{ones2Dense_Verilog}{link} Verilog code for the entire.
 module (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
-\textbf{playToSeven Module:}
+\subsubsection{playToSeven Module}
 \begin{itemize}
-\item \protect\hyperlink{_Ref30701476}{link} Complete Table~\ref{table:throwSevenSeg}
+\item Complete Table~\ref{table:throwSevenSeg}.
 \item  \protect\hyperlink{play2Seven_Verilog}{link} Verilog code for the module
 (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
-\textbf{winLose Module:}
+\subsubsection{winLose Module}
 \begin{itemize}
-\item \protect\hyperlink{_Ref30701411}{link} Complete Table~\ref{table:winLooseTt} truth table for winLose module
+\item Complete Table~\ref{table:winLooseTt} truth table for winLose module.
 \item \protect\hyperlink{winLoose_Verilog}{link} Verilog code for the module
 (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
-\textbf{rpsGame Module:}
+\subsubsection{rpsGame Module}
 \begin{itemize}
 \item \protect\hyperlink{play2Seven_Verilog}{link} Verilog code for the module
 (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
-\textbf{Pin Assignment:}
+\subsubsection{Pin Assignment}
 \begin{itemize}
-\item \protect\hyperlink{rpsGame_PinAssignment}{link} Completed pin assignment
-table for 7-segment, slide switches and button.
+\item Completed pin assignment for 7-segment, slide switches and button in Table~\ref{table:rpsPinAssignment}.
 \end{itemize}
 

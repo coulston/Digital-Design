@@ -2,19 +2,20 @@
 \label{chapter:HexToSeven}
 \graphicspath{ {./Lab02HexToSeven/Fig} }
 
+\section{Outcomes and Objectives}
 
-\hypertarget{objective}{%
-\section{Introduction}
-\label{hex2Seven:introduction}}
-
-The objective of this lab is to introduce you to two new Verilog concepts, vectors,and always/case statement.
-You will learn how to assign pins to your module ports in a process called pin-assignment.  Finally, you
-will download a module+pin-assignment to the development board.
-
-\subsection{Prerequisite concepts}
+The outcome of this lab is to instantiate a hexadecimal to seven segment converter
+on the FPGA development board.  Through this process you will achieve the following
+learning objectives.
 \begin{itemize}
-	\item \hyperref[bok:REP_TruthTable]{Truth Table}
-	\item Truth Table
+	\itemsep=0em
+	\item \Paste{bok:REP_TruthTable}
+	\item \Paste{bok:REP_MultiOut}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{VER:Vectors}	
+	\item \Paste{VER:AlwaysCase}
+	\item \Paste {HDL:Time}
+	\item \Paste{HDL:Pin}
 \end{itemize}
 
 
@@ -182,7 +183,7 @@ Muf02
 1 & 0 & 0 & & & \\ \hline
 1 & 0 & 1 & & & \\ \hline
 1 & 1 & 0 & & & \\ \hline
-1 & 1 & 1 & & & \\
+1 & 1 & 1 & & & \\ \hline
 %\bottomrule()
 \end{longtable}
 
@@ -289,9 +290,8 @@ Port & a & b & c & f{[}2{]} & f{[}1{]} & f{[}0{]}   \\
 \midrule()
 \endhead
 Signal name 	& SW{[}2{]} & SW{[}1{]} & SW{[}0{]} 	& LEDR{[}2{]} & LEDR{[}1{]} & LEDR{[}0{]} \\ \hline
-FPGA Pin No. 	& 		& 		& PIN\_AC9 & 		& 			& \\
+FPGA Pin No. 	& 		& 		& PIN\_AC9 & 		& 			& \\ \hline
 \bottomrule()
-\label{table:pinAssignmentCombinedLab01}
 \end{longtable}
 
 \section{FPGA: Synthesizing a Verilog Module}
@@ -472,7 +472,6 @@ x & seg{[}6{]} & seg{[}5{]} & seg{[}4{]} &  seg{[}3{]} & seg{[}2{]} & seg{[}1{]}
 1110 & & & & & & & \\ \hline
 1111 & & & & & & & \\
 \bottomrule()
-\label{table:hex2sevenTruthTable}
 \end{longtable}
 
 Complete the pin assignment tables for the inputs and outputs of the 
@@ -498,18 +497,17 @@ Port & x{[}3{]} & x{[}2{]} & x{[}1{]} & x{[}0{]} \\ \hline
 Signal name & SW{[}3{]} & SW{[}2{]} & SW{[}1{]} & SW{[}0{]} \\ \hline
 FPGA Pin No. & & & & PIN\_AC9 \\
 \bottomrule()
-\label{table:pinAssignmentHex2Seven}
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1083}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1083}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1431}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1431}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1431}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1341}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}|@{}}
 \toprule()
 Port &
 sevenSeg{[}6{]} &
