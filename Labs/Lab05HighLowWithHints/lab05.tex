@@ -434,12 +434,15 @@ declaration in Listing~\ref{listing:hiLowModule}.
  caption={The module declaration for the enhanced hiLow module if you did or did 
  not get the previous lab working.},
  label={listing:hiLowModule},
+basicstyle=\tiny\ttfamily,
  frame=single]
+ 
  // Didn't get previous lab working, then use this module declaration
 module hiLow(seedSwitch, guessSwitch, hotColdBut, hotColdSeg);
 
-// Did you complete the previous lab successfully?  Then use this module declaration.
-module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hotColdBut, hiLowBut, randMsbSeg, randLsbSeg, greenLEDs, hotColdSeg, hiLowSeg);
+// Did you complete the previous lab successfully?  Then use this module declaration (with no line break)
+module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hotColdBut, hiLowBut, randMsbSeg, randLsbSeg, 
+					greenLEDs, hotColdSeg, hiLowSeg);
  \end{lstlisting}
  
 The \emph{randNum} and \emph{guess} comparator is connected to the pair of 2:1 muxes 
@@ -554,13 +557,13 @@ hiLowSeg
 \end{minipage} \\
 \midrule()
 \endhead
-seg{[}6{]} & AC22 & & Y18 \\ \hline
-seg{[}5{]} & AC23 & & Y19 \\ \hline
-seg{[}4{]} & AC24 & & Y20 \\ \hline
-seg{[}3{]} & AA22 & & W18 \\ \hline
-seg{[}2{]} & AA23 & & V17 \\ \hline
-seg{[}1{]} & Y23 & & V18 \\ \hline
-seg{[}0{]} & Y24 & & V19 \\
+seg{[}6{]} & AC22 & &  \\ \hline
+seg{[}5{]} &     & &  \\ \hline
+seg{[}4{]} &  & &  \\ \hline
+seg{[}3{]} &  & & W18 \\ \hline
+seg{[}2{]} & AA23 & &  \\ \hline
+seg{[}1{]} &  & &  \\ \hline
+seg{[}0{]} &  & & V19 \\
 \bottomrule()
 \end{longtable}
 
@@ -580,10 +583,10 @@ guessSwitch
 \end{minipage} \\
 \midrule()
 \endhead
-slide{[}3{]} & AE19 & N/A & AC8 \\ \hline
-slide{[}2{]} & Y11 & N/A & AD13 \\ \hline
-slide{[}1{]} & AC10 & AB10 & AE10 \\ \hline
-slide{[}0{]} & V10 & W11 & AC9 \\
+slide{[}3{]} & AE19 & N/A &  \\ \hline
+slide{[}2{]} &  & N/A &  \\ \hline
+slide{[}1{]} &  &  & AE10 \\ \hline
+slide{[}0{]} &  & W11 &  \\
 \bottomrule()
 \end{longtable}
 
@@ -603,18 +606,18 @@ Y16
 \endhead
 \begin{minipage}[t]{\linewidth}\raggedright
 hotColdBut
-\end{minipage} & Key{[}2{]} & \\
+\end{minipage} & Key{[}2{]} & \\ \hline
 \begin{minipage}[t]{\linewidth}\raggedright
 hiLowBut
-\end{minipage} & Key{[}0{]} & P11 \\
+\end{minipage} & Key{[}0{]} &  \\
 \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
+| >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}|@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 G{[}3{]}
@@ -627,7 +630,7 @@ G{[}0{]}
 \end{minipage} \\
 \midrule()
 \endhead
-E9 & D8 & K6 & L7 \\
+E9 &  &  &  \\
 \bottomrule()
 \end{longtable}
 

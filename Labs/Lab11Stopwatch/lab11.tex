@@ -2,14 +2,20 @@
 \label{chapter:swDpAndCu}
 \graphicspath{ {./Lab11Stopwatch/Fig} }
 
-\hypertarget{objective}{%
-\section{Objective }\label{section:swComplete}}
+\section{Outcomes and Objectives}
 
-The objective of this lab is to unify the stopwatch datapath and control
-units into a working design that runs on the FPGA development
-board.
+The outcome of this lab is complete the implementation
+of the stopwatch  on the FPGA development board.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
 
-\section{Discussion}
+
+
+\section{Stopwatch}
 
 From the previous lab, you should be familiar with the operation of our
 stopwatch. Briefly, our stopwatch allows a user to measure elapsed time
@@ -42,7 +48,7 @@ connected to a button and the 50MHz clock is on the FPGA
 development board but does not require any user
 interaction.
 
-\section{Stopwatch architecture}
+\section{System Architecture}
 
 In the previous 2 labs you have created the datapath and control unit
 for the stopwatch. Using these 2 components as building blocks, the
@@ -66,7 +72,7 @@ Use the starter code provided on Canvas to complete the stopwatch
 module. While you are at it, download the stopwatch testbench provided
 on Canvas, and make the testbench the top-level entity.
 
-\section{Stopwatch Simulation}
+\subsection{Simulation for Stopwatch}
 
 Before you download your completed control unit to the development boards,
 you are going to perform extensive simulations to uncover as many bugs
@@ -103,7 +109,7 @@ against Figure~\ref{fig:swTiming} You will probably need to modify the do
 file to make it work with your design. Address any problems in the
 stopwatch before proceeding.
 
-\section{Stopwatch Synthesis}
+\subsection{Systehesis for Stopwatch}
 
 When you created the datapath, you intentionally designed the timer
 counter to count up from 0 to 2 in order to expedite execution of the

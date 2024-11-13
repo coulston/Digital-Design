@@ -2,18 +2,27 @@
 \label{chapter:cellAuto}
 \graphicspath{ {./Lab07CellularAutomata/Fig} }
 
-\hypertarget{objective}{%
-\subsubsection{section}{Objective }\label{section:caObjective}}
+\section{Outcomes and Objectives}
 
-The objective of this lab is to design a digital circuit using a basic
-memory element.
+The outcome of this lab is to instantiate a 1-dimensional 
+cellular automata using D-Flip Flops and combinational logic.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
 
-\section{Theory - 1-dimensional cellular automata}
+
+
+\section{1-dimensional cellular automata}
 
 A common research theme in intelligent systems is emergent complexity.
 This is the idea that complex behavior can arise from an interconnected
-arrangement of simple processing elements following simple rules. As a
-testbench for this idea, Stephen Wolfram\footnote{Wolfram, S.
+arrangement of simple processing elements following simple rules. 
+
+\subsection{Theory: Cellular Automata}
+As a testbench for this idea, Stephen Wolfram\footnote{Wolfram, S.
   "Statistical Mechanics of Cellular Automata." Rev. Mod. Phys. 55,
   601-644, 1983.} explored emergent complexity in a 1-dimensional
 cellular automata (1-DCA) network. A 1-DCA is an array of processing
@@ -25,7 +34,7 @@ right. Let's explore the evolution of a 1-DCA using the setup shown in
 Figure~\ref{fig:exampleCA}, note that cells which are alive are shaded and cells which are
 dead, white.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image1.png}
 \caption{A 1-DCA consisting of 8 processing elements. Alive cells are
 shaded grey, dead white.}
@@ -110,7 +119,7 @@ the current states goes from 3'b000 at right to 3'b111 at left. The next
 state for each configuration is shown below the current state
 configuration.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image2.png}
 \caption{The next state of the center cell depends on the current state
 of a cell and its neighbors.}
@@ -142,8 +151,8 @@ the image shown in Figure~\ref{fig:caEvolution}. Some of you may recognize this 
 the Sierpiński Triangle\footnote{\url{https://en.wikipedia.org/wiki/Sierpi\%C5\%84ski_triangle}},
 an elementary fractal.
 
-\begin{figure}
-\includegraphics{image3.png}
+\begin{figure}[ht]
+\includegraphics[width=0.5\paperwidth]{image3.png}
 \caption{The evolution of a single alive cell (shown at top) under Rule 90.}
 \label{fig:caEvolution}
 \end{figure}
@@ -151,7 +160,7 @@ an elementary fractal.
 You now have all the information and terminology you need to build a
 digital system to compute the next state of a 1-DCA, so let's get to it.
 
-\section{Implementation - 1-dimensional cellular automata}
+\subsection{Implementation: Cellular Automata}
 
 You will use the inputs and outputs shown in Figure~\ref{fig:caDevBoard} to realize a
 9 cell 1-DCA. I chose 9 cells so that we could have a unique center
@@ -166,7 +175,7 @@ switch up and set the 8-bit rule value using the \textbf{Rule} slide
 switches. Every time that the array is clocked, the
 \textbf{CurrentState} LEDs will show the array.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image4.png}
 \caption{The input and output of the 1D cellular automata.}
 \label{fig:caDevBoard}
@@ -183,9 +192,15 @@ the round plastic button physically bounced off the metal contacts
 attached to the body of the button. This is more prone to happen if you
 quickly and sharply jab at the button.
 
-\begin{figure}
-\includegraphics[width=0.3\paperwidth]{image5.png}
-\caption{Switch bouncing makes generating a single clock edge problematic.}
+\begin{figure}[ht]
+\begin{tabular}{ccc }
+\includegraphics[width=0.3\paperwidth]{image5.png} &  & \includegraphics{image6.png} \\
+A  & & B \\ 
+\end{tabular}
+\caption{A) Switch bouncing makes generating a single clock edge problematic.
+B) The organization of the SR latch to run the clock requires
+inverters in the sClk and rClk inputs and an SR latch to help remove
+signal bouncing.}
 \label{fig:caSwitchBounce}
 \end{figure}
 
@@ -202,22 +217,15 @@ the clk, its logic level is display on the \textbf{clk} LED.
 
 Since the buttons driving the rClk and sClk signals are logic 0 when
 pressed, you will want to invert these two signals before feeding them
-into the SR latch as shown in Figure~\ref{fig:caSRlatchDebouce}. Thus, to 
+into the SR latch as shown in Figure~\ref{fig:caSwitchBounce}. Thus, to 
 toggle the clock signal
 you will press/release the sClk button to set clk to 1. Then
 press/release the rClk button to clear the clk to 0. The back to sClk,
 etc\ldots{}
 
-\begin{figure}
-\includegraphics{image6.png}
-\caption{ The organization of the SR latch to run the clock requires
-inverters in the sClk and rClk inputs and an SR latch to help remove
-signal bouncing.}
-\label{fig:caSRlatchDebouce}
-\end{figure}
 
-\hypertarget{system-architecture}{%
-\section{System Architecture}\label{system-architecture}}
+
+\section{System Architecture}
 
 The system architecture shown in Figure~\ref{fig:caSysArch} shows the overall organization
 of the cellular automata. Slide switches {[}0-7{]} are used as initial
@@ -228,7 +236,7 @@ rClk. The state of the cells are displayed on the 9 red LEDs. The
 processing elements forming the array are called singleCell and
 discussed in the next section.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image7.png}
 \caption{The system architecture of the cellularAutomata. Due to tight
 spacing, only the n inputs to cell8 and cell2 are shown.}
@@ -271,8 +279,8 @@ to complete the missing pieces. For this module, I want you to:
   lab.
 \end{itemize}
 
-\hypertarget{singlecell-module}{%
-\section{singleCell module:}\label{singlecell-module}}
+
+\section{Module: singleCell}
 
 The significant design problem in today's lab comes in this section,
 building the singleCell module. The module interface for the singleCell
@@ -282,7 +290,7 @@ the singleCell module is shown in Figure~\ref{fig:caSingleCell}. For example, th
 currentState in this figure was called Q in Figure~\ref{fig:caSysArch}. You should be able
 to decipher the rest of the signal abbreviations used in Figure~\ref{fig:caSysArch}.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=0.3\paperwidth]{image8.png}
 \caption{The architecture and module interface for the singleCell module.}
 \label{fig:caSingleCell}
@@ -375,8 +383,8 @@ want you to:
   \end{itemize}
 \end{itemize}
 
-\hypertarget{pin-assignment}{%
-\section{Pin Assignment}\label{pin-assignment}}
+
+\section{Pin-Assignment}
 
 Use the image of the Cyclone V GX Board in Figure~\ref{fig:exampleCA} 
 and the information
@@ -390,22 +398,17 @@ with the input and output devices used by the cellular automata module.
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1954}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2058}}|@{}}
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-slide{[}9{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\hline
+\midrule()
+\endhead 
+slide{[}9{]} & AE19 & &
 Clk
 
-LEDG6
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
-\midrule()
-\endhead
+LEDG6 & \\ \hline
 slide{[}8{]} & & & led {[}8{]}
 
 LEDR8 & \\ \hline
-slide{[}7{]} & & & led {[}7{]} & \\ \hline
+slide{[}7{]} & & & led {[}7{]} & K8\\ \hline
 slide{[}6{]} & & & led {[}6{]} & \\ \hline
 slide{[}5{]} & & & led {[}5{]} & \\ \hline
 slide{[}4{]} & & & led {[}4{]} & \\ \hline
@@ -414,7 +417,7 @@ slide{[}2{]} & & & led {[}2{]} & \\ \hline
 slide{[}1{]} & & & led {[}1{]} & \\ \hline
 slide{[}0{]} & & & led {[}0{]}
 
-LEDR0 & \\ \hline
+LEDR0 & \\ 
 \bottomrule()
 \end{longtable}
 
@@ -433,15 +436,87 @@ Key{[}3{]}
 \endhead
 \begin{minipage}[t]{\linewidth}\raggedright
 rClk
-\end{minipage} & Key{[}2{]} & \\ \hline
+\end{minipage} & Key{[}2{]} & Y15 \\ \hline
 \begin{minipage}[t]{\linewidth}\raggedright
 reset
-\end{minipage} & Key{[}1{]} & \\ \hline
+\end{minipage} & Key{[}1{]} & \\ 
 \bottomrule()
 \end{longtable}
 
-\subsubsection{Example Executions}
 
+
+
+
+\section{Turn in}
+
+You may work in teams of at most two. Make a record of your response to
+the items below and turn them in a single copy as your team's solution
+on Canvas using the instructions posted there. Include the names of both
+team members at the top of your solutions. Use complete English
+sentences to introduce what each of the following listed items (below)
+is and how it was derived. In addition to this submission, you will be
+expected to demonstrate your circuit at the beginning of your lab
+section next week.
+
+\subsubsection{Cellular Automata Module: }
+
+\begin{itemize}
+\item
+  Complete Table~\ref{table:caNextState}.
+\item
+  \protect\hyperlink{cellularAutomata_verilog}{Link} Verilog code for
+  the body of the cellularAutomata module (courier 8-point font single
+  spaced), leave out header comments.
+\end{itemize}
+
+\subsubsection{singleCell Module}
+
+\begin{itemize}
+\item
+  Complete Table~\ref{table:caInOutSingleCell}.
+\item
+  \protect\hyperlink{singleCell_verilog}{Link} Verilog code for the body
+  of the singleCell module (courier 8-point font single spaced), leave
+  out header comments.
+\end{itemize}
+
+\subsubsection{Overall design}
+
+\begin{itemize}
+\item
+  Run the testbench for the cellularAutomata module provided on Canvas.
+  Produce a timing diagram with the following characteristics. Zoom to
+  fill the available horizontal space with the waveform. Color inputs
+  green and outputs red. Order the traces from top to bottom as
+
+\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+signal		& radix				& tracel color \\ \hline
+    reset 			& default 			& Blue  \\ 
+    rule 			&  unsigned 			& Blue \\ 
+    sButton 			& default 		& Green \\ 
+    rButton 			& default 		& Green \\ 
+    clk 				& default 		& Yellow \\ 
+    currentLifeState 	& hex 			& Red \\
+  \end{tabular}
+
+
+I do not want the signals from the testbench, but rather the signals
+from inside the cellularAutomata module. You can do this in ModelSim, by
+expanding the cellularAutomata\_tb instance in the left ModelSim and
+selecting ``uut''. Since uut is an instance of the cellularAutomata
+module, all the signals accessible in the cellularAutomata module are
+shown in the center Object. You can add signals using a drag-and-drop
+operation. Likewise, you can reorder the signals by dragging them. Your
+completed timing diagram should look something like Figure~\ref{fig:caTimeDiag}.
+
+\begin{figure}[ht]
+\includegraphics{image9.png}
+\caption{Partial timing diagram for the cellular automata.}
+\label{fig:caTimeDiag}
+\end{figure}
+\end{itemize}
+
+\section{Debugging Tips}
 To provide you with some examples to run on the Altera boards, the
 following table illustrates the evolution of the CA with different
 initial conditions and different rules.
@@ -475,6 +550,7 @@ initial conditions and different rules.
   ``q\textsubscript{3}q\textsubscript{2}q\textsubscript{1}q\textsubscript{0}''
   is the output from the 4 least significant bits of the CA
 \end{itemize}
+
 
 \begin{longtable}[]{@{}
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2723}}|
@@ -533,73 +609,3 @@ Start: & 1000 & 0 & 0000 \\ \hline
 Final: & 1111 & 1 & 1111 \\
 \bottomrule()
 \end{longtable}
-
-
-\hypertarget{turn-in}{%
-\section{Turn in}\label{section:caTurn-in}}
-
-You may work in teams of at most two. Make a record of your response to
-the items below and turn them in a single copy as your team's solution
-on Canvas using the instructions posted there. Include the names of both
-team members at the top of your solutions. Use complete English
-sentences to introduce what each of the following listed items (below)
-is and how it was derived. In addition to this submission, you will be
-expected to demonstrate your circuit at the beginning of your lab
-section next week.
-
-\subsubsection{Cellular Automata Module: }
-
-\begin{itemize}
-\item
-  Complete Table~\ref{table:caNextState}.
-\item
-  \protect\hyperlink{cellularAutomata_verilog}{Link} Verilog code for
-  the body of the cellularAutomata module (courier 8-point font single
-  spaced), leave out header comments.
-\end{itemize}
-
-\subsubsection{singleCell Module}
-
-\begin{itemize}
-\item
-  Complete Table~\ref{table:caInOutSingleCell}.
-\item
-  \protect\hyperlink{singleCell_verilog}{Link} Verilog code for the body
-  of the singleCell module (courier 8-point font single spaced), leave
-  out header comments.
-\end{itemize}
-
-\subsubsection{Overall design}
-
-\begin{itemize}
-\item
-  Run the testbench for the cellularAutomata module provided on Canvas.
-  Produce a timing diagram with the following characteristics. Zoom to
-  fill the available horizontal space with the waveform. Color inputs
-  green and outputs red. Order the traces from top to bottom as
-
-\begin{tabular}{p{4cm}p{4cm}p{4cm}}
-    reset 			& default 		& Blue trace \\ 
-    rule 			& radix unsigned & Blue trace\\ 
-    sButton 			& default 		& Green trace\\ 
-    rButton 			& default 		& Green trace\\ 
-    clk 				& default 		& Yellow trace\\ 
-    currentLifeState 	&radix hex 		& Red trace\\
-  \end{tabular}
-
-
-I do not want the signals from the testbench, but rather the signals
-from inside the cellularAutomata module. You can do this in ModelSim, by
-expanding the cellularAutomata\_tb instance in the left ModelSim and
-selecting ``uut''. Since uut is an instance of the cellularAutomata
-module, all the signals accessible in the cellularAutomata module are
-shown in the center Object. You can add signals using a drag-and-drop
-operation. Likewise, you can reorder the signals by dragging them. Your
-completed timing diagram should look something like Figure~\ref{fig:caTimeDiag}.
-
-\begin{figure}
-\includegraphics{image9.png}
-\caption{Partial timing diagram for the cellular automata.}
-\label{fig:caTimeDiag}
-\end{figure}
-\end{itemize}

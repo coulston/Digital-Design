@@ -2,14 +2,20 @@
 \label{chapter:stopControl}
 \graphicspath{ {./Lab10ControlUnit/Fig} }
 
-\hypertarget{objective}{%
-\section{Objective }\label{section:swControlObjective}}
+\section{Outcomes and Objectives}
 
-The objective of this lab is to design a control unit to control the
-datapath created in the previous lab so that, together, they can run the
-stopwatch.
+The outcome of this lab is to design and simulate 
+a control unit to control the datapath that stores and 
+manipulates the information need to run a stopwatch.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
 
-\section{Discussion}
+
+\section{Stopwatch}
 
 From the previous lab, you should be familiar with the operation of our
 stopwatch. Briefly, our stopwatch allows a user to measure elapsed time
@@ -58,9 +64,14 @@ You will explore the reason that effect of the user holding down a
 button in the next section which introduces you to the finite state
 machine that governs the behavior of your stopwatch.
 
-\section{Control unit architecture}
+\section{Module: stopWatchControl}
+The design of the stopwatch controller starts with the state diagram, then
+on to the control word values for each state, and then finally to the 
+Verilog code needed to implement the state diagram and control 
+word.  Each of these steps is outlined below.
 
-The control unit for the stopwatch is shown in Figure~\ref{fig:swCuStateDiagram}.
+\subsection{State diagram for stopWatchControl}
+The state diagram for the stopwatch is shown in Figure~\ref{fig:swCuStateDiagram}.
 
 \begin{figure}[ht]
 \includegraphics{image3.jpeg}
@@ -97,6 +108,7 @@ button is held down. When the user releases the S2 button there is a
 \label{fig:swCuImproperFsm}
 \end{figure}
 
+\subsection{Control word for stopWatchControl}
 Before you dive into writing the Verilog code for the control unit, you
 need to complete Table~\ref{table:swCuControlWord}, the control word value for each state. You
 have already completed some of these control words in the previous lab.
@@ -201,6 +213,7 @@ LS2LR & & & & & \\
 \bottomrule()
 \end{longtable}
 
+\subsection{Verilog code for stopWatchControl}
 After you complete the control word table, you are ready to write the
 Verilog for the control unit. This file will have the following main
 sections.
@@ -307,11 +320,10 @@ Compile the Verilog code for the control unit, look for and remove the
 errors. When the control unit compiles cleanly, it's time to simulate to
 check that it behaves correctly.
 
-\section{Control simulation}
-
-Before you download your completed control unit to the C5G boards, you
-are going to perform an extensive simulation to uncover as many bugs as
-possible. Trust me, errors are much, much easier to find in a
+\subsection{Simulation for stopWatchControl}
+This lab will terminate with an extensive simulation of the stopwatch to 
+uncover as many bugs as
+possible. Errors are much, much easier to find in a
 simulation. The goal of this simulation is to cover every transition arc
 in Figure~\ref{fig:swCuStateDiagram} so that you can be sure your code is working correct.
 
@@ -349,6 +361,7 @@ waveforms.
 \label{swCuWaveform}}
 
 \begin{tabular}{p{0.5cm}p{1.5cm}p{5cm}p{3cm}}
+signal & radix & trace color \\ \hline
   clk 		& & default 		& green trace	\\ 
   resetn 	& & default 		& green trace	\\
   cw 		& & hex 		& yellow trace	\\
@@ -431,7 +444,7 @@ section next week.
   font single spaced), leave out header comments.
 \end{itemize}
 
-\subsubsection{Control Unit Simulation:}
+\subsubsection{Control Unit Simulation}
 
 \begin{itemize}
 \item

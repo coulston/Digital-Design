@@ -3,13 +3,21 @@
 \graphicspath{ {./Lab08Mod10Counter/Fig} }
 
 
-\hypertarget{objective}{%
-\section{Objective}\label{section:mod10objective}}
+\section{Outcomes and Objectives}
 
-The objective of this lab is to design a mod10 counter to represent the
-digits of a stopwatch.
+The outcome of this lab is to isimulate a mod10 counter
+that will be used as a building block in the implementation 
+of a digital stopwatch.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
 
-\section{Discussion}
+
+
+\section{Stopwatch}
 
 A stopwatch is a device that is used to measure time intervals, usually
 in competitive events. The stopwatch that you will be designing gets its
@@ -22,7 +30,7 @@ stopwatch is limited to measuring intervals of time from 0.1 second to
 Before diving into the architecture of the datapath, you will need to
 first build an important building block, the mod10 counter.
 
-\section{Mod10 Counter}
+\section{Module: Mod10 Counter}
 
 A mod 10 counter counts up from 0 to 9 and then rolls over back to 0 to
 count up again. The term ``mod'' comes from the word modulus. If you
@@ -38,7 +46,7 @@ input causes the mod10Counter to (synchronously) reset of the rising
 edge of the clock. The roll output indicated when the currentCount is
 going to roll-over from 9 to 0.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image1.png}
 \caption{The high-level interface for the mod 10 counter.}
 \label{fig:mod10Symbol}
@@ -142,8 +150,9 @@ roll
 Now that you have a solid grasp of how the mod10Counter should work,
 let's turn our attention to how this is accomplished. The internal
 organization of the mod10Counter is shown in Figure~\ref{fig:mod10sysArch}.
+\pagebreak
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=0.6\paperwidth]{image2.jpeg}
 \caption{The internal organization of the mod10counter module.}
 \label{fig:mod10sysArch}
@@ -206,7 +215,7 @@ this complete the timing diagram in Figure~\ref{fig:mod10TimingDiamgram} using t
 testbench.
 
 \begin{landscape}
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image4.png}
 
 \includegraphics{image5.png}
@@ -219,7 +228,7 @@ you to read.}
 \end{figure}
 \end{landscape}
 
-\section{Do file}
+\section{FPGA: Do file}
 
 You have been required to run simulation for almost every lab. The goal
 of this requirement is not to just give you an extra task, but rather to
@@ -291,7 +300,7 @@ do mod10counter_tbWaveSetup.do
 
 When you run the do file, you should see something similar to Figure~\ref{fig:mod10console}.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=0.4\paperwidth]{image6.png}
 \caption{The console output when the mod10counter do file is run.}
 \label{fig:mod10console}
@@ -310,17 +319,18 @@ You can issue a variety of commands in the console window. On of my
 favorite is ``run \textless time\textgreater'' to simulate some amount
 of time. I found this VERY handy when debugging my Verilog code.
 
-\section{Testbench}
+\section{Module: Mod10 Testbench}
 
 Edit the do file provided on Canvas to produce the following output.
 
 \begin{tabular}{p{3cm}p{3cm}p{3cm}}
-  clk 		& default 		& green trace \\ 
-  reset 	& default 		& green trace \\ 
-  enb 		& default 		& gold trace \\ 
-  synch 	& default 		& gold trace \\ 
-  roll 		& default 		& yellow trace \\ 
-  currentCount 	& unsigned & greenyellow trace \\ 
+signal & radix & signal color \\ \hline
+  clk 		& default 		& green  \\ 
+  reset 	& default 		& green  \\ 
+  enb 		& default 		& gold  \\ 
+  synch 	& default 		& gold  \\ 
+  roll 		& default 		& yellow  \\ 
+  currentCount 	& unsigned & greenyellow  \\ 
 \end{tabular}
 
 You need to look at the values produced by the mod10counter and compare
@@ -353,6 +363,6 @@ section next week.
 \item
   Timing diagram of the mod10counter using do file in the testbench.
 \item
-  Do file.
+  The contents of your Do file.
 \end{itemize}
 

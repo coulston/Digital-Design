@@ -4,13 +4,20 @@
 
 
 
-\hypertarget{objective}{%
-\section{Objective}\label{section:swObjective}}
+\section{Outcomes and Objectives}
 
-The objective of this lab is to design a datapath to store and
-manipulate the information need to run a stopwatch.
+The outcome of this lab is to design and simulate 
+a datapath to store and manipulate the information need to run a stopwatch.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
 
-\section{Discussion}
+
+
+\section{Stopwatch}
 
 A stopwatch is a device that is used to measure time intervals, usually
 in competitive events. The stopwatch that you will be designing gets its
@@ -99,7 +106,7 @@ To summarize:
   displayed time.
 \end{itemize}
 
-\section{Datapath Architecture}
+\section{Module: stopWatchDatapath}
 
 The datapath for the stopwatch is shown in Figure~\ref{fig:dpSWdatpath}. The behavior of the
 datapath to perform the functions of a stopwatch follows.
@@ -263,7 +270,7 @@ Verilog code for the datapath. For the datapath module, I want you to:
   \end{itemize}
 \end{itemize}
 
-\section{Datapath Simulation}
+\subsection{stopWatchDatapath Simulation}
 
 Before you download your completed datapath to the Development Board,
 you are going to perform extensive simulations to uncover as many bugs
@@ -342,15 +349,16 @@ Run the testbench for the datapathLab09\_tb module using the do file
 provided. Produce a timing diagram ordered from top to bottom as:
 
 \begin{tabular}{p{3cm}p{3cm}p{3cm}}
-  clk 		& default 	& green trace \\
-  resetn 		& default 	& green trace \\
-  cw 		& hex 		& yellow trace \\
-  tenth 		& default 	& gold trace \\
-  clkCnt 		& hex 		& red trace \\
-  tenthDigit 	& hex 		& green trace \\
-  tenthDisp 	& hex 		& green trace \\
-  unitDigit 	& hex 		& greenyellow trace \\
-  unitDisp 	& hex 		& greenyellow trace \\
+signal & radix & trace color \\ \hline
+  clk 		& default 	& green  \\
+  resetn 		& default 	& green  \\
+  cw 		& hex 		& yellow  \\
+  tenth 		& default 	& gold  \\
+  clkCnt 		& hex 		& red  \\
+  tenthDigit 	& hex 		& green  \\
+  tenthDisp 	& hex 		& green  \\
+  unitDigit 	& hex 		& greenyellow  \\
+  unitDisp 	& hex 		& greenyellow  \\
 \end{tabular}
 
 In order to simplify the process of setting up the waveforms, you can
@@ -401,8 +409,7 @@ wrong names or wrong signal order.
 
 \includegraphics{ image10.png}
 
-\hypertarget{turn-in}{%
-\section{Turn in:}\label{turn-in}}
+\section{Turn in}
 
 You may work in teams of at most two. Make a record of your response to
 the items below and turn them in a single copy as your team's solution

@@ -1,24 +1,40 @@
 \chapter{Calculator With Friendly Output}
 \label{chapter:calc}
-\graphicspath{ {./Lab06Calculator/Fig} }
+\graphicspath{{./Lab06Calculator/Fig}}
 
-\hypertarget{objective}{%
-\section{Objective}\label{section:calcObjective}}
+\section{Outcomes and Objectives}
 
-The objective of this lab is to modify existing code to add increased
-functionality. The design requires utilization of basic building block
-and custom combinational logic blocks to realize a complex digital
-circuit.
+The outcome of this lab is to instantiate a calculator with signed
+decimal output making it easy for anyone to use the circuit.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
 
-\subsubsection{Basic Calculator}
+
+
+\section{Basic Calculator}
 
 This week you are going to build a very basic calculator that can add or
-subtract 4-bit values. On the surface, this should require nothing more
+subtract 4-bit values using the input and output shown in 
+Figure~\ref{fig:calcDevBoard}.
+
+\begin{figure}[ht]
+\includegraphics{ image1.png}
+\caption{The input and output of the calculator digital circuit.}
+\label{fig:calcDevBoard}
+\end{figure}
+
+On the surface, this should require nothing more
 than connecting some slide switches to the x and y inputs of an
 adder/subtractor which sends its output to a 7-segment display. And for
 the most part this is correct. However, instead of displaying the input
 and output of the adder as hexadecimal values, you will display them as
-2-digit decimal values. The user input and output are shown in Figure~\ref{fig:calcDevBoard}.
+2-digit decimal values. 
+
+The user input and output are shown in Figure~\ref{fig:calcDevBoard}.
 The user enters a pair of 4-bit operands using the left-most slide
 switches, \textbf{xSlide} and \textbf{ySlide}. The value entered for
 \textbf{xSlide} is displayed on the two (red) \textbf{xDisplay}
@@ -28,14 +44,9 @@ the \textbf{addSub} buttons specify the operation performed on
 \textbf{xSlide} and \textbf{ySlide}. The result is \textbf{xSlide} +
 \textbf{ySlide} or \textbf{xSlide} - \textbf{ySlide}. 
 
-\begin{figure}[ht]
-\includegraphics{ image1.png}
-\caption{The input and output of the calculator digital circuit.}
-\label{fig:calcDevBoard}
-\end{figure}
 
-The
-\textbf{interp} button determines how the values are displayed on the
+
+The \textbf{interp} button determines how the values are displayed on the
 7-segment display. When unpressed, the 7-segment displays show the
 decimal value, when pressed, the 7-segment displays show 2's complement.
 This will be explained in the next section. As we have only 4 7SDs on
@@ -55,8 +66,8 @@ values are processed by the sigUnsig box before being displayed on the
 \label{fig:sysArchCalc}
 \end{figure}
 
-\hypertarget{sigunsign-module}{%
-\section{sigUnsign Module}\label{sigunsign-module}}
+
+\section{Module: sigUnsign}
 
 The significant design problem in today's lab comes in this section,
 building the sigUnsig module. This module takes in a 4-bit value and
@@ -109,32 +120,13 @@ illuminate those patterns.
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.02}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1458}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3170}}|@{}}
-\caption{For each set of inputs to the signUnsig module,
-determine the 7-segment display pattern.}\label{table:calcSevenSeg}\tabularnewline
+\caption{For each set of inputs to the signUnsig module, determine the 7-segment display pattern.}\label{table:calcSevenSeg} \tabularnewline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Input
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-7-segment pattern
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Input
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-7-segment pattern
-\end{minipage} \\
+Input & 7-segment pattern & & Input & 7-segment pattern \\
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Input
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-7-segment pattern
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Input
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-7-segment pattern
-\end{minipage} \\
+Input & 7-segment pattern & & Input & 7-segment pattern \\
 \midrule()
 \endhead
 4'b0010
@@ -143,7 +135,9 @@ interp = 1
 
 ovf = 0 &
 
+\vspace{0.1cm}
 \includegraphics{ image4.png}
+\vspace{0.1cm}
 
 msDisplay = 7'b
 
@@ -153,7 +147,9 @@ interp = 0
 
 ovf = 0 &
 
+\vspace{0.1cm}
 \includegraphics{ image4.png}
+\vspace{0.1cm}
 
 msDisplay = 7'b
 
@@ -164,7 +160,9 @@ interp = 0
 
 ovf = 0 &
 
+\vspace{0.1cm}
 \includegraphics{ image5.png}
+\vspace{0.1cm}
 
 msDisplay = 7'b1111001 = 7'h79
 
@@ -174,7 +172,9 @@ interp = 1
 
 ovf = 0 &
 
+\vspace{0.1cm}
 \includegraphics{ image4.png}
+\vspace{0.1cm}
 
 msDisplay = 7'b
 
@@ -185,7 +185,9 @@ interp = 1
 
 ovf = 0 &
 
+\vspace{0.1cm}
 \includegraphics{ image4.png}
+\vspace{0.1cm}
 
 msDisplay = 7'b
 
@@ -195,7 +197,9 @@ interp = 1
 
 ovf = 1 &
 
+\vspace{0.1cm}
 \includegraphics{ image4.png}
+\vspace{0.1cm}
 
 msDisplay = 7'b
 
@@ -519,7 +523,7 @@ always/casez statement. For this module, I want you to:
   \end{itemize}
 \end{itemize}
 
-\section{Bonus Ovf Logic}
+\section{Bonus: Ovf Logic}
 
 The default configuration of the system architecture ignores any
 overflow generated by the adder subtractor. If you choose, you may
@@ -537,8 +541,8 @@ two's complement numbers.
 For example, if the x and y inputs are 1001 and the operation is
 addition, then both signed and unsigned LEDs will illuminate.
 
-\hypertarget{pin-assignment}{%
-\section{Pin Assignment}\label{pin-assignment}}
+
+\section{Pin-Assignment}
 
 Use the image of the development board in Figure~\ref{fig:calcDevBoard} in and the
 information in the Cyclone V GX Kit User Manual (posted on the class web
@@ -566,10 +570,10 @@ lsYorRESdisplay
 \end{minipage} \\
 \midrule()
 \endhead
-seg{[}6{]} & & & & \\ \hline
-seg{[}5{]} & & & & \\ \hline
-seg{[}4{]} & & & & \\ \hline
-seg{[}3{]} & & & & \\ \hline
+seg{[}6{]} &AC22 & & & \\ \hline
+seg{[}5{]} & & W21 & & \\ \hline
+seg{[}4{]} & & & AE25& \\ \hline
+seg{[}3{]} & & & & W18\\ \hline
 seg{[}2{]} & & & & \\ \hline
 seg{[}1{]} & & & & \\ \hline
 seg{[}0{]} & & & & \\
@@ -589,8 +593,8 @@ y
 \end{minipage} \\
 \midrule()
 \endhead
-slide{[}3{]} & & \\ \hline
-slide{[}2{]} & & \\ \hline
+slide{[}3{]} & AE19& \\ \hline
+slide{[}2{]} & & W11\\ \hline
 slide{[}1{]} & & \\ \hline
 slide{[}0{]} & & \\
 \bottomrule()
@@ -601,7 +605,7 @@ slide{[}0{]} & & \\
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
 \toprule()
-YorRES & Key{[}1{]} & \\
+YorRES & Key{[}1{]} & P12 \\
 \midrule()
 \endhead
 interp & Key{[}2{]} & \\ \hline
@@ -683,7 +687,7 @@ Your completed timing diagram should look something like the following.
 
 \includegraphics{ image7.png}
 
-\subsubsection{Pin Assignment:}
+\subsubsection{Pin-Assignment}
 
 Complete the pin assignment in table~\ref{table:calcPinAssignment}.
 
