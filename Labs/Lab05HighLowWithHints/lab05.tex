@@ -2,14 +2,20 @@
 \label{chapter:hlggwh}
 \graphicspath{ {./Lab05HighLowWithHints/Fig} }
 
-\hypertarget{objective}{%
-\section{\texorpdfstring{Objective }{Objective }}
-\label{section:objectiveHighLowGuessHints}}
 
-The objective of this lab is to modify existing code to add increased
-functionality. The design requires utilization of basic building block
-and custom combinational logic blocks to realize a complex digital
-circuit.
+
+\section{Outcomes and Objectives}
+
+The outcome of this lab is to modify existing code to add increased
+functionality and instantiate it on oue development board.
+Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\itemsep=0em
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{bok:REP_TruthTable}
+\end{itemize}
+
 
 \section{The Guessing Game with Hints}
 
@@ -36,7 +42,7 @@ The user input and output, shown in Figure~\ref{fig:iOonDevBorad} are the same a
 assignment with the exception of the \textbf{hotCold} button and
 \textbf{clue} 7-segment display.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=0.8\paperwidth]{ image1.png}
 \caption{The input and output you should use to realize your digital system.}
 \label{fig:iOonDevBorad}
@@ -77,10 +83,10 @@ between guess, secret number and the Quality of the guess by completing
 Table~\ref{table:applyGuessIntervals}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2499}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2501}}|@{}}
 \caption{Determine the quality of a guess at the secret number.
 Your answer may be a number, pair of numbers, a range or a pair of
 ranges. Assume a 4-bit word size for guess and the secret number and
@@ -108,7 +114,7 @@ Quality
 difference
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Quality
-\end{minipage} \\ \hline
+\end{minipage} \\ 
 \midrule()
 \endhead
 14 & 11 & & \\ \hline
@@ -125,11 +131,12 @@ user's guess to the user. It will do this by displaying `C' if the guess
 is \textbf{\uline{C}}old, `A' if the guess is w\textbf{\uline{A}}rm, `H'
 if the guess is \textbf{\uline{H}}ot.
 
-\subsubsection{System design}
+\section{System Architecture}
 
 There are an almost unlimited number of ways that you could implement
 this digital system. For this lab, I want you to use the system
-architecture shown in Figure~\ref{fig:guessWithHintSystemArch}. A few comments about the visual notation
+architecture shown in Figure~\ref{fig:guessWithHintSystemArch}. A few 
+comments about the visual notation
 used in this schematic are in order.
 
 \begin{enumerate}
@@ -144,7 +151,7 @@ used in this schematic are in order.
   Figure~\ref{fig:iOonDevBorad}.
 \end{enumerate}
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=6.50278in,height=4.42708in]{ image3.png}
 \caption{System architecture for the guessing game with hint. The select
 inputs on the big and small 2x1 muxes is intentionally not shown -- you
@@ -194,17 +201,16 @@ as input to the hotWarmCold logic to display an appropriate character on
 the \textbf{hotCold} 7-segment display. You will derive this logic as
 you work through this lab.
 
-\hypertarget{mux-module}{%
-\section{2:1 Mux Module:}\label{section:hiLowMux-module}}
+\section{Module: 2:1 Mux}
 This module was discussed in Lab 4.
 
 
-\hypertarget{compare-module}{%
-\section{Compare Module:}\label{section:hiLowCompare-module}}
+
+\section{Module: Compare}
 This module was discussed in Lab 4.
 
-\hypertarget{addsub-module}{%
-\section{Add/Sub Module:}\label{addsub-module}}
+
+\section{Module: Add/Sub }
 
 A N-bit adder subtractor is a basic building block in many digital
 systems. The N-bit adder subtractor shown in Figure~\ref{fig:adderSubSymbol} adds 
@@ -216,7 +222,7 @@ sovf output equals 1 when the computation results in an overflow. When
 the inputs and output are interpreted as binary numbers, the uovf output
 equals 1 when the computation results in an overflow.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=0.3\paperwidth]{ image4.png}
 \caption{A schematic representation of a N-bit adder subtractor.}
 \label{fig:adderSubSymbol}
@@ -255,37 +261,26 @@ and \textbf{Y} inputs and \textbf{sumDiff} output using the \#()
 specifier. Pay close attention to match the value of this generic and
 the size of the input and output vectors.
 
-\hypertarget{discrete-logic-block}{%
-\subsubsection{Discrete Logic block:}
-\label{discrete-logic-block}}
 
-The input for this logic will come from the output of the two
-comparators that compare difference and the warm or cold threshold, see
-Figure~\ref{fig:guessWithHintSystemArch}. It would be helpful to take a moment to copy down the logic
-between the adder subtractor and the hotWarmCold module output in your
-notes. We will call the comparator that compares \emph{difference} (the
-output from the adder subtractor) and \emph{warmThresh}, the warm
-comparator. The other comparator will be called the cold comparator for
-obvious reasons.
+\section{Logic: hotWarmCold}
 
-The warm and cold comparators generate a total of 6 signals sent to the
-``discrete logic'' box in Figure~\ref{fig:guessWithHintSystemArch}, but the logic in ``discrete logic''
-does not need all of them. To get a better handle on this, let's look at
-some examples to help uncover the relationship between the magnitude of
-the difference between the \emph{guess} and \emph{randNum} and the
-output of the warm and cold comparators. Note, that in the system
-architecture shown in Figure~\ref{fig:guessWithHintSystemArch}, \emph{difference} is applied to the x
-input of the comparators and the \emph{warmThresh} and \emph{coldThresh}
-are applied to the y inputs.
+The goal of this section is to determine the logic inside the hotWarmCold logi blok
+in Figure~\ref{fig:guessWithHintSystemArch}.  To do this you will first need to form three 
+signals, \emph{hot}, \emph{warm}, and \emph{cold}.  These three signals describe how close the 
+\emph{guess} is from \emph{randNum}. We will call the comparator that compares \emph{difference} 
+and \emph{warmThresh}, the warm comparator and call its three outputs wGT, wEQ and wLT.
+The other omprtor is the cold comparator nd its outputs preixed with  lowercase ``c''.
 
-Let's assume \emph{coldThresh} = 10 and \emph{warmThresh} = 4. Complete
-Table~\ref{table:fillInCompareOperations} by comparing the value in the column labeled
+The warm and cold comparators generate a total of 6 signals, some of which are
+sent to the logic block B1 and B2 to form the warm and cold signals - the logic for the
+hot signal is given to you in Figure~\ref{fig:guessWithHintSystemArch}.
+
+To understand the logic inside the B1 and B2 logic blocks let's look at an
+example.  Use \emph{coldThresh} = 10 and \emph{warmThresh} = 4 to complete
+Table~\ref{table:fillInCompareOperations}.  Do this by comparing the value in the column labeled
 ``\emph{difference}'' to \emph{warmThresh} and \emph{coldThresh} and
-asserting the appropriate comparators outputs. Note, the comparator
-outputs are prefixed by ``w'' for warm comparator output and ``c'' for
-cold comparator output.
-
-Let's do one row together, \emph{difference} = 9. If we consider the
+asserting the appropriate comparators outputs.  It may help for us to do one 
+row together, \emph{difference} = 9. If we consider the
 warm comparator, the x input equals 9 (the value of \emph{difference})
 and the y input equals 4 (the value of \emph{warmThresh}). Since 9 is
 greater than 4, the output wGT will equal 1 and wEQ and wLT will both
@@ -311,75 +306,23 @@ of the guess should set warm = 1 and hot and cold to 0.
 comparator outputs are needed to determine the quality of a guess. Let
 warmThresh = 4 and coldThresh = 10.}\label{table:fillInCompareOperations}\tabularnewline
 \toprule()
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-\emph{difference}
-\end{minipage}} &
-\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3012} + 4\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-warmThresh comparator
-\end{minipage}} &
-\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3012} + 4\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-coldThresh comparator
-\end{minipage}} &
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-Hot
-\end{minipage}} &
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-Warm
-\end{minipage}} &
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-Cold
-\end{minipage}} \\ \cline{2-7}
-& \begin{minipage}[b]{\linewidth}\raggedright
-wGT
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-wEQ
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-wLT
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-cGT
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-cEQ
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-cLT
-\end{minipage} \\ \cline{2-7}
+\multirow{2}{*}{difference} & 
+	\multicolumn{3}{|c|}{warmThresh comparator} & 
+	\multicolumn{3}{|c|}{coldThresh comparator} & 
+	\multirow{2}{*}{Hot} &
+	\multirow{2}{*}{Warm} & 
+	\multirow{2}{*}{Cold} \\ \cline{2-7}
+& wGT & wEQ & wLT & cGT & cEQ &  \\ \cline{2-7}
 \midrule()
 \endfirsthead
 \toprule()
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-\emph{difference}
-\end{minipage}} &
-\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3012} + 4\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-warmThresh comparator
-\end{minipage}} &
-\multicolumn{3}{|>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3012} + 4\tabcolsep}|}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-coldThresh comparator
-\end{minipage}} &
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-Hot
-\end{minipage}} &
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-Warm
-\end{minipage}} &
-\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
-Cold
-\end{minipage}} \\
-& \begin{minipage}[b]{\linewidth}\raggedright
-wGT
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-wEQ
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-wLT
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-cGT
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-cEQ
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-cLT
-\end{minipage} \\ 
+\multirow{2}{*}{difference} & 
+	\multicolumn{3}{|c|}{warmThresh comparator} & 
+	\multicolumn{3}{|c|}{coldThresh comparator} & 
+	\multirow{2}{*}{Hot} &
+	\multirow{2}{*}{Warm} & 
+	\multirow{2}{*}{Cold} \\ \cline{2-7}
+& wGT & wEQ & wLT & cGT & cEQ &  \\ \cline{2-7}
 \midrule()
 \endhead
 3 & & & & & & & & & \\ \hline
@@ -395,16 +338,16 @@ Now, you need to use the values in Table~\ref{table:fillInCompareOperations} to 
 each of the three outputs from the ``discrete logic'' block shown in
 Figure~\ref{fig:guessWithHintSystemArch}. To do this, look at the conditions that cause each of the
 outputs and write an expression using AND and OR to describe when that
-output equals 1.
+output equals 1.  You 
 
 \protect\hypertarget{hotWarmCold_Logic}{}{}
 \begin{verbatim}
-	Cold =								// write logic description
-	Warm =								// write logic description
-	Hot =								// write logic description
+	Cold =                               // write logic description
+	Warm =                            // write logic description
+	Hot = wLT;                       // given to you in  Figure~\ref{fig:guessWithHintSystemArch}
 \end{verbatim}
 
-For this block of code:
+For the hotWarmCold block of code:
 
 \begin{itemize}
 \item
@@ -418,9 +361,6 @@ For this block of code:
   type.
 \end{itemize}
 
-\hypertarget{hotwarmcold-block}{%
-\subsubsection{hotWarmCold block:}\label{hotwarmcold-block}}
-
 You will implement the hotWarmCold logic using an always/case statement
 that takes in as input the 3 outputs from the ``discrete Logic'' block,
 \emph{hot}, \emph{warm} and \emph{cold}. These three outputs form a 1's
@@ -432,7 +372,7 @@ quality of the guess shown in Figure~\ref{figure:hiLoHintSevenSeg}. The
 hotWarmCold block should be blank when the \textbf{hotCold} button is
 unpressed.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{ image5.png}
 \caption{The illuminated patterns to inform the guesser about the magnitude of their guess.}
 \label{figure:hiLoHintSevenSeg}
@@ -478,10 +418,10 @@ For this block of code:
 //*********************************************
 \end{lstlisting}
 
-\hypertarget{hilow-module}{%
-\section{hiLow module:}\label{section:hilow-module}}
 
-\uline{If you were not able to get the previous lab working}, just
+\section{Module: hiLow}
+This is the top-level module in Figure~\ref{fig:guessWithHintSystemArch}, the outermost
+block. \uline{If you were not able to get the previous lab working}, just
 implement the functionality identified in this assignment and make the
 \emph{randNum} come directly from the seed switch. In this case, you
 should use the top module declaration in Listing~\ref{listing:hiLowModule}. If you got the
@@ -502,11 +442,9 @@ module hiLow(seedSwitch, guessSwitch, hotColdBut, hotColdSeg);
 module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hotColdBut, hiLowBut, randMsbSeg, randLsbSeg, greenLEDs, hotColdSeg, hiLowSeg);
  \end{lstlisting}
  
-I intentionally left out the connection between the \emph{randNum} and
-\emph{guess} comparator and the pair of 2:1 muxes that route the larger
-of \emph{randNum} and \emph{guess} to the x input of the adder
-subtractor and the smaller of of \emph{randNum} and \emph{guess} to the
-y input. Note that \emph{randNum} and \emph{guess} are on different
+The \emph{randNum} and \emph{guess} comparator is connected to the pair of 2:1 muxes 
+using the rdGtgs (means random is greater than guess) signal.
+ Note that \emph{randNum} and \emph{guess} are on different
 inputs to the 2 muxes so that a single output of the comparator will
 work for both multiplexers. Note, when \emph{randNum} and \emph{guess}
 are equal, it does not matter which is routed to the x or y input
@@ -532,10 +470,9 @@ For this block of code:
   Use descriptive names for component instance names.
 \end{itemize}
 
-\hypertarget{hilow_tb-module}{%
-\section{hiLow\_tb module:}\label{hilow_tb-module}}
+\section{Module: hiLow\_tb}
 
-The testbench for this module checks hot, warm and cold for guesses that
+The testbench checks hot, warm and cold for guesses that
 are too high and too low. I carefully selected these values to check the
 edge cases, meaning on either side of the warm and cold thresholds.
 \begin{verbatim}
@@ -594,18 +531,17 @@ Test & seed & randNum & guess & big & small & Difference & Comment \\
 \end{longtable}
 
 
-\hypertarget{pin-assignment}{%
-\section{Pin Assignment:}\label{sectionhHiLoPin-assignment}}
+\section{Pin-Assignment}
 
 Use the image of the Development Board in Figure~\ref{fig:iOonDevBorad} and the information
 in the User Guide to determine the FPGA pins associated with the input
 and output devices used by the hiLow module.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2571}}|
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2571}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2814}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2430}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2185}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2185}}|@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Segment
@@ -629,10 +565,10 @@ seg{[}0{]} & Y24 & & V19 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2596}}|
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2596}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2505}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2542}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2357}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2357}}|@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -652,9 +588,9 @@ slide{[}0{]} & V10 & W11 & AC9 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 randBut
@@ -695,8 +631,7 @@ E9 & D8 & K6 & L7 \\
 \bottomrule()
 \end{longtable}
 
-\hypertarget{turn-in}{%
-\section{Turn in:}\label{turn-in}}
+\section{Turn in}
 
 You may work in teams of at most two. Make a record of your response to
 the items below and turn them in a single copy as your team's solution
@@ -712,7 +647,7 @@ section next week.
 \item Complete Table~\ref{table:applyGuessIntervals}.
 \end{itemize}
 
-\subsubsection{Discrete Logic block:}
+\subsubsection{Discrete Logic block}
 \begin{itemize}
 \item Complete Table~\ref{table:fillInCompareOperations}
 
@@ -721,7 +656,7 @@ cold signals
 \end{itemize}
 
 
-\subsubsection{hiLow Module:}
+\subsubsection{Module: hiLow}
 
 \begin{itemize}
 \item
@@ -738,16 +673,17 @@ cold signals
   traces from top to bottom as
 
   \begin{tabular}{p{4cm}p{4cm}p{4cm}}
-    seedSwitch  & radix unsigned & Green trace \\
-    randNum  & radix unsigned  & Lime green trace \\
-    GuessSwitch  & radix unsigned  & Lime green trace \\
-    Big radix  & unsigned &  Cyan trace \\
-    Small  & radix unsigned &  Cyan trace \\
-    Difference  & radix unsigned &  Blue trace \\
-    hotWire  & default &  Orange trace \\
-    warmWire  & default &  Orange trace \\
-    coldWire  & default &  Orange trace \\
-    hotColdSeg  & hexadecimal &  Red trace \\
+   signal & radix & trace color \\ \hline
+    seedSwitch  &  unsigned & Green  \\
+    randNum  &  unsigned  & Lime green  \\
+    GuessSwitch  &  unsigned  & Lime green  \\
+    Big   & unsigned &  Cyan  \\
+    Small  &  unsigned &  Cyan  \\
+    Difference  &  unsigned &  Blue  \\
+    hotWire  & default &  Orange  \\
+    warmWire  & default &  Orange  \\
+    coldWire  & default &  Orange  \\
+    hotColdSeg  & hexadecimal &  Red  \\
 \end{tabular}
 
 I do not want the signals from the testbench, but rather the signals
@@ -758,7 +694,7 @@ signals accessible in the hiLow module are shown in the center Object
 pane in Figure~\ref{fig:hierarchyTestbench}. You can add any of these signals by clicking on them
 and dragging them into the rightmost Wave pane shown in Figure~\ref{fig:hierarchyTestbench}.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{ image6.png}
 \caption{Use the design hierarchy to add signals to the testbench.}
 \label{fig:hierarchyTestbench}
@@ -767,19 +703,19 @@ and dragging them into the rightmost Wave pane shown in Figure~\ref{fig:hierarch
 When compete, your testbench should look like the timing diagram in
 Figure~\ref{fig:guessTiming}.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{ image7.png}
 \caption{A partially obscured timing diagram generated by the testbench.}
 \label{fig:guessTiming}
 \end{figure}
 \end{itemize}
 
-\subsubsection{Demo:}
+\subsubsection{Demo}
 \begin{itemize}
 \item Demonstrate your completed circuit by the start of next week's lab.
 \end{itemize}
 
-\subsection{Clearing errors - Tips from the professor}
+\section{Debugging Tips}
 
 When my program executed successfully, I got the warnings shown in
 Figure~\ref{fig:messageConsole}. These are mainly the result of the unused overflow outputs
@@ -790,7 +726,7 @@ warnings, they will have one top-level warning with all the instances
 accessible by clicking the expander arrow (it looks like
 ``\textgreater'') to the left of the warning triangle.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{image8.png}
 \caption{The messages console filtered by warnings.}
 \label{fig:messageConsole}
@@ -805,7 +741,7 @@ always subtracts. This report also shows that the overflow outputs are
 unconnected because we left them open using a pair of commas talked
 about earlier.
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics{ image9.png}
 \caption{Connectivity Checks report for a working hiLow circuit.}
 \label{fig:connectivityCheck}
