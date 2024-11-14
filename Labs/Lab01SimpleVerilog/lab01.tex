@@ -19,14 +19,11 @@ learning objectives.
 \end{itemize}
 
 \section{FPGA: Creating a project in Quartus and running a testbench}
-In this section you will simulate applying inputs to a 2-input ND gate and
+In this section you will apply inputs to a 2-input AND gate and
 observing the output on a timing diagram.  Since all this activity will
 take place in the memory of a computer and not on actual hardware,
-it is called a simulation.
-
-will learn how to set up a project in Quartus and simulate
-a digital circuit using a piece of Verilog code called a testbench.  The output
-from this step
+it is called a simulation.  To start this process, you will first have to 
+create a project and add files to it.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -46,7 +43,7 @@ from this step
     Save these files in andgate2 directory.
   \end{enumerate}
 \item
-  Start Quartus II 18.1 (64-bit).
+  Start Quartus II.
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
@@ -167,13 +164,17 @@ from this step
     If the last row, ``ModelSim-Altera'' is blank, click on the \ldots{}
     button at right and navigate to the
     \emph{C:\textbackslash intelFPGA\_lite\textbackslash18.1\textbackslash modelsim\_ase\textbackslash{}},
-    select the \emph{win32aloem} folder, the click Select Folder,
+    select the \emph{win32aloem} folder, the click Select Folder.  Note the software version in these instructions
+    is 18.1  The version installed on your computer may be different.  If so, the path should be the same with the
+    exception of the version number. 
   \item
     Click Ok.
   \end{enumerate}
 \item
-  \includegraphics[width=3.9in,height=1.8in]{image1.png}Click
-  on the Files tab in the \emph{Project Navigator} pane.
+  Click on the Files tab in the \emph{Project Navigator} pane.
+  
+  \includegraphics[width=3.9in,height=1.8in]{image1.png}
+
 \item
   Right click on \emph{andgate2\_tb} in the \emph{Project Navigator}
   pane and select Set as Top-Level entity.
@@ -212,7 +213,7 @@ from this step
   In the main Quartus II window, click \emph{Tools -\textgreater{} Run
   Simulation Tool -\textgreater{} RTL Simulation}. The ModelSim program
   will launch. This may take a few moments, be patient. If you get a
-  pop-up Nativelink Error window, then go back and check and fix the
+  pop-up Nativelink Error window, then go back, check and fix the
   directory in step 11.
 \item
   In ModelSim, click Simulate -\textgreater{} Start Simulation
