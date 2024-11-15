@@ -296,6 +296,7 @@ FPGA Pin No. 	& 		& 		& PIN\_AC9 & 		& 			& \\ \hline
 \end{longtable}
 
 \section{FPGA: Synthesizing a Verilog Module}
+\label{section:h27SynthesisHowTo}
 
 It's time to complete the synthesis process by downloading the combinedLab01 Verilog file 
 along with its pin-assignment to the FPGA. Work through the follow these steps to accomplish this.
@@ -403,7 +404,7 @@ The pattern of segments to be illuminated for each digit is shown in
 Figure~\ref{fig:sevenSeg}. For example, to display `4 output would be:
 
 \begin{verbatim}
-seg[6]}=0   seg[5]=0   seg[4]=1   seg[3]=1   seg[2]=0   seg[1]=0   seg[0]=1
+seg[6]=0   seg[5]=0   seg[4]=1   seg[3]=1   seg[2]=0   seg[1]=0   seg[0]=1
 or seg = 7'b0011001
 \end{verbatim}
 
@@ -415,14 +416,9 @@ Figure~\ref{fig:sevenSegChars} shows the proper formatting for all the values be
 \label{fig:sevenSegChars}
 \end{figure}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Complete the Table~\ref{table:hex2sevenTruthTable} to illuminate the active low led segments
-  to generate proper hexadecimal characters. I've renamed the sevenSeg
-  output ``seg'' in the following table in order to make everything fit
-  nicely.
-\end{enumerate}
+Use this information to 
+  complete the Table~\ref{table:hex2sevenTruthTable} to illuminate the active low led segments
+  to generate proper hexadecimal characters. 
 
 \begin{longtable}[]{@{}
 | >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1241}}|
@@ -461,8 +457,67 @@ x & seg{[}6{]} & seg{[}5{]} & seg{[}4{]} &  seg{[}3{]} & seg{[}2{]} & seg{[}1{]}
 \bottomrule()
 \end{longtable}
 
-Complete the pin assignment tables for the inputs and outputs of the 
-hexadecimal to seven segment converter given in
+
+Now that you have a complete desrciption of the input/output behavior 
+of the hexadecimal to seven segment converter. its time to write the
+Verilog code.  You will capture the behavior in Table~\ref{table:hex2sevenTruthTable}
+using an always/case statement.  Work through the following steps to complete this task.
+\begin{enumerate}
+\item
+  Create \textbf{a new project} folder within your \emph{lab2} directory
+  called \emph{hexToSevenSeg.}
+\item
+  Download \emph{hexToSevenSeg.v} and \emph{hexToSevenSeg \_tb.v} from
+  Canvas to the project directory.
+\item
+  Create a project for these two files.
+\item
+  \protect\hypertarget{Hex2Seven_Verilog}{}{}Complete the case statement
+  for \emph{hexToSevenSeg.v}
+  \end{enumerate}
+  
+  
+ \subsection{Testbench}
+ With your Verilog code complete, you need to verify your logic before 
+ synthesis.  While this may seem a waste of time for such a simple design,
+ you are building skills that are essential to debugging the complex 
+ designs you will create later in the term.  Work through the following steps
+ to complete this task.
+ 
+ \begin{enumerate}
+\item
+  Modify \emph{hexToSevenSeg \_tb.v} so that \emph{hexToSevenSeg} is run
+  through every combination of inputs. Assert the inputs in increasing
+  binary numbering order starting from 0,0,0,0 and going to 1,1,1,1.
+\item
+  Perform simulation using this test bench as described in previous
+  steps. You will need to ``run 100'' several times to go through all
+  the inputs.
+\item
+  \protect\hypertarget{Hex2Seven_Waveform}{}{}Save this waveform as an
+  image as done in the previous section. If the waveform is missing, you
+  can add it back in using View -\textgreater{} Waveform.
+\item
+  Compare From the information in the timing diagram, produce a truth table for
+  in Table~\ref{table:hex2sevenTruthTable}.  Fix any errors in the always/case statement
+  before proceeding to synthesis in the next step.
+  \emph{hexToSevenSeg}.
+ \end{enumerate} 
+  
+\subsection{Synthesis}
+Before you can download your design to the FPGA, you need to assign the
+input and outputs of the hexToSevenSeg module to FPGA pins.  
+Figure~\ref{fig:sevenSegInOut} shows the slide switches and 7-segment
+display that will use.
+
+\begin{figure}[ht]
+\includegraphics[width=0.6\paperwidth]{image11.png}
+\caption{The input set to 4'b0110 displaying a 6 on the 7-segment display.}
+\label{fig:sevenSegInOut}
+\end{figure}
+
+
+Use the C5G User manual to complete the pin-assignment in 
 Table~\ref{table:pinAssignmentHex2Seven}.
 
 \begin{longtable}[]{@{}
@@ -511,41 +566,11 @@ FPGA Pin No. & & & & & & & \\ \hline
 \bottomrule()
 
 \end{longtable}
-Now you are ready to write the Verilog code for the hexadecimal to seven
-segment converter, assign pins to the inputs and outputs, synthesize
-and download the module to the development board.
+Use the instructions in Section~\ref{section:h27SynthesisHowTo} to
+combine the pin assignment with your hexToSevenSeg module.
+Synthesize your design, bask in the glow of another success as you 
+demonstrate your circuit's functionality to a member of the lab team.
 
-
-\begin{enumerate}
-\item
-  Create \textbf{a new project} folder within your \emph{lab2} directory
-  called \emph{hexToSevenSeg.}
-\item
-  Download \emph{hexToSevenSeg.v} and \emph{hexToSevenSeg \_tb.v} from
-  Canvas to the project directory.
-\item
-  Create a project for these two files.
-\item
-  \protect\hypertarget{Hex2Seven_Verilog}{}{}Complete the case statement
-  for \emph{hexToSevenSeg.v}
-\item
-  Modify \emph{hexToSevenSeg \_tb.v} so that \emph{hexToSevenSeg} is run
-  through every combination of inputs. Assert the inputs in increasing
-  binary numbering order starting from 0,0,0,0 and going to 1,1,1,1.
-\item
-  Perform simulation using this test bench as described in previous
-  steps. You will need to ``run 100'' several times to go through all
-  the inputs.
-\item
-  \protect\hypertarget{Hex2Seven_Waveform}{}{}Save this waveform as an
-  image as done in the previous section. If the waveform is missing, you
-  can add it back in using View -\textgreater{} Waveform.
-\item
-  From the information in the timing diagram, produce a truth table for
-  \emph{hexToSevenSeg}.
-\item
-  Synthesize your design, bask in the glow of another success.
-\end{enumerate}
 
 \section{Turn in}
 
@@ -568,7 +593,7 @@ following listed items (below) is and how it was derived.
 \item \protect\hyperlink{Hex2Seven_Verilog}{Link} Verilog code for hexToSevenSeg function -- just the always/case statement
 \item \protect\hyperlink{Hex2Seven_Waveform}{Link} Timing diagram for hexToSevenSeg function
 \item Pin assignment tables for hexToSevenSeg  in Tables~\ref{table:pinAssignmentHex2Seven}
-\item Demonstrate working hexadecimal to seven segment module on development board.
+\item Demonstrate working hexadecimal to seven segment module to a member of the lab team.
 \end{itemize}
 
 

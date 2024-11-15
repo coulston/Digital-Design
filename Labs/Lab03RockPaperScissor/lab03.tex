@@ -36,9 +36,9 @@ Rock beats scissors  & Scissors beats paper & Paper beats rock \\
 \end{tabular}
 
 Since prior knowledge of your opponent's throw would provide an unfair
-advantage, the two players make their throws at the same time. You goal 
+advantage, the two players make their throws at the same time. Your goal 
 in this lab is to create a digital version of rock, paper,
-scissors using the Altera Cyclone V Board using the inputs and outputs
+scissors on the Altera Cyclone V Board using the inputs and outputs
 shown in Figure~\ref{figure:systemIO}. Each player will have access to three slide switches
 and one 7-segment display. Each of the three switches represents one of
 the three plays and the 7-segment will display the throw when the Play
@@ -65,7 +65,7 @@ display will reflect their choice as shown in Figure~\ref{figure:play7seg}. Thes
 are supposed to vaguely resemble the objects.
 
 \begin{figure}[ht]
-\includegraphics[width=0.5\paperwidth]{image3.png}
+\includegraphics[width=0.3\paperwidth]{image3.png}
 \caption{Illuminated patters for the different plays.}
 \label{figure:play7seg}
 \end{figure}
@@ -120,10 +120,11 @@ Invalid & 2 & 2 & 2 & d \\ \hline
 \end{longtable}
 
 \section{System Architecture}
+The system architecture shown in Figure~\ref{fig:sysArch} is your guide to building
+a functioning circuit. As such, we will take a moment to cover some important
+details of this diagram that will help you write your Verilog code later./
 
-There are an almost unlimited number of ways that you could implement
-this digital system. Since this is your first lab building a system, you
-must use the system architecture shown in Figure~\ref{fig:sysArch}. The names outside
+The names outside
 the FPGA square correspond to the labels in Figure~\ref{figure:systemIO}. Each soft-square
 (a square with rounded corners) is a Verilog module. Names inside
 soft-squares, that are adjacent to lines outside the soft-square, are
@@ -172,7 +173,7 @@ encode these four combinations in 2-bits as \{2'b00, 2b'01, 2'b10,
 2'b11\} respectively.
 
 In order to write the Verilog code for this module, complete the truth
-table in Table~\ref{table:onesToDense} for the onesToDense function.
+table in Table~\ref{table:onesToDense} for the onesToDense module.
 
 \begin{itemize}
 \item
@@ -200,7 +201,7 @@ table in Table~\ref{table:onesToDense} for the onesToDense function.
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
-\caption{The truth table for the onesToDense function.}\label{table:onesToDense}\tabularnewline 
+\caption{The truth table for the onesToDense module.}\label{table:onesToDense}\tabularnewline 
 \toprule()
 r & p & s & play & Note \\ \hline
 \midrule()
@@ -246,7 +247,8 @@ module:
   Make the input and output port types ``wire''.
 \item
   You may want to break the input vector into its component pieces to
-  correspond to the variable names used in your kmap. This will require
+  correspond to the variable names used in Table~\ref{table:onesToDense}.
+   This will require
   a wire declaration and two assign statements to give each variable
   1-bit from the input vector.
 \item
@@ -276,7 +278,7 @@ generate the four different symbols in Table~\ref{table:throwSevenSeg}. Remember
 in the segments are active low, meaning that a logic 0 output
 illuminates an LED segment. In Table~\ref{table:throwSevenSeg} put a 0 or 1 in each of the
 numbered column so that each row produces the patterns for its throw.
-Remember that rock is coded as 00, paper as 01, scissors as 10 and an
+Remember that pPlay codes rock as 00, paper as 01, scissors as 10 and an
 invalid throw is coded as 11. In the sevenSeg column put the 7-bit code
 formed by concatenating the bits together. Use proper Verilog syntax to
 write this 7-bit vector.
@@ -332,9 +334,8 @@ into your playToSeven Verilog module:
   module.
 \end{itemize}
 
-\hypertarget{winlose-module}{%
+
 \section{Module: winLose}
-\label{winlose-module}}
 
 The winLose module takes the throw from each player (in the dense
 coding), the push button, and determines what to display on the win/lose
@@ -436,7 +437,7 @@ least significant 2-bits) to select one of the rows. Note that the
 default case handles all the combinations where button is 1.
 
 \item
-  Use a default case (last in the list) to handle all the situations
+  Use a default case to handle all the situations
   where the button is not pressed. The default case catches any
   unspecified input combinations for the case statement. List the
   default as the last row in the case list.
@@ -504,6 +505,10 @@ bullet point item in the list below. For this module, I want you to:
 \end{itemize}
 
 \section{Pin-Assignment}
+We are forgoing a simulation of today's lab.  This requires that you pay especially close
+attention to the warnings created by the Quartus software.  If you are having issues with
+your design, go through the compilation report and look for unconnected inputs or vector 
+size mismatches.
 
 Use the image of the Development Board in Figure~\ref{figure:systemIO} and the information
 in the board User Guide to determine the FPGA pins associated with the
@@ -552,7 +557,7 @@ slide{[}0{]} & PIN\_AC9 & \\
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2333}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
 \toprule()
-Play Button & Key{[}0{]} & .\\ \hline
+Play Button & Key{[}0{]} &  \\ \hline
 \midrule()
 \endhead
 %\bottomrule()
@@ -603,5 +608,6 @@ module (courier 8-point font single spaced), leave out header comments.
 \subsubsection{Pin Assignment}
 \begin{itemize}
 \item Completed pin assignment for 7-segment, slide switches and button in Table~\ref{table:rpsPinAssignment}.
+\item Demonstrate your working design to a lab team member.
 \end{itemize}
 

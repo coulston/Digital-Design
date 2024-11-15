@@ -70,28 +70,10 @@ illuminated. You should illuminate LEDs starting from the right side and
 increasing towards the left side.
 
 \section{System Architecture}
-
-There are an unlimited number of ways that you could implement this
-digital system. For this lab, I want you to use the system architecture
-shown in Figure~\ref{fig:guessGameSysArch}. A few comments about the visual notation used in this
-schematic are in order.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi})}
-\item
-  Lines with the same name are connected together. For example, the rand
-  button input is connected to the 2:1 mux in the upper left corner of
-  the FPGA.
-\item
-  When a signal is sent to multiple devices in close proximity, a grey
-  line is used to show that the signal is ``underneath a device. For
-  example, the rand signal is sent to the select input of both 2:1 muxes
-  in the upper left corner of the schematic. These unconnected
-  connections are called ``air-wires.''
-\item
-  The input signals are color-coded to correspond to the colors used in
-  Figure~\ref{fig:inputOutputDevBoard}.
-\end{enumerate}
+Use the system architecture shown in Figure~\ref{fig:guessGameSysArch} as your
+guide to this design. Please note that lines with the same name in different places 
+are connected together. For example, the signal \emph{randBut} connects the button input to the 
+2:1 mux in the upper left corner of  the FPGA.
 
 \begin{figure}[ht]
 \includegraphics[width=0.6\paperwidth]{image2.png}
@@ -122,7 +104,7 @@ their \textbf{y\textsubscript{0}} and \textbf{y\textsubscript{1}} data
 inputs denoted as `0' and `1' respectively. This is done to save space
 and increase clarity in the schematic.
 
-I have provided you the Verilog code for a 2:1 mux on Canvas. When
+The Verilog code for a 2:1 mux is provided to you on Canvas. When
 creating instances of the 2:1 mux, you will need to correctly order the
 signals in the module instantiation. To do this, follow the
 order shown in the module declaration shown in the top two lines in
@@ -141,24 +123,25 @@ genericMux2x1 #(7) muxHex(7'b1111111, RandHex, randBut, randSeg);
 \end{lstlisting}
 
 The signal width, \textbf{N}, shown in Figure~\ref{fig:2x1MuxSymbol} is a placeholder for
-some integer value in an instantiation. I designed the 2:1 mux Verilog
-module so that you could specify the value of \textbf{N} using the \#()
-specifier shown in the bottom line of code in Listing 1. A component
+an integer value that describes the width of the \emph{y1, y0, F} signals.  You can
+specify this width when you instantiate a \emph{genericMux2x1} module using the \#()
+specifier immediately after \emph{genericMux2x1} as shown in the bottom line of code in Listing 1. 
+
+A component
 that you can instantiate with different signal widths is called
-``generic''. This modifier is frequently included in the module's name.
-The default value for the signal width is 8-bit. Be careful, Verilog
-will allow you to instantiate a genericMux2x1 module without the \#()
-specifier, defaulting to 8-bit signals for \textbf{F},
-\textbf{y\textsubscript{0}} , and \textbf{y\textsubscript{0}}
-\uline{and} allowing you to provide signals with different vector sizes.
-It will do this with a warning that you can find in the Compilation
+``generic'' and often used in the module's name.  Often generics
+have a default value, for the genericMux2x1 it is 8-bit. This is 
+worth mentioning because if you forget to include \#(7) in your
+instantation, the compiler will generate a warning that is easy to
+overlook and your design will not simulate or synthesize correctly.
+If you suspect this is occuring in your design,  look in the Compilation
 Report tab -\textgreater{} Analysis \& Synthesis folder -\textgreater{}
 Connectivity Checks folder. Click on the offending module and you will
-see the following error report. Not much, but you have been warned.
+see the following error report. 
 
 \begin{figure}[ht]
 \includegraphics{image4.png}
-\caption{Warning that you messed up your vector sizes in a module instantiation.}
+\caption{Forgetting the generic specifier in a 2:1 Mux will generate this report.}
 \label{fig:vectorSizeWarnings}
 \end{figure}
 
@@ -188,7 +171,7 @@ following list. Note that the order of the inputs is important as
 \item    \textbf{LT} = 1 when \textbf{X} \textless{} \textbf{Y} else   \textbf{LT} = 0
 \end{itemize}
 
-I have provided you the Verilog code for the N-bit comparator on Canvas.
+The Verilog code for the N-bit comparator is available on Canvas.
 When creating instances of the comparator, you will need to correctly
 order the signals in the module instantiation. To do this, follow the
 order shown in the module definition shown in the top two lines in
@@ -196,7 +179,8 @@ Listing ~ref{listing:comparatorVerilog}.
 
 \begin{lstlisting}[language=Verilog,
  caption={Top, the module definition for the comparator.  Bottom, module
- instantiation of a comparator in Figure~\ref{fig:comparatorSymbol}.},
+ instantiation of a comparator in Figure~\ref{fig:comparatorSymbol}. Remove the 
+component instantiation line break in your code.},
  label={listing:comparatorVerilog},
  frame=single]
 // Module definition for the comparator
@@ -208,18 +192,15 @@ genericComparator #(4) randVsGuess(randNum, guessSwitch, \
 \end{lstlisting}
 
 Like the mux, the comparator is a generic module. This means that you
-need to specify the vector width of the \textbf{X} and \textbf{Y} inputs
-using the \#() specifier. As an example, I've provided an instantiation
-from my hiLow module in the lower two lines in Listing 2. Like the mux,
-the default vector width for the inputs is 8-bits. Same warning about
-vector size mismatch applies to comparators.
+need to specify the width of the \textbf{X} and \textbf{Y} vectors 
+using the \#() specifier. The same warnings about vector size mismatch 
+applies to comparators.
 
 
 \section{Module: hexToSevenSeg}
 You should use the hexToSevenSeg module you developed in a
 previous lab. Note, the name of this module was shortened in Figure~\ref{fig:guessGameSysArch}
-to
-hex27 in order to save space and make the schematic more
+to hex27 in order to save space and make the schematic more
 readable.
 
 
@@ -229,8 +210,8 @@ readable.
 The module labeled 2:4 decoder interprets the 2-bit input
 s\textsubscript{1}, s\textsubscript{0} as a 2-bit binary number that we
 will call \textbf{s}. All the y outputs whose subscript is less than or
-equal to \textbf{4-s} will have an output of 1. All the y outputs whose
-subscript is greater than \textbf{3-s} will have an output of 0.
+equal to \textbf{s} will have an output of 1. All the y outputs whose
+subscript is greater than \textbf{s} will have an output of 0.
 
 \begin{figure}[ht]
 \includegraphics[width=0.3\paperwidth]{image6.png}
@@ -311,7 +292,7 @@ button is pressed. The ``I'' from ``wIn'' is needed because you cannot
 make a ``W'' on a 7-segment display.
 
 \begin{figure}[ht]
-\includegraphics{image7.png}
+\includegraphics[width=0.5\paperwidth]{image7.png}
 \caption{The illuminated patterns to inform the guesser about the
 magnitude of their guess.}
 \label{fig:hiLowWinDisplay}
@@ -351,11 +332,12 @@ step as shown in Figure~\ref{fig:lfsrOperation}.
 
 \begin{figure}[ht]
 \includegraphics{image8.png}
-\caption{A schematic illustration of a 4-bit LFSR operation.}
+\caption{A) A schematic illustration of a 4-bit LFSR operation. B) The
+input 4b'1110 produced the output 4b'1101.}
 \label{fig:lfsrOperation}
 \end{figure}
 
-Figure~\ref{fig:lfsrOperation} shows 3 of the 4 input bits I\textsubscript{2} \ldots{}
+Figure~\ref{fig:lfsrOperation} shows the input bits I\textsubscript{2} \ldots{}
 I\textsubscript{0} being shifted one bit to the left on their way to the
 outputs O\textsubscript{3} \ldots{} O\textsubscript{1}. The output
 O\textsubscript{0} is formed by computing I\textsubscript{2} \^{}
@@ -364,10 +346,10 @@ I\textsubscript{0} where ``\^{}'' is the xor operation.
 Let's use Table~\ref{table:lfsrOperations} to 
 understand what happens if the input in 
 Figure~\ref{fig:lfsrOperation}
-was 7'b1110, which when interpreted as a decimal number is 14. The upper
+was 7'b1110, which, when interpreted as a decimal number, is 14. The upper
 3-bits of output are formed by shifting the input left by one bit. The
 least significant bit of the output is formed by computing 1 \^{} 0
-which equals 1. The resulting output is 7'b1101, when interpreted as a
+which equals 1. The resulting output is 4'b1101, when interpreted as a
 decimal number, equals 13. Fill in the next blank row of Table 2 using
 decimal 13 as an input. Repeat for the last row of the table.
 
@@ -426,7 +408,7 @@ and you filled them all in, you would get 14 on the
 14\textsuperscript{th} row. Can you figure out what number is excluded
 from the sequence?
 
-For the lfsr module, I want you to:
+For the lfsr module, you need to:
 
 \begin{itemize}
 \item
@@ -451,22 +433,20 @@ For the lfsr module, I want you to:
 
 \section{Module: hiLow}
 
-The hiLow module stiches together all the modules created and provided
-to you. The hiLow module declaration contains all the signals shown in
-Figure~\ref{fig:guessGameSysArch}. I've provided my module declaration here so that you can more
-easily relate these to the pin assignments in the pin assignment
-section.
+The hiLow module stitches together all the modules and contains all 
+the signals shown in
+Figure~\ref{fig:guessGameSysArch}. The module declaration is provided 
+below to assist your pin assignment.
 
 \begin{verbatim}
 module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hiLowBut,
 			randSeg, greenLEDs, hiLowSeg);
 \end{verbatim}
 
-To complete this module, you will need to instantiate the modules in
-Figure~\ref{fig:guessGameSysArch}. To see how to do this, I've grabbed the 2:1 mux out of the
-system architecture and reproduced it in Figure~\ref{fig:snippetFromSysArch}. 
-Let's write the
-Verilog code to instantiate this module in the hiLow module.
+To complete this module, you will need to instantiate all the modules in
+Figure~\ref{fig:guessGameSysArch}. To provide guidance on this process
+let's focus on the 2:1 mux from Figure~\ref{fig:snippetFromSysArch}.  This
+2:1 mux is repsoduced in Figure~\ref{fig:snippetFromSysArch}.
 
 \begin{figure}[ht]
 \includegraphics{image9.png}
@@ -474,13 +454,15 @@ Verilog code to instantiate this module in the hiLow module.
 \label{fig:snippetFromSysArch}
 \end{figure}
 
+
+Let's write the Verilog code to instantiate the 2:1 mux.
 The first step that you need to take is to give EVERY signal in the
 system architecture a name or constant value. With respect to Figure~\ref{fig:snippetFromSysArch},
 the output of the 2:1 mux is already named \textbf{randSeg} and the
 select line is named \textbf{randBut}. The data input y1 will have a
 constant value \textbf{7b'1111111}, needed to produce a blank 7-segment
-display. The input y0 is the output from a hexToSevenSeg module, I named
-this signal \textbf{RandHex}.
+display. The input y0 is the output from a hexToSevenSeg module, a signal 
+named \textbf{RandHex}.
 
 The second step is to know the order of the parameters in the 2:1 mux
 module declaration. This was given earlier as:
@@ -495,8 +477,8 @@ The third step is instantiating the 2:1 mux in Verilog. To do this:
   Define the width of the data input and data output of the mux
   (7-bits),
 \item
-  Give the 2:1 mux instance a unique name. I called my instance
-  \textbf{muxHex},
+  Give the 2:1 mux instance a descriptive and unique name. 
+  For example, \textbf{muxHex},
 \item
   Put the system architecture signals in their corresponding locations
   in the module
@@ -507,7 +489,7 @@ The third step is instantiating the 2:1 mux in Verilog. To do this:
 Once you get the hang of it, you are just translating the system
 architecture of Figure~\ref{fig:guessGameSysArch} into words.
 
-For the hiLow module, I want you to:
+For the hiLow module, you should:
 
 \begin{itemize}
 \item
@@ -531,9 +513,10 @@ module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hiLowBut,
 \item
   My module had 3 internal vectors (wire type) and 3 internal one bit
   signals (shown in the system architecture).
-\item
-  When you instantiate a module
-\item
+\end{itemize}
+
+\section{Testbench}
+
   Run the testbench for the hiLow module provided on Canvas. Produce a
   timing diagram with the following characteristics. Zoom to fill the
   available horizontal space with the waveform. Color inputs green and
@@ -552,16 +535,15 @@ signal & radix & color trace \\ \hline
     t\_hiLowSeg & hex & red  \\
     t\_greenLEDs & default & red  \\
   \end{tabular}
-\end{itemize}
 
 
-\section{Pin-Assignment}
+
+\section{Pin-Assignment and Synthesis}
 
 Use the image of the development board in 
 Figure~\ref{fig:inputOutputDevBoard} and the information
 in the board User Guide to determine the FPGA pins associated with the
-input and output devices used by the hiLow module. Note, this is where I
-had most of my errors.
+input and output devices used by the hiLow module. 
 
 \begin{longtable}[]{@{}
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3396}}|
@@ -635,6 +617,14 @@ G{[}0{]}
 \bottomrule()
 \end{longtable}
 
+Complete the pin-assignment in Quartus, compile your design and download to the
+FGPA development boards.  If you are having difficulty getting your circuit to work
+correctly, please refer to Section~\ref{section:guessGameDebugging} for some 
+useful debugging tips. 
+
+Once you get your design working, demonstrate it to a member of the 
+lab team.  
+
 
 \section{Turn in}
 
@@ -678,7 +668,7 @@ section next week.
   fill the available horizontal space with the waveform. 
 \end{itemize}
 
-\subsubsection{Pin-Assignment}
+\subsubsection{Pin-Assignment and synthesis}
 
 \begin{itemize}
 \item Completed pin assignment table for all the signals in the hiLow module in Table~\ref{table:hlggPinAssignment}.
@@ -686,45 +676,39 @@ section next week.
 
 
 \section{Debugging Tips}
+\label{section:guessGameDebugging}
 This laboratory typically generates a variety of new errors that you 
-have not seen before.  As a result, I have added this section on 
-useful debugging techniques to help you more effectively 
+have not seen before.  This section on useful debugging techniques 
+will help you more effectively 
 interpert the compilers output to locate errors in your code.
 The following is an example story of someone debugging their code...
 
-After I put together all the components, I ran Start Analysis \&
-Elaboration. It took me a while to find and fix all my errors. I found
-that by clicking on the Error icon (red x) or Warning icon (yellow
-triangle) in the console area, I could eliminate a lot of the clutter
-and focus on the reporting.
+After you put together all the components, you can run Start Analysis \&
+Elaboration. It may take you a while to find all your errors.  Try
+clicking on the Error icon (red x) or Warning icon (yellow
+triangle) in the console area, to eliminate a lot of the clutter.
 
-I defined output wire {[}7:0{]} greenLEDs; I should have used output reg
-{[}7:0{]} greenLEDs; because greenLEDs is the output of an always/case
-statement.
+Th error below is a result of defining the output \verb+wire {[}7:0{]} greenLEDs+.
+the output should have  \verb+reg{[}7:0{]} greenLEDs;+ because greenLEDs is the 
+output of an always/case statement.
 
 \includegraphics{image10.png}
 
-I forgot to include the declaration of randNum -- actually I just
-commented it out to get this error. The top warning always appears and
-the second is a result of an unused output on my adder (more about this
-in the next lab).
+The following error is the result of forgetting to include the declaration of randNum. 
+The top warning always appears and the second is a result of an unused output on 
+the adder (more about this in the next lab).
 
 \includegraphics{image11.png}
-
-I accidentally left a testbench as the top-level entity and tried to
-synthesize.
+Teh next error shows what happen when you accidentally leave a testbench as the 
+top-level entity when attempting to synthesize.
 
 \includegraphics{image12.png}
 
-These are all the Critical Warnings and Warnings that I got on my final,
+These are all the Critical Warnings and Warnings that you will see on your final,
 working version. You should NOT attempt to fix these ``errors''.
 
 \includegraphics{image13.png}
 
 The Connectivity Checks folder from the Compilation Report will help you
 find weird connection problems that you may have inadvertently created
-in your design. This report means that I hardwired one of the inputs to
-the 2:1 mux to all 1's in order to blank out the 7-segment display until
-the button was pressed.
-
-\includegraphics{image14.png}
+in your design. 
