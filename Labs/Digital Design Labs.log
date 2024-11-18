@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.2)  15 NOV 2024 11:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.2)  18 NOV 2024 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,7 +839,7 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 )) (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 53.
+Package hyperref Info: Option `colorlinks' set `true' on input line 62.
 )
 \openout5 = `digitalBodyOfKnowledge.cpy'.
 
@@ -850,7 +850,8 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (Digital Design Labs.aux (bodyOfKnowledge.aux) (Lab01SimpleVerilog/lab01.aux)
 (Lab02HexToSeven/lab02.aux) (Lab03RockPaperScissor/lab03.aux)
-(Lab04HighLow/lab04.aux))
+(Lab04HighLow/lab04.aux) (Lab05HighLowWithHints/lab05.aux)
+(Lab06Calculator/lab06.aux))
 \openout1 = `"Digital Design Labs.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -945,18 +946,12 @@ oulston/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}])
 
  (bodyOfKnowledge.tex
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-61.
+62.
 
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (36.71866pt too wide) in paragraph at lines 61--61
-[]|\OT1/lmtt/m/n/10 Using logic minimization software to describe a logic funct
-ion .2 Combination
- []
-
-
-Underfull \vbox (badness 4660) has occurred while \output is active []
+Underfull \vbox (badness 6893) has occurred while \output is active []
 
 
 
@@ -1001,7 +996,7 @@ File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 166.
-<./Lab01SimpleVerilog/Fig/image1.png, id=128, 341.02406pt x 153.57375pt>
+<./Lab01SimpleVerilog/Fig/image1.png, id=178, 341.02406pt x 153.57375pt>
 File: ./Lab01SimpleVerilog/Fig/image1.png Graphic file (type png)
 <use ./Lab01SimpleVerilog/Fig/image1.png>
 Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image1.png  used on input lin
@@ -1016,13 +1011,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .enc}]
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
 (Font)              Font shape `OML/lmm/m/it' tried instead on input line 197.
-<./Lab01SimpleVerilog/Fig/image2.png, id=168, 762.85pt x 255.95625pt>
+<./Lab01SimpleVerilog/Fig/image2.png, id=218, 762.85pt x 255.95625pt>
 File: ./Lab01SimpleVerilog/Fig/image2.png Graphic file (type png)
 <use ./Lab01SimpleVerilog/Fig/image2.png>
 Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image2.png  used on input lin
 e 206.
 (pdftex.def)             Requested size: 359.52896pt x 120.63141pt.
-<./Lab01SimpleVerilog/Fig/image3.png, id=169, 395.4775pt x 168.63pt>
+<./Lab01SimpleVerilog/Fig/image3.png, id=219, 395.4775pt x 168.63pt>
 File: ./Lab01SimpleVerilog/Fig/image3.png Graphic file (type png)
 <use ./Lab01SimpleVerilog/Fig/image3.png>
 Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image3.png  used on input lin
@@ -1034,13 +1029,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [7 <./Lab01SimpleVerilog/Fig/image1.png> <./Lab01SimpleVerilog/Fig/image2.png>]
-<./Lab01SimpleVerilog/Fig/image4.png, id=186, 584.93532pt x 118.94438pt>
+<./Lab01SimpleVerilog/Fig/image4.png, id=236, 584.93532pt x 118.94438pt>
 File: ./Lab01SimpleVerilog/Fig/image4.png Graphic file (type png)
 <use ./Lab01SimpleVerilog/Fig/image4.png>
 Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image4.png  used on input lin
 e 255.
 (pdftex.def)             Requested size: 359.54118pt x 73.11133pt.
-<./Lab01SimpleVerilog/Fig/image5.png, id=187, 867.24pt x 274.77657pt>
+<./Lab01SimpleVerilog/Fig/image5.png, id=237, 867.24pt x 274.77657pt>
 File: ./Lab01SimpleVerilog/Fig/image5.png Graphic file (type png)
 <use ./Lab01SimpleVerilog/Fig/image5.png>
 Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image5.png  used on input lin
@@ -1050,7 +1045,7 @@ e 268.
 
 [8 <./Lab01SimpleVerilog/Fig/image3.png> <./Lab01SimpleVerilog/Fig/image4.png> 
 <./Lab01SimpleVerilog/Fig/image5.png>]
-<./Lab01SimpleVerilog/Fig/image6.png, id=202, 453.94594pt x 265.74281pt>
+<./Lab01SimpleVerilog/Fig/image6.png, id=252, 453.94594pt x 265.74281pt>
 File: ./Lab01SimpleVerilog/Fig/image6.png Graphic file (type png)
 <use ./Lab01SimpleVerilog/Fig/image6.png>
 Package pdftex.def Info: ./Lab01SimpleVerilog/Fig/image6.png  used on input lin
@@ -1078,7 +1073,7 @@ Overfull \hbox (15.00111pt too wide) in paragraph at lines 410--411
 
 
 ]
-<./Lab02HexToSeven/Fig/image1.png, id=274, 185.94469pt x 91.84312pt>
+<./Lab02HexToSeven/Fig/image1.png, id=324, 185.94469pt x 91.84312pt>
 File: ./Lab02HexToSeven/Fig/image1.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image1.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image1.png  used on input line 3
@@ -1129,7 +1124,7 @@ Overfull \hbox (14.87457pt too wide) in alignment at lines 175--185
  [] [] [] [] [] [] 
  []
 
-<./Lab02HexToSeven/Fig/image2.png, id=315, 1115.3019pt x 241.22554pt>
+<./Lab02HexToSeven/Fig/image2.png, id=365, 1115.3019pt x 241.22554pt>
 File: ./Lab02HexToSeven/Fig/image2.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image2.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image2.png  used on input line 2
@@ -1141,7 +1136,7 @@ Underfull \vbox (badness 5637) has occurred while \output is active []
 
 
 [15]
-<./Lab02HexToSeven/Fig/image3.png, id=335, 551.81157pt x 319.1925pt>
+<./Lab02HexToSeven/Fig/image3.png, id=385, 551.81157pt x 319.1925pt>
 File: ./Lab02HexToSeven/Fig/image3.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image3.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image3.png  used on input line 2
@@ -1150,7 +1145,7 @@ Package pdftex.def Info: ./Lab02HexToSeven/Fig/image3.png  used on input line 2
 
 
 [16 <./Lab02HexToSeven/Fig/image2.png> <./Lab02HexToSeven/Fig/image3.png>]
-<./Lab02HexToSeven/Fig/image4.png, id=343, 698.61pt x 79.79813pt>
+<./Lab02HexToSeven/Fig/image4.png, id=393, 698.61pt x 79.79813pt>
 File: ./Lab02HexToSeven/Fig/image4.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image4.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image4.png  used on input line 2
@@ -1176,7 +1171,7 @@ Overfull \hbox (15.27715pt too wide) in alignment at lines 292--296
  [] [] [] [] [] [] [] 
  []
 
-<./Lab02HexToSeven/Fig/image5.png, id=346, 1223.57124pt x 186.6975pt>
+<./Lab02HexToSeven/Fig/image5.png, id=396, 1223.57124pt x 186.6975pt>
 File: ./Lab02HexToSeven/Fig/image5.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image5.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image5.png  used on input line 3
@@ -1185,7 +1180,7 @@ Package pdftex.def Info: ./Lab02HexToSeven/Fig/image5.png  used on input line 3
 
 
 [17 <./Lab02HexToSeven/Fig/image4.png> <./Lab02HexToSeven/Fig/image5.png>]
-<./Lab02HexToSeven/Fig/image6.png, id=361, 651.03226pt x 373.395pt>
+<./Lab02HexToSeven/Fig/image6.png, id=411, 651.03226pt x 373.395pt>
 File: ./Lab02HexToSeven/Fig/image6.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image6.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image6.png  used on input line 3
@@ -1194,13 +1189,13 @@ Package pdftex.def Info: ./Lab02HexToSeven/Fig/image6.png  used on input line 3
 
 
 [18 <./Lab02HexToSeven/Fig/image6.png>]
-<./Lab02HexToSeven/Fig/image8.png, id=381, 817.55438pt x 483.30562pt>
+<./Lab02HexToSeven/Fig/image8.png, id=431, 817.55438pt x 483.30562pt>
 File: ./Lab02HexToSeven/Fig/image8.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image8.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image8.png  used on input line 3
 97.
 (pdftex.def)             Requested size: 184.29109pt x 108.94556pt.
-<./Lab02HexToSeven/Fig/image9.png, id=384, 978.65625pt x 459.7175pt>
+<./Lab02HexToSeven/Fig/image9.png, id=434, 978.65625pt x 459.7175pt>
 File: ./Lab02HexToSeven/Fig/image9.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image9.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image9.png  used on input line 4
@@ -1224,12 +1219,12 @@ Overfull \hbox (15.63959pt too wide) in alignment at lines 440--458
 
 
 [19 <./Lab02HexToSeven/Fig/image8.png> <./Lab02HexToSeven/Fig/image9.png>]
-Underfull \vbox (badness 2698) has occurred while \output is active []
+Underfull \vbox (badness 1442) has occurred while \output is active []
 
 
 
 [20]
-<./Lab02HexToSeven/Fig/image11.png, id=412, 994.917pt x 464.937pt>
+<./Lab02HexToSeven/Fig/image11.png, id=461, 994.917pt x 464.937pt>
 File: ./Lab02HexToSeven/Fig/image11.png Graphic file (type png)
 <use ./Lab02HexToSeven/Fig/image11.png>
 Package pdftex.def Info: ./Lab02HexToSeven/Fig/image11.png  used on input line 
@@ -1313,7 +1308,7 @@ Overfull \hbox (15.65948pt too wide) in alignment at lines 562--568
 \openout2 = `./Lab03RockPaperScissor/lab03.aux'.
 
  (Lab03RockPaperScissor/lab03.tex
-<./Lab03RockPaperScissor/Fig/image1.png, id=437, 584.1825pt x 274.77657pt>
+<./Lab03RockPaperScissor/Fig/image1.png, id=485, 584.1825pt x 274.77657pt>
 File: ./Lab03RockPaperScissor/Fig/image1.png Graphic file (type png)
 <use ./Lab03RockPaperScissor/Fig/image1.png>
 Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image1.png  used on input 
@@ -1327,13 +1322,13 @@ line 30.
 
 
  <./Lab03RockPaperScissor/Fig/image1.png>]
-<./Lab03RockPaperScissor/Fig/image2.png, id=443, 793.46437pt x 329.73187pt>
+<./Lab03RockPaperScissor/Fig/image2.png, id=491, 793.46437pt x 329.73187pt>
 File: ./Lab03RockPaperScissor/Fig/image2.png Graphic file (type png)
 <use ./Lab03RockPaperScissor/Fig/image2.png>
 Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image2.png  used on input 
 line 50.
 (pdftex.def)             Requested size: 409.54071pt x 170.18863pt.
-<./Lab03RockPaperScissor/Fig/image3.png, id=445, 1492.07437pt x 596.2275pt>
+<./Lab03RockPaperScissor/Fig/image3.png, id=493, 1492.07437pt x 596.2275pt>
 File: ./Lab03RockPaperScissor/Fig/image3.png Graphic file (type png)
 <use ./Lab03RockPaperScissor/Fig/image3.png>
 Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image3.png  used on input 
@@ -1358,7 +1353,7 @@ Overfull \hbox (14.36133pt too wide) in alignment at lines 114--120
 
 [24 <./Lab03RockPaperScissor/Fig/image2.png> <./Lab03RockPaperScissor/Fig/image
 3.png>]
-<./Lab03RockPaperScissor/Fig/image4.png, id=456, 1051.67906pt x 489.32813pt>
+<./Lab03RockPaperScissor/Fig/image4.png, id=504, 1051.67906pt x 489.32813pt>
 File: ./Lab03RockPaperScissor/Fig/image4.png Graphic file (type png)
 <use ./Lab03RockPaperScissor/Fig/image4.png>
 Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image4.png  used on input 
@@ -1384,7 +1379,7 @@ Overfull \hbox (14.36133pt too wide) in alignment at lines 212--221
 
 
 [26]
-<./Lab03RockPaperScissor/Fig/image5.png, id=476, 469.755pt x 130.086pt>
+<./Lab03RockPaperScissor/Fig/image5.png, id=524, 469.755pt x 130.086pt>
 File: ./Lab03RockPaperScissor/Fig/image5.png Graphic file (type png)
 <use ./Lab03RockPaperScissor/Fig/image5.png>
 Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image5.png  used on input 
@@ -1408,7 +1403,7 @@ Overfull \hbox (16.43205pt too wide) in alignment at lines 305--311
 
 
 [27 <./Lab03RockPaperScissor/Fig/image5.png>]
-<./Lab03RockPaperScissor/Fig/image6.png, id=490, 277.911pt x 111.3615pt>
+<./Lab03RockPaperScissor/Fig/image6.png, id=538, 277.911pt x 111.3615pt>
 File: ./Lab03RockPaperScissor/Fig/image6.png Graphic file (type png)
 <use ./Lab03RockPaperScissor/Fig/image6.png>
 Package pdftex.def Info: ./Lab03RockPaperScissor/Fig/image6.png  used on input 
@@ -1444,27 +1439,27 @@ playButton, winLoseSeg);
 
 
 [29]
-Overfull \hbox (13.99997pt too wide) in alignment at lines 521--526
+Overfull \hbox (13.99997pt too wide) in alignment at lines 523--528
  [] [] [] [] 
  []
 
 
-Overfull \hbox (13.99997pt too wide) in alignment at lines 526--530
+Overfull \hbox (13.99997pt too wide) in alignment at lines 528--532
  [] [] [] [] 
  []
 
 
-Overfull \hbox (13.99997pt too wide) in alignment at lines 530--539
+Overfull \hbox (13.99997pt too wide) in alignment at lines 532--541
  [] [] [] [] 
  []
 
 
-Overfull \hbox (13.64114pt too wide) in alignment at lines 544--548
+Overfull \hbox (13.64114pt too wide) in alignment at lines 546--550
  [] [] [] 
  []
 
 
-Overfull \hbox (13.64114pt too wide) in alignment at lines 548--553
+Overfull \hbox (13.64114pt too wide) in alignment at lines 550--555
  [] [] [] 
  []
 
@@ -1483,31 +1478,31 @@ Overfull \hbox (13.64114pt too wide) in alignment at lines 548--553
 
 
 ]
-<./Lab04HighLow/Fig/image1.png, id=548, 812.28468pt x 231.86626pt>
+<./Lab04HighLow/Fig/image1.png, id=596, 812.28468pt x 231.86626pt>
 File: ./Lab04HighLow/Fig/image1.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image1.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image1.png  used on input line 31.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image1.png  used on input line 32.
 (pdftex.def)             Requested size: 409.52502pt x 116.8987pt.
 
 
-[33 <./Lab04HighLow/Fig/image1.png>]
-<./Lab04HighLow/Fig/image2.png, id=556, 593.96906pt x 577.40718pt>
+[33]
+<./Lab04HighLow/Fig/image2.png, id=604, 641.39626pt x 591.71063pt>
 File: ./Lab04HighLow/Fig/image2.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image2.png>
 Package pdftex.def Info: ./Lab04HighLow/Fig/image2.png  used on input line 79.
-(pdftex.def)             Requested size: 368.59235pt x 358.31474pt.
-<./Lab04HighLow/Fig/image3.png, id=558, 511.9125pt x 241.65282pt>
+(pdftex.def)             Requested size: 368.58467pt x 340.03233pt.
+<./Lab04HighLow/Fig/image3.png, id=606, 511.9125pt x 241.65282pt>
 File: ./Lab04HighLow/Fig/image3.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image3.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image3.png  used on input line 96.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image3.png  used on input line 95.
 (pdftex.def)             Requested size: 245.71521pt x 115.99202pt.
 
 
-[34]
-<./Lab04HighLow/Fig/image4.png, id=576, 1197.47375pt x 155.58125pt>
+[34 <./Lab04HighLow/Fig/image1.png>]
+<./Lab04HighLow/Fig/image4.png, id=621, 1197.47375pt x 155.58125pt>
 File: ./Lab04HighLow/Fig/image4.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image4.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image4.png  used on input line 143.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image4.png  used on input line 141.
 
 (pdftex.def)             Requested size: 409.52931pt x 53.2079pt.
 
@@ -1516,89 +1511,89 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [35 <./Lab04HighLow/Fig/image2.png>]
-<./Lab04HighLow/Fig/image5.png, id=584, 145.5255pt x 70.6275pt>
+<./Lab04HighLow/Fig/image5.png, id=632, 145.5255pt x 70.6275pt>
 File: ./Lab04HighLow/Fig/image5.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image5.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image5.png  used on input line 159.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image5.png  used on input line 157.
 
 (pdftex.def)             Requested size: 145.52957pt x 70.62947pt.
 
 
 [36 <./Lab04HighLow/Fig/image3.png> <./Lab04HighLow/Fig/image4.png> <./Lab04Hig
 hLow/Fig/image5.png>]
-Overfull \hbox (4.47418pt too wide) in paragraph at lines 189--190
+Overfull \hbox (4.47418pt too wide) in paragraph at lines 187--188
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<./Lab04HighLow/Fig/image6.png, id=596, 257.46187pt x 169.38281pt>
+<./Lab04HighLow/Fig/image6.png, id=644, 257.46187pt x 169.38281pt>
 File: ./Lab04HighLow/Fig/image6.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image6.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image6.png  used on input line 217.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image6.png  used on input line 215.
 
 (pdftex.def)             Requested size: 184.29597pt x 121.24734pt.
 
-Overfull \hbox (14.86392pt too wide) in alignment at lines 231--250
+Overfull \hbox (14.86392pt too wide) in alignment at lines 229--248
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.86392pt too wide) in alignment at lines 250--266
+Overfull \hbox (14.86392pt too wide) in alignment at lines 248--264
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.86392pt too wide) in alignment at lines 266--271
+Overfull \hbox (14.86392pt too wide) in alignment at lines 264--269
  [] [] [] [] [] [] 
  []
 
 
 
 [37 <./Lab04HighLow/Fig/image6.png>]
-<./Lab04HighLow/Fig/image7.png, id=612, 306.819pt x 121.2165pt>
+<./Lab04HighLow/Fig/image7.png, id=660, 306.819pt x 121.2165pt>
 File: ./Lab04HighLow/Fig/image7.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image7.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image7.png  used on input line 295.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image7.png  used on input line 293.
 
 (pdftex.def)             Requested size: 306.82759pt x 121.21988pt.
 
-Overfull \hbox (70.4748pt too wide) in paragraph at lines 313--314
+Overfull \hbox (70.4748pt too wide) in paragraph at lines 311--312
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-<./Lab04HighLow/Fig/image8.png, id=616, 405.01312pt x 161.85469pt>
+<./Lab04HighLow/Fig/image8.png, id=664, 405.01312pt x 161.85469pt>
 File: ./Lab04HighLow/Fig/image8.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image8.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image8.png  used on input line 334.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image8.png  used on input line 332.
 
 (pdftex.def)             Requested size: 405.0183pt x 161.85674pt.
 
 
 [38 <./Lab04HighLow/Fig/image7.png>]
-Overfull \hbox (14.44403pt too wide) in alignment at lines 361--379
+Overfull \hbox (14.44403pt too wide) in alignment at lines 359--377
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.44403pt too wide) in alignment at lines 379--393
+Overfull \hbox (14.44403pt too wide) in alignment at lines 377--391
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.44403pt too wide) in alignment at lines 393--399
+Overfull \hbox (14.44403pt too wide) in alignment at lines 391--397
  [] [] [] [] [] 
  []
 
 
 
 [39 <./Lab04HighLow/Fig/image8.png>]
-<./Lab04HighLow/Fig/image9.png, id=649, 118.19156pt x 151.3153pt>
+<./Lab04HighLow/Fig/image9.png, id=697, 126.4725pt x 151.3153pt>
 File: ./Lab04HighLow/Fig/image9.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image9.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image9.png  used on input line 452.
+Package pdftex.def Info: ./Lab04HighLow/Fig/image9.png  used on input line 450.
 
-(pdftex.def)             Requested size: 118.19307pt x 151.31723pt.
+(pdftex.def)             Requested size: 126.4741pt x 151.31723pt.
 
-Overfull \hbox (45.96875pt too wide) in paragraph at lines 486--487
+Overfull \hbox (45.96875pt too wide) in paragraph at lines 484--485
 [][] []\OT1/lmtt/m/n/10 genericMux2x1 #(7) muxHex(7\textquotesingle b1111111, R
 andHex, randBut, randSeg); 
  []
@@ -1606,96 +1601,96 @@ andHex, randBut, randSeg);
 
 
 [40 <./Lab04HighLow/Fig/image9.png>]
-Overfull \hbox (13.59995pt too wide) in alignment at lines 551--557
+Overfull \hbox (13.59995pt too wide) in alignment at lines 549--555
  [] [] [] 
  []
 
 
-Overfull \hbox (13.59995pt too wide) in alignment at lines 557--566
+Overfull \hbox (13.59995pt too wide) in alignment at lines 555--564
  [] [] [] 
  []
 
 
-Overfull \hbox (13.99994pt too wide) in alignment at lines 572--576
+Overfull \hbox (13.99994pt too wide) in alignment at lines 570--574
  [] [] [] [] 
  []
 
 
-Overfull \hbox (13.99994pt too wide) in alignment at lines 576--582
+Overfull \hbox (13.99994pt too wide) in alignment at lines 574--580
  [] [] [] [] 
  []
 
 
 
 [41]
-Overfull \hbox (13.64114pt too wide) in alignment at lines 587--592
+Overfull \hbox (13.64114pt too wide) in alignment at lines 585--590
  [] [] [] 
  []
 
 
-Overfull \hbox (13.64114pt too wide) in alignment at lines 592--597
+Overfull \hbox (13.64114pt too wide) in alignment at lines 590--595
  [] [] [] 
  []
 
 
-Overfull \hbox (13.99994pt too wide) in alignment at lines 603--615
+Overfull \hbox (13.99994pt too wide) in alignment at lines 601--613
  [] [] [] [] 
  []
 
 
-Overfull \hbox (13.99994pt too wide) in alignment at lines 615--618
+Overfull \hbox (13.99994pt too wide) in alignment at lines 613--616
  [] [] [] [] 
  []
 
 
 
 [42]
-<./Lab04HighLow/Fig/image10.png, id=682, 1234.6125pt x 338.26375pt>
+<./Lab04HighLow/Fig/image10.png, id=731, 1234.6125pt x 338.26375pt>
 File: ./Lab04HighLow/Fig/image10.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image10.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image10.png  used on input line 695
+Package pdftex.def Info: ./Lab04HighLow/Fig/image10.png  used on input line 694
 .
 (pdftex.def)             Requested size: 409.53331pt x 112.20546pt.
 
-Overfull \hbox (15.00328pt too wide) in paragraph at lines 695--696
+Overfull \hbox (15.00328pt too wide) in paragraph at lines 694--695
 [][] 
  []
 
-<./Lab04HighLow/Fig/image11.png, id=683, 1029.8475pt x 243.91125pt>
+<./Lab04HighLow/Fig/image11.png, id=732, 1029.8475pt x 243.91125pt>
 File: ./Lab04HighLow/Fig/image11.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image11.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image11.png  used on input line 701
+Package pdftex.def Info: ./Lab04HighLow/Fig/image11.png  used on input line 700
 .
 (pdftex.def)             Requested size: 409.52744pt x 96.99333pt.
 
-Overfull \hbox (14.9974pt too wide) in paragraph at lines 701--704
+Overfull \hbox (14.9974pt too wide) in paragraph at lines 700--703
 [][]
  []
 
-<./Lab04HighLow/Fig/image12.png, id=684, 770.88pt x 125.46875pt>
+<./Lab04HighLow/Fig/image12.png, id=733, 770.88pt x 125.46875pt>
 File: ./Lab04HighLow/Fig/image12.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image12.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image12.png  used on input line 705
+Package pdftex.def Info: ./Lab04HighLow/Fig/image12.png  used on input line 704
 .
 (pdftex.def)             Requested size: 409.52899pt x 66.65509pt.
 
-Overfull \hbox (14.99896pt too wide) in paragraph at lines 705--706
+Overfull \hbox (14.99896pt too wide) in paragraph at lines 704--705
 [][] 
  []
 
-<./Lab04HighLow/Fig/image13.png, id=685, 1036.87375pt x 316.18124pt>
+<./Lab04HighLow/Fig/image13.png, id=734, 1036.87375pt x 316.18124pt>
 File: ./Lab04HighLow/Fig/image13.png Graphic file (type png)
 <use ./Lab04HighLow/Fig/image13.png>
-Package pdftex.def Info: ./Lab04HighLow/Fig/image13.png  used on input line 710
+Package pdftex.def Info: ./Lab04HighLow/Fig/image13.png  used on input line 709
 .
 (pdftex.def)             Requested size: 409.53691pt x 124.88298pt.
 
-Overfull \hbox (15.00688pt too wide) in paragraph at lines 710--711
+Overfull \hbox (15.00688pt too wide) in paragraph at lines 709--710
 [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5260) has occurred while \output is active []
 
 
 
@@ -1703,12 +1698,387 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ighLow/Fig/image12.png>])
 
 [44 <./Lab04HighLow/Fig/image13.png>]
+\openout2 = `./Lab05HighLowWithHints/lab05.aux'.
+
+ (Lab05HighLowWithHints/lab05.tex
+<./Lab05HighLowWithHints/Fig/image1.png, id=746, 403.5075pt x 105.77016pt>
+File: ./Lab05HighLowWithHints/Fig/image1.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image1.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image1.png  used on input 
+line 48.
+(pdftex.def)             Requested size: 403.51883pt x 105.7731pt.
+
+
+[45
+
+
+
+
+]
+<./Lab05HighLowWithHints/Fig/image2.png, id=753, 640.19176pt x 202.95825pt>
+File: ./Lab05HighLowWithHints/Fig/image2.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image2.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image2.png  used on input 
+line 76.
+(pdftex.def)             Requested size: 409.52596pt x 129.83089pt.
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 90--106
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 106--118
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 118--126
+ [] [] [] [] 
+ []
+
+
+
+[46 <./Lab05HighLowWithHints/Fig/image1.png> <./Lab05HighLowWithHints/Fig/image
+2.png>]
+<./Lab05HighLowWithHints/Fig/image3.png, id=763, 679.94025pt x 474.573pt>
+File: ./Lab05HighLowWithHints/Fig/image3.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image3.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image3.png  used on input 
+line 140.
+(pdftex.def)             Requested size: 458.40036pt x 319.9464pt.
+
+Overfull \hbox (48.87033pt too wide) in paragraph at lines 140--141
+[][] 
+ []
+
+
+
+[47 <./Lab05HighLowWithHints/Fig/image3.png>]
+Overfull \hbox (22.47437pt too wide) in paragraph at lines 209--210
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+
+[48]
+Overfull \hbox (7.94888pt too wide) in paragraph at lines 290--290
+[]|[]|  
+ []
+
+
+Overfull \hbox (10.42746pt too wide) in alignment at lines 286--298
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (7.94888pt too wide) in paragraph at lines 300--300
+[]|[]|  
+ []
+
+
+Overfull \hbox (10.42746pt too wide) in alignment at lines 298--308
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (10.42746pt too wide) in alignment at lines 308--316
+ [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+
+[49]
+Overfull \hbox (83.96854pt too wide) in paragraph at lines 328--328
+[] \OT1/lmtt/m/n/10 hot = wLT;                       // given to you in  Figure
+~\ref{fig:guessWithHintSystemArch}[] 
+ []
+
+<./Lab05HighLowWithHints/Fig/image5.png, id=803, 314.046pt x 128.4435pt>
+File: ./Lab05HighLowWithHints/Fig/image5.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image5.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image5.png  used on input 
+line 354.
+(pdftex.def)             Requested size: 307.1592pt x 125.62682pt.
+
+
+[50 <./Lab05HighLowWithHints/Fig/image5.png>]
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <6> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 419.
+
+Overfull \hbox (4.28162pt too wide) in paragraph at lines 475--476
+[]|\OT1/lmr/m/n/10 Comment|  
+ []
+
+
+Overfull \hbox (9.60486pt too wide) in alignment at lines 472--477
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.28162pt too wide) in paragraph at lines 479--480
+[]|\OT1/lmr/m/n/10 Comment|  
+ []
+
+
+Overfull \hbox (9.60486pt too wide) in alignment at lines 477--481
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (9.60486pt too wide) in alignment at lines 481--504
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+
+[51]
+<./Lab05HighLowWithHints/Fig/image7.png, id=851, 873.2625pt x 185.94469pt>
+File: ./Lab05HighLowWithHints/Fig/image7.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image7.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image7.png  used on input 
+line 529.
+(pdftex.def)             Requested size: 409.52733pt x 87.20107pt.
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 547--560
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 560--569
+ [] [] [] [] 
+ []
+
+
+
+[52 <./Lab05HighLowWithHints/Fig/image7.png>]
+Overfull \hbox (13.99994pt too wide) in alignment at lines 575--586
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 586--592
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.64114pt too wide) in alignment at lines 597--607
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.64114pt too wide) in alignment at lines 607--615
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 621--633
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.99994pt too wide) in alignment at lines 633--636
+ [] [] [] [] 
+ []
+
+
+
+[53]
+<./Lab05HighLowWithHints/Fig/image8.png, id=877, 1046.91125pt x 130.4875pt>
+File: ./Lab05HighLowWithHints/Fig/image8.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image8.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image8.png  used on input 
+line 702.
+(pdftex.def)             Requested size: 409.52379pt x 51.04323pt.
+<./Lab05HighLowWithHints/Fig/image9.png, id=879, 1229.59375pt x 509.905pt>
+File: ./Lab05HighLowWithHints/Fig/image9.png Graphic file (type png)
+<use ./Lab05HighLowWithHints/Fig/image9.png>
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image9.png  used on input 
+line 717.
+(pdftex.def)             Requested size: 409.53838pt x 169.83305pt.
+)
+
+[54 <./Lab05HighLowWithHints/Fig/image8.png>]
+
+[55 <./Lab05HighLowWithHints/Fig/image9.png>]
+\openout2 = `./Lab06Calculator/lab06.aux'.
+
+ (Lab06Calculator/lab06.tex
+
+[56
+
+
+
+
+]
+<./Lab06Calculator/Fig/image1.png, id=901, 961.5925pt x 350.30875pt>
+File: ./Lab06Calculator/Fig/image1.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image1.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image1.png  used on input line 2
+9.
+(pdftex.def)             Requested size: 409.52975pt x 149.19194pt.
+
+
+[57]
+<./Lab06Calculator/Fig/image2.png, id=909, 995.72pt x 891.33pt>
+File: ./Lab06Calculator/Fig/image2.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image2.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image2.png  used on input line 6
+8.
+(pdftex.def)             Requested size: 307.15067pt x 274.94939pt.
+
+
+[58 <./Lab06Calculator/Fig/image1.png> <./Lab06Calculator/Fig/image2.png>]
+Overfull \hbox (14.36133pt too wide) in alignment at lines 134--147
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.36133pt too wide) in alignment at lines 147--158
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.36133pt too wide) in alignment at lines 158--176
+ [] [] [] [] [] 
+ []
+
+[59]
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 201.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[60]
+<./Lab06Calculator/Fig/image3.png, id=941, 1090.0725pt x 644.4075pt>
+File: ./Lab06Calculator/Fig/image3.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image3.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image3.png  used on input line 2
+49.
+(pdftex.def)             Requested size: 184.27861pt x 108.93819pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[61 <./Lab06Calculator/Fig/image3.png>]
+<./Lab06Calculator/Fig/image4.png, id=965, 201.00093pt x 164.86594pt>
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 2
+84.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 2
+96.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+<./Lab06Calculator/Fig/image5.png, id=966, 201.00093pt x 164.86594pt>
+File: ./Lab06Calculator/Fig/image5.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image5.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image5.png  used on input line 3
+09.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 3
+21.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 3
+34.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+File: ./Lab06Calculator/Fig/image4.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image4.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image4.png  used on input line 3
+46.
+(pdftex.def)             Requested size: 114.60544pt x 94.00221pt.
+<./Lab06Calculator/Fig/image6.png, id=969, 940.51375pt x 801.99625pt>
+File: ./Lab06Calculator/Fig/image6.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image6.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image6.png  used on input line 3
+60.
+(pdftex.def)             Requested size: 307.14151pt x 261.90614pt.
+
+
+[62 <./Lab06Calculator/Fig/image4.png> <./Lab06Calculator/Fig/image5.png>]
+Overfull \hbox (14.36133pt too wide) in alignment at lines 397--412
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.36133pt too wide) in alignment at lines 412--426
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.36133pt too wide) in alignment at lines 426--433
+ [] [] [] [] [] 
+ []
+
+
+
+[63 <./Lab06Calculator/Fig/image6.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[64]
+<./Lab06Calculator/Fig/image7.png, id=1004, 1292.57906pt x 338.01282pt>
+File: ./Lab06Calculator/Fig/image7.png Graphic file (type png)
+<use ./Lab06Calculator/Fig/image7.png>
+Package pdftex.def Info: ./Lab06Calculator/Fig/image7.png  used on input line 5
+44.
+(pdftex.def)             Requested size: 409.53134pt x 107.0935pt.
+
+Overfull \hbox (15.00131pt too wide) in paragraph at lines 544--545
+[][] 
+ []
+
+
+Overfull \hbox (14.36684pt too wide) in alignment at lines 560--575
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (14.36684pt too wide) in alignment at lines 575--584
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (13.60583pt too wide) in alignment at lines 589--598
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.60583pt too wide) in alignment at lines 598--604
+ [] [] [] 
+ []
+
+[65 <./Lab06Calculator/Fig/image7.png>]
+Overfull \hbox (13.64114pt too wide) in alignment at lines 609--613
+ [] [] [] 
+ []
+
+
+Overfull \hbox (13.64114pt too wide) in alignment at lines 613--617
+ [] [] [] 
+ []
+
+
+
+[66])
+
+[67]
 \tf@toc=\write6
 \openout6 = `"Digital Design Labs.toc"'.
 
- (Digital Design Labs.aux
-(bodyOfKnowledge.aux) (Lab01SimpleVerilog/lab01.aux) (Lab02HexToSeven/lab02.aux
-) (Lab03RockPaperScissor/lab03.aux) (Lab04HighLow/lab04.aux))
+ (Digital Design Labs.aux (bodyOfKnowledge.aux)
+(Lab01SimpleVerilog/lab01.aux) (Lab02HexToSeven/lab02.aux)
+(Lab03RockPaperScissor/lab03.aux) (Lab04HighLow/lab04.aux)
+(Lab05HighLowWithHints/lab05.aux) (Lab06Calculator/lab06.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1719,27 +2089,37 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18175 strings out of 473904
- 287093 string characters out of 5725185
- 1974908 words of memory out of 5000000
- 40376 multiletter control sequences out of 15000+600000
- 608808 words of font info for 70 fonts, out of 8000000 for 9000
+ 18592 strings out of 473904
+ 296984 string characters out of 5725185
+ 1984908 words of memory out of 5000000
+ 40627 multiletter control sequences out of 15000+600000
+ 604156 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,12n,93p,837b,1994s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10
-.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb
-x12.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmbx7.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmmi10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmr10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmr7.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/lm/lmri10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/lm/lmro10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/lm/lmsy10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/lm/lmtt10.pfb>
-Output written on "Digital Design Labs.pdf" (44 pages, 4526726 bytes).
+
+pdfTeX warning (dest): name{hilow_tb-module} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{hilow-module} has been referenced but does not exis
+t, replaced by a fixed one
+
+<C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.p
+fb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
+2.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+mi10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmr10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmr7.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmri10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmro10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/lm/lmsy10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmtk10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/lm/lmtt10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmtt8.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/lm/lmtti10.pfb>
+Output written on "Digital Design Labs.pdf" (67 pages, 8065906 bytes).
 PDF statistics:
- 949 PDF objects out of 1000 (max. 8388607)
- 353 named destinations out of 1000 (max. 500000)
- 507 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1399 PDF objects out of 1440 (max. 8388607)
+ 498 named destinations out of 1000 (max. 500000)
+ 777 words of extra memory for PDF output out of 10000 (max. 10000000)
 

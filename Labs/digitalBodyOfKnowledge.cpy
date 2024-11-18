@@ -28,7 +28,8 @@
 \clipboard {bok:CC_Adder}{Adders}
 \clipboard {bok:CC_Compare}{Comparators}
 \clipboard {bok:CC_WireLogic}{Wire Logic}
-\clipboard {bok:CC_Combos}{Combination}
+\clipboard {bok:CC_Glue_Combo}{Designing glue logic to interface building blocks}
+\clipboard {bok:CC_Combos}{Analyzing a circuit with a combination of building blocks}
 \clipboard {bok:CC_ArthStatements}{Arithmetic Statements}
 \clipboard {bok:CC_ConditionalStatements}{Conditional Statements}
 \clipboard {bok:BasicMemoryElements}{Basic Memory Elements}
@@ -56,10 +57,11 @@
 \clipboard {VER:CSA}{Writing concurrent signal assignment statements for a logic function}
 \clipboard {VER:Logic}{Writing a Verilog statement using primitive logic operations}
 \clipboard {VER:AlwaysCase}{Writing a Verilog statement using an Always/Case statement}
+\clipboard {VER:AlwaysCaseZ}{Writing a Verilog statement using an Always/CaseZ statement}
 \clipboard {VER:Vectors}{Creating a Verilog statement that uses vectors}
 \clipboard {VER:Test}{Analyzing and designing a Verilog testbench}
 \clipboard {VER:Generics}{Definition and instantiation of Verilog generic modules}
-\clipboard {VER:Module}{Definition o Verilog modules}
+\clipboard {VER:Module}{Definition of Verilog modules}
 \clipboard {VER:Instantiating}{Instantiation of Verilog Modules}
 \clipboard {VER:fsm}{Definition of Finite State Machines in Verilog}
 \clipboard {HDL}{Hardware and Software Specifics}

@@ -9,17 +9,21 @@ decimal output making it easy for anyone to use the circuit.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\item \Paste{bok:REP_WordStatement}
-	\item \Paste{bok:REP_TruthTable}
+	\item \Paste{bok:CC_WireLogic}
+	\item \Paste{bok:CC_Glue_Combo}
+	\item \Paste{bok:CC_Combos}
+	\item \Paste{VER:AlwaysCaseZ}
+	\item\Paste{HDL:Synthesis}
 \end{itemize}
 
 
 
-\section{Basic Calculator}
+\section{Calculator with Friendly Output}
 
-This week you are going to build a very basic calculator that can add or
+This week you are going to build a calculator that can add or
 subtract 4-bit values using the input and output shown in 
-Figure~\ref{fig:calcDevBoard}.
+Figure~\ref{fig:calcDevBoard} and display the results as
+decimal, base-10, values, not as hexadecimal values.
 
 \begin{figure}[ht]
 \includegraphics{ image1.png}
@@ -36,32 +40,32 @@ and output of the adder as hexadecimal values, you will display them as
 
 The user input and output are shown in Figure~\ref{fig:calcDevBoard}.
 The user enters a pair of 4-bit operands using the left-most slide
-switches, \textbf{xSlide} and \textbf{ySlide}. The value entered for
-\textbf{xSlide} is displayed on the two (red) \textbf{xDisplay}
-7-segment displays. The value entered for \textbf{ySlide} is displayed
-on the two (green) \textbf{yDisplay} 7-segment displays. The leftmost
-the \textbf{addSub} buttons specify the operation performed on
-\textbf{xSlide} and \textbf{ySlide}. The result is \textbf{xSlide} +
-\textbf{ySlide} or \textbf{xSlide} - \textbf{ySlide}. 
+switches, \device{xSlide} and \device{ySlide}. The value entered for
+\device{xSlide} is displayed on the two (red) \device{xDisplay}
+7-segment displays. The value entered for \device{ySlide} is displayed
+on the two (green) \device{yDisplay} 7-segment displays. The leftmost
+the \device{addSub} buttons specify the operation performed on
+\device{xSlide} and \device{ySlide}. The result is \device{xSlide} +
+\device{ySlide} or \device{xSlide} - \device{ySlide}. 
 
 
 
-The \textbf{interp} button determines how the values are displayed on the
+The \device{interp} button determines how the values are displayed on the
 7-segment display. When unpressed, the 7-segment displays show the
 decimal value, when pressed, the 7-segment displays show 2's complement.
-This will be explained in the next section. As we have only 4 7SDs on
-board, the same 7SD of operand Y will be used to show the operation
-result (yellow) when the \textbf{yOrResult} button is pressed.
+This will be explained in the next section. As we have only four 7-segment displays on
+board, the same 7-segment displays of operand Y will be used to show the operation
+result (yellow) when the \device{yOrResult} button is pressed.
 
 \section{System Architecture}
 
 The system architecture shown in Figure~\ref{fig:sysArchCalc} shows the adder subtractor
-processing the xSlide and ySlide inputs. The 4-bit x, y and result
-values are processed by the sigUnsig box before being displayed on the
+processing the \device{xSlide} and \device{ySlide} inputs. The 4-bit x, y and result
+values are processed by the \hdl{sigUnsig} module before being displayed on the
 7-segment displays. It is now time to turn our attention to this module.
 
 \begin{figure}[ht]
-\includegraphics{ image2.png}
+\includegraphics[width=0.5\paperwidth]{ image2.png}
 \caption{The system architecture of the calculator.}
 \label{fig:sysArchCalc}
 \end{figure}
@@ -70,10 +74,10 @@ values are processed by the sigUnsig box before being displayed on the
 \section{Module: sigUnsign}
 
 The significant design problem in today's lab comes in this section,
-building the sigUnsig module. This module takes in a 4-bit value and
+building the \hdl{sigUnsign} module that shows up three times in Figure~\ref{fig:sysArchCalc}. 
+This module takes in a 4-bit value and
 displays a 2-digit signed or unsigned representation on a pair of
-7-segment displays. Before we go into the internal organization of this
-module, look at its module declaration in Listing~\ref{listing:cacSigUnsigModule}.
+7-segment displays. The \hdl{sigUnsign} module declaration is shown in Listing~\ref{listing:cacSigUnsigModule}.
 
 
 \begin{lstlisting}[language=Verilog,
@@ -134,22 +138,22 @@ interpreted value is greater than 10, assign \emph{msDisplay} ``1''.
 \multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}}{%
 \hdl{interp = 0} Unsigned } 
  &
-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}@{}}{%
-\hdl{interp = 1} Signed } \\
+\multicolumn{2}{|>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}|@{}}{%
+\hdl{interp = 1} Signed } \\ \cline{2-5}
 
-&\hdl{msDisplay} & \hdl{lsDisplay} & \hdl{msDisplay} & \hdl{lsDisplay} \\
+&\hdl{msDisplay} & \hdl{lsDisplay} & \hdl{msDisplay} & \hdl{lsDisplay} \\  
 
 \midrule()
 \endfirsthead
 \toprule()
 \multirow{2}{*}{4-bit input x} &
 \multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}}{%
-\emph{interp = 0} Unsigned } 
+\hdl{interp = 0} Unsigned } 
  &
-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}@{}}{%
-\emph{interp = 1} Signed } \\
+\multicolumn{2}{|>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}|@{}}{%
+\hdl{interp = 1} Signed } \\  \cline{2-5}
 
-&\hdl{msDisplay} & \hdl{lsDisplay} & \hdl{msDisplay} & \hdl{lsDisplay} \\
+&\hdl{msDisplay} & \hdl{lsDisplay} & \hdl{msDisplay} & \hdl{lsDisplay} \\  
 \midrule()
 \endhead
 4'b0000 & blank & 0 & blank & 0 \\ \hline
@@ -172,63 +176,67 @@ interpreted value is greater than 10, assign \emph{msDisplay} ``1''.
 \end{longtable}
 
 
-Let's look at the patterns in Table~\ref{table:calcSigUnsign}.  These will be helpful when you are
-required to fill in the
-missing pieces of the architecture of the signUnsign module in Figure~\ref{fig:calcSigUnSigArch}.
+Take a moment and look at the patterns in Table~\ref{table:calcSigUnsign}.  You should make the 
+following important observations.
 \begin{itemize}
 
 	\item \hdl{msDisplay} is assigned one of four values
 	\begin{itemize}
-		\item  blank when the interpretation of \hdl{x} is an unsigned or signed value less than  10
-		\item 1 when the interpretation of \hdl{x} is an unsigned value greater than 10
-		\item - when the interpretation of \hdl{x} is signed value less than 0
-		\item X when the \hdl{ovf = 1}
+		\item  \hdl{blank} when the interpretation of \hdl{x} is an unsigned or signed value less than  10.
+		\item \hdl{1} when the interpretation of \hdl{x} is an unsigned value greater than 10.
+		\item \hdl{-} when the interpretation of \hdl{x} is a \textbf{signed value less than 0}.
+		\item \hdl{X} (the invalid character)when the \hdl{ovf = 1}.
 	\end{itemize}
 
 	\item \hdl{lsDisplay} is assigned one of four values, 
 	\begin{itemize}
-		\item \hdl{x} when the interpertation of \hdl{x} is a unsigned or signed value less than 10
-		\item \hdl{x-10} when the interpertation of \hdl{x} is an unsigned value greater than 10
-		\item \hdl{0-x} when the interpretation of \hdl{x} is a signed value less than 0
-		\item X when the \hdl{ovf = 1}
+		\item \hdl{x} (the value of the \hdl{x} input) when the interpretation of \hdl{x} is a unsigned or signed value less than 10.
+		\item \hdl{x-10} when the interpretation of \hdl{x} is an unsigned value greater than 10.
+		\item \hdl{0-x} when the interpretation of \hdl{x} is a \textbf{signed value less than 0}.
+		\item \hdl{X} (the invalid character) when the \hdl{ovf = 1}.
 	\end{itemize}
 \end{itemize}
 
-\begin{figure}[ht]
-\includegraphics{ image6.png}
-\caption{The internal architecture of the signUnsig module.}
-\label{fig:calcSigUnSigArch}
-\end{figure}
+
+\subsubsection{Why are we taking the 2's complement of \hdl{x}?}
+
+Please take a moment and reflect on pair of rows where you are asked to interpret \hdl{x} as a \textbf{signed value less than 0}.
+Under a signed (2's complement) interpretation, if the most significant bit of \hdl{x} is 1 then the value of \hdl{x} is less than 0.
+In this case the \device{msDisplay}  7-segment display should be illuminated with a ``-'' to indicate negative.  The \device{lsDisplay} needs
+to show the negation of \hdl{x} because the negation of a negative number is a positive number and we can use a \hdl{hexToSevenSeg}
+module to display positive numbers.  This is a complex but important observation.
+
+If you follow the above reasoning, there is a need to form the 2's complement of \hdl{x} in certain input situations.  You will form the
+negation of \hdl{x} by subtracting \hdl{x} from 0, that is compute \hdl{0-x}.  You will do this by putting \hdl{4'b0000} on the \hdl{x} input
+of an \hdl{addSub}, put the sigUnsign input \hdl{x} on the \hdl{y} input of an \hdl{addSub}, and hardwire the \hdl{fnc} input to \hdl{1'b1} so that the
+\hdl{addSub} is hardwired to always subtract.
 
 
-
-To understand this better, complete Listing~\ref{listing:calcDisplayLogic}. 
-You will form the 2's complement of x, the negative of x, by subtracting x
-from 0.  You can assign the value blank, -, constants, x, or a function of x 
-(e.g. \hdl{x-10}) as needed. Note that this code is NOT to be used in your 
+Formalized the observations in a more algorithmic syntax by completing Listing~\ref{listing:calcDisplayLogic}.
+Do this by filling the values of \hdl{msDisplay} and \hdl{lsDisplay} for the different input conditions.  The 
+values for these two signals are given in the two lists above.  Note that this code is NOT to be used in your 
 actual code for this lab.
 
+\pagebreak
 
 \begin{lstlisting}[language=Verilog,
- caption={Logic that determines the output of the 4:1 muxes in Figure~\ref{fig:calcSevenSeg}.},
+ caption={Logic that determines the output of the 4:1 muxes in Figure~\ref{fig:calcSigUnSigArch}.},
  label={listing:calcDisplayLogic},
  frame=single]
-if        ( (interp == 0) && (x < 10) ) {			// y0 input
+if        ( (interp == 0) && (x < 10) ) {    // y0 input
     msDisplay = 		lsDisplay = 	
 
-} else if ( (interp == 0) && (x >= 10) ) {		// y1 input
+} else if ( (interp == 0) && (x >= 10) ) {    // y1 input
     msDisplay =		lsDisplay =
 
-} else if ( (interp == 1) && (x >= 0) ) {		// y0 input
+} else if ( (interp == 1) && (x >= 0) ) {    // y0 input
     msDisplay =		lsDisplay = 
 
-} else if ( (interp == 1) && (x < 0) ) {			// y2 input
+} else if ( (interp == 1) && (x < 0) ) {    // y2 input
     msDisplay = 		lsDisplay = 
 
 }
 \end{lstlisting}
-
-
 
 Now that you know what should be displayed on  \device{msDisplay} 
 and \device{lsDisplay}, let's look at how we an form these symbols on the
@@ -247,7 +255,9 @@ Test your understanding o the \hdl{signUnsign} output by completing
 Table~\ref{table:calcSevenSeg}. Do this by coloring in the segments of the 
 7-segment displays that are illuminated for each of the inputs. Then write 
 the binary and hexadecimal value to illuminate those patterns to the 
-right of \hdl{msDisplay=7'b} and \hdl{lsDisplay=7'b}.
+right of \hdl{msDisplay=7'b} and \hdl{lsDisplay=7'b}. 
+
+\pagebreak
 
 \begin{longtable}[]{@{}
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1458}}|
@@ -346,76 +356,38 @@ Now we are ready to put the pieces of the sigUnsig module together. The
 building blocks in Figure~\ref{fig:calcSigUnSigArch} are captured in the organization described
 by Listing~\ref{listing:calcDisplayLogic}, along with some extra hardware.
 
+\begin{figure}[ht]
+\includegraphics[width=0.5\paperwidth]{ image6.png}
+\caption{The internal architecture of the signUnsig module.}
+\label{fig:calcSigUnSigArch}
+\end{figure}
 
-You are responsible for connecting the inputs of the 4:1 mux and adder
-subtractors using the logic described in Listing~\ref{listing:calcDisplayLogic}. To help you do this,
-first complete Table~\ref{table:calcMuxLogic}. Take notice of the comments in the Listing~\ref{listing:calcDisplayLogic} to
-determine which data inputs to associate with each of the muxes 4 data
-inputs. You should associate the overflow case with the y3 input.
-
-\begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
-\caption{The input values to the 4:1 muxes in Figure~\ref{fig:calcSigUnSigArch}.}\label{table:calcMuxLogic}\tabularnewline
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-input
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y3
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y0
-\end{minipage} \\
-\midrule()
-\endfirsthead
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-input
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y3
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-y0
-\end{minipage} \\
-\midrule()
-\endhead
-digSel & 2'b11 & & & \\ \hline
-msDisplay & ``X'' & & 1 & \\ \hline
-lsDisplay & & & & x \\
-\bottomrule()
-\end{longtable}
-
-In addition, you should add the following to Figure~\ref{fig:calcSigUnSigArch}:
+Complete Figure~\ref{fig:calcSigUnSigArch} by adding the following:
 
 \begin{itemize}
 \item
-  Wire the inputs of the comparator to determine to generate a signal
-  xGE10 which is logic 1 when x is greater than or equal to 10.
+Connect the inputs of the 4:1 mux  using the logic described in Listing~\ref{listing:calcDisplayLogic}. 
 \item
-  Wire the inputs of the adder subtractor according to Table~\ref{table:calcMuxLogic}.
+Connect the inputs of the and adder subtractors using the logic described in Listing~\ref{listing:calcDisplayLogic}. 
+\item
+  Wire the inputs of the comparator to generate the signal \hdl{xGE10} which is 
+  logic 1 when \hdl{x} is greater than or equal to 10.
 \item
   Wire the input of the rightmost hexToSevenSeg .
 \end{itemize}
 
-The last step in building this module is to describe the behavior of the
-glueLogic box. This function chooses which input of the 4 mux inputs to
-route to the output. Before you do this, you will need to create a
-signal \emph{sign} which equals 1 when x represents a negative value
-(when interpreted as a signed value) and equals to 0 when x represents a
-positive value (when interpreted as a signed value). Logically speaking,
-this is a trivial operation -- it does not require any logic gates.
+Al that remains is to define the contents of the \hdl{glueLogic} box in Figure~\ref{fig:calcSigUnSigArch}. 
 
-Now, we can examine the contents of the glueLogic box. Do this by
-completing the truth table in Table~\ref{table:calcGlueLogic}.
+\subsubsection{\hdl{glueLogic} always/casez statement}
+
+the \hdl{glueLogic} box chooses which input of the 4 mux inputs to
+route to the output. This is the logic that you formalized in 
+Listing~\ref{listing:calcDisplayLogic}.  Note the signal \hdl{sign} which equals 1 when \hdl{x}
+ represents a negative value when interpreted as a signed value.
+ 
+ Now complete the truth table in Table~\ref{table:calcGlueLogic} for the \hdl{glueLogic} box
+in Figure~\ref{fig:calcSigUnSigArch}. 
+
 
 \begin{longtable}[]{@{}
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
@@ -426,29 +398,29 @@ completing the truth table in Table~\ref{table:calcGlueLogic}.
 \caption{Truth table for the glueLogic box.}\label{table:calcGlueLogic}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
-ovf
+\hdl{ovf}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-interp
+\hdl{interp}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sign
+\hdl{sign}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-xGE10
+\hdl{xGE10}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-digSel
+\hdl{digSel}
 \end{minipage} \\
 \midrule()
 \endfirsthead
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
-ovf
+\hdl{ovf}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-interp
+\hdl{interp}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-sign
+\hdl{sign}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-xGE10
+\hdl{xGE10}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-digSel
+\hdl{digSel}
 \end{minipage} \\
 \midrule()
 \endhead
@@ -459,7 +431,6 @@ digSel
 0 & 1 & 1 & x & \\
 \bottomrule()
 \end{longtable}
-
 
 It would make sense to use an always case statement to realize the logic
 in Listing~\ref{listing:calcDisplayLogic}. However, an always case statement requires each of the 16
@@ -486,8 +457,9 @@ combination of cases is shown in Listing~\ref{listing:cacAlwaysStaement}.
 
  \end{lstlisting}
 
-
-\protect\hypertarget{sigUnsign_Verilog}{}{}The Verilog code for the
+\subsubsection{\hdl{sigUnsig} Verilog code}
+\protect\hypertarget{sigUnsign_Verilog}{}{}
+The Verilog code for the
 signUnsig module consists of 8 instantiation statements and an
 always/casez statement. For this module, I want you to:
 
@@ -499,13 +471,13 @@ always/casez statement. For this module, I want you to:
 
   \begin{itemize}
   \item
-    Generic Mux4x1 posted on this lab's Canvas folder
+    \hdl{genericMux4x1} posted on this lab's Canvas folder
   \item
-    sevenSegment created in lab 02
+    \hdl{sevenSegment} created in lab 02
   \item
-    genericAdderSubtractor posted on a previous lab's Canvas folder
+    \hdl{genericAdderSubtractor} posted on a previous lab's Canvas folder
   \item
-    genericComparator posted on a previous lab's Canvas folder
+    \hdl{genericComparator} posted on a previous lab's Canvas folder
   \end{itemize}
 \item
   Use localparm to give names to the 7-bit constant patterns (fill in
@@ -513,13 +485,13 @@ always/casez statement. For this module, I want you to:
 
   \begin{itemize}
   \item
-    localparam {[}6:0{]} displayBlank = 7'bxxxxxxx;
+   \hdl{ localparam {[}6:0{]} displayBlank = 7'bxxxxxxx;}
   \item
-    localparam {[}6:0{]} displayOne = 7'bxxxxxxx;
+   \hdl{ localparam {[}6:0{]} displayOne = 7'bxxxxxxx;}
   \item
-    localparam {[}6:0{]} displayMinus = 7'bxxxxxxx;
+   \hdl{ localparam {[}6:0{]} displayMinus = 7'bxxxxxxx;}
   \item
-    localparam {[}6:0{]} displayX = 7'bxxxxxxx;
+   \hdl{ localparam {[}6:0{]} displayX = 7'bxxxxxxx;}
   \end{itemize}
 \item
   Provide meaningful names to the wires in the module.
@@ -538,31 +510,47 @@ always/casez statement. For this module, I want you to:
   \end{itemize}
 \end{itemize}
 
-\section{Bonus: Ovf Logic}
+\section{Testbench}
+\label{section:calcTestbench}
+  Run the testbench for the sigUnsig module provided on Canvas. Produce
+  a timing diagram with the following characteristics. Zoom to fill the
+  available horizontal space with the waveform. Color inputs green and
+  outputs red. Order the traces from top to bottom as
 
-The default configuration of the system architecture ignores any
-overflow generated by the adder subtractor. If you choose, you may
-implement the logic necessary to determine if overflow occurs in the
-selected interpretation. In order to receive credit, your circuit needs
-to work under \uline{all combination} of addSub and interp. Overflow for
-unsigned subtraction will require some careful analysis.
+  \begin{tabular}{p{3cm}p{3cm}p{3cm}}
+  signal			& radix				& Color for trace \\ \hline
+    x radix 		&	unsigned 		& Green  \\
+    xMinus10 		&	 unsigned 	& Green  \\
+    x 				&  decimal 		& Cyan  \\
+    negativeX 		&  decimal 		& Cyan  \\
+    interp 			& default 			& Green  \\
+    ovf 			& default 			& Green  \\
+    digSel 			&  unsigned 		& Yellow  \\
+    xGE10 		& default 			& Yellow  \\
+    msDisplay 		&  hex 			& Red  \\
+    lsDisplay 		&  hex 			& Red  \\
+  \end{tabular}
 
-Your solution should have 2 LEDs, one for signed and one for unsigned.
-The unsigned overflow LED should illuminate when overflow will occur if
-the numbers are interpreted as unsigned numbers. The signed overflow LED
-is on when an overflow will occur if the numbers are interpreted as
-two's complement numbers.
+I do not want the signals from the testbench, but rather the signals
+from inside the \hdl{sigUnsig} module. You can do this in \hdl{sigUnsig} by
+expanding the \hdl{sigUnsig\_tb} instance in the left ModelSim pane and
+selecting ``uut''. Since uut is an instance of the \hdl{sigUnsig} module, all
+the signals accessible in the \hdl{sigUnsig} module are shown in the center
+Object. You can add duplicates of signals by repeating the drag-and-drop
+operation.
 
-For example, if the x and y inputs are 1001 and the operation is
-addition, then both signed and unsigned LEDs will illuminate.
+Your completed timing diagram should look something like the following.
+
+\includegraphics{ image7.png}
 
 
-\section{Pin-Assignment}
+\section{Pin-Assignment and Synthesis}
 
-Use the image of the development board in Figure~\ref{fig:calcDevBoard} in and the
-information in the Cyclone V GX Kit User Manual (posted on the class web
-page) to determine the FPGA pins associated with the input and output
-devices used by the calculator module
+Use the image of the FPGA Development Board in Figure~\ref{fig:calcDevBoard} 
+and the information in the C5G User Guide to determine the FPGA pins associated 
+with the input and output devices used by the devices used by the \hdl{calculator} 
+module.
+
 
 \begin{longtable}[]{@{}
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1436}}|
@@ -628,6 +616,10 @@ addSub & Key{[}3{]} & \\ \hline
 \bottomrule()
 \end{longtable}
 
+Complete the pin-assignment in Quartus, compile your design and download to the FGPA
+development boards. Once you get your design working, demonstrate it to a member of the lab team.
+
+
 \section{Turn in}
 
 You may work in teams of at most two. Make a record of your response to
@@ -643,9 +635,9 @@ section next week.
 
 \begin{itemize}
 \item
-  Complete Table~\ref{table:calcSevenSeg}.
-\item
   Complete Table~\ref{table:calcSigUnsign}.
+\item
+  Complete Table~\ref{table:calcSevenSeg}.
 \item
   Complete the code in Listing~\ref{listing:calcDisplayLogic}.
 \item
@@ -662,47 +654,39 @@ section next week.
     Values on the input of the comparator
   \end{itemize}
 \item
-  Complete Table~\ref{table:calcMuxLogic}.
+  Complete Table~\ref{table:calcSevenSeg}.
 \item
   Complete Table~\ref{table:calcGlueLogic}.
 \item
   \protect\hyperlink{sigUnsign_Verilog}{Verilog code for the body of the
   sigUnsig module} (courier 8-point font single spaced), leave out
   header comments.
-\item
-  Run the testbench for the sigUnsig module provided on Canvas. Produce
-  a timing diagram with the following characteristics. Zoom to fill the
-  available horizontal space with the waveform. Color inputs green and
-  outputs red. Order the traces from top to bottom as
-
-  \begin{tabular}{p{3cm}p{3cm}p{3cm}}
-  signal			& radix				& Color for trace \\ \hline
-    x radix 		&	unsigned 		& Green  \\
-    xMinus10 		&	 unsigned 	& Green  \\
-    x 				&  decimal 		& Cyan  \\
-    negativeX 		&  decimal 		& Cyan  \\
-    interp 			& default 			& Green  \\
-    ovf 			& default 			& Green  \\
-    digSel 			&  unsigned 		& Yellow  \\
-    xGE10 		& default 			& Yellow  \\
-    msDisplay 		&  hex 			& Red  \\
-    lsDisplay 		&  hex 			& Red  \\
-  \end{tabular}
 \end{itemize}
 
-I do not want the signals from the testbench, but rather the signals
-from inside the sigUnsig module. You can do this in sigUnsig, by
-expanding the sigUnsig\_tb instance in the left ModelSim pane and
-selecting ``uut''. Since uut is an instance of the sigUnsig module, all
-the signals accessible in the sigUnsig module are shown in the center
-Object. You can add duplicates of signals by repeating the drag-and-drop
-operation.
+\subsubsection{Testbench}
+\begin{itemize}
+\item Complete testbench and timing diagram from Section~\ref{section:calcTestbench}.
+\end{itemize}
 
-Your completed timing diagram should look something like the following.
+\subsubsection{Pin-Assignment and Synthesis}
+\begin{itemize}
+\item Complete the pin assignment in table~\ref{table:calcPinAssignment}.
+\end{itemize}
 
-\includegraphics{ image7.png}
+\section{Bonus: Ovf Logic}
 
-\subsubsection{Pin-Assignment}
+The default configuration of the system architecture ignores any
+overflow generated by the adder subtractor. If you choose, you may
+implement the logic necessary to determine if overflow occurs in the
+selected interpretation. In order to receive credit, your circuit needs
+to work under \uline{all combination} of addSub and interp. Overflow for
+unsigned subtraction will require some careful analysis.
 
-Complete the pin assignment in table~\ref{table:calcPinAssignment}.
+Your solution should have 2 LEDs, one for signed and one for unsigned.
+The unsigned overflow LED should illuminate when overflow will occur if
+the numbers are interpreted as unsigned numbers. The signed overflow LED
+is on when an overflow will occur if the numbers are interpreted as
+two's complement numbers.
 
+For example, if the x and y inputs are 1001 and the operation is
+addition, then both signed and unsigned LEDs will illuminate.

@@ -504,14 +504,16 @@ bullet point item in the list below. For this module, I want you to:
   \end{itemize}
 \end{itemize}
 
-\section{Pin-Assignment}
+\section{Testbench}
 We are forgoing a simulation of today's lab.  This requires that you pay especially close
 attention to the warnings created by the Quartus software.  If you are having issues with
 your design, go through the compilation report and look for unconnected inputs or vector 
 size mismatches.
 
-Use the image of the Development Board in Figure~\ref{figure:systemIO} and the information
-in the board User Guide to determine the FPGA pins associated with the
+\section{Pin-Assignment and Synthesis}
+
+Use the image of the FPGA Development Board in Figure~\ref{figure:systemIO} and the information
+in the C5G User Guide to determine the FPGA pins associated with the
 input and output devices used by the rpsGame module.
 
 \begin{longtable}[]{@{}
@@ -565,6 +567,10 @@ Play Button & Key{[}0{]} &  \\ \hline
 
 Note, each push-button provides a high logic level when it is not
 pressed, and provides a low logic level when pressed.
+
+Complete the pin-assignment in Quartus, compile your design and download to the FGPA
+development boards. Once you get your design working, demonstrate it to a member of the lab team.
+
 
 \section{Turn in}
 

@@ -18,11 +18,11 @@
 \contentsline {section}{\numberline {2.5}FPGA: Pin-Assignment}{16}{section.2.5}%
 \contentsline {section}{\numberline {2.6}FPGA: Synthesizing a Verilog Module}{17}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Hexadecimal to 7-segment Converter}{18}{section.2.7}%
-\contentsline {subsection}{Testbench}{20}{section*.7}%
-\contentsline {subsection}{Synthesis}{21}{section*.8}%
-\contentsline {section}{\numberline {2.8}Turn in}{21}{section.2.8}%
-\contentsline {subsubsection}{Combine lab 1}{22}{section*.9}%
-\contentsline {subsubsection}{Hexadecimal to 7-segment}{22}{section*.10}%
+\contentsline {section}{\numberline {2.8}Testbench}{20}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Pin-Assignment and Synthesis}{21}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Turn in}{21}{section.2.10}%
+\contentsline {subsubsection}{Combine lab 1}{22}{section*.7}%
+\contentsline {subsubsection}{Hexadecimal to 7-segment}{22}{section*.8}%
 \contentsline {chapter}{\chapternumberline {3}Rock Paper Scissors}{23}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Outcomes and Objectives}{23}{section.3.1}%
 \contentsline {section}{\numberline {3.2}The Rock Paper Scissors Game}{23}{section.3.2}%
@@ -31,13 +31,14 @@
 \contentsline {section}{\numberline {3.5}Module: playToSeven}{27}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Module: winLose}{28}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Module: rpsGame}{29}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Pin-Assignment}{30}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Turn in}{31}{section.3.9}%
-\contentsline {subsubsection}{onesToDense Module}{31}{section*.11}%
-\contentsline {subsubsection}{playToSeven Module}{31}{section*.12}%
-\contentsline {subsubsection}{winLose Module}{31}{section*.13}%
-\contentsline {subsubsection}{rpsGame Module}{31}{section*.14}%
-\contentsline {subsubsection}{Pin Assignment}{31}{section*.15}%
+\contentsline {section}{\numberline {3.8}Testbench}{30}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Pin-Assignment and Synthesis}{30}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Turn in}{31}{section.3.10}%
+\contentsline {subsubsection}{onesToDense Module}{31}{section*.9}%
+\contentsline {subsubsection}{playToSeven Module}{31}{section*.10}%
+\contentsline {subsubsection}{winLose Module}{31}{section*.11}%
+\contentsline {subsubsection}{rpsGame Module}{31}{section*.12}%
+\contentsline {subsubsection}{Pin Assignment}{31}{section*.13}%
 \contentsline {chapter}{\chapternumberline {4}High Low Guessing Game}{33}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Outcomes and Objectives}{33}{section.4.1}%
 \contentsline {section}{\numberline {4.2}The Guessing Game}{33}{section.4.2}%
@@ -50,9 +51,41 @@
 \contentsline {section}{\numberline {4.9}Module: LFSR}{38}{section.4.9}%
 \contentsline {section}{\numberline {4.10}Module: hiLow}{40}{section.4.10}%
 \contentsline {section}{\numberline {4.11}Testbench}{41}{section.4.11}%
-\contentsline {section}{\numberline {4.12}Pin-Assignment}{41}{section.4.12}%
+\contentsline {section}{\numberline {4.12}Pin-Assignment and Synthesis}{41}{section.4.12}%
 \contentsline {section}{\numberline {4.13}Turn in}{42}{section.4.13}%
-\contentsline {subsubsection}{Module: LFSR }{42}{section*.16}%
-\contentsline {subsubsection}{Module: hiLow}{42}{section*.17}%
-\contentsline {subsubsection}{Pin-Assignment}{43}{section*.18}%
+\contentsline {subsubsection}{Module: LFSR }{42}{section*.14}%
+\contentsline {subsubsection}{Module: hiLow}{42}{section*.15}%
+\contentsline {subsubsection}{Pin-Assignment and synthesis}{43}{section*.16}%
 \contentsline {section}{\numberline {4.14}Debugging Tips}{43}{section.4.14}%
+\contentsline {chapter}{\chapternumberline {5}High Low Guessing Game With Hints}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Outcomes and Objectives}{45}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The Guessing Game with Hints}{45}{section.5.2}%
+\contentsline {section}{\numberline {5.3}System Architecture}{47}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Module: 2:1 Mux}{48}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Module: Compare}{48}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Module: Add/Sub }{48}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Logic: hotWarmCold}{49}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Module: hiLow}{51}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Testbench}{51}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Pin-Assignment and Synthesis}{52}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Turn in}{53}{section.5.11}%
+\contentsline {subsubsection}{System Architecture}{53}{section*.17}%
+\contentsline {subsubsection}{Discrete Logic block}{54}{section*.18}%
+\contentsline {subsubsection}{Module: hiLow}{54}{section*.19}%
+\contentsline {subsubsection}{Pin-Assignment and Synthesis}{54}{section*.20}%
+\contentsline {section}{\numberline {5.12}Debugging Tips}{54}{section.5.12}%
+\contentsline {chapter}{\chapternumberline {6}Calculator With Friendly Output}{57}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Outcomes and Objectives}{57}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Calculator with Friendly Output}{57}{section.6.2}%
+\contentsline {section}{\numberline {6.3}System Architecture}{58}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Module: sigUnsign}{59}{section.6.4}%
+\contentsline {subsubsection}{Why are we taking the 2's complement of \texttt {x}?}{60}{section*.21}%
+\contentsline {subsubsection}{ \texttt {glueLogic} always/casez statement}{63}{section*.22}%
+\contentsline {subsubsection}{ \texttt {sigUnsig} Verilog code}{64}{section*.23}%
+\contentsline {section}{\numberline {6.5}Testbench}{64}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Pin-Assignment and Synthesis}{65}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Turn in}{66}{section.6.7}%
+\contentsline {subsubsection}{signUnsig Module}{66}{section*.24}%
+\contentsline {subsubsection}{Testbench}{66}{section*.25}%
+\contentsline {subsubsection}{Pin-Assignment and Synthesis}{66}{section*.26}%
+\contentsline {section}{\numberline {6.8}Bonus: Ovf Logic}{67}{section.6.8}%
