@@ -87,18 +87,153 @@ module, look at its module declaration in Listing~\ref{listing:cacSigUnsigModule
     output wire [6:0]  msDisplay, lsDisplay;
  \end{lstlisting}
 
+The 4-bit input \hdl{x} is interpreted as either signed (2's complement
+value) when \hdl{interp = 1} or unsigned (regular binary number) when
+\hdl{interp = 0}.  The \device{msDisplay} is the most significant (ms)
+symbol being displayed and \device{lsDisplay} is the least significant (ls)
+symbol being display.  The term ``symbol'' is used because more than
+one type of information can be displayed depending on the values
+of the inputs.  Let's explore this.
+
+For example, let \hdl{x = 4'b1100}. 
+\begin{itemize}
+\item 
+If \hdl{interp = 1'b0} then
+\hdl{x} is interpreted as unsigned and its value is 12. Then
+the \device{msDisplay} should show ``1'' and \device{lsDisplay} ``2''. 
+
+\item 
+If \hdl{interp = 1'b1} then
+\hdl{x} is interpreted as 2's complement and its value is -4. Then
+the \device{msDisplay} should show ``-'' and \device{lsDisplay} ``4''. 
+
+\item 
+In the previous two cases we assumed, without stating it, that \hdl{ovf = 1'b0}.
+If \hdl{ovf = 1'b1} then the operation which generated \hdl{x} overflowed
+and the value of \hdl{x} is invalid.  In this case both display's should show ``X''.
+Since we are working with 7-segments, our ``X'' looks much more like ``H'' :(
+\end{itemize}
+
+Not complete Table~\ref{table:calcSigUnsign} by filling in the values of \hdl{msDisplay} and
+\hdl{lsDisplay} for a signed and unsigned interpretation, assuming
+\emph{ovf}=0. If the interpreted value is
+positive and a single digit then assign \emph{msDisplay} blank. If the
+interpreted value is negative then assign \emph{msDisplay} ``-``. If the
+interpreted value is greater than 10, assign \emph{msDisplay} ``1''.
+
+
+\begin{longtable}[]{@{}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
+\caption{The output of the \hdl{sigUnsig} module when \hdl{ovf=0}.}\label{table:calcSigUnsign}\tabularnewline
+\toprule()
+\multirow{2}{*}{4-bit input x} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}}{%
+\hdl{interp = 0} Unsigned } 
+ &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}@{}}{%
+\hdl{interp = 1} Signed } \\
+
+&\hdl{msDisplay} & \hdl{lsDisplay} & \hdl{msDisplay} & \hdl{lsDisplay} \\
+
+\midrule()
+\endfirsthead
+\toprule()
+\multirow{2}{*}{4-bit input x} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}}{%
+\emph{interp = 0} Unsigned } 
+ &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}@{}}{%
+\emph{interp = 1} Signed } \\
+
+&\hdl{msDisplay} & \hdl{lsDisplay} & \hdl{msDisplay} & \hdl{lsDisplay} \\
+\midrule()
+\endhead
+4'b0000 & blank & 0 & blank & 0 \\ \hline
+4'b0001 & & & & \\ \hline
+4'b0010 & & & & \\ \hline
+4'b0011 & & & & \\ \hline
+4'b0100 & & & & \\ \hline
+4'b0101 & & & & \\ \hline
+4'b0110 & & & & \\ \hline
+4'b0111 & & & & \\ \hline
+4'b1000 & & & & \\ \hline
+4'b1001 & & & & \\ \hline
+4'b1010 & & & & \\ \hline
+4'b1011 & & & & \\ \hline
+4'b1100 & 1 & 2 & - & 4 \\ \hline
+4'b1101 & & & & \\ \hline
+4'b1110 & & & & \\ \hline
+4'b1111 & & & & \\
+\bottomrule()
+\end{longtable}
+
+
+Let's look at the patterns in Table~\ref{table:calcSigUnsign}.  These will be helpful when you are
+required to fill in the
+missing pieces of the architecture of the signUnsign module in Figure~\ref{fig:calcSigUnSigArch}.
+\begin{itemize}
+
+	\item \hdl{msDisplay} is assigned one of four values
+	\begin{itemize}
+		\item  blank when the interpretation of \hdl{x} is an unsigned or signed value less than  10
+		\item 1 when the interpretation of \hdl{x} is an unsigned value greater than 10
+		\item - when the interpretation of \hdl{x} is signed value less than 0
+		\item X when the \hdl{ovf = 1}
+	\end{itemize}
+
+	\item \hdl{lsDisplay} is assigned one of four values, 
+	\begin{itemize}
+		\item \hdl{x} when the interpertation of \hdl{x} is a unsigned or signed value less than 10
+		\item \hdl{x-10} when the interpertation of \hdl{x} is an unsigned value greater than 10
+		\item \hdl{0-x} when the interpretation of \hdl{x} is a signed value less than 0
+		\item X when the \hdl{ovf = 1}
+	\end{itemize}
+\end{itemize}
+
+\begin{figure}[ht]
+\includegraphics{ image6.png}
+\caption{The internal architecture of the signUnsig module.}
+\label{fig:calcSigUnSigArch}
+\end{figure}
 
 
 
-The 4-bit input \emph{x} is interpreted as either signed (2's complement
-value) when \emph{interp = 1} or unsigned (regular binary number) when
-\emph{interp = 0}. The interpreted value is displayed on the pair of
-7-segment display with the tens-digit, blank, or minus sign being
-displayed by \emph{msDisplay} and the units digit being displayed by
-\emph{lsDisplay}. If the \emph{ovf} input equals 1, the conversion is
-overruled and both displays show ``X'' (which looks a lot like a capital
-letter ``H''). Because we will need it in the next section, Figure~\ref{fig:calcSevenSeg} is
-the logical arrangements of segments in a 7-segment display. Remember
+To understand this better, complete Listing~\ref{listing:calcDisplayLogic}. 
+You will form the 2's complement of x, the negative of x, by subtracting x
+from 0.  You can assign the value blank, -, constants, x, or a function of x 
+(e.g. \hdl{x-10}) as needed. Note that this code is NOT to be used in your 
+actual code for this lab.
+
+
+\begin{lstlisting}[language=Verilog,
+ caption={Logic that determines the output of the 4:1 muxes in Figure~\ref{fig:calcSevenSeg}.},
+ label={listing:calcDisplayLogic},
+ frame=single]
+if        ( (interp == 0) && (x < 10) ) {			// y0 input
+    msDisplay = 		lsDisplay = 	
+
+} else if ( (interp == 0) && (x >= 10) ) {		// y1 input
+    msDisplay =		lsDisplay =
+
+} else if ( (interp == 1) && (x >= 0) ) {		// y0 input
+    msDisplay =		lsDisplay = 
+
+} else if ( (interp == 1) && (x < 0) ) {			// y2 input
+    msDisplay = 		lsDisplay = 
+
+}
+\end{lstlisting}
+
+
+
+Now that you know what should be displayed on  \device{msDisplay} 
+and \device{lsDisplay}, let's look at how we an form these symbols on the
+7-segment displays.  In order to do this, you need Figure~\ref{fig:calcSevenSeg},
+the bit-order of the segments controlling the illumination o the segments. Remember
 that the segments are active low, meaning a logic 0 illuminates a
 segment. Thus, the 7-bit code 7'b0100100 illuminates the pattern ``2''.
 
@@ -108,11 +243,11 @@ segment. Thus, the 7-bit code 7'b0100100 illuminates the pattern ``2''.
 \label{fig:calcSevenSeg}
 \end{figure}
 
-Let's start the design of the signUnsig module by looking at the
-high-level input/output of the module by completing Table~\ref{table:calcSevenSeg}. Do this by
-filling in the segments of the 7-segment displays that are illuminated
-for each of the inputs. Then write the binary and hexadecimal value to
-illuminate those patterns.
+Test your understanding o the \hdl{signUnsign} output by completing
+Table~\ref{table:calcSevenSeg}. Do this by coloring in the segments of the 
+7-segment displays that are illuminated for each of the inputs. Then write 
+the binary and hexadecimal value to illuminate those patterns to the 
+right of \hdl{msDisplay=7'b} and \hdl{lsDisplay=7'b}.
 
 \begin{longtable}[]{@{}
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1458}}|
@@ -207,130 +342,10 @@ lsDisplay = 7'b \\ \hline
 \bottomrule()
 \end{longtable}
 
-In order to better understand the output from the signUnsig box,
-complete Table~\ref{table:calcSigUnsign} by filling in the values of \emph{msDisplay} and
-\emph{lsDisplay} for a signed and unsigned interpretation -- assume that
-\emph{ovf}=0 while completing this table. If the interpreted value is
-positive and a single digit then leave \emph{msDisplay} blank. If the
-interpreted value is negative then assign \emph{msDisplay} ``-``. If the
-interpreted value is greater than 10, assign \emph{msDisplay} ``1''.
-
-For example, let the 4-bit input x equal to 4'b1100. If x is interpreted
-as unsigned then its value is 12. In this case your hardware should
-assign \emph{msDisplay} ``1'' and \emph{lsDisplay} ``2''. If x is
-interpreted as a signed value, the 7-segment displays should show -4, by
-assigning \emph{msDisplay} ``-'' and \emph{lsDisplay} ``4''. Complete
-the remaining rows of the table.
-
-\begin{longtable}[]{@{}
-|  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
-\caption{The output of the sigUnsig module when
-ovf=0.}\label{table:calcSigUnsign}\tabularnewline
-\toprule()
-\multirow{2}{*}{4-bit input x} &
-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}}{%
-\emph{interp = 0} Unsigned } 
- &
-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}@{}}{%
-\emph{interp = 1} Signed } \\
-
-&msDisplay & lsDisplay & msDisplay & lsDisplay \\
-
-\midrule()
-\endfirsthead
-\toprule()
-\multirow{2}{*}{4-bit input x} &
-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}}{%
-\emph{interp = 0} Unsigned } 
- &
-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000} + 2\tabcolsep}@{}}{%
-\emph{interp = 1} Signed } \\
-
-&msDisplay & lsDisplay & msDisplay & lsDisplay \\
-\midrule()
-\endhead
-4'b0000 & blank & 0 & blank & 0 \\
-4'b0001 & & & & \\ \hline
-4'b0010 & & & & \\ \hline
-4'b0011 & & & & \\ \hline
-4'b0100 & & & & \\ \hline
-4'b0101 & & & & \\ \hline
-4'b0110 & & & & \\ \hline
-4'b0111 & & & & \\ \hline
-4'b1000 & & & & \\ \hline
-4'b1001 & & & & \\ \hline
-4'b1010 & & & & \\ \hline
-4'b1011 & & & & \\ \hline
-4'b1100 & 1 & 2 & - & 4 \\ \hline
-4'b1101 & & & & \\ \hline
-4'b1110 & & & & \\ \hline
-4'b1111 & & & & \\
-\bottomrule()
-\end{longtable}
-
-Note, when there is overflow, you should assign both the
-\emph{msDisplay} and \emph{lsDisplay} ``X''.
-
-You will assign the \emph{msDisplay} output one of four values (three
-from Table~\ref{table:calcSigUnsign} and the ``X'' for overflow) using a 4:1 mux that is
-provided to you on Canvas. You will arrange the inputs to this mux using
-the logic that you will complete in Listing~\ref{listing:calcDisplayLogic}. Note that the four data
-inputs to this mux (y0, y1, y2, y3) are constants; the inputs to this
-mux do not depend on x.
-
-You will assign the \emph{lsDisplay} output one of four values (three
-from Table~\ref{table:calcSigUnsign} and the ``X'' for overflow) using a 4:1 mux that is
-provided to you on Canvas. You will arrange the inputs to this mux using
-the logic that you will complete in Listing~\ref{listing:calcDisplayLogic}. Some of the data inputs
-to the mux depend on x. For example, if interp = 1 (signed) and if x is
-less than 0, then \emph{lsDisplay} should show the 2's complement of x
-(and \emph{msDisplay} should display ``-``). Instead of flipping the
-bits and adding 1, you should form the negative of x by subtracting x
-from 0. On the other hand, if interp = 0 (unsigned) and if x is greater
-than or equal to 10, then \emph{lsDisplay} should show the units digit
-of x (and \emph{msDisplay} should display ``1``). Form this units digit
-by subtracting 10 from x.
-
-Complete the code in Listing~\ref{listing:calcDisplayLogic}. You can assign the value blank, -,
-constants, x, or a function of x as needed. Note that this code is NOT
-to be used in your actual code for this lab.
-
-
-\begin{lstlisting}[language=Verilog,
- caption={Logic that determines the output of the 4:1 muxes in Figure~\ref{fig:calcSevenSeg}.},
- label={listing:calcDisplayLogic},
- frame=single]
-if        ( (interp == 0) && (x < 10) ) {		// y0 input
-    msDisplay = 		lsDisplay = 	
-
-} else if ( (interp == 0) && (x >= 10) ) {		// y1 input
-    msDisplay =		lsDisplay =
-
-} else if ( (interp == 1) && (x >= 0) ) {		// y0 input
-    msDisplay =		lsDisplay = 
-
-} else if ( (interp == 1) && (x < 0) ) {		// y2 input
-    msDisplay = 		lsDisplay = 
-
-}
-\end{lstlisting}
-
-
-
-
 Now we are ready to put the pieces of the sigUnsig module together. The
 building blocks in Figure~\ref{fig:calcSigUnSigArch} are captured in the organization described
 by Listing~\ref{listing:calcDisplayLogic}, along with some extra hardware.
 
-\begin{figure}[ht]
-\includegraphics{ image6.png}
-\caption{The internal architecture of the signUnsig module.}
-\label{fig:calcSigUnSigArch}
-\end{figure}
 
 You are responsible for connecting the inputs of the 4:1 mux and adder
 subtractors using the logic described in Listing~\ref{listing:calcDisplayLogic}. To help you do this,

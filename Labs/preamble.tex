@@ -39,14 +39,23 @@
 
 \usepackage{bookmark}
 
+% Use when nming signls, nming modules or writing HDL ode
+\newenvironment{hdl}	{ \texttt	}{\par}
+
+% Use when ssigning  nming to a piee o hrdwre 
+\newenvironment{device}{\textbf}{\par}
+
+%  Use when desribing  vlue tht is not  nmed signl in hrdwre
+\newenvironment{qty}{\emph}{\par}
+
+
+
 \usepackage{xurl}
 
 \usepackage{hyperref}
 
 %\let\oldhypertarget\hypertarget
 %\renewcommand*{\hypertarget}{\oldhypertarget\space}
-
-
 
 \hypersetup{
    colorlinks=true,

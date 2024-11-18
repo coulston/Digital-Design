@@ -18,14 +18,13 @@ learning objectives.
 
 The guessing game is a two-person game where, one player is the guesser
 and the other, an honest, secret keeper. The game starts with the secret
-keeper generating a \emph{secret number} between {[}\textbf{0} and
-\textbf{15}{]}, inclusive. Once the \emph{secret number} is decided, the
-guesser makes a \emph{guess}, a number in the interval {[}\textbf{0} to
-\textbf{15}{]} inclusive, and tells this to the secret keeper. The
-secret keep then replies to the guesser if \emph{guess} is less than,
-equal to, or greater than the \emph{secret number}. The game continues
+keeper generating a \qty{secret number} between [0-15], inclusive. Once the \qty{secret number} is decided, the
+guesser makes a \emph{guess}, a number in the interval [0-15] 
+inclusive, and tells this to the secret keeper. The
+secret keep then replies to the guesser if \qty{guess} is less than,
+equal to, or greater than the \qty{secret number}. The game continues
 with repeated guesser/secret keeper exchanges until the guesser
-correctly identifies the \emph{secret number}.
+correctly identifies the \qty{secret number}.
 
 \begin{figure}[ht]
 \includegraphics{image1.png}
@@ -36,44 +35,43 @@ correctly identifies the \emph{secret number}.
 Your goal in this lab is to create a digital version of the guessing
 game using the development board using the inputs and outputs shown in
 Figure~\ref{fig:inputOutputDevBoard}. In this case, the FPGA will play the role of secret keeper.
-You will enter a seed value using the \textbf{seed} slide switches. The
-seed value will be ``randomized'' into a 4-bit \emph{secret number}
+You will enter a seed value using the \device{seed} slide switches. The
+seed value will be ``randomized'' into a 4-bit \qty{secret number}
 using a linear feedback shift generator (more about this later).
-Pressing the \textbf{rand} button reveals the \textbf{4}-bit
-\emph{secret number} as a \textbf{1} --digit hexadecimal value on the
-\textbf{randValue} 7-segment displays. Obviously, the guesser should not
-press the \textbf{rand} button during regular game play.
+Pressing the \qty{rand} button reveals the 4-bit
+\qty{secret number} as a 1-digit hexadecimal value on the
+\device{randValue} 7-segment displays. Obviously, the guesser should not
+press the \device{rand} button during regular game play.
 
 The player will make their guess about the secret number on the
-\textbf{guess} slide switches. This \emph{guess} is compared to the
-\emph{secret number} and the outcome is displayed on the \textbf{game}
-7-segment display when the \textbf{hiLow} button is pressed. The
+\device{guess} slide switches. This \qty{guess} is compared to the
+\emph{secret number} and the outcome is displayed on the \device{game}
+7-segment display when the \device{hiLow} button is pressed. The
 \textbf{game} 7-segment display will show:
 
 \begin{itemize}
-\item   `H' when \emph{guess} \textgreater{} \emph{secret number}
-\item   `I' when \emph{guess} = \emph{secret number}
-\item   `L' when \emph{guess} \textless{} \emph{secret number}
+\item   `H' when \qty{guess} > \qty{secret number}
+\item   `I' when \qty{guess} = \qty{secret number}
+\item   `L' when \qty{guess} <\qty{secret number}
 \end{itemize}
 
-A player is only allowed \textbf{4} guesses to get the secret number. To
+A player is only allowed 4 guesses to get the secret number. To
 keep track of this, every time that the player makes a guess, they
-increment the binary number on the \textbf{play} slide switches. When a
+increment the binary number on the \device{play} slide switches. When a
 slide switch is in the up position, the bit value is 1 and when in the
 down position, the bit value is 0. This means that the player needs to
 understand how to count in binary. In order to make keeping track of the
 number of guesses remaining, the number of illuminated green
-\textbf{playRemaining} LEDs will equal the number of guesses left. For
-example, if the binary value set on the \textbf{play} slide switches
-equals \textbf{2}, then the right-most \textbf{2} green LEDs would be
+\device{playRemaining} LEDs will equal the number of guesses left. For
+example, if the binary value set on the \device{play} slide switches
+equals 2, then the right-most 2 green LEDs would be
 illuminated. You should illuminate LEDs starting from the right side and
 increasing towards the left side.
 
 \section{System Architecture}
 Use the system architecture shown in Figure~\ref{fig:guessGameSysArch} as your
 guide to this design. Please note that lines with the same name in different places 
-are connected together. For example, the signal \emph{randBut} connects the button input to the 
-2:1 mux in the upper left corner of  the FPGA.
+are connected together. For example, the signal \hdl{randBut} connects the button input to the 2:1 mux in the upper left corner of  the FPGA.
 
 \begin{figure}[ht]
 \includegraphics[width=0.6\paperwidth]{image2.png}
@@ -84,13 +82,12 @@ are connected together. For example, the signal \emph{randBut} connects the butt
 \section{Module: 2:1 Mux}
 
 A 2:1 multiplexer, a mux for short, is a basic building block in many
-digital systems. The 2:1 mux shown in Figure~\ref{fig:2x1MuxSymbol} routes one of the two
-N-bit data inputs, \textbf{y\textsubscript{0}} or
-\textbf{y\textsubscript{1}} to the N-bit output, \textbf{F}, depending
-on the value of a 1-bit select signal, \textbf{s}. When \textbf{s} = 0,
-\textbf{F}= \textbf{y\textsubscript{0}} and when \textbf{s} = 1,
-\textbf{F}= \textbf{y\textsubscript{1}}. In other word, \textbf{F}
-equals the \textbf{y} input whose subscript equals \textbf{s}.
+digital systems. The 2:1 mux shown in Figure~\ref{fig:2x1MuxSymbol} 
+routes one of the two
+N-bit data inputs, \hdl{y0} or \hdl{y1} to the N-bit output, \hdl{F}, depending
+on the value of a 1-bit select signal, \hdl{s}. When \hdl{s} = 0,
+\hdl{F = y0} and when \hdl{s} = 1, \hdl{F = y1}. In other word, \hdl{F}
+equals the \hdl{y} input whose subscript equals \hdl{s}.
 
 \begin{figure}[ht]
 \includegraphics[width=0.4\paperwidth]{image3.png}
@@ -100,8 +97,8 @@ equals the \textbf{y} input whose subscript equals \textbf{s}.
 
 You may notice that the data inputs of the 2:1 muxes in Figure~\ref{fig:guessGameSysArch}
  have
-their \textbf{y\textsubscript{0}} and \textbf{y\textsubscript{1}} data
-inputs denoted as `0' and `1' respectively. This is done to save space
+their \hdl{y1} or \hdl{y0} data
+inputs denoted as \hdl{1} and \hdl{0} respectively. This is done to save space
 and increase clarity in the schematic.
 
 The Verilog code for a 2:1 mux is provided to you on Canvas. When
@@ -122,16 +119,15 @@ module genericMux2x1(y1, y0, sel, f);
 genericMux2x1 #(7) muxHex(7'b1111111, RandHex, randBut, randSeg);
 \end{lstlisting}
 
-The signal width, \textbf{N}, shown in Figure~\ref{fig:2x1MuxSymbol} is a placeholder for
-an integer value that describes the width of the \emph{y1, y0, F} signals.  You can
-specify this width when you instantiate a \emph{genericMux2x1} module using the \#()
-specifier immediately after \emph{genericMux2x1} as shown in the bottom line of code in Listing 1. 
+The signal width, \hdl{N}, shown in Figure~\ref{fig:2x1MuxSymbol} is a 
+placeholder for an integer value that describes the width of the \hdl{y1, y0, F}
+ signals.  You can specify this width when you instantiate a \hdl{genericMux2x1} module using the \hdl{\#()} specifier immediately after \hdl{genericMux2x1} as shown in the bottom line of code in Listing 1. 
 
 A component
 that you can instantiate with different signal widths is called
 ``generic'' and often used in the module's name.  Often generics
-have a default value, for the genericMux2x1 it is 8-bit. This is 
-worth mentioning because if you forget to include \#(7) in your
+have a default value, for \hdl{genericMux2x1} it is 8-bit. This is 
+worth mentioning because if you forget to include \hdl{\#(7)} in your
 instantation, the compiler will generate a warning that is easy to
 overlook and your design will not simulate or synthesize correctly.
 If you suspect this is occuring in your design,  look in the Compilation
@@ -151,7 +147,7 @@ see the following error report.
 A N-bit comparator is a basic building block in many digital systems.
 The N-bit comparator shown in Figure~\ref{fig:comparatorSymbol} 
 checks the relative magnitude of
-the two N-bit inputs \textbf{x} and \textbf{y} and sets one of the three
+the two N-bit inputs \hdl{x} and \hdl{y} and sets one of the three
 outputs equal to 1, one's-hot output, depending on their relation to
 each other.
 
@@ -671,7 +667,8 @@ section next week.
 \subsubsection{Pin-Assignment and synthesis}
 
 \begin{itemize}
-\item Completed pin assignment table for all the signals in the hiLow module in Table~\ref{table:hlggPinAssignment}.
+\item Completed pin assignment table for all the signals in Table~\ref{table:hlggPinAssignment}.
+\item Demonstrate your completed circuit to a lab team member.
 \end{itemize}
 
 
@@ -680,7 +677,7 @@ section next week.
 This laboratory typically generates a variety of new errors that you 
 have not seen before.  This section on useful debugging techniques 
 will help you more effectively 
-interpert the compilers output to locate errors in your code.
+interpret the compilers output to locate errors in your code.
 The following is an example story of someone debugging their code...
 
 After you put together all the components, you can run Start Analysis \&
