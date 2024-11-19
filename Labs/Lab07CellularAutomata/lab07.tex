@@ -9,8 +9,10 @@ cellular automata using D-Flip Flops and combinational logic.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\item \Paste{bok:REP_WordStatement}
-	\item \Paste{bok:REP_TruthTable}
+	\item \Paste{bok:BasicMemoryElements}
+	\item \Paste{bok:BME_Timing}	
+	\item \Paste{VER:Module}
+	\item \Paste{HDL:Synthesis}			
 \end{itemize}
 
 
@@ -102,7 +104,7 @@ C7 & Alive & & \\
 \end{longtable}
 
 You are going to build a digital system to calculate the next state of a
-17-element array of processing elements. In order to do this, you will
+9-element array of processing elements. In order to do this, you will
 need a way to easily specify the rule used to determine the next state
 of a cell because you are going to be able to change it. Before doing
 this let's agree to associate the value of 1 for an alive cell and
@@ -217,7 +219,7 @@ the clk, its logic level is display on the \textbf{clk} LED.
 
 Since the buttons driving the rClk and sClk signals are logic 0 when
 pressed, you will want to invert these two signals before feeding them
-into the SR latch as shown in Figure~\ref{fig:caSwitchBounce}. Thus, to 
+into the SR latch as shown in Figure~\ref{fig:caSwitchBounce}B. Thus, to 
 toggle the clock signal
 you will press/release the sClk button to set clk to 1. Then
 press/release the rClk button to clear the clk to 0. The back to sClk,
@@ -245,7 +247,7 @@ spacing, only the n inputs to cell8 and cell2 are shown.}
 
 \protect\hypertarget{cellularAutomata_verilog}{}{}The Verilog code for
 the cellularAutomata has been partially provided to you. You will need
-to complete the missing pieces. For this module, I want you to:
+to complete the missing pieces. For this module:
 
 \begin{itemize}
 \item
@@ -268,7 +270,7 @@ to complete the missing pieces. For this module, I want you to:
     Make cell 0 have cell 8 as its ``right'' neighbor in Figure~\ref{fig:caSysArch}
   \end{itemize}
 \item
-  Use cross-couples NORs to realize the SR-latch. This means that you
+  Use cross-couples NORs and a pair of inverters to realize the SR-latch. This means that you
   should have two lines of Verilog Code for the SR-latch, both starting
   with ``assign''.
 \item
@@ -297,7 +299,7 @@ to decipher the rest of the signal abbreviations used in Figure~\ref{fig:caSysAr
 \end{figure}
 
 The most complex portion of logic in the singleCell module is the box
-labeled ``nextState''. This circuit has 11-bit of input and while it may
+labeled ``nextState''. This circuit has 11-bits of input.  While it may
 seem a bit daunting at first, the Verilog code to realize this function
 is pretty straightforward when you have the right perspective. Table~\ref{table:caInOutSingleCell}
 lists all the combination of state for a cell and its 2 neighbors in the
@@ -383,12 +385,47 @@ want you to:
   \end{itemize}
 \end{itemize}
 
+\section{Testbench}
+\label{section:caTestbench}
 
-\section{Pin-Assignment}
+  Run the testbench for the cellularAutomata module provided on Canvas.
+  Produce a timing diagram with the following characteristics. Zoom to
+  fill the available horizontal space with the waveform. Color inputs
+  green and outputs red. Order the traces from top to bottom as
 
-Use the image of the Cyclone V GX Board in Figure~\ref{fig:exampleCA} 
+\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+signal		& radix				& tracel color \\ \hline
+    reset 			& default 			& Blue  \\ 
+    rule 			&  unsigned 			& Blue \\ 
+    sButton 			& default 		& Green \\ 
+    rButton 			& default 		& Green \\ 
+    clk 				& default 		& Yellow \\ 
+    currentLifeState 	& hex 			& Red \\
+  \end{tabular}
+
+
+Do not use the signals from the testbench, but rather the signals
+from inside the cellularAutomata module. You can do this in ModelSim, by
+expanding the cellularAutomata\_tb instance in the left ModelSim and
+selecting ``uut''. Since uut is an instance of the cellularAutomata
+module, all the signals accessible in the cellularAutomata module are
+shown in the center Object. You can add signals using a drag-and-drop
+operation. Likewise, you can reorder the signals by dragging them. Your
+completed timing diagram should look something like Figure~\ref{fig:caTimeDiag}.
+
+\begin{figure}[ht]
+\includegraphics{image9.png}
+\caption{Partial timing diagram for the cellular automata.}
+\label{fig:caTimeDiag}
+\end{figure}
+
+
+
+\section{Pin-Assignment and Synthesis}
+
+Use the image of the FPGA Board in Figure~\ref{fig:exampleCA} 
 and the information
-in the Cyclone V GX User Guide to determine the FPGA pins associated
+in the C5G User Guide to determine the FPGA pins associated
 with the input and output devices used by the cellular automata module.
 
 \begin{longtable}[]{@{}
@@ -397,6 +434,7 @@ with the input and output devices used by the cellular automata module.
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1935}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1954}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2058}}|@{}}
+   \caption{Pin Assignment for the 1-D calllular automata.}\label{table:caPinAssignment}\tabularnewline 
 \toprule()
 \hline
 \midrule()
@@ -443,7 +481,13 @@ reset
 \bottomrule()
 \end{longtable}
 
+Complete the pin-assignment in Quartus, compile your design and download to the
+FGPA development boards.  If you are having difficulty getting your circuit to work
+correctly, please refer to Section~\ref{section:caDebugging} for some 
+useful debugging tips. 
 
+Once you get your design working, demonstrate it to a member of the 
+lab team.  
 
 
 
@@ -458,7 +502,7 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\subsubsection{Cellular Automata Module: }
+\subsubsection{Cellular Automata Module }
 
 \begin{itemize}
 \item
@@ -480,43 +524,22 @@ section next week.
   out header comments.
 \end{itemize}
 
-\subsubsection{Overall design}
-
+\subsubsection{Testbench}
 \begin{itemize}
-\item
-  Run the testbench for the cellularAutomata module provided on Canvas.
-  Produce a timing diagram with the following characteristics. Zoom to
-  fill the available horizontal space with the waveform. Color inputs
-  green and outputs red. Order the traces from top to bottom as
-
-\begin{tabular}{p{4cm}p{4cm}p{4cm}}
-signal		& radix				& tracel color \\ \hline
-    reset 			& default 			& Blue  \\ 
-    rule 			&  unsigned 			& Blue \\ 
-    sButton 			& default 		& Green \\ 
-    rButton 			& default 		& Green \\ 
-    clk 				& default 		& Yellow \\ 
-    currentLifeState 	& hex 			& Red \\
-  \end{tabular}
-
-
-I do not want the signals from the testbench, but rather the signals
-from inside the cellularAutomata module. You can do this in ModelSim, by
-expanding the cellularAutomata\_tb instance in the left ModelSim and
-selecting ``uut''. Since uut is an instance of the cellularAutomata
-module, all the signals accessible in the cellularAutomata module are
-shown in the center Object. You can add signals using a drag-and-drop
-operation. Likewise, you can reorder the signals by dragging them. Your
-completed timing diagram should look something like Figure~\ref{fig:caTimeDiag}.
-
-\begin{figure}[ht]
-\includegraphics{image9.png}
-\caption{Partial timing diagram for the cellular automata.}
-\label{fig:caTimeDiag}
-\end{figure}
+\item Complete testbench and timing diagram from Section~\ref{section:caTestbench}.
 \end{itemize}
 
+\subsubsection{Pin-Assignment and Synthesis}
+\begin{itemize}
+\item Complete the pin assignment in table~\ref{table:caPinAssignment}.
+\item Demonstrate your completed circuit to a lab team member.
+\end{itemize}
+
+
+
+
 \section{Debugging Tips}
+\label{section:caDebugging}
 To provide you with some examples to run on the Altera boards, the
 following table illustrates the evolution of the CA with different
 initial conditions and different rules.
