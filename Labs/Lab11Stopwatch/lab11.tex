@@ -9,8 +9,9 @@ of the stopwatch  on the FPGA development board.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\item \Paste{bok:REP_WordStatement}
-	\item \Paste{bok:REP_TruthTable}
+	\item \Paste{bok:DaC_Architecture}
+	\item \Paste{bok:DaC_Timing}
+	\item \Paste{HDL:Synthesis}
 \end{itemize}
 
 
@@ -72,7 +73,7 @@ Use the starter code provided on Canvas to complete the stopwatch
 module. While you are at it, download the stopwatch testbench provided
 on Canvas, and make the testbench the top-level entity.
 
-\subsection{Simulation for Stopwatch}
+\subsection{Testbench}
 
 Before you download your completed control unit to the development boards,
 you are going to perform extensive simulations to uncover as many bugs
@@ -104,12 +105,13 @@ taken in the testbench, which one was it? I'd suggest double checking
 this transition during the testing of the stopwatch when it is
 downloaded onto the FPGA development board.
 
+\hypertarget{link:swTestbench}
 Run the testbench using the provided do file and compare the output
 against Figure~\ref{fig:swTiming} You will probably need to modify the do
 file to make it work with your design. Address any problems in the
 stopwatch before proceeding.
 
-\subsection{Systehesis for Stopwatch}
+\subsection{Pin-Assignment and Synthesis}
 
 When you created the datapath, you intentionally designed the timer
 counter to count up from 0 to 2 in order to expedite execution of the
@@ -200,14 +202,14 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\subsubsection{Stopwatch Simulation}
+\subsubsection{Testbench}
 
 \begin{itemize}
 \item
   Completed Figure~\ref{fig:swTiming}. Please paste the images in landscape format into your solutions
 
 \item
-  Show the screen shot of simulation timing diagram. Please compose the simulation in landscape 
+  Screen shot of \hyperlink{link:swTestbench}{simulation timing diagram}. Please compose the simulation in landscape 
   format into your solutions and break the screen shot of the simulation into three parts,
 
   \begin{itemize}
@@ -220,11 +222,11 @@ section next week.
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Stopwatch Synthesis}
+\subsubsection{Pin-Assignment and Synthesis}
 
 \begin{itemize}
 \item
   Completed pin assignment from Table~\ref{table:swPinAssignment}.
 \item
-  Demo working stopwatch
+  Demonstrate your working stopwatch to a member of the lab team.
 \end{itemize}

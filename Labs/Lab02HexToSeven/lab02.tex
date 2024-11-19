@@ -29,15 +29,14 @@ are illustrated in Figure~\ref{fig:combinVector}.
 
 \begin{figure}[ht]
 \includegraphics[width=0.2\paperwidth]{image1.png}
-\caption{An illustration showing three bits combined into a vector, f, 
-and then accessing the individual bits of f.}
+\caption{An illustration showing three bits combined into a vector, \hdl{f},  and then accessing the individual bits of \hdl{f}.}
 \label{fig:combinVector}
 \end{figure}
 
 The operations shown in Figure~\ref{fig:combinVector} are similar to
 the operations in Listing~\ref{listing:vectorManipulation}. 
-In this module, the line of code assign \verb+f = {a,b,c};+ combines the
-individual signals a, b and c into a 3-bit vector f. The left-most signal
+In this module, the line of code assign \hdl{f = \{a,b,c\};} combines the
+individual signals \hdl{a}, b and c into a 3-bit vector f. The left-most signal
 in the parenthesis list, \emph{a}, becomes the MSB of the vector and the 
 right-most signal, \emph{c}, becomes LSB. 
 Combining signals is more commonly called concatenation. You can
@@ -85,7 +84,7 @@ statement that uses the 3-bit value of a signal x to compute the value of f.
 \begin{lstlisting}[language=Verilog,
  caption={A 3-input, 2-output function realized with an always statement.
  Can you figure out how the output was computed?},
- label={listing:3in3outVerilog},
+ label={listing:3in2outVerilog},
  frame=single]
     wire [2:0] x;
     reg [2:0] f;
@@ -110,7 +109,7 @@ code between \verb+case+ and \verb+endcase+ acts like a single assign statement.
 case statement uses the argument to case, x as a selector
 for one of the rows below. Every possible value of x must be present and
 when that value matches x, the action to the right of the colon is
-performed. When we use a case statement as shown in Listing~\ref{listing:3in3outVerilog} 
+performed. When we use a case statement as shown in Listing~\ref{listing:3in2outVerilog} 
 you must make the output type reg.
 
 All signals are either \verb+wire+ or \verb+reg+ type. A wire is a signal that has a

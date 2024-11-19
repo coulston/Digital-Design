@@ -1,91 +1,143 @@
 \contentsline {chapter}{Contents}{1}{section*.1}%
-\contentsline {chapter}{\chapternumberline {1}Introduction to Verilog}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Outcomes and Objective }{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}FPGA: Creating a project in Quartus and running a testbench}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}FPGA: Symbolic to Verilog , Timing Diagram, Truth Table}{9}{section.1.3}%
-\contentsline {section}{\numberline {1.4}FPGA: Verilog to Symbolic, Truth Table, Circuit Diagram}{9}{section.1.4}%
-\contentsline {section}{\numberline {1.5}FPGA: Circuit Diagram to Verilog, Symbolic, Truth Table}{9}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Turn in}{10}{section.1.6}%
-\contentsline {subsubsection}{FPGA: Creating a project in Quartus and running a testbench}{10}{section*.3}%
-\contentsline {subsubsection}{FPGA: Symbolic to Verilog , Timing Diagram, Truth Table}{10}{section*.4}%
-\contentsline {subsubsection}{FPGA: Verilog to Symbolic, Truth Table, Circuit Diagram}{11}{section*.5}%
-\contentsline {subsubsection}{FPGA: Circuit Diagram to Verilog, Symbolic, Truth Table}{11}{section*.6}%
-\contentsline {chapter}{\chapternumberline {2}Hexadecimal to Seven-Segment Converter}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Outcomes and Objectives}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Verilog: Vectors}{13}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Verilog: Always/Case statements}{14}{section.2.3}%
-\contentsline {section}{\numberline {2.4}A Multiple Output Function}{15}{section.2.4}%
-\contentsline {section}{\numberline {2.5}FPGA: Pin-Assignment}{16}{section.2.5}%
-\contentsline {section}{\numberline {2.6}FPGA: Synthesizing a Verilog Module}{17}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Hexadecimal to 7-segment Converter}{18}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Testbench}{20}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Pin-Assignment and Synthesis}{21}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Turn in}{21}{section.2.10}%
-\contentsline {subsubsection}{Combine lab 1}{22}{section*.7}%
-\contentsline {subsubsection}{Hexadecimal to 7-segment}{22}{section*.8}%
-\contentsline {chapter}{\chapternumberline {3}Rock Paper Scissors}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Outcomes and Objectives}{23}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The Rock Paper Scissors Game}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}System Architecture}{25}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Module: onesToDense}{25}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Module: playToSeven}{27}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Module: winLose}{28}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Module: rpsGame}{29}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Testbench}{30}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Pin-Assignment and Synthesis}{30}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Turn in}{31}{section.3.10}%
-\contentsline {subsubsection}{onesToDense Module}{31}{section*.9}%
-\contentsline {subsubsection}{playToSeven Module}{31}{section*.10}%
-\contentsline {subsubsection}{winLose Module}{31}{section*.11}%
-\contentsline {subsubsection}{rpsGame Module}{31}{section*.12}%
-\contentsline {subsubsection}{Pin Assignment}{31}{section*.13}%
-\contentsline {chapter}{\chapternumberline {4}High Low Guessing Game}{33}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Outcomes and Objectives}{33}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The Guessing Game}{33}{section.4.2}%
-\contentsline {section}{\numberline {4.3}System Architecture}{34}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Module: 2:1 Mux}{34}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Module: Compare}{36}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Module: hexToSevenSeg}{37}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Module: 2:4 Decoder}{37}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Module: hiLowWin}{38}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Module: LFSR}{38}{section.4.9}%
-\contentsline {section}{\numberline {4.10}Module: hiLow}{40}{section.4.10}%
-\contentsline {section}{\numberline {4.11}Testbench}{41}{section.4.11}%
-\contentsline {section}{\numberline {4.12}Pin-Assignment and Synthesis}{41}{section.4.12}%
-\contentsline {section}{\numberline {4.13}Turn in}{42}{section.4.13}%
-\contentsline {subsubsection}{Module: LFSR }{42}{section*.14}%
-\contentsline {subsubsection}{Module: hiLow}{42}{section*.15}%
-\contentsline {subsubsection}{Pin-Assignment and synthesis}{43}{section*.16}%
-\contentsline {section}{\numberline {4.14}Debugging Tips}{43}{section.4.14}%
-\contentsline {chapter}{\chapternumberline {5}High Low Guessing Game With Hints}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Outcomes and Objectives}{45}{section.5.1}%
-\contentsline {section}{\numberline {5.2}The Guessing Game with Hints}{45}{section.5.2}%
-\contentsline {section}{\numberline {5.3}System Architecture}{47}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Module: 2:1 Mux}{48}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Module: Compare}{48}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Module: Add/Sub }{48}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Logic: hotWarmCold}{49}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Module: hiLow}{51}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Testbench}{51}{section.5.9}%
-\contentsline {section}{\numberline {5.10}Pin-Assignment and Synthesis}{52}{section.5.10}%
-\contentsline {section}{\numberline {5.11}Turn in}{53}{section.5.11}%
-\contentsline {subsubsection}{System Architecture}{53}{section*.17}%
-\contentsline {subsubsection}{Discrete Logic block}{54}{section*.18}%
-\contentsline {subsubsection}{Module: hiLow}{54}{section*.19}%
-\contentsline {subsubsection}{Pin-Assignment and Synthesis}{54}{section*.20}%
-\contentsline {section}{\numberline {5.12}Debugging Tips}{54}{section.5.12}%
-\contentsline {chapter}{\chapternumberline {6}Calculator With Friendly Output}{57}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Outcomes and Objectives}{57}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Calculator with Friendly Output}{57}{section.6.2}%
-\contentsline {section}{\numberline {6.3}System Architecture}{58}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Module: sigUnsign}{59}{section.6.4}%
-\contentsline {subsubsection}{Why are we taking the 2's complement of \texttt {x}?}{60}{section*.21}%
-\contentsline {subsubsection}{ \texttt {glueLogic} always/casez statement}{63}{section*.22}%
-\contentsline {subsubsection}{ \texttt {sigUnsig} Verilog code}{64}{section*.23}%
-\contentsline {section}{\numberline {6.5}Testbench}{64}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Pin-Assignment and Synthesis}{65}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Turn in}{66}{section.6.7}%
-\contentsline {subsubsection}{signUnsig Module}{66}{section*.24}%
-\contentsline {subsubsection}{Testbench}{66}{section*.25}%
-\contentsline {subsubsection}{Pin-Assignment and Synthesis}{66}{section*.26}%
-\contentsline {section}{\numberline {6.8}Bonus: Ovf Logic}{67}{section.6.8}%
+\contentsline {chapter}{\chapternumberline {1}Introduction to Verilog}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Outcomes and Objective }{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}FPGA: Creating a project in Quartus and running a testbench}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}FPGA: Symbolic to Verilog , Timing Diagram, Truth Table}{11}{section.1.3}%
+\contentsline {section}{\numberline {1.4}FPGA: Verilog to Symbolic, Truth Table, Circuit Diagram}{11}{section.1.4}%
+\contentsline {section}{\numberline {1.5}FPGA: Circuit Diagram to Verilog, Symbolic, Truth Table}{11}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Turn in}{12}{section.1.6}%
+\contentsline {subsubsection}{FPGA: Creating a project in Quartus and running a testbench}{12}{section*.3}%
+\contentsline {subsubsection}{FPGA: Symbolic to Verilog , Timing Diagram, Truth Table}{12}{section*.4}%
+\contentsline {subsubsection}{FPGA: Verilog to Symbolic, Truth Table, Circuit Diagram}{13}{section*.5}%
+\contentsline {subsubsection}{FPGA: Circuit Diagram to Verilog, Symbolic, Truth Table}{13}{section*.6}%
+\contentsline {chapter}{\chapternumberline {2}Hexadecimal to Seven-Segment Converter}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Outcomes and Objectives}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Verilog: Vectors}{15}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Verilog: Always/Case statements}{16}{section.2.3}%
+\contentsline {section}{\numberline {2.4}A Multiple Output Function}{17}{section.2.4}%
+\contentsline {section}{\numberline {2.5}FPGA: Pin-Assignment}{18}{section.2.5}%
+\contentsline {section}{\numberline {2.6}FPGA: Synthesizing a Verilog Module}{19}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Hexadecimal to 7-segment Converter}{20}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Testbench}{22}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Pin-Assignment and Synthesis}{23}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Turn in}{23}{section.2.10}%
+\contentsline {subsubsection}{Combine lab 1}{24}{section*.7}%
+\contentsline {subsubsection}{Hexadecimal to 7-segment}{24}{section*.8}%
+\contentsline {chapter}{\chapternumberline {3}Rock Paper Scissors}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Outcomes and Objectives}{25}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Rock Paper Scissors Game}{25}{section.3.2}%
+\contentsline {section}{\numberline {3.3}System Architecture}{27}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Module: onesToDense}{27}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Module: playToSeven}{29}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Module: winLose}{30}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Module: rpsGame}{31}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Testbench}{32}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Pin-Assignment and Synthesis}{32}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Turn in}{33}{section.3.10}%
+\contentsline {subsubsection}{onesToDense Module}{33}{section*.9}%
+\contentsline {subsubsection}{playToSeven Module}{33}{section*.10}%
+\contentsline {subsubsection}{winLose Module}{33}{section*.11}%
+\contentsline {subsubsection}{rpsGame Module}{33}{section*.12}%
+\contentsline {subsubsection}{Pin Assignment}{33}{section*.13}%
+\contentsline {chapter}{\chapternumberline {4}High Low Guessing Game}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Outcomes and Objectives}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The Guessing Game}{35}{section.4.2}%
+\contentsline {section}{\numberline {4.3}System Architecture}{36}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Module: 2:1 Mux}{36}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Module: Compare}{38}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Module: hexToSevenSeg}{39}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Module: 2:4 Decoder}{39}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Module: hiLowWin}{40}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Module: LFSR}{40}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Module: hiLow}{42}{section.4.10}%
+\contentsline {section}{\numberline {4.11}Testbench}{43}{section.4.11}%
+\contentsline {section}{\numberline {4.12}Pin-Assignment and Synthesis}{43}{section.4.12}%
+\contentsline {section}{\numberline {4.13}Turn in}{44}{section.4.13}%
+\contentsline {subsubsection}{Module: LFSR }{44}{section*.14}%
+\contentsline {subsubsection}{Module: hiLow}{44}{section*.15}%
+\contentsline {subsubsection}{Pin-Assignment and synthesis}{45}{section*.16}%
+\contentsline {section}{\numberline {4.14}Debugging Tips}{45}{section.4.14}%
+\contentsline {chapter}{\chapternumberline {5}High Low Guessing Game With Hints}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Outcomes and Objectives}{47}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The Guessing Game with Hints}{47}{section.5.2}%
+\contentsline {section}{\numberline {5.3}System Architecture}{49}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Module: 2:1 Mux}{50}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Module: Compare}{50}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Module: Add/Sub }{50}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Logic: hotWarmCold}{51}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Module: hiLow}{53}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Testbench}{53}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Pin-Assignment and Synthesis}{54}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Turn in}{55}{section.5.11}%
+\contentsline {subsubsection}{System Architecture}{55}{section*.17}%
+\contentsline {subsubsection}{Discrete Logic block}{56}{section*.18}%
+\contentsline {subsubsection}{Module: hiLow}{56}{section*.19}%
+\contentsline {subsubsection}{Pin-Assignment and Synthesis}{56}{section*.20}%
+\contentsline {section}{\numberline {5.12}Debugging Tips}{56}{section.5.12}%
+\contentsline {chapter}{\chapternumberline {6}Calculator With Friendly Output}{59}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Outcomes and Objectives}{59}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Calculator with Friendly Output}{59}{section.6.2}%
+\contentsline {section}{\numberline {6.3}System Architecture}{60}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Module: sigUnsign}{61}{section.6.4}%
+\contentsline {subsubsection}{Why are we taking the 2's complement of \texttt {x}?}{62}{section*.21}%
+\contentsline {subsubsection}{ \texttt {glueLogic} always/casez statement}{65}{section*.22}%
+\contentsline {subsubsection}{ \texttt {sigUnsig} Verilog code}{66}{section*.23}%
+\contentsline {section}{\numberline {6.5}Testbench}{66}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Pin-Assignment and Synthesis}{67}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Turn in}{68}{section.6.7}%
+\contentsline {subsubsection}{signUnsig Module}{68}{section*.24}%
+\contentsline {subsubsection}{Testbench}{68}{section*.25}%
+\contentsline {subsubsection}{Pin-Assignment and Synthesis}{68}{section*.26}%
+\contentsline {section}{\numberline {6.8}Bonus: Ovf Logic}{69}{section.6.8}%
+\contentsline {chapter}{\chapternumberline {7}Cellular Automata}{71}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Outcomes and Objectives}{71}{section.7.1}%
+\contentsline {section}{\numberline {7.2}1-dimensional cellular automata}{71}{section.7.2}%
+\contentsline {subsection}{Theory: Cellular Automata}{71}{section*.27}%
+\contentsline {subsection}{Implementation: Cellular Automata}{73}{section*.28}%
+\contentsline {section}{\numberline {7.3}System Architecture}{75}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Module: singleCell}{76}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Testbench}{77}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Pin-Assignment and Synthesis}{78}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Turn in}{78}{section.7.7}%
+\contentsline {subsubsection}{Cellular Automata Module }{78}{section*.29}%
+\contentsline {subsubsection}{singleCell Module}{79}{section*.30}%
+\contentsline {subsubsection}{Testbench}{79}{section*.31}%
+\contentsline {subsubsection}{Pin-Assignment and Synthesis}{79}{section*.32}%
+\contentsline {section}{\numberline {7.8}Debugging Tips}{79}{section.7.8}%
+\contentsline {chapter}{\chapternumberline {8}Mod 10 Counter}{81}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Outcomes and Objectives}{81}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Module: \texttt {mod10Counter}}{81}{section.8.2}%
+\contentsline {section}{\numberline {8.3}System Architecture}{82}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Testbench}{84}{section.8.4}%
+\contentsline {section}{\numberline {8.5}FPGA: Do file}{86}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Turn in}{87}{section.8.6}%
+\contentsline {subsubsection}{Mod10 Counter Verilog}{88}{section*.33}%
+\contentsline {subsubsection}{Testbench}{88}{section*.34}%
+\contentsline {chapter}{\chapternumberline {9}Stopwatch Datapath}{89}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Outcomes and Objectives}{89}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Stopwatch}{89}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Module: stopWatchDatapath}{91}{section.9.3}%
+\contentsline {subsection}{Testbench}{93}{section*.35}%
+\contentsline {section}{\numberline {9.4}Turn in}{98}{section.9.4}%
+\contentsline {subsubsection}{System Architecture}{98}{section*.36}%
+\contentsline {subsubsection}{Testbench}{98}{section*.37}%
+\contentsline {chapter}{\chapternumberline {10}Stopwatch Control Unit}{99}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Outcomes and Objectives}{99}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Stopwatch}{99}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Module: \texttt {stopWatchControl}}{100}{section.10.3}%
+\contentsline {subsection}{State diagram for stopWatchControl}{100}{section*.38}%
+\contentsline {subsection}{Control word for stopWatchControl}{101}{section*.39}%
+\contentsline {subsection}{Verilog code for stopWatchControl}{103}{section*.40}%
+\contentsline {section}{\numberline {10.4}Timing Diagram}{104}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Turn in}{107}{section.10.5}%
+\contentsline {subsubsection}{Control Unit Design}{108}{section*.41}%
+\contentsline {subsubsection}{Control Unit Simulation}{108}{section*.42}%
+\contentsline {chapter}{\chapternumberline {11}Stopwatch Datapath and Control}{109}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Outcomes and Objectives}{109}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Stopwatch}{109}{section.11.2}%
+\contentsline {section}{\numberline {11.3}System Architecture}{110}{section.11.3}%
+\contentsline {subsection}{Testbench}{111}{section*.43}%
+\contentsline {subsection}{Pin-Assignment and Synthesis}{113}{section*.44}%
+\contentsline {section}{\numberline {11.4}Turn in}{114}{section.11.4}%
+\contentsline {subsubsection}{Testbench}{114}{section*.45}%
+\contentsline {subsubsection}{Pin-Assignment and Synthesis}{114}{section*.46}%

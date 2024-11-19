@@ -128,9 +128,13 @@ of a cell and its neighbors.}
 \label{fig:caRule}
 \end{figure}
 
+
+\pagebreak
+
+
 As an example, let's look at the 4\textsuperscript{th} from left
 arrangement, outlined in red. In the top row of this arrangement, the
-center cell is dead and one of its neighbor's is alive. Note that this
+center cell is dead and one of its neighbor's is alive.  Note that this
 configuration has binary code 3'b100. Using the rule used to complete
 Table~\ref{table:caNextState}, the next state of this cell is alive, shown black. The next
 state value is placed below each configuration and the collection forms
@@ -317,25 +321,13 @@ vector that is passed into the singleCell module.
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3236}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3236}}|@{}}
 \caption{The input/output relationship for the nextState
-functionality in Figure~\ref{fig:caSingleCell}.}\label{table:caInOutSingleCell}\tabularnewline
+functionality in Figure~\ref{fig:caSingleCell}.}\label{table:caInOutSingleCell}\\ \hline
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\{n+, n, n-\}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-nextState
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Rule bit
-\end{minipage} \\
+\{n+, n, n-\} &  nextState & Rule bit \\ 
 \midrule()
 \endfirsthead
 \toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\{n+, n, n-\}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-nextState
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Rule bit
-\end{minipage} \\
+\{n+, n, n-\} &  nextState & Rule bit \\ 
 \midrule()
 \endhead
 3'b000 & & \\ \hline
@@ -434,11 +426,8 @@ with the input and output devices used by the cellular automata module.
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1935}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1954}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2058}}|@{}}
-   \caption{Pin Assignment for the 1-D calllular automata.}\label{table:caPinAssignment}\tabularnewline 
-\toprule()
-\hline
-\midrule()
-\endhead 
+   \caption{Pin Assignment for the 1-D calllular automata.}\label{table:cAutomataPinAssignment} \\ \hline
+\endfirsthead 
 slide{[}9{]} & AE19 & &
 Clk
 
@@ -531,7 +520,7 @@ section next week.
 
 \subsubsection{Pin-Assignment and Synthesis}
 \begin{itemize}
-\item Complete the pin assignment in table~\ref{table:caPinAssignment}.
+\item Complete the pin assignment in table~\ref{table:cAutomataPinAssignment}.
 \item Demonstrate your completed circuit to a lab team member.
 \end{itemize}
 
@@ -579,21 +568,14 @@ initial conditions and different rules.
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2723}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|@{}} \\ \hline
+\endfirsthead
+\endhead
+
 \textbf{Rule 0:}
 
-\textbf{0000 0000}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-q\textsubscript{8}q\textsubscript{7}q\textsubscript{6}q\textsubscript{5}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-q\textsubscript{4}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-q\textsubscript{3}q\textsubscript{2}q\textsubscript{1}q\textsubscript{0}
-\end{minipage} \\
-\midrule()
-\endhead
+\textbf{0000 0000}  &  q\textsubscript{8}q\textsubscript{7}q\textsubscript{6}q\textsubscript{5}
+& q\textsubscript{4} & q\textsubscript{3}q\textsubscript{2}q\textsubscript{1}q\textsubscript{0} \\ \hline
 Start: & XXXX & X & XXXX \\ \hline
 Final: & 0000 & 0 & 0000 \\ \hline
 & & & \\ \hline

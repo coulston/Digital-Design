@@ -32,27 +32,28 @@
 \clipboard {bok:CC_Combos}{Analyzing a circuit with a combination of building blocks}
 \clipboard {bok:CC_ArthStatements}{Arithmetic Statements}
 \clipboard {bok:CC_ConditionalStatements}{Conditional Statements}
-\clipboard {bok:BasicMemoryElements}{Basic Memory Elements}
+\clipboard {bok:BasicMemoryElements}{Basic Memory Element Behavior}
 \clipboard {bok:BME_Char}{Characteristics}
-\clipboard {bok:BME_Timing}{Timing}
+\clipboard {bok:BME_Timing}{Timing of basic memory element}
 \clipboard {bok:BME_Asynch}{Asynchronous set reset}
 \clipboard {bok:BMS_Memory}{Sequential Logic Building Blocks}
 \clipboard {bok:BMS_Reg}{Analysis, design and use of a register in a digital design}
 \clipboard {bok:BMS_ShitReg}{Shift Register}
 \clipboard {bok:BMS_Counter}{Counter}
 \clipboard {bok:BMS_Ram}{Static RAM}
-\clipboard {bok:BMS_RegTran}{Register Transfer}
+\clipboard {bok:BMS_RegTran}{Design a circuit that performs register transfer}
 \clipboard {bok:FSM}{Finite State Machines}
 \clipboard {bok:FSM_Hardware}{Hardware organization of a finite state machine}
 \clipboard {bok:FSM_StateDiagram}{State diagram for a finite state machine}
 \clipboard {bok:FSM_OneHot}{One's Hot Encoding}
 \clipboard {bok:FSM_design}{Design}
-\clipboard {bok:FSM_Timing}{Timing}
+\clipboard {bok:FSM_Timing}{Using a timing diagram to specify or verify the proper operation of a Finite State Machine}
 \clipboard {bok:DaC}{Datapath and Control}
 \clipboard {bok:DaC_Architecture}{Datapath and Control Architecture}
 \clipboard {bok:DaC_Algorithm}{Algorithmic Language}
+\clipboard {bok:DaC_ControWord}{Design a control word table and spcify the control word values for every state.}
 \clipboard {bok:DaC_Design}{Design}
-\clipboard {bok:DaC_Timing}{Timing}
+\clipboard {bok:DaC_Timing}{Using a timing for a datapath and control circuit to specify or verify proper operation.}
 \clipboard {VER}{Verilog }
 \clipboard {VER:CSA}{Writing concurrent signal assignment statements for a logic function}
 \clipboard {VER:Logic}{Writing a Verilog statement using primitive logic operations}

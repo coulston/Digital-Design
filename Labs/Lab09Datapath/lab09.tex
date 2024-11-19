@@ -11,8 +11,10 @@ a datapath to store and manipulate the information need to run a stopwatch.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\item \Paste{bok:REP_WordStatement}
-	\item \Paste{bok:REP_TruthTable}
+	\item \Paste{bok:BMS_RegTran}
+	\item \Paste{bok:DaC_Architecture}
+	\item \Paste{bok:DaC_ControWord}
+	\item \Paste{HDL:Do}
 \end{itemize}
 
 
@@ -240,8 +242,9 @@ potential as an engineer.
 \bottomrule()
 \end{longtable}
 
+\hypertarget{link:swDpVerilog}{}{}
 Now that you have the control word figured out, you need to write the
-Verilog code for the datapath. For the datapath module, I want you to:
+Verilog code for the datapath. For the datapath module:
 
 \begin{itemize}
 \item
@@ -270,7 +273,7 @@ Verilog code for the datapath. For the datapath module, I want you to:
   \end{itemize}
 \end{itemize}
 
-\subsection{stopWatchDatapath Simulation}
+\subsection{Testbench}
 
 Before you download your completed datapath to the Development Board,
 you are going to perform extensive simulations to uncover as many bugs
@@ -296,17 +299,17 @@ Set \verb+ localparam tenthSecondConstant+ to 4\textquotesingle h000002
 \end{itemize}
 
 You can use the parameter \textbf{N} as the generic parameter in
-component instantiation for generic components. For example, in my
-datapath, I have the following genericCounter instantiation - the use of
-the parameter value \#(N) as the width of the counter is legal syntax in
-Verilog.
+component instantiation for generic components. For example, 
+you will have the following genericCounter instantiation in your 
+datapath - the use of the parameter value \hdl{\#(N)} as the width of the 
+counter is legal syntax in Verilog as long as \hdl{N} is defined somewhere.
 
 \begin{verbatim}
 genericCounter #(N) tenthSecondCounter(clk, resetn, zero24, cw{[}1:0{]}, clkCount);
 \end{verbatim}
 
-Make a note to yourself to modify \textbf{N} and
-\textbf{tenthSecondConstant} values before synthesis. This is also
+Make a note to yourself to modify \hdl{N} and
+\hdl{tenthSecondConstant} values before synthesis. This is also
 mentioned later in this document.
 
 Next modify the control words defined in the datapathLab09\_tb.v file
@@ -345,6 +348,7 @@ to understand where your simulation is at and what behavior to expect.
 
 \end{landscape}
 
+\hypertarget{link:swDpSim}{}{{}
 Run the testbench for the datapathLab09\_tb module using the do file
 provided. Produce a timing diagram ordered from top to bottom as:
 
@@ -391,8 +395,7 @@ provided DO file as follows:
 \begin{itemize}
 \item
   You can type ``run \textless time\textgreater'' in this area (as
-  shown) to simulate some amount of time. I found this VERY handy when
-  debugging my Verilog code.
+  shown) to simulate some amount of time. 
 \item
   Also note that the console has tab completion. This allows you to type
   the first few characters of a command/filename and press Tab to fill
@@ -404,8 +407,8 @@ You need to look at the values produced by the datapath and compare them
 against the values in Table 2. Look for discrepancies starting at time 0
 and only advancing the simulation when everything is correct. You will
 have to transcend the design hierarchy to find the source of your
-errors. Most of my errors are due to incorrect wiring or modules --
-wrong names or wrong signal order.
+errors. Most errors are due to incorrect wiring of modules --
+wrong signal names or wrong signal order.
 
 \includegraphics{ image10.png}
 
@@ -420,20 +423,24 @@ is and how it was derived. In addition to this submission, you will be
 expected to demonstrate your circuit at the beginning of your lab
 section next week.
 
-\subsubsection{Datapath}
+\subsubsection{System Architecture}
 
 \begin{itemize}
 \item
   Complete Table~\ref{table:swDPcontrolWord}.
 \item
-  Verilog code for the body of the datapath module (courier 8-point font
+  \hyperlink{link:swDpVerilog}{Verilog code} for the body of the datapath module (courier 8-point font
   single spaced), leave out header comments.
+  \end{itemize}
+  
+ \subsubsection{Testbench}
+ \begin{itemize}
 \item
  Complete timing diagram from Figure~\ref{figure:swDPtiming}.
 \item
-  Copy of your simulation timing diagram. Use the signal
+  A copy of your \hyperlink{link:swDpSim}{simulation timing} diagram. Use the signal
   color and order specified.
 \item
-  Demonstrate that your datapath and do file work in ModelSim.
+  Demonstrate that your simulation to a member of the lab team.
 \end{itemize}
 
