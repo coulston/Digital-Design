@@ -1,10 +1,10 @@
-\section{Datapath and Control}
+\chapter{Datapath and Control}
 \graphicspath{ {./chapter08/FigWork} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Here are the helpful stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Helpful Stuff}
+\section{Helpful Stuff}
 
 \scalebox{0.7}{\includegraphics{../Fig/Abstract}}
 
@@ -62,7 +62,7 @@ N-bit Bus transceiver     & N bits & N bits & & 2 bit  \\ \hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Here are the problems
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Problems}
+\section{Problems}
 \begin{description}
 
 
@@ -252,6 +252,282 @@ datapath and control, the
 control word, MIEs and OEs.  These circuit will need a three-state buffer to
 be able to both read and write to the RAM.  Do not worry about the sizes of the
 registers or RAM.
+
+
+\item[Roulette]
+
+You are to construct a digital circuit that plays a game of
+roulette, allows betting and keeps track of total earnings.
+The roulette wheel has 8 slots, labeled $1 \ldots 8$.  The player
+can play one of the numbers straight or play even or odd.
+The player starts with \$10. 
+The layout of the machine is shown in Figure~\ref{fig:Roulette}.
+\begin{figure}[ht]
+\center{\scalebox{0.5}{\includegraphics{../FigHw/Prob8-17}}}
+\caption{The layout of the roulette playing machine.  
+The two 7 segment displays at the top are used for a variety
+of purposes.}
+\label{fig:Roulette}
+\end{figure}
+
+The sequence of events is as follows:
+\begin{enumerate}
+\item	The circuit lights up the PICK LED.
+	The player enters their guess; a number between 1-8, even or odd.
+	While holding down their guess they press the roll button.
+\item	The circuit displays the picked number in the left most
+	7 segment display.  The circuit lights up the BET LED.
+	The player enters a one digit bet between 1 to 8.  While holding
+	down their bet they press the roll button.
+\item 	The circuit displays the bet on the rightmost 7-segment
+	display.
+	The player pushes and holds down the roll button.
+	The circuit increments a mod 8 counter while the roll 
+	button is depressed. It would be nice to display the
+	current count value on right 7-seven segment display.
+	Since the clock cycle is on the order of milliseconds,
+	then the user would not be able to anticipate the roll.
+\item	The player releases the roll button.  The final roll
+	is displayed on the rightmost 7-segment display.
+	The circuit stops incrementing the counter and checks
+	to see if the final value matches the players guess.
+	If the match is correct then light the WIN LED and
+	increment the players earnings.  If the match is incorrect
+	then light the LOOSE LED and decrement the players
+	earnings.
+\item	The play hits the roll button to clear the roll information
+	from the 7-segment displays.
+\item	The circuit displays the players earnings on the 7-segment
+	display.
+\item	When the user pushes the roll button then goto step 1.
+\end{enumerate}
+
+Set reasonable bounds on the maximum winnings.  Values may be displayed
+in hexadecimal (you may assume that you have a hex to 7-segment display
+converter at your disposal).  
+\\
+\\
+
+\textbf {Algorthm}
+{\small 
+\\
+ 1. cash = 10; \\
+ 2. LeftSeven = blank; 	\\
+ 3. RightSeven = cash; 	\\
+ 4. while(cash != 0) { 	\\
+ 5.     LEDarray = 1 0 0 0;    // Pick Bet Win Loose 	\\
+ 6.     while(ROLL == 0); 	\\
+ 7.     guess = Datain; 	\\
+ 8.     while(ROLL == 1); 	\\
+ 9.      	\\
+10.     LEDarray = 0 1 0 0;    // Pick Bet Win Loose 	\\
+11.     LeftSeven = guess; 	\\
+12.     RightSeven = blank; 	\\
+13.     while(ROLL == 0); 	\\
+14.     bet = Datain; 	\\
+15.     while(ROLL == 1); 	\\
+16.      	\\
+17.     LEDarray = 0 0 0 0;    // Pick Bet Win Loose 	\\
+18.     RightSeven = bet; 	\\
+19.     while(ROLL == 0); 	\\
+20.     while(ROLL == 1) count = count + 1; 	\\
+21.  	\\
+22.     RightSeven = count; 	\\
+23.     if (count == guess) { 	\\
+24.         cash = cash + (bet *4); 	\\
+25.         LEDarray = 0 0 1 0;    // Pick Bet Win Loose 	\\
+26.     } else { 	\\
+27.         cash = cash - bet; 	\\
+28.         LEDarray = 0 0 0 1;    // Pick Bet Win Loose 	\\
+29.     } 	\\
+30.     while(ROLL == 0); 	\\
+31.     while(ROLL == 1); 	\\
+32.     RightSeven = cash; 	\\
+33.  	\\
+34. }	 	\\
+35. LEDarray = 0 0 0 1;    // The user is out of money 	\\
+36. while(1);		// Halt the machine 	\\
+}
+ 
+\begin{landscape}
+\textbf{Datapath and Control}
+\begin{figure}[ht]
+%\center{\scalebox{0.7}{\includegraphics{./Sol8-16-blank}}}
+\end{figure}
+
+\pagebreak
+
+\textbf{ Control Word}
+
+\begin{table}
+\caption{The control word for the roulette circuit and its value for each state.}
+\label{table:roulette}
+{\small
+\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l}
+
+State &  counter& guess  & bet    & cmux      & bmux     & cash   & add/sub & ledmux    & rmux   & lmux \\ \hline
+      & 00 hold & 0 hold & 0 hold & 0 \$10    & 0 bet    & 0 hold & 0 add  & 00 (pick) &00 cash &00 cash  \\ \hline
+      & 01 load & 0 load & 1 load & 1 add/sub & 1 bet<<2 & 1 load & 1 sub  & 01 (bet ) &01 bet  &01 guess \\ \hline
+      & 10 up   &        &        &  	      &          &        &        & 10 (win ) &10 count&10 blank \\ \hline
+      &         &        &        &  	      &          &        &        & 11 (loose)&11 blank&         \\ \hline
+      &         &        &        &  	      &          &        &        &          &         &   \\ \hline
+init  &       &       &       & 	      &         &       &       &        &       & \\ \hline
+wg1   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+guess &       &       &       & 	      &         &       &       &        &       & \\ \hline
+wg2   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+wb1   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+bet   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+wb2   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+wr1   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+spin  &       &       &       & 	      &         &       &       &        &       & \\ \hline
+load 1&       &       &       & 	      &         &       &       &        &       & \\ \hline
+comp  &       &       &       & 	      &         &       &       &        &       & \\ \hline
+win   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+add   &       &       &       & 	      &         &       &       &        &       & \\ \hline
+loose &       &       &       & 	      &         &       &       &        &       & \\ \hline
+sub &       &       &       & 	      &         &       &       &        &       & \\ \hline
+wn    &       &       &       & 	      &         &       &       &        &       & \\ 
+\end{tabular}
+}
+\end{table}
+\end{landscape}
+
+
+\item[Light Show]
+
+A light show consists of an endlessly repeating sequence of up to 16 frames. 
+A frame is an illuminated pattern of LEDs on a LED bar graph. The user 
+creates a light show by specifying the number of frames in the show, editing 
+those frames, and then instructing the circuit to cycle through the frames. 
+The input to the circuit comes from a standard PS/2 keyboard. The output of 
+the circuit is displayed on a LED bar graph and a 7-segment display. The 
+behavior of the Light Show circuit is given in Figure~\ref{fig:LSbehavior}.
+ 
+\begin{figure}[ht]
+\center{\includegraphics{../Fig/Behavior}}
+\caption{A state diagram describing the behavior of the Light Show circuit.}
+\label{fig:LSbehavior}
+\end{figure}
+
+The Light Show circuit changes state when the users presses a key on 
+the keyboard. For example, pressing ``M" while in the \textbf{ index } state causes 
+the circuit to transition into the \textbf{ modify state}. The behavior of the 
+Light Show circuit in each of its states is described in 
+Table~\ref{table:LSbehavior}.
+
+\begin{table}
+\begin{tabular}{l|p{0.5in}|p{0.5in}|p{2.0in}}
+\textbf{ State }	& LED bar graph	& 7-segment	& Behavior 				\\ \hline \hline
+\textbf{ reset }	& blank		& blank		& All sequential elements are reset 	\\ \hline
+\textbf{ prompt }	& blank		& ``P"		& Waiting for user input		\\ \hline
+\textbf{ limit }	& blank		& current limit	& The number of frames in the light show is called 
+	the limit. If the user enters a hex value between 0-F it is stored as the new limit. \\  \hline
+\textbf{ index }	& current frame	& current index	& Each frame in the show has an index which defines 
+	its position in the show. If the user enters a hex value between 0-F, this frame will 
+	be edited in the \textbf{ modify } state. 						\\ \hline
+\textbf{ modify }	& current frame	& current index	& Each frame has eight bits which specify the state of 
+	the 8 LEDs on the bar graph.  These bits are toggled by pressing the corresponding 
+	key. For example, if LED 5 is on, pressing ``5", causes LED 5 
+	to go off.								\\ \hline
+\textbf{ show }	& cycle through frames & current index & Consecutive frames are displayed on the 
+	LED bar graph at around 4Hz. After the last frame is displayed, the circuit loops 
+	back to the 0th frame. 							\\ 
+\end{tabular}
+\caption{The behavior of the Light Show circuit in each of its states.}
+\label{table:LSbehavior}
+\end{table}
+
+The algorithm for the light show circuit continually scans the busy signal 
+and the keyboard scan code.  When the user presses either a ``L", 
+``I", or ``S", 
+the algorithm drops into one of the subfunctions described in 
+Table~\ref{table:LSbehavior}.  Assume the Light Show circuit is
+clocked at 16MHz.  The clock rate is needed in order to create a delay of
+0.25 seconds required to pace the frames during the show phase.  
+
+\pagebreak
+\begin{verbatim}
+1.  while(1) {
+2.      HexDisplay = "P"
+3.      if (!busy and IsL(ScanCode)) {
+4.          while (!busy' and !IsP(ScanCode)) {
+5.             HexDisplay = Hex2Seven(limit);
+6.             BarGraph = 0x00;
+7.             if (!busy and IsHex(ScanCode)) {
+8.                  limit = Scan2Hex(ScanCode);
+9.                  while(!busy);
+10.     }   }  }
+
+11.     if (!busy and IsI(ScanCode)) {
+12.         while (busy or !IsP(ScanCode)) {
+13.             HexDisplay = Hex2Seven(index);
+14.             if (!busy and IsHex(ScanCode)) {
+15.                index = Scan2Hex(ScanCode);
+16.                 while(!busy);
+17.             }
+
+18.             if (!busy and IsM(ScanCode)) {
+19.                 while (busy or !IsI(ScanCode)) {
+20.                     HexDisplay = Hex2Seven(index);
+21.                     BarGraph = RAM[index];
+22             	        while(!busy);
+23             	        while(busy);
+24.                     if (!busy and IsOct(ScanCode)) {
+25.                         RAM[index] = Flip(IsOct(ScanCode),RAM[index]);
+26.     }   }   }   }   }
+
+27.     if (!busy and IsS(ScanCode)) {
+28.	    index = 0;
+29.         while(!busy and !IsP(ScanCode)) {
+30.             BarGraph = RAM[index];
+31.             HexDisplay = Hex2Seven(index);
+32.             for (timer=0; timer<2^22; timer++);
+33.             index += 1;
+34.             if (index == limit) index=0;
+35.  }  }   
+\end{verbatim}
+
+\begin{landscape}
+\begin{figure}[ht]
+%\center{\scalebox{0.9}{\includegraphics{./LightShowCir-hand}}}
+\caption{The datapath and control for the Light show circuit.}
+\label{fig:LightShowCir}
+\end{figure}
+
+
+\begin{table}
+{\small
+\begin{tabular}{c||c|c|c|c|c|c|c|c|c|c|c}
+\textbf{ State } 	& bar & 7-seg & hex & index & delay & limit    & bargraph & CS & R/W' & tsb & flip \\  
+	& mux & mux   & mux & count & count & register & register &       &       & &      \\  \hline \hline
+	& 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold & 0 off & 0 write & 0 tri & 0 pass \\ 
+	& 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load & 1 on    &  1 read & 1 pass & 1 flip \\
+	& 	&     &     & 10 load & 10 load & & & & & \\
+	& 	&     &	    & 11 reset	& 11 reset & & & & \\ \hline \hline
+\textbf{ prompt } 	 & 	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ set limit }  & 	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ load limit } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ waitlimit } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ reset inde  } &	  &	  & 	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ load frame } &	  &	  &	  &	   &	   &	  &	  &	  &   &   &   \\ \hline
+\textbf{ wait frame } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ inc index } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ comp index } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ set index } &	  &	  &	  &	   & 	   &	  & 	  &	  &   &	  &   \\ \hline
+\textbf{ load index } &	  &	  & 	  &	   &	   &	  &	  &	  &   &   &   \\ \hline
+\textbf{ wait index } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ modify	} &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ modify read} &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ modify write } &	  &	  &	  &	   &	   &	  &	  & 	  &   &	  &   \\ \hline
+\textbf{ wait !busy } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
+\textbf{ wait busy } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ 
+\end{tabular} 
+}
+\caption{The control word for the LightShow circuit and its value for each state.}
+\label{table:LightShow}
+\end{table}
+
+\end{landscape}
 
 
 \end{description}

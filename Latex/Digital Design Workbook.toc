@@ -1,0 +1,26 @@
+\contentsline {chapter}{Contents}{iv}{section*.2}%
+\contentsline {chapter}{\chapternumberline {1}Numbering Systems}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Helpfull Stuff}{1}{section.1.1}%
+\contentsline {chapter}{\chapternumberline {2}Representations of Logical Functions}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Helpfull Stuff}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Definitions}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Problems}{4}{section.2.3}%
+\contentsline {chapter}{\chapternumberline {3}Minimization of Logical Functions}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Definitions}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Problems}{7}{section.3.2}%
+\contentsline {chapter}{\chapternumberline {4}Combinational Logic Building Blocks}{11}{chapter.4}%
+\contentsline {subsection}{Helpful Stuff}{11}{section*.3}%
+\contentsline {subsection}{Definitions}{12}{section*.4}%
+\contentsline {subsection}{Problems}{12}{section*.5}%
+\contentsline {chapter}{\chapternumberline {5}Sequential Circuits}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Helpful Stuff}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Problems}{16}{section.5.2}%
+\contentsline {chapter}{\chapternumberline {6}Sequential Building Blocks}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Helpful Stuff}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Problems}{18}{section.6.2}%
+\contentsline {chapter}{\chapternumberline {7}Finite State Machines}{23}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Helpful Stuff}{23}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Problems}{23}{section.7.2}%
+\contentsline {chapter}{\chapternumberline {8}Datapath and Control}{29}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Helpful Stuff}{29}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Problems}{30}{section.8.2}%

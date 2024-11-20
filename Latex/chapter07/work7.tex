@@ -1,10 +1,10 @@
-\section{Finite State Machines}
+\chapter{Finite State Machines}
 \graphicspath{ {./chapter07/FigWork} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Here are the helpful stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Helpful Stuff}
+\section{Helpful Stuff}
 
 \includegraphics{../Fig/GenFSM}
 
@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Here are the problems
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Problems}
+\section{Problems}
 
 \begin{description}
 \item[Convert the state diagram into a state table.]
@@ -133,6 +133,7 @@ E	& C	& B	\\
 \pagebreak
 
 \item[Given the state table and state assignment determine the MIEs.]
+
 \begin{tabular}{ll}
 \begin{tabular}{c||c|c|c|c}
 State & ND=00 & ND = 01 & ND=11 & ND=10 \\ \hline
@@ -242,5 +243,38 @@ Q_2=0 & Q_2=1 \\
 \multicolumn{2}{c}{\text{ Entries\ are\ } Q_0+=D_0}
 \end{array} $$
 }
+
+
+\item[Parity Checker]
+When data is transmitted, there is a chance that noise will corrupt some portion of the data.  
+To detect errors, a single parity bit can be added to each data item to detect single bit errors.  
+The value of the parity bit is determined by the number of 1's in the data packet the parity bit
+is being added to.  In an even-parity scheme, the parity bit's value, 0 or 1, is set so that the
+number of 1's in the data packet plus the parity bit is an even number.  For example if 
+the data packet 1101 0011 has a total of 5 1's.  The even-parity bit would be 1 and 
+you would transmit 1101 0011 1, the last 1 being the parity bit.  The parity bit is 
+then re-computed by the receive and checked against the transmitted bit.  Clearly,
+the transmitter and receiver must agree on the even or odd before the parity bit
+is useful.
+
+The following timing diagram and circuit shows a parity checking circuit.  The serial
+data input is x and the parity bit is z.  Complete the timing diagram using the circuit
+diagram to plug in values at the given time and computing the signal values out of
+the gates and the SR flip flop.  you should assume that the SR flip flop is initially
+reset (Q = 0).  Does this circuit realize a even or odd parity circuit? 
+
+
+
+\begin{figure}[ht]
+\includegraphics[width=0.6\paperwidth]{ParityTime}
+\vspace{0.4cm}
+\includegraphics[width=0.5\paperwidth]{ParityAct}
+\end{figure}
+
+
+
+
+
+
 
 \end{description}
