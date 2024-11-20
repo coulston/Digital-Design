@@ -6,7 +6,7 @@ approach to the design of complex digital systems.  It guides students and facul
 the process by exposing critical skills gradually through the text. 
 
 # Features
-* * End of Chapter Problems. 
+* End of Chapter Problems. 
 * Instructor’s Manual containing solutions to the end-of-chapter problems.
 * Laboratory Manual containing 13 projects suitable for implementation on many development boards.
 * Numerous Examples. Many examples demonstrating application of the material are contained throughout the text. 
