@@ -1,0 +1,137 @@
+\chapter{Creating a Project}
+\graphicspath{ {./Lab00HowTo/howTo10 Create Project/Fig} }
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Select an appropriate working directory for your project. I would
+  recommend selecting your network drive.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Create a new folder for your project \emph{projectFolder},
+  \item
+    Download any provided Verilog files into \emph{projectFolder},
+  \end{enumerate}
+\item
+  Start Quartus II 18.1 (64-bit).
+\item
+  Select \emph{File -\textgreater{} New Project Wizard.}
+\item
+  In the \textbf{Directory, Name, Top-Level Entity} page of the New
+  Project Wizard pop-up:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    To the right of the ``What is the working directory'' box click the
+    \ldots{} button,
+  \item
+    In the Select Folder pop-up, navigate so you can see the andgate2
+    directory created in step 1,
+  \item
+    Select the \emph{projectFolder} folder, click Select Folder,
+  \item
+    In the ``What is the name of this project'' field type
+    \emph{projectName}
+  \item
+    click \emph{Next}.
+  \end{enumerate}
+\item
+  In the \textbf{Project Type} page of the New Project Wizard pop-up:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Select the \emph{Empty project} radio button,
+  \item
+    click \emph{Next}.
+  \end{enumerate}
+\item
+  If you have given Verilog files, in the \textbf{Add Files} page of the
+  New Project Wizard pop-up:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Click the \ldots{} button to the right of File name,
+  \item
+    In the Select File pop-up, navigate to, and select,
+    \emph{projectFiles.v}, click Open,
+  \item
+    The file should appear in the window below,
+  \item
+    Click \emph{Next}
+  \end{enumerate}
+\item
+  In the \textbf{Family \& Device Settings} page of the New Project
+  Wizard pop-up:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Device family, Family: Cyclone V
+  \item
+    Package: FBGA
+  \item
+    Pin Count: 672
+  \item
+    Speed Grade: 7\_H6
+  \item
+    Select \emph{Specific device selected in `Available devices' list}
+  \item
+    From the list of available devices, select: 5CGXFC5C6F27C7
+  \item
+    Click \emph{Next}
+  \end{enumerate}
+\item
+  In the \textbf{EDA Tool Settings} page of the New Project Wizard
+  pop-up:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    In the Simulation row
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii}.}
+    \item
+      Tool Name column: ModelSim-Altera
+    \item
+      Formats column: Verilog HDL
+    \end{enumerate}
+  \item
+    Leave other defaults alone
+  \item
+    Click Next
+  \end{enumerate}
+\item
+  In the \textbf{Summary} page of the New Project Wizard pop-up:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Review information,
+  \item
+    Click Finish.
+  \end{enumerate}
+\item
+  Back in the main Quartus II window, Click \emph{Tools -\textgreater{}
+  Options..}.
+\item
+  In the Options pop-up:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Select \emph{EDA Tool Options} from the Category menu,
+  \item
+    If the last row, ``ModelSim-Altera'' is blank, click on the \ldots{}
+    button at right and navigate to the
+    \emph{C:\textbackslash intelFPGA\_lite\textbackslash18.1\textbackslash modelsim\_ase\textbackslash{}},
+    select the \emph{win32aloem} folder, the click Select Folder,
+  \item
+    Click Ok.
+  \end{enumerate}
+\end{enumerate}
