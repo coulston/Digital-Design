@@ -1,0 +1,8 @@
+\contentsline {chapter}{Contents}{ii}{section*.1}%
+\contentsline {chapter}{\chapternumberline {1}Installing Quartus software.}{1}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {2}Creating a Project}{5}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {3}Performing a Simulation}{7}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {4}Using a Do file}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Example do file for hiLow Module}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Model Sim commands}{11}{section.4.2}%
+\contentsline {chapter}{\chapternumberline {5}Synthesizing a Verilog Module}{13}{chapter.5}%

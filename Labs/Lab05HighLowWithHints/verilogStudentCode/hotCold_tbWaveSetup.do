@@ -1,8 +1,6 @@
 #################################################################################
-#run this file by typing the following in the modelSim command window
-#Useful manual: https://www.microsemi.com/document-portal/doc_view/136364-modelsim-me-10-4c-command-reference-manual-for-libero-soc-v11-7
+# File: hotCold_tbWaveSetup.do
 #################################################################################
-vsim work.hotCold_tb
 restart -f
 delete wave *
 

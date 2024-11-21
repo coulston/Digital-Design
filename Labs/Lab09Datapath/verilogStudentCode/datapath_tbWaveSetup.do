@@ -1,8 +1,6 @@
 #################################################################################
-#Useful manual: https://www.microsemi.com/document-portal/doc_view/136364-modelsim-me-10-4c-command-reference-manual-for-libero-soc-v11-7
-#Students should modify as needed.
+# File:	datapath_tbWaveSetup.do
 #################################################################################
-vsim work.datapath_tb
 restart -f
 delete wave *
 
