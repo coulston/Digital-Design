@@ -1,0 +1,70 @@
+%% Author:      Chris Coulston
+%% Purp:        Here are the homework problems and their solutions.
+
+%%\documentclass[11pt,psfig]{book}
+\documentclass[letterpaper, 10pt]{memoir}
+\chapterstyle{ger}
+\settrims{0pt}{0pt}
+\semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
+
+
+% To keep the book.tex file clean, I pulled all the formating and package 
+% includes into the preamble.tex file
+\include{preamble}
+
+\makeindex
+
+\begin{document}
+
+\frontmatter
+ \title{}
+\includegraphics{./Fig/colorCover}
+ \maketitle
+ 
+ 
+\include{copyright}
+\tableofcontents
+\showanswers
+
+\mainmatter
+
+\chapter{Numbering Systems}
+\include{./chapter01/hw1}
+
+\chapter{Representations of Logical Functions}
+\include{./chapter02/hw2}
+
+\chapter{Minimization of Logical Functions}
+\include{./chapter03/hw3}
+
+\chapter{Combinational Logic Building Blocks}
+\include{./chapter04/hw4}
+
+\chapter{Sequential Circuits}
+\include{./chapter05/hw5}
+
+\chapter{Sequential Building Blocks}
+\include{./chapter06/hw6}
+
+
+\chapter{Finite State Machines}
+\include{./chapter07/hw7}
+
+
+\chapter{Datapath and Control}
+\include{./chapter08/hw8}
+
+
+\chapter{Analog Foundation of Digital Circuits}
+\include{./chapter09/hw9}
+
+
+\chapter{Common Peripheral Components}
+\include{./chapter10/hw10}
+
+\chapter{Optimizing Finite State Machines}
+\include{./chapter11/hw11}
+
+
+
+\end{document} 

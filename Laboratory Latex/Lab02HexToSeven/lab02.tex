@@ -1,0 +1,598 @@
+\chapter{Hexadecimal to Seven-Segment Converter}
+\label{chapter:HexToSeven}
+\graphicspath{ {./Lab02HexToSeven/Fig} }
+
+\section{Outcomes and Objectives}
+
+The outcome of this lab is to instantiate a hexadecimal to seven segment converter
+on the FPGA development board.  Through this process you will achieve the following
+learning objectives.
+\begin{itemize}
+	\itemsep=0em
+	\item \Paste{bok:REP_TruthTable}
+	\item \Paste{bok:REP_MultiOut}
+	\item \Paste{bok:REP_WordStatement}
+	\item \Paste{VER:Vectors}	
+	\item \Paste{VER:AlwaysCase}
+	\item \Paste{HDL:Pin}
+\end{itemize}
+
+
+\section{Verilog: Vectors}
+
+A vector is a collection of bits that are realted to one another in some way.  For example,
+the individual bits of a 4-bit number could be represented as a vector.
+There are three things that you will need to know about vectors in order to
+complete today's lab (and future labs), combining bits into a vector,
+defining a vector, and accessing the bits of a vector. These operations
+are illustrated in Figure~\ref{fig:combinVector}.
+
+\begin{figure}[ht]
+\includegraphics[width=0.2\paperwidth]{image1.png}
+\caption{An illustration showing three bits combined into a vector, \hdl{f},  and then accessing the individual bits of \hdl{f}.}
+\label{fig:combinVector}
+\end{figure}
+
+The operations shown in Figure~\ref{fig:combinVector} are similar to
+the operations in Listing~\ref{listing:vectorManipulation}. 
+In this module, the line of code assign \hdl{f = \{a,b,c\};} combines the
+individual signals \hdl{a}, b and c into a 3-bit vector f. The left-most signal
+in the parenthesis list, \emph{a}, becomes the MSB of the vector and the 
+right-most signal, \emph{c}, becomes LSB. 
+Combining signals is more commonly called concatenation. You can
+concatenate any arrangement of signals as long as the number of bits
+comes out the same as the signal on the left-hand-side of the = sign.
+
+\begin{lstlisting}[language=Verilog,
+ caption={Verilog code which illustrates vector manipulations and declarations.},
+ label={listing:vectorManipulation},
+ frame=single]
+module unimportantModuleName();
+
+    wire a, b, c, x;			// Just some plain old wires
+    wire [2:0] f, g, h;			// 3-bit vectors
+
+    assign f = {a,b,c};			// Concatenate bits to vector
+    assign g = {f[0], f[2:1]};		// re-arrange bits
+
+    assign x = (f[0] & f[1]) ^ f[2];	// vectors are made of bits
+    assign h = 3b'010;			// A constant vector to h
+\end{lstlisting}
+
+The statement \verb+wire [2:0] f;+ defines the vector f as having 3 bits. 
+The numbers in the square brackets are the indices of the most and least significant
+bits of the vector. We will always index our vectors starting at 0, so
+the highest index will always be one less than the number of elements in
+the vector.
+
+The statement \verb+assign x = (f[0] & f[1]) ^ f[2];+ shows how
+you can access the individual bits of a vector by putting the bit index in
+square brackets. You can also access sub-vector by putting indices in
+square brackets separated by a colon, e.g. \verb+f[2:1]+
+
+You can provide a constant value to a vector, an operation we will call
+hardcoding, using the 3b'010; notation. The first number, 3, defines the 
+number of bits in the vector, b' means that this is a bit vector and the 010 is
+the 3-bit value.
+
+\section{Verilog: Always/Case statements}
+
+We will use the Verilog \emph{always} statement to implement a function
+using its truth table. Listing~\ref{listing:3in2outVerilog} shows an always 
+statement that uses the 3-bit value of a signal x to compute the value of f.
+
+\begin{lstlisting}[language=Verilog,
+ caption={A 3-input, 2-output function realized with an always statement.
+ Can you figure out how the output was computed?},
+ label={listing:3in2outVerilog},
+ frame=single]
+    wire [2:0] x;
+    reg [2:0] f;
+    
+    always @(*)
+        case (x)
+            3'b000: f = 3'b00;
+            3'b001: f = 3'b01;
+            3'b010: f = 3'b01;
+            3'b011: f = 3'b10;
+            3'b100: f = 3'b01;
+            3'b101: f = 3'b10;
+            3'b110: f = 3'b10;
+            3'b111: f = 3'b11;
+        endcase
+\end{lstlisting}
+
+For the time being, we will trust that the statement always \verb+@(*)+ allows
+the code between \verb+case+ and \verb+endcase+ to run continuously and concurrent
+with any other statements in the module. Yes, this means that all the
+code between \verb+case+ and \verb+endcase+ acts like a single assign statement. A
+case statement uses the argument to case, x as a selector
+for one of the rows below. Every possible value of x must be present and
+when that value matches x, the action to the right of the colon is
+performed. When we use a case statement as shown in Listing~\ref{listing:3in2outVerilog} 
+you must make the output type reg.
+
+All signals are either \verb+wire+ or \verb+reg+ type. A wire is a signal that has a
+value provided to it by some active element. This active element might
+be a gate or the output of a module. If a signal does not have an
+explicit gate or module driving its value, it needs to be typed reg.
+
+\hypertarget{part-1-combine-lab-1-functions.}{%
+\section{A Multiple Output Function}\label{part-1-combine-lab-1-functions.}}
+
+Let's explore vectors and the always statement by combining the three
+functions created in last weeks assignment into one function.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Go back to your Lab 01 solutions and extract the truth tables for
+  function f04, f03, and f02. Put these values into the truth table
+  shown in Table~\ref{table:combinedLab01}.
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|@{}}
+\caption{The Truth Table for the combinedLab01 function. This
+function has a 3-bit input and 3-bits output.}\label{table:combinedLab01}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+a
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+b
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+C
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+f04
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+f03
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+f02
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+a
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+b
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+C
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+f04
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+f03
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Muf02
+\end{minipage} \\ 
+\midrule()
+\endhead
+0 & 0 & 0 & & & \\ \hline
+0 & 0 & 1 & & & \\ \hline
+0 & 1 & 0 & & & \\ \hline
+0 & 1 & 1 & & & \\ \hline
+1 & 0 & 0 & & & \\ \hline
+1 & 0 & 1 & & & \\ \hline
+1 & 1 & 0 & & & \\ \hline
+1 & 1 & 1 & & & \\ \hline
+%\bottomrule()
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create \textbf{a new project} folder within your \emph{lab2} directory
+  called \emph{combinedLab01.}
+\item
+  Download \emph{combinedLab01.v} and \emph{combinedLab01}\_tb.v from
+  Canvas to the project directory.
+\item
+  Create a project for these two files using the steps from last week's
+  lab. 
+\item
+  Modify \emph{combinedLab01.v} so that \emph{combinedLab01} outputs the
+  values given in Table~\ref{table:combinedLab01}.
+\item
+  Modify \emph{combinedLab01\_tb.v} so that \emph{combinedLab01} is run
+  through every combination of inputs. Assert the inputs in increasing
+  binary numbering order starting from 0,0,0 and going to 1,1,1.
+\item
+  Perform simulation using with the test bench using the steps from last
+  week's lab. 
+  
+\item
+  \protect\hypertarget{CombinedLab01_Waveform}{}{}Capture the output
+  waveform from Simulink. It should look something like the following.
+
+\includegraphics{image2.png}
+
+\item
+  From the information in the timing diagram, produce a truth table.
+  Compare the truth table generated from the data in the timing 
+  diagram to that you generated in Table~\ref{table:combinedLab01}.
+\end{enumerate}
+
+\section{FPGA: Pin-Assignment}
+
+The process of converting your Verilog code to a form which you will
+download onto the development board is called \emph{synthesis}. In order
+to synthesize your Verilog code, you need to tell the Quartus software
+which pins of the FPGA are associated with the ports in your top-level
+Verilog module. In order to perform this assignment, you need to know
+which pins of the FPGA are associated with useful hardware on the
+development board. The engineers who created the development board made
+the assignment of hardware components to FPGA pins when they laid out
+the printed circuit board. These same engineers documented their
+decisions in the Cyclone V GX Kit User Manual posted on the class web
+page.
+
+The Figure~\ref{fig:simpleVerilogDownload} shows a Verilog module called \emph{combinedLab01}
+synthesized and downloaded into an Altera FPGA on the development board.
+Note that ports a, b and c are connected to FPGA pins that are driven by
+slide switches. Ports f{[}2{]}, f{[}1{]} and f{[}0{]} are connected to
+FPGA pins that drive LEDs. In this way, a user can provide input to the
+\emph{combinedLab01} module by moving the slide switches and observe the
+circuit's output on the LEDs.
+
+\begin{figure}[ht]
+\caption{A simple Verilog design synthesized and downloaded onto the development board.}
+\includegraphics{image3.png}
+\label{fig:simpleVerilogDownload}
+\end{figure}
+
+The development board contains an Altera Cyclone V GX FPGA. This FPGA
+has many pins and they are identified by a lettered group and number.
+For example, in Figure~\ref{fig:simpleVerilogDownload} port c of 
+the combinedLab01 module is mapped to pin AC9.
+
+You will need to be able to figure out the remaining pin assignments on
+your own. To do this open up the C5G User Manual posted on the class Canvas
+page. Start with Figure 3-9 on page 30 which shows that the slide switches in one 
+of two positions (up or down). In the up position, they assert a logic 1 and down
+they assert a logic 0.  On the next page, 31 of the C5G User Manual look
+at Table 3-3. This table defines the relationship between the different slide
+switches and the FPGA pins each is connected to.  For example, slide switch 
+SW{[}0{]} is connected to PIN\_AC9.
+
+\includegraphics{image4.png}
+
+Figure 3-10 on page 31 of the C5G User Manual shows that the red and
+green LEDs are active high, meaning that the LED is active (illuminated) when 
+you send it a high signal (logic 1). Consequently, sending the LED a logic 0 turns 
+them off.   The pin assignment for the LEDs is given in Table 3-4 on page 32.
+Note that ``R'' in ``LEDR'' means red and ``G'' stands for green.
+
+
+Use the information to complete the pin assignment in 
+Table~\ref{table:pinAssignmentCombinedLab01}.  We 
+will use this assignment in the next section.
+
+\begin{longtable}[]{@{}
+|  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1428}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1428}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1428}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1430}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1430}}|@{}}
+\caption{Pin Assignment Table for combinedLab01.}\label{table:pinAssignmentCombinedLab01}\tabularnewline
+\toprule()
+Port & a & b & c & f{[}2{]} & f{[}1{]} & f{[}0{]}   \\ 
+\midrule()
+\endfirsthead
+\toprule()
+Port & a & b & c & f{[}2{]} & f{[}1{]} & f{[}0{]}   \\ 
+\midrule()
+\endhead
+Signal name 	& SW{[}2{]} & SW{[}1{]} & SW{[}0{]} 	& LEDR{[}2{]} & LEDR{[}1{]} & LEDR{[}0{]} \\ \hline
+FPGA Pin No. 	& 		& 		& PIN\_AC9 & 		& 			& \\ \hline
+\bottomrule()
+\end{longtable}
+
+\section{FPGA: Synthesizing a Verilog Module}
+\label{section:h27SynthesisHowTo}
+
+It's time to complete the synthesis process by downloading the combinedLab01 Verilog file 
+along with its pin-assignment to the FPGA. Work through the follow these steps to accomplish this.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In Project Navigator pane, select the File tab
+\item
+  Right mouse click \emph{combinedLab01.v} and select Set As Top Level
+  Entity.
+\item
+  Processing -\textgreater{} Start -\textgreater{} Start Analysis and
+  Elaboration
+\item
+  Assignments -\textgreater{} Pin Planner
+\item
+  In the Pin Planner pop-up you should see the pin assignment pane at
+  the bottom of the window.
+
+\includegraphics{image5.png}
+
+\item
+  Double click in the Location cell for row c
+\item
+  Scroll down the list of pins to PIN\_AC9
+\item
+  Complete the pin assignment for the other 5 inputs and outputs using
+  the information contained in pin assignment table completed earlier.
+\item
+  Double check your pin assignments.
+\item
+  File -\textgreater{} Close. Note closing your file incorporates this
+  assignment into the project.
+\item
+  Back in the Quartus window, Processing -\textgreater{} Start
+  Compilation \textless Ctrl-L\textgreater{}
+\item
+  Tools -\textgreater{} Programmer
+\item
+  In the Programmer pop-up window click Add File\ldots{}
+\item
+  In the Select Programming File pop-up, navigate to your project
+  directory, then into the output files folder, the select
+  combinedLab01.sof, click Open. You should see something like the
+  following.
+  
+\includegraphics{image6.png}
+
+\item
+  Connect the Altera Cyclone V GX FPGA to your computer through the USB
+  port, connect the power supply, and push the red power-on button. Try
+  not to be annoyed by the infernal blinking LEDs.
+\item
+  In the Programmer pop-up
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Click Hardware Setup\ldots.
+  \item
+    In the Hardware Setup select USB-Blaster {[}USB=0{]} from the
+    Currently selected hardware pull-down
+  \item
+    Click Close
+  \end{enumerate}
+\item
+  Back in the Programmer window, the box next to Hardware Setup\ldots{}
+  should reflect your choice. Click Start,
+\item
+  The Development board should stop its infernal blinking and run your
+  program. You may notice that the unused LEDs are dimly illuminated.
+ \item 
+  Move the slide switches up and down to verify that the input/output
+  matches the values in Table~\ref{table:combinedLab01}.  Use white
+  silk screen printing on the development board to locate slide switches and 
+  LEDs you assigned in your pin-assignment.
+
+\end{enumerate}
+
+
+\section{Hexadecimal to 7-segment Converter}
+
+While working on the previous problem, you probably noticed that the
+development Board has four 7-segment display. These figure 8 shaped
+blocks above the slide switches are the devices which light up numbers
+on some cash registers. We will be using these 7-segment displays for a
+variety of purposes during the term, so it would be a good idea.
+
+The hexadecimal-to-seven-segment-decoder is a combinational circuit that
+converts a hexadecimal number to an appropriate code that drives a
+7-segment display the corresponding value. \uline{BEWARE, the LEDs in
+the 7-segment displays on the Development Board are active low,
+asserting a logic 0 on the pin attached to a segment will cause that
+segment to illuminate.}
+
+\begin{figure}[ht]
+\includegraphics[width=0.3\paperwidth]{image8.png}
+\caption{Left, the proper numbering of the segments. Right,
+illuminating segments to form the number 4.}
+\label{fig:sevenSeg}
+\end{figure}
+
+The pattern of segments to be illuminated for each digit is shown in
+Figure~\ref{fig:sevenSeg}. For example, to display `4 output would be:
+
+\begin{verbatim}
+seg[6]=0   seg[5]=0   seg[4]=1   seg[3]=1   seg[2]=0   seg[1]=0   seg[0]=1
+or seg = 7'b0011001
+\end{verbatim}
+
+Figure~\ref{fig:sevenSegChars} shows the proper formatting for all the values between 0 -- f.
+
+\begin{figure}[ht]
+\includegraphics{image9.png}
+\caption{The proper arrangement of LEDs to form hexadecimal characters.}
+\label{fig:sevenSegChars}
+\end{figure}
+
+Use this information to 
+  complete the Table~\ref{table:hex2sevenTruthTable} to illuminate the active low led segments
+  to generate proper hexadecimal characters. 
+
+\begin{longtable}[]{@{}
+| >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1241}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1252}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1251}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1252}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1252}}|@{}}
+\caption{Truth table for the hexToSevenSeg component.}\label{table:hex2sevenTruthTable} \tabularnewline
+\toprule()
+x & seg{[}6{]} & seg{[}5{]} & seg{[}4{]} &  seg{[}3{]} & seg{[}2{]} & seg{[}1{]} &  seg{[}0{]} \\ 
+\midrule()
+\endfirsthead
+\toprule()
+x & seg{[}6{]} & seg{[}5{]} & seg{[}4{]} &  seg{[}3{]} & seg{[}2{]} & seg{[}1{]} &  seg{[}0{]} \\ 
+\midrule()
+\endhead
+0000 & & & & & & & \\ \hline
+0001 & & & & & & & \\ \hline
+0010 & & & & & & & \\ \hline
+0011 & & & & & & & \\ \hline
+0100 & 0 & 0 & 1 & 1 & 0 & 0 & 1 \\ \hline
+0101 & & & & & & & \\ \hline
+0110 & & & & & & & \\ \hline
+0111 & & & & & & & \\ \hline
+1000 & & & & & & & \\ \hline
+1001 & & & & & & & \\ \hline
+1010 & & & & & & & \\ \hline
+1011 & & & & & & & \\ \hline
+1100 & & & & & & & \\ \hline
+1101 & & & & & & & \\ \hline
+1110 & & & & & & & \\ \hline
+1111 & & & & & & & \\
+\bottomrule()
+\end{longtable}
+
+
+Now that you have a complete desrciption of the input/output behavior 
+of the hexadecimal to seven segment converter. its time to write the
+Verilog code.  You will capture the behavior in Table~\ref{table:hex2sevenTruthTable}
+using an always/case statement.  Work through the following steps to complete this task.
+\begin{enumerate}
+\item
+  Create \textbf{a new project} folder within your \emph{lab2} directory
+  called \emph{hexToSevenSeg.}
+\item
+  Download \emph{hexToSevenSeg.v} and \emph{hexToSevenSeg \_tb.v} from
+  Canvas to the project directory.
+\item
+  Create a project for these two files.
+\item
+  \protect\hypertarget{Hex2Seven_Verilog}{}{}Complete the case statement
+  for \emph{hexToSevenSeg.v}
+  \end{enumerate}
+  
+  
+ \section{Testbench}
+ With your Verilog code complete, you need to verify your logic before 
+ synthesis.  While this may seem a waste of time for such a simple design,
+ you are building skills that are essential to debugging the complex 
+ designs you will create later in the term.  Work through the following steps
+ to complete this task.
+ 
+ \begin{enumerate}
+\item
+  Modify \emph{hexToSevenSeg \_tb.v} so that \emph{hexToSevenSeg} is run
+  through every combination of inputs. Assert the inputs in increasing
+  binary numbering order starting from 0,0,0,0 and going to 1,1,1,1.
+\item
+  Perform simulation using this test bench as described in previous
+  steps. You will need to ``run 100'' several times to go through all
+  the inputs.
+\item
+  \protect\hypertarget{Hex2Seven_Waveform}{}{}Save this waveform as an
+  image as done in the previous section. If the waveform is missing, you
+  can add it back in using View -\textgreater{} Waveform.
+\item
+  Compare From the information in the timing diagram, produce a truth table for
+  in Table~\ref{table:hex2sevenTruthTable}.  Fix any errors in the always/case statement
+  before proceeding to synthesis in the next step.
+  \emph{hexToSevenSeg}.
+ \end{enumerate} 
+  
+\section{Pin-Assignment and Synthesis}
+Before you can download your design to the FPGA, you need to assign the
+input and outputs of the hexToSevenSeg module to FPGA pins.  
+Figure~\ref{fig:sevenSegInOut} shows the slide switches and 7-segment
+display that will use.
+
+\begin{figure}[ht]
+\includegraphics[width=0.6\paperwidth]{image11.png}
+\caption{The input set to 4'b0110 displaying a 6 on the 7-segment display.}
+\label{fig:sevenSegInOut}
+\end{figure}
+
+
+Use the C5G User manual to complete the pin-assignment in 
+Table~\ref{table:pinAssignmentHex2Seven}.
+
+\begin{longtable}[]{@{}
+| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2001}}|@{}}
+\caption{Pin-assignment tables for the hexToSevenSeg module.}
+\label{table:pinAssignmentHex2Seven}\tabularnewline
+\toprule()
+Port & x{[}3{]} & x{[}2{]} & x{[}1{]} & x{[}0{]} \\ \hline
+\midrule()
+\endfirsthead
+\toprule()
+Port & x{[}3{]} & x{[}2{]} & x{[}1{]} & x{[}0{]} \\ \hline
+\midrule()
+\endhead
+Signal name & SW{[}3{]} & SW{[}2{]} & SW{[}1{]} & SW{[}0{]} \\ \hline
+FPGA Pin No. & & & & PIN\_AC9 \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+| >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1083}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1431}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1431}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1431}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1341}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}|
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1095}}|@{}}
+\toprule()
+Port &
+sevenSeg{[}6{]} &
+sevenSeg{[}5{]} &
+sevenSeg{[}4{]} &
+sevenSeg{[}3{]} &
+sevenSeg{[}2{]} &
+sevenSeg{[}1{]} \\ \hline
+\midrule()
+\endhead
+Signal name & HEX0{[}6{]} & HEX0{[}5{]} & HEX0{[}4{]} & HEX0{[}3{]} &
+HEX0{[}2{]} & HEX0{[}1{]} & HEX0{[}0{]} \\ \hline
+FPGA Pin No. & & & & & & & \\ \hline
+\bottomrule()
+
+\end{longtable}
+Use the instructions in Section~\ref{section:h27SynthesisHowTo} to
+combine the pin assignment with your hexToSevenSeg module.
+Synthesize your design, bask in the glow of another success as you 
+demonstrate your circuit's functionality to a member of the lab team.
+
+
+\section{Turn in}
+
+Make a record of your response to numbered items below and turn them in
+a single copy as your team's solution on Canvas using the instructions
+posted there. Include the names of both team members at the top of your
+solutions. Use complete English sentences to introduce what each of the
+following listed items (below) is and how it was derived.
+
+\subsubsection{Combine lab 1} 
+\begin{itemize}
+\item Truth Table for combinedLab01 function in Table~\ref{table:combinedLab01}
+\item \protect\hyperlink{CombinedLab01_Waveform}{Link} Timing diagram for combinedLab01 function
+\item  Pin assignment for combinedLab01 in Table~\ref{table:pinAssignmentCombinedLab01}
+\end{itemize}
+
+\subsubsection{Hexadecimal to 7-segment}
+\begin{itemize}
+\item  Truth Table for hexToSevenSeg function in Table~\ref{table:hex2sevenTruthTable}
+\item \protect\hyperlink{Hex2Seven_Verilog}{Link} Verilog code for hexToSevenSeg function -- just the always/case statement
+\item \protect\hyperlink{Hex2Seven_Waveform}{Link} Timing diagram for hexToSevenSeg function
+\item Pin assignment tables for hexToSevenSeg  in Tables~\ref{table:pinAssignmentHex2Seven}
+\item Demonstrate working hexadecimal to seven segment module to a member of the lab team.
+\end{itemize}
+
+

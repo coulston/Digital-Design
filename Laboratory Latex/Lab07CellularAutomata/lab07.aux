@@ -1,0 +1,135 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{lof}{\addvspace {10pt}}
+\@writefile{lot}{\addvspace {10pt}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {7}Cellular Automata}{1}{chapter.7}\protected@file@percent }
+\newlabel{chapter:cellAuto}{{7}{1}{Cellular Automata}{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Outcomes and Objectives}{1}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}1-dimensional cellular automata}{1}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Theory: Cellular Automata}{1}{section*.1}\protected@file@percent }
+\gdef \LT@i {\LT@entry 
+    {1}{75.66675pt}\LT@entry 
+    {1}{115.94492pt}\LT@entry 
+    {1}{131.85254pt}\LT@entry 
+    {1}{100.06578pt}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces A 1-DCA consisting of 8 processing elements. Alive cells are shaded grey, dead white.}}{2}{figure.7.1}\protected@file@percent }
+\newlabel{fig:exampleCA}{{7.1}{2}{A 1-DCA consisting of 8 processing elements. Alive cells are shaded grey, dead white}{figure.7.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.1}{The next state of a processing element depends on the current state and the number of alive neighbors.}}{2}{table.7.1}\protected@file@percent }
+\newlabel{table:caNextState}{{7.1}{2}{The next state of a processing element depends on the current state and the number of alive neighbors}{table.7.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces The next state of the center cell depends on the current state of a cell and its neighbors.}}{2}{figure.7.2}\protected@file@percent }
+\newlabel{fig:caRule}{{7.2}{2}{The next state of the center cell depends on the current state of a cell and its neighbors}{figure.7.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces The evolution of a single alive cell (shown at top) under Rule 90.}}{3}{figure.7.3}\protected@file@percent }
+\newlabel{fig:caEvolution}{{7.3}{3}{The evolution of a single alive cell (shown at top) under Rule 90}{figure.7.3}{}}
+\@writefile{toc}{\contentsline {subsection}{Implementation: Cellular Automata}{3}{section*.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces The input and output of the 1D cellular automata.}}{4}{figure.7.4}\protected@file@percent }
+\newlabel{fig:caDevBoard}{{7.4}{4}{The input and output of the 1D cellular automata}{figure.7.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces A) Switch bouncing makes generating a single clock edge problematic. B) The organization of the SR latch to run the clock requires inverters in the sClk and rClk inputs and an SR latch to help remove signal bouncing.}}{4}{figure.7.5}\protected@file@percent }
+\newlabel{fig:caSwitchBounce}{{7.5}{4}{A) Switch bouncing makes generating a single clock edge problematic. B) The organization of the SR latch to run the clock requires inverters in the sClk and rClk inputs and an SR latch to help remove signal bouncing}{figure.7.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}System Architecture}{5}{section.7.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces The system architecture of the cellularAutomata. Due to tight spacing, only the n inputs to cell8 and cell2 are shown.}}{5}{figure.7.6}\protected@file@percent }
+\newlabel{fig:caSysArch}{{7.6}{5}{The system architecture of the cellularAutomata. Due to tight spacing, only the n inputs to cell8 and cell2 are shown}{figure.7.6}{}}
+\gdef \LT@ii {\LT@entry 
+    {1}{148.81438pt}\LT@entry 
+    {1}{137.15486pt}\LT@entry 
+    {1}{137.15486pt}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Module: singleCell}{6}{section.7.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces The architecture and module interface for the singleCell module.}}{6}{figure.7.7}\protected@file@percent }
+\newlabel{fig:caSingleCell}{{7.7}{6}{The architecture and module interface for the singleCell module}{figure.7.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.2}{The input/output relationship for the nextState functionality in Figure~\ref {fig:caSingleCell}.}}{6}{table.7.2}\protected@file@percent }
+\newlabel{table:caInOutSingleCell}{{7.2}{6}{The input/output relationship for the nextState functionality in Figure~\ref {fig:caSingleCell}}{table.7.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Testbench}{7}{section.7.5}\protected@file@percent }
+\newlabel{section:caTestbench}{{7.5}{7}{Testbench}{section.7.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces Partial timing diagram for the cellular automata.}}{7}{figure.7.8}\protected@file@percent }
+\newlabel{fig:caTimeDiag}{{7.8}{7}{Partial timing diagram for the cellular automata}{figure.7.8}{}}
+\gdef \LT@iii {\LT@entry 
+    {2}{84.59737pt}\LT@entry 
+    {2}{87.12663pt}\LT@entry 
+    {2}{82.35486pt}\LT@entry 
+    {2}{83.04442pt}\LT@entry 
+    {2}{86.80116pt}}
+\gdef \LT@iv {\LT@entry 
+    {1}{141.33745pt}\LT@entry 
+    {1}{140.93745pt}\LT@entry 
+    {1}{140.89627pt}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.6}Pin-Assignment and Synthesis}{8}{section.7.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7.3}{Pin Assignment for the 1-D calllular automata.}}{8}{table.7.3}\protected@file@percent }
+\newlabel{table:cAutomataPinAssignment}{{7.3}{8}{Pin Assignment for the 1-D calllular automata}{table.7.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.7}Turn in}{8}{section.7.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Cellular Automata Module }{8}{section*.3}\protected@file@percent }
+\gdef \LT@v {\LT@entry 
+    {1}{114.50963pt}\LT@entry 
+    {3}{103.01817pt}\LT@entry 
+    {3}{103.01817pt}\LT@entry 
+    {3}{103.01817pt}}
+\@writefile{toc}{\contentsline {subsubsection}{singleCell Module}{9}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Testbench}{9}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Pin-Assignment and Synthesis}{9}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.8}Debugging Tips}{9}{section.7.8}\protected@file@percent }
+\newlabel{section:caDebugging}{{7.8}{9}{Debugging Tips}{section.7.8}{}}
+\@setckpt{./Lab07CellularAutomata/lab07}{
+\setcounter{page}{11}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{2}
+\setcounter{mpfootnote}{0}
+\setcounter{@memmarkcntra}{0}
+\setcounter{storedpagenumber}{1}
+\setcounter{book}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{7}
+\setcounter{section}{8}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{vslineno}{0}
+\setcounter{poemline}{0}
+\setcounter{modulo@vs}{0}
+\setcounter{memfvsline}{0}
+\setcounter{verse}{0}
+\setcounter{chrsinstr}{0}
+\setcounter{poem}{0}
+\setcounter{newflo@tctr}{4}
+\setcounter{@contsubnum}{0}
+\setcounter{section@level}{0}
+\setcounter{maxsecnumdepth}{1}
+\setcounter{sidefootnote}{0}
+\setcounter{pagenote}{0}
+\setcounter{pagenoteshadow}{0}
+\setcounter{memfbvline}{0}
+\setcounter{bvlinectr}{0}
+\setcounter{cp@cntr}{0}
+\setcounter{ism@mctr}{0}
+\setcounter{xsm@mctr}{0}
+\setcounter{csm@mctr}{0}
+\setcounter{ksm@mctr}{0}
+\setcounter{xksm@mctr}{0}
+\setcounter{cksm@mctr}{0}
+\setcounter{msm@mctr}{0}
+\setcounter{xmsm@mctr}{0}
+\setcounter{cmsm@mctr}{0}
+\setcounter{bsm@mctr}{0}
+\setcounter{workm@mctr}{0}
+\setcounter{sheetsequence}{11}
+\setcounter{lastsheet}{10}
+\setcounter{lastpage}{10}
+\setcounter{figure}{8}
+\setcounter{lofdepth}{1}
+\setcounter{table}{5}
+\setcounter{lotdepth}{1}
+\setcounter{parentequation}{0}
+\setcounter{lstnumber}{1}
+\setcounter{LT@tables}{5}
+\setcounter{LT@chunks}{3}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{2}
+\setcounter{bookmark@seq@number}{0}
+\setcounter{memhycontfloat}{0}
+\setcounter{Hpagenote}{0}
+\setcounter{lstlisting}{0}
+}

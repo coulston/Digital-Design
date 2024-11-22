@@ -1,0 +1,40 @@
+%%------------------------------------
+%% Digital Design Lab Manual 
+%%  Christopher Coulston
+%%------------------------------------
+
+%%\documentclass[11pt,psfig]{book}
+\documentclass[letterpaper, 10pt]{memoir}
+\chapterstyle{ger}
+\settrims{0pt}{0pt}
+\semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
+
+\makeindex
+
+\include{preamble}
+
+
+\begin{document}
+ \openclipboard{courseObjectives}
+\renewcommand{\chaptername}{Laboratory}
+
+\begin{comment}
+\include{./Lab01SimpleVerilog/lab01}
+\include{./Lab02HexToSeven/lab02}
+\include{./Lab03RockPaperScissor/lab03}
+\include{./Lab04HighLow/lab04}
+\end{comment}
+
+\setcounter {chapter} {4}
+\include{./Lab05HighLowWithHints/lab05}
+
+\begin{comment}
+\include{./Lab06Calculator/lab06}
+\include{./Lab07CellularAutomata/lab07}
+\include{./Lab08Mod10Counter/lab08}
+\include{./Lab09Datapath/lab09}
+\include{./Lab10ControlUnit/lab10}
+\include{./Lab11Stopwatch/lab11}
+\end{comment}
+
+\end{document} 
