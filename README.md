@@ -1,4 +1,4 @@
-<img src="Latex/Fig/colorCover.jpg" align="right" alt="Digital Design Text Cover" width="20%"/>
+<img src="Textbook Latex/Fig/colorCover.jpg" align="right" alt="Digital Design Text Cover" width="20%"/>
 
 Orginally published in 2004 by McGraw Hill, Digital Design: A Datapath and Control is now
 available as an OER.  This text was written for faculty and students wanting a structured 
