@@ -1,0 +1,8 @@
+\contentsline {chapter}{Contents}{iv}{section*.2}%
+\contentsline {chapter}{List of Processes}{iv}{section*.3}%
+\contentsline {chapter}{List of Basic Building Blocks}{iv}{section*.4}%
+\contentsline {chapter}{\chapternumberline {0}Why?}{1}{chapter.0}%
+\contentsline {subsection}{Class Organization}{1}{section*.6}%
+\contentsline {subsection}{Laboratory}{2}{section*.7}%
+\contentsline {section}{\numberline {0.1}Example Timeline}{2}{section.0.1}%
+\contentsline {appendix}{\chapternumberline {A}74LS00 Data Sheets}{5}{appendix.A}%

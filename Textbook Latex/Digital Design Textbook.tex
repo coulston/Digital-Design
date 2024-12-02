@@ -42,14 +42,14 @@
 \settrims{0pt}{0pt}
 \semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
 
-
+% To keep the book.tex file clean, I pulled all the formating and package 
+% includes into the preamble.tex file
+\include{preamble}
 
 \makeindex
 
 \begin{document}
-% To keep the book.tex file clean, I pulled all the formating and package 
-% includes into the preamble.tex file
-\include{preamble}
+
 
 
 \frontmatter
@@ -68,6 +68,10 @@
 
 \mainmatter
 
+\setcounter{chapter}{-1}
+\include{./chapter00/chapter0}
+
+\begin{comment}
 \include{./chapter01/chapter1}
 \include{./chapter01/hw1}
 
@@ -101,7 +105,7 @@
 \include{./chapter11/chapter11}
 \include{./chapter11/hw11}
 
-\begin{comment}
+
 \end{comment}
 
 \appendix

@@ -1,0 +1,493 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{Introduction to Digital Design -- EENG284}
+
+\textbf{Spring 2024}
+
+\textbf{Dr. Chris Coulston, Associate Teaching Professor, 303.273.3265,
+coulston@mines.edu}
+
+\textbf{Office: BB 310F (Brown Hall)}
+
+\textbf{Office hours: MWF 1:30 -- 3:00}
+
+\textbf{Course Title: Digital Logic}
+
+\textbf{Course Meeting:} Lecture MW F 9:00-9:50 130 Coors Tek Chris
+Coulston
+
+Lab A T 8:00-10:50 305 Brown
+
+Lab B T 11:00-1:50 305 Brown
+
+Lab C T 2:00-4:50 305 Brown
+
+Lab D T 5:00-7:50 305 Brown
+
+\textbf{Course Description:} Fundamentals of digital logic design.
+Covers combinational and sequential logic circuits, programmable logic
+devices, hardware description languages, and computer-aided design (CAD)
+tools. The emphasis is to design complex logic circuits using a datapath
+and control approach. The laboratory component introduces design,
+simulation and synthesis of designs on an FPGA.
+
+\textbf{Prerequisite: CSCI 261}
+
+\textbf{Co-requisite: EENG 281, or EENG 282, or PHGN 215}
+
+\textbf{Textbook(s):} Free: Digital Design: A datapath and control
+approach
+
+\textbf{Course Objectives:}
+
+\begin{itemize}
+\item
+  Convert between numbering representations,
+\item
+  Design a combinational logic circuit from a word statement to a
+  circuit diagram,
+\item
+  Manipulate a logic function in any of its representations; word
+  statement, truth table, symbolic, and circuit diagram,
+\item
+  Determine SOPmin and POSmin realizations of logic function with or
+  without don\textquotesingle t cares,
+\item
+  Build and operate adders, comparators, multiplexers and decoders,
+\item
+  Determine output behavior of D,T,SR,JK; latches, clock latches and
+  flip flops,
+\item
+  Build and operate registers, shift registers, counters, tri-state
+  logic and RAMs,
+\item
+  Design Finite State Machines using a dense or Ones Hot encoding,
+\item
+  Implement complex digital systems using the datapath and control
+  design approach.
+\end{itemize}
+
+\textbf{\hfill\break
+Topics Covered:} This is an approximate timeline; changes may be made
+through the semester.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0816}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1239}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.5109}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1418}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1418}}@{}}
+\toprule()
+\endhead
+Session & Date & Topic & Assignment & Reading \\
+No Lab & Jan 9 & No Lab & & \\
+1 & Jan 10 & Course Intro, Binary numbering, Hexadecimal & & 1.1 --
+1.3 \\
+2 & Jan 12 & Binary Addition & & 1.4 \\
+& Jan 15 (M) & Martin Luther King Day & & \\
+No Lab & Jan 16 & Snow Day -- Classes Canceled & & \\
+3 & Jan 17 & Logic gates / Circuit to Symbolic / Circuit to Truth Table
+& & 2.1, 2.21, 2.2.2 \\
+4 & Jan 19 & Symbolic to Truth Table / Symbolic to Circuit & HW\#1 Due &
+2.2.3, 2.2.4 \\
+5 & Jan 22 (M) & Symbolic to Verilog & & Supplemental \\
+Lab \#1 & Jan 23 & Introduction to CAD tools and Verilog & & \\
+6 & Jan 24 & Symbolic to Symbolic & & 2.2.5 \\
+7 & Jan 26 & Symbolic to Symbolic & & 2.2.5 \\
+8 & Jan 29 (M) & Truth Table to Symbolic SOP and POS & HW\#2 Due &
+2.2.6, 2.2.7, 2.3 \\
+& Jan 30 & Career Fair & & \\
+& Jan 31 & Career Fair & & \\
+9 & Feb 2 & Karnaugh Maps, 3 variables & & 3.1 \\
+10 & Feb 5 (M) & Combinational Logic with Verilog & & Supplemental \\
+Lab \#2 & Feb 6 & Hexadecimal to 7-segment Converter & Lab \#1 Due & \\
+11 & Feb 7 & Karnaugh Maps, 4 and 5 variables & HW\#3 Due & 3.2, 3.3 \\
+12 & Feb 9 & Don't cares & & 3.5 \\
+& Feb 12 (M) & SOP and POS in Karnaugh maps & & \\
+& Feb 13 & Rock Paper Scissors & Lab \#2 Due & \\
+13 & Feb 14 & Exam Review & HW\#4 Due & 3.6 \\
+& Feb 16 & Exam I & & \\
+14 & Feb 19 (M) & Presidents' Day & & 4.1 \\
+Lab \#3 & Feb 20 & Presidents' Day & & \\
+15 & Feb 21 & Decoder / Multiplexers & & 4.2 \\
+16 & Feb 23 & 2's complement & & 1.5 \\
+17 & Feb 26 (M) & Adders & HW\#5 Due & 4.3 \\
+Lab \#4 & Feb 27 & Guessing Game & Lab \#3 Due & \\
+18 & Feb 28 & Adder Subtractor & & 4.4 \\
+19 & March 1 & Comparator & & 4.5 \\
+20 & March 4 (M) & Wire Logic / Combinations & & 4.7, 4.8 \\
+Lab \#5 & March 5 & Guessing Game with Hints & Lab \#4 Due & \\
+21 & March 6 & SR Latch & HW\#6 Due & 5.5 \\
+22 & March 8 & Basic memory elements -- timing & & 5.1 \\
+23 & March 11 (M) & Basic memory elements -- practical considerations &
+& 5.7 \\
+Lab \#6 & March 12 & Decimal Calculator & Lab \#5 Due & \\
+24 & March 13 & Register & HW\#7 Due & 6.1 \\
+25 & March 15 & Shift Registers & & 6.2 \\
+& March 18 (M) & Spring Break & & \\
+26 & March 25 (M) & Counter & & 6.3 \\
+Lab \#7 & March 26 & 1 Dimensional Cellular Automata & Lab \#6 Due &
+6.3 \\
+27 & March 27 & RAM & & 6.4 \\
+28 & March 29 & Register Transfer & & 6.5 \\
+& April 1 (M) & Exam Review & HW\#8 Due & Supplemental \\
+Lab \#8 & April 2 & Mod 10 Counter & Lab \#7 Due & \\
+& April 3 & Exam II & & \\
+29 & April 5 & Sequential Design -- Traffic Light Controller & & 7.4 \\
+30 & April 8 (M) & Sequential Design -- Verilog & & Supplemental \\
+Lab \#9 & April 9 & Stopwatch Datapath & Lab \#8 Due & \\
+31 & April 10 & Sequential Design -- Timing & & 7.6 \\
+& April 11-12 & E Days & & 7.4 \\
+32 & April 15 (M) & Sequential Design -- Vending Machine & HW\#9 Due &
+7.5 \\
+Lab\#10 & April 16 & Stopwatch Control & Lab \#9 Due & \\
+33 & April 17 & Datapath and Control Theory & & 8.1, 8.2, 8.3 \\
+37 & April 19 & Datapath and Control Theory & & 8.1, 8.2, 8.3 \\
+38 & April 22 (M) & Datapath and Control Practice & HW\#10 Due & 8.4,
+8.5 \\
+Lab\#11 & April 23 & Stopwatch -- Datapath and Control & Lab \#10 & \\
+39 & April 24 & Datapath and Control Practice & & 8.4, 8.5 \\
+40 & April 26 & Datapath and Control Timing & & 8.4, 8.5 \\
+41 & April 29 (M) & Datapath and Control Practice & & 8.7 \\
+& April 30 & Turn in Stopwatch & Lab \#11 Due & \\
+42 & May 1 & Exam Review & HW\#11 Due & Supplemental \\
+& May 6 & Exam III at 3:15pm in 130 Coors Tek & & \\
+\bottomrule()
+\end{longtable}
+
+\textbf{Homework:} I will assume that your homework solutions represent
+individual effort. This point deserves some attention. At what point
+does working together become copying? \emph{I encourage students to help
+one another, but you must keep working on independent solutions.}
+Don\textquotesingle t arrive at a solution with a friend then both copy
+that solution. If two solutions are identical then I will assume that
+one was copied from another. Please do not go down this road.
+
+Suggest format for homework.
+
+\begin{itemize}
+\item
+  Complete your work on green engineering paper,
+\item
+  Format the top of the first sheet as follows using the 5 cells at the
+  top of the green engineering paper. This example assumes your homework
+  1 solutions require 4 pages.
+\end{itemize}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2007}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2009}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2014}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2006}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1964}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+HW\#1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+EENG 284
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textless Your name\textgreater{}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textless Due Date\textgreater{}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1/4
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{itemize}
+\item
+  You should format all subsequent pages as follows:
+\end{itemize}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2025}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1972}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2032}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1972}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+HW\#1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textless Your name\textgreater{}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2/4
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+When you complete your homework, it needs to be turned in on Canvas
+using the following procedure.
+
+\begin{itemize}
+\item
+  Make a clear scan of each page,
+\item
+  Combine all pages into a single PDF document,
+\item
+  Upload PDF to Canvas before 11:59pm on the due date.
+\end{itemize}
+
+I will assess a 50\% penalty per calendar day for late homework. I will
+not grant extensions to the homework due dates under any circumstances.
+I will drop your lowest 2 homework scores.
+
+\textbf{Lab:} We will meet weekly in 305 Brown Hall. You will be able to
+complete many of the labs during the 3-hour lab session. However, some
+labs may require more time and may need to be worked on outside lab
+times. In these cases, you will have access to the hardware. You may use
+lab stations outside of our class if they are not being used by another
+scheduled class. It's always a good idea to ask one of the lab
+instructors if it's OK to work in the lab. Labs should be completed and
+turn-in a week later at the beginning of your lab session. Late
+assignments (labs and inLabs) are assessed a 50\% late penalty per
+calendar day.
+
+\textbf{Exams:}
+
+\begin{itemize}
+\item
+  Exams will be administrated online using Canvas,
+\item
+  Exams will be scheduled during the class meeting time,
+\item
+  Some exam questions may require you to upload photos showing your
+  work,
+\item
+  You may take the exam wherever you feel comfortable,
+\item
+  The academic integrity guidelines apply while you are taking the exam.
+\end{itemize}
+
+\textbf{Makeup Exams:} You can arrange makeup exams for prior
+commitments (i.e. wedding or sporting event) or an emergency. Prior
+arrangements are appreciated but, in an emergency, (an unforeseen
+circumstance that poses immediate risk to health, life property or the
+environment), please take care of the emergency first. As soon as
+possible:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Contact me at my office phone (303.273.3265), or
+\item
+  Contact me by email (coulston@mines.edu).
+\end{enumerate}
+
+Contact me as soon as you are able to return to campus. In general, I am
+understanding about makeup exams -- I do not want anyone hurt attempting
+to make it to campus as a result of foul weather. Please show me the
+same respect and honesty as you would like me to show you and everything
+will be fine.
+
+\textbf{Grades:} The grade you earn in this class will based on the
+following distribution of points:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6672}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3328}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Exam 1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+15\%
+\end{minipage} \\
+\midrule()
+\endhead
+Exam 2 & 15\% \\
+Labs & 30\% \\
+Final Exam & 20\% \\
+Homework & 20\% \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3366}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3317}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3317}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Grade
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Upper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lower
+\end{minipage} \\
+\midrule()
+\endhead
+A & 100 & 93+ \\
+A- & 93- & 90+ \\
+B+ & 90- & 87+ \\
+B & 87- & 83+ \\
+B- & 83- & 80+ \\
+C+ & 80- & 77+ \\
+C & 77- & 73+ \\
+C- & 73- & 70+ \\
+D+ & 70- & 63+ \\
+D & 67- & 63+ \\
+D- & 63- & 60+ \\
+F & 60- & 0.0 \\
+\bottomrule()
+\end{longtable}
+
+\textbf{Office Hours:} I like to pile everyone in my office during
+office hours. What this means is I generally like to have everybody in
+the office asking questions. In this way, many problems can be addressed
+at once. Since I teach multiple classes, there may be students from a
+different class all piled in my office. If this is the case, please
+interrupt me and let me know that you have a question from a different
+class. I will let the students present know that I need to attend to a
+question from another class and give them and give them 10 minutes to
+wrap-up their questions before I switch to yours.
+
+\textbf{Academic Integrity:} The Colorado School of Mines affirms the
+principle that all individuals associated with the Mines academic
+community have a responsibility for establishing, maintaining and
+fostering an understanding and appreciation for academic integrity. In
+broad terms, this implies protecting the environment of mutual trust
+within which scholarly exchange occurs, supporting the ability of the
+faculty to fairly and effectively evaluate every student's academic
+achievements, and giving credence to the university's educational
+mission, its scholarly objectives and the substance of the degrees it
+awards. The protection of academic integrity requires there to be clear
+and consistent standards, as well as confrontation and sanctions when
+individuals violate those standards. The Colorado School of Mines
+desires an environment free of any and all forms of academic misconduct
+and expects students to act with integrity at all times. Academic
+misconduct is the intentional act of fraud, in which an individual seeks
+to claim credit for the work and efforts of another without
+authorization, or uses unauthorized materials or fabricated information
+in any academic exercise. Student Academic Misconduct arises when a
+student violates the principle of academic integrity. Such behavior
+erodes mutual trust, distorts the fair evaluation of academic
+achievements, violates the ethical code of behavior upon which education
+and scholarship rest, and undermines the credibility of the university.
+Because of the serious institutional and individual ramifications,
+student misconduct arising from violations of academic integrity is not
+tolerated at Mines. If a student is found to have engaged in such
+misconduct sanctions such as change of a grade, loss of institutional
+privileges, or academic suspension or dismissal may be imposed. For this
+course, the following rules should be followed.
+
+\begin{itemize}
+\item
+  Copying of solutions without understanding them is not allowed; if a
+  student copies a solution and cannot explain it adequately this is
+  considered academic dishonesty.
+\item
+  During quizzes and exams, students must do 100 percent of the work on
+  their own.
+\item
+  The nominal penalty for academic dishonesty is an 'F' in the course.
+\end{itemize}
+
+\textbf{Disability Support Statement:}
+
+The Colorado School of Mines is committed to ensuring the full
+participation of all students in its programs, including students with
+disabilities. If you are registered with Disability Support Services
+(DSS) and I have received your letter of accommodations, please contact
+me at your earliest convenience so we can discuss your needs in this
+course. For questions or other inquiries regarding disabilities, I
+encourage you to visit disabilities.mines.edu for more information.
+
+\textbf{Absenteeism (from Undergraduate Bulletin)}
+
+Class attendance is required of all undergraduates unless the student
+has an official excused absence. Excused absences are granted for three
+general reasons:
+
+\begin{quote}
+1. Student is a varsity athlete and is representing the School in a
+varsity athletics activity.
+
+2. Student is representing the School in an authorized activity related
+to a club or academic endeavor (academic competitions, student
+professional society conferences, club sport competition,
+program-sponsored competitions, etc.)
+
+3. Student has a documented personal reason (illness, injury, jury duty,
+life-threatening illness or death in the immediate family, military
+service, etc.).
+\end{quote}
+
+Students who miss academic work (including but not limited to exams,
+homework, and labs) for one of the reasons listed above may be issued an
+excused absence. If an excused absence is received, the student must be
+given the opportunity to make up the missed work in a reasonable period
+of time without penalty. While the student is not responsible for
+actually issuing the excused absence, the student is responsible for
+making sure documentation is submitted appropriately and for contacting
+his/her faculty member(s) to initiate arrangements for making up any
+missed work.
+
+\end{document}
