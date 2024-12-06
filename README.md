@@ -36,7 +36,7 @@ is a finite state machine.
 
 # Class Organization
 The text, homework and laboratory are intended for a 4-credit course.  The example timeline 
-shown in Table~\ref{table:introTimeline} assumes 3 50-minute lectures per week and 
+shown in **Table 1** assumes 3 50-minute lectures per week and 
 one 2 or 3 hour laboratory a week. While it is expected that students finish the laboratory
 during the scheduled time, frequently students will need additional time to complete work, so accommodations need
 to be in-place for them to access the hardware and software outside of course hours.   I expect that students will 
