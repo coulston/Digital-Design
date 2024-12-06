@@ -1,0 +1,29 @@
+\contentsline {chapter}{4\hspace {0.2cm} Combinational Logic Building Blocks}{65}{chapter.4}%
+\contentsline {section}{\numberline {4.1} Decoder}{65}{buildingblockcounter.1}%
+\contentsline {section}{\numberline {4.2} Multiplexer}{67}{buildingblockcounter.2}%
+\contentsline {section}{\numberline {4.3} Adder}{70}{buildingblockcounter.3}%
+\contentsline {section}{\numberline {4.4} Adder Subtractor}{72}{buildingblockcounter.4}%
+\contentsline {section}{\numberline {4.5} Comparator}{74}{buildingblockcounter.5}%
+\contentsline {section}{\numberline {4.6} BCD to 7-segment}{79}{buildingblockcounter.6}%
+\contentsline {section}{\numberline {4.7} Priority Encoder}{81}{buildingblockcounter.7}%
+\contentsline {section}{\numberline {4.8} Saturation Adder}{81}{buildingblockcounter.8}%
+\contentsline {chapter}{6\hspace {0.2cm} Sequential Logic Building Blocks}{101}{chapter.6}%
+\contentsline {section}{\numberline {6.9} Register}{101}{buildingblockcounter.9}%
+\contentsline {section}{\numberline {6.10} Shift Register}{103}{buildingblockcounter.10}%
+\contentsline {section}{\numberline {6.11} Counter}{106}{buildingblockcounter.11}%
+\contentsline {section}{\numberline {6.12} RAM}{109}{buildingblockcounter.12}%
+\contentsline {chapter}{10\hspace {0.2cm} Common Peripheral Components}{187}{chapter.10}%
+\contentsline {section}{\numberline {10.13} Push Button}{187}{buildingblockcounter.13}%
+\contentsline {section}{\numberline {10.14} Three State Buffer}{189}{buildingblockcounter.14}%
+\contentsline {section}{\numberline {10.15} Rotary Encoder}{190}{buildingblockcounter.15}%
+\contentsline {section}{\numberline {10.16} PS2 Keyboard}{192}{buildingblockcounter.16}%
+\contentsline {section}{\numberline {10.17} Keypad}{193}{buildingblockcounter.17}%
+\contentsline {section}{\numberline {10.18} Light Emitting Diode}{194}{buildingblockcounter.18}%
+\contentsline {section}{\numberline {10.19} Alphanumeric Display }{196}{buildingblockcounter.19}%
+\contentsline {section}{\numberline {10.20} Ultrasonic Range Finder}{198}{buildingblockcounter.20}%
+\contentsline {section}{\numberline {10.21} DC motor}{199}{buildingblockcounter.21}%
+\contentsline {section}{\numberline {10.22} Stepper Motor}{200}{buildingblockcounter.22}%
+\contentsline {section}{\numberline {10.23} Servo Motor}{201}{buildingblockcounter.23}%
+\contentsline {section}{\numberline {10.24} Liquid Crystal Display}{202}{buildingblockcounter.24}%
+\contentsline {section}{\numberline {10.25} Remote Control Decoder}{203}{buildingblockcounter.25}%
+\contentsline {section}{\numberline {10.26} Cathode Ray Tube}{204}{buildingblockcounter.26}%

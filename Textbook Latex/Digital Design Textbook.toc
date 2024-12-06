@@ -1,8 +1,132 @@
 \contentsline {chapter}{Contents}{iv}{section*.2}%
-\contentsline {chapter}{List of Processes}{iv}{section*.3}%
-\contentsline {chapter}{List of Basic Building Blocks}{iv}{section*.4}%
-\contentsline {chapter}{\chapternumberline {0}Why?}{1}{chapter.0}%
-\contentsline {subsection}{Class Organization}{1}{section*.6}%
-\contentsline {subsection}{Laboratory}{2}{section*.7}%
-\contentsline {section}{\numberline {0.1}Example Timeline}{2}{section.0.1}%
-\contentsline {appendix}{\chapternumberline {A}74LS00 Data Sheets}{5}{appendix.A}%
+\contentsline {chapter}{List of Processes}{vi}{section*.3}%
+\contentsline {chapter}{List of Basic Building Blocks}{vii}{section*.4}%
+\contentsline {chapter}{\chapternumberline {1}Numbering Systems}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Decimal}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Binary}{2}{section.1.2}%
+\contentsline {subsection}{Binary to Decimal}{2}{section*.6}%
+\contentsline {subsection}{Decimal to Binary}{2}{section*.7}%
+\contentsline {section}{\numberline {1.3}Hexadecimal}{4}{section.1.3}%
+\contentsline {subsection}{Hexadecimal to Binary}{4}{section*.8}%
+\contentsline {subsection}{Binary to Hexadecimal}{4}{section*.10}%
+\contentsline {section}{\numberline {1.4}Binary Addition}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Negative Numbers}{6}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Exercises}{9}{section.1.6}%
+\contentsline {chapter}{\chapternumberline {2}Representations of Logical Functions}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Elementary Logical Functions}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Conversion Between Representations}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Circuit Diagram to Truth Table}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Circuit Diagram to Symbolic}{17}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Symbolic to Truth Table}{18}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Symbolic to Symbolic}{24}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Truth Table to Symbolic}{28}{section.2.7}%
+\contentsline {paragraph}{Minterms}{29}{section*.17}%
+\contentsline {paragraph}{Maxterms}{31}{section*.18}%
+\contentsline {section}{\numberline {2.8}Word Statement to Truth Table}{32}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Timing Diagrams}{34}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Exercises}{37}{section.2.10}%
+\contentsline {chapter}{\chapternumberline {3}Minimization of Logical Functions}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Karnaugh Maps}{45}{section.3.1}%
+\contentsline {section}{\numberline {3.2}4-Variable Kmaps}{48}{section.3.2}%
+\contentsline {section}{\numberline {3.3}5-Variable Kmaps}{49}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Multiple Output Circuits}{50}{section.3.4}%
+\contentsline {section}{\numberline {3.5}``Don't Cares"}{51}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Minimizing to POS}{53}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Espresso}{57}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Exercises}{62}{section.3.8}%
+\contentsline {chapter}{\chapternumberline {4}Combinational Logic Building Blocks}{65}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Decoder}{65}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Multiplexer}{67}{section.4.2}%
+\contentsline {section}{\numberline {4.3}The Adder}{70}{section.4.3}%
+\contentsline {section}{\numberline {4.4}The Adder Subtractor}{72}{section.4.4}%
+\contentsline {section}{\numberline {4.5}The Comparator}{74}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Wire Logic}{76}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Combinations}{77}{section.4.7}%
+\contentsline {subsection}{Arithmetic Statements}{77}{section*.44}%
+\contentsline {subsection}{Conditional Statements}{77}{section*.45}%
+\contentsline {section}{\numberline {4.8}Exercises}{79}{section.4.8}%
+\contentsline {chapter}{\chapternumberline {5}Sequential Circuits}{85}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Basic Memory Elements}{88}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The D Clocked Latch}{90}{section.5.2}%
+\contentsline {section}{\numberline {5.3}The JK Flip Flop}{90}{section.5.3}%
+\contentsline {section}{\numberline {5.4}The Negative Edge Triggered D Flip Flop}{92}{section.5.4}%
+\contentsline {section}{\numberline {5.5}The SR Latch}{92}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Unimplemented Basic Memory Elements}{95}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Flip Flop Details}{95}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Exercises}{97}{section.5.8}%
+\contentsline {chapter}{\chapternumberline {6}Sequential Building Blocks}{101}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Register}{101}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The Shift Register}{103}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The Counter}{106}{section.6.3}%
+\contentsline {section}{\numberline {6.4}The Static RAM}{107}{section.6.4}%
+\contentsline {subsection}{Increase the word size of a RAM}{112}{section*.77}%
+\contentsline {subsection}{Increase number of words stored in RAM}{112}{section*.79}%
+\contentsline {section}{\numberline {6.5}Register Transfer}{113}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Combinations}{115}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Exercises}{118}{section.6.7}%
+\contentsline {chapter}{\chapternumberline {7}Finite State Machines}{123}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Word Statement to State Diagram}{124}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Design Using Ones Hot Encoding}{124}{section.7.2}%
+\contentsline {paragraph}{Word Statement}{126}{section*.91}%
+\contentsline {paragraph}{State Diagram}{126}{section*.92}%
+\contentsline {paragraph}{Circuit Diagram}{126}{section*.94}%
+\contentsline {section}{\numberline {7.3}Timing}{128}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Vending Machine}{129}{section.7.4}%
+\contentsline {paragraph}{Word Statement}{129}{section*.98}%
+\contentsline {paragraph}{State Diagram}{129}{section*.99}%
+\contentsline {paragraph}{Circuit Diagram}{130}{section*.101}%
+\contentsline {section}{\numberline {7.5}Waits States}{131}{section.7.5}%
+\contentsline {section}{\numberline {7.6}DAISY}{131}{section.7.6}%
+\contentsline {paragraph}{Word Statement}{131}{section*.102}%
+\contentsline {paragraph}{System Inputs and Outputs}{132}{section*.104}%
+\contentsline {paragraph}{State Diagram}{133}{section*.105}%
+\contentsline {paragraph}{Memory Input Equations}{134}{section*.108}%
+\contentsline {paragraph}{Output Equations}{134}{section*.109}%
+\contentsline {section}{\numberline {7.7}Exercises}{136}{section.7.7}%
+\contentsline {chapter}{\chapternumberline {8}Datapath and Control}{147}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Conversion}{148}{section.8.1}%
+\contentsline {subsection}{Word Statement to Algorithm}{148}{section*.121}%
+\contentsline {subsection}{Algorithm to Circuit}{148}{section*.122}%
+\contentsline {subsection}{Control Word}{152}{section*.128}%
+\contentsline {section}{\numberline {8.2}Minimum Search}{153}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Timing}{157}{section.8.3}%
+\contentsline {subsection}{Increasing Parallelism}{159}{section*.134}%
+\contentsline {section}{\numberline {8.4}Two-Line Handshake}{159}{section.8.4}%
+\contentsline {section}{\numberline {8.5}RAM counter}{162}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Keyboard Scancode Reader}{163}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Light Show}{167}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Exercises}{173}{section.8.8}%
+\contentsline {chapter}{\chapternumberline {9}Analog Foundation of Digital Circuits}{181}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Data Sheet}{181}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Noise Margin}{183}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Fan Out}{184}{section.9.3}%
+\contentsline {section}{\numberline {9.4}I/O Impedance}{184}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Open Collector}{185}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Exercises}{186}{section.9.6}%
+\contentsline {chapter}{\chapternumberline {10}Common Peripheral Components}{187}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Pushbutton}{187}{section.10.1}%
+\contentsline {subsection}{Switch Bouncing}{188}{section*.157}%
+\contentsline {subsection}{Switch Interfacing}{188}{section*.159}%
+\contentsline {section}{\numberline {10.2}Three-State Buffer}{189}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Rotary Encoder}{190}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Keyboard}{192}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Keypad}{193}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Light Emitting Diodes}{194}{section.10.6}%
+\contentsline {subsection}{Pulse Width Modulation}{196}{section*.169}%
+\contentsline {section}{\numberline {10.7}Alphanumeric Display}{196}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Hall Effect Sensor}{198}{section.10.8}%
+\contentsline {section}{\numberline {10.9}Infrared Range Finder}{198}{section.10.9}%
+\contentsline {section}{\numberline {10.10}Ultrasonic Range Finder}{198}{section.10.10}%
+\contentsline {section}{\numberline {10.11}DC Motor}{199}{section.10.11}%
+\contentsline {section}{\numberline {10.12}Stepper motor}{200}{section.10.12}%
+\contentsline {section}{\numberline {10.13}Servo motor}{201}{section.10.13}%
+\contentsline {section}{\numberline {10.14}Liquid Crystal Display}{202}{section.10.14}%
+\contentsline {section}{\numberline {10.15}Remote Control Decoder}{203}{section.10.15}%
+\contentsline {section}{\numberline {10.16}CRT}{204}{section.10.16}%
+\contentsline {section}{\numberline {10.17}Exercises}{206}{section.10.17}%
+\contentsline {chapter}{\chapternumberline {11}Optimizing Finite State Machines}{213}{chapter.11}%
+\contentsline {section}{\numberline {11.1}State Minimization}{213}{section.11.1}%
+\contentsline {subsection}{State Minimization Procedure}{214}{section*.182}%
+\contentsline {section}{\numberline {11.2}State Assignment}{217}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Exercises}{220}{section.11.3}%
+\contentsline {appendix}{\chapternumberline {A}74LS00 Data Sheets}{223}{appendix.A}%

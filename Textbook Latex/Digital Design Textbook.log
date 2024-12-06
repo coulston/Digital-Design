@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.2)  2 DEC 2024 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.2)  6 DEC 2024 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1364,7 +1364,14 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 51.
 
 
 Writing index file "Digital Design Textbook".idx
-(Digital Design Textbook.aux (copyright.aux) (chapter00/chapter0.aux)
+(Digital Design Textbook.aux (copyright.aux) (chapter01/chapter1.aux)
+(chapter01/hw1.aux) (chapter02/chapter2.aux) (chapter02/hw2.aux)
+(chapter03/chapter3.aux) (chapter03/hw3.aux) (chapter04/chapter4.aux)
+(chapter04/hw4.aux) (chapter05/chapter5.aux) (chapter05/hw5.aux)
+(chapter06/chapter6.aux) (chapter06/hw6.aux) (chapter07/chapter7.aux)
+(chapter07/hw7.aux) (chapter08/chapter8.aux) (chapter08/hw8.aux)
+(chapter09/chapter9.aux) (chapter09/hw9.aux) (chapter10/chapter10.aux)
+(chapter10/hw10.aux) (chapter11/chapter11.aux) (chapter11/hw11.aux)
 (appendix.aux))
 \openout1 = `"Digital Design Textbook.aux"'.
 
@@ -1424,7 +1431,7 @@ Package hyperref Info: Link coloring ON on input line 51.
 
 pdfTeX warning: pdflatex (file ./Fig/colorCover.pdf): PDF inclusion: found PDF 
 version <1.7>, but at most version <1.5> allowed
-<./Fig/colorCover.pdf, id=30, 341.43309pt x 569.05505pt>
+<./Fig/colorCover.pdf, id=418, 341.43309pt x 569.05505pt>
 File: ./Fig/colorCover.pdf Graphic file (type pdf)
 <use ./Fig/colorCover.pdf>
 Package pdftex.def Info: ./Fig/colorCover.pdf  used on input line 57.
@@ -1456,22 +1463,22 @@ LaTeX Warning: No \author given.
 \openout2 = `copyright.aux'.
 
  (copyright.tex
-<./Fig/cc-logo.pdf, id=56, 22.58438pt x 22.58438pt>
+<./Fig/cc-logo.pdf, id=444, 22.58438pt x 22.58438pt>
 File: ./Fig/cc-logo.pdf Graphic file (type pdf)
 <use ./Fig/cc-logo.pdf>
 Package pdftex.def Info: ./Fig/cc-logo.pdf  used on input line 8.
 (pdftex.def)             Requested size: 28.45274pt x 28.45299pt.
-<./Fig/cc-by.pdf, id=57, 22.58438pt x 22.58438pt>
+<./Fig/cc-by.pdf, id=445, 22.58438pt x 22.58438pt>
 File: ./Fig/cc-by.pdf Graphic file (type pdf)
 <use ./Fig/cc-by.pdf>
 Package pdftex.def Info: ./Fig/cc-by.pdf  used on input line 9.
 (pdftex.def)             Requested size: 28.45274pt x 28.45299pt.
-<./Fig/cc-nc.pdf, id=58, 22.58438pt x 22.58438pt>
+<./Fig/cc-nc.pdf, id=446, 22.58438pt x 22.58438pt>
 File: ./Fig/cc-nc.pdf Graphic file (type pdf)
 <use ./Fig/cc-nc.pdf>
 Package pdftex.def Info: ./Fig/cc-nc.pdf  used on input line 10.
 (pdftex.def)             Requested size: 28.45274pt x 28.45299pt.
-<./Fig/cc-sa.pdf, id=59, 22.58438pt x 22.58438pt>
+<./Fig/cc-sa.pdf, id=447, 22.58438pt x 22.58438pt>
 File: ./Fig/cc-sa.pdf Graphic file (type pdf)
 <use ./Fig/cc-sa.pdf>
 Package pdftex.def Info: ./Fig/cc-sa.pdf  used on input line 11.
@@ -1492,69 +1499,2377 @@ ith page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Fig/cc-sa.pdf): PDF inclusion: multiple pdfs w
 ith page group included in a single page
->] (Digital Design Textbook.toc) (Digital Design Textbook.lop)
-(Digital Design Textbook.lobb)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+>] (Digital Design Textbook.toc
 
 [4
 
 
 ]
+Overfull \hbox (1.74986pt too wide) detected at line 57
+ \OT1/cmr/bx/n/10 101
+ []
+
+
+Overfull \hbox (1.74986pt too wide) detected at line 67
+ \OT1/cmr/bx/n/10 123
+ []
+
+
+Overfull \hbox (1.74986pt too wide) detected at line 86
+ \OT1/cmr/bx/n/10 147
+ []
+
+
+Overfull \hbox (1.74986pt too wide) detected at line 99
+ \OT1/cmr/bx/n/10 181
+ []
+
+
 
 [5]
+Overfull \hbox (1.74986pt too wide) detected at line 106
+ \OT1/cmr/bx/n/10 187
+ []
 
-[6
 
-]
-\openout2 = `./chapter00/chapter0.aux'.
+Overfull \hbox (1.74986pt too wide) detected at line 127
+ \OT1/cmr/bx/n/10 213
+ []
 
- (chapter00/chapter0.tex
-<./chapter00/Fig/../../chapter08/Fig/Abstract.pdf, id=94, 466.74374pt x 114.427
-5pt>
-File: ./chapter00/Fig/../../chapter08/Fig/Abstract.pdf Graphic file (type pdf)
-<use ./chapter00/Fig/../../chapter08/Fig/Abstract.pdf>
-Package pdftex.def Info: ./chapter00/Fig/../../chapter08/Fig/Abstract.pdf  used
- on input line 19.
-(pdftex.def)             Requested size: 466.7426pt x 114.42722pt.
+
+Overfull \hbox (1.74986pt too wide) detected at line 132
+ \OT1/cmr/bx/n/10 223
+ []
+
+) (Digital Design Textbook.lop
+
+[6]) (Digital Design Textbook.lobb
+Overfull \hbox (1.74986pt too wide) detected at line 10
+ \OT1/cmr/bx/n/10 101
+ []
+
+
+Overfull \hbox (1.74986pt too wide) detected at line 15
+ \OT1/cmr/bx/n/10 187
+ []
+
+
+
+[7])
+
+[8]
+\openout2 = `./chapter01/chapter1.aux'.
+
+ (chapter01/chapter1.tex
+<./chapter01/Fig/sys.pdf, id=679, 179.25235pt x 56.90552pt>
+File: ./chapter01/Fig/sys.pdf Graphic file (type pdf)
+<use ./chapter01/Fig/sys.pdf>
+Package pdftex.def Info: ./chapter01/Fig/sys.pdf  used on input line 17.
+(pdftex.def)             Requested size: 179.2519pt x 56.90536pt.
 
 
 [1
 
 
- <./chapter00/Fig/../../chapter08/Fig/Abstract.pdf>]
-Overfull \hbox (0.33406pt too wide) in alignment at lines 47--55
- [] [] [] [] 
+
+ <./chapter01/Fig/sys.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 96--112
+
  []
 
 
-Overfull \hbox (0.33406pt too wide) in alignment at lines 55--58
- [] [] [] [] 
+Underfull \hbox (badness 10000) in paragraph at lines 96--112
+
  []
 
 
-Overfull \hbox (0.33406pt too wide) in alignment at lines 58--126
- [] [] [] [] 
- []
 
-[2])
+[2]
 
 [3]
-\openout2 = `appendix.aux'.
+Underfull \hbox (badness 10000) in paragraph at lines 231--248
 
- (appendix.tex
+ []
 
-[4
 
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 266--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--303
+
+ []
+
+
+
+[5]
+<./chapter01/Fig/2wheel.pdf, id=744, 227.62204pt x 227.62204pt>
+File: ./chapter01/Fig/2wheel.pdf Graphic file (type pdf)
+<use ./chapter01/Fig/2wheel.pdf>
+Package pdftex.def Info: ./chapter01/Fig/2wheel.pdf  used on input line 375.
+(pdftex.def)             Requested size: 227.62148pt x 227.62148pt.
+
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 438--460
+
+ []
+
+
+
+[7 <./chapter01/Fig/2wheel.pdf>])
+
+[8]
+\openout2 = `./chapter01/hw1.aux'.
+
+ (chapter01/hw1.tex
+
+[9
 
 
 
 ])
 
-[5]
+[10]
+\openout2 = `./chapter02/chapter2.aux'.
 
-[6
+ (chapter02/chapter2.tex
+<./chapter02/Fig/Design.pdf, id=821, 297.11pt x 61.22876pt>
+File: ./chapter02/Fig/Design.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/Design.pdf>
+Package pdftex.def Info: ./chapter02/Fig/Design.pdf  used on input line 49.
+(pdftex.def)             Requested size: 297.10927pt x 61.22859pt.
+
+
+[11
+
+
+
+
+]
+<./chapter02/Fig/and.pdf, id=831, 74.2775pt x 38.1425pt>
+File: ./chapter02/Fig/and.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/and.pdf>
+Package pdftex.def Info: ./chapter02/Fig/and.pdf  used on input line 124.
+(pdftex.def)             Requested size: 74.27731pt x 38.1424pt.
+
+Overfull \hbox (34.17545pt too wide) in paragraph at lines 104--127
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[12 <./chapter02/Fig/Design.pdf>]
+<./chapter02/Fig/or.pdf, id=853, 78.2925pt x 40.15pt>
+File: ./chapter02/Fig/or.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/or.pdf>
+Package pdftex.def Info: ./chapter02/Fig/or.pdf  used on input line 146.
+(pdftex.def)             Requested size: 78.2923pt x 40.14989pt.
+<./chapter02/Fig/not.pdf, id=854, 74.2775pt x 29.10875pt>
+File: ./chapter02/Fig/not.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/not.pdf>
+Package pdftex.def Info: ./chapter02/Fig/not.pdf  used on input line 163.
+(pdftex.def)             Requested size: 74.27731pt x 29.10867pt.
+<./chapter02/Fig/nand.pdf, id=855, 74.2775pt x 38.1425pt>
+File: ./chapter02/Fig/nand.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/nand.pdf>
+Package pdftex.def Info: ./chapter02/Fig/nand.pdf  used on input line 183.
+(pdftex.def)             Requested size: 74.27731pt x 38.1424pt.
+
+Overfull \hbox (34.17545pt too wide) in paragraph at lines 128--186
+[][] 
+ []
+
+<./chapter02/Fig/nor.pdf, id=856, 78.2925pt x 40.15pt>
+File: ./chapter02/Fig/nor.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/nor.pdf>
+Package pdftex.def Info: ./chapter02/Fig/nor.pdf  used on input line 205.
+(pdftex.def)             Requested size: 78.2923pt x 40.14989pt.
+<./chapter02/Fig/xor.pdf, id=857, 78.2925pt x 40.15pt>
+File: ./chapter02/Fig/xor.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/xor.pdf>
+Package pdftex.def Info: ./chapter02/Fig/xor.pdf  used on input line 226.
+(pdftex.def)             Requested size: 78.2923pt x 40.14989pt.
+
+Overfull \hbox (34.17545pt too wide) in paragraph at lines 187--229
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[13 <./chapter02/Fig/and.pdf> <./chapter02/Fig/or.pdf
+
+pdfTeX warning: pdflatex (file ./chapter02/Fig/or.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+> <./chapter02/Fig/not.pdf
+
+pdfTeX warning: pdflatex (file ./chapter02/Fig/not.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./chapter02/Fig/nand.pdf
+
+pdfTeX warning: pdflatex (file ./chapter02/Fig/nand.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>]
+<./chapter02/Fig/forms.pdf, id=870, 298.11375pt x 108.405pt>
+File: ./chapter02/Fig/forms.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/forms.pdf>
+Package pdftex.def Info: ./chapter02/Fig/forms.pdf  used on input line 253.
+(pdftex.def)             Requested size: 298.11302pt x 108.40472pt.
+<./chapter02/Fig/cd-tt.pdf, id=872, 207.77625pt x 132.495pt>
+File: ./chapter02/Fig/cd-tt.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/cd-tt.pdf>
+Package pdftex.def Info: ./chapter02/Fig/cd-tt.pdf  used on input line 268.
+(pdftex.def)             Requested size: 207.77573pt x 132.49466pt.
+
+
+[14 <./chapter02/Fig/nor.pdf> <./chapter02/Fig/xor.pdf
+
+pdfTeX warning: pdflatex (file ./chapter02/Fig/xor.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+Package mdframed Info: mdframed works in twoside mode on input line 304.
+<./chapter02/Fig/cd-tt2.pdf, id=890, 362.35374pt x 168.63pt>
+File: ./chapter02/Fig/cd-tt2.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/cd-tt2.pdf>
+Package pdftex.def Info: ./chapter02/Fig/cd-tt2.pdf  used on input line 380.
+(pdftex.def)             Requested size: 362.35286pt x 168.62958pt.
+
+
+[15 <./chapter02/Fig/forms.pdf> <./chapter02/Fig/cd-tt.pdf
+
+pdfTeX warning: pdflatex (file ./chapter02/Fig/cd-tt.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>]
+Package mdframed Info: Not enough space on this page on input line 409.
+
+
+[16]
+Package mdframed Info: mdframed works in twoside mode on input line 423.
+<./chapter02/Fig/basic.pdf, id=960, 411.53754pt x 145.54375pt>
+File: ./chapter02/Fig/basic.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/basic.pdf>
+Package pdftex.def Info: ./chapter02/Fig/basic.pdf  used on input line 471.
+(pdftex.def)             Requested size: 346.97472pt x 122.71117pt.
+
+Overfull \hbox (3.33333pt too wide) in paragraph at lines 471--472
+ [][] 
+ []
+
+
+
+[17 <./chapter02/Fig/cd-tt2.pdf>]
+Package mdframed Info: Not enough space on this page on input line 476.
+
+
+[18 <./chapter02/Fig/basic.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 553.
+Package mdframed Info: Not enough space on this page on input line 607.
+
+
+[19]
+Package mdframed Info: Not enough space on this page on input line 607.
+
+
+[20]
+Overfull \hbox (8.79483pt too wide) in paragraph at lines 674--682
+[]\OT1/cmr/m/n/10 Finally, com-bine these two subex-pres-sions and com-pute the
+ value of the func-tion $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A;
+ B; C\OT1/cmr/m/n/10 ) =
+ []
+
+
+
+[21]
+Package mdframed Info: mdframed works in twoside mode on input line 697.
+<./chapter02/Fig/advance.pdf, id=1013, 250.93752pt x 113.42375pt>
+File: ./chapter02/Fig/advance.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/advance.pdf>
+Package pdftex.def Info: ./chapter02/Fig/advance.pdf  used on input line 839.
+(pdftex.def)             Requested size: 346.97472pt x 156.8503pt.
+
+Overfull \hbox (3.33333pt too wide) in paragraph at lines 839--840
+ [][] 
+ []
+
+
+
+[22]
+
+[23 <./chapter02/Fig/advance.pdf>]
+Underfull \vbox (badness 2460) has occurred while \output is active []
+
+
+
+[24]
+Package mdframed Info: mdframed works in twoside mode on input line 935.
+
+Underfull \hbox (badness 1377) in paragraph at lines 1020--1020
+[]|\OT1/cmr/m/n/10 Add miss-ing vari-
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 1021--1021
+[]|$\OML/cmm/m/it/10 AB[]C \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 AB[]C[] \OT1/cmr/
+m/n/10 +
+ []
+
+
+Overfull \hbox (0.60768pt too wide) in paragraph at lines 1022--1022
+[]|$\OML/cmm/m/it/10 A[]B[]C$| 
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 1026--1026
+[]|$\OML/cmm/m/it/10 AB[]C \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 AB[]C[] \OT1/cmr/
+m/n/10 +
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1098.
+
+
+[25]
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+Package mdframed Info: mdframed works in twoside mode on input line 1218.
+Package mdframed Info: Not enough space on this page on input line 1267.
+
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1340--1355
+
+ []
+
+
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 1385--1401
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1385--1401
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 1419.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1481.
+
+
+[32]
+
+[33]
+<./chapter02/Fig/ThreeOutputs.pdf, id=1093, 132.495pt x 167.62625pt>
+File: ./chapter02/Fig/ThreeOutputs.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/ThreeOutputs.pdf>
+Package pdftex.def Info: ./chapter02/Fig/ThreeOutputs.pdf  used on input line 1
+553.
+(pdftex.def)             Requested size: 132.49466pt x 167.62582pt.
+
+
+[34]
+<./chapter02/Fig/wavedromTiming.pdf, id=1100, 316.18124pt x 162.6075pt>
+File: ./chapter02/Fig/wavedromTiming.pdf Graphic file (type pdf)
+<use ./chapter02/Fig/wavedromTiming.pdf>
+Package pdftex.def Info: ./chapter02/Fig/wavedromTiming.pdf  used on input line
+ 1591.
+(pdftex.def)             Requested size: 316.18047pt x 162.6071pt.
+
+
+[35 <./chapter02/Fig/ThreeOutputs.pdf> <./chapter02/Fig/wavedromTiming.pdf
+
+pdfTeX warning: pdflatex (file ./chapter02/Fig/wavedromTiming.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>])
+
+[36]
+\openout2 = `./chapter02/hw2.aux'.
+
+ (chapter02/hw2.tex
+<./chapter02/FigHw/Prob2-3.pdf, id=1127, 218.8175pt x 51.19125pt>
+File: ./chapter02/FigHw/Prob2-3.pdf Graphic file (type pdf)
+<use ./chapter02/FigHw/Prob2-3.pdf>
+Package pdftex.def Info: ./chapter02/FigHw/Prob2-3.pdf  used on input line 84.
+(pdftex.def)             Requested size: 218.81696pt x 51.19112pt.
+
+
+[37
+
+
+
+ <./chapter02/FigHw/Prob2-3.pdf>]
+Overfull \hbox (13.11066pt too wide) in paragraph at lines 385--387
+[] \OT1/cmr/bx/n/10 (3 pts.) \OT1/cmr/m/n/10 De-ter-mine the canon-i-cal SOP an
+d POS ex-pres-sion for $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; 
+B; C\OT1/cmr/m/n/10 ) = [] \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10
+ ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1
+/cmr/m/n/10 5)$
+ []
+
+<./chapter02/FigHw/wavedromFunctionToTimeProblem.pdf, id=1156, 316.18124pt x 18
+5.19188pt>
+File: ./chapter02/FigHw/wavedromFunctionToTimeProblem.pdf Graphic file (type pd
+f)
+<use ./chapter02/FigHw/wavedromFunctionToTimeProblem.pdf>
+Package pdftex.def Info: ./chapter02/FigHw/wavedromFunctionToTimeProblem.pdf  u
+sed on input line 418.
+(pdftex.def)             Requested size: 316.18047pt x 185.1914pt.
+
+
+[38]
+
+pdfTeX warning: pdflatex (file ./chapter02/FigHw/hex2SevenToDisplay.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter02/FigHw/hex2SevenToDisplay.pdf, id=1178, 341.43309pt x 170.7165pt>
+File: ./chapter02/FigHw/hex2SevenToDisplay.pdf Graphic file (type pdf)
+<use ./chapter02/FigHw/hex2SevenToDisplay.pdf>
+Package pdftex.def Info: ./chapter02/FigHw/hex2SevenToDisplay.pdf  used on inpu
+t line 466.
+(pdftex.def)             Requested size: 341.43224pt x 170.71608pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter02/FigHw/sevenSegmentLayout.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter02/FigHw/sevenSegmentLayout.pdf, id=1181, 361.35pt x 216.81pt>
+File: ./chapter02/FigHw/sevenSegmentLayout.pdf Graphic file (type pdf)
+<use ./chapter02/FigHw/sevenSegmentLayout.pdf>
+Package pdftex.def Info: ./chapter02/FigHw/sevenSegmentLayout.pdf  used on inpu
+t line 478.
+(pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter02/FigHw/sevenSegmentPatterns.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter02/FigHw/sevenSegmentPatterns.pdf, id=1183, 298.75392pt x 142.2638pt>
+
+File: ./chapter02/FigHw/sevenSegmentPatterns.pdf Graphic file (type pdf)
+<use ./chapter02/FigHw/sevenSegmentPatterns.pdf>
+Package pdftex.def Info: ./chapter02/FigHw/sevenSegmentPatterns.pdf  used on in
+put line 489.
+(pdftex.def)             Requested size: 298.75319pt x 142.26344pt.
+
+
+[39 <./chapter02/FigHw/wavedromFunctionToTimeProblem.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[40 <./chapter02/FigHw/hex2SevenToDisplay.pdf> <./chapter02/FigHw/sevenSegmentL
+ayout.pdf>])
+
+[41 <./chapter02/FigHw/sevenSegmentPatterns.pdf>]
+\openout2 = `./chapter03/chapter3.aux'.
+
+ (chapter03/chapter3.tex
+
+[42
+
+
+
+
+]
+
+[43]
+
+[44]
+
+pdfTeX warning: pdflatex (file ./chapter03/Fig/Torus.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<./chapter03/Fig/Torus.pdf, id=1252, 426.79138pt x 56.9055pt>
+File: ./chapter03/Fig/Torus.pdf Graphic file (type pdf)
+<use ./chapter03/Fig/Torus.pdf>
+Package pdftex.def Info: ./chapter03/Fig/Torus.pdf  used on input line 163.
+(pdftex.def)             Requested size: 426.79034pt x 56.90535pt.
+
+Overfull \hbox (17.26031pt too wide) in paragraph at lines 163--166
+ [] 
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 179.
+
+Overfull \hbox (21.9767pt too wide) in paragraph at lines 182--186
+[]\OT1/cmr/m/n/10 This pro-cess is ex-am-ined by de-ter-min-ing the $[][] $expr
+ession for the func-tion $\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A
+; B; C\OT1/cmr/m/n/10 ) =
+ []
+
+
+Package caption Warning: \label without proper reference on input line 114.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `figure:minimiztionThreeVarKmapShell' on page 45 undef
+ined on input line 190.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 253.
+
+
+[45 <./chapter03/Fig/Torus.pdf>]
+
+[46]
+
+LaTeX Warning: Marginpar on page 47 moved by 70.75969pt.
+
+
+LaTeX Warning: Marginpar on page 47 moved by 141.51938pt.
+
+
+LaTeX Warning: Marginpar on page 47 moved by 212.27907pt.
+
+
+LaTeX Warning: Marginpar on page 47 moved by 283.03876pt.
+
+
+LaTeX Warning: Marginpar on page 47 moved by 353.79845pt.
+
+
+LaTeX Warning: Marginpar on page 47 moved by 424.55814pt.
+
+
+Overfull \hbox (6.16348pt too wide) in paragraph at lines 403--404
+[]\OT1/cmr/m/n/10 A Kmap may have more
+ []
+
+
+
+[47]
+
+[48]
+
+LaTeX Warning: Marginpar on page 49 moved by 31.33252pt.
+
+
+LaTeX Warning: Marginpar on page 49 moved by 3.22054pt.
+
+
+Overfull \hbox (1.55255pt too wide) in paragraph at lines 562--571
+\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; B; C; D; E\OT1/cmr/m/n/1
+0 ) = [] \OML/cmm/m/it/10 m\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
+ 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/
+cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 8\OML/cmm/m/i
+t/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 15\OML/cmm/m/it/10 
+; \OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 18\OML/cmm/m/it/10 ; \OT
+1/cmr/m/n/10 23\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 24\OML/cmm/m/it/10 ; \OT1/cmr
+/m/n/10 26\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 28\OML/cmm/m/it/10 ; \OT1/cmr/m/n/
+10 29\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 31)$. Each of the 4-variable
+ []
+
+
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 599--616
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--616
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--638
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--638
+
+ []
+
+
+Underfull \vbox (badness 1142) has occurred while \output is active []
+
+
+
+[50]
+
+pdfTeX warning: pdflatex (file ./chapter03/Fig/MultiOut.pdf): PDF inclusion: fo
+und PDF version <1.7>, but at most version <1.5> allowed
+<./chapter03/Fig/MultiOut.pdf, id=1304, 200.5919pt x 142.2638pt>
+File: ./chapter03/Fig/MultiOut.pdf Graphic file (type pdf)
+<use ./chapter03/Fig/MultiOut.pdf>
+Package pdftex.def Info: ./chapter03/Fig/MultiOut.pdf  used on input line 685.
+(pdftex.def)             Requested size: 200.5914pt x 142.26344pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter03/Fig/Share.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<./chapter03/Fig/Share.pdf, id=1306, 213.39565pt x 132.3053pt>
+File: ./chapter03/Fig/Share.pdf Graphic file (type pdf)
+<use ./chapter03/Fig/Share.pdf>
+Package pdftex.def Info: ./chapter03/Fig/Share.pdf  used on input line 725.
+(pdftex.def)             Requested size: 213.39513pt x 132.30496pt.
+
+
+[51 <./chapter03/Fig/MultiOut.pdf>]
+
+[52 <./chapter03/Fig/Share.pdf>]
+
+LaTeX Warning: Reference `sec:TTtoSymb' on page 53 undefined on input line 861.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 877--888
+
+ []
+
+
+
+[53]
+Package mdframed Info: mdframed works in twoside mode on input line 951.
+
+Underfull \hbox (badness 10000) in paragraph at lines 959--970
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 973.
+Package mdframed Info: Not enough space on this page on input line 987.
+
+
+[54]
+Package mdframed Info: Not enough space on this page on input line 987.
+Package mdframed Info: mdframed works in twoside mode on input line 992.
+
+Overfull \hbox (7.0724pt too wide) in paragraph at lines 1003--1005
+[]\OT1/cmr/m/n/10 An ex-am-ple shows how this plan is put into prac-tice. De-te
+r-mine the $[][] $expression
+ []
+
+
+
+[55]
+Package mdframed Info: mdframed works in twoside mode on input line 1049.
+Package mdframed Info: Not enough space on this page on input line 1062.
+Package mdframed Info: mdframed works in twoside mode on input line 1064.
+Package mdframed Info: mdframed works in twoside mode on input line 1088.
+Package mdframed Info: mdframed works in twoside mode on input line 1104.
+Package mdframed Info: mdframed works in twoside mode on input line 1121.
+
+Overfull \hbox (7.0724pt too wide) in paragraph at lines 1132--1134
+[]\OT1/cmr/m/n/10 An ex-am-ple shows how this plan is put into prac-tice. De-te
+r-mine the $[][] $expression
+ []
+
+Package mdframed Info: Not enough space on this page on input line 1166.
+
+
+[56]
+Package mdframed Info: Not enough space on this page on input line 1166.
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+
+
+[57]
+
+[58]
+
+[59]
+
+[60])
+
+[61]
+\openout2 = `./chapter03/hw3.aux'.
+
+ (chapter03/hw3.tex
+<./chapter03/FigHw/Prob3-3.pdf, id=1412, 265.99374pt x 155.58125pt>
+File: ./chapter03/FigHw/Prob3-3.pdf Graphic file (type pdf)
+<use ./chapter03/FigHw/Prob3-3.pdf>
+Package pdftex.def Info: ./chapter03/FigHw/Prob3-3.pdf  used on input line 63.
+(pdftex.def)             Requested size: 265.99309pt x 155.58086pt.
+
+
+[62
+
+
+
+ <./chapter03/FigHw/Prob3-3.pdf>]
+
+[63]
+Overfull \hbox (6.25095pt too wide) in paragraph at lines 713--715
+[]\OT1/cmr/m/n/10 Determine $[][] $expression for the G, L and E out-puts. De-t
+er-mine $[][] $expression
+ []
+
+)
+
+[64]
+\openout2 = `./chapter04/chapter4.aux'.
+
+ (chapter04/chapter4.tex
+
+LaTeX Warning: Reference `fig:comboBBsys' on page 65 undefined on input line 6.
+
+
+<./chapter04/Fig/Asys.pdf, id=1465, 218.8175pt x 51.19125pt>
+File: ./chapter04/Fig/Asys.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/Asys.pdf>
+Package pdftex.def Info: ./chapter04/Fig/Asys.pdf  used on input line 24.
+(pdftex.def)             Requested size: 218.81696pt x 51.19112pt.
+Package mdframed Info: mdframed works in twoside mode on input line 41.
+
+
+[65
+
+
+
+
+ <./chapter04/Fig/Asys.pdf>]
+<./chapter04/Fig/3_8.pdf, id=1494, 128.0374pt x 136.57323pt>
+File: ./chapter04/Fig/3_8.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/3_8.pdf>
+Package pdftex.def Info: ./chapter04/Fig/3_8.pdf  used on input line 66.
+(pdftex.def)             Requested size: 34.14319pt x -22.76216pt.
+<./chapter04/Fig/3_8Guts.pdf, id=1497, 352.31625pt x 414.54878pt>
+File: ./chapter04/Fig/3_8Guts.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/3_8Guts.pdf>
+Package pdftex.def Info: ./chapter04/Fig/3_8Guts.pdf  used on input line 117.
+(pdftex.def)             Requested size: 352.31538pt x 414.54776pt.
+
+
+[66 <./chapter04/Fig/3_8.pdf>]
+<./chapter04/Fig/BigDecoder.pdf, id=1549, 352.31625pt x 407.5225pt>
+File: ./chapter04/Fig/BigDecoder.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/BigDecoder.pdf>
+Package pdftex.def Info: ./chapter04/Fig/BigDecoder.pdf  used on input line 135
+.
+(pdftex.def)             Requested size: 352.31538pt x 407.5215pt.
+Package mdframed Info: mdframed works in twoside mode on input line 164.
+<./chapter04/Fig/8_1.pdf, id=1553, 128.48pt x 132.495pt>
+File: ./chapter04/Fig/8_1.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/8_1.pdf>
+Package pdftex.def Info: ./chapter04/Fig/8_1.pdf  used on input line 189.
+(pdftex.def)             Requested size: 34.14319pt x -22.76216pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--205
+
+ []
+
+
+
+[67 <./chapter04/Fig/3_8Guts.pdf>]
+
+[68 <./chapter04/Fig/BigDecoder.pdf> <./chapter04/Fig/8_1.pdf
+
+pdfTeX warning: pdflatex (file ./chapter04/Fig/8_1.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+<./chapter04/Fig/8_1Guts.pdf, id=1730, 502.87875pt x 399.49252pt>
+File: ./chapter04/Fig/8_1Guts.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/8_1Guts.pdf>
+Package pdftex.def Info: ./chapter04/Fig/8_1Guts.pdf  used on input line 223.
+(pdftex.def)             Requested size: 502.87752pt x 399.49155pt.
+<./chapter04/Fig/BigMux.pdf, id=1732, 377.41pt x 407.5225pt>
+File: ./chapter04/Fig/BigMux.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/BigMux.pdf>
+Package pdftex.def Info: ./chapter04/Fig/BigMux.pdf  used on input line 240.
+(pdftex.def)             Requested size: 377.40907pt x 407.5215pt.
+<./chapter04/Fig/4x2x1mux.pdf, id=1736, 377.41pt x 118.4425pt>
+File: ./chapter04/Fig/4x2x1mux.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/4x2x1mux.pdf>
+Package pdftex.def Info: ./chapter04/Fig/4x2x1mux.pdf  used on input line 276.
+(pdftex.def)             Requested size: 377.40907pt x 118.4422pt.
+
+
+[69 <./chapter04/Fig/8_1Guts.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 289.
+
+
+[70 <./chapter04/Fig/BigMux.pdf> <./chapter04/Fig/4x2x1mux.pdf
+
+pdfTeX warning: pdflatex (file ./chapter04/Fig/4x2x1mux.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>]
+<./chapter04/Fig/add.pdf, id=1939, 240.9pt x 103.38625pt>
+File: ./chapter04/Fig/add.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/add.pdf>
+Package pdftex.def Info: ./chapter04/Fig/add.pdf  used on input line 319.
+(pdftex.def)             Requested size: 240.8994pt x 103.38599pt.
+
+Overfull \hbox (221.8583pt too wide) in paragraph at lines 352--366
+[]|[]| 
+ []
+
+
+
+[71 <./chapter04/Fig/add.pdf>]
+<./chapter04/Fig/adder.pdf, id=1976, 358.33875pt x 170.6375pt>
+File: ./chapter04/Fig/adder.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/adder.pdf>
+Package pdftex.def Info: ./chapter04/Fig/adder.pdf  used on input line 376.
+(pdftex.def)             Requested size: 358.33788pt x 170.63707pt.
+Package mdframed Info: mdframed works in twoside mode on input line 400.
+<./chapter04/Fig/AddSub.pdf, id=1979, 312.16624pt x 193.72377pt>
+File: ./chapter04/Fig/AddSub.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/AddSub.pdf>
+Package pdftex.def Info: ./chapter04/Fig/AddSub.pdf  used on input line 426.
+(pdftex.def)             Requested size: 312.16548pt x 193.72328pt.
+
+
+[72 <./chapter04/Fig/adder.pdf>]
+<./chapter04/Fig/TotalAddSub.pdf, id=2062, 345.29pt x 213.79875pt>
+File: ./chapter04/Fig/TotalAddSub.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/TotalAddSub.pdf>
+Package pdftex.def Info: ./chapter04/Fig/TotalAddSub.pdf  used on input line 47
+0.
+(pdftex.def)             Requested size: 345.28914pt x 213.79822pt.
+
+
+[73 <./chapter04/Fig/AddSub.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 492.
+
+
+[74 <./chapter04/Fig/TotalAddSub.pdf>]
+<./chapter04/Fig/Compare.pdf, id=2129, 375.4025pt x 135.50626pt>
+File: ./chapter04/Fig/Compare.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/Compare.pdf>
+Package pdftex.def Info: ./chapter04/Fig/Compare.pdf  used on input line 542.
+(pdftex.def)             Requested size: 375.40158pt x 135.5059pt.
+
+
+[75 <./chapter04/Fig/Compare.pdf>]
+
+[76]
+<./chapter04/Fig/cond.pdf, id=2218, 235.88127pt x 123.46124pt>
+File: ./chapter04/Fig/cond.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/cond.pdf>
+Package pdftex.def Info: ./chapter04/Fig/cond.pdf  used on input line 733.
+(pdftex.def)             Requested size: 235.88069pt x 123.46092pt.
+
+
+[77]
+<./chapter04/Fig/cond2.pdf, id=2229, 231.86626pt x 137.51375pt>
+File: ./chapter04/Fig/cond2.pdf Graphic file (type pdf)
+<use ./chapter04/Fig/cond2.pdf>
+Package pdftex.def Info: ./chapter04/Fig/cond2.pdf  used on input line 761.
+(pdftex.def)             Requested size: 231.86568pt x 137.51341pt.
+)
+
+[78 <./chapter04/Fig/cond.pdf> <./chapter04/Fig/cond2.pdf
+
+pdfTeX warning: pdflatex (file ./chapter04/Fig/cond2.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>]
+\openout2 = `./chapter04/hw4.aux'.
+
+ (chapter04/hw4.tex
+Package mdframed Info: mdframed works in twoside mode on input line 140.
+<./chapter04/FigHw/Prob4-5.pdf, id=2312, 611.28375pt x 121.45375pt>
+File: ./chapter04/FigHw/Prob4-5.pdf Graphic file (type pdf)
+<use ./chapter04/FigHw/Prob4-5.pdf>
+Package pdftex.def Info: ./chapter04/FigHw/Prob4-5.pdf  used on input line 164.
+
+(pdftex.def)             Requested size: 611.28226pt x 121.45343pt.
+
+Overfull \hbox (18.36568pt too wide) in paragraph at lines 164--166
+ [] 
+ []
+
+
+
+[79
+
+
+
+]
+
+[80 <./chapter04/FigHw/Prob4-5.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 411.
+Package mdframed Info: mdframed works in twoside mode on input line 462.
+
+
+[81]
+
+[82]
+
+[83])
+
+[84]
+\openout2 = `./chapter05/chapter5.aux'.
+
+ (chapter05/chapter5.tex
+
+[85
+
+
+
+
+]
+<./chapter05/Fig/SimpleFurnace.pdf, id=2401, 96.36pt x 82.3075pt>
+File: ./chapter05/Fig/SimpleFurnace.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/SimpleFurnace.pdf>
+Package pdftex.def Info: ./chapter05/Fig/SimpleFurnace.pdf  used on input line 
+57.
+(pdftex.def)             Requested size: 96.35974pt x 82.30728pt.
+<./chapter05/Fig/HysteresisGraph.pdf, id=2403, 100.375pt x 82.3075pt>
+File: ./chapter05/Fig/HysteresisGraph.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/HysteresisGraph.pdf>
+Package pdftex.def Info: ./chapter05/Fig/HysteresisGraph.pdf  used on input lin
+e 108.
+(pdftex.def)             Requested size: 100.37474pt x 82.30728pt.
+
+
+[86 <./chapter05/Fig/SimpleFurnace.pdf>]
+<./chapter05/Fig/HysteresisSD.pdf, id=2429, 178.6675pt x 49.18375pt>
+File: ./chapter05/Fig/HysteresisSD.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/HysteresisSD.pdf>
+Package pdftex.def Info: ./chapter05/Fig/HysteresisSD.pdf  used on input line 1
+49.
+(pdftex.def)             Requested size: 178.66705pt x 49.18361pt.
+
+
+[87 <./chapter05/Fig/HysteresisGraph.pdf> <./chapter05/Fig/HysteresisSD.pdf
+
+pdfTeX warning: pdflatex (file ./chapter05/Fig/HysteresisSD.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>]
+<./chapter05/Fig/SDproperties.pdf, id=2489, 218.8175pt x 78.2925pt>
+File: ./chapter05/Fig/SDproperties.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/SDproperties.pdf>
+Package pdftex.def Info: ./chapter05/Fig/SDproperties.pdf  used on input line 1
+96.
+(pdftex.def)             Requested size: 218.81696pt x 78.2923pt.
+
+
+[88 <./chapter05/Fig/SDproperties.pdf>]
+<./chapter05/Fig/devices.pdf, id=2525, 277.035pt x 96.36pt>
+File: ./chapter05/Fig/devices.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/devices.pdf>
+Package pdftex.def Info: ./chapter05/Fig/devices.pdf  used on input line 344.
+(pdftex.def)             Requested size: 277.03432pt x 96.35974pt.
+
+
+[89 <./chapter05/Fig/devices.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 362--381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--381
+
+ []
+
+<./chapter05/Fig/DCL.pdf, id=2547, 349.305pt x 181.67876pt>
+File: ./chapter05/Fig/DCL.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/DCL.pdf>
+Package pdftex.def Info: ./chapter05/Fig/DCL.pdf  used on input line 404.
+(pdftex.def)             Requested size: 349.30414pt x 181.6783pt.
+<./chapter05/Fig/JKFF.pdf, id=2550, 345.29pt x 194.7275pt>
+File: ./chapter05/Fig/JKFF.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/JKFF.pdf>
+Package pdftex.def Info: ./chapter05/Fig/JKFF.pdf  used on input line 437.
+(pdftex.def)             Requested size: 345.28914pt x 194.727pt.
+
+
+[90]
+
+[91 <./chapter05/Fig/DCL.pdf> <./chapter05/Fig/JKFF.pdf
+
+pdfTeX warning: pdflatex (file ./chapter05/Fig/JKFF.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>]
+<./chapter05/Fig/DFF.pdf, id=2579, 336.25626pt x 163.61125pt>
+File: ./chapter05/Fig/DFF.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/DFF.pdf>
+Package pdftex.def Info: ./chapter05/Fig/DFF.pdf  used on input line 480.
+(pdftex.def)             Requested size: 336.25543pt x 163.61084pt.
+<./chapter05/Fig/SRLtime.pdf, id=2581, 327.2225pt x 163.61125pt>
+File: ./chapter05/Fig/SRLtime.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/SRLtime.pdf>
+Package pdftex.def Info: ./chapter05/Fig/SRLtime.pdf  used on input line 509.
+(pdftex.def)             Requested size: 327.2217pt x 163.61084pt.
+
+
+[92 <./chapter05/Fig/DFF.pdf>]
+<./chapter05/Fig/SRL.pdf, id=2595, 89.33376pt x 56.21pt>
+File: ./chapter05/Fig/SRL.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/SRL.pdf>
+Package pdftex.def Info: ./chapter05/Fig/SRL.pdf  used on input line 543.
+(pdftex.def)             Requested size: 89.33353pt x 56.20985pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[93 <./chapter05/Fig/SRLtime.pdf> <./chapter05/Fig/SRL.pdf
+
+pdfTeX warning: pdflatex (file ./chapter05/Fig/SRL.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+<./chapter05/Fig/SR1.pdf, id=2623, 219.82124pt x 82.3075pt>
+File: ./chapter05/Fig/SR1.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/SR1.pdf>
+Package pdftex.def Info: ./chapter05/Fig/SR1.pdf  used on input line 608.
+(pdftex.def)             Requested size: 219.8207pt x 82.30728pt.
+
+Underfull \vbox (badness 1983) has occurred while \output is active []
+
+
+
+[94 <./chapter05/Fig/SR1.pdf>]
+<./chapter05/Fig/ff-time.pdf, id=2638, 300.12125pt x 73.27374pt>
+File: ./chapter05/Fig/ff-time.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/ff-time.pdf>
+Package pdftex.def Info: ./chapter05/Fig/ff-time.pdf  used on input line 679.
+(pdftex.def)             Requested size: 300.12051pt x 73.27354pt.
+
+
+[95 <./chapter05/Fig/ff-time.pdf>]
+<./chapter05/Fig/DFFSR.pdf, id=2672, 110.4125pt x 114.4275pt>
+File: ./chapter05/Fig/DFFSR.pdf Graphic file (type pdf)
+<use ./chapter05/Fig/DFFSR.pdf>
+Package pdftex.def Info: ./chapter05/Fig/DFFSR.pdf  used on input line 719.
+(pdftex.def)             Requested size: 110.41222pt x 114.42722pt.
+)
+
+[96 <./chapter05/Fig/DFFSR.pdf>]
+\openout2 = `./chapter05/hw5.aux'.
+
+ (chapter05/hw5.tex
+<./chapter05/FigHw/Prob5-1.pdf, id=2687, 94.3525pt x 56.21pt>
+File: ./chapter05/FigHw/Prob5-1.pdf Graphic file (type pdf)
+<use ./chapter05/FigHw/Prob5-1.pdf>
+Package pdftex.def Info: ./chapter05/FigHw/Prob5-1.pdf  used on input line 9.
+(pdftex.def)             Requested size: 94.35225pt x 56.20985pt.
+<./chapter05/FigHw/Prob5-2.pdf, id=2689, 157.58875pt x 65.24374pt>
+File: ./chapter05/FigHw/Prob5-2.pdf Graphic file (type pdf)
+<use ./chapter05/FigHw/Prob5-2.pdf>
+Package pdftex.def Info: ./chapter05/FigHw/Prob5-2.pdf  used on input line 50.
+(pdftex.def)             Requested size: 157.58835pt x 65.24358pt.
+<./chapter05/FigHw/Prob5-3.pdf, id=2691, 412.54124pt x 273.02pt>
+File: ./chapter05/FigHw/Prob5-3.pdf Graphic file (type pdf)
+<use ./chapter05/FigHw/Prob5-3.pdf>
+Package pdftex.def Info: ./chapter05/FigHw/Prob5-3.pdf  used on input line 81.
+(pdftex.def)             Requested size: 412.54024pt x 273.01933pt.
+
+
+[97
+
+
+
+ <./chapter05/FigHw/Prob5-1.pdf> <./chapter05/FigHw/Prob5-2.pdf> <./chapter05/F
+igHw/Prob5-3.pdf>]
+<./chapter05/FigHw/Prob5-4.pdf, id=2718, 688.5725pt x 345.29pt>
+File: ./chapter05/FigHw/Prob5-4.pdf Graphic file (type pdf)
+<use ./chapter05/FigHw/Prob5-4.pdf>
+Package pdftex.def Info: ./chapter05/FigHw/Prob5-4.pdf  used on input line 92.
+(pdftex.def)             Requested size: 688.5708pt x 345.28914pt.
+<./chapter05/FigHw/Prob5-5.pdf, id=2720, 688.5725pt x 345.29pt>
+File: ./chapter05/FigHw/Prob5-5.pdf Graphic file (type pdf)
+<use ./chapter05/FigHw/Prob5-5.pdf>
+Package pdftex.def Info: ./chapter05/FigHw/Prob5-5.pdf  used on input line 109.
+
+(pdftex.def)             Requested size: 688.5708pt x 345.28914pt.
+
+
+[98 <./chapter05/FigHw/Prob5-4.pdf> <./chapter05/FigHw/Prob5-5.pdf>])
+
+[99]
+\openout2 = `./chapter06/chapter6.aux'.
+
+ (chapter06/chapter6.tex
+
+[100
+
+
+
+
+]
+
+LaTeX Warning: Reference `fig:sequentialBBAsys' on page 101 undefined on input 
+line 42.
+
+Package mdframed Info: mdframed works in twoside mode on input line 50.
+
+
+[101]
+Package mdframed Info: Not enough space on this page on input line 70.
+<./chapter06/Fig/RegTime.pdf, id=2759, 208.78001pt x 181.67876pt>
+File: ./chapter06/Fig/RegTime.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/RegTime.pdf>
+Package pdftex.def Info: ./chapter06/Fig/RegTime.pdf  used on input line 98.
+(pdftex.def)             Requested size: 208.77948pt x 181.6783pt.
+<./chapter06/Fig/reg.pdf, id=2762, 376.40625pt x 220.82501pt>
+File: ./chapter06/Fig/reg.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/reg.pdf>
+Package pdftex.def Info: ./chapter06/Fig/reg.pdf  used on input line 123.
+(pdftex.def)             Requested size: 376.40532pt x 220.82446pt.
+
+Underfull \vbox (badness 2277) has occurred while \output is active []
+
+
+
+[102]
+Package mdframed Info: mdframed works in twoside mode on input line 146.
+
+
+[103 <./chapter06/Fig/RegTime.pdf> <./chapter06/Fig/reg.pdf
+
+pdfTeX warning: pdflatex (file ./chapter06/Fig/reg.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+
+[104]
+<./chapter06/Fig/ShiftReg.pdf, id=2795, 376.40625pt x 243.91125pt>
+File: ./chapter06/Fig/ShiftReg.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/ShiftReg.pdf>
+Package pdftex.def Info: ./chapter06/Fig/ShiftReg.pdf  used on input line 289.
+(pdftex.def)             Requested size: 376.40532pt x 243.91064pt.
+
+
+[105]
+Package mdframed Info: mdframed works in twoside mode on input line 319.
+
+
+[106 <./chapter06/Fig/ShiftReg.pdf>]
+<./chapter06/Fig/CountTime.pdf, id=2815, 235.88127pt x 181.67876pt>
+File: ./chapter06/Fig/CountTime.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/CountTime.pdf>
+Package pdftex.def Info: ./chapter06/Fig/CountTime.pdf  used on input line 368.
+
+(pdftex.def)             Requested size: 235.88069pt x 181.6783pt.
+<./chapter06/Fig/counter.pdf, id=2817, 199.74626pt x 285.065pt>
+File: ./chapter06/Fig/counter.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/counter.pdf>
+Package pdftex.def Info: ./chapter06/Fig/counter.pdf  used on input line 385.
+(pdftex.def)             Requested size: 199.74577pt x 285.0643pt.
+
+
+[107 <./chapter06/Fig/CountTime.pdf>]
+<./chapter06/Fig/ram.pdf, id=2839, 37.13875pt x 110.4125pt>
+File: ./chapter06/Fig/ram.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/ram.pdf>
+Package pdftex.def Info: ./chapter06/Fig/ram.pdf  used on input line 429.
+(pdftex.def)             Requested size: 37.13866pt x 110.41222pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[108 <./chapter06/Fig/counter.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 486.
+
+Overfull \hbox (6.73352pt too wide) in paragraph at lines 489--489
+[]|\OT1/cmr/m/n/10 Nomenclature:| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+[]|\OT1/cmr/m/n/10 Data Out-
+ []
+
+
+Overfull \hbox (1.87079pt too wide) in paragraph at lines 497--505
+[]|[]
+ []
+
+
+Overfull \hbox (38.00845pt too wide) in paragraph at lines 487--509
+[][]
+ []
+
+
+
+[109 <./chapter06/Fig/ram.pdf>]
+
+[110]
+<./chapter06/Fig/wavedromRamReadWrite.pdf, id=2911, 632.3625pt x 353.82187pt>
+File: ./chapter06/Fig/wavedromRamReadWrite.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/wavedromRamReadWrite.pdf>
+Package pdftex.def Info: ./chapter06/Fig/wavedromRamReadWrite.pdf  used on inpu
+t line 526.
+(pdftex.def)             Requested size: 409.53003pt x 229.14465pt.
+
+
+[111
+
+ <./chapter06/Fig/wavedromRamReadWrite.pdf>]
+
+pdfTeX warning: pdflatex (file ./chapter06/Fig/wide.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<./chapter06/Fig/wide.pdf, id=2927, 426.79138pt x 199.1693pt>
+File: ./chapter06/Fig/wide.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/wide.pdf>
+Package pdftex.def Info: ./chapter06/Fig/wide.pdf  used on input line 586.
+(pdftex.def)             Requested size: 426.79034pt x 199.1688pt.
+
+Overfull \hbox (17.26031pt too wide) in paragraph at lines 586--587
+ [] 
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./chapter06/Fig/deep.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<./chapter06/Fig/deep.pdf, id=2930, 312.9803pt x 284.52759pt>
+File: ./chapter06/Fig/deep.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/deep.pdf>
+Package pdftex.def Info: ./chapter06/Fig/deep.pdf  used on input line 621.
+(pdftex.def)             Requested size: 312.97952pt x 284.52689pt.
+
+
+[112
+
+ <./chapter06/Fig/wide.pdf>]
+<./chapter06/Fig/simple.pdf, id=2958, 421.575pt x 217.81377pt>
+File: ./chapter06/Fig/simple.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/simple.pdf>
+Package pdftex.def Info: ./chapter06/Fig/simple.pdf  used on input line 654.
+(pdftex.def)             Requested size: 421.57396pt x 217.81322pt.
+
+
+[113 <./chapter06/Fig/deep.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[114 <./chapter06/Fig/simple.pdf>]
+<./chapter06/Fig/comb1.pdf, id=3016, 367.3725pt x 145.54375pt>
+File: ./chapter06/Fig/comb1.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/comb1.pdf>
+Package pdftex.def Info: ./chapter06/Fig/comb1.pdf  used on input line 743.
+(pdftex.def)             Requested size: 367.37158pt x 145.54338pt.
+
+
+[115 <./chapter06/Fig/comb1.pdf>]
+
+pdfTeX warning: pdflatex (file ./chapter06/Fig/min.pdf): PDF inclusion: found P
+DF version <1.7>, but at most version <1.5> allowed
+<./chapter06/Fig/min.pdf, id=3050, 227.62209pt x 199.1693pt>
+File: ./chapter06/Fig/min.pdf Graphic file (type pdf)
+<use ./chapter06/Fig/min.pdf>
+Package pdftex.def Info: ./chapter06/Fig/min.pdf  used on input line 854.
+(pdftex.def)             Requested size: 227.62152pt x 199.1688pt.
+)
+
+[116]
+
+[117 <./chapter06/Fig/min.pdf>]
+\openout2 = `./chapter06/hw6.aux'.
+
+ (chapter06/hw6.tex
+
+[118
+
+
+
+]
+<./chapter06/FigHw/Prob6-14.pdf, id=3090, 235.88126pt x 181.67876pt>
+File: ./chapter06/FigHw/Prob6-14.pdf Graphic file (type pdf)
+<use ./chapter06/FigHw/Prob6-14.pdf>
+Package pdftex.def Info: ./chapter06/FigHw/Prob6-14.pdf  used on input line 219
+.
+(pdftex.def)             Requested size: 235.88068pt x 181.6783pt.
+<./chapter06/FigHw/Prob6-15.pdf, id=3095, 235.88126pt x 181.67876pt>
+File: ./chapter06/FigHw/Prob6-15.pdf Graphic file (type pdf)
+<use ./chapter06/FigHw/Prob6-15.pdf>
+Package pdftex.def Info: ./chapter06/FigHw/Prob6-15.pdf  used on input line 237
+.
+(pdftex.def)             Requested size: 235.88068pt x 181.6783pt.
+
+
+LaTeX Warning: Reference `fig:comb1' on page 119 undefined on input line 255.
+
+<./chapter06/FigHw/Prob6-16.pdf, id=3100, 349.305pt x 159.59625pt>
+File: ./chapter06/FigHw/Prob6-16.pdf Graphic file (type pdf)
+<use ./chapter06/FigHw/Prob6-16.pdf>
+Package pdftex.def Info: ./chapter06/FigHw/Prob6-16.pdf  used on input line 257
+.
+(pdftex.def)             Requested size: 349.30414pt x 159.59584pt.
+<./chapter06/FigHw/fib.pdf, id=3104, 376.40625pt x 159.59625pt>
+File: ./chapter06/FigHw/fib.pdf Graphic file (type pdf)
+<use ./chapter06/FigHw/fib.pdf>
+Package pdftex.def Info: ./chapter06/FigHw/fib.pdf  used on input line 276.
+(pdftex.def)             Requested size: 376.40532pt x 159.59584pt.
+)
+
+[119]
+
+[120 <./chapter06/FigHw/Prob6-14.pdf> <./chapter06/FigHw/Prob6-15.pdf>]
+
+[121 <./chapter06/FigHw/Prob6-16.pdf> <./chapter06/FigHw/fib.pdf>]
+\openout2 = `./chapter07/chapter7.aux'.
+
+
+(chapter07/chapter7.tex
+
+[122
+
+
+
+
+]
+
+pdfTeX warning: pdflatex (file ./chapter07/Fig/GenFSM.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<./chapter07/Fig/GenFSM.pdf, id=3156, 227.62209pt x 128.03745pt>
+File: ./chapter07/Fig/GenFSM.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/GenFSM.pdf>
+Package pdftex.def Info: ./chapter07/Fig/GenFSM.pdf  used on input line 22.
+(pdftex.def)             Requested size: 227.62152pt x 128.03711pt.
+
+
+[123 <./chapter07/Fig/GenFSM.pdf>]
+
+[124]
+<./chapter07/Fig/Ones.pdf, id=3187, 408.52628pt x 249.93375pt>
+File: ./chapter07/Fig/Ones.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/Ones.pdf>
+Package pdftex.def Info: ./chapter07/Fig/Ones.pdf  used on input line 169.
+(pdftex.def)             Requested size: 408.52528pt x 249.93314pt.
+
+
+[125]
+
+LaTeX Warning: Reference `fig:sequentialFSMHysteresisGraph' on page 126 undefin
+ed on input line 203.
+
+<./chapter07/Fig/FurnaceSD.pdf, id=3197, 201.75375pt x 54.2025pt>
+File: ./chapter07/Fig/FurnaceSD.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/FurnaceSD.pdf>
+Package pdftex.def Info: ./chapter07/Fig/FurnaceSD.pdf  used on input line 213.
+
+(pdftex.def)             Requested size: 201.75325pt x 54.20236pt.
+
+
+[126 <./chapter07/Fig/Ones.pdf> <./chapter07/Fig/FurnaceSD.pdf
+
+pdfTeX warning: pdflatex (file ./chapter07/Fig/FurnaceSD.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 230--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--248
+
+ []
+
+<./chapter07/Fig/FurnaceCir.pdf, id=3283, 173.64874pt x 258.9675pt>
+File: ./chapter07/Fig/FurnaceCir.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/FurnaceCir.pdf>
+Package pdftex.def Info: ./chapter07/Fig/FurnaceCir.pdf  used on input line 251
+.
+(pdftex.def)             Requested size: 173.64832pt x 258.96684pt.
+
+
+[127 <./chapter07/Fig/FurnaceCir.pdf>]
+<./chapter07/Fig/GenTime.pdf, id=3308, 358.33875pt x 132.495pt>
+File: ./chapter07/Fig/GenTime.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/GenTime.pdf>
+Package pdftex.def Info: ./chapter07/Fig/GenTime.pdf  used on input line 305.
+(pdftex.def)             Requested size: 358.33788pt x 132.49466pt.
+
+
+[128 <./chapter07/Fig/GenTime.pdf>]
+<./chapter07/Fig/FurnaceTime.pdf, id=3358, 240.9pt x 123.46124pt>
+File: ./chapter07/Fig/FurnaceTime.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/FurnaceTime.pdf>
+Package pdftex.def Info: ./chapter07/Fig/FurnaceTime.pdf  used on input line 35
+7.
+(pdftex.def)             Requested size: 240.8994pt x 123.46092pt.
+
+
+[129 <./chapter07/Fig/FurnaceTime.pdf>]
+<./chapter07/Fig/VendSD.pdf, id=3376, 305.14pt x 98.36751pt>
+File: ./chapter07/Fig/VendSD.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/VendSD.pdf>
+Package pdftex.def Info: ./chapter07/Fig/VendSD.pdf  used on input line 402.
+(pdftex.def)             Requested size: 305.13924pt x 98.36725pt.
+
+
+[130 <./chapter07/Fig/VendSD.pdf>]
+<./chapter07/Fig/Daisy.pdf, id=3429, 525.965pt x 447.67253pt>
+File: ./chapter07/Fig/Daisy.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/Daisy.pdf>
+Package pdftex.def Info: ./chapter07/Fig/Daisy.pdf  used on input line 521.
+(pdftex.def)             Requested size: 525.9637pt x 447.67143pt.
+
+
+[131]
+Underfull \hbox (badness 10000) in paragraph at lines 554--582
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--582
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--582
+
+ []
+
+
+Underfull \vbox (badness 2165) has occurred while \output is active []
+
+
+
+[132 <./chapter07/Fig/Daisy.pdf>]
+<./chapter07/Fig/DaisySD.pdf, id=3450, 506.89375pt x 116.43501pt>
+File: ./chapter07/Fig/DaisySD.pdf Graphic file (type pdf)
+<use ./chapter07/Fig/DaisySD.pdf>
+Package pdftex.def Info: ./chapter07/Fig/DaisySD.pdf  used on input line 609.
+(pdftex.def)             Requested size: 506.89252pt x 116.43472pt.
+
+
+[133 <./chapter07/Fig/DaisySD.pdf>]
+
+Package caption Warning: \label without proper reference on input line 695.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `table:daisy' on page 134 undefined on input line 673.
+
+
+)
+
+[134]
+
+[135]
+\openout2 = `./chapter07/hw7.aux'.
+
+ (chapter07/hw7.tex
+<./chapter07/FigHw/Prob7-10.pdf, id=3521, 92.345pt x 164.615pt>
+File: ./chapter07/FigHw/Prob7-10.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-10.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-10.pdf  used on input line 199
+.
+(pdftex.def)             Requested size: 92.34476pt x 164.6146pt.
+
+
+[136
+
+
+
+]
+
+[137 <./chapter07/FigHw/Prob7-10.pdf>]
+
+[138]
+<./chapter07/FigHw/Prob7-11.pdf, id=3565, 213.79875pt x 181.67876pt>
+File: ./chapter07/FigHw/Prob7-11.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-11.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-11.pdf  used on input line 473
+.
+(pdftex.def)             Requested size: 213.79822pt x 181.6783pt.
+
+
+[139 <./chapter07/FigHw/Prob7-11.pdf>]
+<./chapter07/FigHw/Prob7-11b.pdf, id=3580, 327.2225pt x 74.2775pt>
+File: ./chapter07/FigHw/Prob7-11b.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-11b.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-11b.pdf  used on input line 50
+0.
+(pdftex.def)             Requested size: 327.2217pt x 74.27731pt.
+<./chapter07/FigHw/Prob7-12.pdf, id=3583, 445.665pt x 173.64874pt>
+File: ./chapter07/FigHw/Prob7-12.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-12.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-12.pdf  used on input line 545
+.
+(pdftex.def)             Requested size: 445.66391pt x 173.64832pt.
+<./chapter07/FigHw/Prob7-13.pdf, id=3585, 183.68625pt x 95.35625pt>
+File: ./chapter07/FigHw/Prob7-13.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-13.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-13.pdf  used on input line 591
+.
+(pdftex.def)             Requested size: 183.68578pt x 95.356pt.
+
+
+[140 <./chapter07/FigHw/Prob7-11b.pdf> <./chapter07/FigHw/Prob7-12.pdf>]
+<./chapter07/FigHw/Prob7-14.pdf, id=3606, 275.0275pt x 128.48pt>
+File: ./chapter07/FigHw/Prob7-14.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-14.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-14.pdf  used on input line 646
+.
+(pdftex.def)             Requested size: 275.02682pt x 128.47968pt.
+
+
+[141 <./chapter07/FigHw/Prob7-13.pdf> <./chapter07/FigHw/Prob7-14.pdf>]
+<./chapter07/FigHw/Prob7-15.pdf, id=3625, 266.9975pt x 182.6825pt>
+File: ./chapter07/FigHw/Prob7-15.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-15.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-15.pdf  used on input line 777
+.
+(pdftex.def)             Requested size: 266.99683pt x 182.68204pt.
+
+
+[142]
+<./chapter07/FigHw/Prob7-16.pdf, id=3633, 161.60374pt x 148.555pt>
+File: ./chapter07/FigHw/Prob7-16.pdf Graphic file (type pdf)
+<use ./chapter07/FigHw/Prob7-16.pdf>
+Package pdftex.def Info: ./chapter07/FigHw/Prob7-16.pdf  used on input line 834
+.
+(pdftex.def)             Requested size: 161.60335pt x 148.55463pt.
+
+
+[143 <./chapter07/FigHw/Prob7-15.pdf>]
+
+[144 <./chapter07/FigHw/Prob7-16.pdf>])
+
+[145]
+\openout2 = `./chapter08/chapter8.aux'.
+
+ (chapter08/chapter8.tex
+
+[146
+
+
+
+
+]
+
+LaTeX Warning: Reference `fig:datapathControlAsys' on page 147 undefined on inp
+ut line 15.
+
+<./chapter08/Fig/Abstract.pdf, id=3664, 466.74374pt x 114.4275pt>
+File: ./chapter08/Fig/Abstract.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/Abstract.pdf>
+Package pdftex.def Info: ./chapter08/Fig/Abstract.pdf  used on input line 21.
+(pdftex.def)             Requested size: 466.7426pt x 114.42722pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[147 <./chapter08/Fig/Abstract.pdf>]
+
+[148]
+<./chapter08/Fig/IfThen.pdf, id=3685, 191.71625pt x 137.51375pt>
+File: ./chapter08/Fig/IfThen.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/IfThen.pdf>
+Package pdftex.def Info: ./chapter08/Fig/IfThen.pdf  used on input line 132.
+(pdftex.def)             Requested size: 191.71577pt x 137.51341pt.
+
+
+[149 <./chapter08/Fig/IfThen.pdf>]
+<./chapter08/Fig/For.pdf, id=3700, 209.78375pt x 128.48pt>
+File: ./chapter08/Fig/For.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/For.pdf>
+Package pdftex.def Info: ./chapter08/Fig/For.pdf  used on input line 174.
+(pdftex.def)             Requested size: 209.78322pt x 128.47968pt.
+<./chapter08/Fig/While.pdf, id=3704, 209.78375pt x 128.48pt>
+File: ./chapter08/Fig/While.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/While.pdf>
+Package pdftex.def Info: ./chapter08/Fig/While.pdf  used on input line 201.
+(pdftex.def)             Requested size: 209.78322pt x 128.47968pt.
+
+
+[150 <./chapter08/Fig/For.pdf> <./chapter08/Fig/While.pdf>]
+<./chapter08/Fig/Op.pdf, id=3723, 200.75pt x 141.52875pt>
+File: ./chapter08/Fig/Op.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/Op.pdf>
+Package pdftex.def Info: ./chapter08/Fig/Op.pdf  used on input line 237.
+(pdftex.def)             Requested size: 200.7495pt x 141.5284pt.
+<./chapter08/Fig/2Source.pdf, id=3725, 240.9pt x 137.51375pt>
+File: ./chapter08/Fig/2Source.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/2Source.pdf>
+Package pdftex.def Info: ./chapter08/Fig/2Source.pdf  used on input line 264.
+(pdftex.def)             Requested size: 240.8994pt x 137.51341pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[151 <./chapter08/Fig/Op.pdf>]
+
+[152 <./chapter08/Fig/2Source.pdf>]
+
+[153]
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch.pdf, id=3786, 625.96059pt x 284.52759pt>
+File: ./chapter08/Fig/MinSearch.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch.pdf  used on input line 439.
+
+(pdftex.def)             Requested size: 625.95905pt x 284.52689pt.
+
+Overfull \hbox (28.63939pt too wide) in paragraph at lines 439--441
+ [] 
+ []
+
+
+
+[154 <./chapter08/Fig/MinSearch.pdf>]
+
+[155]
+
+[156]
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch2a.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch2a.pdf, id=3824, 625.96059pt x 341.43309pt>
+File: ./chapter08/Fig/MinSearch2a.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2a.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2a.pdf  used on input line 60
+9.
+(pdftex.def)             Requested size: 625.95905pt x 341.43224pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch2e.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch2e.pdf, id=3825, 625.96059pt x 341.43309pt>
+File: ./chapter08/Fig/MinSearch2e.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2e.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2e.pdf  used on input line 61
+0.
+(pdftex.def)             Requested size: 625.95905pt x 341.43224pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch2b.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch2b.pdf, id=3826, 625.96059pt x 341.43309pt>
+File: ./chapter08/Fig/MinSearch2b.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2b.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2b.pdf  used on input line 61
+2.
+(pdftex.def)             Requested size: 625.95905pt x 341.43224pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch2f.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch2f.pdf, id=3827, 625.96059pt x 341.43309pt>
+File: ./chapter08/Fig/MinSearch2f.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2f.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2f.pdf  used on input line 61
+3.
+(pdftex.def)             Requested size: 625.95905pt x 341.43224pt.
+<./chapter08/Fig/MinSearch2c.pdf, id=3828, 598.235pt x 291.0875pt>
+File: ./chapter08/Fig/MinSearch2c.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2c.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2c.pdf  used on input line 61
+5.
+(pdftex.def)             Requested size: 598.23354pt x 291.08678pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch2g.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch2g.pdf, id=3829, 625.96059pt x 341.43309pt>
+File: ./chapter08/Fig/MinSearch2g.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2g.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2g.pdf  used on input line 61
+6.
+(pdftex.def)             Requested size: 625.95905pt x 341.43224pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch2d.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch2d.pdf, id=3830, 625.96059pt x 341.43309pt>
+File: ./chapter08/Fig/MinSearch2d.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2d.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2d.pdf  used on input line 61
+8.
+(pdftex.def)             Requested size: 625.95905pt x 341.43224pt.
+
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/MinSearch2h.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/MinSearch2h.pdf, id=3831, 625.96059pt x 341.43309pt>
+File: ./chapter08/Fig/MinSearch2h.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/MinSearch2h.pdf>
+Package pdftex.def Info: ./chapter08/Fig/MinSearch2h.pdf  used on input line 61
+9.
+(pdftex.def)             Requested size: 625.95905pt x 341.43224pt.
+
+LaTeX Warning: Reference `fig:datapathControlGenTime' on page 157 undefined on 
+input line 642.
+
+
+LaTeX Warning: Reference `fig:datapathControlGenFSM' on page 157 undefined on i
+nput line 659.
+
+
+LaTeX Warning: Reference `fig:datapathControlGenFSM' on page 157 undefined on i
+nput line 680.
+
+<./chapter08/Fig/DPTime.pdf, id=3840, 326.21875pt x 73.27374pt>
+File: ./chapter08/Fig/DPTime.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/DPTime.pdf>
+Package pdftex.def Info: ./chapter08/Fig/DPTime.pdf  used on input line 690.
+(pdftex.def)             Requested size: 326.21794pt x 73.27354pt.
+
+
+[157]
+
+[158 <./chapter08/Fig/MinSearch2a.pdf> <./chapter08/Fig/MinSearch2e.pdf> <./cha
+pter08/Fig/MinSearch2b.pdf> <./chapter08/Fig/MinSearch2f.pdf> <./chapter08/Fig/
+MinSearch2c.pdf> <./chapter08/Fig/MinSearch2g.pdf> <./chapter08/Fig/MinSearch2d
+.pdf> <./chapter08/Fig/MinSearch2h.pdf>]
+<./chapter08/Fig/Branch.pdf, id=3975, 452.69125pt x 140.525pt>
+File: ./chapter08/Fig/Branch.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/Branch.pdf>
+Package pdftex.def Info: ./chapter08/Fig/Branch.pdf  used on input line 746.
+(pdftex.def)             Requested size: 452.69014pt x 140.52464pt.
+
+
+[159 <./chapter08/Fig/DPTime.pdf> <./chapter08/Fig/Branch.pdf>]
+<./chapter08/Fig/ProdConTime.pdf, id=3994, 249.93375pt x 124.465pt>
+File: ./chapter08/Fig/ProdConTime.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/ProdConTime.pdf>
+Package pdftex.def Info: ./chapter08/Fig/ProdConTime.pdf  used on input line 80
+8.
+(pdftex.def)             Requested size: 249.93314pt x 124.46469pt.
+
+
+[160 <./chapter08/Fig/ProdConTime.pdf>]
+<./chapter08/Fig/2Line.pdf, id=4011, 309.155pt x 266.9975pt>
+File: ./chapter08/Fig/2Line.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/2Line.pdf>
+Package pdftex.def Info: ./chapter08/Fig/2Line.pdf  used on input line 841.
+(pdftex.def)             Requested size: 309.15424pt x 266.99683pt.
+
+
+[161 <./chapter08/Fig/2Line.pdf>]
+
+[162]
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/RAMmatch.pdf): PDF inclusion: fo
+und PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/RAMmatch.pdf, id=4030, 739.77165pt x 284.52759pt>
+File: ./chapter08/Fig/RAMmatch.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/RAMmatch.pdf>
+Package pdftex.def Info: ./chapter08/Fig/RAMmatch.pdf  used on input line 948.
+(pdftex.def)             Requested size: 739.76984pt x 284.52689pt.
+
+Underfull \vbox (badness 6412) has occurred while \output is active []
+
+
+
+[163 <./chapter08/Fig/RAMmatch.pdf>]
+<./chapter08/Fig/Keyboard.pdf, id=4055, 457.71pt x 119.44624pt>
+File: ./chapter08/Fig/Keyboard.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/Keyboard.pdf>
+Package pdftex.def Info: ./chapter08/Fig/Keyboard.pdf  used on input line 1052.
+
+(pdftex.def)             Requested size: 457.7089pt x 119.44594pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1067--1087
+
+ []
+
+
+Underfull \vbox (badness 2318) has occurred while \output is active []
+
+
+
+[164]
+
+[165 <./chapter08/Fig/Keyboard.pdf>]
+<./chapter08/Fig/Kbscan.pdf, id=4077, 512.91624pt x 263.98625pt>
+File: ./chapter08/Fig/Kbscan.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/Kbscan.pdf>
+Package pdftex.def Info: ./chapter08/Fig/Kbscan.pdf  used on input line 1149.
+(pdftex.def)             Requested size: 512.915pt x 263.9856pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[166 <./chapter08/Fig/Kbscan.pdf>]
+<./chapter08/Fig/Behavior.pdf, id=4091, 185.69376pt x 109.40875pt>
+File: ./chapter08/Fig/Behavior.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/Behavior.pdf>
+Package pdftex.def Info: ./chapter08/Fig/Behavior.pdf  used on input line 1198.
+
+(pdftex.def)             Requested size: 185.6933pt x 109.40846pt.
+
+
+[167 <./chapter08/Fig/Behavior.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[168]
+Overfull \hbox (8.11986pt too wide) in paragraph at lines 1320--1324
+[] \OT1/cmr/bx/n/10 Line 6. \OT1/cmr/m/n/10 The LED bar-graph dis-plays two dif
+-fer-ent val-ues on its out-put, 0x00 and RAM[index],
+ []
+
+
+
+[169]
+
+[170]
+
+pdfTeX warning: pdflatex (file ./chapter08/Fig/LightShowCir.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapter08/Fig/LightShowCir.pdf, id=4124, 739.77165pt x 341.43309pt>
+File: ./chapter08/Fig/LightShowCir.pdf Graphic file (type pdf)
+<use ./chapter08/Fig/LightShowCir.pdf>
+Package pdftex.def Info: ./chapter08/Fig/LightShowCir.pdf  used on input line 1
+441.
+(pdftex.def)             Requested size: 739.76984pt x 341.43224pt.
+
+Overfull \hbox (34.33638pt too wide) in paragraph at lines 1441--1442
+ [] 
+ []
+
+
+Overfull \hbox (7.31653pt too wide) in paragraph at lines 1456--1482
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1456--1482
+
+ []
+
+)
+
+[171 <./chapter08/Fig/LightShowCir.pdf>]
+
+[172]
+\openout2 = `./chapter08/hw8.aux'.
+
+ (chapter08/hw8.tex
+
+[173
+
+
+
+]
+<./chapter08/FigHw/Prob8-7.pdf, id=4167, 169.63374pt x 146.5475pt>
+File: ./chapter08/FigHw/Prob8-7.pdf Graphic file (type pdf)
+<use ./chapter08/FigHw/Prob8-7.pdf>
+Package pdftex.def Info: ./chapter08/FigHw/Prob8-7.pdf  used on input line 165.
+
+(pdftex.def)             Requested size: 169.63332pt x 146.54712pt.
+<./chapter08/FigHw/Prob8-8.pdf, id=4169, 169.63374pt x 146.5475pt>
+File: ./chapter08/FigHw/Prob8-8.pdf Graphic file (type pdf)
+<use ./chapter08/FigHw/Prob8-8.pdf>
+Package pdftex.def Info: ./chapter08/FigHw/Prob8-8.pdf  used on input line 191.
+
+(pdftex.def)             Requested size: 169.63332pt x 146.54712pt.
+
+
+[174 <./chapter08/FigHw/Prob8-7.pdf>]
+
+[175 <./chapter08/FigHw/Prob8-8.pdf>]
+<./chapter08/FigHw/Prob8-14.pdf, id=4202, 283.0575pt x 181.67876pt>
+File: ./chapter08/FigHw/Prob8-14.pdf Graphic file (type pdf)
+<use ./chapter08/FigHw/Prob8-14.pdf>
+Package pdftex.def Info: ./chapter08/FigHw/Prob8-14.pdf  used on input line 389
+.
+(pdftex.def)             Requested size: 283.0568pt x 181.6783pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[176 <./chapter08/FigHw/Prob8-14.pdf>]
+<./chapter08/FigHw/Prob8-14b.pdf, id=4215, 185.69376pt x 194.7275pt>
+File: ./chapter08/FigHw/Prob8-14b.pdf Graphic file (type pdf)
+<use ./chapter08/FigHw/Prob8-14b.pdf>
+Package pdftex.def Info: ./chapter08/FigHw/Prob8-14b.pdf  used on input line 43
+5.
+(pdftex.def)             Requested size: 185.6933pt x 194.727pt.
+
+
+[177 <./chapter08/FigHw/Prob8-14b.pdf>]
+<./chapter08/FigHw/Prob8-16.pdf, id=4231, 119.44624pt x 155.58125pt>
+File: ./chapter08/FigHw/Prob8-16.pdf Graphic file (type pdf)
+<use ./chapter08/FigHw/Prob8-16.pdf>
+Package pdftex.def Info: ./chapter08/FigHw/Prob8-16.pdf  used on input line 477
+.
+(pdftex.def)             Requested size: 119.44594pt x 155.58086pt.
+<./chapter08/FigHw/Prob8-17.pdf, id=4233, 218.8175pt x 236.885pt>
+File: ./chapter08/FigHw/Prob8-17.pdf Graphic file (type pdf)
+<use ./chapter08/FigHw/Prob8-17.pdf>
+Package pdftex.def Info: ./chapter08/FigHw/Prob8-17.pdf  used on input line 497
+.
+(pdftex.def)             Requested size: 218.81696pt x 236.88441pt.
+
+
+[178 <./chapter08/FigHw/Prob8-16.pdf>]
+
+[179 <./chapter08/FigHw/Prob8-17.pdf>])
+
+[180]
+\openout2 = `./chapter09/chapter9.aux'.
+
+ (chapter09/chapter9.tex
+
+[181
+
+
+
+
+]
+<./chapter09/Fig/vih.pdf, id=4276, 51.19125pt x 26.0975pt>
+File: ./chapter09/Fig/vih.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/vih.pdf>
+Package pdftex.def Info: ./chapter09/Fig/vih.pdf  used on input line 95.
+(pdftex.def)             Requested size: 51.19112pt x 26.09743pt.
+<./chapter09/Fig/vil.pdf, id=4277, 46.1725pt x 24.09pt>
+File: ./chapter09/Fig/vil.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/vil.pdf>
+Package pdftex.def Info: ./chapter09/Fig/vil.pdf  used on input line 96.
+(pdftex.def)             Requested size: 46.17236pt x 24.08992pt.
+<./chapter09/Fig/ioh.pdf, id=4278, 55.20625pt x 23.08626pt>
+File: ./chapter09/Fig/ioh.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/ioh.pdf>
+Package pdftex.def Info: ./chapter09/Fig/ioh.pdf  used on input line 97.
+(pdftex.def)             Requested size: 55.2061pt x 23.08618pt.
+<./chapter09/Fig/iol.pdf, id=4279, 51.19125pt x 27.10126pt>
+File: ./chapter09/Fig/iol.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/iol.pdf>
+Package pdftex.def Info: ./chapter09/Fig/iol.pdf  used on input line 98.
+(pdftex.def)             Requested size: 51.19112pt x 27.10118pt.
+<./chapter09/Fig/voh.pdf, id=4280, 55.20625pt x 23.08626pt>
+File: ./chapter09/Fig/voh.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/voh.pdf>
+Package pdftex.def Info: ./chapter09/Fig/voh.pdf  used on input line 130.
+(pdftex.def)             Requested size: 55.2061pt x 23.08618pt.
+<./chapter09/Fig/vol.pdf, id=4281, 49.18375pt x 27.10126pt>
+File: ./chapter09/Fig/vol.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/vol.pdf>
+Package pdftex.def Info: ./chapter09/Fig/vol.pdf  used on input line 131.
+(pdftex.def)             Requested size: 49.18361pt x 27.10118pt.
+<./chapter09/Fig/iih.pdf, id=4282, 55.20625pt x 33.12375pt>
+File: ./chapter09/Fig/iih.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/iih.pdf>
+Package pdftex.def Info: ./chapter09/Fig/iih.pdf  used on input line 132.
+(pdftex.def)             Requested size: 55.2061pt x 33.12366pt.
+<./chapter09/Fig/iil.pdf, id=4283, 55.20625pt x 32.12pt>
+File: ./chapter09/Fig/iil.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/iil.pdf>
+Package pdftex.def Info: ./chapter09/Fig/iil.pdf  used on input line 133.
+(pdftex.def)             Requested size: 55.2061pt x 32.1199pt.
+
+
+[182 <./chapter09/Fig/vih.pdf> <./chapter09/Fig/vil.pdf
+
+pdfTeX warning: pdflatex (file ./chapter09/Fig/vil.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./chapter09/Fig/ioh.pdf
+
+pdfTeX warning: pdflatex (file ./chapter09/Fig/ioh.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./chapter09/Fig/iol.pdf
+
+pdfTeX warning: pdflatex (file ./chapter09/Fig/iol.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+<./chapter09/Fig/cascade.pdf, id=4324, 110.4125pt x 29.10875pt>
+File: ./chapter09/Fig/cascade.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/cascade.pdf>
+Package pdftex.def Info: ./chapter09/Fig/cascade.pdf  used on input line 164.
+(pdftex.def)             Requested size: 110.41222pt x 29.10867pt.
+
+
+[183 <./chapter09/Fig/voh.pdf> <./chapter09/Fig/vol.pdf
+
+pdfTeX warning: pdflatex (file ./chapter09/Fig/vol.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./chapter09/Fig/iih.pdf
+
+pdfTeX warning: pdflatex (file ./chapter09/Fig/iih.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./chapter09/Fig/iil.pdf
+
+pdfTeX warning: pdflatex (file ./chapter09/Fig/iil.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./chapter09/Fig/cascade.pdf
+
+pdfTeX warning: pdflatex (file ./chapter09/Fig/cascade.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>]
+<./chapter09/Fig/impedance.pdf, id=4371, 74.2775pt x 58.2175pt>
+File: ./chapter09/Fig/impedance.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/impedance.pdf>
+Package pdftex.def Info: ./chapter09/Fig/impedance.pdf  used on input line 234.
+
+(pdftex.def)             Requested size: 74.27731pt x 58.21735pt.
+
+
+[184 <./chapter09/Fig/impedance.pdf>]
+<./chapter09/Fig/transistor.pdf, id=4393, 110.4125pt x 92.345pt>
+File: ./chapter09/Fig/transistor.pdf Graphic file (type pdf)
+<use ./chapter09/Fig/transistor.pdf>
+Package pdftex.def Info: ./chapter09/Fig/transistor.pdf  used on input line 291
+.
+(pdftex.def)             Requested size: 110.41222pt x 92.34476pt.
+)
+
+[185 <./chapter09/Fig/transistor.pdf>]
+\openout2 = `./chapter09/hw9.aux'.
+
+ (chapter09/hw9.tex)
+
+[186
+
+
+
+]
+\openout2 = `./chapter10/chapter10.aux'.
+
+ (chapter10/chapter10.tex
+Package mdframed Info: mdframed works in twoside mode on input line 16.
+<./chapter10/Fig/pushbutton.pdf, id=4429, 133.49875pt x 41.15375pt>
+File: ./chapter10/Fig/pushbutton.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/pushbutton.pdf>
+Package pdftex.def Info: ./chapter10/Fig/pushbutton.pdf  used on input line 43.
+
+(pdftex.def)             Requested size: 133.4984pt x 41.15364pt.
+
+
+[187
+
+
+
+
+]
+<./chapter10/Fig/bounce.pdf, id=4437, 167.62625pt x 85.31876pt>
+File: ./chapter10/Fig/bounce.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/bounce.pdf>
+Package pdftex.def Info: ./chapter10/Fig/bounce.pdf  used on input line 72.
+(pdftex.def)             Requested size: 167.62582pt x 85.31853pt.
+<./chapter10/Fig/pushbutton_dp.pdf, id=4439, 241.90376pt x 95.35626pt>
+File: ./chapter10/Fig/pushbutton_dp.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/pushbutton_dp.pdf>
+Package pdftex.def Info: ./chapter10/Fig/pushbutton_dp.pdf  used on input line 
+103.
+(pdftex.def)             Requested size: 241.90317pt x 95.35602pt.
+<./chapter10/Fig/pushfsm.pdf, id=4441, 249.93375pt x 63.23625pt>
+File: ./chapter10/Fig/pushfsm.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/pushfsm.pdf>
+Package pdftex.def Info: ./chapter10/Fig/pushfsm.pdf  used on input line 117.
+(pdftex.def)             Requested size: 249.93314pt x 63.23608pt.
+
+
+[188 <./chapter10/Fig/pushbutton.pdf> <./chapter10/Fig/bounce.pdf
+
+pdfTeX warning: pdflatex (file ./chapter10/Fig/bounce.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>]
+Package mdframed Info: mdframed works in twoside mode on input line 159.
+
+
+[189 <./chapter10/Fig/pushbutton_dp.pdf> <./chapter10/Fig/pushfsm.pdf
+
+pdfTeX warning: pdflatex (file ./chapter10/Fig/pushfsm.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>]
+<./chapter10/Fig/tsb.pdf, id=4566, 114.4275pt x 51.19125pt>
+File: ./chapter10/Fig/tsb.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/tsb.pdf>
+Package pdftex.def Info: ./chapter10/Fig/tsb.pdf  used on input line 186.
+(pdftex.def)             Requested size: 5.69052pt x 5.69052pt.
+<./chapter10/Fig/bus.pdf, id=4569, 363.3575pt x 69.25874pt>
+File: ./chapter10/Fig/bus.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/bus.pdf>
+Package pdftex.def Info: ./chapter10/Fig/bus.pdf  used on input line 239.
+(pdftex.def)             Requested size: 363.3566pt x 69.25856pt.
+Package mdframed Info: mdframed works in twoside mode on input line 258.
+
+Underfull \hbox (badness 1043) in paragraph at lines 268--271
+[]|\OT1/cmr/m/n/10 When the en-coders know is ro-tated clock-wise (CW)
+ []
+
+
+Underfull \hbox (badness 7963) in paragraph at lines 268--271
+\OT1/cmr/m/n/10 the vec-tor $\OML/cmm/m/it/10 A$ \OT1/cmr/m/n/10 pro-duces an i
+n-creas-ing gray code
+ []
+
+
+
+[190 <./chapter10/Fig/tsb.pdf>]
+Package mdframed Info: Not enough space on this page on input line 273.
+<./chapter10/Fig/encoder.pdf, id=4585, 272.01625pt x 127.47626pt>
+File: ./chapter10/Fig/encoder.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/encoder.pdf>
+Package pdftex.def Info: ./chapter10/Fig/encoder.pdf  used on input line 289.
+(pdftex.def)             Requested size: 272.01558pt x 127.47594pt.
+
+
+[191 <./chapter10/Fig/bus.pdf> <./chapter10/Fig/encoder.pdf
+
+pdfTeX warning: pdflatex (file ./chapter10/Fig/encoder.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>]
+Package mdframed Info: mdframed works in twoside mode on input line 309.
+<./chapter10/Fig/keyboard.pdf, id=4657, 457.71pt x 119.44626pt>
+File: ./chapter10/Fig/keyboard.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/keyboard.pdf>
+Package pdftex.def Info: ./chapter10/Fig/keyboard.pdf  used on input line 337.
+(pdftex.def)             Requested size: 457.7089pt x 119.44595pt.
+
+
+[192 <./chapter10/Fig/keyboard.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 409.
+
+
+[193]
+<./chapter10/Fig/keypad.pdf, id=4691, 222.8325pt x 96.36pt>
+File: ./chapter10/Fig/keypad.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/keypad.pdf>
+Package pdftex.def Info: ./chapter10/Fig/keypad.pdf  used on input line 435.
+(pdftex.def)             Requested size: 222.83195pt x 96.35974pt.
+Package mdframed Info: mdframed works in twoside mode on input line 454.
+
+
+[194 <./chapter10/Fig/keypad.pdf>]
+<./chapter10/Fig/led.pdf, id=4731, 261.97874pt x 109.40875pt>
+File: ./chapter10/Fig/led.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/led.pdf>
+Package pdftex.def Info: ./chapter10/Fig/led.pdf  used on input line 488.
+(pdftex.def)             Requested size: 261.9781pt x 109.40846pt.
+
+
+[195 <./chapter10/Fig/led.pdf>]
+<./chapter10/Fig/pulse.pdf, id=4765, 286.06876pt x 74.2775pt>
+File: ./chapter10/Fig/pulse.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/pulse.pdf>
+Package pdftex.def Info: ./chapter10/Fig/pulse.pdf  used on input line 555.
+(pdftex.def)             Requested size: 286.06805pt x 74.27731pt.
+Package mdframed Info: mdframed works in twoside mode on input line 573.
+
+
+[196 <./chapter10/Fig/pulse.pdf>]
+Package mdframed Info: Not enough space on this page on input line 586.
+<./chapter10/Fig/alpha.pdf, id=4793, 343.2825pt x 119.44626pt>
+File: ./chapter10/Fig/alpha.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/alpha.pdf>
+Package pdftex.def Info: ./chapter10/Fig/alpha.pdf  used on input line 597.
+(pdftex.def)             Requested size: 343.28165pt x 119.44595pt.
+<./chapter10/Fig/common.pdf, id=4795, 227.85126pt x 41.15375pt>
+File: ./chapter10/Fig/common.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/common.pdf>
+Package pdftex.def Info: ./chapter10/Fig/common.pdf  used on input line 617.
+(pdftex.def)             Requested size: 227.8507pt x 41.15364pt.
+
+Underfull \vbox (badness 2213) has occurred while \output is active []
+
+
+
+[197 <./chapter10/Fig/alpha.pdf> <./chapter10/Fig/common.pdf
+
+pdfTeX warning: pdflatex (file ./chapter10/Fig/common.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>]
+Package mdframed Info: mdframed works in twoside mode on input line 632.
+<./chapter10/Fig/ultra.pdf, id=4819, 217.81377pt x 83.31126pt>
+File: ./chapter10/Fig/ultra.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/ultra.pdf>
+Package pdftex.def Info: ./chapter10/Fig/ultra.pdf  used on input line 660.
+(pdftex.def)             Requested size: 217.81322pt x 83.31105pt.
+
+
+[198 <./chapter10/Fig/ultra.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 698.
+<./chapter10/Fig/hbridge.pdf, id=4843, 358.33875pt x 118.4425pt>
+File: ./chapter10/Fig/hbridge.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/hbridge.pdf>
+Package pdftex.def Info: ./chapter10/Fig/hbridge.pdf  used on input line 747.
+(pdftex.def)             Requested size: 358.33788pt x 118.4422pt.
+
+
+[199]
+Package mdframed Info: mdframed works in twoside mode on input line 772.
+<./chapter10/Fig/stepper.pdf, id=4851, 124.465pt x 106.3975pt>
+File: ./chapter10/Fig/stepper.pdf Graphic file (type pdf)
+<use ./chapter10/Fig/stepper.pdf>
+Package pdftex.def Info: ./chapter10/Fig/stepper.pdf  used on input line 802.
+(pdftex.def)             Requested size: 124.46469pt x 106.39723pt.
+
+
+Package caption Warning: \label without proper reference on input line 830.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `table:stepper' on page 200 undefined on input line 81
+9.
+
+
+
+[200 <./chapter10/Fig/hbridge.pdf>]
+
+Package caption Warning: \label without proper reference on input line 830.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `table:stepper' on page 201 undefined on input line 84
+0.
+
+Package mdframed Info: mdframed works in twoside mode on input line 849.
+
+
+[201 <./chapter10/Fig/stepper.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 893.
+
+
+[202]
+Package mdframed Info: mdframed works in twoside mode on input line 940.
+
+
+[203]
+Package mdframed Info: mdframed works in twoside mode on input line 996.
+
+
+[204])
+
+[205]
+\openout2 = `./chapter10/hw10.aux'.
+
+ (chapter10/hw10.tex
+
+LaTeX Warning: Reference `fig:pushbutton' on page 206 undefined on input line 9
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--47
+
+ []
+
+
+
+[206
+
+
+
+]
+<./chapter10/FigHw/Prob10-4.pdf, id=4961, 327.2225pt x 227.85126pt>
+File: ./chapter10/FigHw/Prob10-4.pdf Graphic file (type pdf)
+<use ./chapter10/FigHw/Prob10-4.pdf>
+Package pdftex.def Info: ./chapter10/FigHw/Prob10-4.pdf  used on input line 117
+.
+(pdftex.def)             Requested size: 327.2217pt x 227.8507pt.
+
+
+[207 <./chapter10/FigHw/Prob10-4.pdf>]
+<./chapter10/FigHw/Prob10-4b.pdf, id=4978, 202.7575pt x 154.5775pt>
+File: ./chapter10/FigHw/Prob10-4b.pdf Graphic file (type pdf)
+<use ./chapter10/FigHw/Prob10-4b.pdf>
+Package pdftex.def Info: ./chapter10/FigHw/Prob10-4b.pdf  used on input line 15
+3.
+(pdftex.def)             Requested size: 202.757pt x 154.5771pt.
+
+
+[208 <./chapter10/FigHw/Prob10-4b.pdf>]
+<./chapter10/FigHw/Prob10-6.pdf, id=4995, 163.61125pt x 101.37875pt>
+File: ./chapter10/FigHw/Prob10-6.pdf Graphic file (type pdf)
+<use ./chapter10/FigHw/Prob10-6.pdf>
+Package pdftex.def Info: ./chapter10/FigHw/Prob10-6.pdf  used on input line 239
+.
+(pdftex.def)             Requested size: 163.61084pt x 101.3785pt.
+
+
+[209 <./chapter10/FigHw/Prob10-6.pdf>]
+<./chapter10/FigHw/Prob10-6b.pdf, id=5009, 452.69125pt x 195.73125pt>
+File: ./chapter10/FigHw/Prob10-6b.pdf Graphic file (type pdf)
+<use ./chapter10/FigHw/Prob10-6b.pdf>
+Package pdftex.def Info: ./chapter10/FigHw/Prob10-6b.pdf  used on input line 27
+5.
+(pdftex.def)             Requested size: 452.69014pt x 195.73076pt.
+<./chapter10/FigHw/Prob10-6c.pdf, id=5010, 304.13625pt x 177.66376pt>
+File: ./chapter10/FigHw/Prob10-6c.pdf Graphic file (type pdf)
+<use ./chapter10/FigHw/Prob10-6c.pdf>
+Package pdftex.def Info: ./chapter10/FigHw/Prob10-6c.pdf  used on input line 30
+5.
+(pdftex.def)             Requested size: 304.1355pt x 177.66331pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[210 <./chapter10/FigHw/Prob10-6b.pdf>]
+
+[211 <./chapter10/FigHw/Prob10-6c.pdf>])
+
+[212]
+\openout2 = `./chapter11/chapter11.aux'.
+
+ (chapter11/chapter11.tex
+
+[213
+
+
+
+
+]
+
+[214]
+
+[215]
+
+[216]
+Overfull \hbox (8.68178pt too wide) in paragraph at lines 325--369
+[][] 
+ []
+
+
+Underfull \vbox (badness 1264) has occurred while \output is active []
+
+
+
+[217]
+
+[218]
+Underfull \vbox (badness 1577) has occurred while \output is active []
+
+
+
+[219]
+
+[220]
+
+[221])
+
+[222]
+\openout2 = `./chapter11/hw11.aux'.
+
+
+No file ./chapter11/hw11.tex.
+\openout2 = `appendix.aux'.
+
+(appendix.tex)
+
+[223
+
+
+
+
+
+
+
+]
+
+[224
 
 
 
@@ -1562,8 +3877,11 @@ Overfull \hbox (0.33406pt too wide) in alignment at lines 58--126
 runsystem(makeindex "Digital Design Textbook".idx)...quotation error in system 
 command.
 
+ (Digital Design Textbook.ind [225
 
-No file "Digital Design Textbook".ind.
+])
+
+[226]
 \tf@toc=\write10
 \openout10 = `"Digital Design Textbook.toc"'.
 
@@ -1573,36 +3891,71 @@ No file "Digital Design Textbook".ind.
 \tf@lobb=\write12
 \openout12 = `"Digital Design Textbook.lobb"'.
 
-(Digital Design Textbook.aux (copyright.aux) (chapter00/chapter0.aux)
+ (Digital Design Textbook.aux (copyright.aux) (chapter01/chapter1.aux)
+(chapter01/hw1.aux) (chapter02/chapter2.aux) (chapter02/hw2.aux)
+(chapter03/chapter3.aux) (chapter03/hw3.aux) (chapter04/chapter4.aux)
+(chapter04/hw4.aux) (chapter05/chapter5.aux) (chapter05/hw5.aux)
+(chapter06/chapter6.aux) (chapter06/hw6.aux) (chapter07/chapter7.aux)
+(chapter07/hw7.aux) (chapter08/chapter8.aux) (chapter08/hw8.aux)
+(chapter09/chapter9.aux) (chapter09/hw9.aux) (chapter10/chapter10.aux)
+(chapter10/hw10.aux) (chapter11/chapter11.aux) (chapter11/hw11.aux)
 (appendix.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `"Digital Design Textbook".out' has not chang
 ed.
-(rerunfilecheck)             Checksum: 4B815CDE83CEAAA653332352B4165F0A;760.
+(rerunfilecheck)             Checksum: 2A3A72E009E5FA9ED36560BF8FFBFC4A;14541.
  ) 
 Here is how much of TeX's memory you used:
- 28060 strings out of 473904
- 515045 string characters out of 5725185
- 1982908 words of memory out of 5000000
- 50399 multiletter control sequences out of 15000+600000
- 568793 words of font info for 76 fonts, out of 8000000 for 9000
+ 31536 strings out of 473904
+ 604698 string characters out of 5725185
+ 2003908 words of memory out of 5000000
+ 52839 multiletter control sequences out of 15000+600000
+ 572118 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 91i,11n,136p,635b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 91i,26n,136p,635b,811s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\coulston\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\t
 crm1000.pk><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/coulston/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/coulston/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/coulston/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/c
-oulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb
->
-Output written on "Digital Design Textbook.pdf" (12 pages, 149132 bytes).
+KTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/coulston/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/coulston/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/c
+oulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb
+><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+mextra/cmex7.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/coulston/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/coulston/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/coulsto
+n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Us
+ers/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr5.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/coulston/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/coulston/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/coulston/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/cou
+lston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><
+C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy5.pfb><C:/Users/coulston/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb><C:/Users/coulston/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/coulston/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/coulston/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/c
+oulston/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+
+Output written on "Digital Design Textbook.pdf" (234 pages, 7883181 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5534 PDF objects out of 6186 (max. 8388607)
+ 883 named destinations out of 1000 (max. 500000)
+ 1632 words of extra memory for PDF output out of 10000 (max. 10000000)
 

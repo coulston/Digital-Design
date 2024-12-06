@@ -1,0 +1,166 @@
+\begin{theindex}
+
+  \item active high, \hyperpage{195}
+  \item active low, \hyperpage{195}
+  \item adder, \hyperpage{70--72}
+  \item adder subtractor, \hyperpage{72--73}
+  \item alphanumeric display, \hyperpage{196}
+
+  \indexspace
+
+  \item bcd to 7-segment, \hyperpage{79}
+  \item bit-slice, \hyperpage{5}, \hyperpage{71}
+  \item Boolean variable, \hyperpage{1}
+  \item bus, \hyperpage{190}
+  \item bus transceiver, \hyperpage{206}
+
+  \indexspace
+
+  \item cascade configuration, \hyperpage{183}
+  \item clocked latch, \hyperpage{88}
+  \item common anode, \hyperpage{197}
+  \item common cathode, \hyperpage{197}
+  \item comparator, \hyperpage{74--76}
+    \subitem truth table, \hyperpage{74}
+  \item counter, \hyperpage{106--107}
+  \item crt, \hyperpage{204}
+
+  \indexspace
+
+  \item decoder, \hyperpage{66--67}
+  \item Doughnut
+    \subitem Hyper, \hyperpage{49}
+    \subitem Ultra, \hyperpage{50}
+  \item doughnut, \hyperpage{45}, \hyperpage{47}
+    \subitem Texas, \hyperpage{48}
+  \item duality principle, \hyperpage{24}
+
+  \indexspace
+
+  \item edge sensitive, \hyperpage{89}
+  \item expression, \hyperpage{22}
+  \item expression:child expression, \hyperpage{22}
+  \item expression:parent, \hyperpage{22}
+
+  \indexspace
+
+  \item fan out, \hyperpage{184}
+  \item flip flop, \hyperpage{88}
+    \subitem asynchronous set, reset, \hyperpage{96}
+    \subitem propagation delay, \hyperpage{95}
+
+  \indexspace
+
+  \item gray code, \hyperpage{191}
+
+  \indexspace
+
+  \item hold time, \hyperpage{95}
+
+  \indexspace
+
+  \item implement, \hyperpage{21}
+  \item Implicant, \hyperpage{48}
+    \subitem Essential Prime, \hyperpage{48}
+    \subitem Prime, \hyperpage{48}
+
+  \indexspace
+
+  \item keyboard, \hyperpage{192}
+  \item keypad, \hyperpage{193}
+
+  \indexspace
+
+  \item latch, \hyperpage{88}
+    \subitem bad, \hyperpage{95}
+    \subitem silly, \hyperpage{95}
+    \subitem SR, \hyperpage{92--94}
+  \item LCD, \hyperpage{202}
+  \item leaf, \hyperpage{23}
+  \item led, \hyperpage{194}
+
+  \indexspace
+
+  \item maxterm
+    \subitem definition, \hyperpage{31}
+  \item minterm
+    \subitem definition, \hyperpage{29}
+  \item modular adder, \hyperpage{82}
+  \item modular arithmetic, \hyperpage{82}
+  \item motor
+    \subitem dc, \hyperpage{199}
+    \subitem H-bridge, \hyperpage{200}
+    \subitem servo, \hyperpage{201}
+    \subitem stepper, \hyperpage{200}
+  \item multiplexer, \hyperpage{67--69}
+
+  \indexspace
+
+  \item noise margin, \hyperpage{183}
+  \item numbering system
+    \subitem base, \hyperpage{2}
+    \subitem positional, \hyperpage{1}
+
+  \indexspace
+
+  \item overflow, \hyperpage{5}
+
+  \indexspace
+
+  \item parent, \hyperpage{22}
+  \item parsing, \hyperpage{22}
+  \item POS
+    \subitem canonical, \hyperpage{32}
+  \item priority encoder, \hyperpage{81}
+  \item product term, \hyperpage{21}
+  \item product term: shared, \hyperpage{51}
+  \item propagation delay
+    \subitem flip flop, \hyperpage{95}
+  \item push button, \hyperpage{187}
+
+  \indexspace
+
+  \item RAM, \hyperpage{109--113}
+  \item realize, \hyperpage{21}
+  \item register, \hyperpage{102}, 102
+    \subitem shift, \hyperpage{103--105}
+  \item Remote control, \hyperpage{203}
+  \item rotary encoder, \hyperpage{190}
+
+  \indexspace
+
+  \item saturation adder, \hyperpage{81}
+  \item setup time, \hyperpage{95}
+  \item sign extension, \hyperpage{8}
+  \item SOP
+    \subitem \SOPmin, \hyperpage{45}
+    \subitem canonical, \hyperpage{30}
+  \item state diagram, \hyperpage{87}
+  \item switch bouncing, \hyperpage{188}
+
+  \indexspace
+
+  \item three-state buffer, \hyperpage{190}
+  \item timing
+    \subitem counter, \hyperpage{107}
+    \subitem datapath and control, \hyperpage{157}
+    \subitem diagrams, \hyperpage{34}
+    \subitem FSM, \hyperpage{128}
+    \subitem producer consumer, \hyperpage{160}
+    \subitem register, \hyperpage{102}
+  \item trick
+    \subitem expansion, \hyperpage{25}
+    \subitem maxterm, \hyperpage{31}
+    \subitem minterm, \hyperpage{29}
+    \subitem simplification, \hyperpage{44}
+
+  \indexspace
+
+  \item Ultrasonic sensor, \hyperpage{198}
+
+  \indexspace
+
+  \item wire logic, \hyperpage{76}
+  \item word size, \hyperpage{5}
+
+\end{theindex}
