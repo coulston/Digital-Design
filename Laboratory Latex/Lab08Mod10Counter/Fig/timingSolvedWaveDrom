@@ -1,0 +1,17 @@
+{signal: [
+  {name: 'clk', wave: 'P................'},
+  {name: 'resetn', wave: '01................', phase: 1.5},
+  {name: 'enb', wave: '01........01.0.1..', phase: 1.0},
+  {name: 'synch', wave: '0.............10..', phase: 1.0},
+  {name: 'roll', wave: '0..................10.10...........', period: 0.5, phase: 1.0},
+  {name: 'currentCount',  wave: '==========.==.===', data:['0','1','2','3','4','5','6','7','8','9','0','1','0','1','2']},
+ ]
+  ,
+
+  config:{hscale: 2},  
+  
+  foot:{
+  text: 'Mod10 Counter Testbench',
+  tock: 0},
+  
+  }

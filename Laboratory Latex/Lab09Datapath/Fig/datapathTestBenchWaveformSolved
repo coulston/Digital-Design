@@ -1,0 +1,25 @@
+{signal: [
+  {name: 'clk', wave: 'P........................................'},
+  {name: 'resetn', wave: '01................................................................................', period: 0.5},
+  {name: 't_cw', wave: '=.=3.33.33.333444.44.44333.33.33.33.3399.', data: ['reset_cw', 'stop_cw', 'run_cw', 'inc_cw','run_cw', 'inc_cw','run_cw', 'inc_cw', 'run_cw',
+                                                                        'r2lr_cw',  'laprun_cw', 'lapinc_cw',  'laprun_cw', 'lapinc_cw',  'laprun_cw', 'lapinc_cw',  'laprun_cw',
+                                                                    	'run_cw', 'inc_cw','run_cw', 'inc_cw','run_cw', 'inc_cw','run_cw', 'inc_cw',
+                                                                           'run_cw', 'inc_cw','run_cw','reset_cw', 'stop_cw'], phase: 0.5},
+  {name: 'clkCount', wave: '=..==========.=========================..', data:['0', '1', '2', '0', '1', '2', '0', '1', '2', 
+                                                                              '0', '1', '2', '0', '1', '2', '0', '1', '2', 
+                                                                              '0', '1', '2', '0', '1', '2', '0', '1', '2', 
+                                                                              '0', '1', '2', '0', '1', '2', '0', '1', '0']},
+  {name: 'tenthDigit', wave: '=....=..=..=...=..=..=..=..=..=..=..=.=..', data:['0', '1', '2', '3','4','5','6','7','8','9','0', '1', '0']},
+  {name: 'tenthDigitToDisplay', wave: '=....=..=..=...........==..=..=..=..=.=..', data:['0', '1', '2', '3','6','7','8','9','0', '1', '0']},
+  {name: 'unitDigit', wave: '=................................=....=..', data:['0', '1','0']},
+  {name: 'unitDigitToDisplay', wave: '=................................=....=..', data:['0', '1','0']},  
+ ]
+  ,
+
+  config:{hscale: 2},  
+  
+  foot:{
+  text: 'Datapath testbench',
+  tock: 0},
+  
+  }
