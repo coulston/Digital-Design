@@ -1,5 +1,7 @@
-/Latex/Digital Design Homework Solutions.tex
-/Latex/Digital Design Homework Solutions.pdf
-/Latex/Digital-Design/Textbook\ Latex/chapter*/*.aux
-# /Latex/Digital-Design/Textbook\ Latex/chapter*/FigHw
-# /Latex/Digital-Design/Textbook\ Latex/chapter*/hw*.tex
+Textbook Latex/Digital Design Homework Solutions.pdf
+# Trash intermediates
+*.aux
+*.toc
+*.log
+*.out
+*.synctex.gz

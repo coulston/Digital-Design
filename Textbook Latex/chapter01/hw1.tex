@@ -21,7 +21,6 @@
 	
 	\item True of False: University ID is required during exams.
 	
-		
 	\begin{onlysolution}
 	\itshape
 	I check ID at the exams.  After I learn 
@@ -30,6 +29,9 @@
 	\end{onlysolution}
 	
 	\item What is my thesis regarding grades?
+	{\begin{onlysolution}
+		\fcolorbox{red}{yellow}{lorem ipsum}	
+	\end{onlysolution}}	
 	\item Bob L. Student has the following grades.  Determine his final
 	overall course percentage and grade.
 
@@ -85,7 +87,7 @@ Show work, or receive 1/2 credit.
 	\begin{onlysolution}	\itshape $1000100101000101_2=2^{15}+2^{11}+2^8+2^6+2^5+2^0=35141_{10}$\end{onlysolution}
 	
 	\item $3EA_{16}$
-	\begin{onlysolution}	\itshape$3EA_{16}=0011 1110 1010 = 2^9+2^8+2^7+2^6+2^5+2^3+2^1=1002_{10}$\end{onlysolution}
+	\begin{onlysolution}	\itshape$3EA_{16}=0011 1110 1010 = 2^9+2^8+2^7+2^6+2^5+2^3+2^1=1002_{10}$\\ {\color{blue} $3EA_{16} = 3*16^2 +14*16^1 + 10 * 16^0 = 1002_{10} $}\end{onlysolution}
 	
      \end{enumerate}
 
@@ -110,10 +112,10 @@ work, or receive 1/2 credit.
 	\begin{enumerate}
 	
 	\item $101011101_2$
-	\begin{onlysolution}	\itshape$1 0101 1101_2 = 15D_{16}$ \end{onlysolution}
+	\begin{onlysolution}	{\color{blue} \itshape$0001\, 0101\, 1101_2 = 15D_{16}$} \end{onlysolution}
 	
 	\item $77_{10}$
-	\begin{onlysolution}	\itshape $77_{10} = 64+8+4+1=2^6+2^3+2^2+2^0=100 1101_2=4D_{16}$ \end{onlysolution}
+	\begin{onlysolution}	\itshape $77_{10} = 64+8+4+1=2^6+2^3+2^2+2^0=100\, 1101_2=4D_{16}$ \end{onlysolution}
 	
 	\end{enumerate}
 
@@ -142,27 +144,61 @@ work, or receive 1/2 credit.
 \item \textbf{ (1 pt. each)} Perform the following additions, assume a word 
 size of four bits. Determine if overflow occurs.
 	\begin{enumerate}
-	
+	{ \color{blue} % every answer changed, questions caught in the crossfire
 	\item $0110_2 + 0101_2$
-	\begin{onlysolution}	\itshape0110 + 0101 = 1011\end{onlysolution}
+	\begin{onlysolution}\begin{align*}
+	1\0\0\0 &\\
+	0110 &\\
+ +\:0101 &\\[-2ex]
+ \rule{9ex}{1pt}\hspace{-1ex}&\\[-1ex]
+	1011& \end{align*}\end{onlysolution}
 	
 	\item $0010_2 + 0110_2$
-	\begin{onlysolution}	\itshape0010 + 0110 = 1000\end{onlysolution}
+	\begin{onlysolution}\begin{align*}
+	11\0\0 &\\
+    0010 &\\
+ +\:0110 &\\[-2ex]
+ \rule{9ex}{1pt}\hspace{-1ex}&\\[-1ex]
+    1000 &\end{align*}\end{onlysolution}
 	
 	\item $0111_2 + 0011_2$
-	\begin{onlysolution}	\itshape0111 + 0011 = 1010\end{onlysolution}
+	\begin{onlysolution}\begin{align*}
+	111\0&\\
+    0111&\\
+ +\:0011&\\	
+ \rule{9ex}{1pt}\hspace{-1ex}&\\[-1ex]
+	1010 &\end{align*}\end{onlysolution}
 	
 	\item $0010_2 + 0101_2$
-	\begin{onlysolution}	\itshape0010 + 0101 = 0111\end{onlysolution}
+	\begin{onlysolution}\begin{align*}
+	0010&\\
+ +\:0101&\\
+ \rule{9ex}{1pt}\hspace{-1ex}&\\[-1ex]
+    0111 &\end{align*}\end{onlysolution}
 	
 	\item $0010_2 + 1010_2$
-	\begin{onlysolution}	\itshape0010 + 1010 = 1100\end{onlysolution}
+	\begin{onlysolution}	\itshape\begin{align*}
+	 1\0\0 &\\
+	0010 &\\
+ +\:1010 &\\
+ \rule{9ex}{1pt}\hspace{-1ex}&\\[-1ex]
+    1101 &\end{align*}\end{onlysolution}
 	
 	\item $0101_2 + 1011_2$
-	\begin{onlysolution}	\itshape0101 + 1011 = 10000 overflow\end{onlysolution}
+	\begin{onlysolution}\begin{align*}
+   1111\0&\\
+    0101&\\
+ +\:1011&\\
+    \hline
+    0000&\quad\text{\textit{Overflow}} \end{align*}\end{onlysolution}
 	
 	\item $0011_2 + 1001_2$
-	\begin{onlysolution}	\itshape0011 + 1001 = 1100\end{onlysolution}
+	\begin{onlysolution}	\begin{align*}
+     11\0&\\
+    0011&\\
+ +\:1001&\\
+    \hline
+    1100&\end{align*}\end{onlysolution} }
 	
 	\end{enumerate}
 \end{enumerate}
