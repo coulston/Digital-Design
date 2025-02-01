@@ -1,8 +1,13 @@
 Textbook Latex/Digital Design Homework Solutions.pdf
-# Trash intermediates
+
+# Throw away intermediates (Every editor I try seems to have come up with at least one new file type)
 *.aux
-*.toc
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
 *.log
 *.out
 *.synctex.gz
-*.idx
+*.toc
