@@ -2,22 +2,21 @@
 \label{RPS}
 \graphicspath{ {./Lab03RockPaperScissor/Fig} }
 
-
 \section{Outcomes and Objectives}
 
 The outcome of this lab is to instantiate a rock, paper scissors games
-on the FPGA development board. 
+on the FPGA development board.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\itemsep=0em
-	\item \Paste{bok:REP_WordStatement}
-	\item \Paste{bok:REP_TruthTable}
-	\item \Paste{VER:CSA}
-	\item \Paste{VER:Module}
-	\item \Paste{VER:Instantiating}
-	\item \Paste{HDL:Pin}
-	\item \Paste{HDL:Synthesis}
+        \itemsep=0em
+    \item \Paste{bok:REP_WordStatement}
+    \item \Paste{bok:REP_TruthTable}
+    \item \Paste{VER:CSA}
+    \item \Paste{VER:Module}
+    \item \Paste{VER:Instantiating}
+    \item \Paste{HDL:Pin}
+    \item \Paste{HDL:Synthesis}
 \end{itemize}
 
 \section{The Rock Paper Scissors Game}
@@ -32,11 +31,11 @@ the shape of the object.
 The rules of the game state that:
 
 \begin{tabular}{p{4cm}p{4cm}p{4cm}}
-Rock beats scissors  & Scissors beats paper & Paper beats rock \\
+    Rock beats scissors  & Scissors beats paper & Paper beats rock \\
 \end{tabular}
 
 Since prior knowledge of your opponent's throw would provide an unfair
-advantage, the two players make their throws at the same time. Your goal 
+advantage, the two players make their throws at the same time. Your goal
 in this lab is to create a digital version of rock, paper,
 scissors on the Altera Cyclone V Board using the inputs and outputs
 shown in Figure~\ref{figure:systemIO}. Each player will have access to three slide switches
@@ -47,12 +46,10 @@ player 1 wins, ``2'' when player 2 wins, and ``d'' when the game is a
 draw (a tie).
 
 \begin{figure}[ht]
-\includegraphics{ image2.png}
-\caption{The input and output you should use to realize your digital system.}
-\label{figure:systemIO}
+    \includegraphics{ image2.png}
+    \caption{The input and output you should use to realize your digital system.}
+    \label{figure:systemIO}
 \end{figure}
-
-
 
 A player will move one of the three slides-switches into the up position
 to indicate their play. Moving more than one slide-switch, or no slide
@@ -65,9 +62,9 @@ display will reflect their choice as shown in Figure~\ref{figure:play7seg}. Thes
 are supposed to vaguely resemble the objects.
 
 \begin{figure}[ht]
-\includegraphics[width=0.3\paperwidth]{image3.png}
-\caption{Illuminated patters for the different plays.}
-\label{figure:play7seg}
+    \includegraphics[width=0.3\paperwidth]{image3.png}
+    \caption{Illuminated patters for the different plays.}
+    \label{figure:play7seg}
 \end{figure}
 
 When the Throw button is pressed, the Win/Lose 7-segment will display
@@ -76,46 +73,54 @@ Table~\ref{table:gameLogic}. When the Throw button is un-pressed, the Win/Lose 7
 display is blank.
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
-\caption{The output for every combination of player 1 (P1) and player 2 (P2) throws.}  
-\label{table:gameLogic}
-\tabularnewline
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-P1 \textbackslash{} P2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Rock
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Paper
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Scissors
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Invalid
-\end{minipage} \\ \hline
-\midrule()
-\endfirsthead
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-P1 \textbackslash{} P2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Rock
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Paper
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Scissors
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Invalid
-\end{minipage} \\\hline
-\midrule()
-\endhead
-Rock & d & 2 & 1 & 1 \\ \hline
-Paper & 1 & d & 2 & 1 \\ \hline
-Scissors & 2 & 1 & d & 1 \\ \hline
-Invalid & 2 & 2 & 2 & d \\ \hline
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
+    \caption{The output for every combination of player 1 (P1) and player 2 (P2) throws.}
+    \label{table:gameLogic}
+    \tabularnewline
+    \toprule()
+    \begin{minipage}[b]{\linewidth}\raggedright
+        P1 \textbackslash{} P2
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Rock
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Paper
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Scissors
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Invalid
+    \end{minipage} \\ \hline
+    \midrule()
+    \endfirsthead
+    \toprule()
+    \begin{minipage}[b]{\linewidth}\raggedright
+        P1 \textbackslash{} P2
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Rock
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Paper
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Scissors
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Invalid
+    \end{minipage} \\\hline
+    \midrule()
+    \endhead
+    Rock & d & 2 & 1 & 1 \\ \hline
+    Paper & 1 & d & 2 & 1 \\ \hline
+    Scissors & 2 & 1 & d & 1 \\ \hline
+    Invalid & 2 & 2 & 2 & d \\ \hline
 
 \end{longtable}
 
@@ -137,13 +142,13 @@ rpsGame module to connect the 5 modules together. Lines that are slashed
 with a number denote bit vectors.
 
 \begin{figure}[ht]
-\includegraphics{ image4.png}
-\caption{System architecture for the rock, paper, scissors system.}
-\label{fig:sysArch}
+    \includegraphics{ image4.png}
+    \caption{System architecture for the rock, paper, scissors system.}
+    \label{fig:sysArch}
 \end{figure}
 
 \hypertarget{onestodense-module}{%
-\section{Module: onesToDense}
+    \section{Module: onesToDense}
 \label{onestodense-module}}
 
 Each player makes their throw selection by placing one of the three
@@ -152,12 +157,12 @@ there are only three valid input combinations for the rock, paper,
 scissors trio. These are:
 
 \begin{itemize}
-\item
-  (1,0,0) for when the player moves only the rock slide switch up,
-\item
-  (0,1,0) for when the player moves only the paper slide switch up,
-\item
-  (0,0,1) for when the player moves only the scissor slide switch up.
+    \item
+        (1,0,0) for when the player moves only the rock slide switch up,
+    \item
+        (0,1,0) for when the player moves only the paper slide switch up,
+    \item
+        (0,0,1) for when the player moves only the scissor slide switch up.
 \end{itemize}
 
 Having a code where only one of the bits is equal logic 1 is called a
@@ -176,48 +181,48 @@ In order to write the Verilog code for this module, complete the truth
 table in Table~\ref{table:onesToDense} for the onesToDense module.
 
 \begin{itemize}
-\item
-  r is the state of the rock slide-switch. r=0 slide switch is down. r=1
-  slide-switch up.
-\item
-  p is the state of the paper slide-switch. p=0 slide switch is down.
-  p=1 slide-switch up
-\item
-  s is the state of the scissor slide-switch. s=0 slide switch is down.
-  s=1 slide-switch up
-\item
-  play = \{00\} means rock was selected
-\item
-  play = \{01\} means paper was selected
-\item
-  play = \{10\} means scissor was selected
-\item
-  play = \{11\} means invalid selection was made
+    \item
+        r is the state of the rock slide-switch. r=0 slide switch is down. r=1
+        slide-switch up.
+    \item
+        p is the state of the paper slide-switch. p=0 slide switch is down.
+        p=1 slide-switch up
+    \item
+        s is the state of the scissor slide-switch. s=0 slide switch is down.
+        s=1 slide-switch up
+    \item
+        play = \{00\} means rock was selected
+    \item
+        play = \{01\} means paper was selected
+    \item
+        play = \{10\} means scissor was selected
+    \item
+        play = \{11\} means invalid selection was made
 \end{itemize}
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
-\caption{The truth table for the onesToDense module.}\label{table:onesToDense}\tabularnewline 
-\toprule()
-r & p & s & play & Note \\ \hline
-\midrule()
-\endfirsthead
-\toprule()
-r & p & s & play & Note \\ \hline
-\midrule()
-\endhead
-0 & 0 & 0 & & \\ \hline
-0 & 0 & 1 & & \\ \hline
-0 & 1 & 0 & & \\ \hline
-0 & 1 & 1 & & \\ \hline
-1 & 0 & 0 & 00 & Rock \\ \hline
-1 & 0 & 1 & & \\ \hline
-1 & 1 & 0 & & \\ \hline
-1 & 1 & 1 & & \\ \hline
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1999}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}|@{}}
+    \caption{The truth table for the onesToDense module.}\label{table:onesToDense}\tabularnewline
+    \toprule()
+    r & p & s & play & Note \\ \hline
+    \midrule()
+    \endfirsthead
+    \toprule()
+    r & p & s & play & Note \\ \hline
+    \midrule()
+    \endhead
+    0 & 0 & 0 & & \\ \hline
+    0 & 0 & 1 & & \\ \hline
+    0 & 1 & 0 & & \\ \hline
+    0 & 1 & 1 & & \\ \hline
+    1 & 0 & 0 & 00 & Rock \\ \hline
+    1 & 0 & 1 & & \\ \hline
+    1 & 1 & 0 & & \\ \hline
+    1 & 1 & 1 & & \\ \hline
 \end{longtable}
 
 From this truth table, determine the canonical SOP expressions for
@@ -236,30 +241,30 @@ Verilog code. Incorporate the following into your onesToDense Verilog
 module:
 
 \begin{itemize}
-\item
-  Use the module declaration: module onesToDense (throw, play);
-\item
-  Use vectors for the throw input. The MSB should come from the rock
-  slide-switch and the LSB from the scissors slide-switch.
-\item
-  Use a vector for the play output.
-\item
-  Make the input and output port types ``wire''.
-\item
-  You may want to break the input vector into its component pieces to
-  correspond to the variable names used in Table~\ref{table:onesToDense}.
-   This will require
-  a wire declaration and two assign statements to give each variable
-  1-bit from the input vector.
-\item
-  Use assign statements to realize the AND, OR, NOT logic derived for
-  your canonical SOP expressions.
-\item
-  Use function04 from lab 1 as a starting point for this module.
+    \item
+        Use the module declaration: module onesToDense (throw, play);
+    \item
+        Use vectors for the throw input. The MSB should come from the rock
+        slide-switch and the LSB from the scissors slide-switch.
+    \item
+        Use a vector for the play output.
+    \item
+        Make the input and output port types ``wire''.
+    \item
+        You may want to break the input vector into its component pieces to
+        correspond to the variable names used in Table~\ref{table:onesToDense}.
+        This will require
+        a wire declaration and two assign statements to give each variable
+        1-bit from the input vector.
+    \item
+        Use assign statements to realize the AND, OR, NOT logic derived for
+        your canonical SOP expressions.
+    \item
+        Use function04 from lab 1 as a starting point for this module.
 \end{itemize}
 
 \hypertarget{playtoseven-module}{%
-\section{Module: playToSeven}
+    \section{Module: playToSeven}
 \label{playtoseven-module}}
 
 The playToSeven module converts the player throw, represented in the
@@ -267,10 +272,10 @@ dense coding, to a ``graphical'' form displayed on the 7-segment
 display. The symbols for each possible throw are shown in Figure~\ref{figure:throw7seg}.
 
 \begin{figure}[ht]
-\includegraphics{ image5.png}
-\caption{7-segment display patterns for the different throws along with
-the 7-segment display segment indices.}
-\label{figure:throw7seg}
+    \includegraphics{ image5.png}
+    \caption{7-segment display patterns for the different throws along with
+    the 7-segment display segment indices.}
+    \label{figure:throw7seg}
 \end{figure}
 
 Use the information in Figure~\ref{figure:throw7seg} to determine the bit patterns needed to
@@ -284,56 +289,55 @@ formed by concatenating the bits together. Use proper Verilog syntax to
 write this 7-bit vector.
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1513}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.2210}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1777}}|@{}}
-\caption{The 7-segment display LEDs to produce the throw patterns.}\label{table:throwSevenSeg}\tabularnewline
-\toprule()
-pPlay & 6 & 5 & 4 & 3 & 2 & 1 & 0 & sevenSeg & Note \\ \hline
-\midrule()
-\endfirsthead
-\toprule()
-pPlay & 6 & 5 & 4 & 3 & 2 & 1 & 0 & sevenSeg & Note \\ \hline
-\midrule()
-\endhead
-00 & & & & & & & & & Rock \\ \hline
-01 & & & & & & & & & Paper \\ \hline
-10 & & & & & & & & & Scissors \\ \hline
-11 & & & & & & & & 7'b1111111 & Invalid \\
-\bottomrule()
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1513}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0643}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.2210}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1777}}|@{}}
+    \caption{The 7-segment display LEDs to produce the throw patterns.}\label{table:throwSevenSeg}\tabularnewline
+    \toprule()
+    pPlay & 6 & 5 & 4 & 3 & 2 & 1 & 0 & sevenSeg & Note \\ \hline
+    \midrule()
+    \endfirsthead
+    \toprule()
+    pPlay & 6 & 5 & 4 & 3 & 2 & 1 & 0 & sevenSeg & Note \\ \hline
+    \midrule()
+    \endhead
+    00 & & & & & & & & & Rock \\ \hline
+    01 & & & & & & & & & Paper \\ \hline
+    10 & & & & & & & & & Scissors \\ \hline
+    11 & & & & & & & & 7'b1111111 & Invalid \\
+    \bottomrule()
 \end{longtable}
 
 \protect\hypertarget{play2Seven_Verilog}{}{}Incorporate the following
 into your playToSeven Verilog module:
 
 \begin{itemize}
-\item
-  Use the module declaration: \verb+module playToSeven (pPlay, sevenSeg);+
-\item
-  Use a vector for the input pPlay and a vector for the sevenSeg output.
-\item
-  Make the input port type ``wire''. Make the output port type ``reg''.
-\item
-  Use a case statement, embedded in an always statement to realize this
-  module. Enumerate all combinations of the input; do not use a default
-  case
-\item
-  Use the information in Table~\ref{table:throwSevenSeg} to assign values to the output.
-\item
-  Put comments at the end of each case row describing, in words, what
-  the output should look like on the 7-segment display.
-\item
-  Use the hex2Seven module from lab 2 as the starting point for this
-  module.
+    \item
+        Use the module declaration: \verb+module playToSeven (pPlay, sevenSeg);+
+    \item
+        Use a vector for the input pPlay and a vector for the sevenSeg output.
+    \item
+        Make the input port type ``wire''. Make the output port type ``reg''.
+    \item
+        Use a case statement, embedded in an always statement to realize this
+        module. Enumerate all combinations of the input; do not use a default
+        case
+    \item
+        Use the information in Table~\ref{table:throwSevenSeg} to assign values to the output.
+    \item
+        Put comments at the end of each case row describing, in words, what
+        the output should look like on the 7-segment display.
+    \item
+        Use the hex2Seven module from lab 2 as the starting point for this
+        module.
 \end{itemize}
-
 
 \section{Module: winLose}
 
@@ -347,9 +351,9 @@ you have already created for the hexToSeven module and are shown in
 Figure~\ref{fig:winLose7seg} as a reminder.
 
 \begin{figure}[ht]
-\includegraphics{ image6.png}
-\caption{The illuminated patterns displayed on the win/lose 7-segment display.}
-\label{fig:winLose7seg}
+    \includegraphics{ image6.png}
+    \caption{The illuminated patterns displayed on the win/lose 7-segment display.}
+    \label{fig:winLose7seg}
 \end{figure}
 
 You will use a case statement, based on the information in Table~\ref{table:winLooseTt}, to
@@ -360,39 +364,39 @@ the game. In the Note column put either ``1'', ``2'', ``Draw'', or
 bit order given in Figure~\ref{figure:throw7seg}.
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1723}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2093}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2055}}||
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2188}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1941}}|@{}}
-\caption{Abbreviated truth table for the winLose module.}\label{table:winLooseTt}\tabularnewline
-\toprule()
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1723}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2093}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2055}}||
+        >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2188}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1941}}|@{}}
+    \caption{Abbreviated truth table for the winLose module.}\label{table:winLooseTt}\tabularnewline
+    \toprule()
 
-button & p1Play & p2Play & sevenSeg & Note \\ \hline
-\midrule()
-\endfirsthead
-\toprule()
-button & p1Play & p2Play & sevenSeg & Note \\ \hline
-\midrule()
-\endhead
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & 10 (scissors) & 00 (rock) & 7'b0100100 & 2 \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-0 & & & & \\ \hline
-1 & xx (don't care) & xx (don't care) & 7'b1111111 & Blank \\
-\bottomrule()
+    button & p1Play & p2Play & sevenSeg & Note \\ \hline
+    \midrule()
+    \endfirsthead
+    \toprule()
+    button & p1Play & p2Play & sevenSeg & Note \\ \hline
+    \midrule()
+    \endhead
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & 10 (scissors) & 00 (rock) & 7'b0100100 & 2 \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    0 & & & & \\ \hline
+    1 & xx (don't care) & xx (don't care) & 7'b1111111 & Blank \\
+    \bottomrule()
 \end{longtable}
 
 \protect\hypertarget{winLoose_Verilog}{}{}Incorporate the following into
@@ -400,26 +404,26 @@ your winLose Verilog module: Use the module and port names given in
 Figure~\ref{fig:sysArch}.
 
 \begin{itemize}
-\item
-  Use the module declaration:
-\verb+ module winLose(p1Play, p2Play, playButton, sevenSeg);+
+    \item
+        Use the module declaration:
+        \verb+ module winLose(p1Play, p2Play, playButton, sevenSeg);+
 
-\item
-  Use vectors for the p1Play and p2Play inputs.
-\item
-  Use a vector for the sevenSeg output.
-\item
-  Make the input port types ``wire''. Make the output port types  ``reg''.
+    \item
+        Use vectors for the p1Play and p2Play inputs.
+    \item
+        Use a vector for the sevenSeg output.
+    \item
+        Make the input port types ``wire''. Make the output port types  ``reg''.
 
-\item
-  You will use a case statement, embedded in an always statement to
-  realize this module.
+    \item
+        You will use a case statement, embedded in an always statement to
+        realize this module.
 
-  \begin{itemize}
-  \item
-    Use brackets to make the vector for the case statement. For example,
-    if button was a 1-bit signal and play was a 2-bit signal, then
-    
+        \begin{itemize}
+            \item
+                Use brackets to make the vector for the case statement. For example,
+                if button was a 1-bit signal and play was a 2-bit signal, then
+
 \begin{lstlisting}[language=Verilog, frame=single]
 case ({button, play})
     3'b000:  seg = 7'b1000000;    // display ``0''
@@ -429,33 +433,33 @@ case ({button, play})
     default:  seg = 7'b1111111;    // blank 7-seg
 endcase
     \end{lstlisting}
-    
-  \end{itemize}
 
-This code snippet will use the 3-bit value (button as MSB and play as
-least significant 2-bits) to select one of the rows. Note that the
-default case handles all the combinations where button is 1.
+        \end{itemize}
 
-\item
-  Use a default case to handle all the situations
-  where the button is not pressed. The default case catches any
-  unspecified input combinations for the case statement. List the
-  default as the last row in the case list.
-\item
-  At the end of each ``case'' row, provide a comment that lists player
-  1's throw, player 2's throw and the output that is displayed on the
-  7-segment display. For example, in my program the first case row has a
-  comment that looks like:
+        This code snippet will use the 3-bit value (button as MSB and play as
+        least significant 2-bits) to select one of the rows. Note that the
+        default case handles all the combinations where button is 1.
 
-\verb+ // P1: Rock P2:Rock Draw +
+    \item
+        Use a default case to handle all the situations
+        where the button is not pressed. The default case catches any
+        unspecified input combinations for the case statement. List the
+        default as the last row in the case list.
+    \item
+        At the end of each ``case'' row, provide a comment that lists player
+        1's throw, player 2's throw and the output that is displayed on the
+        7-segment display. For example, in my program the first case row has a
+        comment that looks like:
 
-\item
-  Use the hex2Seven module from lab 2 as the starting point for this
-  module.
+        \verb+ // P1: Rock P2:Rock Draw +
+
+    \item
+        Use the hex2Seven module from lab 2 as the starting point for this
+        module.
 \end{itemize}
 
 \hypertarget{rpsgame-module}{%
-\section{Module: rpsGame}
+    \section{Module: rpsGame}
 \label{rpsgame-module}}
 
 The rpsGame module, ``glues'' together the modules shown in Figure~\ref{fig:sysArch} and
@@ -464,50 +468,50 @@ consists of 5 instantiation statements; one of them is given as the last
 bullet point item in the list below. For this module, I want you to:
 
 \begin{itemize}
-\item
-  Use the module declaration: \newline
-   \verb+ module rpsGame(p1Throw, p1SevenSeg, p2Throw, p2SevenSeg, playButton, winLoseSeg);+
+    \item
+        Use the module declaration: \newline
+        \verb+ module rpsGame(p1Throw, p1SevenSeg, p2Throw, p2SevenSeg, playButton, winLoseSeg);+
 
-\item
-  Make the p1Throw and p2Throw inputs vectors with the MSB coming from
-  the rock slide-switch input and scissors slide-switch as the LSB. You
-  will need to keep this consistent with the pin assignment that you
-  will complete next.
-\item
-  The \verb+playButton+ input is not a vector.
-\item
-  Use a vector for the \verb+winLoseSeg+ output.
-\item
-  Make the input and output port types ``wire''.
-\item
-  You need to create 2 internal vectors. Look carefully at Figure~\ref{fig:sysArch} and
-  find wires that begin and end inside the rpsGame module. These are the
-  vectors.
-\item
-  Name the module instances using the names provided in Figure~\ref{fig:sysArch}.
-\item
-  When you instantiate a module
+    \item
+        Make the p1Throw and p2Throw inputs vectors with the MSB coming from
+        the rock slide-switch input and scissors slide-switch as the LSB. You
+        will need to keep this consistent with the pin assignment that you
+        will complete next.
+    \item
+        The \verb+playButton+ input is not a vector.
+    \item
+        Use a vector for the \verb+winLoseSeg+ output.
+    \item
+        Make the input and output port types ``wire''.
+    \item
+        You need to create 2 internal vectors. Look carefully at Figure~\ref{fig:sysArch} and
+        find wires that begin and end inside the rpsGame module. These are the
+        vectors.
+    \item
+        Name the module instances using the names provided in Figure~\ref{fig:sysArch}.
+    \item
+        When you instantiate a module
 
-  \begin{itemize}
-  \item
-    The first term is the name of the module you are instantiating
-  \item
-    The second term is the instance name of the module
-  \item
-    The remaining term is the parenthesis list of signal in and out of
-    the module. The order of the signals in the instantiation must be
-    the same as those in the module declaration. \uline{Pay special
-    attention to this!}
-  \item
-    For example, in my program I had an instantiation that looked like: \\
-   \verb+onesToDense p1o2d(p1Throw, p1Dense);+
-  \end{itemize}
+        \begin{itemize}
+            \item
+                The first term is the name of the module you are instantiating
+            \item
+                The second term is the instance name of the module
+            \item
+                The remaining term is the parenthesis list of signal in and out of
+                the module. The order of the signals in the instantiation must be
+                the same as those in the module declaration. \uline{Pay special
+                attention to this!}
+            \item
+                For example, in my program I had an instantiation that looked like: \\
+                \verb+onesToDense p1o2d(p1Throw, p1Dense);+
+        \end{itemize}
 \end{itemize}
 
 \section{Testbench}
 We are forgoing a simulation of today's lab.  This requires that you pay especially close
 attention to the warnings created by the Quartus software.  If you are having issues with
-your design, go through the compilation report and look for unconnected inputs or vector 
+your design, go through the compilation report and look for unconnected inputs or vector
 size mismatches.
 
 \section{Pin-Assignment and Synthesis}
@@ -517,52 +521,52 @@ in the C5G User Guide to determine the FPGA pins associated with the
 input and output devices used by the rpsGame module.
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|@{}}
-\caption{Pin assignment tables for the Rock Paper Scissor game.}\label{table:rpsPinAssignment}\tabularnewline
-\toprule()
-Segment & Player 1 Throw & Player 2 Throw & Win/Lose \\ \hline
-\midrule()
-\endfirsthead
-\toprule()
-Segment & Player 1 Throw & Player 2 Throw & Win/Lose \\ \hline
-\midrule()
-\endhead
-seg{[}6{]} & PIN\_Y18 & & \\ \hline
-seg{[}5{]} & & PIN\_AC23 & \\ \hline
-seg{[}4{]} & & & \\ \hline
-seg{[}3{]} & & & \\ \hline
-seg{[}2{]} & & & \\ \hline
-seg{[}1{]} & & & \\ \hline
-seg{[}0{]} & & & PIN\_AA18 \\
-\bottomrule()
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}|@{}}
+    \caption{Pin assignment tables for the Rock Paper Scissor game.}\label{table:rpsPinAssignment}\tabularnewline
+    \toprule()
+    Segment & Player 1 Throw & Player 2 Throw & Win/Lose \\ \hline
+    \midrule()
+    \endfirsthead
+    \toprule()
+    Segment & Player 1 Throw & Player 2 Throw & Win/Lose \\ \hline
+    \midrule()
+    \endhead
+    seg{[}6{]} & PIN\_Y18 & & \\ \hline
+    seg{[}5{]} & & PIN\_AC23 & \\ \hline
+    seg{[}4{]} & & & \\ \hline
+    seg{[}3{]} & & & \\ \hline
+    seg{[}2{]} & & & \\ \hline
+    seg{[}1{]} & & & \\ \hline
+    seg{[}0{]} & & & PIN\_AA18 \\
+    \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|@{}}
-\toprule()
- & Player 1 Slide Switch & Player 2 Slide Switch \\ \hline
-\midrule()
-\endhead
-slide{[}2{]} & & \\ \hline
-slide{[}1{]} & & \\ \hline
-slide{[}0{]} & PIN\_AC9 & \\
-\bottomrule()
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|@{}}
+    \toprule()
+    & Player 1 Slide Switch & Player 2 Slide Switch \\ \hline
+    \midrule()
+    \endhead
+    slide{[}2{]} & & \\ \hline
+    slide{[}1{]} & & \\ \hline
+    slide{[}0{]} & PIN\_AC9 & \\
+    \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2333}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2333}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
-\toprule()
-Play Button & Key{[}0{]} &  \\ \hline
-\midrule()
-\endhead
-%\bottomrule()
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2333}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2333}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
+    \toprule()
+    Play Button & Key{[}0{]} &  \\ \hline
+    \midrule()
+    \endhead
+    %\bottomrule()
 \end{longtable}
 
 Note, each push-button provides a high logic level when it is not
@@ -570,7 +574,6 @@ pressed, and provides a low logic level when pressed.
 
 Complete the pin-assignment in Quartus, compile your design and download to the FGPA
 development boards. Once you get your design working, demonstrate it to a member of the lab team.
-
 
 \section{Turn in}
 
@@ -585,35 +588,35 @@ section next week.
 
 \subsubsection{onesToDense Module}
 \begin{itemize}
-\item Complete Table~\ref{table:onesToDense} truth table for oneToDense module.
-\item \protect\hyperlink{ones2Dense_CanonicalSOP}{link} Canonical SOP expressions for the play{[}1{]} and play{[}0{]} functions.
-\item \protect\hyperlink{ones2Dense_Verilog}{link} Verilog code for the entire.
-module (courier 8-point font single spaced), leave out header comments.
+    \item Complete Table~\ref{table:onesToDense} truth table for oneToDense module.
+    \item \protect\hyperlink{ones2Dense_CanonicalSOP}{link} Canonical SOP expressions for the play{[}1{]} and
+        play{[}0{]} functions.
+    \item \protect\hyperlink{ones2Dense_Verilog}{link} Verilog code for the entire.
+        module (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
 \subsubsection{playToSeven Module}
 \begin{itemize}
-\item Complete Table~\ref{table:throwSevenSeg}.
-\item  \protect\hyperlink{play2Seven_Verilog}{link} Verilog code for the module
-(courier 8-point font single spaced), leave out header comments.
+    \item Complete Table~\ref{table:throwSevenSeg}.
+    \item  \protect\hyperlink{play2Seven_Verilog}{link} Verilog code for the module
+        (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
 \subsubsection{winLose Module}
 \begin{itemize}
-\item Complete Table~\ref{table:winLooseTt} truth table for winLose module.
-\item \protect\hyperlink{winLoose_Verilog}{link} Verilog code for the module
-(courier 8-point font single spaced), leave out header comments.
+    \item Complete Table~\ref{table:winLooseTt} truth table for winLose module.
+    \item \protect\hyperlink{winLoose_Verilog}{link} Verilog code for the module
+        (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
 \subsubsection{rpsGame Module}
 \begin{itemize}
-\item \protect\hyperlink{play2Seven_Verilog}{link} Verilog code for the module
-(courier 8-point font single spaced), leave out header comments.
+    \item \protect\hyperlink{play2Seven_Verilog}{link} Verilog code for the module
+        (courier 8-point font single spaced), leave out header comments.
 \end{itemize}
 
 \subsubsection{Pin Assignment}
 \begin{itemize}
-\item Completed pin assignment for 7-segment, slide switches and button in Table~\ref{table:rpsPinAssignment}.
-\item Demonstrate your working design to a lab team member.
+    \item Completed pin assignment for 7-segment, slide switches and button in Table~\ref{table:rpsPinAssignment}.
+    \item Demonstrate your working design to a lab team member.
 \end{itemize}
-

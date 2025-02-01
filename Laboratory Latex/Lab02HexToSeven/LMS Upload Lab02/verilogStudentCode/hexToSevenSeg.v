@@ -10,7 +10,7 @@
 //            seg[0]
 //            ------
 //   seg[5]  |      |   seg[1]
-//           |      |	
+//           |      |
 //            ------    seg[6]
 //   seg[4]  |      |
 //           |      |   seg[2]
@@ -24,14 +24,14 @@ module hexToSevenSeg(x, sevenSeg);
 
     output reg [6:0] sevenSeg;
     input [3:0] x;
-	
+
     //------------------------------------------------
     // You will need to fill in the missing 15 rows
     //------------------------------------------------
 
     always @(x)
         case (x)
- 
+
             4'b0100: sevenSeg = 7'b0011001;
 
         endcase

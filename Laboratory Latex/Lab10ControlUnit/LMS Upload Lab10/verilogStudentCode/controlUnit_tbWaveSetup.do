@@ -18,5 +18,3 @@ add wave -position end  sim:/controlUnit_tb/uut/clk
 
 
 add wave -position end  -radix States sim:/controlUnit_tb/uut/state
-
-

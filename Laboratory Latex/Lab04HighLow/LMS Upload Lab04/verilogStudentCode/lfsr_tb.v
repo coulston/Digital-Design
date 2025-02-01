@@ -18,19 +18,19 @@
 // Board.
 //*****************************************************************
 module lfsr_tb;
-	
-    reg  [3:0] t_inputSeed;	 
+
+    reg  [3:0] t_inputSeed;
 	 wire [3:0] t_outputRand;
 
 	 lfsr uut (t_inputSeed, t_outputRand);
-	
+
     initial
         begin
-        		
-			t_inputSeed = 4'b1110;				 	#20		
-			t_inputSeed = 4'b1101;				 	#20	
-			t_inputSeed = 4'b1010;				 	#20	
-			t_inputSeed = 4'b0100;				 	
+
+			t_inputSeed = 4'b1110;				 	#20
+			t_inputSeed = 4'b1101;				 	#20
+			t_inputSeed = 4'b1010;				 	#20
+			t_inputSeed = 4'b0100;
 
 
 		 end

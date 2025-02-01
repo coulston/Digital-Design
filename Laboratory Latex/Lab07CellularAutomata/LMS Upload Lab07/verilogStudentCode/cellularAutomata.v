@@ -19,30 +19,30 @@
 // Board.
 //*****************************************************************
 module cellularAutomata(sButton, rButton, clk, reset, slideSwitches, currentLifeState, loadOrRunSlide );
-    
+
 	parameter N =
-		  
+
     	input wire         sButton, rButton;
 	output wire        clk;
-	input wire         reset; 	 
+	input wire         reset;
 	input wire [N-1:0]  slideSwitches;
 	input wire         loadOrRunSlide;
-	 
+
 	output wire [N-1:0] currentLifeState;
-	
+
 	wire         srFeedback;
-	wire [7:0]   rule;	 	 	 
-	wire [N-1:0]  initialState;	 
-	 
+	wire [7:0]   rule;
+	wire [N-1:0]  initialState;
+
 	assign rule = slideSwitches[7:0];
 	assign initialState = slideSwitches;
-	
-	
+
+
     	singleCell arrayCell0th(clk, reset, rule, currentLifeState[0], initialState[0], {currentLifeState[1],currentLifeState[0],currentLifeState[N-1]}, loadOrRunSlide);
 	// Add rest of singleCell instantations
 
 	// Logic to generate an SR Latch
 	assign clk =
 	assign srFeedback =
-		
+
 endmodule

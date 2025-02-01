@@ -4,29 +4,27 @@
 
 \section{Outcomes and Objectives}
 
-The outcome of this lab is to instantiate a 1-dimensional 
+The outcome of this lab is to instantiate a 1-dimensional
 cellular automata using D-Flip Flops and combinational logic.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\item \Paste{bok:BasicMemoryElements}
-	\item \Paste{bok:BME_Timing}	
-	\item \Paste{VER:Module}
-	\item \Paste{HDL:Synthesis}			
+    \item \Paste{bok:BasicMemoryElements}
+    \item \Paste{bok:BME_Timing}
+    \item \Paste{VER:Module}
+    \item \Paste{HDL:Synthesis}
 \end{itemize}
-
-
 
 \section{1-dimensional cellular automata}
 
 A common research theme in intelligent systems is emergent complexity.
 This is the idea that complex behavior can arise from an interconnected
-arrangement of simple processing elements following simple rules. 
+arrangement of simple processing elements following simple rules.
 
 \subsection{Theory: Cellular Automata}
 As a testbench for this idea, Stephen Wolfram\footnote{Wolfram, S.
-  "Statistical Mechanics of Cellular Automata." Rev. Mod. Phys. 55,
-  601-644, 1983.} explored emergent complexity in a 1-dimensional
+    "Statistical Mechanics of Cellular Automata." Rev. Mod. Phys. 55,
+601-644, 1983.} explored emergent complexity in a 1-dimensional
 cellular automata (1-DCA) network. A 1-DCA is an array of processing
 elements, each of which has one of two states (called alive and dead)
 and is interconnected to the neighbors immediately to its left and
@@ -37,22 +35,22 @@ Figure~\ref{fig:exampleCA}, note that cells which are alive are shaded and cells
 dead, white.
 
 \begin{figure}[ht]
-\includegraphics{image1.png}
-\caption{A 1-DCA consisting of 8 processing elements. Alive cells are
-shaded grey, dead white.}
-\label{fig:exampleCA}
+    \includegraphics{image1.png}
+    \caption{A 1-DCA consisting of 8 processing elements. Alive cells are
+    shaded grey, dead white.}
+    \label{fig:exampleCA}
 \end{figure}
 
-Let's examine the next state of the 1-DCA shown in Figure~\ref{fig:exampleCA} 
+Let's examine the next state of the 1-DCA shown in Figure~\ref{fig:exampleCA}
 using the rule where:
 
 \begin{itemize}
-\item
-  An alive cell stays alive when exactly 1 of its neighbors is alive,
-  else it dies.
-\item
-  A dead cell comes alive when exactly 1 of its neighbors is alive, else
-  it stays dead.
+    \item
+        An alive cell stays alive when exactly 1 of its neighbors is alive,
+        else it dies.
+    \item
+        A dead cell comes alive when exactly 1 of its neighbors is alive, else
+        it stays dead.
 \end{itemize}
 
 Complete the unfilled entries in Table~\ref{table:caNextState} using the initial state shown
@@ -62,45 +60,51 @@ processing element C7 is C0 and the right neighbor of processing element
 of C0 is C7.
 
 \begin{longtable}[]{@{}
-|  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1683}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2772}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3198}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2347}}|@{}}
-\caption{The next state of a processing element depends on the
-current state and the number of alive neighbors.} \label{table:caNextState} \tabularnewline
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Cell
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Current State
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\# Alive neighbors
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Next State
-\end{minipage} \\
-\midrule()
-\endfirsthead
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Cell
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Current State
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\# Alive neighbors
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Next State
-\end{minipage} \\
-\midrule()
-\endhead
-C0 & Dead & & \\ \hline
-C1 & Dead & & \\ \hline
-C2 & Alive & 0 & \\ \hline
-C3 & Dead & & \\ \hline
-C4 & Alive & & Alive \\ \hline
-C5 & Alive & & \\ \hline
-C6 & Dead & & \\ \hline
-C7 & Alive & & \\
-\bottomrule()
+        |  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1683}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2772}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3198}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2347}}|@{}}
+    \caption{The next state of a processing element depends on the
+    current state and the number of alive neighbors.} \label{table:caNextState} \tabularnewline
+    \toprule()
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Cell
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Current State
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \# Alive neighbors
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Next State
+    \end{minipage} \\
+    \midrule()
+    \endfirsthead
+    \toprule()
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Cell
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Current State
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \# Alive neighbors
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Next State
+    \end{minipage} \\
+    \midrule()
+    \endhead
+    C0 & Dead & & \\ \hline
+    C1 & Dead & & \\ \hline
+    C2 & Alive & 0 & \\ \hline
+    C3 & Dead & & \\ \hline
+    C4 & Alive & & Alive \\ \hline
+    C5 & Alive & & \\ \hline
+    C6 & Dead & & \\ \hline
+    C7 & Alive & & \\
+    \bottomrule()
 \end{longtable}
 
 You are going to build a digital system to calculate the next state of a
@@ -122,15 +126,13 @@ state for each configuration is shown below the current state
 configuration.
 
 \begin{figure}[ht]
-\includegraphics{image2.png}
-\caption{The next state of the center cell depends on the current state
-of a cell and its neighbors.}
-\label{fig:caRule}
+    \includegraphics{image2.png}
+    \caption{The next state of the center cell depends on the current state
+    of a cell and its neighbors.}
+    \label{fig:caRule}
 \end{figure}
 
-
 \pagebreak
-
 
 As an example, let's look at the 4\textsuperscript{th} from left
 arrangement, outlined in red. In the top row of this arrangement, the
@@ -158,9 +160,9 @@ the Sierpiński Triangle\footnote{\url{https://en.wikipedia.org/wiki/Sierpi\%C5\
 an elementary fractal.
 
 \begin{figure}[ht]
-\includegraphics[width=0.5\paperwidth]{image3.png}
-\caption{The evolution of a single alive cell (shown at top) under Rule 90.}
-\label{fig:caEvolution}
+    \includegraphics[width=0.5\paperwidth]{image3.png}
+    \caption{The evolution of a single alive cell (shown at top) under Rule 90.}
+    \label{fig:caEvolution}
 \end{figure}
 
 You now have all the information and terminology you need to build a
@@ -182,9 +184,9 @@ switches. Every time that the array is clocked, the
 \textbf{CurrentState} LEDs will show the array.
 
 \begin{figure}[ht]
-\includegraphics{image4.png}
-\caption{The input and output of the 1D cellular automata.}
-\label{fig:caDevBoard}
+    \includegraphics{image4.png}
+    \caption{The input and output of the 1D cellular automata.}
+    \label{fig:caDevBoard}
 \end{figure}
 
 The \textbf{reset} button will reset the state of all the cells to 0 --
@@ -199,11 +201,11 @@ attached to the body of the button. This is more prone to happen if you
 quickly and sharply jab at the button.
 
 \begin{figure}[ht]
-\begin{tabular}{ccc }
-\includegraphics[width=0.3\paperwidth]{image5.png} &  & \includegraphics{image6.png} \\
-A  & & B \\ 
-\end{tabular}
-\caption{A) Switch bouncing makes generating a single clock edge problematic.
+    \begin{tabular}{ccc }
+        \includegraphics[width=0.3\paperwidth]{image5.png} &  & \includegraphics{image6.png} \\
+        A  & & B \\
+    \end{tabular}
+    \caption{A) Switch bouncing makes generating a single clock edge problematic.
 B) The organization of the SR latch to run the clock requires
 inverters in the sClk and rClk inputs and an SR latch to help remove
 signal bouncing.}
@@ -223,13 +225,11 @@ the clk, its logic level is display on the \textbf{clk} LED.
 
 Since the buttons driving the rClk and sClk signals are logic 0 when
 pressed, you will want to invert these two signals before feeding them
-into the SR latch as shown in Figure~\ref{fig:caSwitchBounce}B. Thus, to 
+into the SR latch as shown in Figure~\ref{fig:caSwitchBounce}B. Thus, to
 toggle the clock signal
 you will press/release the sClk button to set clk to 1. Then
 press/release the rClk button to clear the clk to 0. The back to sClk,
 etc\ldots{}
-
-
 
 \section{System Architecture}
 
@@ -255,36 +255,35 @@ to complete the missing pieces. For this module:
 
 \begin{itemize}
 \item
-  Use the cellularAutomata.v file provided in the Canvas folder as the
-  starting point.
+Use the cellularAutomata.v file provided in the Canvas folder as the
+starting point.
 \item
-  Make a vector for the \emph{rule} and \emph{initialState} from the
-  \emph{slideSwitches} input vector.
+Make a vector for the \emph{rule} and \emph{initialState} from the
+\emph{slideSwitches} input vector.
 \item
-  Make a 3-bit vector input for each singleCell by appending its current
-  state to the two neighbors current state using the ``\{\}'' operators.
-  See the singleCell module for more information.
+Make a 3-bit vector input for each singleCell by appending its current
+state to the two neighbors current state using the ``\{\}'' operators.
+See the singleCell module for more information.
 \item
-  Connect the ends of the CA together
+Connect the ends of the CA together
 
-  \begin{itemize}
-  \item
-    Make cell 8 have cell 0 as its ``left'' neighbor in Figure~\ref{fig:caSysArch}
-  \item
-    Make cell 0 have cell 8 as its ``right'' neighbor in Figure~\ref{fig:caSysArch}
-  \end{itemize}
-\item
-  Use cross-couples NORs and a pair of inverters to realize the SR-latch. This means that you
-  should have two lines of Verilog Code for the SR-latch, both starting
-  with ``assign''.
-\item
-  You are encouraged to use the generate statement to instantiate
-  singleCell 1-7. Due the ring architecture, you will need to
-  instantiate cells 0 and 7 individually. For an example of the generate
-  statement, look at the adderSubtractor provided to you in a previous
-  lab.
+\begin{itemize}
+    \item
+        Make cell 8 have cell 0 as its ``left'' neighbor in Figure~\ref{fig:caSysArch}
+    \item
+        Make cell 0 have cell 8 as its ``right'' neighbor in Figure~\ref{fig:caSysArch}
 \end{itemize}
-
+\item
+Use cross-couples NORs and a pair of inverters to realize the SR-latch. This means that you
+should have two lines of Verilog Code for the SR-latch, both starting
+with ``assign''.
+\item
+You are encouraged to use the generate statement to instantiate
+singleCell 1-7. Due the ring architecture, you will need to
+instantiate cells 0 and 7 individually. For an example of the generate
+statement, look at the adderSubtractor provided to you in a previous
+lab.
+\end{itemize}
 
 \section{Module: singleCell}
 
@@ -318,16 +317,16 @@ vector that is passed into the singleCell module.
 
 \begin{longtable}[]{@{}
 | >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3528}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3236}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3236}}|@{}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3236}}|
+>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3236}}|@{}}
 \caption{The input/output relationship for the nextState
 functionality in Figure~\ref{fig:caSingleCell}.}\label{table:caInOutSingleCell}\\ \hline
 \toprule()
-\{n+, n, n-\} &  nextState & Rule bit \\ 
+\{n+, n, n-\} &  nextState & Rule bit \\
 \midrule()
 \endfirsthead
 \toprule()
-\{n+, n, n-\} &  nextState & Rule bit \\ 
+\{n+, n, n-\} &  nextState & Rule bit \\
 \midrule()
 \endhead
 3'b000 & & \\ \hline
@@ -337,7 +336,7 @@ functionality in Figure~\ref{fig:caSingleCell}.}\label{table:caInOutSingleCell}\
 3'b100 & 1 & \\ \hline
 3'b101 & & \\ \hline
 3'b110 & & \\ \hline
-3'b111 & & \\ 
+3'b111 & & \\
 \bottomrule()
 \end{longtable}
 
@@ -346,55 +345,54 @@ want you to:
 
 \begin{itemize}
 \item
-  Use the singleCell.v file provided in the Canvas folder as the
-  starting point.
+Use the singleCell.v file provided in the Canvas folder as the
+starting point.
 \item
-  Use an always/case statement for the nextState logic
+Use an always/case statement for the nextState logic
 \item
-  Use the module definitions for:
+Use the module definitions for:
 
-  \begin{itemize}
-  \item
-    Use the genericMux2x1 from a previous lab.
-  \item
-    Use the dffNegEdge module provided in the Canvas lab folder for this
-    lab.
-  \end{itemize}
+\begin{itemize}
+    \item
+        Use the genericMux2x1 from a previous lab.
+    \item
+        Use the dffNegEdge module provided in the Canvas lab folder for this
+        lab.
+\end{itemize}
 \item
-  Provide meaningful names to the wires in the module.
+Provide meaningful names to the wires in the module.
 \item
-  Properly tab-indent your code
+Properly tab-indent your code
 
-  \begin{itemize}
-  \item
-    Single level for wire declarations
-  \item
-    Single level for component instantiations
-  \item
-    Two levels for case statement
-  \item
-    Three levels for case values
-  \end{itemize}
+\begin{itemize}
+    \item
+        Single level for wire declarations
+    \item
+        Single level for component instantiations
+    \item
+        Two levels for case statement
+    \item
+        Three levels for case values
+\end{itemize}
 \end{itemize}
 
 \section{Testbench}
 \label{section:caTestbench}
 
-  Run the testbench for the cellularAutomata module provided on Canvas.
-  Produce a timing diagram with the following characteristics. Zoom to
-  fill the available horizontal space with the waveform. Color inputs
-  green and outputs red. Order the traces from top to bottom as
+Run the testbench for the cellularAutomata module provided on Canvas.
+Produce a timing diagram with the following characteristics. Zoom to
+fill the available horizontal space with the waveform. Color inputs
+green and outputs red. Order the traces from top to bottom as
 
 \begin{tabular}{p{4cm}p{4cm}p{4cm}}
-signal		& radix				& tracel color \\ \hline
-    reset 			& default 			& Blue  \\ 
-    rule 			&  unsigned 			& Blue \\ 
-    sButton 			& default 		& Green \\ 
-    rButton 			& default 		& Green \\ 
-    clk 				& default 		& Yellow \\ 
-    currentLifeState 	& hex 			& Red \\
-  \end{tabular}
-
+signal        & radix                & tracel color \\ \hline
+reset             & default             & Blue  \\
+rule             &  unsigned             & Blue \\
+sButton             & default         & Green \\
+rButton             & default         & Green \\
+clk                 & default         & Yellow \\
+currentLifeState     & hex             & Red \\
+\end{tabular}
 
 Do not use the signals from the testbench, but rather the signals
 from inside the cellularAutomata module. You can do this in ModelSim, by
@@ -411,23 +409,21 @@ completed timing diagram should look something like Figure~\ref{fig:caTimeDiag}.
 \label{fig:caTimeDiag}
 \end{figure}
 
-
-
 \section{Pin-Assignment and Synthesis}
 
-Use the image of the FPGA Board in Figure~\ref{fig:exampleCA} 
+Use the image of the FPGA Board in Figure~\ref{fig:exampleCA}
 and the information
 in the C5G User Guide to determine the FPGA pins associated
 with the input and output devices used by the cellular automata module.
 
 \begin{longtable}[]{@{}
 | >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1986}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2067}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1935}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1954}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2058}}|@{}}
-   \caption{Pin Assignment for the 1-D calllular automata.}\label{table:cAutomataPinAssignment} \\ \hline
-\endfirsthead 
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2067}}|
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1935}}|
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1954}}|
+>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2058}}|@{}}
+\caption{Pin Assignment for the 1-D calllular automata.}\label{table:cAutomataPinAssignment} \\ \hline
+\endfirsthead
 slide{[}9{]} & AE19 & &
 Clk
 
@@ -444,20 +440,22 @@ slide{[}2{]} & & & led {[}2{]} & \\ \hline
 slide{[}1{]} & & & led {[}1{]} & \\ \hline
 slide{[}0{]} & & & led {[}0{]}
 
-LEDR0 & \\ 
+LEDR0 & \\
 \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
 | >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
+>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 sClk
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} &
+\begin{minipage}[b]{\linewidth}\raggedright
 Key{[}3{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} &
+\begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} \\
 \midrule()
 \endhead
@@ -466,19 +464,17 @@ rClk
 \end{minipage} & Key{[}2{]} & Y15 \\ \hline
 \begin{minipage}[t]{\linewidth}\raggedright
 reset
-\end{minipage} & Key{[}1{]} & \\ 
+\end{minipage} & Key{[}1{]} & \\
 \bottomrule()
 \end{longtable}
 
 Complete the pin-assignment in Quartus, compile your design and download to the
 FGPA development boards.  If you are having difficulty getting your circuit to work
-correctly, please refer to Section~\ref{section:caDebugging} for some 
-useful debugging tips. 
+correctly, please refer to Section~\ref{section:caDebugging} for some
+useful debugging tips.
 
-Once you get your design working, demonstrate it to a member of the 
-lab team.  
-
-
+Once you get your design working, demonstrate it to a member of the
+lab team.
 
 \section{Turn in}
 
@@ -495,22 +491,22 @@ section next week.
 
 \begin{itemize}
 \item
-  Complete Table~\ref{table:caNextState}.
+Complete Table~\ref{table:caNextState}.
 \item
-  \protect\hyperlink{cellularAutomata_verilog}{Link} Verilog code for
-  the body of the cellularAutomata module (courier 8-point font single
-  spaced), leave out header comments.
+\protect\hyperlink{cellularAutomata_verilog}{Link} Verilog code for
+the body of the cellularAutomata module (courier 8-point font single
+spaced), leave out header comments.
 \end{itemize}
 
 \subsubsection{singleCell Module}
 
 \begin{itemize}
 \item
-  Complete Table~\ref{table:caInOutSingleCell}.
+Complete Table~\ref{table:caInOutSingleCell}.
 \item
-  \protect\hyperlink{singleCell_verilog}{Link} Verilog code for the body
-  of the singleCell module (courier 8-point font single spaced), leave
-  out header comments.
+\protect\hyperlink{singleCell_verilog}{Link} Verilog code for the body
+of the singleCell module (courier 8-point font single spaced), leave
+out header comments.
 \end{itemize}
 
 \subsubsection{Testbench}
@@ -524,9 +520,6 @@ section next week.
 \item Demonstrate your completed circuit to a lab team member.
 \end{itemize}
 
-
-
-
 \section{Debugging Tips}
 \label{section:caDebugging}
 To provide you with some examples to run on the Altera boards, the
@@ -535,40 +528,39 @@ initial conditions and different rules.
 
 \begin{itemize}
 \item
-  In the left most column contains several different rows
+In the left most column contains several different rows
 
-  \begin{itemize}
-  \item
-    The row labeled ``Rule \#'' is the rule that you will enter on the
-    slide switches. The binary code of the rule is provided to make
-    setting your dip switches easier.
-  \item
-    The row labeled ``start'' is the initial load value stored in the
-    CA. A value of ``x'' means that the initial load value doesn't
-    matter (don't care).
-  \item
-    The rows labeled ``iteration'' count successive positive edges
-    generated by the clock.
-  \end{itemize}
-\item
-  The column labeled
-  ``q\textsubscript{8}q\textsubscript{7}q\textsubscript{6}q\textsubscript{5}''
-  is the output from the 4 most significant bits of the CA
-\item
-  The column labeled ``q\textsubscript{4}'' is the output from the
-  middle bit of the CA
-\item
-  The column labeled
-  ``q\textsubscript{3}q\textsubscript{2}q\textsubscript{1}q\textsubscript{0}''
-  is the output from the 4 least significant bits of the CA
+\begin{itemize}
+    \item
+        The row labeled ``Rule \#'' is the rule that you will enter on the
+        slide switches. The binary code of the rule is provided to make
+        setting your dip switches easier.
+    \item
+        The row labeled ``start'' is the initial load value stored in the
+        CA. A value of ``x'' means that the initial load value doesn't
+        matter (don't care).
+    \item
+        The rows labeled ``iteration'' count successive positive edges
+        generated by the clock.
 \end{itemize}
-
+\item
+The column labeled
+``q\textsubscript{8}q\textsubscript{7}q\textsubscript{6}q\textsubscript{5}''
+is the output from the 4 most significant bits of the CA
+\item
+The column labeled ``q\textsubscript{4}'' is the output from the
+middle bit of the CA
+\item
+The column labeled
+``q\textsubscript{3}q\textsubscript{2}q\textsubscript{1}q\textsubscript{0}''
+is the output from the 4 least significant bits of the CA
+\end{itemize}
 
 \begin{longtable}[]{@{}
 |  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2723}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|@{}} \\ \hline
+>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|
+>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|
+>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2426}}|@{}} \\ \hline
 \endfirsthead
 \endhead
 

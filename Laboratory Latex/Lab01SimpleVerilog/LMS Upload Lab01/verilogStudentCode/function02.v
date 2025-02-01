@@ -26,6 +26,6 @@ module function02 (a, b, c, f02);
     // Complete the following line of verilog code
     // Use the logic operators and parenthesis
 
-    assign f02 = 
+    assign f02 =
 
 endmodule

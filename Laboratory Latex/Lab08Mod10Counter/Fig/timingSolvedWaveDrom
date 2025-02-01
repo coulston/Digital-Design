@@ -8,10 +8,10 @@
  ]
   ,
 
-  config:{hscale: 2},  
-  
+  config:{hscale: 2},
+
   foot:{
   text: 'Mod10 Counter Testbench',
   tock: 0},
-  
+
   }

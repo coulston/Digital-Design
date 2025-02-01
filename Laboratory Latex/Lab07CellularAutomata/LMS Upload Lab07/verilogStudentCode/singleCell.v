@@ -19,14 +19,14 @@
 // Board.
 //*****************************************************************
 module singleCell(clk, reset, rule, currentState, initialState, neighborhoodState, loadOrRun);
-    
+
 	 input wire         clk, reset;
-	 input wire  [7:0]  rule;	 	 	 
+	 input wire  [7:0]  rule;
 	 output wire        currentState;
 	 input wire         initialState;
 	 input wire  [2:0]  neighborhoodState;
 	 input wire         loadOrRun;
 
-	
-				
+
+
 endmodule

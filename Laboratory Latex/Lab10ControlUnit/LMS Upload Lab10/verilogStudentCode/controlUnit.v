@@ -1,7 +1,7 @@
 //*****************************************************************
 // Name:    Dr. Chris Coulston
 // Date:    Spring 2020
-// Lab:     
+// Lab:
 // Purp:    controlUnit
 //
 // Assisted: The entire EENG 284 class
@@ -21,40 +21,40 @@
 module controlUnit(clk, reset, cw, sw);
 
 
-	input wire         clk, reset;	 
+	input wire         clk, reset;
 	output reg [5 : 0]   cw;
 	input wire [2 : 0]   sw;
-	 
+
 	wire tenth, S1, S2;
-	 
+
 	reg 			[3:0] state;
 	reg 			[3:0] nextstate;
 
-	localparam   RESET_CW   = 6'b001011;	 
-	 
+	localparam   RESET_CW   = 6'b001011;
+
 	localparam   STOP_CW    = 6'b000000;
- 	 
-	
+
+
 	parameter 	RESET_STATE   = 4'b0000,
-					
+
 					STOP_STATE    = 4'b0010,
 
-					LS2LR_STATE   = 4'b1110;	
-									
-					
+					LS2LR_STATE   = 4'b1110;
+
+
 	assign tenth = sw[0];
 	assign S1 = sw[1];
 	assign S2 = sw[2];
-	 
+
 	 //------------------------------------------
 	 // Take care of reset logic
 	 //------------------------------------------
-	always @(negedge reset, posedge clk) 
+	always @(negedge reset, posedge clk)
 		if (!reset)
 			state <= RESET_STATE;
 		else
 			state <= nextstate;
-    
+
 	 //------------------------------------------
 	 // Determine the output
 	 //------------------------------------------
@@ -67,15 +67,15 @@ module controlUnit(clk, reset, cw, sw);
 				default:				cw = RESET_CW;
 			endcase
 		end
-		  
-		  
+
+
     //------------------------------------------
 	 // Determine the next state
-	 //------------------------------------------		  
+	 //------------------------------------------
 	always @(*) // always block to compute nextstate
 		begin
 			case(state)
-			
+
 				STOP_STATE:
 					begin
 						case({S2,S1})
@@ -84,10 +84,10 @@ module controlUnit(clk, reset, cw, sw);
 							default:		nextstate = STOP_STATE;
 						endcase
 					end
-					
+
 					default:					nextstate = RESET_STATE;
-					
+
 			endcase
 		end
-	
-endmodule	
+
+endmodule

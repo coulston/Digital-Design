@@ -9,29 +9,29 @@ most efficient way possible.  There are two main criterion for
 efficient, time and space.  Time refers to the speed of the
 circuit and is mainly determined by the design
 and the propagation delay of the devices.  In
-this chapter we will concentrate on the space aspect of 
+this chapter we will concentrate on the space aspect of
 efficiency; minimizing the number of circuit elements required
 to realize the design.
 
 Minimizing the number of components in a digital design is,
 in general, a very hard problem.  We have already considered
-the problem of minimizing combinational logic.  We now turn 
-our attention to sequential circuit.  There are two optimizations 
-that can be performed to a FSM; state minimization and state 
+the problem of minimizing combinational logic.  We now turn
+our attention to sequential circuit.  There are two optimizations
+that can be performed to a FSM; state minimization and state
 assignment.
 
 \section{State Minimization}
 The purpose of state minimization is to reduce the number
 of states in the state table yielding a \textit{ minimal state
-table}.  For a FSM designed with a dense 
-encoding of the states this optimization will, in general, have 
-very little effect. Since a FSM with $N$ states has 
+table}.  For a FSM designed with a dense
+encoding of the states this optimization will, in general, have
+very little effect. Since a FSM with $N$ states has
 $\lceil \log_2(N) \rceil$ flip flops then the number of states
 would have to be decreased by a half on order to save a single
 flip flop.  However, in FSM designed using a one's hot encoding,
 each state eliminates one flip flop.
 
-The benefit of such a minimization is obvious, reduce the 
+The benefit of such a minimization is obvious, reduce the
 number of flip flops required for the FSM.  In addition, it allows
 the designer the freedom of constructing the FSM without
 having to worry about the number of states.  The procedure
@@ -43,58 +43,60 @@ an equivalence class by one state.  Two states A and B are
 in the same equivalence class if and only if properties
 E1 and E2 are true.
 \begin{itemize}
-\item E1: $\lambda (A,x) = \lambda (B,x)$ for all x
-\item E2: $\delta(A,x) = \delta(B,x)$ for all x
+    \item E1: $\lambda (A,x) = \lambda (B,x)$ for all x
+    \item E2: $\delta(A,x) = \delta(B,x)$ for all x
 \end{itemize}
 
-$\lambda(A,x)$ is the output of a FSM in state A with input x. 
-$\delta(A,x)$ is the next state of a FSM in state A with input x. 
+$\lambda(A,x)$ is the output of a FSM in state A with input x.
+$\delta(A,x)$ is the next state of a FSM in state A with input x.
 For example, consider the following state table:
 
-$$ \begin{array} {c||c|c}
+$$
+\begin{array} {c||c|c}
     CS \bs x & 0     & 1    \\ \hline \hline
     Q0       & Q0,0  & Q1,0 \\ \hline
     Q1       & Q0,0  & Q2,0 \\ \hline
     Q2       & Q0,0  & Q3,1 \\ \hline
     Q3       & Q0,0  & Q3,1 \\
-\end{array} $$   
+\end{array} $$
 
 Lets determine what $\lambda (Q2,0)$ is equal to.  Since $\lambda$
-describes the output, we have to ask ourselves, what the output of 
+describes the output, we have to ask ourselves, what the output of
 the FSM described by the state table when it is in state Q2 and
 the input is 0?  Clearly, the answer is 0.  The following lists
 some other values of $\lambda$.
 \begin{itemize}
-\item $\lambda (Q2,1) =  1$
-\item $\lambda (Q2,0) =  0$
-\item $\lambda (Q3,1) =  1$
+    \item $\lambda (Q2,1) =  1$
+    \item $\lambda (Q2,0) =  0$
+    \item $\lambda (Q3,1) =  1$
 \end{itemize}
 From this we can conclude that states Q2 and Q3 have the same output
 for each possible input.  In other words:
 $\lambda (Q2,x) = \lambda (Q3,x), \forall x$
-The $\forall$ symbol is interpreted as "for all".  Now, lets look at 
+The $\forall$ symbol is interpreted as "for all".  Now, lets look at
 the $\delta$ function for the states Q2 and Q3.
-\begin{itemize}	
-\item $\delta(Q2,0) = Q0$
-\item $\delta(Q2,1) = Q3$
-\item $\delta(Q2,0) = Q0$
-\item $\delta(Q3,1) = Q3$
+\begin{itemize}
+    \item $\delta(Q2,0) = Q0$
+    \item $\delta(Q2,1) = Q3$
+    \item $\delta(Q2,0) = Q0$
+    \item $\delta(Q3,1) = Q3$
 \end{itemize}
 From this we we can conclude that $\delta (Q2,x) = \delta (Q3,x) \forall x$
 Since, states Q2 and Q3 satisfy property E1 and E2 then Q2 and Q3 are in the
-same equivalence class -- they are equal.  Hence, states Q2 and Q3 can be 
-replaced a single state called Qnew.  The minimal state is formed by 
+same equivalence class -- they are equal.  Hence, states Q2 and Q3 can be
+replaced a single state called Qnew.  The minimal state is formed by
 eliminating all but one state of the equivalence class from the state table
-(knock out rows).  Then all occurrence of the equivalent states 
+(knock out rows).  Then all occurrence of the equivalent states
 are replaced by Qnew.  When this is done to our original state table
 we get the minimal state table below.
 
-$$ \begin{array} {c||c|c}
+$$
+\begin{array} {c||c|c}
     CS \bs x & 0     & 1    \\ \hline \hline
     Q0       & Q0,0  & Q1,0 \\ \hline
     Q1       & Q0,0  & Qnew,0 \\ \hline
     Qnew     & Q0,0  & Qnew,1 \\
-\end{array} $$ 
+\end{array} $$
 
 This method is a bit slow and would be difficult to perform on large
 state table.  The following presents a procedure that is guarantee to
@@ -103,196 +105,199 @@ produce a minimal state table every time.
 \subsection{State Minimization Procedure}
 The state minimization procedure starts with the largest
 possible equivalence classes (an optimistic view)
-and then iteratively fractures the equivalence classes into 
+and then iteratively fractures the equivalence classes into
 smaller classes.
 
 \begin{description}
-\item[Step 1]  Put states into equivalence classes based on their
-output.  Give each equivalence class a name 
+    \item[Step 1]  Put states into equivalence classes based on their
+        output.  Give each equivalence class a name
 
-\item[Step 2]  Interpret the next state values of each state in
-terms of the equivalence classes.  These will be called the next
-class values of a state.
+    \item[Step 2]  Interpret the next state values of each state in
+        terms of the equivalence classes.  These will be called the next
+        class values of a state.
 
-\item[Step 3]  In each equivalence class identify and move any
-state which has different next class values.  Any subset of states
-which disagree with the other states in the class, but agree with
-each other should be moved together.  The moved state(s) should be
-put into their own new equivalence class.
+    \item[Step 3]  In each equivalence class identify and move any
+        state which has different next class values.  Any subset of states
+        which disagree with the other states in the class, but agree with
+        each other should be moved together.  The moved state(s) should be
+        put into their own new equivalence class.
 
-\item [Step 4] If states were moved in Step 3 then go back to Step 2.
-Otherwise the partitioning of the equivalence class is done and the
-minimal state table should be formed.  This is done by interpreting
-each equivalence class as a state.  The next class entries of 
-all the states must agree (otherwise we would have partitioned in Step
-2) and are listed as the "next state" entries of the equivalence class.
-The outputs must be determined by looking up the output values in
-the original state table.
+    \item [Step 4] If states were moved in Step 3 then go back to Step 2.
+        Otherwise the partitioning of the equivalence class is done and the
+        minimal state table should be formed.  This is done by interpreting
+        each equivalence class as a state.  The next class entries of
+        all the states must agree (otherwise we would have partitioned in Step
+        2) and are listed as the "next state" entries of the equivalence class.
+        The outputs must be determined by looking up the output values in
+        the original state table.
 \end{description}
 
 If all this sounds very cryptic, thats all right, we'll work through an
 example to make each of the steps clear. Consider the following state
 table:
-$$ \begin{array} {c||c|c}
+$$
+\begin{array} {c||c|c}
     CS \bs x & 0     & 1    \\ \hline \hline
     Q0       & Q4,1  & Q3,0 \\ \hline
     Q1       & Q3,1  & Q4,1 \\ \hline
     Q2       & Q0,1  & Q3,0 \\ \hline
     Q3       & Q1,1  & Q4,1 \\ \hline
     Q4       & Q3,1  & Q4,0 \\
-\end{array} $$ 
+\end{array} $$
 
 \begin{description}
-\item [Step 1]  The outputs are used to partition
-the states into equivalence classes.  Since there two different
-output combinations exhibited in the state table (1,0) and (1,1)
-our initial partition consists of two equivalence classes.
-This is the most optimistic minimization that can be obtained;
-we are only using rule E1 at this point.
+    \item [Step 1]  The outputs are used to partition
+        the states into equivalence classes.  Since there two different
+        output combinations exhibited in the state table (1,0) and (1,1)
+        our initial partition consists of two equivalence classes.
+        This is the most optimistic minimization that can be obtained;
+        we are only using rule E1 at this point.
 
-\begin{tabular}{|c||c|c|c||c|c|}\hline
-Class & \multicolumn{3}{c||}A & \multicolumn{2}{c|} B \\ \hline
-State & Q0 & Q2 & Q4 & Q1 & Q3 \\ \hline
-\end{tabular}
+        \begin{tabular}{|c||c|c|c||c|c|}\hline
+            Class & \multicolumn{3}{c||}A & \multicolumn{2}{c|} B \\ \hline
+            State & Q0 & Q2 & Q4 & Q1 & Q3 \\ \hline
+        \end{tabular}
 
-\item[Step 2] The next state values for each of the states
-Q0 $\ldots$ Q4 are interpreted in terms of the class partitions A,B.
-For example the next state entries for Q0 are Q4,Q3 for x equal to
-0,1 respectively.  State Q4
-is in class A and state Q3 is in state B.  Hence, the next class
-entries for state Q0 are A,B.  This pair of next class entries is
-written below the state Q0.  This procedure is carried out for the
-remaining states Q1 $\ldots$ Q4 keeping the ordering x equal 0,1 consistent.
-The following table results.
+    \item[Step 2] The next state values for each of the states
+        Q0 $\ldots$ Q4 are interpreted in terms of the class partitions A,B.
+        For example the next state entries for Q0 are Q4,Q3 for x equal to
+        0,1 respectively.  State Q4
+        is in class A and state Q3 is in state B.  Hence, the next class
+        entries for state Q0 are A,B.  This pair of next class entries is
+        written below the state Q0.  This procedure is carried out for the
+        remaining states Q1 $\ldots$ Q4 keeping the ordering x equal 0,1 consistent.
+        The following table results.
 
-\begin{tabular}{|c||c|c|c||c|c|}\hline
-Class      & \multicolumn{3}{|c||} A & \multicolumn{2}{c|} B \\ \hline
-State      & Q0 & Q2 & Q4 & Q1 & Q3 \\ \hline
-Next Class & AB & AB & BA & BA & BA \\ \hline
-\end{tabular}
+        \begin{tabular}{|c||c|c|c||c|c|}\hline
+            Class      & \multicolumn{3}{|c||} A & \multicolumn{2}{c|} B \\ \hline
+            State      & Q0 & Q2 & Q4 & Q1 & Q3 \\ \hline
+            Next Class & AB & AB & BA & BA & BA \\ \hline
+        \end{tabular}
 
-\item[Step 3]
-It is clear that state Q4 does not belong in class A; it
-does not have the same next class as Q0,Q4.
-State Q4 is removed from class A and put into its own class,
-called C.
+    \item[Step 3]
+        It is clear that state Q4 does not belong in class A; it
+        does not have the same next class as Q0,Q4.
+        State Q4 is removed from class A and put into its own class,
+        called C.
 
-Since Q4 has the same next class values as the states in class B
-then can state Q4 be moved into equivalence class B?  No, state
-Q4 has different outputs from the states in equivalence class B,
-that is why it was put into a different class initially.  In this phase
-(steps 2,3) of the state minimization process the equivalence class are
-only made smaller, class are \textit{ never} merged.
+        Since Q4 has the same next class values as the states in class B
+        then can state Q4 be moved into equivalence class B?  No, state
+        Q4 has different outputs from the states in equivalence class B,
+        that is why it was put into a different class initially.  In this phase
+        (steps 2,3) of the state minimization process the equivalence class are
+        only made smaller, class are \textit{ never} merged.
 
-\item [Step 4]
-Since states were moved in step 3 we must go back to step 2 with
-the classes A,B,C.
+    \item [Step 4]
+        Since states were moved in step 3 we must go back to step 2 with
+        the classes A,B,C.
 
-\item [Step 2]  The next class entries are written down
-for each state.  If you were lazy you might skip writing
-down the next class entries for state Q4 because it cannot
-be different from the other members of its equivalence class; it
-is by itself.
+    \item [Step 2]  The next class entries are written down
+        for each state.  If you were lazy you might skip writing
+        down the next class entries for state Q4 because it cannot
+        be different from the other members of its equivalence class; it
+        is by itself.
 
-\begin{tabular}{|c||c|c||c|c||c|}\hline
-Class      & \multicolumn{2}{|c||} A & \multicolumn{2}{c||} B & C\\ \hline
-State      & Q0 & Q2 & Q1 & Q3 & Q4 \\ \hline
-Next Class & CB & AB & BC & BC & BC \\ \hline
-\end{tabular}
+        \begin{tabular}{|c||c|c||c|c||c|}\hline
+            Class      & \multicolumn{2}{|c||} A & \multicolumn{2}{c||} B & C\\ \hline
+            State      & Q0 & Q2 & Q1 & Q3 & Q4 \\ \hline
+            Next Class & CB & AB & BC & BC & BC \\ \hline
+        \end{tabular}
 
-\item [Step 3]
-We see that states in class A have different next class entries so 
-one of them must be moved into a new class.  The choice of which
-state to move is arbitrary, so we will move Q2 into class D.
-Since states were moved in step 3 we must go back to step 2 with
-the classes A,B,C,D.
+    \item [Step 3]
+        We see that states in class A have different next class entries so
+        one of them must be moved into a new class.  The choice of which
+        state to move is arbitrary, so we will move Q2 into class D.
+        Since states were moved in step 3 we must go back to step 2 with
+        the classes A,B,C,D.
 
-\item[Step 2]
-\begin{tabular}{|c||c||c|c||c||c|}\hline
-Class      & A & \multicolumn{2}{c||} B & C & D\\ \hline
-State      & Q0 & Q1 & Q3 & Q4 & Q2  \\ \hline
-Next Class & CB & BC & BC & BC & AB  \\ \hline
-\end{tabular}
+    \item[Step 2]
+        \begin{tabular}{|c||c||c|c||c||c|}\hline
+            Class      & A & \multicolumn{2}{c||} B & C & D\\ \hline
+            State      & Q0 & Q1 & Q3 & Q4 & Q2  \\ \hline
+            Next Class & CB & BC & BC & BC & AB  \\ \hline
+        \end{tabular}
 
-\item[Step 3]
-All the states within the classes are the same so no
-partitioning is required.
+    \item[Step 3]
+        All the states within the classes are the same so no
+        partitioning is required.
 
-\item[Step 4]
-There was no partitioning in step 3 so we can now form the minimal
-state table.  This is done by listing each class on a row of a 
-state table.  The next class entries are listed as the next state
-entries in the state table.  The outputs are determined by looking
-at the outputs for one of the states within the equivalence class.
+    \item[Step 4]
+        There was no partitioning in step 3 so we can now form the minimal
+        state table.  This is done by listing each class on a row of a
+        state table.  The next class entries are listed as the next state
+        entries in the state table.  The outputs are determined by looking
+        at the outputs for one of the states within the equivalence class.
 
-$$ \begin{array} {c||c|c}
-    CS \bs x & 0     & 1    \\ \hline \hline
-    A       & C,1  & B,0 \\ \hline
-    B       & B,1  & C,1 \\ \hline
-    C       & B,1  & C,0 \\ \hline
-    D       & A,1  & B,0 \\ 
-\end{array} $$ 
+        $$
+        \begin{array} {c||c|c}
+            CS \bs x & 0     & 1    \\ \hline \hline
+            A       & C,1  & B,0 \\ \hline
+            B       & B,1  & C,1 \\ \hline
+            C       & B,1  & C,0 \\ \hline
+            D       & A,1  & B,0 \\
+        \end{array} $$
 
-Realize that it does not matter what the states are
-called, so at this point you could revert back to some state notation
-that you need/want for the design process.
+        Realize that it does not matter what the states are
+        called, so at this point you could revert back to some state notation
+        that you need/want for the design process.
 \end{description}
 
 The state minimization problem can be made to handle arbitrarily
 large state tables.  Increasing the number of input bits increases the
 number of entries in the  Next Class row as is seen in the following example.
 
-$$ \begin{array} {c||c|c|c|c}
-  CS \bs x_1 x_0 & 00    & 01   & 11    & 10   \\ \hline \hline
-        Q0       & Q0,1  & Q5,1 & Q1,1  & Q4,1 \\ \hline
-        Q1       & Q2,0  & Q1,0 & Q3,0  & Q5,0 \\ \hline
-        Q2       & Q4,1  & Q1,1 & Q5,1  & Q0,1 \\ \hline
-        Q3       & Q3,1  & Q2,1 & Q4,1  & Q1,1 \\ \hline
-        Q4       & Q5,0  & Q4,0 & Q0,0  & Q2,0 \\ \hline
-        Q5       & Q1,1  & Q1,1 & Q2,1  & Q3,1 \\
+$$
+\begin{array} {c||c|c|c|c}
+    CS \bs x_1 x_0 & 00    & 01   & 11    & 10   \\ \hline \hline
+    Q0       & Q0,1  & Q5,1 & Q1,1  & Q4,1 \\ \hline
+    Q1       & Q2,0  & Q1,0 & Q3,0  & Q5,0 \\ \hline
+    Q2       & Q4,1  & Q1,1 & Q5,1  & Q0,1 \\ \hline
+    Q3       & Q3,1  & Q2,1 & Q4,1  & Q1,1 \\ \hline
+    Q4       & Q5,0  & Q4,0 & Q0,0  & Q2,0 \\ \hline
+    Q5       & Q1,1  & Q1,1 & Q2,1  & Q3,1 \\
 \end{array} $$
 
 \begin{description}
-\item[Step 1]  The outputs are used to set up an initial partition.
+    \item[Step 1]  The outputs are used to set up an initial partition.
 
-\begin{tabular}{|c||c|c|c|c||c|c|}\hline
-Class      & \multicolumn{4}{|c||} A & \multicolumn{2}{c|} B\\ \hline
-State      & Q0   & Q2   & Q3   & Q5   & Q1   & Q4   \\ \hline
-\end{tabular}
+        \begin{tabular}{|c||c|c|c|c||c|c|}\hline
+            Class      & \multicolumn{4}{|c||} A & \multicolumn{2}{c|} B\\ \hline
+            State      & Q0   & Q2   & Q3   & Q5   & Q1   & Q4   \\ \hline
+        \end{tabular}
 
+    \item[Step 2]  The next class entries are recorded for each state.  Since
+        there are four input combinations each state will have four next class
+        entries.  The input order 00,01,11,10 will be maintained.
 
-\item[Step 2]  The next class entries are recorded for each state.  Since
-there are four input combinations each state will have four next class
-entries.  The input order 00,01,11,10 will be maintained.
+        \begin{tabular}{|c||c|c|c|c||c|c|}\hline
+            Class      & \multicolumn{4}{|c||} A & \multicolumn{2}{c|} B \\ \hline
+            State      & Q0   & Q2   & Q3   & Q5   & Q1   & Q4   \\ \hline
+            Next Class & AABB & BBAA & AABB & BBAA & ABAA & ABAA \\ \hline
+        \end{tabular}
 
-\begin{tabular}{|c||c|c|c|c||c|c|}\hline
-Class      & \multicolumn{4}{|c||} A & \multicolumn{2}{c|} B \\ \hline
-State      & Q0   & Q2   & Q3   & Q5   & Q1   & Q4   \\ \hline
-Next Class & AABB & BBAA & AABB & BBAA & ABAA & ABAA \\ \hline
-\end{tabular}
+    \item[Step 3]  Since the next class entries in class A do not agree,
+        some states will have to be moved.  Since both states Q2 and
+        Q5 agree on their next class entries they will be moved as a pair
+        into an new class C.
 
-\item[Step 3]  Since the next class entries in class A do not agree,
-some states will have to be moved.  Since both states Q2 and
-Q5 agree on their next class entries they will be moved as a pair
-into an new class C.
+    \item[Step 2]  The next class entries for the new partition of
+        the states is determined.
 
-\item[Step 2]  The next class entries for the new partition of
-the states is determined.
+        \begin{tabular}{|c||c|c||c|c||c|c|}\hline
+            Class      & \multicolumn{2}{|c||} A & \multicolumn{2}{c||} B & \multicolumn{2}{c|} C\\ \hline
+            State      & Q0   & Q3   & Q1   & Q4   & Q2   & Q5 \\ \hline
+            Next Class & ACBB & ACBB & CBAC & CBAC & BBCA & BBCA \\ \hline
+        \end{tabular}
 
-\begin{tabular}{|c||c|c||c|c||c|c|}\hline
-Class      & \multicolumn{2}{|c||} A & \multicolumn{2}{c||} B & \multicolumn{2}{c|} C\\ \hline
-State      & Q0   & Q3   & Q1   & Q4   & Q2   & Q5 \\ \hline
-Next Class & ACBB & ACBB & CBAC & CBAC & BBCA & BBCA \\ \hline
-\end{tabular}
+    \item[Step 3]Since no states were moved, the state table can be written.
 
-\item[Step 3]Since no states were moved, the state table can be written.
-
-$$ \begin{array} {c||c|c|c|c}
-  CS \bs x_1 x_0 & 00  & 01  & 11   & 10   \\ \hline \hline
-        A        & A,1 & C,1 & B,1  & B,1 \\ \hline
-        B        & C,0 & B,0 & A,0  & C,0 \\ \hline
-        C        & B,1 & B,1 & C,1  & A,1 \\ 
-\end{array} $$
+        $$
+        \begin{array} {c||c|c|c|c}
+            CS \bs x_1 x_0 & 00  & 01  & 11   & 10   \\ \hline \hline
+            A        & A,1 & C,1 & B,1  & B,1 \\ \hline
+            B        & C,0 & B,0 & A,0  & C,0 \\ \hline
+            C        & B,1 & B,1 & C,1  & A,1 \\
+        \end{array} $$
 \end{description}
 
 The process of determining a minimal state table is a rather simple procedure
@@ -300,15 +305,15 @@ which could easily be automated by a program which reads in a state table and
 output a minimal state table.
 
 \section{State Assignment}
-State assignment is the process of assigning binary codes to the 
-symbolic states.   This step does not need to be performed when a 
+State assignment is the process of assigning binary codes to the
+symbolic states.   This step does not need to be performed when a
 one's hot encoding is used because the binary
-code for each state is predetermined.  This step is only performed 
-when the states of the FSM are to be encoded using a dense coding.  
+code for each state is predetermined.  This step is only performed
+when the states of the FSM are to be encoded using a dense coding.
 
 Before the assignment can proceed the number of flip flops required
 must be quantified.  In general, if a FSM has $N$ states then it
-will require $\lceil \log_2(N) \rceil$ flip flops.  
+will require $\lceil \log_2(N) \rceil$ flip flops.
 
 The state assignment does influence the amount of combinational
 logic required to realize the FSM.  Consider the following state
@@ -319,19 +324,19 @@ table, it will be realized using D flip flops.
     A       & C,0  & D,0 \\ \hline
     B       & A,1  & B,0 \\ \hline
     C       & C,0  & D,1 \\ \hline
-    D       & A,1  & B,1 \\ 
-\end{tabular} 
+    D       & A,1  & B,1 \\
+\end{tabular}
 
 \begin{tabular}{l|l}
-Assignment 1 & Assignment 2 \\ \hline
+    Assignment 1 & Assignment 2 \\ \hline
     \begin{tabular} {c||c}
         State   & Q1 Q0 \\ \hline
         A       & 00 \\ \hline
         B       & 01 \\ \hline
         C       & 10 \\ \hline
-        D       & 11 \\ 
-    \end{tabular} 
-&
+        D       & 11 \\
+    \end{tabular}
+    &
     \begin{tabular} {c||c}
         State   & Q1 Q0 \\ \hline
         A       & 00 \\ \hline
@@ -345,57 +350,57 @@ Assignment 1 & Assignment 2 \\ \hline
         00      & 10  & 11 \\ \hline
         01      & 00  & 01 \\ \hline
         11      & 00  & 01 \\ \hline
-        10      & 10  & 11 \\ 
-    \end{tabular}  
-& 
+        10      & 10  & 11 \\
+    \end{tabular}
+    &
     \begin{tabular} {c||c|c}
         Q1 Q0 $\bs$ X & 0  & 1  \\ \hline \hline
         00      & 11  & 10 \\ \hline
         01      & 00  & 01 \\ \hline
         11      & 11  & 10 \\ \hline
-        10      & 00  & 01 \\ 
+        10      & 00  & 01 \\
     \end{tabular}  \\ \hline
 
     \begin{tabular}{l}
-    D1 = Q0' \\
-    D0 = X \\
+        D1 = Q0' \\
+        D0 = X \\
     \end{tabular}
-&
+    &
     \begin{tabular}{l}
-    D1 = Q1'*Q0' + Q1*Q0 \\
-    D0 = X'*Q1'*Q0' + X*Q1'*Q0 + X'*Q1*Q0 + X*Q1*Q0' \\
-    \end{tabular} \\ 
+        D1 = Q1'*Q0' + Q1*Q0 \\
+        D0 = X'*Q1'*Q0' + X*Q1'*Q0 + X'*Q1*Q0 + X*Q1*Q0' \\
+    \end{tabular} \\
 \end{tabular}
 
 Clearly, assignment 1 produces a more minimal realization.  Incredibly,
 this drastic change in the realization is the result of
-changing the assignments of states C and D.  Thus, we are motivated to 
-find a state assignment that minimizes the amount of combinational logic 
-required to realize a FSM.  Unfortunately, this problem is not solvable 
+changing the assignments of states C and D.  Thus, we are motivated to
+find a state assignment that minimizes the amount of combinational logic
+required to realize a FSM.  Unfortunately, this problem is not solvable
 in practice as the following discussion eludes to.
 
 How many state assignments are possible in a FSM with $N$ states?
-The answer is too many.  Let the states be labeled $Q_1 \ldots Q_N$.  
+The answer is too many.  Let the states be labeled $Q_1 \ldots Q_N$.
 
-\begin{itemize}	
-\item State $Q_N$ may have $N$ possible binary representations, 
-\item Since one combination was used by state $Q_N$ there are N-1 combinations
-left to choose from for state $Q_{N-1}$. 
-\item This process continues, each state using one combination till
-we get to the final state.
-\item State $Q_1$ has 1 possible binary representation.
+\begin{itemize}
+    \item State $Q_N$ may have $N$ possible binary representations,
+    \item Since one combination was used by state $Q_N$ there are N-1 combinations
+        left to choose from for state $Q_{N-1}$.
+    \item This process continues, each state using one combination till
+        we get to the final state.
+    \item State $Q_1$ has 1 possible binary representation.
 \end{itemize}
 
 These choices are independent so in total there are $N*(N-1) * \ldots * 1 = N!$
 different choices of state assignments.  This is a stunningly large number
 for even a humble FSM with 8 states; 40,320 different state assignments.
-Thus, we cannot check for the best assignment by enumerating all the state 
+Thus, we cannot check for the best assignment by enumerating all the state
 assignment and looking for the best.  Coupled with
 this difficulty is the fact that determining an \SOPmin expression
 is a rather daunting problem in of itself.
 
 Given the preceding discussion, it should come as no surprise
-that determining a state assignment which minimizes the 
+that determining a state assignment which minimizes the
 amount of combinational logic is, in practice, not feasible.
 Thus, if we want an assignment that minimizes the amount
 of combinational logic then we must be guided by \textit{ heuristics}.
@@ -410,11 +415,11 @@ Highest priority should be given to the first heuristic and the
 lowest priority should be given to the last heuristic.
 
 \begin{tabular}{ll}
-First  & States with the same next states for all inputs \\
-Second & States with the same next states for some inputs \\
-Third  & Next states \\
-Fourth & States with the same outputs for all inputs \\
-Fifth  & States with the same outputs for some inputs \\
+    First  & States with the same next states for all inputs \\
+    Second & States with the same next states for some inputs \\
+    Third  & Next states \\
+    Fourth & States with the same outputs for all inputs \\
+    Fifth  & States with the same outputs for some inputs \\
 \end{tabular}
 
 These heuristics will be explained with the aide of an
@@ -422,21 +427,21 @@ example.  Consider the state table used in the example
 above.
 
 \begin{tabular} {c||c|c}
-        CS $\bs$ X & 0     & 1    \\ \hline \hline
-        A       & C,0  & D,0 \\ \hline
-        B       & A,1  & B,0 \\ \hline
-        C       & C,0  & D,1 \\ \hline
-        D       & A,1  & B,1 \\
+    CS $\bs$ X & 0     & 1    \\ \hline \hline
+    A       & C,0  & D,0 \\ \hline
+    B       & A,1  & B,0 \\ \hline
+    C       & C,0  & D,1 \\ \hline
+    D       & A,1  & B,1 \\
 \end{tabular}
 
 The first heuristic states that two state which have the same
 next states for all inputs should be given adjacent binary
 representation.  Looking at the state table we see that states
 A and C have the same next states C,D for X equal 0,1
-respectively.  So the pair of states (A,C) should be given 
-adjacent binary assignments.  Likewise, the pair of 
+respectively.  So the pair of states (A,C) should be given
+adjacent binary assignments.  Likewise, the pair of
 states (B,D) have the same next states A,B for all inputs.
-Thus, from this step the state pairs (A,C) and (B,D) should be 
+Thus, from this step the state pairs (A,C) and (B,D) should be
 given adjacent binary representations.
 
 The second heuristic state that states with the same next state
@@ -461,16 +466,16 @@ have already been included above, none of them need to be noted.
 
 The heuristics are usually written down in a more concise form
 \begin{enumerate}
-\item (A,C) (B,D)
-\item none
-\item (C,D) (A,B)
-\item none
-\item none
+    \item (A,C) (B,D)
+    \item none
+    \item (C,D) (A,B)
+    \item none
+    \item none
 \end{enumerate}
 
 In the example at the beginning of this section, assignment 1 satisfies
 all the heuristics while assignment 2 only satisfies the third heuristic.
-This example gives evidence that the heuristics provide good 
+This example gives evidence that the heuristics provide good
 state assignments.  It may not be possible to satisfy all the
 assignments.  In such cases, try to satisfy as many as possible;
 giving preference to the highest.  Remember that these are only
@@ -478,29 +483,30 @@ heuristics, there is no guarantee that they will generate the best
 possible assignment.
 
 When a state table has more than 4 states a kmap may be used to help
-organize the states according to the heuristics.  For example, 
+organize the states according to the heuristics.  For example,
 consider the state table defined below.
 
-$$ \begin{array} {c||c|c}
-        State   & 0   & 1   \\ \hline
-        A       & C,0  & B,0 \\ \hline
-        B       & E,1  & D,0 \\ \hline
-        C       & E,1  & D,0 \\ \hline
-        D       & F,1  & G,1 \\ \hline
-        E       & E,0  & G,0 \\ \hline
-        F       & A,0  & A,0 \\ \hline
-        G       & A,1  & A,1 \\ 
+$$
+\begin{array} {c||c|c}
+    State   & 0   & 1   \\ \hline
+    A       & C,0  & B,0 \\ \hline
+    B       & E,1  & D,0 \\ \hline
+    C       & E,1  & D,0 \\ \hline
+    D       & F,1  & G,1 \\ \hline
+    E       & E,0  & G,0 \\ \hline
+    F       & A,0  & A,0 \\ \hline
+    G       & A,1  & A,1 \\
 \end{array} $$
 
 The heuristics are applied to this state table generating the following
 list of adjacencies.
 
 \begin{enumerate}
-\item (B,C) (F,G)
-\item (B,E) (C,E) (D,E)
-\item (C,B) (E,D) (F,G) (E,G)
-\item (A,E,F) (B,C) (D,G)
-\item too many
+    \item (B,C) (F,G)
+    \item (B,E) (C,E) (D,E)
+    \item (C,B) (E,D) (F,G) (E,G)
+    \item (A,E,F) (B,C) (D,G)
+    \item too many
 \end{enumerate}
 
 Now we play a game where you try to satisfy as many of the
@@ -514,10 +520,11 @@ It would be a good time to give the reset state the binary
 code $0 \ldots 0$ by placing it in the 0 corner of the kmap.
 In the above example, state A will be taken to be the reset states.
 
-$$ \begin{array} {c||c|c|c|c}
+$$
+\begin{array} {c||c|c|c|c}
     Q_2 \bs Q_1 Q_0 & 00 & 01 & 11 & 10 \\ \hline \hline
     0           &  A & C  & B  &    \\ \hline
-    1           &  D & E  & G  & F  \\ 
+    1           &  D & E  & G  & F  \\
 \end{array} $$
 
 The cells of this kmap are filled with the states in order to satisfy
@@ -525,94 +532,92 @@ the constraints determined earlier.  The results of this kmap can be
 used to determine the state assignment table.
 
 \begin{tabular} {c||c|c}
-        State   & $Q_2 Q_1 Q_0$
-        A       & 000 \\ \hline
-        B       & 011 \\ \hline
-        C       & 001 \\ \hline
-        D       & 100 \\ \hline
-        E       & 101 \\ \hline
-        F       & 110 \\ \hline
-        G       & 111 \\ 
+    State   & $Q_2 Q_1 Q_0$
+    A       & 000 \\ \hline
+    B       & 011 \\ \hline
+    C       & 001 \\ \hline
+    D       & 100 \\ \hline
+    E       & 101 \\ \hline
+    F       & 110 \\ \hline
+    G       & 111 \\
 \end{tabular}
 
 \section{Exercises}
 \begin{enumerate}
 
-\item Determine the minimal state table for the following
-state table.
+    \item Determine the minimal state table for the following
+        state table.
 
-\begin{tabular}{c||c|c}
-CS $\bs$ X &  0     &  1 \\ \hline \hline
-s1  &  s2,0  &  s3,0 \\ \hline
-s2  &  s4,0  &  s5,0 \\ \hline
-s3  &  s6,0  &  s7,0 \\ \hline
-s4  &  s8,0  &  s9,0 \\ \hline
-s5  &  s10,0 &  s11,0 \\ \hline
-s6  &  s12,0 &  s13,0 \\ \hline
-s7  &  s14,0 &  s15,0 \\ \hline
-s8  &  s1,0  &  s3,0 \\ \hline
-s9  &  s1,0  &  s3,0 \\ \hline
-s10 &  s1,0  &  s3,0 \\ \hline
-s11 &  s1,0  &  s2,0 \\ \hline
-s12 &  s2,1  &  s1,0 \\ \hline
-s13 &  s2,0  &  s1,0 \\ \hline
-s14 &  s2,0  &  s1,0 \\ \hline
-s15 &  s2,0  &  s1,0 \\ 
-\end{tabular}
+        \begin{tabular}{c||c|c}
+            CS $\bs$ X &  0     &  1 \\ \hline \hline
+            s1  &  s2,0  &  s3,0 \\ \hline
+            s2  &  s4,0  &  s5,0 \\ \hline
+            s3  &  s6,0  &  s7,0 \\ \hline
+            s4  &  s8,0  &  s9,0 \\ \hline
+            s5  &  s10,0 &  s11,0 \\ \hline
+            s6  &  s12,0 &  s13,0 \\ \hline
+            s7  &  s14,0 &  s15,0 \\ \hline
+            s8  &  s1,0  &  s3,0 \\ \hline
+            s9  &  s1,0  &  s3,0 \\ \hline
+            s10 &  s1,0  &  s3,0 \\ \hline
+            s11 &  s1,0  &  s2,0 \\ \hline
+            s12 &  s2,1  &  s1,0 \\ \hline
+            s13 &  s2,0  &  s1,0 \\ \hline
+            s14 &  s2,0  &  s1,0 \\ \hline
+            s15 &  s2,0  &  s1,0 \\
+        \end{tabular}
 
+    \item Determine the MIE's for one's hot implementation of the state
+        diagram in Figure~\ref{fig:MinState}.  Make sure to minimize the
+        number of states before determining the MIEs.
+        \begin{figure}[ht]
+            %\centerline{\includegraphics{figure=../chapter09/Fig/MinState}}
+            \caption{An Mealy FSM state diagram.}
+            \label{fig:MinState}
+        \end{figure}
 
-\item Determine the MIE's for one's hot implementation of the state
-diagram in Figure~\ref{fig:MinState}.  Make sure to minimize the 
-number of states before determining the MIEs.
-\begin{figure}[ht]
-%\centerline{\includegraphics{figure=../chapter09/Fig/MinState}}
-\caption{An Mealy FSM state diagram.}
-\label{fig:MinState}
-\end{figure}
+    \item Determine a good state assignment for the following FSM assuming
+        that state A is assigned the binary code $(Q_3 Q_2 Q_1 Q_0) = 0000$.
 
-\item Determine a good state assignment for the following FSM assuming
-that state A is assigned the binary code $(Q_3 Q_2 Q_1 Q_0) = 0000$.
+        \begin{tabular}{c||c|c}
+            CS $\bs$ X&  0    &  1 \\ \hline \hline
+            A   &  B,0  &  G,0 \\ \hline
+            B   &  E,1  &  H,1 \\ \hline
+            C   &  C,0  &  D,1 \\ \hline
+            D   &  B,0  &  A,0 \\ \hline
+            E   &  B,1  &  D,0 \\ \hline
+            F   &  F,0  &  E,1 \\ \hline
+            G   &  D,0  &  A,1 \\ \hline
+            H   &  G,1  &  D,0 \\
+        \end{tabular}
 
-\begin{tabular}{c||c|c}
-CS $\bs$ X&  0    &  1 \\ \hline \hline
-A   &  B,0  &  G,0 \\ \hline
-B   &  E,1  &  H,1 \\ \hline
-C   &  C,0  &  D,1 \\ \hline
-D   &  B,0  &  A,0 \\ \hline
-E   &  B,1  &  D,0 \\ \hline
-F   &  F,0  &  E,1 \\ \hline
-G   &  D,0  &  A,1 \\ \hline
-H   &  G,1  &  D,0 \\ 
-\end{tabular}
+    \item Determine the minimal state table for the following state table
 
+        \begin{tabular}{c||c|c|c|c}
+            CS $\bs$ X1,X0& 00    & 01    & 11    & 10    \\ \hline
+            A    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            B    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            C    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            D    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            E    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            F    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            G    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            H    & A,0    & A,0    & A,0    & A,0    \\
+        \end{tabular}
 
-\item Determine the minimal state table for the following state table
+    \item Determine a good state assignment for the following minimal state
+        table.
 
-\begin{tabular}{c||c|c|c|c}
-CS $\bs$ X1,X0& 00	& 01	& 11	& 10	\\ \hline
-A	& A,0	& A,0	& A,0	& A,0	\\ \hline
-B	& A,0	& A,0	& A,0	& A,0	\\ \hline
-C	& A,0	& A,0	& A,0	& A,0	\\ \hline
-D	& A,0	& A,0	& A,0	& A,0	\\ \hline
-E	& A,0	& A,0	& A,0	& A,0	\\ \hline
-F	& A,0	& A,0	& A,0	& A,0	\\ \hline
-G	& A,0	& A,0	& A,0	& A,0	\\ \hline
-H	& A,0	& A,0	& A,0	& A,0	\\ 
-\end{tabular}
-
-\item Determine a good state assignment for the following minimal state
-table.
-
-\begin{tabular}{c||c|c|c|c}
-CS $\bs$ X1,X0& 00	& 01	& 11	& 10	\\ \hline
-A	& A,0	& A,0	& A,0	& A,0	\\ \hline
-B	& A,0	& A,0	& A,0	& A,0	\\ \hline
-C	& A,0	& A,0	& A,0	& A,0	\\ \hline
-D	& A,0	& A,0	& A,0	& A,0	\\ \hline
-E	& A,0	& A,0	& A,0	& A,0	\\ \hline
-F	& A,0	& A,0	& A,0	& A,0	\\ \hline
-G	& A,0	& A,0	& A,0	& A,0	\\ \hline
-H	& A,0	& A,0	& A,0	& A,0	\\ 
-\end{tabular}
+        \begin{tabular}{c||c|c|c|c}
+            CS $\bs$ X1,X0& 00    & 01    & 11    & 10    \\ \hline
+            A    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            B    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            C    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            D    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            E    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            F    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            G    & A,0    & A,0    & A,0    & A,0    \\ \hline
+            H    & A,0    & A,0    & A,0    & A,0    \\
+        \end{tabular}
 
 \end{enumerate}

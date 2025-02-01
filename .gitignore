@@ -11,3 +11,6 @@ Textbook Latex/Digital Design Homework Solutions.pdf
 *.out
 *.synctex.gz
 *.toc
+
+# Vale rules storage
+/styles/*

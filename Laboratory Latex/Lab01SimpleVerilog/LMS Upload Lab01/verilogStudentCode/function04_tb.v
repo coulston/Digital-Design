@@ -30,12 +30,12 @@ initial
         $monitor(t_a, t_b, t_c, t_f);
 
         // Complete the stimulus vectors.  Do not put "#20" after the
-        // last row - it will cause an error.		
-        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b0;		#20 	
-        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b1;		#20 	
+        // last row - it will cause an error.
+        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b0;		#20
+        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b1;		#20
 
 	// Yup, add those lines of code.
 
-        t_a = 1'b1;	t_b = 1'b1;	t_c = 1'b1;	
+        t_a = 1'b1;	t_b = 1'b1;	t_c = 1'b1;
     end
 endmodule

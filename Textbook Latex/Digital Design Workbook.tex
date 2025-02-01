@@ -1,5 +1,5 @@
 %%------------------------------------
-%% This is for the workbook 
+%% This is for the workbook
 %% tar -cvf work.tar *.tex ./Fig*/*.fig
 %%
 %% To make the book
@@ -18,24 +18,23 @@
 \documentclass[letterpaper, 10pt]{memoir}
 \chapterstyle{ger}
 \settrims{0pt}{0pt}
-\semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
+\semiisopage[9]        % [N] is spine margin is 1/Nth pf page
 
-% To keep the root LaTex file clean, I pulled all the formating and package 
+% To keep the root LaTex file clean, I pulled all the formating and package
 % includes into the preamble.tex file
 \include{preamble}
 
 %%\showanswers
-\hideanswers 
+\hideanswers
 
 \makeindex
 
 \begin{document}
 
-
 \frontmatter
 \title{}
- \includegraphics{./Fig/colorCover}
- \maketitle
+\includegraphics{./Fig/colorCover}
+\maketitle
 
 \include{copyright}
 \tableofcontents
@@ -50,5 +49,4 @@
 \include{./chapter07/work7}
 \include{./chapter08/work8}
 
-
-\end{document} 
+\end{document}

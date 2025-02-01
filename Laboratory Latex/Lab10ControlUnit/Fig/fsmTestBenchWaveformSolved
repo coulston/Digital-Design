@@ -4,20 +4,20 @@
   {name: 'tenth', wave: '0.....10.10.10....10.10.10..................', phase: 0.5},
   {name: 'S1', wave: '1.............0.1...............0.1...0.1...', phase: 0.5},
   {name: 'S2', wave: '1..01.....................0.10.1...0.1......', phase: 0.5},
- 
-  {name: 'state', wave: '==.=3.33.33.333.4.44.44.444.77.44.33.==.==..', data: ['RESET', 'STOP', 'S2R', 
+
+  {name: 'state', wave: '==.=3.33.33.333.4.44.44.444.77.44.33.==.==..', data: ['RESET', 'STOP', 'S2R',
                                                     'RUN', 'INC','RUN','INC','RUN','INC','RUN','R2LR',
-                                                    'LAPRUN', 'LAPINC','LAPRUN', 'LAPINC', 'LAPRUN', 'LAPINC','LAPRUN','LR2LS', 
+                                                    'LAPRUN', 'LAPINC','LAPRUN', 'LAPINC', 'LAPRUN', 'LAPINC','LAPRUN','LR2LS',
                                                     'LAPSTOP', 'LS2LR',
                                                     'LAPRUN', 'LR2R',
                                                     'RUN', 'R2S',
                                                      'STOP', 'S2RES', 'RESET', 'STOP']},
  ],
 
-  config:{hscale: 1},  
-  
+  config:{hscale: 1},
+
   foot:{
   text: 'Figure',
   tock: 0},
-  
+
   }
