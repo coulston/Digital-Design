@@ -19,7 +19,7 @@
 // Board.
 //*****************************************************************
 module function02_tb;
-	
+
     wire t_f;
     reg t_a, t_b, t_c;
 
@@ -31,9 +31,9 @@ initial
         $monitor(t_a, t_b, t_c, t_f);
 
         // Complete the stimulus vectors.  Do not put "#20" after the
-        // last row - it will cause an error.		
-        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b0;		#20 	
-        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b1;		#20 	
+        // last row - it will cause an error.
+        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b0;		#20
+        t_a = 1'b0;	t_b = 1'b0;	t_c = 1'b1;		#20
 
 	// Put in the missing rows
 

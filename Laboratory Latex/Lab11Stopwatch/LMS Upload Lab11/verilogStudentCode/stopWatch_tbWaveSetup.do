@@ -1,5 +1,5 @@
 #################################################################################
-# File: stopWatch_tbWaveSetup.do 
+# File: stopWatch_tbWaveSetup.do
 #################################################################################
 restart -f
 delete wave *
@@ -33,9 +33,3 @@ add wave -position end  -radix hex -color orange sim:/stopWatch_tb/uut/dpsw/tenD
 add wave -position end  -radix hex -color green sim:/stopWatch_tb/uut/dpsw/tenthDigitToDisplay
 add wave -position end  -radix hex -color green sim:/stopWatch_tb/uut/dpsw/unitDigitToDisplay
 add wave -position end  -radix hex -color green sim:/stopWatch_tb/uut/dpsw/tenDigitToDisplay
-
-
-
-
-
-

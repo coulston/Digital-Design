@@ -18,12 +18,12 @@
 // Board.
 //*****************************************************************
 module lfsr(inputSeed, outputRand);
-	
+
     // Put variable decelaration here
 
-	assign outputRand[0] = 
-    assign outputRand[1] = 
-    assign outputRand[2] = 
-    assign outputRand[3] = 
+	assign outputRand[0] =
+    assign outputRand[1] =
+    assign outputRand[2] =
+    assign outputRand[3] =
 
 endmodule

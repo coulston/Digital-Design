@@ -17,10 +17,10 @@
 // another individual that it could also result in a zero credit for the
 // assignment, course failure and a report to the Academic Dishonesty
 // Board.
-//   
+//
 //------------------------------------------
-//    play[1] = 
-//    play[0] = 
+//    play[1] =
+//    play[0] =
 //*****************************************************************
 module onesToDense (throw, play);
 

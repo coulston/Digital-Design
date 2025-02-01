@@ -19,9 +19,9 @@
 // Board.
 //*****************************************************************
 module rpsGame(p1Throw, p1SevenSeg, p2Throw, p2SevenSeg, playButton, winLoseSeg);
-	
 
-	     
+
+
     onesToDense p1o2d(p1Throw, p1Dense);
 
 

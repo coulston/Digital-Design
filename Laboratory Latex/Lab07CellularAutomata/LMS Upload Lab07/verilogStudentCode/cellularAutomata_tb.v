@@ -18,43 +18,43 @@
 // assignment, course failure and a report to the Academic Dishonesty
 // Board.
 //*****************************************************************
-module cellularAutomata_tb;	
-    
+module cellularAutomata_tb;
+
     	 reg         t_sButton, t_rButton;
-	 wire        t_clk; 
+	 wire        t_clk;
 	 reg         t_reset;
-	 reg  [8:0]  t_slideSwitches;	 	 
+	 reg  [8:0]  t_slideSwitches;
 	 reg         t_loadOrRun;
-	 
+
 	 wire [8:0] t_currentLifeState;
 
 	 cellularAutomata uut (t_sButton, t_rButton, t_clk, t_reset, t_slideSwitches, t_currentLifeState, t_loadOrRun);
-	 
+
 	 //---------------------------
-	 // Generate signals to 
-	 //---------------------------	 
+	 // Generate signals to
+	 //---------------------------
     initial
-        begin        						
+        begin
             t_reset = 0;							#5
-				
+
 				t_reset = 1;
 				t_loadOrRun = 0;						// Load operation
 				t_slideSwitches = 9'b000010000;		#20
-				
-				t_loadOrRun = 1;		
-				t_slideSwitches = 9'b0001011010;		
+
+				t_loadOrRun = 1;
+				t_slideSwitches = 9'b0001011010;
 		 end
-		 
+
 	 //---------------------------
 	 // Generate a clock signal with period 20ns
 	 //---------------------------
     always // no sensitivity list, so it always executes
 		begin
-			t_sButton = 1; 	t_rButton = 0;		#5; 
+			t_sButton = 1; 	t_rButton = 0;		#5;
 			t_sButton = 0;	t_rButton = 0;		#5;
-			t_sButton = 0; 	t_rButton = 1;		#5; 
-			t_sButton = 0;	t_rButton = 0;		#5;						
+			t_sButton = 0; 	t_rButton = 1;		#5;
+			t_sButton = 0;	t_rButton = 0;		#5;
 		end
 
-	 
+
 endmodule

@@ -11,7 +11,7 @@ Document Class: memoir 2024/01/26 v3.8.2 configurable book, report, article doc
 ument class
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2024-05-27 L3 programming layer (loader) 
+Package: expl3 2024-05-27 L3 programming layer (loader)
 
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
 pdftex.def
@@ -405,7 +405,7 @@ Package verse [2008/07/23] emulated by memoir.
 \openout4 = `"Stand Alone Lab.idx"'.
 
 
-Writing index file "Stand Alone Lab".idx 
+Writing index file "Stand Alone Lab".idx
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
 e 14.
@@ -906,7 +906,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <./Lab05HighLowWithHints/Fig/image1.png, id=4, 403.5075pt x 105.77016pt>
 File: ./Lab05HighLowWithHints/Fig/image1.png Graphic file (type png)
 <use ./Lab05HighLowWithHints/Fig/image1.png>
-Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image1.png  used on input 
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image1.png  used on input
 line 48.
 (pdftex.def)             Requested size: 403.51883pt x 105.7731pt.
 
@@ -935,22 +935,22 @@ LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
 <./Lab05HighLowWithHints/Fig/image2.png, id=20, 640.19176pt x 202.95825pt>
 File: ./Lab05HighLowWithHints/Fig/image2.png Graphic file (type png)
 <use ./Lab05HighLowWithHints/Fig/image2.png>
-Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image2.png  used on input 
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image2.png  used on input
 line 76.
 (pdftex.def)             Requested size: 409.52596pt x 129.83089pt.
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 90--106
- [] [] [] [] 
+ [] [] [] []
  []
 
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 106--118
- [] [] [] [] 
+ [] [] [] []
  []
 
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 118--126
- [] [] [] [] 
+ [] [] [] []
  []
 
 
@@ -961,12 +961,12 @@ ge2.png>]
 <./Lab05HighLowWithHints/Fig/image3.png, id=33, 679.94025pt x 474.573pt>
 File: ./Lab05HighLowWithHints/Fig/image3.png Graphic file (type png)
 <use ./Lab05HighLowWithHints/Fig/image3.png>
-Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image3.png  used on input 
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image3.png  used on input
 line 140.
 (pdftex.def)             Requested size: 458.40036pt x 319.9464pt.
 
 Overfull \hbox (48.87033pt too wide) in paragraph at lines 140--141
-[][] 
+[][]
  []
 
 
@@ -988,47 +988,47 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 205.
 
 Overfull \hbox (22.47437pt too wide) in paragraph at lines 209--210
-[][][][][][][][][][][][][][][][][][][][][][][][] 
+[][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
 
 [4]
 Overfull \hbox (7.94888pt too wide) in paragraph at lines 290--290
-[]|[]|  
+[]|[]|
  []
 
 
 Overfull \hbox (10.42746pt too wide) in alignment at lines 286--298
- [] [] [] [] [] [] [] [] [] [] 
+ [] [] [] [] [] [] [] [] [] []
  []
 
 
 Overfull \hbox (7.94888pt too wide) in paragraph at lines 300--300
-[]|[]|  
+[]|[]|
  []
 
 
 Overfull \hbox (10.42746pt too wide) in alignment at lines 298--308
- [] [] [] [] [] [] [] [] [] [] 
+ [] [] [] [] [] [] [] [] [] []
  []
 
 
 Overfull \hbox (10.42746pt too wide) in alignment at lines 308--316
- [] [] [] [] [] [] [] [] [] [] 
+ [] [] [] [] [] [] [] [] [] []
  []
 
 
 
 [5]
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line
 325.
  (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Overfull \hbox (83.96854pt too wide) in paragraph at lines 328--328
 [] \OT1/lmtt/m/n/10 hot = wLT;                       // given to you in  Figure
-~\ref{fig:guessWithHintSystemArch}[] 
+~\ref{fig:guessWithHintSystemArch}[]
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 3
@@ -1036,7 +1036,7 @@ LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 3
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line
 337.
 
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
@@ -1047,7 +1047,7 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 <./Lab05HighLowWithHints/Fig/image5.png, id=77, 314.046pt x 128.4435pt>
 File: ./Lab05HighLowWithHints/Fig/image5.png Graphic file (type png)
 <use ./Lab05HighLowWithHints/Fig/image5.png>
-Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image5.png  used on input 
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image5.png  used on input
 line 354.
 (pdftex.def)             Requested size: 307.1592pt x 125.62682pt.
 LaTeX Font Info:    Font shape `OML/lmr/m/it' in size <10> not available
@@ -1063,33 +1063,33 @@ LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <6> not available
 (Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 419.
 
 Overfull \hbox (4.28162pt too wide) in paragraph at lines 475--476
-[]|\OT1/lmr/m/n/10 Comment|  
+[]|\OT1/lmr/m/n/10 Comment|
  []
 
 
 Overfull \hbox (9.60486pt too wide) in alignment at lines 472--477
- [] [] [] [] [] [] [] [] 
+ [] [] [] [] [] [] [] []
  []
 
 
 Overfull \hbox (4.28162pt too wide) in paragraph at lines 479--480
-[]|\OT1/lmr/m/n/10 Comment|  
+[]|\OT1/lmr/m/n/10 Comment|
  []
 
 
 Overfull \hbox (9.60486pt too wide) in alignment at lines 477--481
- [] [] [] [] [] [] [] [] 
+ [] [] [] [] [] [] [] []
  []
 
 
 Overfull \hbox (9.60486pt too wide) in alignment at lines 481--504
- [] [] [] [] [] [] [] [] 
+ [] [] [] [] [] [] [] []
  []
 
 
 
 [7]
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line
 511.
  (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1115,49 +1115,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <./Lab05HighLowWithHints/Fig/image7.png, id=131, 873.2625pt x 185.94469pt>
 File: ./Lab05HighLowWithHints/Fig/image7.png Graphic file (type png)
 <use ./Lab05HighLowWithHints/Fig/image7.png>
-Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image7.png  used on input 
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image7.png  used on input
 line 529.
 (pdftex.def)             Requested size: 409.52733pt x 87.20107pt.
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 547--560
- [] [] [] [] 
+ [] [] [] []
  []
 
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 560--569
- [] [] [] [] 
+ [] [] [] []
  []
 
 
 
 [8 <./Lab05HighLowWithHints/Fig/image7.png>]
 Overfull \hbox (13.99994pt too wide) in alignment at lines 575--586
- [] [] [] [] 
+ [] [] [] []
  []
 
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 586--592
- [] [] [] [] 
+ [] [] [] []
  []
 
 
 Overfull \hbox (13.64114pt too wide) in alignment at lines 597--607
- [] [] [] 
+ [] [] []
  []
 
 
 Overfull \hbox (13.64114pt too wide) in alignment at lines 607--615
- [] [] [] 
+ [] [] []
  []
 
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 621--633
- [] [] [] [] 
+ [] [] [] []
  []
 
 
 Overfull \hbox (13.99994pt too wide) in alignment at lines 633--636
- [] [] [] [] 
+ [] [] [] []
  []
 
 
@@ -1166,13 +1166,13 @@ Overfull \hbox (13.99994pt too wide) in alignment at lines 633--636
 <./Lab05HighLowWithHints/Fig/image8.png, id=160, 1046.91125pt x 130.4875pt>
 File: ./Lab05HighLowWithHints/Fig/image8.png Graphic file (type png)
 <use ./Lab05HighLowWithHints/Fig/image8.png>
-Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image8.png  used on input 
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image8.png  used on input
 line 702.
 (pdftex.def)             Requested size: 409.52379pt x 51.04323pt.
 <./Lab05HighLowWithHints/Fig/image9.png, id=162, 1229.59375pt x 509.905pt>
 File: ./Lab05HighLowWithHints/Fig/image9.png Graphic file (type png)
 <use ./Lab05HighLowWithHints/Fig/image9.png>
-Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image9.png  used on input 
+Package pdftex.def Info: ./Lab05HighLowWithHints/Fig/image9.png  used on input
 line 717.
 (pdftex.def)             Requested size: 409.53838pt x 169.83305pt.
 )
@@ -1185,7 +1185,7 @@ line 717.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
- ) 
+ )
 Here is how much of TeX's memory you used:
  17337 strings out of 473904
  269562 string characters out of 5725185
@@ -1219,4 +1219,3 @@ PDF statistics:
  292 PDF objects out of 1000 (max. 8388607)
  81 named destinations out of 1000 (max. 500000)
  140 words of extra memory for PDF output out of 10000 (max. 10000000)
-

@@ -1,0 +1,7 @@
+wrap = true
+wraplen = 120
+tabsize = 4
+tabchar = "space"
+stdin = false
+verbosity = "quiet"
+lists = []

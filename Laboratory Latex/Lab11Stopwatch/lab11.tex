@@ -9,12 +9,10 @@ of the stopwatch  on the FPGA development board.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\item \Paste{bok:DaC_Architecture}
-	\item \Paste{bok:DaC_Timing}
-	\item \Paste{HDL:Synthesis}
+    \item \Paste{bok:DaC_Architecture}
+    \item \Paste{bok:DaC_Timing}
+    \item \Paste{HDL:Synthesis}
 \end{itemize}
-
-
 
 \section{Stopwatch}
 
@@ -26,21 +24,21 @@ Control input comes from 2 buttons called S1 and S2 according to the
 finite state machine shown in Figure~\ref{fig:swHighLevel}.
 
 \begin{figure}[ht]
-\includegraphics{image1.png}
-\caption{A digital stopwatch gets its input from 2 buttons and displays
-its output on a 7-segment display. The behavior of the stopwatch can be
-described by this finite state machine (FSM).}
-\label{fig:swHighLevel}
+    \includegraphics{image1.png}
+    \caption{A digital stopwatch gets its input from 2 buttons and displays
+        its output on a 7-segment display. The behavior of the stopwatch can be
+    described by this finite state machine (FSM).}
+    \label{fig:swHighLevel}
 \end{figure}
 
 Figure~\ref{fig:swDevBoard} shows how you will implement the idea presented in Figure~\ref{fig:swHighLevel}
 using the FGPA development board.
 
 \begin{figure}[ht]
-\includegraphics{image2.png}
-\caption{The stopwatch user interface as implemented on the FPGA
-development board.}
-\label{fig:swDevBoard}
+    \includegraphics{image2.png}
+    \caption{The stopwatch user interface as implemented on the FPGA
+    development board.}
+    \label{fig:swDevBoard}
 \end{figure}
 
 Two of the buttons will act as the stopwatch buttons
@@ -58,10 +56,10 @@ the Verilog file for the stopwatch contains 2 component instantiations
 of the datapath and controlUnit.
 
 \begin{figure}
-\includegraphics{image3.jpeg}
-\caption{The architecture for the stopwatch consists of a datapath and
-controlUnit.}
-\label{fig:swArch}
+    \includegraphics{image3.jpeg}
+    \caption{The architecture for the stopwatch consists of a datapath and
+    controlUnit.}
+    \label{fig:swArch}
 \end{figure}
 
 The only minor complication is combining the tenth output from the
@@ -90,13 +88,13 @@ clkCount value, the mod10Counter outputs and the values displayed on the
 
 \begin{landscape}
 
-\includegraphics{image5.png}
+    \includegraphics{image5.png}
 
-\includegraphics{image6.png}
-\begin{figure}
-\caption{Timing diagram that you will run on the testbench.}
-\label{fig:swTiming}
-\end{figure}
+    \includegraphics{image6.png}
+    \begin{figure}
+        \caption{Timing diagram that you will run on the testbench.}
+        \label{fig:swTiming}
+    \end{figure}
 \end{landscape}
 
 The goal of the testbench was to cover every transition arc in the state
@@ -125,8 +123,8 @@ FPGA development board. I've summarized these changes in Listing~\ref{listing:sw
  caption={Changes to the datapath that will allow it to run properly on the FPGA development board.},
  label={listing:swtenthSecond},
  frame=single]
-// parameter N = 4;	
-parameter N = 24;	
+// parameter N = 4;
+parameter N = 24;
 
 // localparam   tenthSecondConstant   = 4'h000002;
 localparam   tenthSecondConstant   = 24'h4c4b40;
@@ -134,7 +132,6 @@ localparam   tenthSecondConstant   = 24'h4c4b40;
 //localparam   zero24 = 4'h000000;
 localparam   zero24 = 24'h000000;
 \end{lstlisting}
-
 
 While you are at it, make sure that you remove the testbench as the
 top-level module and make the stopwatch the top-level module. Then run
@@ -148,45 +145,48 @@ Figure~\ref{fig:swDevBoard} and the information in the FPGA development board Us
 the following pin assignment tables.
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
-  \caption{Pin assignment for the stopwatch.}\label{table:swPinAssignment}\tabularnewline
-\toprule()
-S2 & Key{[}3{]} & Y16 \\
-\midrule()
-\endhead
-S1 		& Key{[}2{]} 		& \\ \hline
-resetn	& Key{[}0{]} 		& \\ \hline
-clk		& CLOCK\_50 	& R20 \\
-\bottomrule()
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3334}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}|@{}}
+    \caption{Pin assignment for the stopwatch.}\label{table:swPinAssignment}\tabularnewline
+    \toprule()
+    S2 & Key{[}3{]} & Y16 \\
+    \midrule()
+    \endhead
+    S1         & Key{[}2{]}         & \\ \hline
+    resetn    & Key{[}0{]}         & \\ \hline
+    clk        & CLOCK\_50     & R20 \\
+    \bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1548}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2313}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2323}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3816}}|@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Segment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-tenHex Hex2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-unitHex Hex1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-tenthHex Hex0
-\end{minipage} \\
-\midrule()
-\endhead
-seg{[}6{]} & & & \\ \hline
-seg{[}5{]} & & & \\ \hline
-seg{[}4{]} & V20 & & \\ \hline
-seg{[}3{]} & & & \\ \hline
-seg{[}2{]} & & & V17 \\ \hline
-seg{[}1{]} & & & \\ \hline
-seg{[}0{]} & & AA18 & \\
-\bottomrule()
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1548}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2313}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2323}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3816}}|@{}}
+    \toprule()
+    \begin{minipage}[b]{\linewidth}\raggedright
+        Segment
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        tenHex Hex2
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        unitHex Hex1
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        tenthHex Hex0
+    \end{minipage} \\
+    \midrule()
+    \endhead
+    seg{[}6{]} & & & \\ \hline
+    seg{[}5{]} & & & \\ \hline
+    seg{[}4{]} & V20 & & \\ \hline
+    seg{[}3{]} & & & \\ \hline
+    seg{[}2{]} & & & V17 \\ \hline
+    seg{[}1{]} & & & \\ \hline
+    seg{[}0{]} & & AA18 & \\
+    \bottomrule()
 \end{longtable}
 
 After making the pin assignment, download and test your design.
@@ -205,28 +205,29 @@ section next week.
 \subsubsection{Testbench}
 
 \begin{itemize}
-\item
-  Completed Figure~\ref{fig:swTiming}. Please paste the images in landscape format into your solutions
+    \item
+        Completed Figure~\ref{fig:swTiming}. Please paste the images in landscape format into your solutions
 
-\item
-  Screen shot of \hyperlink{link:swTestbench}{simulation timing diagram}. Please compose the simulation in landscape 
-  format into your solutions and break the screen shot of the simulation into three parts,
+    \item
+        Screen shot of \hyperlink{link:swTestbench}{simulation timing diagram}. Please compose the simulation
+        in landscape
+        format into your solutions and break the screen shot of the simulation into three parts,
 
-  \begin{itemize}
-    \item
-      from 0 to 400ps
-    \item
-      from 400ps to 800ps
-    \item
-      from 800ps to 1200ps
-\end{itemize}
+        \begin{itemize}
+            \item
+                from 0 to 400ps
+            \item
+                from 400ps to 800ps
+            \item
+                from 800ps to 1200ps
+        \end{itemize}
 \end{itemize}
 
 \subsubsection{Pin-Assignment and Synthesis}
 
 \begin{itemize}
-\item
-  Completed pin assignment from Table~\ref{table:swPinAssignment}.
-\item
-  Demonstrate your working stopwatch to a member of the lab team.
+    \item
+        Completed pin assignment from Table~\ref{table:swPinAssignment}.
+    \item
+        Demonstrate your working stopwatch to a member of the lab team.
 \end{itemize}

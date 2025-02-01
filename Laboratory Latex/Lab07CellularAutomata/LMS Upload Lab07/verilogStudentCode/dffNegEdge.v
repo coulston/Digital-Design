@@ -1,6 +1,6 @@
 module dffNegEdge (clk, reset, data, q);
 
-    input wire data, clk, reset ; 
+    input wire data, clk, reset ;
     output reg q;
 
     always @ ( posedge clk or negedge reset)
@@ -10,4 +10,4 @@ module dffNegEdge (clk, reset, data, q);
             q <= data;
         end
 
-endmodule 
+endmodule

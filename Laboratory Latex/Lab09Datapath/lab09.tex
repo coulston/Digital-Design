@@ -2,22 +2,18 @@
 \label{chapter:stopDatapath}
 \graphicspath{ {./Lab09Datapath/Fig} }
 
-
-
 \section{Outcomes and Objectives}
 
-The outcome of this lab is to design and simulate 
+The outcome of this lab is to design and simulate
 a datapath to store and manipulate the information need to run a stopwatch.
 Through this process you will achieve the following
 learning objectives.
 \begin{itemize}
-	\item \Paste{bok:BMS_RegTran}
-	\item \Paste{bok:DaC_Architecture}
-	\item \Paste{bok:DaC_ControWord}
-	\item \Paste{HDL:Do}
+    \item \Paste{bok:BMS_RegTran}
+    \item \Paste{bok:DaC_Architecture}
+    \item \Paste{bok:DaC_ControWord}
+    \item \Paste{HDL:Do}
 \end{itemize}
-
-
 
 \section{Stopwatch}
 
@@ -33,11 +29,11 @@ The stopwatch's behavior is dictated by its 2 buttons called S1 and S2
 according to the finite state machine shown in Figure~\ref{fig:swDPbehavior}.
 
 \begin{figure}[ht]
-\includegraphics[width=0.5\paperwidth]{image1.png}
-\caption{A digital stopwatch gets its input from 2 buttons and displays
-its output on a 7-segment display. The behavior of the stopwatch can be
-described by this finite state machine (FSM).}
-\label{fig:swDPbehavior}
+    \includegraphics[width=0.5\paperwidth]{image1.png}
+    \caption{A digital stopwatch gets its input from 2 buttons and displays
+        its output on a 7-segment display. The behavior of the stopwatch can be
+    described by this finite state machine (FSM).}
+    \label{fig:swDPbehavior}
 \end{figure}
 
 To make sense out of the FSM shown in Figure~\ref{fig:swDPbehavior}, its helpful to imagine
@@ -88,24 +84,24 @@ performs a similar function for the LAP state.
 To summarize:
 
 \begin{itemize}
-\item
-  RESET -- Reset the internal and displayed time values.
-\item
-  STOP -- Stop the 10\textsuperscript{th} second timer and hold the
-  displayed time.
-\item
-  RUN -- Run the 10\textsuperscript{th} second timer and display the
-  stored time.
-\item
-  INC -- Increment the stored time
-\item
-  LAP RUN -- Run the 10\textsuperscript{th} second timer and hold the
-  displayed time.
-\item
-  LAP INC - Increment the stored time.
-\item
-  LAP STOP -- Stop the 10\textsuperscript{th} second timer and hold the
-  displayed time.
+    \item
+        RESET -- Reset the internal and displayed time values.
+    \item
+        STOP -- Stop the 10\textsuperscript{th} second timer and hold the
+        displayed time.
+    \item
+        RUN -- Run the 10\textsuperscript{th} second timer and display the
+        stored time.
+    \item
+        INC -- Increment the stored time
+    \item
+        LAP RUN -- Run the 10\textsuperscript{th} second timer and hold the
+        displayed time.
+    \item
+        LAP INC - Increment the stored time.
+    \item
+        LAP STOP -- Stop the 10\textsuperscript{th} second timer and hold the
+        displayed time.
 \end{itemize}
 
 \section{Module: stopWatchDatapath}
@@ -114,10 +110,10 @@ The datapath for the stopwatch is shown in Figure~\ref{fig:dpSWdatpath}. The beh
 datapath to perform the functions of a stopwatch follows.
 
 \begin{figure}[ht]
-\includegraphics{ image2.jpg}
-\caption{The datapath for the stopwatch has a 6-bit control word and
-displays the time on three 7-segment displays.}
-\label{fig:dpSWdatpath}
+    \includegraphics{ image2.jpg}
+    \caption{The datapath for the stopwatch has a 6-bit control word and
+    displays the time on three 7-segment displays.}
+    \label{fig:dpSWdatpath}
 \end{figure}
 
 The internal time is formed by the counter/comparator combination at the
@@ -148,98 +144,108 @@ how to make design decisions on your own so that you can reach your full
 potential as an engineer.
 
 \begin{itemize}
-\item
-  RESET -- clear the values in the registers and counters
-\item
-  STOP -- hold the timer counter and display the mod 10 counters
-\item
-  RUN -- allow the timer counter to count up and display the mod 10
-  counters
-\item
-  INC -- clear the timer counter and increment the mod 10 counters
-\item
-  RUN2LAP -- Latch up the mod 10 counters in the lap register
-\item
-  LAP RUN -- allow the timer counter to count up, display the latched
-  time
-\item
-  LAP INC -- clear the timer counter and increment the mod 10 counters
-\item
-  LAP STOP -- stop the timer counter and display the latched time
+    \item
+        RESET -- clear the values in the registers and counters
+    \item
+        STOP -- hold the timer counter and display the mod 10 counters
+    \item
+        RUN -- allow the timer counter to count up and display the mod 10
+        counters
+    \item
+        INC -- clear the timer counter and increment the mod 10 counters
+    \item
+        RUN2LAP -- Latch up the mod 10 counters in the lap register
+    \item
+        LAP RUN -- allow the timer counter to count up, display the latched
+        time
+    \item
+        LAP INC -- clear the timer counter and increment the mod 10 counters
+    \item
+        LAP STOP -- stop the timer counter and display the latched time
 \end{itemize}
 
 \begin{longtable}[]{@{}
-| >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|@{}}
-\caption{Control word table for the datapath shown in Figure~\ref{fig:dpSWdatpath}}
-\label{table:swDPcontrolWord}\tabularnewline
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}5{]}}
+        | >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1666}}|
+        >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|
+    >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}|@{}}
+    \caption{Control word table for the datapath shown in Figure~\ref{fig:dpSWdatpath}}
+    \label{table:swDPcontrolWord}\tabularnewline
+    \toprule()
+    \begin{minipage}[b]{\linewidth}\raggedright
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}5{]}}
 
-\textbf{2x1 mux}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}4{]}}
+        \textbf{2x1 mux}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}4{]}}
 
-\textbf{lap register}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}3{]}}
+        \textbf{lap register}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}3{]}}
 
-\textbf{mod10 reset}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}2{]}}
+        \textbf{mod10 reset}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}2{]}}
 
-\textbf{mod10 count}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}1:0{]}}
+        \textbf{mod10 count}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}1:0{]}}
 
-\textbf{timer counter}
-\end{minipage} \\
-\midrule()
-\endfirsthead
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}5{]}}
+        \textbf{timer counter}
+    \end{minipage} \\
+    \midrule()
+    \endfirsthead
+    \toprule()
+    \begin{minipage}[b]{\linewidth}\raggedright
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}5{]}}
 
-\textbf{2x1 mux}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}4{]}}
+        \textbf{2x1 mux}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}4{]}}
 
-\textbf{lap register}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}3{]}}
+        \textbf{lap register}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}3{]}}
 
-\textbf{mod10 reset}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}2{]}}
+        \textbf{mod10 reset}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}2{]}}
 
-\textbf{mod10 count}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{cw{[}1:0{]}}
+        \textbf{mod10 count}
+    \end{minipage} &
+    \begin{minipage}[b]{\linewidth}\raggedright
+        \textbf{cw{[}1:0{]}}
 
-\textbf{timer counter}
-\end{minipage} \\
-\midrule()
-\endhead
-& 0 = mod10 & 1 = load & 1 = reset & 1 = count up & 11 = load \\ \hline
-& 1 = register & 0 = hold & 0 = hold & 0 = hold & 10 = count up \\ \hline
-& & & & & 01 = not used \\ \hline
-& & & & & 00 = hold \\ \hline
-\textbf{RESET} & & & 1 & & \\ \hline
-\textbf{STOP} & & & & & \\ \hline
-\textbf{RUN} & & & & & \\ \hline
-\textbf{INC} & & & & & \\ \hline
-\textbf{RUN2LAP} & & & & 0 & \\ \hline
-\textbf{LAP RUN} & & & & & 10 \\ \hline
-\textbf{LAP INC} & & 0 & & & \\ \hline
-\textbf{LAP STOP} & 1 & & & & \\
-\bottomrule()
+        \textbf{timer counter}
+    \end{minipage} \\
+    \midrule()
+    \endhead
+    & 0 = mod10 & 1 = load & 1 = reset & 1 = count up & 11 = load \\ \hline
+    & 1 = register & 0 = hold & 0 = hold & 0 = hold & 10 = count up \\ \hline
+    & & & & & 01 = not used \\ \hline
+    & & & & & 00 = hold \\ \hline
+    \textbf{RESET} & & & 1 & & \\ \hline
+    \textbf{STOP} & & & & & \\ \hline
+    \textbf{RUN} & & & & & \\ \hline
+    \textbf{INC} & & & & & \\ \hline
+    \textbf{RUN2LAP} & & & & 0 & \\ \hline
+    \textbf{LAP RUN} & & & & & 10 \\ \hline
+    \textbf{LAP INC} & & 0 & & & \\ \hline
+    \textbf{LAP STOP} & 1 & & & & \\
+    \bottomrule()
 \end{longtable}
 
 \hypertarget{link:swDpVerilog}{}{}
@@ -247,30 +253,30 @@ Now that you have the control word figured out, you need to write the
 Verilog code for the datapath. For the datapath module:
 
 \begin{itemize}
-\item
-  Use the datapath.v file provided in the Canvas folder as the starting
-  point.
+    \item
+        Use the datapath.v file provided in the Canvas folder as the starting
+        point.
 
-  \begin{itemize}
-  \item
-    Use the module definitions from previous land and the Canvas lab
-    folder for this lab.
-  \end{itemize}
-\item
-  Provide meaningful names to the wires in the module.
-\item
-  Properly tab-indent your code
+        \begin{itemize}
+            \item
+                Use the module definitions from previous land and the Canvas lab
+                folder for this lab.
+        \end{itemize}
+    \item
+        Provide meaningful names to the wires in the module.
+    \item
+        Properly tab-indent your code
 
-  \begin{itemize}
-  \item
-    Single level for wire declarations
-  \item
-    Single level for component instantiations
-  \item
-    Two levels for case statement
-  \item
-    Three levels for case values
-  \end{itemize}
+        \begin{itemize}
+            \item
+                Single level for wire declarations
+            \item
+                Single level for component instantiations
+            \item
+                Two levels for case statement
+            \item
+                Three levels for case values
+        \end{itemize}
 \end{itemize}
 
 \section{Testbench}
@@ -291,17 +297,17 @@ the 5,000,000 constant you need to go into the datapath.v module and
 modify the following:
 
 \begin{itemize}
-\item
-Set \verb+ localparam tenthSecondConstant+ to 4\textquotesingle h000002
-  (an arbitrary small constant)
-\item
-  Set the parameter \verb+N+ to 4, this sets the word size of the counter/comparator hardware.
+    \item
+        Set \verb+ localparam tenthSecondConstant+ to 4\textquotesingle h000002
+        (an arbitrary small constant)
+    \item
+        Set the parameter \verb+N+ to 4, this sets the word size of the counter/comparator hardware.
 \end{itemize}
 
 You can use the parameter \textbf{N} as the generic parameter in
-component instantiation for generic components. For example, 
-you will have the following genericCounter instantiation in your 
-datapath - the use of the parameter value \hdl{\#(N)} as the width of the 
+component instantiation for generic components. For example,
+you will have the following genericCounter instantiation in your
+datapath - the use of the parameter value \hdl{\#(N)} as the width of the
 counter is legal syntax in Verilog as long as \hdl{N} is defined somewhere.
 
 \begin{verbatim}
@@ -331,86 +337,85 @@ line of the simulation is reached. Including these statements helps you
 to understand where your simulation is at and what behavior to expect.
 
 \begin{landscape}
-\includegraphics{ image4.png}
+    \includegraphics{ image4.png}
 
-\includegraphics{ image5.png}
+    \includegraphics{ image5.png}
 
-\includegraphics{ image6.png}
+    \includegraphics{ image6.png}
 
-\includegraphics{ image7.png}
+    \includegraphics{ image7.png}
 
-\includegraphics{ image8.png}
+    \includegraphics{ image8.png}
 
-\begin{figure}[ht]
-\caption{Complete the timing diagram using the control words found in the testbench.}
-\label{figure:swDPtiming}
-\end{figure}
+    \begin{figure}[ht]
+        \caption{Complete the timing diagram using the control words found in the testbench.}
+        \label{figure:swDPtiming}
+    \end{figure}
 
 \end{landscape}
 
 \hypertarget{link:swDpSim}{}{{}
-Before running the simulation, you need to complete the
-do file given to you on Canvas.  Organize the waveforms
-on your simulation as follows. 
+    Before running the simulation, you need to complete the
+    do file given to you on Canvas.  Organize the waveforms
+    on your simulation as follows.
 
-\begin{tabular}{p{3cm}p{3cm}p{3cm}}
-signal & radix & trace color \\ \hline
-  clk 		& default 	& green  \\
-  resetn 		& default 	& green  \\
-  cw 		& hex 		& yellow  \\
-  tenth 		& default 	& gold  \\
-  clkCnt 		& hex 		& red  \\
-  tenthDigit 	& hex 		& green  \\
-  tenthDisp 	& hex 		& green  \\
-  unitDigit 	& hex 		& greenyellow  \\
-  unitDisp 	& hex 		& greenyellow  \\
-\end{tabular}
+    \begin{tabular}{p{3cm}p{3cm}p{3cm}}
+        signal & radix & trace color \\ \hline
+        clk         & default     & green  \\
+        resetn         & default     & green  \\
+        cw         & hex         & yellow  \\
+        tenth         & default     & gold  \\
+        clkCnt         & hex         & red  \\
+        tenthDigit     & hex         & green  \\
+        tenthDisp     & hex         & green  \\
+        unitDigit     & hex         & greenyellow  \\
+        unitDisp     & hex         & greenyellow  \\
+    \end{tabular}
 
-Once you have the do file complete, launch the testbench
-simulation in ModelSim and compare the expected output 
-from Figure~\ref{figure:swDPtiming} against the actual 
-output from your simulation.  Since you will not be synthesizing
-your design, you need to ensure \underline{perfect} functionality
-as you will use this module in an upcoming lab.  Do this by
-looking for discrepancies starting at time 0 and only advancing 
-the simulation when everything is correct. You will
-have to transcend the design hierarchy to find the source of your
-errors. Most errors are due to incorrect wiring of modules --
-wrong signal names or wrong signal order. 
+    Once you have the do file complete, launch the testbench
+    simulation in ModelSim and compare the expected output
+    from Figure~\ref{figure:swDPtiming} against the actual
+    output from your simulation.  Since you will not be synthesizing
+    your design, you need to ensure \underline{perfect} functionality
+    as you will use this module in an upcoming lab.  Do this by
+    looking for discrepancies starting at time 0 and only advancing
+    the simulation when everything is correct. You will
+    have to transcend the design hierarchy to find the source of your
+    errors. Most errors are due to incorrect wiring of modules --
+    wrong signal names or wrong signal order.
 
-To get you started, your simulation output should look something like
-the following.
-\includegraphics{ image10.png}
+    To get you started, your simulation output should look something like
+    the following.
+    \includegraphics{ image10.png}
 
-\section{Turn in}
+    \section{Turn in}
 
-You may work in teams of at most two. Make a record of your response to
-the items below and turn them in a single copy as your team's solution
-on Canvas using the instructions posted there. Include the names of both
-team members at the top of your solutions. Use complete English
-sentences to introduce what each of the following listed items (below)
-is and how it was derived. In addition to this submission, you will be
-expected to demonstrate your circuit at the beginning of your lab
-section next week.
+    You may work in teams of at most two. Make a record of your response to
+    the items below and turn them in a single copy as your team's solution
+    on Canvas using the instructions posted there. Include the names of both
+    team members at the top of your solutions. Use complete English
+    sentences to introduce what each of the following listed items (below)
+    is and how it was derived. In addition to this submission, you will be
+    expected to demonstrate your circuit at the beginning of your lab
+    section next week.
 
-\subsubsection{System Architecture}
+    \subsubsection{System Architecture}
 
-\begin{itemize}
-\item
-  Complete Table~\ref{table:swDPcontrolWord}.
-\item
-  \hyperlink{link:swDpVerilog}{Verilog code} for the body of the datapath module (courier 8-point font
-  single spaced), leave out header comments.
-  \end{itemize}
-  
- \subsubsection{Testbench}
- \begin{itemize}
-\item
- Complete timing diagram from Figure~\ref{figure:swDPtiming}.
-\item
-  A copy of your \hyperlink{link:swDpSim}{simulation timing} diagram. Use the signal
-  color and order specified.
-\item
-  Demonstrate that your simulation to a member of the lab team.
-\end{itemize}
+    \begin{itemize}
+        \item
+            Complete Table~\ref{table:swDPcontrolWord}.
+        \item
+            \hyperlink{link:swDpVerilog}{Verilog code} for the body of the datapath module (courier 8-point font
+            single spaced), leave out header comments.
+    \end{itemize}
 
+    \subsubsection{Testbench}
+    \begin{itemize}
+        \item
+            Complete timing diagram from Figure~\ref{figure:swDPtiming}.
+        \item
+            A copy of your \hyperlink{link:swDpSim}{simulation timing} diagram. Use the signal
+            color and order specified.
+        \item
+            Demonstrate that your simulation to a member of the lab team.
+    \end{itemize}

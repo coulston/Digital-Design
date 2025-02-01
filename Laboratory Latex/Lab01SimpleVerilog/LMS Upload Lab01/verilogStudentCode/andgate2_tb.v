@@ -24,7 +24,7 @@ module andgate2_tb;
     // These are like local variables
     wire    t_y;
     reg     t_a, t_b;
-	
+
     // Make an instance of the AND gate as the unit under test (uut)
     andgate2 uut(t_a, t_b, t_y);
 
@@ -38,9 +38,9 @@ initial
 	// Not put a #20 on the last row.
 
         t_a = 1'b0;        t_b = 1'b0;        #20
-        t_a = 1'b0;        t_b = 1'b1;        #20 
-        t_a = 1'b1;        t_b = 1'b0;        #20 	
-        t_a = 1'b1;        t_b = 1'b1;	
-	  end	
+        t_a = 1'b0;        t_b = 1'b1;        #20
+        t_a = 1'b1;        t_b = 1'b0;        #20
+        t_a = 1'b1;        t_b = 1'b1;
+	  end
 
 endmodule

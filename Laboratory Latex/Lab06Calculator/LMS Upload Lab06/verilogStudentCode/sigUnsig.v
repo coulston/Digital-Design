@@ -16,36 +16,35 @@
 // Board.
 //*****************************************************************
 module sigUnsig(x, interp, ovf, msDisplay, lsDisplay);
-	
-    
 
-		 
+
+
+
     //******************************************************************************
-	// Logical organization of 7-segment display 
+	// Logical organization of 7-segment display
 	//
 	//				 hex[0]
 	//				 -----
 	//	hex[5]	|		|	hex[1]
-	//				|		|	
+	//				|		|
 	//				 -----	hex[6]
 	//	hex[4]	|		|
 	//				|		|	hex[2]
 	//				 -----
-	//				 hex[3]	 
-	//******************************************************************************	
-    localparam [6:0] displayBlank = 7'b       ; 
-	localparam [6:0] displayOne   = 7'b       ; 
-	localparam [6:0] displayMinus = 7'b       ; 
-	localparam [6:0] displayX     = 7'b       ; 
+	//				 hex[3]
+	//******************************************************************************
+    localparam [6:0] displayBlank = 7'b       ;
+	localparam [6:0] displayOne   = 7'b       ;
+	localparam [6:0] displayMinus = 7'b       ;
+	localparam [6:0] displayX     = 7'b       ;
 
 
 	//******************************************************************************
-    //	 
+    //
 	// interp = 1 signed
 	// interp = 0 unsigned
 	//
-	//******************************************************************************	 
+	//******************************************************************************
 
 
 endmodule
-

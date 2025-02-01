@@ -15,29 +15,28 @@
 // assignment, course failure and a report to the Academic Dishonesty
 // Board.
 //*****************************************************************
-module calculator(x, y, interp, addSub, YorRES, msXdisplay, lsXdisplay, msfdisplay, lsfdisplay);	
-	
-    input wire  [3:0] x, y;	 	 
+module calculator(x, y, interp, addSub, YorRES, msXdisplay, lsXdisplay, msfdisplay, lsfdisplay);
+
+    input wire  [3:0] x, y;
     input wire        interp, addSub, YorRES;
-	 
+
 	output wire [6:0] msXdisplay, lsXdisplay, msfdisplay, lsfdisplay;
-	 
+
 	wire [3:0] res;
 	wire       n_interp, n_addSub;
 	wire       sovf, ovf;
 	wire [6:0] msYdisplay, lsYdisplay, msRESdisplay, lsRESdisplay;
-	 
+
 	assign n_interp = ~ interp;
 	assign n_addSub = ~ addSub;
-	 
+
     sigUnsig displayX   (x, n_interp, 1'b0, msXdisplay, lsXdisplay);
 	sigUnsig displayY   (y, n_interp, 1'b0, msYdisplay, lsYdisplay);
 	sigUnsig displayRES (res, n_interp, 1'b0, msRESdisplay, lsRESdisplay);
-	 
+
 	genericMux2x1 #(7) ms(msYdisplay,msRESdisplay, YorRES, msfdisplay);
 	genericMux2x1 #(7) ls(lsYdisplay,lsRESdisplay, YorRES, lsfdisplay);
 
 	genericAdderSubtractor #(4) xPlusMinusY (x, y, n_addSub, res, sovf, ovf);
 
 endmodule
-

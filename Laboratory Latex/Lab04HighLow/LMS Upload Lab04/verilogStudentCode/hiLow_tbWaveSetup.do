@@ -13,6 +13,3 @@ add wave -position end  -radix unsigned -color yellow sim:/hiLow_tb/uut/randNum
 add wave -position end  -radix hex -color red sim:/hiLow_tb/t_randDisp
 add wave -position end  -radix hex -color red sim:/hiLow_tb/t_hiLowSeg
 add wave -position end  -color red sim:/hiLow_tb/t_greenLEDs
-
-
-

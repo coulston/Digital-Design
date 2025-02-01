@@ -19,24 +19,24 @@
 // Board.
 //*****************************************************************
 module sigUnsig_tb;
-	
-    reg  [3:0] t_x;	 	 
+
+    reg  [3:0] t_x;
     reg        t_interp, t_ovf;
-	 
+
 	 wire [6:0] t_msDisplay, t_lsDisplay;
 
 	 sigUnsig uut (t_x, t_interp, t_ovf, t_msDisplay, t_lsDisplay);
-	
+
     initial
         begin
-        						
+
             t_interp = 1; t_ovf = 0;	t_x = 4'b0010;		#20
 				t_interp = 0; t_ovf = 0;	t_x = 4'b1100;		#20
 				t_interp = 1; t_ovf = 0;	t_x = 4'b1100;		#20
 				t_interp = 0; t_ovf = 0;	t_x = 4'b0111;		#20
 				t_interp = 1; t_ovf = 0;	t_x = 4'b1000;		#20
 				t_interp = 1; t_ovf = 1;	t_x = 4'b1010;		#20
-								
+
 			   t_x = 4'b0000;		// Bogus to let last simulation value run
 
 		 end

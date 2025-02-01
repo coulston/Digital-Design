@@ -18,7 +18,7 @@
 %% Use `` quotes at begining and " at end
 %% 2's-complement number or using 2's complement.
 %% If you italize the first usage, it should also appear in the index
-%% No "we", "you", "let's", "our", 
+%% No "we", "you", "let's", "our",
 %% Boolean Algebra
 %% ``Don't care"
 %% all time reference are regular font and use "=", e.g. time=20
@@ -28,21 +28,21 @@
 
 %%------------------------------------------------------
 %% To check for missing reference:
-%%		Edit -> preferences 
-%%		In Typesetting tab, click Processing tools
-%%			pdfLaTeX+MakeIndex+BibTex select Edit...
-%%			Remove --clean
-%%		Typeset document
-%%		open .log file search for ``LaTeX Warning:''
+%%        Edit -> preferences
+%%        In Typesetting tab, click Processing tools
+%%            pdfLaTeX+MakeIndex+BibTex select Edit...
+%%            Remove --clean
+%%        Typeset document
+%%        open .log file search for ``LaTeX Warning:''
 %%------------------------------------------------------
 
 %%\documentclass[11pt,psfig]{book}
 \documentclass[letterpaper, 10pt]{memoir}
 \chapterstyle{ger}
 \settrims{0pt}{0pt}
-\semiisopage[9]		% [N] is spine margin is 1/Nth pf page 
+\semiisopage[9]        % [N] is spine margin is 1/Nth pf page
 
-% To keep the book.tex file clean, I pulled all the formating and package 
+% To keep the book.tex file clean, I pulled all the formating and package
 % includes into the preamble.tex file
 \include{preamble}
 
@@ -50,24 +50,20 @@
 
 \begin{document}
 
-
-
 \frontmatter
- \title{}
+\title{}
 \includegraphics{./Fig/colorCover}
- \maketitle
- 
- 
+\maketitle
+
 \include{copyright}
 \tableofcontents
 \listofprocesses
 \listofbuildingblocks
 
 %\showanswers
-\hideanswers 
+\hideanswers
 
 \mainmatter
-
 
 \include{./chapter01/chapter1}
 \include{./chapter01/hw1}
@@ -108,4 +104,4 @@
 \appendix
 \include{appendix}
 \printindex
-\end{document} 
+\end{document}
