@@ -5,8 +5,8 @@
 \begin{enumerate}
 \item A finite state machine has been implemented with four
 flip-flops, two inputs and three outputs. 
-	\begin{enumerate}
-	\item What are the minimum and maximum number of states in the diagram?
+    \begin{enumerate}
+    \item What are the minimum and maximum number of states in the diagram?
 \begin{onlysolution}  \textbf{Solution} \itshape{
 Since there are three flip flops we can have a maximum of 8 states.  The minimum
 number of states is a bit tricky.  A practical answer is 5, because if you
@@ -15,15 +15,15 @@ asks for a minimum, in which case you could have 1 state.  Note, that a
 1 state FSM would only generate a single output and hence would not be a
 very interesting circuit.
 }\end{onlysolution} 
-	\item What are the minimum and maximum number of transition arrows 
-		starting at a particular state?
+    \item What are the minimum and maximum number of transition arrows 
+        starting at a particular state?
 \begin{onlysolution}  \textbf{Solution} \itshape{
 These values are the same.  Since there are two bits of input there are four
 different inputs that can be applied at each state.  Thus, four arrows must
 leave each state.
 }\end{onlysolution} 
-	\item What are the minimum and maximum number of transition arrows 
-		ending in a particular state?
+    \item What are the minimum and maximum number of transition arrows 
+        ending in a particular state?
 \begin{onlysolution}  \textbf{Solution} \itshape{
 In a typical design your systems will have a reset state, it normal for such
 states to have NO input arcs.  You only visit them when the power is turned on.
@@ -32,8 +32,8 @@ other hand, I could image a machine where   transition arc points to a
 particular state (not a very interesting FSM).  Hence all 32 arcs could point
 to a single state.
 }\end{onlysolution} 
-	\item What are the minimum and maximum number of different binary patterns
-		that are displayed on the outputs? 
+    \item What are the minimum and maximum number of different binary patterns
+        that are displayed on the outputs? 
 \begin{onlysolution}  \textbf{Solution} \itshape{
 this is a tricky question, you need to determine which of the inputs and outputs
 constrains the number of distinct patterns on the output.  You should consult
@@ -43,7 +43,7 @@ combinational logic box, more than enough to cope with the 8 different output.  
 the other end of the scale, I can imagine a FSM which only produces a single output,
 it would however, not be very interesting.
 }\end{onlysolution} 
-	\end{enumerate}
+    \end{enumerate}
 
 
 \item \textbf{ (20 points)}
@@ -147,7 +147,7 @@ $Z   = Q_1Q_0' + Q_2$						\\
 
 \begin{onlysolution}  \textbf{Solution} \itshape{
 \begin{tabular}{l|l|l}
-	& State Assignment 1	& State Assignment 2 \\ \hline
+    & State Assignment 1	& State Assignment 2 \\ \hline
 $D_2$	& 	15		&	22	\\ \hline
 $D_1$	&	14		&	22	\\ \hline
 $D_0$	&	17		&	9	\\ \hline
@@ -290,8 +290,8 @@ word table.
 
 \begin{tabular}{l||l|l}
 state	& counter	& register \\ \hline 
-	& 0 reset	& 0 hold \\ \hline
-	& 1 count up& 1 reset \\ \hline \hline
+    & 0 reset	& 0 hold \\ \hline
+    & 1 count up& 1 reset \\ \hline \hline
 RefLo	&		&	  \\ \hline
 RefHi	&		&	  \\ \hline
 Load 	&		&	  \\ \hline
@@ -381,9 +381,9 @@ we will construct an output table.
 
 \begin{tabular}{l|l}
 State	& motor		\\ \hline
-	& 00 stop	\\ \hline
-	& 01 down	\\ \hline
-	& 10 up		\\ \hline
+    & 00 stop	\\ \hline
+    & 01 down	\\ \hline
+    & 10 up		\\ \hline
 open    & 00 		\\ \hline
 close   & 00		\\ \hline
 opening & 10 		\\ \hline
@@ -434,8 +434,8 @@ Each column in the table will be associated with one bit of the output.
 
 \begin{tabular}{l||l|l|l|l|l|l}
 state	& Rlight & Ylight & Glight & Rtimer & Ytimer & Gtimer	\\ \hline 
-	& 0 off  & 0 off  & 0 off  & 0 rst  & 0 rst  & 0 rst	\\ \hline
-	& 1 on   & 1 on   & 1 on   & 1 run  & 1 run  & 1 run	\\ \hline \hline
+    & 0 off  & 0 off  & 0 off  & 0 rst  & 0 rst  & 0 rst	\\ \hline
+    & 1 on   & 1 on   & 1 on   & 1 run  & 1 run  & 1 run	\\ \hline \hline
 R	&	 &	  &	   &	    &	     &		\\ \hline
 Y	&	 &	  &	   &	    &	     &		\\ \hline
 G	&	 &	  &	   &	    &	     &		\\ 
@@ -712,13 +712,13 @@ Determine the memory input equations and output equations assuming a one-hot
 encoding.
 
 \begin{onlysolution}  \textbf{Solution} \itshape{
-	\begin{enumerate}
-	\item No control table (-6)
-	\item Disposable washing machine (-1)
-	\item No OEs (-5)
-	\item start * cold (-2)
-	\item no complements on arcs (-2)
-	\end{enumerate}
+    \begin{enumerate}
+    \item No control table (-6)
+    \item Disposable washing machine (-1)
+    \item No OEs (-5)
+    \item start * cold (-2)
+    \item no complements on arcs (-2)
+    \end{enumerate}
 \begin{figure}[ht]
 \center{\includegraphics{Sol7-13}}
 \caption{The FSM for a washing machine.}

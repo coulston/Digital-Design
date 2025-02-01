@@ -234,8 +234,8 @@ In the case of the furnace controller, this construction is quite simple.
 \begin{tabular}{c||c}
 
 State		& Furnace	\\ \hline 
-		& 0 off		\\ \hline 
-		& 1 on		\\ \hline \hline
+        & 0 off		\\ \hline 
+        & 1 on		\\ \hline \hline
 ON		& 1		\\ \hline 
 OFF		& 0		\\ 
 
@@ -576,8 +576,8 @@ controlling the compressed air is open, air rushes out, goosing the cow.
 Gate1		& Gate2		& Timer Control			& Air Valve	\\ \hline \hline
 1 - gate up 	& 1 - gate up	& 00 Stop timer			& 0 closed	\\ \hline
 0 - gate down	& 0 - gate down	& 01 Set timer to 30 seconds	& 1 open	\\ \hline
-		&		& 10 Set timer to 3 seconds	&		\\ \hline
-		&		& 11 Run timer			&		\\
+        &		& 10 Set timer to 3 seconds	&		\\ \hline
+        &		& 11 Run timer			&		\\
 \end{tabular}
 
 \paragraph{State Diagram}
@@ -680,10 +680,10 @@ the control is formed from a collection of bits.
 {\small
 \begin{tabular}{c||c|c|c|c}
 State		& Gate1		& Gate2		& Timer Control			& Air		\\ \hline \hline
-		& 1 - gate up	& 1 - gate up	& 00 Stop timer			& 0 - closed \\ \hline
-		& 0 - gate down	& 0 - gate down	& 01 Set timer to 30 seconds	& 1 - open	\\ \hline
-		&			&			& 10 Set timer to 3 seconds	&		\\ \hline
-		&			&			& 11 Run timer			& 		\\ \hline \hline
+        & 1 - gate up	& 1 - gate up	& 00 Stop timer			& 0 - closed \\ \hline
+        & 0 - gate down	& 0 - gate down	& 01 Set timer to 30 seconds	& 1 - open	\\ \hline
+        &			&			& 10 Set timer to 3 seconds	&		\\ \hline
+        &			&			& 11 Run timer			& 		\\ \hline \hline
 \textbf{ WaitEnter}	& 1			& 0			& 00					& 0		\\ \hline
 \textbf{ WaitRead}	& 0			& 0			& 00					& 0		\\ \hline
 \textbf{ Set30}		& 0			& 0			& 01					& 0		\\ \hline

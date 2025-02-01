@@ -24,32 +24,32 @@ of purposes.}
 The sequence of events is as follows:
 \begin{enumerate}
 \item	The circuit lights up the PICK LED.
-	The player enters their guess; a number between 1-8, even or odd.
-	While holding down their guess they press the roll button.
+    The player enters their guess; a number between 1-8, even or odd.
+    While holding down their guess they press the roll button.
 \item	The circuit displays the picked number in the left most
-	7 segment display.  The circuit lights up the BET LED.
-	The player enters a one digit bet between 1 to 8.  While holding
-	down their bet they press the roll button.
+    7 segment display.  The circuit lights up the BET LED.
+    The player enters a one digit bet between 1 to 8.  While holding
+    down their bet they press the roll button.
 \item 	The circuit displays the bet on the rightmost 7-segment
-	display.
-	The player pushes and holds down the roll button.
-	The circuit increments a mod 8 counter while the roll 
-	button is depressed. It would be nice to display the
-	current count value on right 7-seven segment display.
-	Since the clock cycle is on the order of milliseconds,
-	then the user would not be able to anticipate the roll.
+    display.
+    The player pushes and holds down the roll button.
+    The circuit increments a mod 8 counter while the roll 
+    button is depressed. It would be nice to display the
+    current count value on right 7-seven segment display.
+    Since the clock cycle is on the order of milliseconds,
+    then the user would not be able to anticipate the roll.
 \item	The player releases the roll button.  The final roll
-	is displayed on the rightmost 7-segment display.
-	The circuit stops incrementing the counter and checks
-	to see if the final value matches the players guess.
-	If the match is correct then light the WIN LED and
-	increment the players earnings.  If the match is incorrect
-	then light the LOOSE LED and decrement the players
-	earnings.
+    is displayed on the rightmost 7-segment display.
+    The circuit stops incrementing the counter and checks
+    to see if the final value matches the players guess.
+    If the match is correct then light the WIN LED and
+    increment the players earnings.  If the match is incorrect
+    then light the LOOSE LED and decrement the players
+    earnings.
 \item	The play hits the roll button to clear the roll information
-	from the 7-segment displays.
+    from the 7-segment displays.
 \item	The circuit displays the players earnings on the 7-segment
-	display.
+    display.
 \item	When the user pushes the roll button then goto step 1.
 \end{enumerate}
 

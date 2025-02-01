@@ -52,11 +52,11 @@ $\delta(A,x)$ is the next state of a FSM in state A with input x.
 For example, consider the following state table:
 
 $$ \begin{array} {c||c|c}
-	CS \bs x & 0     & 1    \\ \hline \hline
-	Q0       & Q0,0  & Q1,0 \\ \hline
-	Q1       & Q0,0  & Q2,0 \\ \hline
-	Q2       & Q0,0  & Q3,1 \\ \hline
-	Q3       & Q0,0  & Q3,1 \\
+    CS \bs x & 0     & 1    \\ \hline \hline
+    Q0       & Q0,0  & Q1,0 \\ \hline
+    Q1       & Q0,0  & Q2,0 \\ \hline
+    Q2       & Q0,0  & Q3,1 \\ \hline
+    Q3       & Q0,0  & Q3,1 \\
 \end{array} $$   
 
 Lets determine what $\lambda (Q2,0)$ is equal to.  Since $\lambda$
@@ -90,10 +90,10 @@ are replaced by Qnew.  When this is done to our original state table
 we get the minimal state table below.
 
 $$ \begin{array} {c||c|c}
-	CS \bs x & 0     & 1    \\ \hline \hline
-	Q0       & Q0,0  & Q1,0 \\ \hline
-	Q1       & Q0,0  & Qnew,0 \\ \hline
-	Qnew     & Q0,0  & Qnew,1 \\
+    CS \bs x & 0     & 1    \\ \hline \hline
+    Q0       & Q0,0  & Q1,0 \\ \hline
+    Q1       & Q0,0  & Qnew,0 \\ \hline
+    Qnew     & Q0,0  & Qnew,1 \\
 \end{array} $$ 
 
 This method is a bit slow and would be difficult to perform on large
@@ -134,12 +134,12 @@ If all this sounds very cryptic, thats all right, we'll work through an
 example to make each of the steps clear. Consider the following state
 table:
 $$ \begin{array} {c||c|c}
-	CS \bs x & 0     & 1    \\ \hline \hline
-	Q0       & Q4,1  & Q3,0 \\ \hline
-	Q1       & Q3,1  & Q4,1 \\ \hline
-	Q2       & Q0,1  & Q3,0 \\ \hline
-	Q3       & Q1,1  & Q4,1 \\ \hline
-	Q4       & Q3,1  & Q4,0 \\
+    CS \bs x & 0     & 1    \\ \hline \hline
+    Q0       & Q4,1  & Q3,0 \\ \hline
+    Q1       & Q3,1  & Q4,1 \\ \hline
+    Q2       & Q0,1  & Q3,0 \\ \hline
+    Q3       & Q1,1  & Q4,1 \\ \hline
+    Q4       & Q3,1  & Q4,0 \\
 \end{array} $$ 
 
 \begin{description}
@@ -226,11 +226,11 @@ entries in the state table.  The outputs are determined by looking
 at the outputs for one of the states within the equivalence class.
 
 $$ \begin{array} {c||c|c}
-	CS \bs x & 0     & 1    \\ \hline \hline
-	A       & C,1  & B,0 \\ \hline
-	B       & B,1  & C,1 \\ \hline
-	C       & B,1  & C,0 \\ \hline
-	D       & A,1  & B,0 \\ 
+    CS \bs x & 0     & 1    \\ \hline \hline
+    A       & C,1  & B,0 \\ \hline
+    B       & B,1  & C,1 \\ \hline
+    C       & B,1  & C,0 \\ \hline
+    D       & A,1  & B,0 \\ 
 \end{array} $$ 
 
 Realize that it does not matter what the states are
@@ -315,56 +315,56 @@ logic required to realize the FSM.  Consider the following state
 table, it will be realized using D flip flops.
 
 \begin{tabular} {c||c|c}
-	CS $\bs$ X & 0     & 1    \\ \hline \hline
-	A       & C,0  & D,0 \\ \hline
-	B       & A,1  & B,0 \\ \hline
-	C       & C,0  & D,1 \\ \hline
-	D       & A,1  & B,1 \\ 
+    CS $\bs$ X & 0     & 1    \\ \hline \hline
+    A       & C,0  & D,0 \\ \hline
+    B       & A,1  & B,0 \\ \hline
+    C       & C,0  & D,1 \\ \hline
+    D       & A,1  & B,1 \\ 
 \end{tabular} 
 
 \begin{tabular}{l|l}
 Assignment 1 & Assignment 2 \\ \hline
-	\begin{tabular} {c||c}
-		State   & Q1 Q0 \\ \hline
-		A       & 00 \\ \hline
-		B       & 01 \\ \hline
-		C       & 10 \\ \hline
-		D       & 11 \\ 
-	\end{tabular} 
+    \begin{tabular} {c||c}
+        State   & Q1 Q0 \\ \hline
+        A       & 00 \\ \hline
+        B       & 01 \\ \hline
+        C       & 10 \\ \hline
+        D       & 11 \\ 
+    \end{tabular} 
 &
-	\begin{tabular} {c||c}
-		State   & Q1 Q0 \\ \hline
-		A       & 00 \\ \hline
-		B       & 01 \\ \hline
-		C       & 11 \\ \hline
-		D       & 10 \\
-	\end{tabular}  \\ \hline
+    \begin{tabular} {c||c}
+        State   & Q1 Q0 \\ \hline
+        A       & 00 \\ \hline
+        B       & 01 \\ \hline
+        C       & 11 \\ \hline
+        D       & 10 \\
+    \end{tabular}  \\ \hline
 
-	\begin{tabular} {c||c|c}
-		Q1 Q0 $\bs$ X & 0  & 1  \\ \hline \hline
-		00      & 10  & 11 \\ \hline
-		01      & 00  & 01 \\ \hline
-		11      & 00  & 01 \\ \hline
-		10      & 10  & 11 \\ 
-	\end{tabular}  
+    \begin{tabular} {c||c|c}
+        Q1 Q0 $\bs$ X & 0  & 1  \\ \hline \hline
+        00      & 10  & 11 \\ \hline
+        01      & 00  & 01 \\ \hline
+        11      & 00  & 01 \\ \hline
+        10      & 10  & 11 \\ 
+    \end{tabular}  
 & 
-	\begin{tabular} {c||c|c}
-		Q1 Q0 $\bs$ X & 0  & 1  \\ \hline \hline
-		00      & 11  & 10 \\ \hline
-		01      & 00  & 01 \\ \hline
-		11      & 11  & 10 \\ \hline
-		10      & 00  & 01 \\ 
-	\end{tabular}  \\ \hline
+    \begin{tabular} {c||c|c}
+        Q1 Q0 $\bs$ X & 0  & 1  \\ \hline \hline
+        00      & 11  & 10 \\ \hline
+        01      & 00  & 01 \\ \hline
+        11      & 11  & 10 \\ \hline
+        10      & 00  & 01 \\ 
+    \end{tabular}  \\ \hline
 
-	\begin{tabular}{l}
-	D1 = Q0' \\
-	D0 = X \\
-	\end{tabular}
+    \begin{tabular}{l}
+    D1 = Q0' \\
+    D0 = X \\
+    \end{tabular}
 &
-	\begin{tabular}{l}
-	D1 = Q1'*Q0' + Q1*Q0 \\
-	D0 = X'*Q1'*Q0' + X*Q1'*Q0 + X'*Q1*Q0 + X*Q1*Q0' \\
-	\end{tabular} \\ 
+    \begin{tabular}{l}
+    D1 = Q1'*Q0' + Q1*Q0 \\
+    D0 = X'*Q1'*Q0' + X*Q1'*Q0 + X'*Q1*Q0 + X*Q1*Q0' \\
+    \end{tabular} \\ 
 \end{tabular}
 
 Clearly, assignment 1 produces a more minimal realization.  Incredibly,
@@ -516,8 +516,8 @@ In the above example, state A will be taken to be the reset states.
 
 $$ \begin{array} {c||c|c|c|c}
     Q_2 \bs Q_1 Q_0 & 00 & 01 & 11 & 10 \\ \hline \hline
-	0           &  A & C  & B  &    \\ \hline
-	1           &  D & E  & G  & F  \\ 
+    0           &  A & C  & B  &    \\ \hline
+    1           &  D & E  & G  & F  \\ 
 \end{array} $$
 
 The cells of this kmap are filled with the states in order to satisfy

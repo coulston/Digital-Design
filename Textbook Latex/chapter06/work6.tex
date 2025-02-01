@@ -14,15 +14,15 @@ Data Output:   & N-bit vector $Q=q_{N-1} \ldots q_1 q_0$    \\ \hline
 Control:       & 1-bit $c$              				\\ \hline
 Status:        & none 							\\ \hline
 Others:		& 1-bit edge-sensitive clock.  1-bit asynchronous
-		active low reset.						\\ \hline
+        active low reset.						\\ \hline
 Behavior:      & 
-			\begin{tabular}{c|c|c|c||c||c}
-			reset & clk          & C & D & $Q^+$ & comment \\ \hline
-			0     & x            & x & x & $0$   & reset   \\ \hline
-			1     & 0,1,falling  & x & x & $Q$   & hold  \\ \hline
-			1     & rising       & 0 & x & $Q$   &  hold \\ \hline
-			1     & rising       & 1 & D & D     &  load \\
-			\end{tabular} \\ \hline
+            \begin{tabular}{c|c|c|c||c||c}
+            reset & clk          & C & D & $Q^+$ & comment \\ \hline
+            0     & x            & x & x & $0$   & reset   \\ \hline
+            1     & 0,1,falling  & x & x & $Q$   & hold  \\ \hline
+            1     & rising       & 0 & x & $Q$   &  hold \\ \hline
+            1     & rising       & 1 & D & D     &  load \\
+            \end{tabular} \\ \hline
 \end{tabular}
 
 
@@ -77,32 +77,32 @@ Control:       & 1-bit $c$              \\ \hline
 Status:        & none                                   \\ \hline
 Others:        & none                 \\ \hline
 Behavior:      & Output equals input when $C=1$ otherwise
-		output disconnected from input.	\\ \hline
+        output disconnected from input.	\\ \hline
 \end{tabular}
 
 
 \begin{tabular}{|l|p{4.5in}|} \hline
 Nomenclature:  & NxM RAM (random access memory)    \\ \hline
 Data Input:    &  M-bit vector $D=d_{M-1} \ldots d_1 d_0$  
-		$log_2(N)$-bit address $A=a_{log_2(N)-1} \ldots a_1 a_0$ \\ \hline
+        $log_2(N)$-bit address $A=a_{log_2(N)-1} \ldots a_1 a_0$ \\ \hline
 Data Output:   & M-bit vector $D=d_{M-1} \ldots d_1 d_0$	 \\ \hline
 Control:       & 1-bit CS (chip select), RE (Read enable), 
-		 WE (write enable)             \\ \hline
+         WE (write enable)             \\ \hline
 Status:        & none                                   \\ \hline
 Others:        & none                 \\ \hline
 Behavior:      &
-			\begin{tabular}{c|c|c|c||c|l}
-			A & CS  & RE   & WE & D  & Note   \\ \hline
-			x & 0   & x    & x  & Z  & RAM deactivated      \\ \hline
-			x & 1   & 0    & 0  & Z  & RAM deactivated \\ \hline
-			A & 1   & 0    & 1  & D  & RAM[A] = D (write) \\ \hline
-			A & 1   & 1    & 0  & RAM[A]   & D = RAM[A] (read)  \\
-			\end{tabular} \\ \hline
+            \begin{tabular}{c|c|c|c||c|l}
+            A & CS  & RE   & WE & D  & Note   \\ \hline
+            x & 0   & x    & x  & Z  & RAM deactivated      \\ \hline
+            x & 1   & 0    & 0  & Z  & RAM deactivated \\ \hline
+            A & 1   & 0    & 1  & D  & RAM[A] = D (write) \\ \hline
+            A & 1   & 1    & 0  & RAM[A]   & D = RAM[A] (read)  \\
+            \end{tabular} \\ \hline
 \end{tabular}
 
 
 \begin{tabular}{c|c|c}
-		& Left			& Right		    \\ \hline
+        & Left			& Right		    \\ \hline
 Arithmetic	& $x_2 x_1 x_0 0$		& $x_3 x_3 x_2 x_1$ \\ \hline
 Circular	& $x_2 x_1 x_0 x_3$	& $x_0 x_3 x_2 x_1$ \\ \hline
 Logical 	& $x_2 x_1 x_0 0$		& $0   x_3 x_2 x_1$   \\ 

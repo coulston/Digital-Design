@@ -118,16 +118,16 @@ Shade the active FF and any BBBs which are read or written.
 
 \begin{tabular}{ll}
 \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & 
-	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+    \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
 1. State \textbf{ InitMin} \vspace{10mm}        & 5. State \textbf{ CompM} \\
 \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & i
-	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+    \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
 2. State \textbf{ InitI}   \vspace{10mm}        & 6. State \textbf{ NewMin} \\
 \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & 
-	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+    \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
 3. State \textbf{ CompC}   \vspace{10mm}          & 7. State \textbf{ Inc} \\
 \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} & 
-	\scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
+    \scalebox{0.3}{\includegraphics{../Fig/MinSearch2}} \\
 4. State \textbf{ Read}                                  & 8. State \textbf{ CompC} \\
 \end{tabular}
 
@@ -273,32 +273,32 @@ of purposes.}
 The sequence of events is as follows:
 \begin{enumerate}
 \item	The circuit lights up the PICK LED.
-	The player enters their guess; a number between 1-8, even or odd.
-	While holding down their guess they press the roll button.
+    The player enters their guess; a number between 1-8, even or odd.
+    While holding down their guess they press the roll button.
 \item	The circuit displays the picked number in the left most
-	7 segment display.  The circuit lights up the BET LED.
-	The player enters a one digit bet between 1 to 8.  While holding
-	down their bet they press the roll button.
+    7 segment display.  The circuit lights up the BET LED.
+    The player enters a one digit bet between 1 to 8.  While holding
+    down their bet they press the roll button.
 \item 	The circuit displays the bet on the rightmost 7-segment
-	display.
-	The player pushes and holds down the roll button.
-	The circuit increments a mod 8 counter while the roll 
-	button is depressed. It would be nice to display the
-	current count value on right 7-seven segment display.
-	Since the clock cycle is on the order of milliseconds,
-	then the user would not be able to anticipate the roll.
+    display.
+    The player pushes and holds down the roll button.
+    The circuit increments a mod 8 counter while the roll 
+    button is depressed. It would be nice to display the
+    current count value on right 7-seven segment display.
+    Since the clock cycle is on the order of milliseconds,
+    then the user would not be able to anticipate the roll.
 \item	The player releases the roll button.  The final roll
-	is displayed on the rightmost 7-segment display.
-	The circuit stops incrementing the counter and checks
-	to see if the final value matches the players guess.
-	If the match is correct then light the WIN LED and
-	increment the players earnings.  If the match is incorrect
-	then light the LOOSE LED and decrement the players
-	earnings.
+    is displayed on the rightmost 7-segment display.
+    The circuit stops incrementing the counter and checks
+    to see if the final value matches the players guess.
+    If the match is correct then light the WIN LED and
+    increment the players earnings.  If the match is incorrect
+    then light the LOOSE LED and decrement the players
+    earnings.
 \item	The play hits the roll button to clear the roll information
-	from the 7-segment displays.
+    from the 7-segment displays.
 \item	The circuit displays the players earnings on the 7-segment
-	display.
+    display.
 \item	When the user pushes the roll button then goto step 1.
 \end{enumerate}
 
@@ -421,17 +421,17 @@ Table~\ref{table:LSbehavior}.
 \textbf{ reset }	& blank		& blank		& All sequential elements are reset 	\\ \hline
 \textbf{ prompt }	& blank		& ``P"		& Waiting for user input		\\ \hline
 \textbf{ limit }	& blank		& current limit	& The number of frames in the light show is called 
-	the limit. If the user enters a hex value between 0-F it is stored as the new limit. \\  \hline
+    the limit. If the user enters a hex value between 0-F it is stored as the new limit. \\  \hline
 \textbf{ index }	& current frame	& current index	& Each frame in the show has an index which defines 
-	its position in the show. If the user enters a hex value between 0-F, this frame will 
-	be edited in the \textbf{ modify } state. 						\\ \hline
+    its position in the show. If the user enters a hex value between 0-F, this frame will 
+    be edited in the \textbf{ modify } state. 						\\ \hline
 \textbf{ modify }	& current frame	& current index	& Each frame has eight bits which specify the state of 
-	the 8 LEDs on the bar graph.  These bits are toggled by pressing the corresponding 
-	key. For example, if LED 5 is on, pressing ``5", causes LED 5 
-	to go off.								\\ \hline
+    the 8 LEDs on the bar graph.  These bits are toggled by pressing the corresponding 
+    key. For example, if LED 5 is on, pressing ``5", causes LED 5 
+    to go off.								\\ \hline
 \textbf{ show }	& cycle through frames & current index & Consecutive frames are displayed on the 
-	LED bar graph at around 4Hz. After the last frame is displayed, the circuit loops 
-	back to the 0th frame. 							\\ 
+    LED bar graph at around 4Hz. After the last frame is displayed, the circuit loops 
+    back to the 0th frame. 							\\ 
 \end{tabular}
 \caption{The behavior of the Light Show circuit in each of its states.}
 \label{table:LSbehavior}
@@ -499,11 +499,11 @@ clocked at 16MHz.  The clock rate is needed in order to create a delay of
 {\small
 \begin{tabular}{c||c|c|c|c|c|c|c|c|c|c|c}
 \textbf{ State } 	& bar & 7-seg & hex & index & delay & limit    & bargraph & CS & R/W' & tsb & flip \\  
-	& mux & mux   & mux & count & count & register & register &       &       & &      \\  \hline \hline
-	& 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold & 0 off & 0 write & 0 tri & 0 pass \\ 
-	& 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load & 1 on    &  1 read & 1 pass & 1 flip \\
-	& 	&     &     & 10 load & 10 load & & & & & \\
-	& 	&     &	    & 11 reset	& 11 reset & & & & \\ \hline \hline
+    & mux & mux   & mux & count & count & register & register &       &       & &      \\  \hline \hline
+    & 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold & 0 off & 0 write & 0 tri & 0 pass \\ 
+    & 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load & 1 on    &  1 read & 1 pass & 1 flip \\
+    & 	&     &     & 10 load & 10 load & & & & & \\
+    & 	&     &	    & 11 reset	& 11 reset & & & & \\ \hline \hline
 \textbf{ prompt } 	 & 	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
 \textbf{ set limit }  & 	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline
 \textbf{ load limit } &	  &	  &	  &	   &	   &	  &	  &	  &   &	  &   \\ \hline

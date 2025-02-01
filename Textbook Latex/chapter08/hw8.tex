@@ -249,11 +249,11 @@ be stored in a register called IR (Instruction Register).  If the upper
 two bits of IR are:
 \begin{enumerate}
 \item  00 then add the lower 10 bits of the IR to ACC.  Pad the upper two
-	bits of the IR with 0's before adding to the ACC.
+    bits of the IR with 0's before adding to the ACC.
 \item  01 then store the ACC to the address specified by the 
-	lower 10 bits of the IR.
+    lower 10 bits of the IR.
 \item  10 then load the ACC from from the address specified by the lower 
-	10 bits of the IR.
+    10 bits of the IR.
 \item  11 then clear the value of ACC to 0.
 \end{enumerate}
 
@@ -273,13 +273,13 @@ The control unit is to be implemented using a ones hot encoding.
 %% while(1) {
     %% IR = RAM[PC];
     %% if (IR(11,10) == 00) 
-	%% ACC += 00 & IR(9 downto 0);
+    %% ACC += 00 & IR(9 downto 0);
     %% if (IR(11,10) == 01) 
-	%% RAM[IR(9 downto 0) = ACC;
+    %% RAM[IR(9 downto 0) = ACC;
     %% if (IR(11,10) == 10) 
-	%% ACC = RAM[IR(9 downto 0)];
+    %% ACC = RAM[IR(9 downto 0)];
     %% if (IR(11,10) == 11) 
-	%% ACC = 0;
+    %% ACC = 0;
     %% PC += 1;
 %% }
 %% \end{verbatim}
@@ -323,8 +323,8 @@ $D_{Stor} = Q_{wait1b}req$             &  $Z_{TSB} = Q_{Stor}$         \\
 $D_{Load}= Q_{GetB} + Q_{wait2b}req$  &  $Z_{PC1} = Q_{Inc}$          \\
 $D_{Clr  } = Q_{wait2B}req'$            &  $Z_{PC0} = Q_{Init}$          \\
 $D_{Inc } = Q_{For}LB$                 &   $Z_{CS} = Q_{Read}+Q_{Stor}+Q_{Load}$     \\
-					&   $Z_{Amux} = Q_{Read}+Q_{Stor}+Q_{Load}$   \\
-					&   $Z_{RW} = Q_{Read}+Q_{Load}$            \\
+                    &   $Z_{Amux} = Q_{Read}+Q_{Stor}+Q_{Load}$   \\
+                    &   $Z_{RW} = Q_{Read}+Q_{Load}$            \\
 \end{tabular}
 
 }\end{onlysolution} 
@@ -504,32 +504,32 @@ of purposes.}
 The sequence of events is as follows:
 \begin{enumerate}
 \item	The circuit lights up the PICK LED.
-	The player enters their guess; a number between 1-8, even or odd.
-	While holding down their guess they press the roll button.
+    The player enters their guess; a number between 1-8, even or odd.
+    While holding down their guess they press the roll button.
 \item	The circuit displays the picked number in the left most
-	7-segment display.  The circuit lights up the BET LED.
-	The player enters a one digit bet between 1 to 8.  While holding
-	down their bet they press the roll button.
+    7-segment display.  The circuit lights up the BET LED.
+    The player enters a one digit bet between 1 to 8.  While holding
+    down their bet they press the roll button.
 \item 	The circuit displays the bet on the rightmost 7-segment
-	display.
-	The player pushes and holds down the roll button.
-	The circuit increments a mod 8 counter while the roll 
-	button is depressed. It would be nice to display the
-	current count value on right 7-seven segment display.
-	Since the clock cycle is on the order of milliseconds,
-	then the user would not be able to anticipate the roll.
+    display.
+    The player pushes and holds down the roll button.
+    The circuit increments a mod 8 counter while the roll 
+    button is depressed. It would be nice to display the
+    current count value on right 7-seven segment display.
+    Since the clock cycle is on the order of milliseconds,
+    then the user would not be able to anticipate the roll.
 \item	The player releases the roll button.  The final roll
-	is displayed on the rightmost 7-segment display.
-	The circuit stops incrementing the counter and checks
-	to see if the final value matches the players guess.
-	If the match is correct then light the WIN LED and
-	increment the players earnings.  If the match is incorrect
-	then light the LOOSE LED and decrement the players
-	earnings.
+    is displayed on the rightmost 7-segment display.
+    The circuit stops incrementing the counter and checks
+    to see if the final value matches the players guess.
+    If the match is correct then light the WIN LED and
+    increment the players earnings.  If the match is incorrect
+    then light the LOOSE LED and decrement the players
+    earnings.
 \item	The play hits the roll button to clear the roll information
-	from the 7-segment displays.
+    from the 7-segment displays.
 \item	The circuit displays the players earnings on the 7-segment
-	display.
+    display.
 \item	When the user pushes the roll button then go to step 1.
 \end{enumerate}
 

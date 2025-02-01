@@ -488,10 +488,10 @@ the actions each state performs and is discussed next.
 \begin{table}
 \begin{tabular}{c||c|c|c|c|c}  
 \textbf{ State}   & enb      	&  Min Reg & Min mux       & Counter & MBR Reg	\\ \hline
-        			& 0     		&  0 hold   & 0 load FF     & 00 hold & 0 hold	\\ \hline
-        			& 1 read 	&  1 load   & 1 load RAM    & 01 load & 1 load	\\ \hline
-        			&          	 &           &               		& 10 count& 		\\ \hline
-        			&         		 &           &              		 & 11 reset& \\ \hline \hline
+                    & 0     		&  0 hold   & 0 load FF     & 00 hold & 0 hold	\\ \hline
+                    & 1 read 	&  1 load   & 1 load RAM    & 01 load & 1 load	\\ \hline
+                    &          	 &           &               		& 10 count& 		\\ \hline
+                    &         		 &           &              		 & 11 reset& \\ \hline \hline
 \textbf{ InitMin } & 0        	 & 1         & 0          		   & 00      & 0   \\ \hline
 \textbf{ InitI }  	& 0        	& 0         & x           		  & 01      & 0   \\ \hline
 \textbf{ CompC }  & 0        & 0         & x             		& 00      & 0   \\ \hline
@@ -607,16 +607,16 @@ back into the \textbf{ CompC} state on the next positive clock edge.
 
 \begin{tabular}{ll}
 \scalebox{0.3}{\includegraphics{MinSearch2a}} & 
-	\scalebox{0.3}{\includegraphics{MinSearch2e}} \\
+    \scalebox{0.3}{\includegraphics{MinSearch2e}} \\
 1. State \textbf{ InitMin}                               & 5. State \textbf{ CompM} \\
 \scalebox{0.3}{\includegraphics{MinSearch2b}} & 
-	\scalebox{0.3}{\includegraphics{MinSearch2f}} \\
+    \scalebox{0.3}{\includegraphics{MinSearch2f}} \\
 2. State \textbf{ InitI}                                 & 6. State \textbf{ NewMin} \\
 \scalebox{0.3}{\includegraphics{MinSearch2c}} & 
-	\scalebox{0.3}{\includegraphics{MinSearch2g}} \\
+    \scalebox{0.3}{\includegraphics{MinSearch2g}} \\
 3. State \textbf{ CompC}                                 & 7. State \textbf{ Inc} \\
 \scalebox{0.3}{\includegraphics{MinSearch2d}} & 
-	\scalebox{0.3}{\includegraphics{MinSearch2h}} \\
+    \scalebox{0.3}{\includegraphics{MinSearch2h}} \\
 4. State \textbf{ Read}                                  & 8. State \textbf{ CompC} \\
 \end{tabular}
 
@@ -997,9 +997,9 @@ Others:        & 1-bit clk, nominally logic 1		\\ \hline
 Physical Input:& key press and key release events 	\\ \hline
 Physical Output:& none		\\ \hline
 Behavior:      & When a key is pressed, its 8-bit make code
-		is transmitted.  When a key is released, an
-		8-bit break code is transmitted, immediately
-		followed by the key's 8-bit scan code.	\\ \hline
+        is transmitted.  When a key is released, an
+        8-bit break code is transmitted, immediately
+        followed by the key's 8-bit scan code.	\\ \hline
 \end{tabular}
 
 While the table implies a keyboard is an output-only device, the
@@ -1067,17 +1067,17 @@ summarized in the following table.
 \begin{tabular}{|l|p{3.5in}|} \hline
 Nomenclature:  & Keyboard scan code reader		\\ \hline
 Data Input:    & 1-bit kd\_data, nominally logic 1
-		 1-bit kd\_clk, nominally logic 1	\\ \hline
+         1-bit kd\_clk, nominally logic 1	\\ \hline
 Data Output:   & 8-bit scan code				\\ \hline
 Control:       & none					\\ \hline
 Status:        & 1-bit busy, nominally logic 0		\\ \hline
 Others:        & 1-bit clk, nominally logic 1		\\ \hline
 Behavior:      & Interprets the PS/2 keyboard clk and data signal
-		from a keypress event and outputs the associated
-		scan code.  The busy signal goes high when the
-		first data bit arrives and stays high until the
-		last data bit is received.  Busy is low only when
-		there is a valid scan code on the output. \\ \hline
+        from a keypress event and outputs the associated
+        scan code.  The busy signal goes high when the
+        first data bit arrives and stays high until the
+        last data bit is received.  Busy is low only when
+        there is a valid scan code on the output. \\ \hline
 \end{tabular}
 \\ \\
 The keyboard scan code reader algorithm just shifts in the 33 bits
@@ -1212,17 +1212,17 @@ Table~\ref{table:LSbehavior}.
 \textbf{ reset }	& blank		& blank		& All sequential elements are reset 	\\ \hline
 \textbf{ prompt }	& blank		& ``P"		& Waiting for user input		\\ \hline
 \textbf{ limit }	& blank		& current limit	& The number of frames in the light show is called 
-	the limit. If the user enters a hex value between 0-F it is stored as the new limit. \\  \hline
+    the limit. If the user enters a hex value between 0-F it is stored as the new limit. \\  \hline
 \textbf{ index }	& current frame	& current index	& Each frame in the show has an index which defines 
-	its position in the show. If the user enters a hex value between 0-F, this frame will 
-	be edited in the \textbf{ modify } state. 						\\ \hline
+    its position in the show. If the user enters a hex value between 0-F, this frame will 
+    be edited in the \textbf{ modify } state. 						\\ \hline
 \textbf{ modify }	& current frame	& current index	& Each frame has eight bits which specify the state of 
-	the 8 LEDs on the bar graph.  These bits are toggled by pressing the corresponding 
-	key. For example, if LED 5 is on, pressing ``5", causes LED 5 
-	to go off.								\\ \hline
+    the 8 LEDs on the bar graph.  These bits are toggled by pressing the corresponding 
+    key. For example, if LED 5 is on, pressing ``5", causes LED 5 
+    to go off.								\\ \hline
 \textbf{ show }	& cycle through frames & current index & Consecutive frames are displayed on the 
-	LED bar graph at around 4Hz. After the last frame is displayed, the circuit loops 
-	back to the 0th frame. 							\\ 
+    LED bar graph at around 4Hz. After the last frame is displayed, the circuit loops 
+    back to the 0th frame. 							\\ 
 \end{tabular}
 \caption{The behavior of the Light Show circuit in each of its states.}
 \label{table:LSbehavior}
@@ -1455,11 +1455,11 @@ are determined from the line-by-line analysis of the light show algorithm.
 {\tiny
 \begin{tabular}{c||c|c|c|c|c|c|c|c|c|c}
 \textbf{ State } 	& bar & 7-seg & hex & index & delay & limit    & bargraph & enb & wen   & flip \\  
-	                & mux & mux   & mux & count & count & register & register &          &         &       \\  \hline \hline
-	& 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold   & 0       & 0       &0 pass \\ 
-	& 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load              & 1 read & write   & 1 flip \\
-	& 	&     &     & 10 load & 10 load & & &  \\
-	& 	&     &	    & 11 reset	& 11 reset & & \\ \hline \hline
+                    & mux & mux   & mux & count & count & register & register &          &         &       \\  \hline \hline
+    & 0 0x00 & 0 index & 0 7-seg & 00 hold & 00 hold & 0 hold & 0 hold   & 0       & 0       &0 pass \\ 
+    & 1 bar	& 1 limit & 1 ``P"& 01 cnt & 01 cnt & 1 load &    1 load              & 1 read & write   & 1 flip \\
+    & 	&     &     & 10 load & 10 load & & &  \\
+    & 	&     &	    & 11 reset	& 11 reset & & \\ \hline \hline
 \textbf{ prompt } 	 & 	0 &	x &	1 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
 \textbf{ set limit }  & 	0 &	1 &	0 &	00 &	00 &	0 &	0 &	0 &	0 & x \\ \hline
 \textbf{ load limit } &	0 &	1 &	0 &	00 &	00 &	1 &	0 &	0 &	0 & x \\ \hline
