@@ -25,7 +25,7 @@ module function03(a, b, c, f03);
 
     // Wires are signals that begin and end inside the module
     wire p1, p2, p4, p7;
-	 
+
     // f03 has four product terms, you'll learn about these in chapter 3
     // The order of the following rows does not matter, they all "run"
     // at the same time, they are concurrent assignment statements (CSA)

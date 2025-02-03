@@ -19,7 +19,7 @@
 // Board.
 //*****************************************************************
 module hexToSevenSeg_tb;
-	
+
     wire [2:0] t_sevSeg;
     reg [3:0] t_x;
 
@@ -31,10 +31,10 @@ initial
         $monitor(t_x, t_sevSeg);
 
         // Complete the stimulus vectors.  Do not put "#20" after the
-        // last row - it will cause an error.		
-        t_x = 4'b0000;		#20 	
-        t_x = 4'b0001;		#20 	
+        // last row - it will cause an error.
+        t_x = 4'b0000;		#20
+        t_x = 4'b0001;		#20
 
-        t_x = 4'b1111;		
+        t_x = 4'b1111;
 		      end
 endmodule

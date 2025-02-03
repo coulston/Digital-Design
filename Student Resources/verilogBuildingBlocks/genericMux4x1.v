@@ -14,7 +14,7 @@ module genericMux4x1(y3, y2, y1, y0, sel, f);
     output reg [n-1:0]  f;
 
     always @(*)
-        case(sel) 
+        case(sel)
 	    2'b00: f=y0;
 	    2'b01: f=y1;
 	    2'b10: f=y2;

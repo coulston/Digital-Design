@@ -14,7 +14,7 @@ module genericMux8x1(y7, y6, y5, y4, y3, y2, y1, y0, sel, f);
     output reg [n-1:0]  f;
 
     always @(*)
-        case(sel) 
+        case(sel)
 	    3'b000: f=y0;
 	    3'b001: f=y1;
 	    3'b010: f=y2;

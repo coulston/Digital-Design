@@ -11,7 +11,7 @@ Document Class: memoir 2024/01/26 v3.8.2 configurable book, report, article doc
 ument class
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2024-05-27 L3 programming layer (loader) 
+Package: expl3 2024-05-27 L3 programming layer (loader)
 
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
 pdftex.def
@@ -405,7 +405,7 @@ Package verse [2008/07/23] emulated by memoir.
 \openout4 = `howToManual.idx'.
 
 
-Writing index file howToManual.idx 
+Writing index file howToManual.idx
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
 e 14.
@@ -899,7 +899,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package hyperref Info: Link coloring ON on input line 17.
 
 
-pdfTeX warning: pdflatex (file ./Fig/colorCover.pdf): PDF inclusion: found PDF 
+pdfTeX warning: pdflatex (file ./Fig/colorCover.pdf): PDF inclusion: found PDF
 version <1.7>, but at most version <1.5> allowed
 <./Fig/colorCover.pdf, id=3, 341.43309pt x 569.05505pt>
 File: ./Fig/colorCover.pdf Graphic file (type pdf)
@@ -919,13 +919,13 @@ LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line
 24.
 
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line
 24.
 
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
@@ -971,7 +971,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line
 15.
 
 (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
@@ -1018,7 +1018,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[2 <./Lab00HowTo/howTo00 Install Quartus/Fig/image1.png> <./Lab00HowTo/howTo00 
+[2 <./Lab00HowTo/howTo00 Install Quartus/Fig/image1.png> <./Lab00HowTo/howTo00
 Install Quartus/Fig/image2.png>])
 
 [3 <./Lab00HowTo/howTo00 Install Quartus/Fig/image3.png>]
@@ -1059,7 +1059,7 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10> not available
 aux"'.
 
  (Lab00HowTo/howTo20 Performing Simulation/Performing Simulation.tex
-<./Lab00HowTo/howTo20 Performing Simulation/Fig/image1.png, id=125, 395.4775pt 
+<./Lab00HowTo/howTo20 Performing Simulation/Fig/image1.png, id=125, 395.4775pt
 x 168.63pt>
 File: ./Lab00HowTo/howTo20 Performing Simulation/Fig/image1.png Graphic file (t
 ype png)
@@ -1086,7 +1086,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./Lab00HowTo/howTo20 Performing Simulation/Fig/image1.png>]
-<./Lab00HowTo/howTo20 Performing Simulation/Fig/image3.png, id=143, 867.24pt x 
+<./Lab00HowTo/howTo20 Performing Simulation/Fig/image3.png, id=143, 867.24pt x
 274.77657pt>
 File: ./Lab00HowTo/howTo20 Performing Simulation/Fig/image3.png Graphic file (t
 ype png)
@@ -1104,7 +1104,7 @@ wTo20 Performing Simulation/Fig/image3.png>]
 
 
 (Lab00HowTo/howTo30 Using Do Files/Using Do Files.tex
-LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
+LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line
 23.
 LaTeX Font Info:    No file OMSlmtt.fd. on input line 23.
 
@@ -1141,7 +1141,7 @@ File: lstlang2.sty 2024/05/25 1.10b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 146.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line
 172.
  (C:\Users\coulston\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1170,7 +1170,7 @@ pe png)
 Package pdftex.def Info: ./Lab00HowTo/howTo40 Performing Synthesis/Fig/image1.p
 ng  used on input line 26.
 (pdftex.def)             Requested size: 384.53082pt x 58.67328pt.
-<./Lab00HowTo/howTo40 Performing Synthesis/Fig/image2.png, id=200, 651.03226pt 
+<./Lab00HowTo/howTo40 Performing Synthesis/Fig/image2.png, id=200, 651.03226pt
 x 373.395pt>
 File: ./Lab00HowTo/howTo40 Performing Synthesis/Fig/image2.png Graphic file (ty
 pe png)
@@ -1203,7 +1203,7 @@ L3 programming layer <2020/03/25>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- ) 
+ )
 Here is how much of TeX's memory you used:
  17458 strings out of 473904
  278051 string characters out of 5725185
@@ -1230,4 +1230,3 @@ PDF statistics:
  343 PDF objects out of 1000 (max. 8388607)
  124 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
-

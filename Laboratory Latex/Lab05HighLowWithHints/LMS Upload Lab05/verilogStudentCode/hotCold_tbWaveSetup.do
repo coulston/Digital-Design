@@ -14,5 +14,3 @@ add wave -position end  -color orange sim:/hotCold_tb/uut/hotWire
 add wave -position end  -color orange sim:/hotCold_tb/uut/warmWire
 add wave -position end  -color orange sim:/hotCold_tb/uut/coldWire
 add wave -position end  -radix hex -color red sim:/hotCold_tb/uut/hotColdSeg
-
-

@@ -1,22 +1,22 @@
 <img src="Textbook Latex/Fig/colorCover.jpg" align="right" alt="Digital Design Text Cover" width="20%"/>
 
 Orginally published in 2004 by McGraw Hill, Digital Design: A Datapath and Control is now
-available as an OER.  This text was written for faculty and students wanting a structured 
-approach to the design of complex digital systems.  It guides students and faculty through 
-the process by exposing critical skills gradually through the text. 
+available as an OER.  This text was written for faculty and students wanting a structured
+approach to the design of complex digital systems.  It guides students and faculty through
+the process by exposing critical skills gradually through the text.
 
 # Features
-* End of Chapter Problems. 
+* End of Chapter Problems.
 * Instructor’s Manual containing solutions to the end-of-chapter problems.
 * Laboratory Manual containing 11 projects suitable for implementation on many different FPGA development boards.
-* Numerous Examples. Many examples demonstrating application of the material are contained throughout the text. 
+* Numerous Examples. Many examples demonstrating application of the material are contained throughout the text.
 
 
 # Why?
-You might be asking yourself ``Why bother writing yet another digital design 
-text?''  While this text does cover many of the same topics you will 
+You might be asking yourself ``Why bother writing yet another digital design
+text?''  While this text does cover many of the same topics you will
 find in other digital design texts, it distinguishes itself by
-*presenting a systematic design process for sophisticated digital circuits.* 
+*presenting a systematic design process for sophisticated digital circuits.*
 A digital design sophisticated when it needs to be described algorithmically
 and has the generic architecture shown in **Figure 1**.
 
@@ -27,20 +27,20 @@ and has the generic architecture shown in **Figure 1**.
 
 
 The datapath and control framework classifies the inputs and outputs of every
-digital logic building block as either **Data inputs**, **Data output**, **Control**, 
+digital logic building block as either **Data inputs**, **Data output**, **Control**,
 **Status** (the two special signals, **clk** and **reset** sit outside this
-classification).  Under this framework, the datapath performs all data manipulations and the 
+classification).  Under this framework, the datapath performs all data manipulations and the
 control unit sequences the control inputs for datapath.  The datapath is built from
 combinational and sequential building blocks like multiplexers and counters.  The control unit
 is a finite state machine.
 
 # Class Organization
-The text, homework and laboratory are intended for a 4-credit course.  The example timeline 
-shown in **Table 1** assumes 3 50-minute lectures per week and 
+The text, homework and laboratory are intended for a 4-credit course.  The example timeline
+shown in **Table 1** assumes 3 50-minute lectures per week and
 one 2 or 3 hour laboratory a week. While it is expected that students finish the laboratory
 during the scheduled time, frequently students will need additional time to complete work, so accommodations need
-to be in-place for them to access the hardware and software outside of course hours.   I expect that students will 
-spend about 4-hours a week working outside of class. 
+to be in-place for them to access the hardware and software outside of course hours.   I expect that students will
+spend about 4-hours a week working outside of class.
 
 
 # Example Timeline
@@ -49,8 +49,8 @@ spend about 4-hours a week working outside of class.
 | ---     | --- | --- |
 | 1			  |  Course Intro, Binary numbering, Hexadecimal | 1.1 -- 1.3 |
 | 2			  | Binary Addition | 1.4 |
-| 3			  | Logic gates / Circuit to Symbolic / Circuit to Truth Table | 2.1, 2.21, 2.2.2 
-| 4			  | Symbolic to Truth Table / Symbolic to Circuit |  2.2.3, 2.2.4 
+| 3			  | Logic gates / Circuit to Symbolic / Circuit to Truth Table | 2.1, 2.21, 2.2.2
+| 4			  | Symbolic to Truth Table / Symbolic to Circuit |  2.2.3, 2.2.4
 | 5 			| Symbolic to Verilog | Supplemental |
 | Lab \#1	| Introduction to CAD tools and Verilog | |
 | 6 			| Symbolic to Symbolic |  2.2.5 |
@@ -107,6 +107,6 @@ Lab \#8 	| Mod 10 Counter |  |
 # Contribute
 An important feature of this text is the ability for others to contribute to its ongoing improvement.
 At present the text lacks HDL material and would benefit from a unit on FPGA architectures.  There
-are countless ways that you can improve this text.  If you are interested in contributing, reach out 
-to [Dr. Christopher Coulston](mailto:coulston@mines.edu?subject=[GitHub]%20Contributions) and I can arrange to make a branch of the text repository.  I'd enjoy 
+are countless ways that you can improve this text.  If you are interested in contributing, reach out
+to [Dr. Christopher Coulston](mailto:coulston@mines.edu?subject=[GitHub]%20Contributions) and I can arrange to make a branch of the text repository.  I'd enjoy
 working with others and sharing perspectives.

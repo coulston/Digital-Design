@@ -1,48 +1,47 @@
 %%------------------------------------------------------
 %% Document formatting standards.
-%% references labels			figure:<camelCase>
-%%						\tableofcontents:<camelCase>
-%%						section:<dash seperated>
-%%						index:<camelCase>
-%%						example:<camelCase> 
-%%						equ:<camelCase>
+%% references labels            figure:<camelCase>
+%%                        \tableofcontents:<camelCase>
+%%                        section:<dash seperated>
+%%                        index:<camelCase>
+%%                        example:<camelCase>
+%%                        equ:<camelCase>
 %%------------------------------------------------------
 
 \usepackage{graphicx}
-\usepackage{imakeidx}			% Enables Index functionality
+\usepackage{imakeidx}            % Enables Index functionality
 \usepackage{wrapfig}
 
 %% Lots of packages needed for tables
-\usepackage{xcolor,colortbl}	% Enable colors in tables
+\usepackage{xcolor,colortbl}    % Enable colors in tables
 \usepackage{mdframed}
 
 \usepackage{multirow}
-\usepackage{hhline}			% allows partial hlines in multirow tables
-\usepackage{longtable}			%Enables multipage tables
-\usepackage{makecell}			% deal with parboxes inside tables
+\usepackage{hhline}            % allows partial hlines in multirow tables
+\usepackage{longtable}            %Enables multipage tables
+\usepackage{makecell}            % deal with parboxes inside tables
 
-\usepackage{amssymb}			%% Enables a range of useful  math notation
+\usepackage{amssymb}            %% Enables a range of useful  math notation
 \usepackage{amsmath}
 
 \usepackage{soul}
 
-\usepackage{tikz}			% Enable drawing simples shapes over text
-\usepackage{subcaption}	% Enables tables to not have a caption but to increment the table counter
-
+\usepackage{tikz}            % Enable drawing simples shapes over text
+\usepackage{subcaption}    % Enables tables to not have a caption but to increment the table counter
 
 % This allows conditional formatting of the problem/solution manual
-%	\showanswers
-%	\hideanswers
-\usepackage{probsoln}		% For problems and solutions
-\usepackage{dirtree}		% For the body of knowledge
+%    \showanswers
+%    \hideanswers
+\usepackage{probsoln}        % For problems and solutions
+\usepackage{dirtree}        % For the body of knowledge
 
 % Table of contents for processes
 \usepackage{tocloft}
 \usepackage{multicol}
 
-\usepackage{pdflscape}			% enables landscape pages
+\usepackage{pdflscape}            % enables landscape pages
 
-\usepackage{hyperref}			% Enable hyperlinks to email and URLs
+\usepackage{hyperref}            % Enable hyperlinks to email and URLs
 \hypersetup{
     colorlinks=true,
     linkcolor=red,
@@ -50,23 +49,24 @@
     pdftitle={Digital Design, A Datapath and Control Approach}
 }
 
-%\newcommand{\ul}{\underline}	%superceeded by soul package
+%\newcommand{\ul}{\underline}    %superceeded by soul package
 \definecolor{Gray}{gray}{0.85}
 \newcolumntype {g} {>{\columncolor{Gray}}c}
 
 % Draws a item list bullet, helps create fake lists in table (tightens up the list)
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
-%Adding this before the "\\" in a table line will give you some more room below 
-\newcommand\B{\rule[-2.5ex]{0pt}{0pt}} 		% Bottom strut
+%Adding this before the "\\" in a table line will give you some more room below
+\newcommand\B{\rule[-2.5ex]{0pt}{0pt}}         % Bottom strut
 %Adding this before the first row item will give you some room above
 \newcommand\T{\rule{0pt}{4ex}}       % Top strut
 
 % I want all quotes to be in italics
 \newenvironment{itquote}
-{\begin{quote}\itshape}
-{\end{quote}}
-
+{
+\begin{quote}\itshape}
+    {
+\end{quote}}
 
 \newcounter{helpfulStuffcounter}
 \newcommand{\helpfulStuff}[1]{\refstepcounter{helpfulStuffcounter}\label{#1}}
@@ -82,23 +82,22 @@
 \par\noindent\textbf{Process \theprocesscounter~(#1).} }
 
 \newenvironment{process}[1]  {
-	\par%
-	\addvspace{\baselineskip}	
-	\refstepcounter{processcounter}
-	\addcontentsline{lop}{section}{\protect\numberline{\thechapter.\theprocesscounter} #1}
-	\begin{mdframed}[
-	    frametitle={ \textbf{Process \thechapter.\theprocesscounter}: #1 \vspace{12pt} },
-	    frametitlerule=false,
-	    innertopmargin=-0.7em, innerleftmargin=0.4em,
-	    hidealllines=true, leftline=true,
-	    linewidth=10pt,
-	    linecolor=gray!80,
-	    backgroundcolor=blue!10
-	]
-	}{
-	\end{mdframed}
+    \par%
+    \addvspace{\baselineskip}
+    \refstepcounter{processcounter}
+    \addcontentsline{lop}{section}{\protect\numberline{\thechapter.\theprocesscounter} #1}
+    \begin{mdframed}[
+            frametitle={ \textbf{Process \thechapter.\theprocesscounter}: #1 \vspace{12pt} },
+            frametitlerule=false,
+            innertopmargin=-0.7em, innerleftmargin=0.4em,
+            hidealllines=true, leftline=true,
+            linewidth=10pt,
+            linecolor=gray!80,
+            backgroundcolor=blue!10
+        ]
+    }{
+    \end{mdframed}
 }
-
 
 % Credit to: https://tex.stackexchange.com/questions/270598/creating-list-of-examples-using-tocloft-in-memoir-class
 \newcounter{buildingblockcounter}
@@ -109,23 +108,22 @@
 \par\noindent\textbf{BuildingBlock \thebuildingblockcounter~(#1).} }
 
 \newenvironment{buildingblock}[1]  {
-	\par%
-	\addvspace{\baselineskip}	
-	\refstepcounter{buildingblockcounter}
-	\addcontentsline{lobb}{section}{\protect\numberline{\thechapter.\thebuildingblockcounter} #1}
-	\begin{mdframed}[
-	    frametitle={ \textbf{Building Block}: #1 \vspace{12pt} },
-	    frametitlerule=false,
-	    innertopmargin=-0.7em, innerleftmargin=0.4em,
-	    hidealllines=true, leftline=true,
-	    linewidth=10pt,
-	    linecolor=gray!80,
-	    backgroundcolor=green!10
-	]
-	}{
-	\end{mdframed}
+    \par%
+    \addvspace{\baselineskip}
+    \refstepcounter{buildingblockcounter}
+    \addcontentsline{lobb}{section}{\protect\numberline{\thechapter.\thebuildingblockcounter} #1}
+    \begin{mdframed}[
+            frametitle={ \textbf{Building Block}: #1 \vspace{12pt} },
+            frametitlerule=false,
+            innertopmargin=-0.7em, innerleftmargin=0.4em,
+            hidealllines=true, leftline=true,
+            linewidth=10pt,
+            linecolor=gray!80,
+            backgroundcolor=green!10
+        ]
+    }{
+    \end{mdframed}
 }
-
 
 % This allows you to fake a figure environment inside
 % the example environment
@@ -136,9 +134,9 @@
 {\refstepcounter{table}\label{#1}}
 
 % Margins need to be wider when you put a kmap in them
-\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist 
-
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}
+\item[]}
+\let\endchangemargin=\endlist
 
 \newcommand{\SOPmin}{$\text{ SOP}_\text{ min} \ $}
 \newcommand{\POSmin}{$\text{ POS}_\text{ min} \ $}
@@ -156,3 +154,8 @@
 \newcommand{\IIL}{$\text{ I}_\text{ IL} \ $}
 \newcommand{\Ra}{$\text{ R}_\text{ a} \ $}
 \newcommand{\Rb}{$\text{ R}_\text{ b} \ $}
+
+% Spacing macros
+\newcommand{\1}{\ensuremath{\;\!}} % 2/18 of a quad to provide minimal grouping hints
+\newcommand{\0}{\phantom{0}} % width of zero; for formatting addition
+\newcommand{\9}{\ensuremath{\,\phantom{0}}} % Zero with a large grouping space after.

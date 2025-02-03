@@ -25,12 +25,12 @@ module function04(a, b, c, f04);
 
     // Wires are signals that begin and end inside the module
     wire o1, a1, a2;
-	 
+
     // Complete the following lines of verilog code
 
-    assign o1 = 
-    assign a1 = 
+    assign o1 =
+    assign a1 =
     assign a2 =
-    assign f04 = 
+    assign f04 =
 
 endmodule

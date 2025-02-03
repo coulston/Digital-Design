@@ -15,10 +15,10 @@
  ]
   ,
 
-  config:{hscale: 2},  
-  
+  config:{hscale: 2},
+
   foot:{
   text: 'Figure',
   tock: 0},
-  
+
   }

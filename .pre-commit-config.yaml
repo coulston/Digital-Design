@@ -1,0 +1,14 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-added-large-files
+-   repo: https://github.com/WGUNDERWOOD/tex-fmt
+    rev: v0.5.2
+    hooks:
+    -   id: tex-fmt # The lack of a fail on change arg will cause issues
+        # but despite the documentation, that flag does not exist. So if git gives strange errors, invoke this before
