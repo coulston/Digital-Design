@@ -1,0 +1,12 @@
+{signal: [
+
+  {name: 'A'	, wave: '0...1...'},
+  {name: 'B'	, wave: '0.1.0.1.'},
+  {name: 'C'	, wave: '01010101'},
+  {name: 'F(A,B,C)', wave: '0..1.0.1'},
+  ],
+  foot:{text:['tspan', 'F(A,B,C)= BC+AB\'C\''],
+   tick:0,
+   every:1
+ },
+  }
