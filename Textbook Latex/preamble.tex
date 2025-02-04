@@ -9,6 +9,7 @@
 %%------------------------------------------------------
 
 \usepackage{graphicx}
+\usepackage[export]{adjustbox}   % Allows greater control over the placement and sizing of graphics
 \usepackage{imakeidx}            % Enables Index functionality
 \usepackage{wrapfig}
 
@@ -17,31 +18,34 @@
 \usepackage{mdframed}
 
 \usepackage{multirow}
-\usepackage{hhline}            % allows partial hlines in multirow tables
-\usepackage{longtable}            %Enables multipage tables
-\usepackage{makecell}            % deal with parboxes inside tables
+\usepackage{hhline}             % allows partial hlines in multirow tables
+\usepackage{longtable}          % Enables multipage tables
+\usepackage{makecell}           % deal with parboxes inside tables
 
-\usepackage{amssymb}            %% Enables a range of useful  math notation
-\usepackage{amsmath}
+\usepackage{amsmath}            % Enables a range of useful math notation
+\usepackage{mathtools}          % Extends amsmath
+%\usepackage{breqn}             % Enables breaking long equations (loading before amssymb is recommended)
+\usepackage{amssymb}
 
 \usepackage{soul}
 
 \usepackage{tikz}            % Enable drawing simples shapes over text
-\usepackage{subcaption}    % Enables tables to not have a caption but to increment the table counter
+\usepackage{subcaption}      % Enables tables to not have a caption but to increment the table counter
 
 % This allows conditional formatting of the problem/solution manual
 %    \showanswers
 %    \hideanswers
 \usepackage{probsoln}        % For problems and solutions
-\usepackage{dirtree}        % For the body of knowledge
+\usepackage{dirtree}         % For the body of knowledge
 
 % Table of contents for processes
 \usepackage{tocloft}
 \usepackage{multicol}
 
 \usepackage{pdflscape}            % enables landscape pages
+\usepackage{pdfpages}             % allows pdfs to be included as pages
 
-\usepackage{hyperref}            % Enable hyperlinks to email and URLs
+\usepackage{hyperref}             % Enable hyperlinks to email and URLs
 \hypersetup{
     colorlinks=true,
     linkcolor=red,
