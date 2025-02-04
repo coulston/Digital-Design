@@ -31,27 +31,26 @@
 \includegraphics{../Fig/forms}
 \vspace{0.2in}
 
-\begin{tabular}[ht]{l|l|l}
-    & Regular Algebra        & Boolean Algebra \\ \hline \hline
-    Performed First    & Parenthesis        & Parenthesis \\ \hline
-    & Exponents            & Not  \\  \hline
-    & multiplication/division & And \\  \hline
-    Performed Last    & addition/subtraction     & Or \\
+\begin{tabular}[ht]{cl|l}
+    & Regular Algebra         & Boolean Algebra \\ \cline{2-3}
+    Performed First                     & Parenthesis             & Parenthesis     \\ \cline{2-3}
+    \multirow{2}{*}{$\bigg\Downarrow$}  & Exponents               & Not             \\ \cline{2-3}
+    & Multiplication/Division & And             \\ \cline{2-3}
+    Performed Last                      & Addition/Subtraction    & Or
 \end{tabular}
 
 \vspace{0.2in}
-
-\begin{tabular}[ht]{|c|c|c|}\hline
-    Axiom    &    Primary &    Dual    \\ \hline
-    1.    &    x+0=x    &    x*1=x    \\ \hline
-    2.    &    x+1=1    &    x*0=0    \\ \hline
-    3.    &    x+x=x    &    x*x=x    \\ \hline
-    4.    &    x''=x    &             \\ \hline
-    5.    &    x+x'=1    &    x*x'=0    \\ \hline
-    6.    &    x+y=y+x    &    x*y=y*x\\ \hline
-    7.    & x+(y+z)=(x+y)+z&x*(y*z)=(x*y)*z \\ \hline
-    8.    & x*(y+z)=x*y+x*z  & x+(y*z)=(x+y)*(x+z)  \\ \hline
-    9.    & (x+y)'=x'*y'  & (x*y)'=x'+y' \\ \hline
+\begin{tabular}[ht]{lc>{\quad}c} % give extra space for row 8 ergonomically
+    Axiom   &     Primary              &     Dual                    \\[0.1em] \hline
+    1.      & $   x+0=x              $ & $   x*1=x                 $ \\[0.1em] \hline
+    2.      & $   x+1=1              $ & $   x*0=0                 $ \\[0.1em] \hline
+    3.      & $   x+x=x              $ & $   x*x=x                 $ \\[0.1em] \hline
+    4.      & $   x''=x              $ & $                         $ \\[0.1em] \hline
+    5.      & $   x+x'=1             $ & $   x*x'=0                $ \\[0.1em] \hline
+    6.      & $   x+y=y+x            $ & $   x*y=y*x               $ \\[0.1em] \hline
+    7.      & $   x+(y+z)=(x+y)+z    $ & $   x*(y*z)=(x*y)*z       $ \\[0.1em] \hline
+    8.      & $   x*(y+z)=x*y+x*z    $ & $ x+(y*z)=(x+y)*(x+z)     $ \\[0.1em] \hline
+    9.      & $   (x+y)'=x'*y'       $ & $   (x*y)'=x'+y'          $ \\[0.1em] \hline
 \end{tabular}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
