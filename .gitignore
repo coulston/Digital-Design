@@ -1,5 +1,8 @@
 Textbook Latex/Digital Design Homework Solutions.pdf
 
+# Allow me to only generate what I'm editing, without affecting you
+Textbook Latex/Digital Design Homework Solutions.tex
+
 # Throw away intermediates
 *.aux
 *.fdb_latexmk
@@ -9,5 +12,8 @@ Textbook Latex/Digital Design Homework Solutions.pdf
 *.ind
 *.log
 *.out
+*.synctex
 *.synctex.gz
 *.toc
+*.lobb
+*.lop
