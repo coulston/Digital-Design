@@ -105,14 +105,14 @@ procedure, use a power-of-two table.
     $2^i$ & 1 & 2 &  4 &  8 & 16 & 32 & 64 & 128 & 256 &  512\\ \hline
 \end{tabular}
 \\ \\
-The power-of-two table lists indices, $i$, and its value when it is
-raised to the exponent of 2.  This table is used in the following
+The power-of-two table lists the index $i$ and its value when
+raised as the exponent of 2.  This table is used in the following
 3-step decimal to binary conversion procedure.
 
 \begin{description}
     \item [Step 1] Find the largest power of two less than or equal to the
         number to convert.
-    \item [Step 2] Subtract this power of two from the number being converting.
+    \item [Step 2] Subtract this power of two from the number being converted.
         This is the remaining number to convert.
     \item [Step 3] If the reminder is not equal to 0, go to step 1; otherwise stop.
 \end{description}
