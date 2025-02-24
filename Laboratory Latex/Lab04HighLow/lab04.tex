@@ -119,7 +119,7 @@ Listing~\ref{listing:2x1muxVerilog}.
 module genericMux2x1(y1, y0, sel, f);
 
 // Module instantation for a 2:1 mux in the hiLow digital circuit
-genericMux2x1 #(7) muxHex(7'b1111111, RandHex, randBut, randSeg);
+genericMux2x1 #(7) muxHex(7'b1111111, randHex, randBut, randSeg);
 \end{lstlisting}
 
 The signal width, \hdl{N}, shown in Figure~\ref{fig:2x1MuxSymbol} is a
@@ -474,7 +474,7 @@ the output of the 2:1 mux is already named \textbf{randSeg} and the
 select line is named \textbf{randBut}. The data input y1 will have a
 constant value \textbf{7b'1111111}, needed to produce a blank 7-segment
 display. The input y0 is the output from a hexToSevenSeg module, a signal
-named \textbf{RandHex}.
+named \textbf{randHex}.
 
 The second step is to know the order of the parameters in the 2:1 mux
 module declaration. This was given earlier as:
@@ -494,7 +494,7 @@ For example, \textbf{muxHex},
 Put the system architecture signals in their corresponding locations
 in the module
 
-\verb+ genericMux2x1 #(7) muxHex(7\textquotesingle b1111111, RandHex, randBut, randSeg); +
+\verb+ genericMux2x1 #(7) muxHex(7'b1111111, RandHex, randBut, randSeg); +
 \end{itemize}
 
 Once you get the hang of it, you are just translating the system

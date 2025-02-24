@@ -1,0 +1,222 @@
+\documentclass{article}
+\usepackage{epsfig, latexsym}
+
+\begin{document}
+
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\bs}{\backslash}
+
+
+\title{
+\Huge{CSE 271 -- Fall 2001}\\
+\normalsize{Exam 2}\\
+\makebox[4in][l]{Name:}
+SSN:}
+\date{}
+
+\maketitle{}
+
+\begin{tabular}{llll}
+\begin{tabular}{c||c}
+D & Q+   \\ \hline
+0 & 0 \\ \hline
+1 & 1 \\
+\end{tabular}
+&
+\begin{tabular}{c||c}
+T & Q+   \\ \hline
+0 & Q \\ \hline
+1 & Q' \\
+\end{tabular}
+&
+\begin{tabular}{c|c||c}
+S & R & Q+   \\ \hline
+0 & 0 & Q \\ \hline
+0 & 1 & 0 \\ \hline
+1 & 0 & 1 \\ \hline
+1 & 1 & x \\
+\end{tabular}
+&
+\begin{tabular}{c|c||c}
+J & K & Q+   \\ \hline
+0 & 0 & Q \\ \hline
+0 & 1 & 0 \\ \hline
+1 & 0 & 1 \\ \hline
+1 & 1 & Q' \\
+\end{tabular}
+\\
+\end{tabular}
+
+
+\begin{enumerate}
+\item {\bf (1 pt.)} How many 3:8 decoders are required to construct a 6:64 decoder?
+\begin{description}
+\item{a) }2
+\item{b) }4
+\item{c) }5
+\item{d) }8
+\item{e) }9
+\end{description}
+
+\item {\bf (1 pt.)}How many inputs do the AND gates inside a 2:4 decoder have?
+\begin{description}
+\item{a) }2
+\item{b) }3
+\item{c) }4
+\item{d) }5
+\item{e) }None of the above.
+\end{description}
+
+\item {\bf (1 pt.)}How many inputs does the OR gates inside a 16:1 mux have?
+\begin{description}
+\item{a) }2
+\item{b) }3
+\item{c) }4
+\item{d) }16
+\item{e) }Trick question, a mux does not have an OR gate.
+\end{description}
+
+\pagebreak{}
+\item {\bf (1 pt.)} If a 4:16 mux is constructed from 1:2 decoders, how
+many of the 1:2 decoders get the select line $S_3$?
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 4
+\item{d) } 8
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (1 pt.)} Assuming a word size of 5 bits, interpret 11010 as a 2's complement
+number.
+\begin{description}
+\item{a) }-10
+\item{b) }-6 
+\item{c) }-5 
+\item{d) }-4 
+\item{e) }None of the above.
+\end{description}
+
+
+\item {\bf (1 pt.)} Assuming a word size of 4 bits, determine the 2's complement
+representation of -5.
+\begin{description}
+\item{a) }1101
+\item{b) }1010
+\item{c) }1011 
+\item{d) }1001 
+\item{e) }Cannot be done in 5 bits.
+\end{description}
+
+\item {\bf (1 pt.)} Assuming a word size of 4 bits and a 2's complement representation,
+compute  1101 - 0011
+\begin{description}
+\item{a) } 0110
+\item{b) } 1010
+\item{c) } 1000
+\item{d) } Invalid answer because overflow occurs.
+\item{e) } None of the above.
+\end{description}
+
+\pagebreak
+\item {\bf (2 pt.)} Which of $G,L,E$ below must be connected to the 
+sel input of the mux so that \\
+\verb+if (X > Y) then Z = X else Z = Y;+
+
+\psfig{figure=./Fig2/compare.eps,height=1.5in.}
+
+\begin{description}
+\item{a) } G
+\item{b) } L
+\item{c) } E
+\end{description}
+
+\item {\bf (1 pt.)} How many address lines does a 1024x32 RAM have?
+\begin{description}
+\item{a) } 5
+\item{b) } 8
+\item{c) } 10
+\item{d) } 16
+\item{e) } 32
+\end{description}
+
+\pagebreak
+In the following question you are to complete the design of a counter with
+the following truth atble and circuit diagram.  All the remains is to route
+the signals to the mux.  For each of the four questions use the following 
+letters to code your answer:
+\begin{description}
+	\item {a)} The output of the ADDER
+	\item {b)} 0
+	\item {c)} D
+	\item {d)} The output of the REGISTER
+	\item {d)} None of the above
+\end{description}
+
+\begin{tabular}{lr}
+
+\begin{tabular}[!t]{l|l|l||l}
+clk         & $C_1 C_0$ & D & $Q^+$ \\ \hline \hline
+0,1,$\downarrow$ & xx   & x & Q     \\ \hline
+$\uparrow$     & 00     & x & Q     \\  \hline
+$\uparrow$     & 01     & x & 0     \\  \hline
+$\uparrow$     & 10     & x & Q+1 mod 16  \\  \hline
+$\uparrow$     & 11     & D & D     \\
+\end{tabular}
+&
+\psfig{figure=./Fig2/counter.eps, height=2.5in.} 
+\end{tabular}
+
+\item{\bf (1 pt.)} Which signal goes into the $y_0$ input of the mux?
+\item{\bf (1 pt.)} Which signal goes into the $y_1$ input of the mux?
+\item{\bf (1 pt.)} Which signal goes into the $y_2$ input of the mux?
+\item{\bf (1 pt.)} Which signal goes into the $y_3$ input of the mux?
+
+\pagebreak
+
+\begin{figure}[ht]
+\centerline{\psfig{figure=./Fig2/ExTim.eps,width=5in.,clip=}}
+\end{figure}
+
+\item {\bf (1 pts.)} What is the value of $Q_1$ at time 72?
+\begin{description}
+\item{a) }0
+\item{b) }1
+\item{c) }Changing rapidly.
+\item{d) }Input changed too close to the edge to tell.
+\item{d) }None of the above.
+\end{description}
+
+\item {\bf (1 pts.)} What is the value of $Q_2$ at time 37?
+\begin{description}
+\item{a) }0
+\item{b) }1
+\item{c) }Changing rapidly.
+\item{d) }Input changed too close to the edge to tell.
+\item{d) }None of the above.
+\end{description}
+
+\item {\bf (4 pts.)} Show the interconnections between a mux, a 
+register and a counter to implement the following circuit.
+\verb+if (X > Y) then Z = X else Z = Y;+
+
+
+\pagebreak
+\item {\bf (4 pt.)}Describe the sequence of bits seen on the
+$Q$ output.  Write down the output sequence until it starts to 
+repeat.  Assume that $Q=0100$ initially.
+
+\begin{tabular}{l|l|l|l||l|r}
+clk         & $C_1 C_0$ & D & cin & $Q^+$ & comment \\ \hline \hline
+0,1,$\downarrow$ & xx   & x & x   & Q     & hold     \\ \hline
+$\uparrow$     & 00     & x & x   & Q     & hold     \\  \hline
+$\uparrow$     & 01     & x & cin & $cin,Q_3,Q_2,Q_1$  & shift right \\  \hline
+$\uparrow$     & 10     & x & cin & $Q_2,Q_1,Q_0,cin$  & shift left \\  \hline
+$\uparrow$     & 11     & D & x   & D     & parallel load  \\ 
+\end{tabular}
+
+\psfig{figure=./Fig2/shift.eps,height=1.5in.} 
+
+\end{enumerate}
+\end{document}

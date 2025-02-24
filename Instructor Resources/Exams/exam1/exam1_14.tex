@@ -1,0 +1,270 @@
+\documentclass{article}
+\usepackage{epsfig, latexsym}
+
+\begin{document}
+
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\bs}{\backslash}
+
+
+\title{
+\Huge{CMPEN 271 -- Fall 2011}\\
+\normalsize{Return this exam!  No calculators!}\\
+\normalsize{Exam 1}\\
+\makebox[2in][l] {Name:}
+\makebox[1in][l] {ID:} }
+\date{}
+
+\maketitle{}
+
+
+\begin{enumerate}
+\item {\bf (2$*10^6$ pts.)} Convert $101011_2$ to decimal.
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 16 & b) 24 & c) 42 & d) 84 & e) none of the above
+\end{tabular}
+
+\item {\bf (2$*10^6$ pts.)} Convert $35_{10}$ to binary.
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) $110101_2$ & b) $010111_2$ & c) $111111_2$ & d) $100011_2$ & e) none of the above
+\end{tabular}
+
+\item {\bf (2$*10^6$ pts.)} Convert $35_{16}$ to decimal.
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 24 & b) 35 & c) 48 & d) 53 & e) none of the above
+\end{tabular}
+
+\item {\bf (2$*10^6$ pts.)} What is the largest number that you can make with $N$-bits?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) $log_2(N)$ & b) $N$ & c) $N^2$ & d) $2^N-1$ & e) none of the above
+\end{tabular} \\
+
+\underline{For questions 5-8 assume F(A,B,C)= ((A'B)'C + (BC')')' }
+
+\item {\bf (2$*10^6$ pts.)} What does F(0,1,0) equal?
+\begin{description}
+\item{a) } 0
+\item{b) } 1
+\item{c) } C
+\item{d) } C'
+\item{e) } Not enough information.
+\end{description}
+
+\item {\bf (2$*10^6$ pts.)} What does F(1,1,C) equal?
+\begin{description}
+\item{a) } 0
+\item{b) } 1
+\item{c) } C
+\item{d) } C'
+\item{e) } Not enough information.
+\end{description}
+\pagebreak
+\item {\bf (1$*10^6$ pt.)} How many OR gates does it take to realize F
+as is (do not simplify)?
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 3
+\item{d) } 4
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (2$*10^6$ pts.)} How many AND gates does it take to realize F 
+as is (do not simplify)?
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 3
+\item{d) } 4
+\item{e) } None of the above.
+\end{description}
+
+\underline{Utilize the following truth table for problems 9-12.}
+
+\begin{tabular}{c|c|c||c|c}
+A & B & C & F & G \\ \hline \hline
+0 & 0 & 0 & 1 & 1 \\ \hline
+0 & 0 & 1 & 0 & 0 \\ \hline
+0 & 1 & 0 & 0 & 0 \\ \hline
+0 & 1 & 1 & 0 & 1 \\ \hline
+1 & 0 & 0 & 1 & 1 \\ \hline
+1 & 0 & 1 & 1 & 0 \\ \hline
+1 & 1 & 0 & 0 & 1 \\ \hline
+1 & 1 & 1 & 0 & 1 \\
+\end{tabular} 
+
+
+\item {\bf (1$*10^6$ pt.)}What function is described by $\sum m(0,3,4,6,7)$ ?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) F & b) F' & c) G & d) G' & e) none of the above
+\end{tabular}
+
+\item {\bf (1$*10^6$ pt.)} What function is described by $\prod M(0,4,5)$?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) F & b) F' & c) G & d) G' & e) none of the above
+\end{tabular}
+
+
+\item {\bf (1$*10^6$ pt.)} How many product terms does the \underline{canonical SOP} expression 
+for F' have?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 4 & e) 5
+\end{tabular}
+
+\item {\bf (1$*10^6$ pt.)} How many sum terms does the \underline{canonical POS} expression for G have?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 4 & e) 5
+\end{tabular}
+\pagebreak
+
+\underline{Utilize the following circuit diagram for problems 13,14.}
+
+\begin{figure}[ht]
+\rightline{\psfig{figure=./Fig1/cir_10.eps,width=4in,clip=}}
+\end{figure}
+
+\item {\bf (4$*10^6$ pts.)} What is the symbolic representation of $G(A,B,C)$ as shown?
+\begin{description}
+\item{a) } ABC'(A'+AB)
+\item{b) } (AB+A')C'
+\item{c) } (A'+AB)BC'
+\item{d) } ABC'
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (2$*10^6$ pts.)} What does G(0,1,0) equal?
+
+\begin{tabular}{p{0.7in} l}
+a) 0 & b) 1 
+\end{tabular}
+
+\item {\bf (1$*10^6$ pt.)} Which of the following should be avoided.
+\begin{description}
+\item{a) } Connecting outputs together.
+\item{b) } Connecting inputs together.
+\item{c) } Having a single output drive multiple inputs.
+\item{d) } Connecting wires together.
+\item{e) } Connecting an input to an output.
+\end{description}
+
+\item {\bf (1$*10^6$ pt.)} Which expression is equivalent to (AB')'(B'+AC)?
+Hint, use De Morgans, distribute, and simplify.
+\begin{description}
+\item{a) } 0
+\item{b) } AB' + AB'C
+\item{c) } AB' + AC + B' + AB'C
+\item{d) } A'B' + ABC
+\item{e) } None of the above.
+\end{description}
+\pagebreak
+
+\underline{Utilize the following word statement for problems 17-19.}
+
+Design a 4-input $a_1a_0b_1b_0$. $A=a_1a_0$ and $B=b_1b_0$ represent
+2-bit binary numbers.  The output should be the product (multiplication)
+of the inputs, that is $O=A*B$.
+
+\item {\bf (1$*10^6$ pt.)}How many bits of output must the circuit have?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 4 & e) 5
+\end{tabular}
+
+\item {\bf (1$*10^6$ pt.)}How many rows will the truth table have?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 4 & b) 8 & c) 16 & d) 32 & e) None of the above.
+\end{tabular}
+
+\item {\bf (1$*10^6$ pt.)}How many rows of the truth table will have $o_0 = 1$?
+Note that $o_0$ is the least significant bit of the output.
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 3 & c) 9 & d) 12 & e) None of the above.
+\end{tabular}
+
+
+\item {\bf (1$*10^6$ pt.)} A cell in a 8 variable kmap is adjacent to how many 
+other cells?  
+\begin{description}
+\item{a) } 3
+\item{b) } 8
+\item{c) } 16
+\item{d) } 64
+\item{e) } 256
+\end{description}
+
+\item {\bf (2$*10^6$ pts.)} How many different \SOPmin solutions exist for \\
+F(A,B,C)=$\Sigma$m(0,2,5,6,7) ?
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\ 
+\end{array} $$ }
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 3
+\item{d) } 4
+\item{e) } 5
+\end{description}
+
+\item {\bf (4$*10^6$ pts.)} Determine the \SOPmin expression for \\
+F(A,B,C,D)=$\sum m(0,1,5,6,7,8,9,14)$
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ }
+\begin{description}
+\item{a) }A'B'C' + A'BD + BCD' + AB'C'
+\item{b) }B'C' + A'BD + BCD'
+\item{c) }A'C'D + BCD' + B'C'
+\item{d) }B'C'D' + B'C'D + A'BD + BCD'
+\item{e) } None of the above.
+\end{description}
+\pagebreak
+
+\item {\bf (4$*10^6$ pts.)}Determine the \SOPmin realization for F.
+
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\ 
+\end{array} $$ }
+
+\begin{tabular}{l|l|l||l}
+A & B & C & F \\ \hline \hline
+0 & 0 & X & 1 \\ \hline
+1 & 0 & 0 & 0 \\ \hline
+1 & 1 & X & X \\ \hline
+0 & X & 0 & 1 \\ \hline
+1 & 0 & 1 & 0 \\ \hline
+X & 1 & 1 & X \\ 
+\end{tabular}
+
+\begin{description} 
+\item{a) } A'+ B
+\item{b) } A+BC'
+\item{c) } A + C'
+\item{d) } A'BC' + A'B'
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (6$*10^6$ pts.)} Determine the \POSmin expression for \\
+$F(A,B,C,D)=(A'+D)(A'+B'+C')(A+B+D')(B'+C'+D')$,
+show your work.
+
+\end{enumerate}
+\end{document}

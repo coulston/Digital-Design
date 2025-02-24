@@ -1,0 +1,289 @@
+\documentclass{article}
+\usepackage{epsfig, latexsym}
+
+\begin{document}
+
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\bs}{\backslash}
+
+
+\title{
+\Huge{CSE 271 -- Spring 2002}\\
+\normalsize{Return this exam!  No calculators!}\\
+\normalsize{Exam 1}\\
+\makebox[4in][l]{Name:}
+SSN:}
+\date{}
+
+\maketitle{}
+
+\underline{For questions 1-4 assume a word size of 6 bits.}
+
+\begin{enumerate}
+\item {\bf (2 pt.)} Convert $110100_2$ to decimal.
+\begin{description}
+\item{a) }16
+\item{b) }24
+\item{c) }42
+\item{d) }84
+\item{e) }None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} Convert $53_{10}$ to binary.
+\begin{description}
+\item{a) }$110101_2$
+\item{b) }$010111_2$
+\item{c) }$111111_2$
+\item{d) }$100011_2$
+\item{e) }None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} Convert $39_{16}$ to decimal.
+\begin{description}
+\item{a) }$992_{10}$
+\item{b) }$71_{10}$
+\item{c) }$57_{10}$
+\item{d) }$39_{10}$
+\item{e) }None of the above.
+\end{description}
+\pagebreak
+\item {\bf (1 pt.)} If overflow occurs indicate it, otherwise identify
+the correct answer: $111010_2 + 011011_2$
+\begin{description}
+\item{a) }$100101_2$
+\item{b) }$110101_2$
+\item{c) }$111111_2$
+\item{d) }$101011_2$
+\item{e) }Overflow occurs.
+\end{description}
+
+\item {\bf (2 pt.)} How many different binary numbers can be formed
+using $N$ bits?
+\begin{description}
+\item{a) } $\log_2(N)-1$
+\item{b) } $N-1$
+\item{c) } $N$
+\item{d) } $2^{N}-1$
+\item{e) } $2^N$
+\end{description}
+
+\item {\bf (1 pt.)}A logic function who's output equals 0 when any
+input equals 1, describes which of the following?
+\begin{description}
+\item{a) } AND
+\item{b) } OR
+\item{c) } NAND
+\item{d) } NOR
+\item{e) } XOR
+\end{description}
+
+\item {\bf (3 pt.)} Does A(A+B) = A?
+Hint, the answer is not c.
+\begin{description}
+\item{a) } Yes
+\item{b) } No
+\item{c) } Maybe?
+\item{d) } None of the above.
+\end{description}
+\pagebreak
+\underline{For questions 8-11 assume F(A,B,C,D)= A'C+B'(C'+D)'+AB'CD}
+
+\item {\bf (2 pt.)} What does F(0,1,0,0) equal?
+\begin{description}
+\item{a) } 0
+\item{b) } 1
+\item{c) } B
+\item{d) } B'
+\item{e) } Not enough information.
+\end{description}
+
+\item {\bf (2 pt.)} What does F(1,B,1,0) equal?
+\begin{description}
+\item{a) } 0
+\item{b) } 1
+\item{c) } B
+\item{d) } B'
+\item{e) } Not enough information.
+\end{description}
+
+\item {\bf (2 pt.)} How many AND gates does it take to realize F 
+as shown (do not simplify)?
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 3
+\item{d) } 4
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} What is the \SOPmin expression for F?
+\begin{description}
+\item{a) } A'C + B'C' + A'D  + AB'CD
+\item{b) } A'C + B'CD' + AB'CD
+\item{c) } A'C + AB'C
+\item{d) } A'C + B'C
+\item{e) } C(A'+B')
+\end{description}
+\pagebreak
+\underline{For questions 12,13 use the figure below.}
+\begin{figure}[ht]
+\rightline{\psfig{figure=./Fig1/cir_1.eps}}
+\end{figure}
+
+\item {\bf (2 pt.)} What is the symbolic representation of $F(A,B,C,D)$ 
+\begin{description}
+\item{a) } ((A'+B+C) +ABC)(ABC')'
+\item{b) } ((A +B+C')'+A'BC)(A'BC)'
+\item{c) } ((A'+B+C)'+ABC') (ABC')
+\item{d) } ((A'+B+C)'+ABC')(ABC')'
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} What is F(1,1,0)=?
+\begin{description}
+\item{a) } 1
+\item{b) } 0
+\end{description}
+
+\item {\bf (2 pt.)} You are working on a kmap and find a legal grouping 
+of 16 1's.  How many variables does the function have?
+\begin{description}
+\item{a) } 4
+\item{b) } 6
+\item{c) } 8
+\item{d) } 16
+\item{e) } Not enough information.
+\end{description}
+
+\item {\bf (1 pt.)} A cell in a 6 variable kmap is adjacent to how many other cells?  
+\begin{description}
+\item{a) } 3
+\item{b) } 6
+\item{c) } 36
+\item{d) } 64
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} How many different \SOPmin solutions exist for \\
+F(A,B,C,D)=$\Sigma$m(0,2,5,6,7) ?
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\ 
+\end{array} $$ }
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 3
+\item{d) } 4
+\item{e) } 5
+\end{description}
+\pagebreak
+\item {\bf (2 pt.)} Determine the \SOPmin expression for \\
+F(A,B,C,D)=$\Sigma$m(4,9,12,15)+$\Sigma$d(2,6,10,11,14)
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ }
+\begin{description}
+\item{a) } C'D' + AB'D+AC
+\item{b) } BD' + AC + AB'D
+\item{c) } BC'D' + AB'D + ABC
+\item{d) } BC'D' + AB'D + AC
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (3 pt.)} Determine the \SOPmin expression for \\
+F(A,B,C,D)=(A+B+C'+D')(A+B'+D)(A'+B'+C)(A'+B+D')(A'+B'+D)
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ }
+\begin{description}
+\item{a) } B'D'+A'C'D+BCD
+\item{b) } BD+ACD'+B'C'D'
+\item{c) } BD+AC'D+B'CD
+\item{d) } B'D'+A'CD'+BC'D'
+\item{e) } None of the above.
+\end{description}
+
+\underline{For questions 19,20 assume that espresso has generated the following output.}
+\begin{verbatim}
+.i 3
+.o 2
+.ilb A B C
+.ob F G
+.p 3
+1-0 10
+01- 01
+-01 11
+.e
+\end{verbatim}
+
+\item{\bf (1 pt.)}  Which product term is shared.
+\begin{description}
+\item{a) } AC'
+\item{b) } AB'
+\item{c) } B'C
+\item{d) } F and G
+\end{description}
+
+\item{\bf (1 pt.)}  Which of the following is equivalent to G(A,B,C)?
+\begin{description}
+\item{a) } G(A,B,C) = $\Sigma$m(1,2,3,5)
+\item{b) } A'C+A'BC'+B'C
+\item{c) } A'B + B'C
+\item{d) } All of the above.
+\end{description}
+
+\item{\bf (5 pt.)} Explain how to convert a truth table into a
+canonical SOP expression.  Your answer should address the meaning
+and definition of minterms and their role in the final circuit.
+
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} \\
+\rule{112mm}{.1mm} 
+\end{enumerate}
+\end{document}

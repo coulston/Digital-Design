@@ -1,0 +1,276 @@
+\documentclass{article}
+\usepackage{epsfig, latexsym}
+
+\begin{document}
+
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\bs}{\backslash}
+
+
+\title{
+\Huge{CSE 271 -- Fall 2000}\\
+\normalsize{Exam 2}\\
+\makebox[4in][l]{Name:}
+SSN:}
+\date{}
+
+\maketitle{}
+
+\begin{tabular}{llll}
+\begin{tabular}{c||c}
+D & Q+   \\ \hline
+0 & 0 \\ \hline
+1 & 1 \\
+\end{tabular}
+&
+\begin{tabular}{c||c}
+T & Q+   \\ \hline
+0 & Q \\ \hline
+1 & Q' \\
+\end{tabular}
+&
+\begin{tabular}{c|c||c}
+S & R & Q+   \\ \hline
+0 & 0 & Q \\ \hline
+0 & 1 & 0 \\ \hline
+1 & 0 & 1 \\ \hline
+1 & 1 & x \\
+\end{tabular}
+&
+\begin{tabular}{c|c||c}
+J & K & Q+   \\ \hline
+0 & 0 & Q \\ \hline
+0 & 1 & 0 \\ \hline
+1 & 0 & 1 \\ \hline
+1 & 1 & Q' \\
+\end{tabular}
+\\
+\end{tabular}
+
+
+\begin{enumerate}
+\item {\bf (1 pt.)} How many 2:4 decoders are required to construct a 6:64 decoder?
+\begin{description}
+\item{a) }3
+\item{b) }16
+\item{c) }21
+\item{d) }32
+\item{e) }63
+\end{description}
+
+\item {\bf (1 pt.)}How many inputs do the AND gates inside a 4:1 mux have?
+\begin{description}
+\item{a) }2
+\item{b) }3
+\item{c) }4
+\item{d) }5
+\item{e) }None of the above.
+\end{description}
+
+\item {\bf (1 pt.)} How many data outputs does a 4:1 mux have?
+\begin{description}
+\item{a) }1
+\item{b) }2
+\item{c) }4
+\item{d) }6
+\item{e) }None of the above.
+\end{description}
+
+\pagebreak{}
+\item {\bf (1 pt.)} If a 16:1 mux is constructed from 4:1 muxes, how
+many of the 4:1 muxes get the select line $S_3 S_2$?
+\begin{description}
+\item{a) } 1
+\item{b) } 4
+\item{c) } 5
+\item{d) } 6
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (1 pt.)} Your friend is building a 4 bit adder using
+a truth table.  How many rows will the truth table have?
+\begin{description}
+\item{a) } 4
+\item{b) } 8
+\item{c) } 16
+\item{d) } 64
+\item{e) } 256
+\end{description}
+
+\item {\bf (1 pt.)} How many bits of output does a 4 bit adder have? Include overflow.
+\begin{description}
+\item{a) } 4
+\item{b) } 5
+\item{c) } 8
+\item{d) } 9
+\item{e) } 16
+\end{description}
+
+\item {\bf (1 pt.)} Assuming a word size of 4 bits, interpret 1010 as a 2's complement
+number.
+\begin{description}
+\item{a) }-2
+\item{b) }-5 
+\item{c) }-6 
+\item{d) }-10 
+\item{e) }None of the above.
+\end{description}
+
+\pagebreak{}
+\item {\bf (1 pt.)} Assuming a word size of 4 bits, determine the 2's complement
+representation of -3.
+\begin{description}
+\item{a) }1100
+\item{b) }1011
+\item{c) }1100 
+\item{d) }1101 
+\item{e) }None of the above.
+\end{description}
+
+\item {\bf (1 pt.)} Assuming a word size of 4 bits and a 2's complement representation,
+compute  1101 - 0011
+\begin{description}
+\item{a) } 0110
+\item{b) } 1010
+\item{c) } 1000
+\item{d) } Invalid answer because overflow occurs.
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (1 pt.)} What is $F^+$ for the following circuit when
+$A=0$ and $B=0$?
+\begin{description}
+\item {a) } F 
+\item {b) } F' 
+\item {c) } 0 
+\item {d) } 1 
+\item {e) } None of the above. 
+\end{description}
+
+\psfig{figure=./Fig2/NANDs.eps} 
+
+\pagebreak{}
+\underline{For questions 11-14 use the circuit and timing diagram
+show below}
+
+\begin{figure}[ht]
+\centerline{\psfig{figure=./Fig2/ExTim.eps,width=6in.,clip=}}
+\end{figure}
+
+\item {\bf (1 pt.)} What is the value of $Q_1$ at time=25nS?
+\begin{description}
+\item{a) }0 
+\item{b) }1 
+\item{c) }Toggling rapidly. 
+\item{d) }Input(s) is (was) changed too close to the clock edge to tell.
+\end{description}
+
+\item {\bf (1 pt.)} What is the value of $Q_1$ at time=75nS?
+\begin{description}
+\item{a) }0 
+\item{b) }1 
+\item{c) }Toggling rapidly. 
+\item{d) }Input(s) is (was) changed too close to the clock edge to tell.
+\end{description}
+
+\item {\bf (1 pt.)} What is the value of $Q_2$ at time=25nS?
+\begin{description}
+\item{a) }0 
+\item{b) }1 
+\item{c) }Toggling rapidly. 
+\item{d) }Input(s) is (was) changed too close to the clock edge to tell.
+\end{description}
+
+\item {\bf (1 pt.)} What is the value of $Q_2$ at time=30nS?
+\begin{description}
+\item{a) }0 
+\item{b) }1 
+\item{c) }Toggling rapidly. 
+\item{d) }Input(s) is (was) changed too close to the clock edge to tell.
+\end{description}
+
+\pagebreak{}
+\item {\bf (1 pt.)}The counter shown in the figure below operates according to
+truth table given.  Determine the count sequence on the
+$Q$ lines.  Assume that $Q=0$ initially.
+
+\begin{tabular}{l|l|l||l}
+clk & $C_1 C_0$ & D & $Q^+$ \\ \hline
+0,1,falling & xx & x & Q \\ \hline
+rising & 00 & x & Q \\  \hline
+rising & 01 & D & D \\  \hline
+rising & 11 & x & Q+1 mod 8 \\ 
+\end{tabular}
+\begin{description}
+\item{a) }0,6,0, $\ldots$ 
+\item{b) }0,1,6,0, $\ldots$ 
+\item{c) }0,1,6,7,0, $\ldots$ 
+\item{d) }0,1,2,3,6,7,0 $\ldots$ 
+\item{e) }0,1,2,3,4,5,6,6,6 $\ldots$ 
+\end{description}
+\psfig{figure=./Fig2/count.eps,height=1.5in.} 
+
+\item {\bf (1 pt.)}Describe the output of the following circuit.
+Hint, a TSB tristates when the control input equals 0.
+\begin{description}
+\item{a) }F(A,B,C)=A'B + AB'
+\item{b) }F(A,B,C)=1
+\item{c) }F(A,B,C)=A'BC' + AB'C
+\item{d) }F(A,B,C)=A'BC + AB'C'
+\item{e) }F(A,B,C)=Z
+\end{description}
+\psfig{figure=./Fig2/tri.eps,height=1.5in.} 
+
+\pagebreak{}
+\item Given the transition kmap to the right, determine the MIEs
+assuming that the FSM is implemented using a JK flip flop.
+{\small
+$$\begin{array}{cll}
+$$\begin{array}{c||c|c|c|c}
+        Q \bs X_1 X_0 & 00  & 01  & 11  & 10  \\ \hline \hline
+        0             & 1,1 & 1,1 & 0,1 & 0,1 \\ \hline
+        1             & 0,0 & 1,0 & 1,0 & 0,0 \\ 
+\end{array}$$
+&
+$$\begin{array} {c||c|c|c|c}
+        Q \bs X_1 X_0 & 00 & 01 & 11 & 10 \\ \hline \hline
+        0             &    &    &    &    \\ \hline
+        1             &    &    &    &    \\ 
+\end{array}$$
+&
+$$\begin{array} {c||c|c|c|c}
+        Q \bs X_1 X_0 & 00 & 01 & 11 & 10 \\ \hline \hline
+        0             &    &    &    &    \\ \hline
+        1             &    &    &    &    \\ 
+\end{array}$$ \\
+Q^+,Z & J= & K= \\
+\end{array}$$}
+
+\item {\bf (1 pt.)} What does $J=$ ?
+\begin{description}
+\item{a) }$Q'X_1'$ 
+\item{b) }$Q'X_1' + QX_0$ 
+\item{c) }$X_0'$
+\item{d) }$X_1'$
+\item{d) }$Q'$
+\end{description}
+
+\item {\bf (1 pt.)} What does $K=$ ?
+\begin{description}
+\item{a) }$QX_0$ 
+\item{b) }$QX_0 + Q'X_1'$ 
+\item{c) }$X_0'$
+\item{d) }$X_1$
+\item{d) }$Q'$
+\end{description}
+
+\item {\bf (1 pt.)} Does the transition kmap you just worked on describe a 
+Mealy or Moore FSM?
+\begin{description}
+\item{a) }This is a Mealy FSM.
+\item{b) }This is a Moore FSM.
+\end{description}
+
+\end{enumerate}
+\end{document}

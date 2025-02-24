@@ -1,0 +1,271 @@
+\documentclass{article}
+\usepackage{epsfig, latexsym}
+
+\begin{document}
+
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\bs}{\backslash}
+
+
+\title{
+\Huge{CMPEN 271 -- Fall 2012}\\
+\normalsize{Return this exam!  No calculators!}\\
+\normalsize{Exam 1}\\
+\makebox[4in][l]{Name:} }
+\date{}
+
+\maketitle{}
+
+
+\begin{enumerate}
+
+\item {\bf (2 pts.)} Convert $010100_2$ to decimal.
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a)20 & b)24  & c)40  & d)42  & e) none of the above
+\end{tabular}
+
+\item {\bf (2 pts.)} Convert $24_{10}$ to binary.
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) $010010_2$ & b) $100010_2$ & c) $001100_2$ & d) $011000_2$ & e) none of the above
+\end{tabular}
+
+\item {\bf (2 pts.)} Convert $24_{16}$ to binary.
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) $110010_2$ & b) $110100_2$ & c) $001100_2$ & d) $011000_2$ & e) none of the above
+\end{tabular}
+
+\item {\bf (2 pts.)} What is the largest decimal number that you can make with 8 bits?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 256 & b) 255 & c) 32 & d) $2^{8}$ & e) none of the above
+\end{tabular}
+
+\item {\bf (1 pts.)} When represented as 4-bit binary numbers does 8 + 8 
+generate overflow?
+
+\begin{tabular}{p{0.7in} l}
+a) yes & b) no  c) 8 cannot be represented in 2's complement
+\end{tabular}
+
+\item {\bf (1 pt.)} How many 1's does the output column in a truth table for a 
+5-input OR gate have?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 0 & b) 1 & c) 5 & d) $2^{5}-1$ & e) $2^5$
+\end{tabular}
+
+\item {\bf (2 pt.)} Which expression is equivalent to (A'+B)'(B+AC)?
+\begin{description}
+\item{a) } 0
+\item{b) } 1
+\item{c) } AB'C
+\item{d) } AB' + AB'C
+\item{e) } None of the above
+\end{description}
+
+\pagebreak
+
+\underline{For questions 8-10 let F(A,B,C)= AB'C + (A+B')C'}
+
+\item {\bf (2 pts.)} What does F(1,1,0) equal?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 0 & b) 1 & c) C & d) C' & e) none of these
+\end{tabular}
+
+\item {\bf (2 pts.)} What does F(0,0,C) equal?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 0 & b) 1 & c) C & d) C' & e) none of these
+\end{tabular}
+
+\item {\bf (1 pt.)} How many OR gates does it take to realize F
+as is (do not simplify)?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 4 & e) none of these
+\end{tabular}
+
+\underline{Utilize the following truth table for problems 11,12.}
+
+\begin{tabular}{c|c|c||c|c}
+A & B & C & F & G  \\ \hline \hline
+0 & 0 & 0 & 1 & 1  \\ \hline
+0 & 0 & 1 & 0 & 0  \\ \hline
+0 & 1 & 0 & 0 & 0  \\ \hline
+0 & 1 & 1 & 1 & 0  \\ \hline
+1 & 0 & 0 & 1 & 1  \\ \hline
+1 & 0 & 1 & 0 & 1  \\ \hline
+1 & 1 & 0 & 1 & 0  \\ \hline
+1 & 1 & 1 & 1 & 0  \\
+\end{tabular} 
+
+\item {\bf (1 pt.)} What function is described by $\prod M(0,4,5)$?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) F & b) F' & c) G & d) G' & e) none of the above
+\end{tabular}
+
+
+\item {\bf (1 pt.)} How many product terms does the canonical SOP expression 
+for G' have?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 4 & e) 5
+\end{tabular}
+
+\underline{Utilize the following word statement for problems 13,14.}
+
+Design a 4-input digital system where the input $A=a_3a_2a_1a_0$ represent 
+a 4-bit binary number.  The output is the input divided by 3.  Fractional
+answers should be rounded up to the nearest integer.
+
+\item {\bf (1 pt.)}How many rows will have the output $11_2$?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 4 & e) 5
+\end{tabular}
+
+\item {\bf (1 pt.)}How many bits of output are needed?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 5 & e) None of the above.
+\end{tabular}
+
+\pagebreak
+
+\underline{Utilize the following circuit diagram for problems 16,17.}
+
+\begin{figure}[ht]
+\rightline{\psfig{figure=./Fig1/cir_10.eps,width=3in,clip=}}
+\end{figure}
+
+\item {\bf (3 pts.)} What is the symbolic representation of 
+$G(A,B,C)$ as shown?  \begin{description}
+\item{a) } AB
+\item{b) } ABC'
+\item{c) } ABC'(A+AB)
+\item{d) } (AB+C')(A+AB)
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (1 pts.)} What does G(0,1,1) equal?
+
+\begin{tabular}{p{0.7in} p{0.7in} l}
+a) 0 & b) 1 & c) None of the above
+\end{tabular}
+
+\item {\bf (1 pt.)} How many distinct \SOPmin solutions  exist for \\
+F(A,B,C)=$\Sigma$m(1,2,3,4,5)
+\marginpar{ \small $$ \begin{array} {c||c|c|c|c}
+        A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        1        &    &    &    &    \\ \hline
+        0        &    &    &    &    \\
+\end{array} $$ }
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 1 & b) 2 & c) 3 & d) 4 & e) 5
+\end{tabular}
+
+
+\item {\bf (3 pt.)} Determine the \SOPmin expression for \\
+F(A,B,C,D)=$\Sigma$m(1,5,6,7,11,12,14,15)
+\marginpar{ \small $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ }
+
+\begin{description}
+\item{a) } ABC'D' + A'C'D + ACD + BC 
+\item{b) } ABD' + A'C'D + ACD + BC 
+\item{c) } ABC'D' + A'C'D + ACD + BC
+\item{d) } ABD' + A'C'D + BC  
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (3 pt.)} Determine the \SOPmin expression for \\
+F(A,B,C,D)=$\Sigma$m(1,4,5,9,11,14) + $\Sigma$d(6,7,10,12)
+\marginpar{\small $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ }
+
+
+\begin{description}
+\item{a) } AB'D + A'C'D + BD'
+\item{b) } AB'D + BC'D' + A'C'D + A'B + BCD'
+\item{c) } AB'D + ACD' + A'B + B'C'D
+\item{d) } AB'D + BC'D' + A'C'D + A'B + BD'
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (3 pt.)} Determine the \POSmin expression for \\
+F(A,B,C,D)= B'D' + A'D' + BC'D + ACD
+
+\begin{description}
+\item{a) } (A+C'+D')(A'+B'+D)(B+C+D')
+\item{b) } (A+C'+D')(A'+B'+D)(B+D')
+\item{c) } (C'+D')(B+D')
+\item{d) } (B+D)(A+D)(B'+C+D')(A'+C'+D')
+\item{e) } None of the above.
+\end{description}
+
+
+\vspace{0.2in} 
+
+\begin{tabular}{ll}
+
+$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $
+
+& 
+
+$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $
+
+\\
+\end{tabular}
+
+\vspace{0.2in} 
+
+\item {\bf (2 pt.)} You are working on a kmap and find a legal grouping
+of 8 1's which requires 3 variables to represent.  How many variables
+does the function have?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 3 & b) 4 & c) 5 & d) 6 & e) Not enough information.
+\end{tabular}
+
+
+\item {\bf (1 pt.)} A cell in a 7 variable kmap is adjacent to how many other cells?
+
+\begin{tabular}{p{0.7in} p{0.7in} p{0.7in} p{0.7in} l}
+a) 4 & b) 6 & c) 8 & d) 10 & e) None of the above.
+\end{tabular}
+
+
+\end{enumerate}
+
+\end{document}
+
+

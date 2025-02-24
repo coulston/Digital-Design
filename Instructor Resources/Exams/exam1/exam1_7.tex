@@ -1,0 +1,334 @@
+\documentclass{article}
+\usepackage{epsfig, latexsym}
+
+\begin{document}
+
+\newcommand{\SOPmin}{${\rm SOP}_{\rm min} \ $}
+\newcommand{\POSmin}{${\rm POS}_{\rm min} \ $}
+\newcommand{\bs}{\backslash}
+
+
+\title{
+\Huge{CSE 271 -- Spring 2004}\\
+\normalsize{Return this exam!  No calculators!}\\
+\normalsize{Exam 1}\\
+\makebox[4in][l]{Name:}
+SSN:}
+\date{}
+
+\maketitle{}
+
+\underline{For questions 1-4 assume a word size of 6 bits.}
+
+\begin{enumerate}
+\item {\bf (2 pt.)} Convert $11010_2$ to decimal.
+\begin{description}
+\item{a) }13
+\item{b) }26
+\item{c) }52
+\item{d) }84
+\item{e) }None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} Convert $61_{10}$ to binary.
+\begin{description}
+\item{a) }$110101_2$
+\item{b) }$010111_2$
+\item{c) }$111101_2$
+\item{d) }$100011_2$
+\item{e) }None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} Convert $61_{16}$ to decimal.
+\begin{description}
+\item{a) }$848_{10}$
+\item{b) }$194_{10}$
+\item{c) }$97_{10}$
+\item{d) }$61_{10}$
+\item{e) }None of the above.
+\end{description}
+
+\pagebreak
+\item {\bf (1 pt.)} Assume a word size of 6-bits.  If overflow occurs 
+indicate it, otherwise identify the correct answer: $101010_2 + 011011_2$
+\begin{description}
+\item{a) }$000101_2$
+\item{b) }$110101_2$
+\item{c) }$111111_2$
+\item{d) }$101011_2$
+\item{e) }Overflow occurs.
+\end{description}
+
+\item {\bf (2 pt.)} How many bits are required to represent a number 
+whoses value is X?  (You may assume that X is a power of 2).
+\begin{description}
+\item{a) } $\log_2(X)$
+\item{b) } $\sqrt{X}$
+\item{c) } $X/2$
+\item{d) } $X$
+\item{e) } $2^X$
+\end{description}
+
+\item {\bf (1 pt.)}A logic function who's output equals 0 when all
+inputs equals 1, describes which of the following?
+\begin{description}
+\item{a) } AND
+\item{b) } OR
+\item{c) } NAND
+\item{d) } NOR
+\item{e) } none of the above
+\end{description}
+
+\item {\bf (1 pt.)} Digital design ends at which representations of a logical function?
+\begin{description}
+\item{a) } word statement
+\item{b) } truth table
+\item{c) } symbolic
+\item{d) } circuit diagram
+\end{description}
+
+\item {\bf (1 pt.)} Which of the following is not shared by all the 
+representations of a logical function?
+\begin{description}
+\item{a) } a descriptions of the circuits cost.
+\item{b) } a description of the number of outputs.
+\item{c) } a description of the circuits behavior.
+\item{d) } a description of the number of inputs.
+\item{e) } all of the above.
+\end{description}
+
+\pagebreak
+\underline{For the questions 9-10 use the following figure below.}
+
+\includegraphics{./Fig1/cir_7}
+
+\item {\bf (2 pt.)} What is F(1,1,0)=?
+\begin{description}
+\item{a) } 1
+\item{b) } 0
+\end{description}
+
+\item {\bf (2 pt.)} What is the symbolic representation of $F(A,B,C)$ as
+shown?
+\begin{description}
+\item{a) } BC(A+C)A' + (A+C)'
+\item{b) } BCA' + (A+C)'
+\item{c) } (BC(A+C) + (A+C))'
+\item{d) } A'BC + A'C'
+\item{e) } None of the above.
+\end{description}
+
+
+\underline{For questions 11-13 assume F(A,B,C)= B + AB'C + B'C' }
+
+\item {\bf (2 pt.)} What does F(0,1,0) equal?
+\begin{description}
+\item{a) } 0
+\item{b) } 1
+\item{c) } B
+\item{d) } B'
+\item{e) } Not enough information.
+\end{description}
+
+\item {\bf (2 pt.)} What does F(1,B,1) equal?
+\begin{description}
+\item{a) } 0
+\item{b) } 1
+\item{c) } B
+\item{d) } B'
+\item{e) } Not enough information.
+\end{description}
+
+\item {\bf (2 pt.)} What is the \SOPmin expression for F?
+\begin{description}
+\item{a) } A+B +C
+\item{b) } A+B'+C
+\item{c) } A+B +C'
+\item{d) } A+B'+C'
+\item{e) } Not enough information.
+\end{description}
+
+
+\pagebreak
+\item {\bf (2 pt.)} How many AND gates does it take to realize F 
+as shown (do not simplify)?  Note, a 3-input AND gate counts
+as a single AND gate.
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 3
+\item{d) } 4
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} Does (X+Y)(X'+Z) = X'Z + X'Y?
+\begin{description}
+\item{a) } Yes
+\item{b) } No
+\end{description}
+
+\item {\bf (1 pt.)} How many product terms does the function
+F(A,B,C,D)=$\Sigma$m(1,2,4,9,12,15) have when realized in 
+canonical form?
+\begin{description}
+\item{a) } 0
+\item{b) } 4
+\item{c) } 8
+\item{d) } 15
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (2 pt.)} What is the \SOPmin expression for F(A,B,C)
+shown in the timing diagram to the  right?
+\begin{description}
+\item{a) } ab'c + abc' + ab'c'
+\item{b) } ab' + ac'
+\item{c) } ab' + ac
+\item{d) } a'b + bc'
+\item{e) } None of the above.
+\end{description}
+
+\includegraphics[-70mm,15mm][0mm,16mm]{./Fig1/time.eps}
+\vspace{0.7in}
+
+\item {\bf (2 pt.)} You are working on a kmap and find a legal grouping 
+of 4 1's which has 6 variable in its product term.  How many variables 
+does the function have?
+\begin{description}
+\item{a) } 4
+\item{b) } 6
+\item{c) } 8
+\item{d) } 10
+\item{e) } None of the above.
+\end{description}
+
+\pagebreak
+\item {\bf (1 pt.)} How many cells does a kmap with 8 variables have?
+\begin{description}
+\item{a) } 3
+\item{b) } 8
+\item{c) } 64
+\item{d) } 256
+\item{e) } None of the above.
+\end{description}
+
+\item {\bf (4 pt.)}Determine the \SOPmin realization for F.
+
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        A \bs BC & 00 & 01 & 11 & 10 \\ \hline \hline
+        0        &    &    &    &    \\ \hline
+        1        &    &    &    &    \\
+\end{array} $$ }
+
+\begin{tabular}{l|l|l||l}
+A & B & C & F \\ \hline \hline
+0 & 0 & X & X \\ \hline
+0 & 1 & 1 & 0 \\ \hline
+X & 1 & 0 & X \\ \hline
+1 & 0 & 0 & 1 \\ \hline
+1 & X & 1 & 1 \\
+\end{tabular}
+\begin{description}
+\item{a) } A
+\item{b) } AB' + AC
+\item{c) } B' + AC
+\item{d) } B' + A
+\item{e) } None of the above.
+\end{description}
+
+
+\item {\bf (2 pt.)} How many different \SOPmin solutions exist for \\
+F(A,B,C,D)=$\Sigma$m(1,2,3,5,7,8,9,13,14,15) ?
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ 
+\end{array} $$ }
+\begin{description}
+\item{a) } 1
+\item{b) } 2
+\item{c) } 3
+\item{d) } 4
+\item{e) } 5
+\end{description}
+
+\item {\bf (4 pt.)} Determine the \SOPmin expression for \\
+F(A,B,C,D)=$\Sigma$m(0,1,3,5,8,10,11,14)+$\Sigma$d(4,12,13)
+\marginpar{ \tiny $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ }
+\begin{description}
+\item{a) }  A'C' + A'B'D + ABC' + AC + AB'C
+\item{b) } C'D' + A'C' + B'CD + ACD'
+\item{c) } B'C'D' + A'B'D + BC'D + ABD' + AB'C
+\item{d) } A'C' + A'B'D' + AC'D' + AB'C + ACD'
+\item{e) } None of the above.
+\end{description}
+
+\pagebreak
+\item {\bf (5 pt.)} Determine the \POSmin expression for \\
+F(A,B,C,D)=(W+X'+Y')(W'+Z')(W+Y')
+\marginpar{ 
+\tiny $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ 
+\\
+\tiny $$ \begin{array} {c||c|c|c|c}
+        AB \bs CD & 00 & 01 & 11 & 10 \\ \hline \hline
+        00        &    &    &    &    \\ \hline
+        01        &    &    &    &    \\ \hline
+        11        &    &    &    &    \\ \hline
+        10        &    &    &    &    \\
+\end{array} $$ 
+}
+\begin{description}
+\item{a) } (W'+Y')(W+Z')
+\item{b) } (W+Y)(W'+Z)
+\item{c) } (W+Y')(W'+Z')
+\item{d) } (W'+Y)(W+Z)
+\item{e) } None of the above.
+\end{description}
+
+\underline{For questions 24-25 assume that espresso has generated the following output.}
+\begin{verbatim}
+.i 3
+.o 2
+.ilb A B C
+.ob F G
+.p 3
+1-0 10
+01- 01
+-01 11
+.e
+\end{verbatim}
+
+\item{\bf (1 pt.)}  Which product term is shared.
+\begin{description}
+\item{a) } AC'
+\item{b) } AB'
+\item{c) } A'B
+\item{d) } B'C
+\item{e) } F and G
+\end{description}
+
+\item{\bf (1 pt.)}  What is the espresso solution for G(A,B,C)?
+\begin{description}
+\item{a) } A'B + B'C
+\item{b) } AC'+ B'C
+\item{c) } AB' + A'B
+\item{d) } B'C
+\item{e) } None of the above.
+\end{description}
+
+\end{enumerate}
+\end{document}
