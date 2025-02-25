@@ -1,11 +1,10 @@
 //*****************************************************************
-// Name:    Dr. Chris Coulston
-// Date:    Spring 2020
-// Lab:     07
-// Purp:    cellularAutomata
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    cellularAutomata_tb.v
+// Purp:    testbench for the cellularAutomata module
 //
-// Assisted: The entire EENG 383 class
-// Assisted by: Dr. Vibhuti Dave
+// Assisted: Christopher Coulston Spring 2020
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,

@@ -1,11 +1,10 @@
 //*****************************************************************
-// Name:    Dr. Chris Coulston
-// Date:    Spring 2020
-// Lab:
-// Purp:    A testbench for regFile module
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    mod10counter_tb.v
+// Purp:    A testbench for mod 10 counter
 //
-// Assisted: The entire EENG 383 class
-// Assisted by: Dr. Vibhuti Dave
+// Assisted by: Christopher Coulston Spring 2020
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,
@@ -17,9 +16,6 @@
 // another individual that it could also result in a zero credit for the
 // assignment, course failure and a report to the Academic Dishonesty
 // Board.
-//
-// If work is not being created or modelsim is not working, then Project -> Clean Project (All Revisions)
-//
 //*****************************************************************
 
 module mod10counter_tb;

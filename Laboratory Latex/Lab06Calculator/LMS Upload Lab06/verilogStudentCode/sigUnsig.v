@@ -1,8 +1,10 @@
 //*****************************************************************
-// Name:    Dr. Christopher Coulston
-// Date:    Fall 2023
-// Lab:     06
-// Purp:    sigUnsig
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    sigUnsig.v
+// Purp:    sigUnsig module
+//
+// Assisted by: Christopher Coulston Fall 2023
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,

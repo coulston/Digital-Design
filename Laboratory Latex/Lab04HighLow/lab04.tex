@@ -52,9 +52,9 @@ The player will make their guess about the secret number on the
 \textbf{game} 7-segment display will show:
 
 \begin{itemize}
-    \item   `H' when \qty{guess} > \qty{secret number}
-    \item   `I' when \qty{guess} = \qty{secret number}
-    \item   `L' when \qty{guess} <\qty{secret number}
+    \item   `H' when \qty{guess} $>$ \qty{secret number}
+    \item   `I' when \qty{guess} $=$  \qty{secret number}
+    \item   `L' when \qty{guess} $<$  \qty{secret number}
 \end{itemize}
 
 A player is only allowed 4 guesses to get the secret number. To
@@ -315,9 +315,9 @@ Note that the code shown Listing~\ref{listing:hiLowWinVerilog} is incomplete.
  label={listing:hiLowWinVerilog},
  frame=single]
  always @(*)
-    case ({hotColdBut, hotWire, warmWire, coldWire})
-        4'b0001: hotColdSeg = 7'bxxxxxxx;
-        default: hotColdSeg = 7'bxxxxxxx;
+    case ({hiLowBut, randGTguess, randEQguess, randLTguess})
+        4'b0001: hiLowSeg = 7'bxxxxxxx;    // rand < guess   High
+        default:  hiLowSeg = 7'bxxxxxxx;
     endcase
  \end{lstlisting}
 

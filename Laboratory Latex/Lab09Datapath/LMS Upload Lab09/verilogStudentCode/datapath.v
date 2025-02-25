@@ -1,11 +1,10 @@
 //*****************************************************************
-// Name:    Dr. Chris Coulston
-// Date:    Spring 2021
-// Lab:
-// Purp:    datapath
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    datapath.v
+// Purp:    datapath module
 //
-// Assisted: The entire EENG 383 class
-// Assisted by: Dr. Vibhuti Dave
+// Assisted by: Christopher Coulston Spring 2020
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,

@@ -1,12 +1,10 @@
 //*****************************************************************
-// Name:    Dr. Chris Coulston
-// Date:    Spring 2021
-// Lab:
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    conbtrolUnit_tb.v
 // Purp:    A testbench for stopwatch control unit
-// Do file:	control_tbWaveSetup.do - setup symbolic states for easy debugging
 //
-// Assisted: The entire EENG 284 class
-// Assisted by: Dr. Vibhuti Dave
+// Assisted by: Christopher Coulston Spring 2020
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,

@@ -1,11 +1,10 @@
 //*****************************************************************
-// Name:    Dr. Chris Coulston
-// Date:    Spring 2020
-// Lab:     06
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    sigUnsig_tb.v
 // Purp:    A testbench for signUnsig module
 //
-// Assisted: The entire EENG 284 class
-// Assisted by: Dr. Vibhuti Dave
+// Assisted by: Christopher Coulston Fall 2023
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,

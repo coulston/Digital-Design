@@ -1,10 +1,10 @@
 //*****************************************************************
-// Name:    Thomas MacDougall
-// Date:    Spring 2023
-// Lab:     04
-// Purp:    lfsr - Development of Labs for New Boards  *** STARTER CODE ***
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    lfsrStart.c
+// Purp:    lfsr module
 //
-// Assisted: Dr. Coulston, Dr. Sager & Aaron Hsu
+// Assisted: Christopher Coulston and Thomas MacDougall Spring 2023
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,
@@ -21,7 +21,7 @@ module lfsr(inputSeed, outputRand);
 
     // Put variable decelaration here
 
-	assign outputRand[0] =
+    assign outputRand[0] =
     assign outputRand[1] =
     assign outputRand[2] =
     assign outputRand[3] =

@@ -1,8 +1,10 @@
 //*****************************************************************
-// Name:    Name:    Dr. Christopher Coulston
-// Date:    Fall 2023
-// Lab:     06
-// Purp:    calculator
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    calculator.v
+// Purp:    calculator module
+//
+// Assisted by: Christopher Coulston Fall 2023
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,

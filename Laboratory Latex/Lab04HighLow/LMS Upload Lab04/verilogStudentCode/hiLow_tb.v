@@ -1,10 +1,10 @@
 //*****************************************************************
-// Name:    Thomas MacDougall
-// Date:    Spring 2023
-// Lab:     04
-// Purp:    hiLow - Development of Labs for New Boards
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    hiLow_tb.v
+// Purp:    hiLow_tb
 //
-// Assisted: Dr. Sager & Aaron Hsu
+// Assisted: Christopher Coulston and Thomas MacDougall Spring 2023
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,

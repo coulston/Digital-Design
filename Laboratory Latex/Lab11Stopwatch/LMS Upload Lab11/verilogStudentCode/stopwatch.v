@@ -1,11 +1,10 @@
 //*****************************************************************
-// Name:    Dr. Chris Coulston
-// Date:    Spring 2021
-// Lab:
-// Purp:    stopwatch
+// Name:    <Your Name>
+// Date:    <Term Year>
+// File:    stopwatch.v
+// Purp:    stopwatch module that unites the datapath and control
 //
-// Assisted: The entire EENG 383 class
-// Assisted by: Dr. Vibhuti Dave
+// Assisted by: Christopher Coulston Spring 2021
 //
 // Academic Integrity Statement: I certify that, while others may have
 // assisted me in brain storming, debugging and validating this program,
