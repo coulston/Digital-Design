@@ -1,7 +1,7 @@
 %%------------------------------------------------------
 %% Document formatting standards.
-%% references labels            figure:<camelCase>
-%%                        \tableofcontents:<camelCase>
+%% references labels      figure:<camelCase>
+%%                       \tableofcontents:<camelCase>
 %%                        section:<dash seperated>
 %%                        index:<camelCase>
 %%                        example:<camelCase>
@@ -15,22 +15,24 @@
 
 %% Lots of packages needed for tables
 \usepackage{xcolor,colortbl}    % Enable colors in tables
-\usepackage{mdframed}
+\usepackage{mdframed}           % Enables framed boxes
 
-\usepackage{multirow}
+\usepackage{multirow}           % Allows rows to span multiple rows
+%\usepackage{array}              % Allows for more control over table columns
 \usepackage{hhline}             % allows partial hlines in multirow tables
 \usepackage{longtable}          % Enables multipage tables
 \usepackage{makecell}           % deal with parboxes inside tables
+\usepackage{marginfit}          % Fixes some of the margin issues with tables. Not the issue we're fighting with
 
 \usepackage{amsmath}            % Enables a range of useful math notation
 \usepackage{mathtools}          % Extends amsmath
 %\usepackage{breqn}             % Enables breaking long equations (loading before amssymb is recommended)
 \usepackage{amssymb}
 
-\usepackage{soul}
+\usepackage{soul}               % Enables underlining and highlighting
 
-\usepackage{tikz}            % Enable drawing simples shapes over text
-\usepackage{subcaption}      % Enables tables to not have a caption but to increment the table counter
+\usepackage{tikz}               % Enable drawing simples shapes over text
+\usepackage{subcaption}         % Enables tables to not have a caption but to increment the table counter
 
 % This allows conditional formatting of the problem/solution manual
 %    \showanswers
