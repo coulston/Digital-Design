@@ -215,110 +215,110 @@ information.  This stored bit is the state of the basic memory element.
 The state is always available on an output signal called $Q$.
 There are a variety of basic memory elements; they are
 differentiated by two fundamental characteristics:
+\begin{changemargin}{1.5cm}{1.5cm}
+    \begin{enumerate}
+        \item \textbf{ Clock} - Basic memory elements are characterized by
+            when they sample their inputs.  Having tight restrictions on the
+            times when a memory element can sample its inputs greatly
+            simplifies the design of sequential circuits.  A \textit{ clock}
+            input is used to tell the basic memory element when it should sample
+            its data input(s).  A digital clock is a signal which
+            changes its logic level between 0 and 1 with a fixed frequency.
+            A basic memory element can be either a latch, clocked latch, or
+            a flip flop.
 
-\begin{enumerate}
-    \item \textbf{ Clock} - Basic memory elements are characterized by
-        when they sample their inputs.  Having tight restrictions on the
-        times when a memory element can sample its inputs greatly
-        simplifies the design of sequential circuits.  A \textit{ clock}
-        input is used to tell the basic memory element when it should sample
-        its data input(s).  A digital clock is a signal which
-        changes its logic level between 0 and 1 with a fixed frequency.
-        A basic memory element can be either a latch, clocked latch, or
-        a flip flop.
+            \begin{enumerate}
 
-        \begin{enumerate}
+                    \index{latch}
+                \item Latches: A latch continuously samples its inputs.
+                    Latches do not have a clock input.
 
-                \index{latch}
-            \item Latches: A latch continuously samples its inputs.
-                Latches do not have a clock input.
+                    \index{clocked latch}
+                \item Clocked latches: A clocked latch samples its inputs when
+                    the clock input equals 1.  When the clock input equals 0, the
+                    clocked latch does not change the currently stored bit.
 
-                \index{clocked latch}
-            \item Clocked latches: A clocked latch samples its inputs when
-                the clock input equals 1.  When the clock input equals 0, the
-                clocked latch does not change the currently stored bit.
+                    \index{flip flop}
+                \item Flip flops: A flip flop samples its input when the its
+                    clock input rises.  The clock is said to rise when it goes
+                    from a logic 0 to a logic 1.  When the clock input is not rising,
+                    the flip flop does not change the currently stored bit.
+            \end{enumerate}
 
-                \index{flip flop}
-            \item Flip flops: A flip flop samples its input when the its
-                clock input rises.  The clock is said to rise when it goes
-                from a logic 0 to a logic 1.  When the clock input is not rising,
-                the flip flop does not change the currently stored bit.
-        \end{enumerate}
+        \item \textbf{ Data} - Basic memory elements are characterized by
+            their data inputs and how the inputs are transformed into the
+            stored bit value; the clock is not considered a data input.
+            A basic memory element can be either a D, T, SR, or JK device.
 
-    \item \textbf{ Data} - Basic memory elements are characterized by
-        their data inputs and how the inputs are transformed into the
-        stored bit value; the clock is not considered a data input.
-        A basic memory element can be either a D, T, SR, or JK device.
+            \begin{enumerate}
 
-        \begin{enumerate}
+                \item
+                    \marginpar{\tiny
+                        \begin{tabular}{c||c}
+                            D & Q+   \\ \hline
+                            0 & 0 \\ \hline
+                            1 & 1 \\
+                        \end{tabular}
+                    }
+                    A D memory element has a single data input called $D$;
+                    the D stands for \textit{ data}.  When the
+                    D memory device samples its input, it stores this value.
 
-            \item
-                \marginpar{\tiny
-                    \begin{tabular}{c||c}
-                        D & Q+   \\ \hline
-                        0 & 0 \\ \hline
-                        1 & 1 \\
-                    \end{tabular}
-                }
-                A D memory element has a single data input called $D$;
-                the D stands for \textit{ data}.  When the
-                D memory device samples its input, it stores this value.
+                \item
+                    \marginpar{\tiny
+                        \begin{tabular}{c||c}
+                            T & Q+   \\ \hline
+                            0 & Q \\ \hline
+                            1 & Q' \\
+                        \end{tabular}
+                    }
+                    A T memory element has a single data input called T;
+                    the T stands for \textit{ toggle}.  If $T=1$ when the input
+                    is sampled, then the T device toggles (flips) its stored bit.
+                    If $T=0$ when the input is sampled, then the T device holds its
+                    current stored bit.
 
-            \item
-                \marginpar{\tiny
-                    \begin{tabular}{c||c}
-                        T & Q+   \\ \hline
-                        0 & Q \\ \hline
-                        1 & Q' \\
-                    \end{tabular}
-                }
-                A T memory element has a single data input called T;
-                the T stands for \textit{ toggle}.  If $T=1$ when the input
-                is sampled, then the T device toggles (flips) its stored bit.
-                If $T=0$ when the input is sampled, then the T device holds its
-                current stored bit.
+                \item
+                    \marginpar{\tiny
+                        \begin{tabular}{c|c||c}
+                            S & R & Q+   \\ \hline
+                            0 & 0 & Q \\ \hline
+                            0 & 1 & 0 \\ \hline
+                            1 & 0 & 1 \\ \hline
+                            1 & 1 & x \\
+                        \end{tabular}
+                    }
+                    A SR memory element has two data inputs called SR;
+                    the S stands for \textit{ set} and the R for \textit{ reset}.
+                    If $SR=00$ when the input is sampled, then the SR device retains
+                    its stored bit; the device \textit{ holds} its stored bit.
+                    If $SR=01$ when the input is sampled, then the SR device stores a 0;
+                    the device \textit{ resets} its stored bit.
+                    If $SR=10$ when the input is sampled, then the SR device stores a 1;
+                    the device \textit{ sets} its stored bit.
+                    The input of a SR device should never be set to 11.
 
-            \item
-                \marginpar{\tiny
-                    \begin{tabular}{c|c||c}
-                        S & R & Q+   \\ \hline
-                        0 & 0 & Q \\ \hline
-                        0 & 1 & 0 \\ \hline
-                        1 & 0 & 1 \\ \hline
-                        1 & 1 & x \\
-                    \end{tabular}
-                }
-                A SR memory element has two data inputs called SR;
-                the S stands for \textit{ set} and the R for \textit{ reset}.
-                If $SR=00$ when the input is sampled, then the SR device retains
-                its stored bit; the device \textit{ holds} its stored bit.
-                If $SR=01$ when the input is sampled, then the SR device stores a 0;
-                the device \textit{ resets} its stored bit.
-                If $SR=10$ when the input is sampled, then the SR device stores a 1;
-                the device \textit{ sets} its stored bit.
-                The input of a SR device should never be set to 11.
-
-            \item
-                \marginpar{\tiny
-                    \begin{tabular}{c|c||c}
-                        J & K & Q+   \\ \hline
-                        0 & 0 & Q \\ \hline
-                        0 & 1 & 0 \\ \hline
-                        1 & 0 & 1 \\ \hline
-                        1 & 1 & Q' \\
-                    \end{tabular}
-                }
-                A JK memory element has two data inputs called $J$ and $K$. They have
-                no good acronym, but act very much like $S$ and $R$, respectively.
-                If $JK=00$ when the input is sampled, then the JK device retains
-                its stored bit; \textit{ holds}.
-                If $JK=01$ when the input is sampled, then the JK device stores a 0; \textit{ resets}.
-                If $JK=10$ when the input is sampled, then the JK device stores a 1; \textit{ sets}.
-                If $JK=11$ when the input is sampled, then the JK device toggles its
-                stored bit value; \textit{ toggles}.
-        \end{enumerate}
-\end{enumerate}
-
+                \item
+                    \marginpar{\tiny
+                        \begin{tabular}{c|c||c}
+                            J & K & Q+   \\ \hline
+                            0 & 0 & Q \\ \hline
+                            0 & 1 & 0 \\ \hline
+                            1 & 0 & 1 \\ \hline
+                            1 & 1 & Q' \\
+                        \end{tabular}
+                    }
+                    A JK memory element has two data inputs called $J$ and $K$. They have
+                    no good acronym, but act very much like $S$ and $R$, respectively.
+                    If $JK=00$ when the input is sampled, then the JK device retains
+                    its stored bit; \textit{ holds}.
+                    If $JK=01$ when the input is sampled, then the JK device stores a 0; \textit{ resets}.
+                    If $JK=10$ when the input is sampled, then the JK device stores a 1; \textit{ sets}.
+                    If $JK=11$ when the input is sampled, then the JK device toggles its
+                    stored bit value; \textit{ toggles}.
+            \end{enumerate}
+    \end{enumerate}
+\end{changemargin}
 The information on how a basic memory element processes the input into
 the stored bit is summarized in the state tables shown in the margins.
 A state table is a truth table describing the changes in state
