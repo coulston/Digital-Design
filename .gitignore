@@ -15,6 +15,7 @@ Textbook Latex/Digital Design Homework Solutions.tex
 *.out
 *.synctex
 *.synctex.gz
+*.synctex(busy)
 *.toc
 *.lobb
 *.lop
