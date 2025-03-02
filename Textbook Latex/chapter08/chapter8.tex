@@ -12,7 +12,7 @@ a FSM.
 
 A digital system built using the datapath and control design approach
 is still a digital system whose inputs and outputs can be categorized
-using the terminology introduced Figure~\ref{fig:datapathControlAsys}.  The
+using the terminology introduced Figure~\ref{4-fig:comboBBAsys}.  The
 digital system shown in this figure is broken down into two components,
 a datapath and a control unit.  The addition of a clock and a reset signal for the
 sequential logic elements yields Figure~\ref{fig:datapathControlAbstract}.
@@ -640,7 +640,7 @@ based on the behavior of the general model of its organization
 shown in Figure~\ref{fig:datapathControlAbstract}.  Since the control unit in
 this figure is just a FSM, understanding
 the timing analysis of the FSM presented in
-Figure~\ref{fig:datapathControlGenTime} on page~\pageref{page:GenTime} is imperative.  The goal
+Figure~\ref{7-fig:sequentialFSMGenTime} on page~\pageref{page:GenTime} is imperative.  The goal
 of this analysis is to determine the maximum clock frequency at which
 a datapath and control circuit can operate. In order to do
 this, the worst case delay, called the
@@ -657,7 +657,7 @@ the datapath requires a valid control word before it can begin,
 the critical path includes the output equation logic.
 
 The D flip flops which store the state of the control unit's FSM
-are the input of the OEs; see Figure~\ref{fig:datapathControlGenFSM}.  The delay
+are the input of the OEs; see Figure~\ref{7-fig:sequentialFSMGenFSM}.  The delay
 between the application of a valid $Q$ to when the OEs assert their new
 values is referred to as $T_p(B)$ in Figure~\ref{fig:datapathControlDPTime}.
 
@@ -678,7 +678,7 @@ and the status input to the control unit becoming valid is referred
 to as $T_p(C)$ in Figure~\ref{fig:datapathControlDPTime}.
 
 The status input to the control unit are routed to the MIE logic;
-see Figure~\ref{fig:datapathControlGenFSM}.  The delay between the status inputs
+see Figure~\ref{7-fig:sequentialFSMGenFSM}.  The delay between the status inputs
 becoming valid and the MIEs becoming valid is referred to as $T_p(D)$
 in Figure~\ref{fig:datapathControlDPTime}.
 
