@@ -305,10 +305,27 @@
 
             \item \SOPmin expression for the outputs, no product sharing please
                 (use the \verb+-Dso+ command line option).
+                \begin{onlysolution}
+                    \textbf{Solution}\\
+                    $f_3 = a_3$\\
+                    $f_2 = a_3a_2'+a_3'a_2$\\
+                    $f_1 = a_2a_1'+a_2'a_1$\\
+                    $f_0 = a_1'a_0+a_1a_0'$
+                \end{onlysolution}
             \item Espresso file for the converter
+                \begin{onlysolution}
+                    \textbf{Solution} \lstinputlisting{./chapter03/FigHw/prob3-6-4.txt}
+                \end{onlysolution}
             \item Espresso output in PLA format
+                \begin{onlysolution}
+                    \textbf{Solution} \lstinputlisting{./chapter03/FigHw/prob3-6-5.txt}
+                \end{onlysolution}
             \item Compare the number of gates required in your solution
                 versus the number of gates required by Espresso.
+                \begin{onlysolution}
+                    \textbf{Solution}\\
+                    They are equivalent.
+                \end{onlysolution}
         \end{itemize}
 
     \item \textbf{ (4 pts. each)} Determine \SOPmin expression for:
@@ -692,8 +709,12 @@
         \begin{tabular}{l}
             Question: Generate the \POSmin expression for $F(A,B,C) = \sum m(2,3,4,5)$ \\
             Answer: $F(A,B,C) = (A+B')(A'+B)$ \\
-        \end{tabular}
-
+        \end{tabular}\\
+        \begin{onlysolution}
+            \textbf{Solution}
+            {\color{blue} While that is incorrect, the correct \SOPmin expression is $F(A,B,C)~=~AB'\,+\,A'B$. Therefore, the student seems to have mixed up minterms and maxterms when putting their answer together.
+            }
+        \end{onlysolution}
     \item \textbf{ (6 pts.)} Determine the \SOPmin realization of the following
         function.
 
@@ -775,6 +796,21 @@
         they are turned off.
 
         Determine \SOPmin expression for the G, L and E outputs.
-        Determine \POSmin expression for the G, L and E outputs.
-
+        {\color{blue}
+            \begin{onlysolution}
+                \begin{gather*}
+                    G(A_1, A_0, B_1, B_0) = A1'A0' + A1'B0 + A1'B1 + A0'B1 + B1B0\\
+                    L(A_1, A_0, B_1, B_0) = B1'B0' + B1'A0 + B1'A1 + B0'A1 + A1A0\\
+                    E(A_1, A_0, B_1, B_0) = A0'B0 + A1'B1 + A0B0' + A1B1'
+                \end{gather*}
+            \end{onlysolution}
+            {\color{black}        Determine \POSmin expression for the G, L and E outputs.}
+            \begin{onlysolution}
+                \begin{align*}
+                    G(A_1, A_0, B_1, B_0) =& (A0'+ B1+B0) (A1'+B1) (A1'+A0'+B0)\\
+                    L(A_1, A_0, B_1, B_0) =& (B0'+ A1+A0) (B1'+A1) (B1'+B0'+A0)\\
+                    E(A_1, A_0, B_1, B_0) =& (A1 + A0 + B1 + B0)(A1 + A0' + B1 + B0') \times\\
+                    &\,(A1' + A0 + B1' + B0)(A1' + A0' + B1' + B0')
+                \end{align*}
+        \end{onlysolution}}
 \end{enumerate}
