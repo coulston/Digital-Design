@@ -160,8 +160,8 @@ outputs 1 when \emph{randNum} is greater than \emph{guess}.  Hence when \emph{ra
 is larger it is the \emph{big} output.
 
 The output of the 2:1 mux in front of the add/sub's \emph{y} input, \emph{small} follows
-a similar logical organization, but notice that the 1 and 0 inputs to this mux are the
-opposite of those on the big mux.
+a similar logical organization, but uses the less than output of the comparator to select the
+smaller of \emph{randNum} or \emph{guess} to pass to the \emph{small} output.
 
 Now that we have \emph{difference} computed correctly, let's see how it's used
 to inform the user of the quality of their guess. The
