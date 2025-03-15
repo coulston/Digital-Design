@@ -320,20 +320,19 @@
                     $c_{out} = A + c_{in}$
                 }
             \end{onlysolution}
-
         \item \textbf{(4 pts.)} Build a 7:128 decoder using a minimum number of
             4:16, 2:4 and 1:2 decoders. Describe the wiring of the select lines.
-            \begin{onlysolution} \textbf{Solutions} \itshape {
 
-                    \begin{figure}[ht]
-                        \center{\includegraphics{Sol4-7}}
-                        \caption{A 7:128 decoder built from 4:16, 2:4 and 1:2 decoders.}
-                        \label{fig:bighwdec}
-                    \end{figure}
-                }
+            \begin{onlysolution} \textbf{Solutions}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[height=0.8\textheight]{Sol4-7}
+                    \caption{A 7:128 decoder built from 4:16, 2:4 and 1:2 decoders.}
+                    \label{fig:bighwdec}
+                \end{figure}
+                \filbreak
             \end{onlysolution}
-
-        \item \textbf{ (4 pts. each)} Design a circuit with two 8-bit inputs $X,Y$, an
+        \item \textbf{(4 pts. each)} Design a circuit with two 8-bit inputs $X,Y$, an
             8-bit output $Z$ and a 1-bit input $sel$.  Construct a circuit that yields the
             correct value of $Z$ using only the basic building blocks presented in this
             chapter; do NOT show the internal organization of these building blocks.  If
@@ -592,7 +591,7 @@
                     \end{onlysolution}
 
             \end{enumerate}
-
+            \filbreak
         \item \textbf{ (1 pt. each)} Perform the following operations for the given
             2's-complement numbers. Assume a word size of eight bits
             in all cases. Indicate where overflow occurs. If there is no overflow,
@@ -601,63 +600,80 @@
 
                 \item 01011101 + 00110111
 
-                    \begin{onlysolution} \textbf{Solutions} \itshape{
-                            01011101 + 00110111 = 10010100  overflow
-                        }
+                    \begin{onlysolution} \textbf{Solutions}
+                        \begin{align*}
+                            {\color{gray}
+                            1111\,111\0 }&\\[-1.5ex]
+                            0101\,1101&\\
+                            +\:0011\,0111&\\[-2ex]
+                            \rule{12ex}{1pt}\hspace{-1ex}&\\[-1ex]
+                            1001\,0100&\quad  overflow
+                        \end{align*}
                     \end{onlysolution}
 
                 \item 11101011 + 11110001
 
-                    \begin{onlysolution} \textbf{Solutions} \itshape{
-                            11101011 +
-                            11110001 =
-                            11011100
-                        }
+                    \begin{onlysolution} \textbf{Solutions}
+                        \begin{align*}
+                            {\color{gray}
+                            1111\0\911\0 }&\\[-1.5ex]
+                            1110\,1011&\\
+                            +\:1111\,0001&\\[-2ex]
+                            \rule{12ex}{1pt}\hspace{-1ex}&\\[-1ex]
+                            1101\,1100&
+                        \end{align*}
                     \end{onlysolution}
 
                 \item 01011101 + 10101011
 
-                    \begin{onlysolution} \textbf{Solutions} \itshape{
-                            01011101 +
-                            10101011 =
-                            00001000
-                        }
+                    \begin{onlysolution} \textbf{Solutions}
+                        \begin{align*}
+                            {\color{gray}
+                            11111\,111\0}&\\[-1.5ex]
+                            0101\,1101&\\
+                            +\:1010\,1011&\\[-2ex]
+                            \rule{12ex}{1pt}\hspace{-1ex}&\\[-1ex]
+                            0000\,1000&
+                        \end{align*}
                     \end{onlysolution}
 
                 \item 10111011 - 11110001
 
-                    \begin{onlysolution} \textbf{Solutions} \itshape{
-                            10111011 -
-                            11110001 =
-
-                            10111011 +
-                            00001111 =
-                            11001010
-                        }
+                    \begin{onlysolution} \textbf{Solutions}
+                        \begin{alignat*}{3}
+                            &&{\color{gray}
+                            1\,111\0 }\\[-1.5ex]
+                            1110\,1011&   &1110\,1011\\
+                            -\:1111\,0001&&+\:0000\,1111\\[-2ex]
+                            \rule{12ex}{1pt}\hspace{-1ex}&\ \raisebox{3.5ex}[0pt][0pt]{$\xLongrightarrow{\phantom{80em}}$}\ &\rule{12ex}{1pt}\hspace{-1ex}\\[-1ex]
+                            & &1101\,1100
+                        \end{alignat*}
                     \end{onlysolution}
 
                 \item 01011101 - 00110111
 
-                    \begin{onlysolution} \textbf{Solutions} \itshape{
-                            01011101 -
-                            00110111 =
-
-                            01011101 +
-                            11001001 =
-                            00100110
-                        }
+                    \begin{onlysolution} \textbf{Solutions}
+                        \begin{alignat*}{3}
+                            &&{\color{gray}
+                            11\011\9\01\0 }\\[-1.5ex]
+                            0101\,1101&&   0101\,1101\\
+                            -\:0011\,0111&&+\:1100\,1001\\[-2ex]
+                            \rule{12ex}{1pt}\hspace{-1ex}&\ \raisebox{3.5ex}[0pt][0pt]{$\xLongrightarrow{\phantom{80em}}$}\ &\rule{12ex}{1pt}\hspace{-1ex}\\[-1ex]
+                            &&   0010\,0110
+                        \end{alignat*}
                     \end{onlysolution}
 
                 \item 01011101 - 10101111
 
-                    \begin{onlysolution} \textbf{Solutions} \itshape{
-                            01011101 -
-                            10101111 =
-
-                            01011101 +
-                            01010001 =
-                            10101110, overflow
-                        }
+                    \begin{onlysolution} \textbf{Solutions}
+                        \begin{alignat*}{3}
+                            &&{\color{gray}
+                            \1 1\9\0\01\0 }\\[-1.5ex]
+                            0101\,1101&&   0101\,1101\\
+                            -\:1010\,1111&&+\:0101\,0001\\[-2ex]
+                            \rule{12ex}{1pt}\hspace{-1ex}&\ \raisebox{3.5ex}[0pt][0pt]{$\xLongrightarrow{\phantom{80em}}$}\ &\rule{12ex}{1pt}\hspace{-1ex}\\[-1ex]
+                            &&1010\,1110&\ \textit{overflow}
+                        \end{alignat*}
                     \end{onlysolution}
 
             \end{enumerate}
@@ -711,7 +727,6 @@
                 \caption{IBM 6450225 Keyboard scancodes.}%\footnote{it is based on an \href{https://www.seasip.info/VintagePC/ibm_6450225.html}{IBM 6450225 Keyboard}}
                 \label{table:scancodes}
             \end{table}
-
             \label{page:scanclass}
             \begin{tabular}{|l|p{3.5in}|} \hline
                 Nomenclature:  & scancode classifier                   \\ \hline
@@ -726,20 +741,12 @@
                 IsS =1 when $D$ is the scan code for the letter ``S".{\color{blue}($1B_{16}$)}  \\ \hline
             \end{tabular}\\
             \begin{onlysolution} \textbf{Solution:}
-                \textit{\color{blue} As this is a Ones-Hot system, we need to build each gate separate. Here are the equations for each output, and a consolidated logic diagram.}
-                \begin{align*}
-                    IsP =&\ d7'\, d6 \, d5'\, d4'\, d3 \, d2 \, d1'\, d0;  \\
-                    IsL =&\ d7'\, d6 \, d5'\, d4'\, d3 \, d2'\, d1 \, d0;  \\
-                    IsM =&\ d7'\, d6'\, d5 \, d4 \, d3 \, d2'\, d1 \, d0'; \\
-                    IsI =&\ d7'\, d6 \, d5'\, d4'\, d3'\, d2'\, d1 \, d0;  \\
-                    IsS =&\ d7'\, d6'\, d5'\, d4 \, d3 \, d2'\, d1 \, d0;
-                \end{align*}
-                \includegraphics[scale=0.25]{Sol4-15.png} % Generated with Logic Friday
+                \textit{\color{blue} We would simply need 5 comparators testing if the incoming scan code is equal to $4D_{16}$ (IsP), $4B_{16}$ (IsL), $3A_{16}$ (IsM), $43_{16}$ (IsI), or $1B_{16}$ (IsS)}
             \end{onlysolution}
+            \filbreak
         \item \textbf{ (10 pts.)}
             \label{page:ScanDecode}
-            Build a box which converts an 8-bit scancode for a hexadecimal
-            digit into a 4-bit hexadecimal values.
+            Build a box which converts an 8-bit scancode for a hexadecimal digit into a 4-bit hexadecimal values.
 
             \label{page:scanconv}
             \begin{tabular}{|l|p{3.5in}|} \hline
@@ -759,25 +766,29 @@
             legal hexadecimal scancodes.
             \begin{onlysolution}
                 {\color{blue}
-                    \begin{align*}
-                        Is1 =&\ d7'\, d6'\, d5'\, d4 \, d3'\, d2 \, d1 \, d0'; \\
-                        Is2 =&\ d7'\, d6'\, d5'\, d4 \, d3 \, d2 \, d1 \, d0'; \\
-                        Is3 =&\ d7'\, d6'\, d5 \, d4'\, d3'\, d2 \, d1 \, d0'; \\
-                        Is4 =&\ d7'\, d6'\, d5 \, d4'\, d3'\, d2 \, d1'\, d0; \\
-                        Is5 =&\ d7'\, d6'\, d5 \, d4'\, d3 \, d2 \, d1 \, d0'; \\
-                        Is6 =&\ d7'\, d6'\, d5 \, d4 \, d3'\, d2 \, d1 \, d0'; \\
-                        Is7 =&\ d7'\, d6'\, d5 \, d4 \, d3 \, d2 \, d1'\, d0; \\
-                        Is8 =&\ d7'\, d6'\, d5 \, d4 \, d3 \, d2 \, d1 \, d0'; \\
-                        Is9 =&\ d7'\, d6 \, d5'\, d4'\, d3'\, d2 \, d1 \, d0'; \\
-                        Is0 =&\ d7'\, d6 \, d5'\, d4'\, d3'\, d2 \, d1'\, d0; \\
-                        IsA =&\ d7'\, d6'\, d5'\, d4 \, d3 \, d2 \, d1'\, d0'; \\
-                        IsB =&\ d7'\, d6'\, d5 \, d4 \, d3'\, d2'\, d1 \, d0'; \\
-                        IsC =&\ d7'\, d6'\, d5 \, d4'\, d3'\, d2'\, d1'\, d0; \\
-                        IsD =&\ d7'\, d6'\, d5 \, d4'\, d3'\, d2'\, d1 \, d0; \\
-                        IsE =&\ d7'\, d6'\, d5 \, d4'\, d3'\, d2 \, d1'\, d0'; \\
-                        IsF =&\ d7'\, d6'\, d5 \, d4'\, d3 \, d2'\, d1 \, d0;
-                \end{align*}}
-                \newpage
-                \includegraphics[scale=0.25]{Sol4-16.png} % Generated with Logic Friday
+
+                    \begin{table}[!ht]
+                        \centering
+                        {\color{blue}
+                            \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+                                \hline
+                                \textbf{d6} & \textbf{d5} & \textbf{d4} & \textbf{d3} & \textbf{d2} & \textbf{d1} & \textbf{d0} & \textbf{} & \textbf{h3} & \textbf{h2} & \textbf{h1} & \textbf{h0} \\ \hline
+                                X & 1 & 1 & 1 & 1 & X & 0 & ~ & 1 & 0 & 0 & 0 \\ \hline
+                                X & 0 & 0 & X & 1 & 1 & X & ~ & 1 & 0 & 0 & 0 \\ \hline
+                                X & 1 & 1 & 0 & 1 & X & X & ~ & 0 & 1 & 0 & 0 \\ \hline
+                                X & 1 & X & 0 & 0 & 1 & X & ~ & 1 & 0 & 0 & 1 \\ \hline
+                                X & 0 & X & 1 & X & 0 & X & ~ & 1 & 0 & 0 & 0 \\ \hline
+                                X & X & 0 & 1 & X & 1 & X & ~ & 0 & 1 & 0 & 0 \\ \hline
+                                X & 0 & X & 1 & X & X & 0 & ~ & 0 & 0 & 1 & 0 \\ \hline
+                                X & 0 & X & 0 & X & 1 & X & ~ & 0 & 0 & 0 & 1 \\ \hline
+                                X & 1 & X & X & 0 & X & 1 & ~ & 1 & 0 & 0 & 0 \\ \hline
+                                X & 1 & 0 & X & X & 1 & X & ~ & 0 & 0 & 0 & 1 \\ \hline
+                                X & X & X & 0 & X & 0 & 0 & ~ & 1 & 1 & 0 & 0 \\ \hline
+                                X & 1 & X & 0 & X & X & 0 & ~ & 0 & 0 & 1 & 0 \\ \hline
+                                X & 1 & X & 1 & X & X & 1 & ~ & 0 & 0 & 1 & 1 \\ \hline
+                                X & X & X & X & 0 & X & 0 & ~ & 0 & 0 & 1 & 0 \\ \hline
+                                X & 1 & X & X & X & X & 1 & ~ & 0 & 1 & 0 & 0 \\ \hline
+                        \end{tabular}}
+                \end{table}}
             \end{onlysolution}
     \end{enumerate}
