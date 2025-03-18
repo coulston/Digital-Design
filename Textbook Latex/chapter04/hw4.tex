@@ -700,14 +700,14 @@
             $F=11110100$.  If $D=11110000$ and $S=101$ then $F=11010000$.  The solution
             should rely heavily on the basic building blocks.
 
-            \begin{onlysolution} \textbf{Solutions} \itshape {
+            \begin{onlysolution} \textbf{Solutions} \itshape{
                     Arrange 8, 2:1 muxes with $d_i$ and $d_i'$ going into the data inputs.
                     Run the select into a 3:8 decoder and route the data outputs to the
                     individual selects of the 2:1 muxes.
                 }
             \end{onlysolution}
 
-        \item \textbf{ (10 pts.)}
+        \item \textbf{(10 pts.)}
             \label{page:IsScan}
             Build a box which recognizes some keyboard scancode.  When a key is
             pressed on a keyboard, the keyboard transmits (among other things)
@@ -737,14 +737,16 @@
                 Behavior:      & IsP =1 when $D$ is the scan code for the letter ``P".
                 IsL =1 when $D$ is the scan code for the letter ``L".
                 IsM =1 when $D$ is the scan code for the letter ``M".
-                IsI =1 when $D$ is the scan code for the letter ``I".
-                IsS =1 when $D$ is the scan code for the letter ``S".{\color{blue}($1B_{16}$)}  \\ \hline
+                IsI =1 when $D$ is the scan code for the letter ``I".\\ \hline
+                %IsS =1 when $D$ is the scan code for the letter ``S".{\color{blue}($1B_{16}$)}  \\ \hline
             \end{tabular}\\
             \begin{onlysolution} \textbf{Solution:}
-                \textit{\color{blue} We would simply need 5 comparators testing if the incoming scan code is equal to $4D_{16}$ (IsP), $4B_{16}$ (IsL), $3A_{16}$ (IsM), $43_{16}$ (IsI), or $1B_{16}$ (IsS)}
+                \textit{\color{blue} We would simply need 4 comparators testing if the incoming scan code is equal to $4D_{16}$ (IsP), $4B_{16}$ (IsL), $3A_{16}$ (IsM), or $43_{16}$ (IsI).}\\
+                \includegraphics[max width = 0.8\textwidth]{sol4-15}
+
             \end{onlysolution}
             \filbreak
-        \item \textbf{ (10 pts.)}
+        \item \textbf{(10 pts.)}
             \label{page:ScanDecode}
             Build a box which converts an 8-bit scancode for a hexadecimal digit into a 4-bit hexadecimal values.
 
