@@ -15,7 +15,8 @@
 \usepackage{listings}
 
 %% Lots of packages needed for tables
-\usepackage{xcolor,colortbl}    % Enable colors in tables
+\usepackage[svgnames]{xcolor}    % Enable colors in tables
+\usepackage{colortbl}
 \usepackage{mdframed}           % Enables framed boxes
 
 \usepackage{multirow}           % Allows rows to span multiple rows
@@ -166,3 +167,5 @@
 \newcommand{\1}{\ensuremath{1\phantom{0}}} % width of a one with a blank after it; for formatting addition
 \newcommand{\0}{\ensuremath{\phantom{0}}} % width of zero; for formatting addition
 \newcommand{\9}{\ensuremath{\,\phantom{0}}} % Zero with a large grouping space after.
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
