@@ -193,18 +193,22 @@
                     $S_7 \ldots S_1$.  Underline product terms that are shared.
                     Submit the Espresso source file.
 
+                    \definecolorseries{BCD7-Table}{hsb}{step}[hsb]{0.35,0.42,1}{.368,0,-0.01} \resetcolorseries[10]{BCD7-Table}
                     \begin{onlysolution} \textbf{Solutions} \itshape{
-                            The following is the source file for the BCD to 7-segment converter.\vspace{-1em}\lstinputlisting{./chapter04/FigHw/sol4-5-a.txt}
-                            {This produces the following gates (exactly):
-                                \begin{align*}
-                                    s7 =&\       \mathcolorbox{LightBlue}{(!d2\&!d1\&!d0)}     |       \mathcolorbox{LightCyan}{(d1\&!d0)}          |       \mathcolorbox{LightSalmon}{(d2\&!d1\&d0)}       |       \mathcolorbox{LightSlateBlue}{(!d2\&d1)}                                 \\
-                                    s6 =&\       \mathcolorbox{LightCoral}{(d1\&d0)}           |       \mathcolorbox{LightGoldenrod}{(!d2\&!d1)}    |       \mathcolorbox{LightSeaGreen}{(d2\&!d1\&!d0)}    |       \mathcolorbox{LightYellow}{(d2\&d1)}        |       \mathcolorbox{LightSalmon}{(d2\&!d1\&d0)}     \\
-                                    s5 =&\       \mathcolorbox{LightBlue}{(!d2\&!d1\&!d0)}     |       \mathcolorbox{LightCyan}{(d1\&!d0)}                                                                                                                                                \\
-                                    s4 =&\       \mathcolorbox{LightCyan}{(d1\&!d0)}           |       \mathcolorbox{LightGreen}{(d2\&!d1\&!d0)}    |       \mathcolorbox{LightSalmon}{(d2\&!d1\&d0)}       |       \mathcolorbox{LightSlateBlue}{(!d2\&d1)}    |       \mathcolorbox{LightGray}{(d3)}              \\
-                                    s3 =&\       \mathcolorbox{LightCoral}{(d1\&d0)}           |       \mathcolorbox{LightGoldenrod}{(!d2\&!d1)}    |       \mathcolorbox{LightSeaGreen}{(d2\&!d1\&!d0)}    |       \mathcolorbox{LightSlateBlue}{(!d2\&d1)}                                 \\
-                                    s2 =&\       \mathcolorbox{LightBlue}{(!d2\&!d1\&!d0)}     |       \mathcolorbox{LightGreen}{(d2\&!d1\&!d0)}    |       \mathcolorbox{LightYellow}{(d2\&d1)}            |       \mathcolorbox{LightSalmon}{(d2\&!d1\&d0)}   |       \mathcolorbox{LightGray}{(d3)}              \\
-                                    s1 =&\       \mathcolorbox{LightBlue}{(!d2\&!d1\&!d0)}     |       \mathcolorbox{LightYellow}{(d2\&d1)}           |       \mathcolorbox{LightSalmon}{(d2\&!d1\&d0)}     |       \mathcolorbox{LightSlateBlue}{(!d2\&d1)}    |       \mathcolorbox{LightGray}{(d3)}              %
-                            \end{align*}}
+                            The following is the source file for the BCD to 7-segment converter.\lstinputlisting{./chapter04/FigHw/sol4-5-a.txt}
+                            This produces the following gates:\newpage
+                            \begin{table}[t]
+                                \begin{tabular}{llllll}
+                                    s7 =&      \mathcolorbox{BCD7-Table!![0]}{(!d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![2]}{(d1\&!d0)}                & +        \mathcolorbox{BCD7-Table!![6]}{(d2\&!d1\&d0)}         & +        \mathcolorbox{BCD7-Table!![9]}{(!d2\&d1)}                                                                               \\
+                                    s6 =&      \mathcolorbox{BCD7-Table!![1]}{(d1\&d0)}               & +        \mathcolorbox{BCD7-Table!![3]}{(!d2\&!d1)}               & +        \mathcolorbox{BCD7-Table!![7]}{(d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![5]}{(d2\&d1)}          & +        \mathcolorbox{BCD7-Table!![6]}{(d2\&!d1\&d0)}              \\
+                                    s5 =&      \mathcolorbox{BCD7-Table!![0]}{(!d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![2]}{(d1\&!d0)}                                                                                                                                                                                                                    \\
+                                    s4 =&      \mathcolorbox{BCD7-Table!![2]}{(d1\&!d0)}              & +        \mathcolorbox{BCD7-Table!![4]}{(d2\&!d1\&!d0)}           & +        \mathcolorbox{BCD7-Table!![6]}{(d2\&!d1\&d0)}         & +        \mathcolorbox{BCD7-Table!![9]}{(!d2\&d1)}         & +        \mathcolorbox{BCD7-Table!![10]}{(d3)}                       \\
+                                    s3 =&      \mathcolorbox{BCD7-Table!![1]}{(d1\&d0)}               & +        \mathcolorbox{BCD7-Table!![3]}{(!d2\&!d1)}               & +        \mathcolorbox{BCD7-Table!![7]}{(d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![9]}{(!d2\&d1)}                                                                               \\
+                                    s2 =&      \mathcolorbox{BCD7-Table!![0]}{(!d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![4]}{(d2\&!d1\&!d0)}           & +        \mathcolorbox{BCD7-Table!![5]}{(d2\&d1)}              & +        \mathcolorbox{BCD7-Table!![6]}{(d2\&!d1\&d0)}     & +        \mathcolorbox{BCD7-Table!![10]}{(d3)}                       \\
+                                    s1 =&      \mathcolorbox{BCD7-Table!![0]}{(!d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![5]}{(d2\&d1)}                 & +        \mathcolorbox{BCD7-Table!![6]}{(d2\&!d1\&d0)}         & +        \mathcolorbox{BCD7-Table!![9]}{(!d2\&d1)}         & +        \mathcolorbox{BCD7-Table!![10]}{(d3)}               %
+                                \end{tabular}
+                            \end{table}
+
                         }
                     \end{onlysolution}
 
@@ -214,7 +218,7 @@
                     \begin{onlysolution} \textbf{Solutions} \itshape {
                             The following output was generated by using the same file
                             as the solution in the previous part; but using the epos
-                        option in espresso.} {\color{blue}%\lstinputlisting{./chapter04/FigHw/sol4-5-b.sol}
+                        option in espresso.} {\color{blue}
                         }
 
 %% \begin{verbatim}
@@ -237,19 +241,6 @@
 %% -111 1011000
 %% .e
 %% \end{verbatim}
-
-                        \itshape{Remember that these are the negation of the output variables, hence
-                            we have to use DeMorgan's to put them into \POSmin form.
-                        Symbolically we have:}
-                        \begin{align*}
-                            &s7=(b3+b2+b1+b0')(b2'+b1+b0)(b3'+b0')(b2'+b1'+b0') \\
-                            &s6=(b2+b1'+b0) \\
-                            &s5=(b2'+b1+b0')(b3+b2+b1+b0')(b2+b1+b0')(b2'+b1+b0)(b3'+b0')(b2'+b1'+b0') \\
-                            &s4=(b3+b2+b1)(b2'+b1'+b0') \\
-                            &s3=(b2'+b1'+b0)(b2'+b1+b0') \\
-                            &s2=(b2+b1'+b0)(b3+b2+b1+b0')(b2+b1'+b0') \\
-                            &s1=(b3+b2+b1+b0')(b2'+b1+b0) \\
-                        \end{align*}
                     \end{onlysolution}
             \end{enumerate}
 
