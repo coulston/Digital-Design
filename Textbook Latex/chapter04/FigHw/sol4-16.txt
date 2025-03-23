@@ -1,4 +1,4 @@
-# Scancode to Hexadecimal (With Don't Cares)
+# Scancode to Hexadecimal
 #
 .i 7
 .o 4

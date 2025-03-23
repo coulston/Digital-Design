@@ -198,6 +198,7 @@
                             The following is the source file for the BCD to 7-segment converter.\lstinputlisting{./chapter04/FigHw/sol4-5-a.txt}
                             This produces the following gates:\newpage
                             \begin{table}[t]
+                                \centering
                                 \begin{tabular}{llllll}
                                     s7 =&      \mathcolorbox{BCD7-Table!![0]}{(!d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![2]}{(d1\&!d0)}                & +        \mathcolorbox{BCD7-Table!![6]}{(d2\&!d1\&d0)}         & +        \mathcolorbox{BCD7-Table!![9]}{(!d2\&d1)}                                                                               \\
                                     s6 =&      \mathcolorbox{BCD7-Table!![1]}{(d1\&d0)}               & +        \mathcolorbox{BCD7-Table!![3]}{(!d2\&!d1)}               & +        \mathcolorbox{BCD7-Table!![7]}{(d2\&!d1\&!d0)}        & +        \mathcolorbox{BCD7-Table!![5]}{(d2\&d1)}          & +        \mathcolorbox{BCD7-Table!![6]}{(d2\&!d1\&d0)}              \\
@@ -217,8 +218,8 @@
                     Submit the Espresso source file
                     \begin{onlysolution} \textbf{Solutions} \itshape {
                         If we run the same file as part a with the -epos flag, it will preform a minimization on the off-set of our functions. If we take this output and invert it, we will have our \POSmin expression.} \\
-
-                        \begin{adjustbox}{center} \tabcolsep=1pt\relax
+                        \begin{table}[h]
+                            \centering
                             \begin{tabular}{*{7}{l}}
                                 s7 =& \mathcolorbox{BCD7-Table!![0]}{(d3 + d2 + d1 + !d0)}  &$\&$ \mathcolorbox{BCD7-Table!![3]}{(!d2 + d1 + d0)}       &$\&$ \mathcolorbox{BCD7-Table!![5]}{(!d3 + !d0)}       &$\&$ \mathcolorbox{BCD7-Table!![4]}{(!d2 + !d1 + !d0)} & ~ & ~ \\
                                 s6 =& \mathcolorbox{BCD7-Table!![1]}{(d2 + !d1 + d0)}       & ~                     & ~ & ~ & ~ & ~ \\
@@ -228,7 +229,7 @@
                                 s2 =& \mathcolorbox{BCD7-Table!![1]}{(d2 + !d1 + d0)}       &$\&$ \mathcolorbox{BCD7-Table!![0]}{(d3 + d2 + d1 + !d0)}  &$\&$ \mathcolorbox{BCD7-Table!![6]}{(d2 + !d1 + !d0)}  & ~ & ~ & ~ \\
                                 s1 =& \mathcolorbox{BCD7-Table!![0]}{(d3 + d2 + d1 + !d0)}  &$\&$ \mathcolorbox{BCD7-Table!![3]}{(!d2 + d1 + d0)}       & ~ & ~ & ~ & ~ \\
                             \end{tabular}
-                        \end{adjustbox}
+                        \end{table}
 %% \begin{verbatim}
 %% # BCD to 7-segment display
 %% #
