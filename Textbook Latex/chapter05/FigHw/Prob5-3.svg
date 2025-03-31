@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: fig2dev Version 3.2.8b -->
+<!-- CreationDate: 2025-03-30 15:42:31 -->
+<!-- Magnification: 1 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="412pt" height="272pt"
+	viewBox="4110 1563 6852 4524">
+<g fill="none">
+<!-- Text -->
+<text xml:space="preserve" x="4125" y="5625" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">Q</text>
+<!-- Text -->
+<text xml:space="preserve" x="4275" y="5700" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="108" text-anchor="start">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="4275" y="5100" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="108" text-anchor="start">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="4125" y="5025" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">Q</text>
+<!-- Text -->
+<text xml:space="preserve" x="7800" y="1950" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="108" text-anchor="start">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="7650" y="1875" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">Q</text>
+<!-- Text -->
+<text xml:space="preserve" x="9900" y="1875" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">Q</text>
+<!-- Text -->
+<text xml:space="preserve" x="10050" y="1950" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="108" text-anchor="start">2</text>
+<!-- Circle -->
+<circle cx="5625" cy="2025" r="50" fill="#000000"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5025,3375 5025,6075"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="40 40"/>
+<!-- Line -->
+<polyline points=" 6225,3375 6225,6075"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="40 40"/>
+<!-- Line -->
+<polyline points=" 7425,3375 7425,6075"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="40 40"/>
+<!-- Line -->
+<polyline points=" 8625,3375 8625,6075"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="40 40"/>
+<!-- Line -->
+<polyline points=" 9825,3375 9825,6075"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="40 40"/>
+<!-- Line -->
+<polyline points=" 4425,4875 10950,4875"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="10 30"/>
+<!-- Line -->
+<polyline points=" 4425,5175 10950,5175"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="10 30"/>
+<!-- Line -->
+<polyline points=" 4425,5475 10950,5475"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="10 30"/>
+<!-- Line -->
+<polyline points=" 4425,5775 10950,5775"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="10 30"/>
+<!-- Line -->
+<polyline points=" 4425,3675 5025,3675 5025,3975 5625,3975 5625,3675 6225,3675 6225,3975 6825,3975
+ 6825,3675 7425,3675 7425,3975 8025,3975 8025,3675 8625,3675 8625,3975 9225,3975
+ 9225,3675 9825,3675 9825,3975 10425,3975 10425,3675 10950,3675"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 4425,4275 4875,4275 4875,4575 5775,4575 5775,4275 8250,4275 8250,4575 9375,4575
+ 9375,4275 9525,4275 9525,4575 9600,4575 9600,4275 10950,4275"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5925,1725 5325,1725"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 7575,1725 8025,1725"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5325,2025 5925,2025"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5625,2025 5625,2850"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 6825,2850 7800,2850 7800,2025 8025,2025"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 9675,1725 10125,1725"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<rect x="5925" y="1575" width="1650" height="900"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<rect x="8025" y="1575" width="1650" height="900"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Text -->
+<text xml:space="preserve" x="4275" y="4500" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">A</text>
+<!-- Text -->
+<text xml:space="preserve" x="6300" y="2400" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">D clock latch</text>
+<!-- Text -->
+<text xml:space="preserve" x="6000" y="1800" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">D</text>
+<!-- Text -->
+<text xml:space="preserve" x="7350" y="1800" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">Q</text>
+<!-- Text -->
+<text xml:space="preserve" x="8400" y="2400" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">D clock latch</text>
+<!-- Text -->
+<text xml:space="preserve" x="8100" y="1800" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">D</text>
+<!-- Text -->
+<text xml:space="preserve" x="9450" y="1800" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">Q</text>
+<!-- Text -->
+<text xml:space="preserve" x="5175" y="1725" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">A</text>
+<!-- Text -->
+<text xml:space="preserve" x="6000" y="2100" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">clk</text>
+<!-- Text -->
+<text xml:space="preserve" x="5025" y="2025" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">clk</text>
+<!-- Text -->
+<text xml:space="preserve" x="4125" y="3900" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">clk</text>
+<!-- Text -->
+<text xml:space="preserve" x="8100" y="2100" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">clk</text>
+<!-- Circle -->
+<circle cx="6450" cy="2850" r="75" fill="#ffffff"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polygon points=" 6375,2850 5925,2625 5925,3075" fill="#ffffff"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 5625,2850 5925,2850"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 6525,2850 6825,2850"
+	stroke="#000000" stroke-width="8px"/>
+</g>
+</svg>

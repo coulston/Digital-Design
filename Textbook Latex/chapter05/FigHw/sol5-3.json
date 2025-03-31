@@ -1,0 +1,7 @@
+{signal: [
+    {name: 'clk', wave: 'hn....'},
+    {name: 'A', wave: 'hlnh..0.=h.', period:0.5},
+    {},
+    {name: 'Q1', wave: 'hl.h...0.=h.', period: 0.5},
+    {name: 'Q2', wave: 'x.l.h...l.h.', period: 0.5}
+  ]}

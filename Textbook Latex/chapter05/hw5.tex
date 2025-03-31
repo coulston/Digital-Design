@@ -12,7 +12,7 @@
         \end{figure}
 
         \begin{onlysolution}  \textbf{Solution} \itshape{
-                The analysis of the cross-coupled NANDs show in Figure~\ref{fig:sequentialCirnand} is
+                The analysis of the cross-coupled NANDs show in Figure~\ref{fig:sequentialCirNANDs} is
                 almost exactly the same as that for the cross coupled NORs.  Start with
                 the truth table for an NAND gate:
 
@@ -77,48 +77,44 @@
         shown in Figure~\ref{fig:sequentialCirDMS}.  Which basic memory element
         does this circuit act like?
 
+        \ifshowanswers \textbf{Solution} \fi
+
         \begin{figure}[ht]
             \label{fig:sequentialCirnand}
-            \center{\scalebox{0.8}{\includegraphics{Prob5-3}}}
+            \center{\scalebox{0.8}{
+                    \ifshowanswers \includegraphics{sol5-3}
+                    \else \includegraphics{prob5-3}\fi
+            }}
             \caption{A 2-stage sequential circuit.}
             \label{fig:sequentialCirDMS}
         \end{figure}
-
+        \ifshowanswers \textit{\color{blue} This circuit is acting like a Negative Edge Triggered D Flip Flop.}\fi
+        \filbreak %h! won't prevent content beneath it from filling, so we need to give it some help with keeping them together
     \item \textbf{ (15 pts.)} Complete the timing diagram for the basic memory
         elements in Figure~\ref{fig:sequentialCirExTim}.  The clock cycle is 20 ns. When
         necessary, assume that $Q$ is initialized to 0 and the output settles to
-        0 after a period of rapid toggling.
-
+        0 after a period of rapid toggling. \needspace{4.78in} % tell it that we really do want it to keep this question next to the figure
+        \ifshowanswers \textbf{Solution} \fi
         \begin{figure}[ht]
-            \center{\scalebox{0.5}{\includegraphics{Prob5-4}}}
+            \center{\scalebox{0.5}{
+                    \ifshowanswers \includegraphics{sol5-4} \else \includegraphics{prob5-4} \fi
+            }}
             \caption{A variety of basic memory elements and the signals applied to them.}
             \label{fig:sequentialCirExTim}
         \end{figure}
-
-        \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\scalebox{0.5}{\includegraphics{Sol5-4}}}
-                \end{figure}
-            }
-        \end{onlysolution}
-
     \item \textbf{ (15 pts.)} Complete the timing diagram for the basic memory elements in
         Figure~\ref{fig:sequentialCirExTim2}.  The clock cycle is 20 ns. When necessary,
         assume that Q is initialized to 0 and the output settles to 0 after
-        a period of rapid toggling.
+        a period of rapid toggling.\par
+        \ifshowanswers \textbf{Solution} \fi
         \begin{figure}[ht]
-            \center{\scalebox{0.5}{\includegraphics{Prob5-5}}}
+            \center{\scalebox{0.5}{
+                    \ifshowanswers \includegraphics{sol5-5} \else \includegraphics{prob5-5} \fi
+            }}
             \caption{}
             \label{fig:sequentialCirExTim2}
         \end{figure}
-
-        \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\scalebox{0.5}{\includegraphics{Sol5-5}}}
-                \end{figure}
-            }
-        \end{onlysolution}
-
+        \filbreak
     \item \textbf{ (4 pts.)} Consider the furnace
         controller discussed at the beginning of this chapter.  Determine
         which state the controller should transition into when in a particular state
@@ -128,16 +124,19 @@
         system should transition (or remain in) the ON state, OFF if the system
         should transition (or remain in) the OFF state, or X if the input
         combination is meaningless.
-
-        \begin{table}[ht]
+        \begin{onlyproblem} % Compress the problem version as it can be trivially recreated
+            \center{
+                \begin{tabular}{c||c|c|c|c}CurrentState$\bs~T_{hi}T_{low}$&00&01&11&10\\\hline\hline ON&&&&\\ \hline OFF&&&&\\
+            \end{tabular}}
+        \end{onlyproblem}
+        \begin{onlysolution}
             \center{
                 \begin{tabular}{c||c|c|c|c}
-                    Current State $\bs T_{hi} T_{low}$& 00    & 01    & 11    & 10    \\ \hline \hline
-                    ON            &    &    &    &    \\ \hline
-                    OFF            &    &    &    &    \\
-                \end{tabular}
-            }
-        \end{table}
+                    Current State $\bs T_{hi} T_{low}$ & 00  & 01 & 11 & 10  \\ \hline \hline
+                    ON                                 & ON  & ON & X  & OFF \\ \hline
+                    OFF                                & OFF & ON & X  & OFF \\
+            \end{tabular}}
+        \end{onlysolution}
 
     \item \textbf{ (8 pts.)} Derive the next state equations for each
         type (D, T, SR, and JK) of basic memory element.  The next state equation
@@ -148,9 +147,21 @@
         $Q$, $J$, and $K$ as the inputs.  The entries in the Kmap should
         be $Q^+$.  Solving this Kmap will yield the next state equation.
         Show all work for full credit.
-
+        \begin{onlysolution}
+            \begin{figure}[ht]
+                \center{\includegraphics{sol5-7-DC}}
+                \caption{}
+            \end{figure}
+            {\color{blue}\addtolength{\tabcolsep}{-0.4em}
+                \begin{tabular}{*{3}{l}}
+                    $Q^+_D   $   &$= D         $& ~                              \\[0.1em]
+                    $Q^+_T   $   &$= Q'T + QT' $&$= (Q+T)(Q'+T') = Q\oplus T$    \\[0.1em]
+                    $Q^+_{SR}$   &$= SR'+R'Q   $&$= (Q+S)(R')   $                \\[0.1em]
+                    $Q^+_{JK}$   &$= Q'J + QK' $&$= (Q+J)(Q'+K')$
+            \end{tabular}}
+        \end{onlysolution}
     \item \textbf{ (16 pts.)} Derive the transition list for each
-        type (D, T, JK, and SR) of basic memory element.  A transition
+        type (D, T, SR, and JK) of basic memory element.  A transition
         list describes the input(s) necessary to elicit a particular
         change in state.  For example, imagine that a D flip flop output
         is currently in the 0 state and it needs to transition to
@@ -167,51 +178,63 @@
 
         \begin{table}[ht]
             \center{
-                \begin{tabular}{cccc}
-
-                    \begin{tabular}{c||c}
-                        $Q \rightarrow Q^+$    &    D        \\ \hline \hline
-                        $0 \rightarrow 0$        &        \\ \hline
-                        $0 \rightarrow 1$        &    1    \\ \hline
-                        $1 \rightarrow 0$        &        \\ \hline
-                        $1 \rightarrow 1$        &        \\
+                \begin{onlyproblem}
+                    \begin{tabular}{cccc}
+                        \begin{tabular}{c||c}$Q\rightarrow~Q^+$&D\\\hline\hline$0\rightarrow0$&\\\hline$0\rightarrow1$&1\\\hline$1\rightarrow0$&\\\hline$1\rightarrow1$&\\
+                        \end{tabular}&
+                        \begin{tabular}{c||c}$Q\rightarrow~Q^+$&T\\\hline\hline$0\rightarrow0$&\\\hline$0\rightarrow1$&\\\hline$1\rightarrow0$&\\\hline$1\rightarrow1$&\\
+                        \end{tabular}&
+                        \begin{tabular}{c||c|c}$Q\rightarrow~Q^+$&S&R\\\hline\hline$0\rightarrow0$&&\\\hline$0\rightarrow1$&&\\\hline$1\rightarrow0$&&\\\hline$1\rightarrow1$&&\\
+                        \end{tabular}&
+                        \begin{tabular}{c||c|c}$Q\rightarrow~Q^+$&J&K\\\hline\hline$0\rightarrow0$&&\\\hline$0\rightarrow1$&&\\\hline$1\rightarrow0$&&\\\hline$1\rightarrow1$&&\\
+                        \end{tabular}\\
                     \end{tabular}
+                \end{onlyproblem}
+                \begin{onlysolution}{\color{blue}
+                        \begin{tabular}{cccc}
 
-                    &
+                            \begin{tabular}{c||c}
+                                $Q \rightarrow Q^+$ &   D           \\ \hline \hline
+                                $0 \rightarrow 0$   &   0           \\ \hline
+                                $0 \rightarrow 1$   &   1           \\ \hline
+                                $1 \rightarrow 0$   &   0           \\ \hline
+                                $1 \rightarrow 1$   &   1           \\
+                            \end{tabular}
 
-                    \begin{tabular}{c||c}
-                        $Q \rightarrow Q^+$    &    T        \\ \hline \hline
-                        $0 \rightarrow 0$        &        \\ \hline
-                        $0 \rightarrow 1$        &        \\ \hline
-                        $1 \rightarrow 0$        &        \\ \hline
-                        $1 \rightarrow 1$        &        \\
-                    \end{tabular}
+                            &
 
-                    &
+                            \begin{tabular}{c||c}
+                                $Q \rightarrow Q^+$ &   T           \\ \hline \hline
+                                $0 \rightarrow 0$   &   0           \\ \hline
+                                $0 \rightarrow 1$   &   1           \\ \hline
+                                $1 \rightarrow 0$   &   1           \\ \hline
+                                $1 \rightarrow 1$   &   0           \\
+                            \end{tabular}
 
-                    \begin{tabular}{c||c|c}
-                        $Q \rightarrow Q^+$    &    J    &    K        \\ \hline \hline
-                        $0 \rightarrow 0$        &        &        \\ \hline
-                        $0 \rightarrow 1$        &        &        \\ \hline
-                        $1 \rightarrow 0$        &        &        \\ \hline
-                        $1 \rightarrow 1$        &        &        \\
-                    \end{tabular}
+                            &
 
-                    &
+                            \begin{tabular}{c||c|c}
+                                $Q \rightarrow Q^+$ &   S   &   R   \\ \hline \hline
+                                $0 \rightarrow 0$   &   0   &   0,1 \\ \hline
+                                $0 \rightarrow 1$   &   1   &   0   \\ \hline
+                                $1 \rightarrow 0$   &   0   &   1   \\ \hline
+                                $1 \rightarrow 1$   &   0,1 &   0   \\
+                            \end{tabular}
 
-                    \begin{tabular}{c||c|c}
-                        $Q \rightarrow Q^+$    &    S    &    R        \\ \hline \hline
-                        $0 \rightarrow 0$        &        &        \\ \hline
-                        $0 \rightarrow 1$        &        &        \\ \hline
-                        $1 \rightarrow 0$        &        &        \\ \hline
-                        $1 \rightarrow 1$        &        &        \\
-                    \end{tabular}
+                            &
 
-                    \\
-                \end{tabular}
+                            \begin{tabular}{c||c|c}
+                                $Q \rightarrow Q^+$ &   J   &   K   \\ \hline \hline
+                                $0 \rightarrow 0$   &   0   &   0,1 \\ \hline
+                                $0 \rightarrow 1$   &   1   &   0,1 \\ \hline
+                                $1 \rightarrow 0$   &   0,1 &   1   \\ \hline
+                                $1 \rightarrow 1$   &   0,1 &   0   \\
+                            \end{tabular}
+                    \end{tabular}}
+                \end{onlysolution}
             }
             \caption{The transition lists for the four types of basic memory elements.}
             \label{table:tl}
         \end{table}
-
+        %How?
 \end{enumerate}
