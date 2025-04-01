@@ -1,0 +1,9 @@
+{ "signal": [
+    { "name": "clk", "wave": "lhlhlhlhlhl" },
+    { "name": "C"  , "wave": "====.=.=...", "data": ["10","01","10","10","00","01"]},
+    { "name": "D"  , "wave": "=..=.......", "data": ["7", "5"]},
+    { "name": "Q"  , "wave": "==", "data": ["E"]}
+],
+"foot": {
+    "tick": 0
+}}

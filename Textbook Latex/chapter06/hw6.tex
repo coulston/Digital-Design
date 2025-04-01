@@ -6,7 +6,8 @@
     \item \textbf{ (8 points)} Build a 4-bit universal shift register in
         Table~\ref{table:uni} using D flip-flops and 8:1 multiplexers.
 
-        \begin{table}
+        \begin{table}[h]
+            \centering
             \begin{tabular}{c|c|c||c}
                 S2 & S1 & S0 & Operation \\ \hline
                 0  &  0 &  0 & Hold \\ \hline
@@ -22,11 +23,11 @@
             \label{table:uni}
         \end{table}
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-1}}
-                \end{figure}
-            }
+        \begin{onlysolution}
+            \begin{figure}[ht]
+                \caption{\textbf{Solution}}
+                \includegraphics[max width=\textwidth, center]{Prob6-1}
+            \end{figure}
         \end{onlysolution}
 
     \item \textbf{ (8 pts.)} Use a counter and a comparator
@@ -56,6 +57,7 @@
                         the less significant counter has rolled over.
 
                         \begin{figure}[ht]
+                            \caption{}
                             \center{\includegraphics{Prob6-2}}
                         \end{figure}
 
@@ -74,6 +76,7 @@
 
         \end{enumerate}
 
+        \ifshowanswers\needspace{2in}\fi % LaTeX does not think the question should be moved, and I agree. If layout changes, our opinions might flip though
     \item \textbf{ (8 pts.)} Design a circuit which contains three 8-bit
         registers X,Y,Z.  The behavior of the circuit is determined by the statement:
 \begin{verbatim}
@@ -83,21 +86,24 @@ if (X > Y) then Z = X+X else Z = Y+Y
         Submit a circuit diagram showing the building blocks uses,
         their interconnections and any miscellaneous logic required to make
         them operate together.
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution} \needspace{2.58in} \itshape{
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-3}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-3}
                 \end{figure}
             }
         \end{onlysolution}
 
+        \ifshowanswers\needspace{2in}\fi
     \item \textbf{ (8 pts.)} Design a circuit which contains three registers X,Y,Z.
         The behavior of the circuit is determined by the statements:
-\begin{verbatim}
-1. while (X > 0) {
-2.     Z = Z+Y;
-3.     X = X-1;
-4. }
-\end{verbatim}
+        \begin{verbatim}
+            1. while (X > 0) {
+            2.     Z = Z+Y;
+            3.     X = X-1;
+            4. }
+        \end{verbatim}
+        \vspace{-1.25em}
         The registers are preloaded with values in them.
         Submit a circuit diagram showing the building blocks used,
         their interconnections and any miscellaneous logic required to make
@@ -106,25 +112,29 @@ if (X > Y) then Z = X+X else Z = Y+Y
         the enable inputs of the registers to control when they
         latch information.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution} \itshape{
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-4}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-4}
                 \end{figure}
             }
         \end{onlysolution}
 
+        \ifshowanswers\needspace{2in}\fi
     \item \textbf{ (8 pts.)} Given three 32-bit registers A,B,PC, design a circuit
         which adds PC and A (putting the result back into PC) when A is equal
         to B.  Otherwise, add 1 to PC.  The contents of A and B
         are to remain unchanged.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution} \itshape{
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-5}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-5}
                 \end{figure}
             }
         \end{onlysolution}
 
+        \ifshowanswers\needspace{2in}\fi %figure still floats due to length of answer
     \item \textbf{ (8 pts.)} Build a circuit that performs the following:
 \begin{verbatim}
     for(i=0; i<100; i++)
@@ -148,9 +158,10 @@ if (X > Y) then Z = X+X else Z = Y+Y
                 does not overflow during the computation.  The figure below shows that
                 13 bits are required (the upper six bits of the counter's output are padded
                 with 0's so that the counters output can be feed into the adder).
-
+                \needspace{2.08in}
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-6}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-6}
                 \end{figure}
             }
         \end{onlysolution}
@@ -161,25 +172,29 @@ if (X > Y) then Z = X+X else Z = Y+Y
         total = total + 1;
 \end{verbatim}
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution} \itshape{
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-7}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-7}
                 \end{figure}
             }
         \end{onlysolution}
 
+        \ifshowanswers\needspace{2in}\fi
     \item\textbf{ (8 pts.)} Design a circuit that can shift (circular
         to the right) the contents of register X by an amount given in
         register Y. X is stored in the circular shift register described
         in this chapter. The solution will require a comparator and a
         counter.
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution}\needspace{2in} \itshape{
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-8}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-8}
                 \end{figure}
             }
         \end{onlysolution}
 
+        \ifshowanswers\needspace{2in}\fi
     \item\textbf{ (8 pts.)} Assume a 32kx8 RAM is full of data. Show
         the hardware required to realize the following algorithm.
 \begin{verbatim}
@@ -192,13 +207,16 @@ if (X > Y) then Z = X+X else Z = Y+Y
         be the output of a counter. Use a comparator to shut down the counter
         and to put the register in hold when the count value reaches a critical
         value.
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution} \itshape{
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-9}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-9}
                 \end{figure}
             }
+
         \end{onlysolution}
 
+        \ifshowanswers\needspace{2in}\fi
     \item\textbf{ (8 pts.)} Show how to initialize a 32kx8 RAM in the following manner.
 \begin{verbatim}
     for(i=0; i<32767; i++)
@@ -208,69 +226,55 @@ if (X > Y) then Z = X+X else Z = Y+Y
         Where the ``i mod 256" statement means store the least significant
         eight bits of the $i$ variable into the RAM.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution} \itshape{
                 \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-10}}
+                    \caption{\textbf{Solution}}
+                    \includegraphics[max width=\textwidth, center]{Prob6-10}
                 \end{figure}
             }
         \end{onlysolution}
 
+        \needspace{2in}
     \item\textbf{ (5 pts.)} Complete the timing diagram in Figure~\ref{fig:hwshift}
         \label{item:shifter}
         for a 4-bit arithmetic shift register.  Use the control setting from the
-        truth table on page~\pageref{page:shi}.
+        truth table on page~\pageref{6-page:shi}.
         \begin{figure}[ht]
-            \center{\includegraphics{Prob6-14}}
-            \caption{The timing diagram for a 4-bit arithmetic shift register in
-            Problem~\ref{item:shifter}.}
+            \ifshowanswers \includegraphics[max width=\textwidth, center]{Sol6-11}
+            \else \includegraphics[max width=\textwidth, center]{Prob6-11} \fi
+            \caption{The timing diagram for a 4-bit arithmetic shift register
+            in Problem~\ref{item:shifter}.}
             \label{fig:hwshift}
         \end{figure}
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-13}}
-                \end{figure}
-            }
-        \end{onlysolution}
-
+        \needspace{2in}
     \item\textbf{ (5 pts.)} Complete the timing diagram in Figure~\ref{fig:hwcount}
         \label{item:counter}
         for a 4-bit counter.  Use the control setting from the truth table on
-        page~\pageref{page:counter}.
+        page~\pageref{6-page:counter}.
         \begin{figure}[ht]
-            \center{\includegraphics{Prob6-15}}
+            \ifshowanswers \includegraphics[max width=\textwidth, center]{Sol6-12}
+            \else \includegraphics[max width=\textwidth, center]{Prob6-12} \fi
             \caption{The timing diagram for a 4-bit counter in
             Problem~\ref{item:counter}.}
             \label{fig:hwcount}
         \end{figure}
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-14}}
-                \end{figure}
-            }
-        \end{onlysolution}
-
     \item\textbf{ (5 pts.)} Complete the timing waveforms for $A_1, A_0, Q_1, Q_0$
         \label{item:cascade}
         based on the circuit diagram shown in Figure~\ref{fig:cascade}.  Use the truth
-        table on page~\pageref{page:reg} for the register. Put the decimal
+        table on page~\pageref{6-page:reg} for the register. Put the decimal
         representation of the signals in the timing diagram (like the timing
-        diagram in Figure~\ref{fig:comb1}).
+        diagram in Figure~\ref{6-fig:sequentialBBcomb1} of the textbook).\needspace{2.2in}
         \begin{figure}[ht]
-            \center{\includegraphics{Prob6-16}}
+            \ifshowanswers \includegraphics[max width=\textwidth, center]{Prob6-13}
+            \else \includegraphics[max width=\textwidth, center]{Prob6-13} \fi
             \caption{The circuit diagram and incomplete timing diagram for
             Problem~\ref{item:cascade}.}
             \label{fig:cascade}
         \end{figure}
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\includegraphics{Prob6-15}}
-                \end{figure}
-            }
-        \end{onlysolution}
-
+        \needspace{2in}
     \item\textbf{ (4 pts.)} The circuit shown in Figure~\ref{fig:fib} generates a
         Fibonacci sequence, a sequence starting with 1,1,2,3...  The next number in
         the sequence is the sum of the preceding two numbers.  Complete the

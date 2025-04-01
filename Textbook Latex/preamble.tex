@@ -49,10 +49,21 @@
 \usepackage{pdflscape}            % enables landscape pages
 \usepackage{pdfpages}             % allows pdfs to be included as pages
 
+\usepackage{xr-hyper}             % external references library for refs across files. Links unfortunately don't work right now. Most corrections on branch for approval
+\externaldocument[1-]{chapter01/chapter1} % avoid namespace collisions (guaranteed as files are included into themselves)
+\externaldocument[2-]{chapter02/chapter2}
+\externaldocument[3-]{chapter03/chapter3}
+\externaldocument[4-]{chapter04/chapter4}
+\externaldocument[5-]{chapter05/chapter5}
+\externaldocument[6-]{chapter06/chapter6}
+\externaldocument[7-]{chapter07/chapter7}
+\externaldocument[8-]{chapter08/chapter8}
+
 \usepackage{hyperref}             % Enable hyperlinks to email and URLs
 \hypersetup{
     colorlinks=true,
     linkcolor=red,
+    filecolor=black,
     menucolor=blue,
     pdftitle={Digital Design, A Datapath and Control Approach}
 }
