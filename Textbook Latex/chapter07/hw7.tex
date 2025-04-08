@@ -105,11 +105,11 @@
         The cost of an AND gate is equal to the number of inputs to the
         AND gate.  Likewise the cost of an OR gate is equal to the number
         of inputs.  NOT gates are free. For example, the circuit
-        $A'B + ABC'$ costs $2+3+2=7$.
+        $A'B + ABC'$ costs $(2+3)+2+0=7$.
 
         Submit:
         \begin{enumerate}
-            \item Shared steps of the design process.
+            \item Shared steps of the design process. \ifshowanswers \textit{\color{red}What are you expecting students to give for this?} \fi
             \item Derive the MIEs for each of the two realizations.
                 \begin{onlysolution}  \textbf{Solution} \itshape{
 
@@ -121,12 +121,13 @@
                             01  & 000,1 & 110,1 & 011,0 & 010,0  \\ \hline
                             11  & 010,1 & 100,1 & 011,0 & 111,1  \\ \hline
                             10  & 101,1 & 100,1 & 101,0 & 111,0  \\
-                        \end{tabular}
-
-                        $D_2 = Q_1Q_0'X + Q_1'Q_0X + Q_2Q_0X' + Q_2Q_1'$        \\
-                        $D_1 = Q_2Q_1X' + Q_2'Q_1X + Q_1Q_0 + Q_0X'$            \\
-                        $D_0 = Q_2Q_1'X' + Q_2'Q_1'X + Q_1'Q_0 + Q_2Q_0 + Q_0X$     \\
-                        $Z   = Q_2'Q_1'Q_0 + Q_1Q_0' + Q_2Q_0' + Q_2Q_1$        \\
+                        \end{tabular}\vspace{-1em}
+                        \begin{flalign*}
+                            D_2 &= Q_1Q_0'X + Q_1'Q_0X + Q_2Q_0X' + Q_2Q_1'          &&\\
+                            D_1 &= Q_2Q_1X' + Q_2'Q_1X + Q_1Q_0 + Q_0X'              &&\\
+                            D_0 &= Q_2Q_1'X' + Q_2'Q_1'X + Q_1'Q_0 + Q_2Q_0 + Q_0X   &&\\
+                            Z   &= Q_2'Q_1'Q_0 + Q_1Q_0' + Q_2Q_0' + Q_2Q_1          &&
+                        \end{flalign*}
 
                         State Assignment 2
 
@@ -136,12 +137,13 @@
                             01  & 110,1 & 101,1 & 011,0 & 100,0  \\ \hline
                             11  & 000,1 & 010,1 & 011,1 & 001,1  \\ \hline
                             10  & 100,1 & 001,1 & 101,1 & 011,1  \\
-                        \end{tabular}
-
-                        $D_2 = Q_2Q_1'Q_0'X' + Q_2Q_1'Q_0X + Q_2'Q_1Q_0' + Q_2'Q_0'X + Q_2'Q_0X'$ \\
-                        $D_1 = Q_2'Q_1Q_0'X' + Q_2'Q_1'Q_0'X + Q_2Q_1X+Q_1Q_0X + Q_1'Q_0X'$\\
-                        $D_0 = Q_1'X + Q_2'X + Q_2Q_0$                    \\
-                        $Z   = Q_1Q_0' + Q_2$                        \\
+                        \end{tabular}\vspace{-1em}
+                        \begin{flalign*}
+                            D_2 &= Q_2Q_1'Q_0'X' + Q_2Q_1'Q_0X + Q_2'Q_1Q_0' + Q_2'Q_0'X + Q_2'Q_0X'   &&\\
+                            D_1 &= Q_2'Q_1Q_0'X' + Q_2'Q_1'Q_0'X + Q_2Q_1X+Q_1Q_0X + Q_1'Q_0X'         &&\\
+                            D_0 &= Q_1'X + Q_2'X + Q_2Q_0                                              &&\\
+                            Z   &= Q_1Q_0' + Q_2                                                       &&
+                        \end{flalign*}
 
                     }
                 \end{onlysolution}
@@ -205,12 +207,10 @@
             \center{\includegraphics{Prob7-10}}
             \caption{A basic vending machine.}
             \label{fig:Vend}
-        \end{figure}
-
+        \end{figure}\vspace{-1em}
         \begin{onlysolution}  \textbf{Solution} \itshape{
-
                 \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-9}}
+                    \includegraphics[max width=\textwidth, center]{Sol7-9}
                 \end{figure}
 
                 Note, that in the figure if a input does not appear on
@@ -219,22 +219,22 @@
                 are the outputs for each of the states above.
 
                 \begin{tabular}{|l||l|l|l|} \hline
-                    \multicolumn{4}{|c|}{outputs from the vending FSM}              \\ \hline \hline
-                    state & nickel change    & diet dispense & regular dispense      \\ \hline
-                    & 0 give none    & 0 give none    & 0 given none        \\ \hline
-                    & 1 give nickel    & 1 dispense diet & 1 dispense regular    \\ \hline
-                    &         &        &            \\ \hline
-                    0     & 0        & 0        & 0            \\ \hline
-                    5     & 0        & 0        & 0            \\ \hline
-                    10    & 0        & 0        & 0            \\ \hline
-                    15    & 0        & 0        & 0            \\ \hline
-                    20    & 0        & 0        & 0            \\ \hline
-                    25    & 0        & 0        & 0            \\ \hline
-                    30    & 0        & 0        & 0            \\ \hline
-                    35    & 0        & 0        & 0            \\ \hline
-                    40    & 1        & 0        & 0            \\ \hline
-                    d     & 0        & 1        & 0            \\ \hline
-                    r     & 0        & 0        & 1            \\ \hline
+                    \multicolumn{4}{|c|}{outputs from the vending FSM}                      \\ \hline \hline
+                    state   & nickel change     & diet dispense     & regular dispense      \\ \hline
+                    & 0 give none       & 0 give none       & 0 given none          \\ \hline
+                    & 1 give nickel     & 1 dispense diet   & 1 dispense regular    \\ \hline
+                    &                   &                   &                       \\ \hline
+                    0       & 0                 & 0                 & 0                     \\ \hline
+                    5       & 0                 & 0                 & 0                     \\ \hline
+                    10      & 0                 & 0                 & 0                     \\ \hline
+                    15      & 0                 & 0                 & 0                     \\ \hline
+                    20      & 0                 & 0                 & 0                     \\ \hline
+                    25      & 0                 & 0                 & 0                     \\ \hline
+                    30      & 0                 & 0                 & 0                     \\ \hline
+                    35      & 0                 & 0                 & 0                     \\ \hline
+                    40      & 1                 & 0                 & 0                     \\ \hline
+                    d       & 0                 & 1                 & 0                     \\ \hline
+                    r       & 0                 & 0                 & 1                     \\ \hline
                 \end{tabular}
             }
         \end{onlysolution}
@@ -261,9 +261,9 @@
         truth table.
 
         \begin{tabular}{l|l}
-            control & behavior \\ \hline \hline
-            0    & reset to 0 \\ \hline
-            1    & count up \\
+            control & behavior      \\ \hline \hline
+            0       & reset to 0    \\ \hline
+            1       & count up      \\
         \end{tabular}
 
         The counter's output is eight bits wide, representing two BCD digits.  Thus,
@@ -282,7 +282,8 @@
         in the MHz range).  The architecture of the FSM is given in
         the figure below.
 
-        %% \includegraphics{RPS}
+        \ifshowanswers \includegraphics[max width=0.8\textwidth, center]{Sol7-6}
+        \else      \includegraphics[max width=0.8\textwidth, center]{Prob7-6} \fi
 
         Submit:
         \begin{enumerate}
@@ -290,21 +291,40 @@
                 circuit operates correctly.
             \item Determine the output for each state.  Instead of writing the
                 output in each state, list the outputs in the following control
-                word table.
-
-                \begin{tabular}{l||l|l}
-                    state    & counter    & register \\ \hline
-                    & 0 reset    & 0 hold \\ \hline
-                    & 1 count up& 1 reset \\ \hline \hline
-                    RefLo    &        &      \\ \hline
-                    RefHi    &        &      \\ \hline
-                    Load     &        &      \\ \hline
-                    Reset    &        &      \\
-                \end{tabular}
+                word table. \\
+                \begin{onlyproblem}
+                    \begin{tabular}{l||l|l}state&counter&register\\\hline&0~reset&0~hold\\\hline&1~count~up&1~reset\\\hline\hline~RefLo&&\\\hline~RefHi&&\\\hline~Load&&\\\hline~Reset&&\\
+                    \end{tabular}
+                \end{onlyproblem}
+                \begin{onlysolution}\color{blue}
+                    \begin{tabular}{l||l|l}
+                        state   & counter       & register  \\ \hline
+                        0   & 0 reset       & 0 hold    \\ \hline
+                        1   & 1 count up    & 1 reset   \\ \hline \hline
+                        RefLo   & 1             & 0         \\ \hline
+                        RefHi   & 1             & 0         \\ \hline
+                        Load    & 1             & 1         \\ \hline
+                        Reset   & 0             & 0         \\
+                    \end{tabular}
+                \end{onlysolution}
 
             \item Determine the output equations.
+                \begin{onlysolution}\color{blue}\vspace{-0.5em}
+                    \begin{flalign*}
+                        Z_C &= RefLo + RefHi + Load &\\
+                        Z_R &= Load                 &
+                    \end{flalign*}\vspace{-2em}
+                \end{onlysolution}
             \item Determine the memory input equations assuming a one-hot
                 encoding of the states.
+                \begin{onlysolution}\color{blue}\vspace{-0.5em}
+                    \begin{flalign*}
+                        RefLo &= Reset + R'\&RefLo      &\\
+                        RefHi &= R\&Reset + R\& RefHi   &\\
+                        Load  &= R'\&RefHi              &\\
+                        Reset &= Load                   &\\
+                    \end{flalign*}\vspace{-2em}
+                \end{onlysolution}
         \end{enumerate}
 
     \item \textbf{ (12 pts.)}
@@ -322,7 +342,7 @@
         upward, opening the garage door.  When $motor=00$, the motor is turned off.
 
         \begin{figure}[ht]
-            %% \center{\includegraphics{./FigWork/Door}}
+            \center{\includegraphics{Prob7-7}}
             \caption{The garage door and the circuit controlling it.}
             \label{fig:hwgarage}
         \end{figure}
@@ -330,8 +350,7 @@
         Construct the FSM assuming a one-hot encoding of the states.
         Determine the memory input equations and output equations.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
-
+        \begin{onlysolution}  \textbf{Solution} \itshape{ \vspace{-1em}
                 \paragraph{Control unit}
                 The control unit includes so called wait states.  Waits states are
                 a result of the fact that the clock running the FSM is usually
