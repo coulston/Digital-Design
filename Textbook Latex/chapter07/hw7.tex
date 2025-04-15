@@ -251,82 +251,19 @@
 
         Draw the state diagram and from this determine the MIEs and OEs.
 
-    \item \textbf{ (12 pts.)}
-        Build a FSM which displays the revolutions per second
-        (RPS) of a motor.  The output shaft of the motor is attached to
-        a sensor whose output pulses to logic 1 every time the motor's shaft
-        completes a single revolution.  This sensor signal is attached to
-        a counter.  The behavior of the counter to the pulse input is determined
-        by a 1-bit control input (coming from the FSM) given by the following
-        truth table.
-
-        \begin{tabular}{l|l}
-            control & behavior      \\ \hline \hline
-            0       & reset to 0    \\ \hline
-            1       & count up      \\
-        \end{tabular}
-
-        The counter's output is eight bits wide, representing two BCD digits.  Thus,
-        the counter's output will go from 19 to 20 when the control input is 1
-        and there is a pulse on the sensor line.  This 8-bit output from the
-        counter is sent to the data input of an 8-bit register.  The register's
-        control input comes from the FSM.  The output of the register is split
-        into two nybbles (a 4-bit value is called a nybble)
-        each sent its own BCD to 7-segment converter.  In order to determine
-        when a second is up, the FSM is fed a reference signal denoted by
-        the variable $R$ with a period of exactly 1Hz and a 50\% duty cycle;
-        the duty cycle of a square wave is the proportion of time the signal
-        spends at logic 1.   That is $R$ is at logic 1 for half a second and
-        then at logic 0 for half a second.  The FSM is being supplied with a
-        clock signal, $clk$, with a frequency much greater than 1Hz (perhaps
-        in the MHz range).  The architecture of the FSM is given in
-        the figure below.
-
-        \ifshowanswers \includegraphics[max width=0.8\textwidth, center]{Sol7-6}
-        \else      \includegraphics[max width=0.8\textwidth, center]{Prob7-6} \fi
-
-        Submit:
-        \begin{enumerate}
-            \item Label the arcs of the FSM with R or R' so that the
-                circuit operates correctly.
-            \item Determine the output for each state.  Instead of writing the
-                output in each state, list the outputs in the following control
-                word table. \\
-                \begin{onlyproblem}
-                    \begin{tabular}{l||l|l}state&counter&register\\\hline&0~reset&0~hold\\\hline&1~count~up&1~reset\\\hline\hline~RefLo&&\\\hline~RefHi&&\\\hline~Load&&\\\hline~Reset&&\\
-                    \end{tabular}
-                \end{onlyproblem}
-                \begin{onlysolution}\color{blue}
-                    \begin{tabular}{l||l|l}
-                        state   & counter       & register  \\ \hline
-                        0   & 0 reset       & 0 hold    \\ \hline
-                        1   & 1 count up    & 1 reset   \\ \hline \hline
-                        RefLo   & 1             & 0         \\ \hline
-                        RefHi   & 1             & 0         \\ \hline
-                        Load    & 1             & 1         \\ \hline
-                        Reset   & 0             & 0         \\
-                    \end{tabular}
-                \end{onlysolution}
-
-            \item Determine the output equations.
-                \begin{onlysolution}\color{blue}\vspace{-0.5em}
-                    \begin{flalign*}
-                        Z_C &= RefLo + RefHi + Load &\\
-                        Z_R &= Load                 &
-                    \end{flalign*}\vspace{-2em}
-                \end{onlysolution}
-            \item Determine the memory input equations assuming a one-hot
-                encoding of the states.
-                \begin{onlysolution}\color{blue}\vspace{-0.5em}
-                    \begin{flalign*}
-                        RefLo &= Reset + R'\&RefLo      &\\
-                        RefHi &= R\&Reset + R\& RefHi   &\\
-                        Load  &= R'\&RefHi              &\\
-                        Reset &= Load                   &\\
-                    \end{flalign*}\vspace{-2em}
-                \end{onlysolution}
-        \end{enumerate}
-
+        \begin{onlysolution}
+            \includegraphics[center]{Sol7-5}
+            \textbf{MIE:}
+            \begin{flalign*}
+                D_{off} &= Q_{off}Tilt' +  Q_{on}Reset &&\\
+                D_{on}  &= Q_{off}Tilt\  + Q_{on}Reset' &&
+            \end{flalign*}
+            \textbf{OE:}
+            \begin{flalign*}
+                Alarm\ &= D_{on}  &&\\
+                Alarm' &= D_{off} &&
+            \end{flalign*}
+        \end{onlysolution}
     \item \textbf{ (12 pts.)}
         Build a digital circuit which controls an automatic garage door opener.
         The garage door circuit has three bits of input.  The first input, called
@@ -350,76 +287,78 @@
         Construct the FSM assuming a one-hot encoding of the states.
         Determine the memory input equations and output equations.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{ \vspace{-1em}
-                \paragraph{Control unit}
-                The control unit includes so called wait states.  Waits states are
-                a result of the fact that the clock running the FSM is usually
-                much faster than the physical phenomena being monitored by the FSM.
-                Unless told otherwise, you can assume that any FSM that you are
-                building has a clock which operates on the order of megahertzs.
-                This means that the resulting FSM can make around 1 million
-                state transitions per second.  Clearly, a garage door needs more
-                than one millionth of a second to open or close.  Consequently,
-                the FSM in this problem needs to wait for the door to be opened.
-                This is done by having the FSM repetitively check the status of the
-                door via the up or down limit switches.  In addition to waiting
-                for the garage door to open and close the FSM must wait for a
-                button press.
+        \begin{onlysolution}  \textbf{Solution:} \itshape{
+                \begin{itemize}
+                    \item\textbf{Control unit}
+                        The control unit includes so called wait states.  Waits states are
+                        a result of the fact that the clock running the FSM is usually
+                        much faster than the physical phenomena being monitored by the FSM.
+                        Unless told otherwise, you can assume that any FSM that you are
+                        building has a clock which operates on the order of megahertzs.
+                        This means that the resulting FSM can make around 1 million
+                        state transitions per second.  Clearly, a garage door needs more
+                        than one millionth of a second to open or close.  Consequently,
+                        the FSM in this problem needs to wait for the door to be opened.
+                        This is done by having the FSM repetitively check the status of the
+                        door via the up or down limit switches.  In addition to waiting
+                        for the garage door to open and close the FSM must wait for a
+                        button press.
 
-                \begin{figure}[ht]
-                    %\center{\includegraphics{../Fig/GarageFSM}}
-                    \caption{The FSM for the garage door controller.}
-                \end{figure}
+                        \begin{figure}[ht]
+                            \center{\includegraphics{GarageFSM}}
+                            \caption{The FSM for the garage door controller.}
+                        \end{figure}
 
-                The state diagram for the garage door controller has four states.
-                In the open and close state, the FSM is waiting for a button push,
-                while the button is not pressed the door stays open or closed.  As
-                soon as the button is pressed the door starts to open or close.
-                It stays in this state until the limit switches tell the FSM that
-                the door has reached the limit of its travel.
+                        The state diagram for the garage door controller has four states.
+                        In the open and close state, the FSM is waiting for a button push,
+                        while the button is not pressed the door stays open or closed.  As
+                        soon as the button is pressed the door starts to open or close.
+                        It stays in this state until the limit switches tell the FSM that
+                        the door has reached the limit of its travel.
 
-                \paragraph{Memory Input Equations}
-                Since we are building the garage door controller assuming a
-                one hot encoding of the states, each state will get its own
-                flip flop.  Each flip flop will output a 1 when the FSM is
-                in that state.  The memory input equations for a particular
-                state are determined by answering, ``how do you get into that
-                state?" The four answers to this questions are provided below.
+                    \item\textbf{Memory Input Equations}
+                        Since we are building the garage door controller assuming a
+                        one hot encoding of the states, each state will get its own
+                        flip flop.  Each flip flop will output a 1 when the FSM is
+                        in that state.  The memory input equations for a particular
+                        state are determined by answering, ``how do you get into that
+                        state?" The four answers to this questions are provided below.
 
-                \begin{tabular}{l}
-                    $D_{open} = Q_{open}button' + Q_{opening}up$ \\
-                    $D_{close} = Q_{close}button' + Q_{closing}down$ \\
-                    $D_{opening} = Q_{close}button+ Q_{opening}up'$ \\
-                    $D_{closing}  = Q_{open}button+ Q_{closing}down'$ \\
-                \end{tabular}
+                        {\addtolength{\tabcolsep}{-0.4em}
+                            \begin{tabular}{lll}
+                                $D_{open}     $&$=\, Q_{open}button'  $&$+\, Q_{opening}up$ \\
+                                $D_{close}    $&$=\, Q_{close}button' $&$+\, Q_{closing}down$ \\
+                                $D_{opening}  $&$=\, Q_{close}button  $&$+\, Q_{opening}up'$ \\
+                                $D_{closing}  $&$=\, Q_{open}button   $&$+\, Q_{closing}down'$ \\
+                        \end{tabular}}
 
-                \paragraph{Output Equations}
-                The outputs for complex FSMs are usually not written inside the
-                states, rather a separate table is constructed which contains the
-                output for each state.   Even though this is a simple example
-                we will construct an output table.
+                    \item\textbf{Output Equations}
+                        The outputs for complex FSMs are usually not written inside the
+                        states, rather a separate table is constructed which contains the
+                        output for each state.   Even though this is a simple example
+                        we will construct an output table.
 
-                \begin{tabular}{l|l}
-                    State    & motor        \\ \hline
-                    & 00 stop    \\ \hline
-                    & 01 down    \\ \hline
-                    & 10 up        \\ \hline
-                    open    & 00         \\ \hline
-                    close   & 00        \\ \hline
-                    opening & 10         \\ \hline
-                    closing & 01         \\
-                \end{tabular}
+                        \begin{tabular}{l|l}
+                            State    & motor        \\ \hline
+                            & 00 stop    \\ \hline
+                            & 01 down    \\ \hline
+                            & 10 up        \\ \hline
+                            open    & 00         \\ \hline
+                            close   & 00        \\ \hline
+                            opening & 10         \\ \hline
+                            closing & 01         \\
+                        \end{tabular}
 
-                Call the outputs $Z_{m1}$ and $Z_{m0}$, for the most and least
-                significant bits of the output respectively.  Then the outputs
-                are determined by asking for which states does the output
-                equal 1?  The answers to this question are shown below.
+                        Call the outputs $Z_{m1}$ and $Z_{m0}$, for the most and least
+                        significant bits of the output respectively.  Then the outputs
+                        are determined by asking for which states does the output
+                        equal 1?  The answers to this question are shown below.
 
-                \begin{tabular}{l}
-                    $Z_{m1} = Q_{opening}$ \\
-                    $Z_{m0} = Q_{closing}$ \\
-                \end{tabular}
-
+                        \begin{tabular}{l}
+                            $Z_{m1} = Q_{opening}$ \\
+                            $Z_{m0} = Q_{closing}$ \\
+                        \end{tabular}
+                \end{itemize}
             }
         \end{onlysolution}
 

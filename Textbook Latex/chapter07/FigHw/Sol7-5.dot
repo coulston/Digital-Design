@@ -1,0 +1,12 @@
+digraph G {
+    pad=0
+    margin=0
+    layout=circo
+    quiet[label="*off"]
+    alarm[label="on"]
+
+    quiet -> quiet[label="tilt' ", tailport="w"]
+    quiet -> alarm[label="tilt"]
+    alarm -> alarm[label=" reset'"]
+    alarm -> quiet[label="reset"]
+}

@@ -1,0 +1,21 @@
+digraph G {
+    graph[rankdir="BT"]
+    pad=0
+    margin=0
+
+    {rank = min; closed[label="closed"];}
+    closing[label="closing"];
+    opening[label="opening"];
+
+    {rank=max;open[label="open"];}
+
+    closed -> closed  [label="button'", headport="e"]
+    closed -> opening [xlabel="button"]
+    opening -> opening[headlabel="up' ", headport="w", labeldistance=2.6]
+    opening -> open   [taillabel="up", labeldistance=2]
+    open -> open      [headlabel="button'", headport="w", labeldistance=3.6] // Put it opposite the other edge
+    open -> closing   [label=" button", labelfloat=true]
+    closing -> closing[label=" down'", headport="e"]
+    closing -> closed [label=" down", labelfloat=true]
+
+}
