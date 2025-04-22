@@ -36,10 +36,10 @@ module datapath_tb;
 	wire	[6:0]   t_unitHex, t_tenthHex, t_tenHex;
 
 	localparam   RESET_CW		= 6'b001011;
-	localparam   STOP_CW			= 6'b000000;
-	localparam   RUN_CW			= 6'b000010;
-	localparam   R2LR_CW			= 6'b010000;
-	localparam   INC_CW			= 6'b000111;
+	localparam   STOP_CW		= 6'b000000;
+	localparam   RUN_CW		= 6'b000010;
+	localparam   R2LR_CW		= 6'b110000;
+	localparam   INC_CW		= 6'b000111;
 	localparam   LAPRUN_CW		= 6'b100010;
 	localparam   LAPINC_CW		= 6'b100111;
 	localparam   LAPSTOP_CW		= 6'b100000;
