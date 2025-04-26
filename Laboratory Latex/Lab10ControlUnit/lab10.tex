@@ -120,9 +120,9 @@ follow the following 2 rules.
     \def\labelenumi{\arabic{enumi})}
 \item
     Assign the cw{[}5{]} bit for transitional states the same value as the
-    cw{[}5{]} value for the source state. So for example in the R2LR
-    state, set cw{[}5{]} to 0 because the cw{[}5{]} value in the source
-    state, RUN, is 0.
+    cw{[}5{]} value for the destination state. So for example in the R2LR
+    state, set cw{[}5{]} to 1 because the cw{[}5{]} value in the destination
+    state, LAPRUN, is 1.
 \item
     Only have the timer counter counting up while the control unit is in
     the RUN or LAPRUN states. We don't want the timer counting up in
@@ -208,11 +208,11 @@ RESET & & & & 0 & \\ \hline
 STOP & & & & & \\ \hline
 S2RES & & & & & \\ \hline
 S2R & & & & & \\ \hline
-RUN & 0 & & & & \\ \hline
-R2LR & 0 & & & & \\ \hline
+RUN &  & & & & \\ \hline
+R2LR & 1 & & & & \\ \hline
 R2S & & & & & \\ \hline
 INC & & & & & \\ \hline
-LAPRUN & & & & & 10 \\ \hline
+LAPRUN & 1 & & & & 10 \\ \hline
 LR2R & & & & & \\ \hline
 LR2LS & & & & & \\ \hline
 LAPINC & & & & & \\ \hline
