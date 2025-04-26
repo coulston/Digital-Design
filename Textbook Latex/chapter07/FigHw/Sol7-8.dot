@@ -1,0 +1,6 @@
+digraph FSM {
+    layout=circo
+    node[shape=circle]
+    3 2 1 4
+    1 -> 2 -> 3 -> 4 -> 1
+}

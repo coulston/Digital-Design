@@ -204,13 +204,13 @@
         the \textit{ diet dispenser} mechanism.  The dispenser need only get a signal for
         one clock cycle.  After the dispensing, go back to the reset state.
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-10}}
+            \center{\includegraphics{Prob7-4}}
             \caption{A basic vending machine.}
             \label{fig:Vend}
         \end{figure}\vspace{-1em}
         \begin{onlysolution}  \textbf{Solution} \itshape{
                 \begin{figure}[ht]
-                    \includegraphics[max width=\textwidth, center]{Sol7-9}
+                    \includegraphics[max width=\textwidth, center]{Sol7-4}
                 \end{figure}
 
                 Note, that in the figure if a input does not appear on
@@ -279,7 +279,7 @@
         upward, opening the garage door.  When $motor=00$, the motor is turned off.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-7}}
+            \center{\includegraphics{Prob7-6}}
             \caption{The garage door and the circuit controlling it.}
             \label{fig:hwgarage}
         \end{figure}
@@ -305,7 +305,7 @@
                         button press.
 
                         \begin{figure}[ht]
-                            \center{\includegraphics{GarageFSM}}
+                            \center{\includegraphics{Sol7-6}}
                             \caption{The FSM for the garage door controller.}
                         \end{figure}
 
@@ -378,8 +378,8 @@
         figure below.  As shown in this figure the FSM receives input from the
         three timers, while the output of the FSM controls the counters. Complete
         the following three tasks.
-
-        % \includegraphics{./FigWork/Light}
+        \ifshowanswers \includegraphics[max width=\textwidth, center]{Sol7-7}
+        \else \includegraphics[max width=\textwidth, center]{Prob7-7} \fi
 
         \begin{enumerate}
             \item Label the arcs of the FSM with the input values (Rt, Yt or Gt)
@@ -391,14 +391,20 @@
                 row will contain the output associated with a particular state.
                 Each column in the table will be associated with one bit of the output.
 
-                \begin{tabular}{l||l|l|l|l|l|l}
-                    state    & Rlight & Ylight & Glight & Rtimer & Ytimer & Gtimer    \\ \hline
-                    & 0 off  & 0 off  & 0 off  & 0 rst  & 0 rst  & 0 rst    \\ \hline
-                    & 1 on   & 1 on   & 1 on   & 1 run  & 1 run  & 1 run    \\ \hline \hline
-                    R    &     &      &       &        &         &        \\ \hline
-                    Y    &     &      &       &        &         &        \\ \hline
-                    G    &     &      &       &        &         &        \\
-                \end{tabular}
+                \begin{onlyproblem}
+                    \begin{tabular}{l||l|l|l|l|l|l}state&Rlight&Ylight&Glight&Rtimer&Ytimer&Gtimer\\\hline&0~off&0~off&0~off&0~rst&0~rst&0~rst\\\hline&1~on&1~on&1~on&1~run&1~run&1~run\\\hline\hline R&&&&&&\\\hline Y&&&&&&\\\hline G&&&&&&\\
+                    \end{tabular}
+                \end{onlyproblem}
+                \begin{onlysolution}
+                    \begin{tabular}{l||l|l|l|l|l|l}
+                        state         & Rlight & Ylight & Glight & Rtimer & Ytimer & Gtimer    \\ \hline
+                        & 0 off  & 0 off  & 0 off  & 0 rst  & 0 rst  & 0 rst    \\ \hline
+                        & 1 on   & 1 on   & 1 on   & 1 run  & 1 run  & 1 run    \\ \hline \hline
+                        R             & 1      & 0      & 0      & 1      & 0      & 0        \\ \hline
+                        Y             & 0      & 1      & 0      & 0      & 1      & 0        \\ \hline
+                        G             & 0      & 0      & 1      & 0      & 0      & 1        \\
+                    \end{tabular}
+                \end{onlysolution}
 
             \item Finally, write the memory input equations and output
                 equations for the traffic light controller.  In order to write the
@@ -406,30 +412,40 @@
                 the state diagram.   In order to write the output equations
                 use the output table.
 
-                \begin{tabular}{p{2in}p{2in}}
-                    \begin{tabular}{l}
-                        $Q_{red}$= \\
-                        $Q_{yellow}$= \\
-                        $Q_{greew}$= \\
+                \begin{onlyproblem}
+                    \begin{tabular}{p{2in}p{2in}}
+                        \begin{tabular}{l@{}l}$Q_{red}$&$=$\\$Q_{yellow}\,$&$=$\\$Q_{green}$&$=$\\
+                        \end{tabular}&
+                        \begin{tabular}{l@{}l}$Z_{Rlight}$&$=$\\$Z_{Ylight}$&$=$\\$Z_{Glight}$&$=$\\$Z_{Rtimer}$&$=$\\$Z_{Ytimer}$&$=$\\$Z_{Gtimer}\,$&$=$\\
+                        \end{tabular}
                     \end{tabular}
-                    &
-                    \begin{tabular}{l}
-                        $Z_{Rlight}$= \\
-                        $Z_{Ylight}$= \\
-                        $Z_{Glight}$= \\
-                        $Z_{Rtimer}$= \\
-                        $Z_{Ytimer}$= \\
-                        $Z_{Gtimer}$= \\
-                    \end{tabular}
-                \end{tabular}
+                \end{onlyproblem}
+                \begin{onlysolution}{\color{blue}
+                        \begin{tabular}{p{2in}p{2in}}
+                            \begin{tabular}{l@{}l} % @{} removes all automatic padding from the table
+                                $Q_{red}$      & $=Set30 + Red   \,\&\, Rt$    \\
+                                $Q_{yellow}\,$ & $=Set5  + Yellow\,\&\, Yt$    \\ % Manually creating alignment removes the spacing around symbols, so artificially add it back on longest line
+                                $Q_{green}$    & $=Set25 + Green \,\&\, Gt$    \\
+                            \end{tabular}
+                            &
+                            \begin{tabular}{l@{}l}
+                                $Z_{Rlight}$   & $= Red$ \\
+                                $Z_{Ylight}$   & $= Yellow$ \\
+                                $Z_{Glight}$   & $= Green$ \\
+                                $Z_{Rtimer}$   & $= Red$ \\
+                                $Z_{Ytimer}$   & $= Yellow$ \\
+                                $Z_{Gtimer}\,$ & $= Green$ \\
+                            \end{tabular}
+                    \end{tabular}}
+                \end{onlysolution}
         \end{enumerate}
-
+        \filbreak
     \item \textbf{ (16 pts.)}
         Build a FSM which make the hexapod robot shown in Figure~\ref{fig:hexapod}
         walk forward.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-11}}
+            \center{\includegraphics{Prob7-8}}
             \caption{A hexapod walking robot.}
             \label{fig:hexapod}
         \end{figure}
@@ -456,7 +472,7 @@
         the air, solid legs are in contact with the ground.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-11b}}
+            \center{\includegraphics{Prob7-8b}}
             \caption{The walking gait of the hexapod robot.}
             \label{fig:hexgate}
         \end{figure}
@@ -466,12 +482,9 @@
         Figure~\ref{fig:hexgate}. Draw the state diagram,
         and determine the memory input and output equations.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution}\filbreak  \textbf{Solution} \itshape{
 
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-11}}
-                \end{figure}
-
+                \includegraphics[max width=\textwidth, center]{Sol7-8}
                 Note that the states have been given numbers to simplify the
                 description of the states.  Here is a listing of the outputs
                 associated with each state:
@@ -502,7 +515,7 @@
         Build a FSM which makes the simple robot shown in Figure~\ref{fig:Robot}
         move along (track) the black line crossing two intersections.
         \begin{figure}[ht]
-            \center{\scalebox{0.8}{\includegraphics{Prob7-12}}}
+            \center{\scalebox{0.8}{\includegraphics{Prob7-9}}}
             \caption{A simple line-tracking robot that must cross two intersections.}
             \label{fig:Robot}
         \end{figure}
@@ -522,24 +535,36 @@
         a one-hot encoding of the states.
 
         \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-11}}
-                \end{figure}
 
+                \textbf{FSM}
+
+                \includegraphics[max width=\textwidth, center]{Sol7-9}
                 \begin{tabular}{l|l|l|l}
-                    State & lm          & rm            \\ \hline
+                    State    & lm                & rm                  \\ \hline
                     & 0 stop left wheel & 0 stop right wheel  \\ \hline
                     & 1 turn left wheel & 1 turn right wheel  \\ \hline
                     &                   &                     \\ \hline \hline
-                    Reset     & 1          & 1            \\ \hline
-                    Straight & 1          & 1            \\ \hline
-                    Left     & 0          & 1            \\ \hline
-                    Right    & 1          & 0            \\ \hline
-                    OnLine   & 1          & 1            \\ \hline
-                    Up     & 1          & 1            \\ \hline
-                    Stop     & 0          & 0            \\
+                    Reset    & 1                 & 1                   \\ \hline
+                    Straight & 1                 & 1                   \\ \hline
+                    Left     & 0                 & 1                   \\ \hline
+                    Right    & 1                 & 0                   \\ \hline
+                    OnLine   & 1                 & 1                   \\ \hline
+                    Stop     & 0                 & 0                   \\
                 \end{tabular}
             }
+
+            \textbf{MIE}
+            \begin{align*}
+                Straight &= Reset + Straight(ls'*rs') + Left(ls'*rs') + Right(ls'*rs') + OnLine(ls+rs)\\
+                Left     &= Straight(ls*rs') \\
+                Right    &= Straight(ls'*rs) \\
+                OnLine   &= Left(ls*rs) + Right(ls*rs) + Straight(ls*rs) + OnLine(ls*rs)
+            \end{align*}
+            \textbf{OE}
+            \begin{align*}
+                lm &= Reset + Straight + Right + OnLine\\
+                rm &= Reset + Straight + Left  + OnLine
+            \end{align*}
         \end{onlysolution}
 
     \item \textbf{ (16 pts.)}
@@ -549,7 +574,7 @@
         and comparator, are added to the FSM to address this problem.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-13}}
+            \center{\includegraphics[max width=\textwidth, center]{Prob7-10}}
             \caption{The innards of a intersection counting, line tracking robot.}
             \label{fig:linecounter}
         \end{figure}
@@ -559,6 +584,7 @@
         must also count up once every time it crosses an intersection.  Remember
         the digital circuit shown in Figure~\ref{fig:linecounter} is
         operating much faster than the robot is crossing intersections.
+        \filbreak
         The state diagram needs to have wait states while it crosses
         the intersection, similar to those
         in the DAISY example.  Assume the counter counts up
@@ -569,18 +595,16 @@
         encoding of the states.
 
         \begin{onlysolution}  \textbf{Solution} \itshape{
-                \pagebreak
                 If you encoded 64 line crossing using only a FSM you would have
                 on the order of 256 states, 4 for each line crossing.  The solution
                 is to use a counter to keep track of how many lines have been crossed.
                 The states below explain.
 
-                \textbf{ DP \& CU}
+                \textbf{FSM}
 
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-12}}
-                \end{figure}
+                \includegraphics[max width=\textwidth, center]{Sol7-10}
 
+                \filbreak
                 \textbf{ Control Word}
 
                 \begin{tabular}{l|l|l|l}
@@ -597,19 +621,34 @@
                     Stop     & 0          & 0            & 00      \\
                 \end{tabular}
 
-                One could easily derive the MIEs and OEs for the FSM.
+                \textbf{MIE}
+                \begin{align*}
+                    Straight &= Reset + Straight(ls'*rs') + Left(ls'*rs') + Right(ls'*rs') + Straight(L)\\
+                    Left     &= Straight(ls*rs') \\
+                    Right    &= Straight(ls'*rs) \\
+                    OnLine   &= Left(ls*rs) + Right(ls*rs) + Straight(ls*rs) + OnLine(ls*rs)\\
+                    Up       &= OnLine(ls+rs) \\
+                    Stop     &= Up(L')
+                \end{align*}
+                \textbf{OE}
+                \begin{align*}
+                    lm &= Reset + Straight + Right + OnLine\\
+                    rm &= Reset + Straight + Left  + OnLine \\
+                    c  &= Up
+                \end{align*}
             }
         \end{onlysolution}
 
     \item \textbf{ (24 pts.)}
         Construct a digital circuit to control the operation of a
-        simple washing machine, see Figure ~\ref{fig:Wash}.
+        simple washing machine, see Figure~\ref{fig:Wash}.
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-14}}
+            \includegraphics[max width=\textwidth, center]{Prob7-11}
             \caption{A humble washing machine with a close-up of the start
             button and temperature switch.}
             \label{fig:Wash}
         \end{figure}
+
         To use the simple washing machine set the temperature switch to
         either hot, tepid or cold and then press the start button.
         To build a digital circuit to control the washing of clothes
@@ -681,8 +720,9 @@
                     \item start * cold (-2)
                     \item no complements on arcs (-2)
                 \end{enumerate}
+                \filbreak % looks bad with this. Looks worse without
                 \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-13}}
+                    \center{\includegraphics{Sol7-11}}
                     \caption{The FSM for a washing machine.}
                 \end{figure}
 
@@ -736,7 +776,7 @@
         desired floor.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-15}}
+            \center{\includegraphics{Prob7-12}}
             \caption{The layout of an elevator in a four story tall building.}
             \label{fig:elevator}
         \end{figure}
@@ -793,7 +833,7 @@
         at the four way intersection shown in Figure~\ref{fig:crossroad}.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-16}}
+            \center{\includegraphics{Prob7-13}}
             \caption{The layout of a four way intersection.}
             \label{fig:crossroad}
         \end{figure}
@@ -864,7 +904,7 @@ while(1) {
         \begin{onlysolution}  \textbf{Solution} \itshape{
 
                 \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-16}}
+                    \center{\includegraphics{Sol7-13}}
                     \caption{The FSM for a traffic light controller.}
                 \end{figure}
 

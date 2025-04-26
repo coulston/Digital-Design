@@ -8,7 +8,7 @@
    height="310.03528"
    viewBox="0 0 353.87662 310.03529"
    sodipodi:docname="sol7-8.svg"
-   inkscape:export-filename="sol7-8.pdf"
+   inkscape:export-filename="trafficLightFSM.pdf"
    inkscape:export-xdpi="86.400002"
    inkscape:export-ydpi="86.400002"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
@@ -76,9 +76,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="2.0784314"
-     inkscape:cx="137.36321"
-     inkscape:cy="185.23585"
+     inkscape:zoom="2.9393459"
+     inkscape:cx="40.315093"
+     inkscape:cy="169.08524"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -109,7 +109,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,300.39733,450.82267)"><tspan
            id="tspan3"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 -0.023982"
            y="0">Red</tspan></text>
@@ -122,7 +122,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,292.61067,546.708)"><tspan
            id="tspan4"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 0 0 -0.011991"
            y="0">Green</tspan></text>
@@ -135,7 +135,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,291.13733,642.82267)"><tspan
            id="tspan5"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 -1.1031719 -0.011991 0 0.011991 -0.011991"
            y="0">Yellow</tspan></text>
@@ -203,7 +203,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,522.97333,537.108)"><tspan
            id="tspan13"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            y="0">3</tspan></text>
     </g>
@@ -222,7 +222,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,435.09867,578.83467)"><tspan
            id="tspan15"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 -0.023982"
            y="0">cw</tspan></text>
@@ -338,7 +338,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,431.28133,696)"><tspan
            id="tspan29"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 -0.023982"
            y="0">clk</tspan></text>
@@ -350,7 +350,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,418.62,678.84133)"><tspan
            id="tspan30"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 -0.023982 0 0 -0.011991"
            y="0">reset</tspan></text>
@@ -394,7 +394,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,558.236,626.948)"><tspan
            id="tspan35"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 -0.011991 0 0 -0.011991"
            y="0">timer</tspan></text>
@@ -406,7 +406,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,523.76667,588.51067)"><tspan
            id="tspan36"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            y="0">3</tspan></text>
     </g>
@@ -425,7 +425,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,434.04133,613.11467)"><tspan
            id="tspan38"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 -0.023982"
            y="0">sw</tspan></text>
@@ -470,7 +470,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,389.632,450.708)"><tspan
            id="tspan43"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 0 -0.011991 0.011991 -0.011991"
            y="0">Set25</tspan></text>
@@ -483,7 +483,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,389.632,546.708)"><tspan
            id="tspan44"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 0 -0.011991 0.011991"
            y="0">Set5</tspan></text>
@@ -496,7 +496,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,389.632,642.708)"><tspan
            id="tspan45"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            dx="0 0 -0.011991 0.011991 -0.011991"
            y="0">Set30</tspan></text>
@@ -529,7 +529,7 @@
     </g>
     <g
        id="g49"
-       transform="translate(1.3262619,0.55972175)">
+       transform="translate(-0.91407108,0.55972175)">
       <text
          id="text49"
          xml:space="preserve"
@@ -537,38 +537,38 @@
          x="350.78473"
          y="441.53229"><tspan
            id="tspan49"
-           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+           style="font-variant:normal;font-weight:normal;font-size:9.33333px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
            x="350.78473"
-           y="441.53229"><tspan
-   style="font-size:16px"
-   id="tspan71">Rt</tspan>'</tspan></text>
+           dx="0 -0.010658666 0 0.063951999 0 0.40502933"
+           y="441.53229">timer’</tspan></text>
     </g>
     <g
        id="g50"
-       transform="translate(3.4714737,4.6493369)">
+       transform="translate(1.4733279,4.6493369)">
       <text
          id="text50"
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,348.39733,533.44267)"
          style="font-size:7px"><tspan
            id="tspan50"
-           style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
-           y="0">Gt'</tspan></text>
+           dx="0 -0.0079939999 0 0.047963999 0 0.303772"
+           y="0">timer’</tspan></text>
     </g>
     <g
        id="g51"
-       transform="translate(-3.1099868,4.6866679)">
+       transform="translate(0.52932792,4.6866679)">
       <text
          id="text51"
          xml:space="preserve"
-         style="font-size:9.33333px;stroke-width:1.33333"
-         x="356.26785"
-         y="629.40533"><tspan
+         transform="matrix(1.3333333,0,0,1.3333333,349.34133,629.44267)"
+         style="font-size:7px"><tspan
            id="tspan51"
-           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
-           x="356.26785"
-           y="629.40533">Yt'</tspan></text>
+           style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           dx="0 -0.0079939999 0 0.047963999 0 0.303772"
+           y="0">timer’</tspan></text>
     </g>
     <g
        id="g52">
@@ -650,7 +650,7 @@
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,462.19867,567.156)"><tspan
            id="tspan61"
-           style="font-variant:normal;font-weight:normal;font-size:12.0000003px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            y="0">6</tspan></text>
     </g>
@@ -672,33 +672,35 @@
     </g>
     <g
        id="g64"
-       transform="translate(1.8150404,-21.239412)">
+       transform="translate(-0.1572445,-23.625479)">
       <text
          id="text64"
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,325.568,501.468)"
-         style="font-size:10px"><tspan
+         style="font-size:7px"><tspan
            id="tspan64"
-           style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
-           y="0">Rt</tspan></text>
+           dx="0 -0.0079939999 0 0.047963999"
+           y="0">timer</tspan></text>
     </g>
     <g
        id="g65"
-       transform="translate(1.5728529,-21.222056)">
+       transform="translate(-2.1572445,-23.662812)">
       <text
          id="text65"
          xml:space="preserve"
          transform="matrix(1.3333333,0,0,1.3333333,325.568,597.50533)"
          style="font-size:7px"><tspan
            id="tspan65"
-           style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
-           y="0">Gt</tspan></text>
+           dx="0 -0.0079939999 0 0.047963999"
+           y="0">timer</tspan></text>
     </g>
     <g
        id="g66"
-       transform="translate(-2.187608,-5.8859182)">
+       transform="translate(-7.2067645,-8.271987)">
       <text
          id="text66"
          xml:space="preserve"
@@ -706,9 +708,10 @@
          x="330.61752"
          y="678.1145"><tspan
            id="tspan66"
-           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+           style="font-variant:normal;font-weight:normal;font-size:9.33333px;font-family:Arial;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
            x="330.61752"
-           y="678.1145">Yt</tspan></text>
+           dx="0 -0.010658666 0 0.063951999"
+           y="678.1145">timer</tspan></text>
     </g>
   </g>
 </svg>
