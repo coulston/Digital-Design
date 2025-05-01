@@ -843,7 +843,7 @@
         the control word table, the memory input equations, and output equations.
         \begin{onlysolution}[fragile] \color{blue}%required to use verbatim environments inside of an answer
 \begin{lstlisting}
-uint2_t loc;
+uint2_t loc = 0; #Assume starting location
 int3_t delta;
 while(1) {
     if(Creq){
@@ -887,7 +887,6 @@ while(1) {
     }
 }
 \end{lstlisting} % This is written with the assumption that it will be turned into logical blocks
-            \includegraphics[max width=\textwidth, center]{sol7-12}
         \end{onlysolution}
     \item \textbf{ (36 pts.)}
         Construct a digital circuit to control the movement of traffic
