@@ -1,0 +1,27 @@
+digraph FSM{
+    graph[rankdir="LR"]
+    start
+    start -> start
+    start -> CStart[label="Creq"]
+    start -> Pstart[xlabel="Preq"]
+    movup[label="Move up"]
+    movdown[label="Move down"]
+    CStart -> movup[label="G"]
+    Pstart -> movup[label="G"]
+    CStart -> movdown[label="L"]
+    Pstart -> movdown[label="L"]
+    waitmv[label="Moving"]
+    movup -> waitmv
+    invDelt[label="Flip count"]
+    movdown -> invDelt-> waitmv
+    waitmv -> waitmv
+    waitmv -> aligned[label="Align"]
+    aligned -> dec
+    waitual[label="wait unaligned"]
+    dec -> waitual[label="G"]
+    waitual -> waitmv[label="Align'"]
+    waitual -> waitual[label="Align"]
+    dec -> arrived[label="E"]
+    arrived -> start
+}
+# W/ ALU to calculate Delta, Comparator

@@ -1,7 +1,7 @@
 //*****************************************************************
 // Name:    <Your Name>
 // Date:    <Term Year>
-// File:    lfsrStart.c
+// File:    lfsr.c
 // Purp:    lfsr module
 //
 // Assisted: Christopher Coulston and Thomas MacDougall Spring 2023

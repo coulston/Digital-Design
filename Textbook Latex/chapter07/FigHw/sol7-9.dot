@@ -1,0 +1,19 @@
+digraph FSM{
+    node[shape=circle, margin=0, fixedsize=true, width=0.7]
+    subgraph START{
+        reset[label="Reset\n*"]
+        straight1[label="Straight"]
+        left1[label="Left"]
+        online1[label="OnLine"]
+        right1[label="Right"]
+        reset -> straight1[constraint=false]
+        straight1 -> left1[label="ls"]
+        straight1 -> right1[label="rs"]
+        straight1 -> straight1[label="ls'rs'"]
+        left1 -> straight1[label="ls'rs'"]
+        right1 -> straight1[label="ls'rs'"]
+        left1 -> online1[label="lsrs"]
+        right1 -> online1[label="lsrs"]
+        straight1 -> online1
+    }
+}

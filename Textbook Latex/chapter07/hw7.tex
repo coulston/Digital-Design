@@ -204,13 +204,13 @@
         the \textit{ diet dispenser} mechanism.  The dispenser need only get a signal for
         one clock cycle.  After the dispensing, go back to the reset state.
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-10}}
+            \center{\includegraphics{Prob7-4}}
             \caption{A basic vending machine.}
             \label{fig:Vend}
         \end{figure}\vspace{-1em}
         \begin{onlysolution}  \textbf{Solution} \itshape{
                 \begin{figure}[ht]
-                    \includegraphics[max width=\textwidth, center]{Sol7-9}
+                    \includegraphics[max width=\textwidth, center]{Sol7-4}
                 \end{figure}
 
                 Note, that in the figure if a input does not appear on
@@ -279,7 +279,7 @@
         upward, opening the garage door.  When $motor=00$, the motor is turned off.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-7}}
+            \center{\includegraphics{Prob7-6}}
             \caption{The garage door and the circuit controlling it.}
             \label{fig:hwgarage}
         \end{figure}
@@ -305,7 +305,7 @@
                         button press.
 
                         \begin{figure}[ht]
-                            \center{\includegraphics{GarageFSM}}
+                            \center{\includegraphics{Sol7-6}}
                             \caption{The FSM for the garage door controller.}
                         \end{figure}
 
@@ -375,11 +375,15 @@
         counts down its preset timer interval.  When a timer counts all the way down,
         its output goes to 1 and stays there until the timer is reset (by applying
         an input of 0).  The state diagram of the circuit is shown in the
-        figure below.  As shown in this figure the FSM receives input from the
+        figure below.  As shown in figure~\ref{fig:TrafficFSM} the FSM receives input from the
         three timers, while the output of the FSM controls the counters. Complete
         the following three tasks.
-
-        % \includegraphics{./FigWork/Light}
+        \begin{figure}[t]
+            \ifshowanswers \includegraphics[max width=\textwidth, center]{Sol7-7}
+            \else \includegraphics[max width=\textwidth, center]{Prob7-7} \fi
+            \caption{}
+            \label{fig:TrafficFSM}
+        \end{figure}
 
         \begin{enumerate}
             \item Label the arcs of the FSM with the input values (Rt, Yt or Gt)
@@ -391,14 +395,20 @@
                 row will contain the output associated with a particular state.
                 Each column in the table will be associated with one bit of the output.
 
-                \begin{tabular}{l||l|l|l|l|l|l}
-                    state    & Rlight & Ylight & Glight & Rtimer & Ytimer & Gtimer    \\ \hline
-                    & 0 off  & 0 off  & 0 off  & 0 rst  & 0 rst  & 0 rst    \\ \hline
-                    & 1 on   & 1 on   & 1 on   & 1 run  & 1 run  & 1 run    \\ \hline \hline
-                    R    &     &      &       &        &         &        \\ \hline
-                    Y    &     &      &       &        &         &        \\ \hline
-                    G    &     &      &       &        &         &        \\
-                \end{tabular}
+                \begin{onlyproblem}
+                    \begin{tabular}{l||l|l|l|l|l|l}state&Rlight&Ylight&Glight&Rtimer&Ytimer&Gtimer\\\hline&0~off&0~off&0~off&0~rst&0~rst&0~rst\\\hline&1~on&1~on&1~on&1~run&1~run&1~run\\\hline\hline R&&&&&&\\\hline Y&&&&&&\\\hline G&&&&&&\\
+                    \end{tabular}
+                \end{onlyproblem}
+                \begin{onlysolution}
+                    \begin{tabular}{l||l|l|l|l|l|l}
+                        state         & Rlight & Ylight & Glight & Rtimer & Ytimer & Gtimer    \\ \hline
+                        & 0 off  & 0 off  & 0 off  & 0 rst  & 0 rst  & 0 rst    \\ \hline
+                        & 1 on   & 1 on   & 1 on   & 1 run  & 1 run  & 1 run    \\ \hline \hline
+                        R             & 1      & 0      & 0      & 1      & 0      & 0        \\ \hline
+                        Y             & 0      & 1      & 0      & 0      & 1      & 0        \\ \hline
+                        G             & 0      & 0      & 1      & 0      & 0      & 1        \\
+                    \end{tabular}
+                \end{onlysolution}
 
             \item Finally, write the memory input equations and output
                 equations for the traffic light controller.  In order to write the
@@ -406,30 +416,40 @@
                 the state diagram.   In order to write the output equations
                 use the output table.
 
-                \begin{tabular}{p{2in}p{2in}}
-                    \begin{tabular}{l}
-                        $Q_{red}$= \\
-                        $Q_{yellow}$= \\
-                        $Q_{greew}$= \\
+                \begin{onlyproblem}
+                    \begin{tabular}{p{2in}p{2in}}
+                        \begin{tabular}{l@{}l}$Q_{red}$&$=$\\$Q_{yellow}\,$&$=$\\$Q_{green}$&$=$\\
+                        \end{tabular}&
+                        \begin{tabular}{l@{}l}$Z_{Rlight}$&$=$\\$Z_{Ylight}$&$=$\\$Z_{Glight}$&$=$\\$Z_{Rtimer}$&$=$\\$Z_{Ytimer}$&$=$\\$Z_{Gtimer}\,$&$=$\\
+                        \end{tabular}
                     \end{tabular}
-                    &
-                    \begin{tabular}{l}
-                        $Z_{Rlight}$= \\
-                        $Z_{Ylight}$= \\
-                        $Z_{Glight}$= \\
-                        $Z_{Rtimer}$= \\
-                        $Z_{Ytimer}$= \\
-                        $Z_{Gtimer}$= \\
-                    \end{tabular}
-                \end{tabular}
+                \end{onlyproblem}
+                \begin{onlysolution}{\color{blue}
+                        \begin{tabular}{p{2in}p{2in}}
+                            \begin{tabular}{l@{}l} % @{} removes all automatic padding from the table
+                                $D_{red}$      & $=Q_{Set30} + Q_{Red   }Rt$    \\
+                                $D_{yellow}\,$ & $=Q_{Set5 } + Q_{Yellow}Yt$    \\ % Manually creating alignment removes the spacing around symbols, so artificially add it back on longest line
+                                $D_{green}$    & $=Q_{Set25} + Q_{Green }Gt$    \\
+                            \end{tabular}
+                            &
+                            \begin{tabular}{l@{}l}
+                                $Z_{Rlight}$   & $= Q_{Red   }$ \\
+                                $Z_{Ylight}$   & $= Q_{Yellow}$ \\
+                                $Z_{Glight}$   & $= Q_{Green }$ \\
+                                $Z_{Rtimer}$   & $= Q_{Red   }$ \\
+                                $Z_{Ytimer}$   & $= Q_{Yellow}$ \\
+                                $Z_{Gtimer}\,$ & $= Q_{Green }$ \\
+                            \end{tabular}
+                    \end{tabular}}
+                \end{onlysolution}
         \end{enumerate}
-
+        \filbreak
     \item \textbf{ (16 pts.)}
         Build a FSM which make the hexapod robot shown in Figure~\ref{fig:hexapod}
         walk forward.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-11}}
+            \center{\includegraphics{Prob7-8}}
             \caption{A hexapod walking robot.}
             \label{fig:hexapod}
         \end{figure}
@@ -456,7 +476,7 @@
         the air, solid legs are in contact with the ground.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-11b}}
+            \center{\includegraphics{Prob7-8b}}
             \caption{The walking gait of the hexapod robot.}
             \label{fig:hexgate}
         \end{figure}
@@ -466,12 +486,9 @@
         Figure~\ref{fig:hexgate}. Draw the state diagram,
         and determine the memory input and output equations.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution}\filbreak  \textbf{Solution} \itshape{
 
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-11}}
-                \end{figure}
-
+                \includegraphics[max width=\textwidth, center]{Sol7-8}
                 Note that the states have been given numbers to simplify the
                 description of the states.  Here is a listing of the outputs
                 associated with each state:
@@ -488,10 +505,10 @@
 
                 \begin{tabular}{ll}
                     MIEs        &    OEs            \\
-                    $D_1 = D_4$    &    $Z_{Aw_1} = Q_2 + Q_3$    \\
-                    $D_2 = D_1$    &    $Z_{Aw_0} = Q_3 + Q_4$    \\
-                    $D_3 = D_2$    &    $Z_{Bw_1} = Q_1 + Q_4$    \\
-                    $D_4 = D_3$    &    $Z_{Bw_0} = Q_1 + Q_2$    \\
+                    $D_1 = Q_4$    &    $Z_{Aw_1} = Q_2 + Q_3$    \\
+                    $D_2 = Q_1$    &    $Z_{Aw_0} = Q_3 + Q_4$    \\
+                    $D_3 = Q_2$    &    $Z_{Bw_1} = Q_1 + Q_4$    \\
+                    $D_4 = Q_3$    &    $Z_{Bw_0} = Q_1 + Q_2$    \\
                 \end{tabular}
 
             }
@@ -502,7 +519,7 @@
         Build a FSM which makes the simple robot shown in Figure~\ref{fig:Robot}
         move along (track) the black line crossing two intersections.
         \begin{figure}[ht]
-            \center{\scalebox{0.8}{\includegraphics{Prob7-12}}}
+            \includegraphics[max width=\textwidth, center]{Prob7-9}
             \caption{A simple line-tracking robot that must cross two intersections.}
             \label{fig:Robot}
         \end{figure}
@@ -522,24 +539,37 @@
         a one-hot encoding of the states.
 
         \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-11}}
-                \end{figure}
 
+                \textbf{FSM}
+
+                \includegraphics[max width=\textwidth, center]{Sol7-9}
                 \begin{tabular}{l|l|l|l}
-                    State & lm          & rm            \\ \hline
+                    State    & lm                & rm                  \\ \hline
                     & 0 stop left wheel & 0 stop right wheel  \\ \hline
                     & 1 turn left wheel & 1 turn right wheel  \\ \hline
                     &                   &                     \\ \hline \hline
-                    Reset     & 1          & 1            \\ \hline
-                    Straight & 1          & 1            \\ \hline
-                    Left     & 0          & 1            \\ \hline
-                    Right    & 1          & 0            \\ \hline
-                    OnLine   & 1          & 1            \\ \hline
-                    Up     & 1          & 1            \\ \hline
-                    Stop     & 0          & 0            \\
+                    Reset    & 1                 & 1                   \\ \hline
+                    Straight & 1                 & 1                   \\ \hline
+                    Left     & 0                 & 1                   \\ \hline
+                    Right    & 1                 & 0                   \\ \hline
+                    OnLine   & 1                 & 1                   \\ \hline
+                    Done     & 0                 & 0                   \\
                 \end{tabular}
             }
+            {\color{blue}
+                \textbf{MIE}
+                \begin{align*}
+                    D_{S }    &= Q_{Reset} + Q_{S}(ls'*rs') + Q_{L}(ls'*rs') + Q_{R}(ls'*rs') + Q_{OL}(ls+rs)\\
+                    D_{L }    &= Q_{S}(ls*rs') \\
+                    D_{R }    &= Q_{S}(ls'*rs) \\
+                    D_{OL}    &= Q_{L}(ls*rs)  + Q_{R}(ls*rs) + Q_{S}(ls*rs) + Q_{OL}(ls*rs)\\
+                    D_{Done} &=  Q_{OL}(ls+rs) + Q_{Done}
+                \end{align*}
+                \textbf{OE}
+                \begin{align*}
+                    Z_{lm} &= Q_{Reset} + Q_{S} + Q_{R} + Q_{OL}\\
+                    Z_{rm} &= Q_{Reset} + Q_{S} + Q_{L} + Q_{OL}
+            \end{align*}}
         \end{onlysolution}
 
     \item \textbf{ (16 pts.)}
@@ -549,7 +579,7 @@
         and comparator, are added to the FSM to address this problem.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-13}}
+            \center{\includegraphics[max width=\textwidth, center]{Prob7-10}}
             \caption{The innards of a intersection counting, line tracking robot.}
             \label{fig:linecounter}
         \end{figure}
@@ -559,6 +589,7 @@
         must also count up once every time it crosses an intersection.  Remember
         the digital circuit shown in Figure~\ref{fig:linecounter} is
         operating much faster than the robot is crossing intersections.
+        \filbreak
         The state diagram needs to have wait states while it crosses
         the intersection, similar to those
         in the DAISY example.  Assume the counter counts up
@@ -569,47 +600,62 @@
         encoding of the states.
 
         \begin{onlysolution}  \textbf{Solution} \itshape{
-                \pagebreak
                 If you encoded 64 line crossing using only a FSM you would have
                 on the order of 256 states, 4 for each line crossing.  The solution
                 is to use a counter to keep track of how many lines have been crossed.
                 The states below explain.
 
-                \textbf{ DP \& CU}
+                \textbf{FSM}
 
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-12}}
-                \end{figure}
+                \includegraphics[max width=\textwidth, center]{Sol7-10}
 
+                \filbreak
                 \textbf{ Control Word}
 
                 \begin{tabular}{l|l|l|l}
-                    State & lm          & rm            & counter \\ \hline
+                    State    & lm                & rm                  & counter \\ \hline
                     & 0 stop left wheel & 0 stop right wheel  & 00 hold \\ \hline
                     & 1 turn left wheel & 1 turn right wheel  & 01 load \\ \hline
                     &                   &                     & 10 count\\ \hline \hline
-                    Reset     & 1          & 1            & 01      \\ \hline
-                    Straight & 1          & 1            & 00      \\ \hline
-                    Left     & 0          & 1            & 00      \\ \hline
-                    Right    & 1          & 0            & 00      \\ \hline
-                    OnLine   & 1          & 1            & 00      \\ \hline
-                    Up     & 1          & 1            & 10      \\ \hline
-                    Stop     & 0          & 0            & 00      \\
+                    Reset    & 1                 & 1                   & 01      \\ \hline
+                    Straight & 1                 & 1                   & 00      \\ \hline
+                    Left     & 0                 & 1                   & 00      \\ \hline
+                    Right    & 1                 & 0                   & 00      \\ \hline
+                    OnLine   & 1                 & 1                   & 00      \\ \hline
+                    Up       & 1                 & 1                   & 10      \\ \hline
+                    Stop     & 0                 & 0                   & 00      \\
                 \end{tabular}
 
-                One could easily derive the MIEs and OEs for the FSM.
+                { \color{blue}
+                    \textbf{MIE}
+                    \begin{flalign*} % flalign both sets as these are almost the width of the page
+                        D_{S }   &= Q_{Reset} + Q_{S}(ls'*rs') + Q_{L}(ls'*rs') + Q_{R}(ls'*rs') + Q_{Up}(L)\\
+                        D_{L }   &= Q_{S} (ls*rs') \\
+                        D_{R }   &= Q_{S} (ls'*rs) \\
+                        D_{OL}   &= Q_{L} (ls*rs)  + Q_{R}(ls*rs) + Q_{S}(ls*rs) + Q_{OL}(ls*rs)\\
+                        D_{Up}   &= Q_{OL}(ls+rs)  &\\
+                        D_{Stop} &= Q_{Up}(L') &
+                    \end{flalign*}
+                    \textbf{OE}
+                    \begin{flalign*}
+                        Z_{lm } &= Q_{Reset} + Q_{S} + Q_{R}  + Q_{OL} &\\
+                        Z_{rm } &= Q_{Reset} + Q_{S} + Q_{L}  + Q_{OL} &\\
+                        Z_{c_1} &= Q_{Up} & \\
+                        Z_{c_0} &= Q_{Reset} &
+                \end{flalign*}}
             }
         \end{onlysolution}
 
     \item \textbf{ (24 pts.)}
         Construct a digital circuit to control the operation of a
-        simple washing machine, see Figure ~\ref{fig:Wash}.
+        simple washing machine, see Figure~\ref{fig:Wash}.
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-14}}
+            \includegraphics[max width=\textwidth, center]{Prob7-11}
             \caption{A humble washing machine with a close-up of the start
             button and temperature switch.}
             \label{fig:Wash}
         \end{figure}
+
         To use the simple washing machine set the temperature switch to
         either hot, tepid or cold and then press the start button.
         To build a digital circuit to control the washing of clothes
@@ -674,69 +720,77 @@
         encoding.
 
         \begin{onlysolution}  \textbf{Solution} \itshape{
-                \begin{enumerate}
-                    \item No control table (-6)
-                    \item Disposable washing machine (-1)
-                    \item No OEs (-5)
-                    \item start * cold (-2)
-                    \item no complements on arcs (-2)
-                \end{enumerate}
+                % \begin{enumerate} % I'm not sure what most of these mean, or why these are the only deductions listed for any problem
+                %     \item No control table (-6)
+                %     \item Disposable washing machine (-1)
+                %     \item No OEs (-5)
+                %     \item start * cold (-2)
+                %     \item no complements on arcs (-2)
+                % \end{enumerate}
                 \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-13}}
+                    \center{\includegraphics{Sol7-11}}
                     \caption{The FSM for a washing machine.}
                 \end{figure}
 
                 \begin{tabular}{|l|||l|l|l|l|l|} \hline
-                    \multicolumn{6}{|c|}{outputs from the digital circuit}            \\ \hline \hline
-                    state & hot     & cold    & motor      & timer in   & drain     \\ \hline
-                    & 0 close & 0 close & 00 off     & 00 nothing & 0 close    \\ \hline
-                    & 1 open  & 1 open  & 01 agitate & 01 reset   & 1 open    \\ \hline
-                    &        &         & 10 spin    & 10 start   &        \\ \hline
-                    &        &         &           & 11 stop    &        \\ \hline \hline
-                    HOME  &    0    & 0      & 00           & 00        & 0        \\ \hline
-                    COLD  &    0    & 1      & 00           & 01        & 0        \\ \hline
-                    TEPI  &    1    & 1      & 00           & 01        & 0        \\ \hline
-                    HOT   &    1    & 0      & 00           & 01        & 0        \\ \hline
-                    AGIT  &    0    & 0      & 01           & 10        & 0        \\ \hline
-                    ZERO  &    0    & 0      & 00           & 01        & 0        \\ \hline
-                    DRAI  &    0    & 0      & 00           & 01        & 1        \\ \hline
-                    SPIN  &    0    & 0      & 10           & 10        & 0        \\ \hline
+                    \multicolumn{6}{|c|}{outputs from the digital circuit}        \\ \hline \hline
+                    state & hot     & cold    & motor      & timer in   & drain   \\ \hline
+                    & 0 close & 0 close & 00 off     & 00 nothing & 0 close \\ \hline
+                    & 1 open  & 1 open  & 01 agitate & 01 reset   & 1 open  \\ \hline
+                    &         &         & 10 spin    & 10 start   &         \\ \hline
+                    &         &         &            & 11 stop    &         \\ \hline \hline
+                    HOME  &    0    & 0       & 00         & 00         & 0       \\ \hline
+                    COLD  &    0    & 1       & 00         & 01         & 0       \\ \hline
+                    TEPI  &    1    & 1       & 00         & 01         & 0       \\ \hline
+                    HOT   &    1    & 0       & 00         & 01         & 0       \\ \hline
+                    AGIT  &    0    & 0       & 01         & 10         & 0       \\ \hline
+                    ZERO  &    0    & 0       & 00         & 01         & 0       \\ \hline
+                    DRAI  &    0    & 0       & 00         & 01         & 1       \\ \hline
+                    SPIN  &    0    & 0       & 10         & 10         & 0       \\ \hline
                 \end{tabular}
+                \begin{align*}
+                    D_{home}   &= Q_{home}start' + Q_{spin}time \\
+                    D_{cold1}  &= Q_{home}*start*cold \\
+                    D_{tepi}   &= Q_{home}*start*tepid \\
+                    D_{hot}    &= Q_{home}*start*hot \\
+                    D_{agit1}  &= Q_{cold1}*fill + Q_{tepid}*fill + Q_{hit}*fill + Q_{agit1}*time' \\
+                    D_{zero1}  &= Q_{agit1}*time \\
+                    D_{agit2}  &= Q_{zero1}*time + Q_{agit2}*time' \\
+                    D_{zero2}  &= Q_{agit2}*time \\
+                    D_{agit3}  &= Q_{zero2}*time + Q_{agit2}*time' \\
+                    D_{drain1} &= Q_{agit3}*time + Q_{drain1}*empty' \\
+                    D_{cold2}  &= Q_{drain1}*empty + Q_{cold2}*fill' \\
+                    D_{agit4}  &= Q_{cold2}*fill + Q_{agit4}*time' \\
+                    D_{drain2} &= Q_{agit4}*time + Q_{drain2}*empty' \\
+                    D_{spin}   &= Q_{drain2}*empty + Q_{spin}*time'
+                \end{align*}
 
-                The memory input equations are a snap.
-                \begin{description}
-                    \item $D_{home} = Q_{home}start' + Q_{spin}time $
-                    \item $D_{cold1} = Q_{home}*start*cold $
-                    \item $D_{tepi} =  Q_{home}*start*tepid $
-                    \item $D_{hot} =  Q_{home}*start*hot $
-                    \item $D_{agit1} = Q_{cold1}*fill + Q_{tepid}*fill + Q_{hit}*fill + Q_{agit1}*time' $
-                    \item $D_{zero1} =  Q_{agit1}*time $
-                    \item $D_{agit2} = Q_{zero1}*time + Q_{agit2}*time' $
-                    \item $D_{zero2} = Q_{agit2}*time $
-                    \item $D_{agit3} = Q_{zero2}*time + Q_{agit2}*time' $
-                    \item $D_{drain1} = Q_{agit3}*time + Q_{drain1}*empty' $
-                    \item $D_{cold2} = Q_{drain1}*empty + Q_{cold2}*fill' $
-                    \item $D_{agit4} =  Q_{cold2}*fill + Q_{agit4}*time' $
-                    \item $D_{drain2} = Q_{agit4}*time + Q_{drain2}*empty' $
-                    \item $D_{spin} = Q_{drain2}*empty + Q_{spin}*time' $
-                \end{description}
-
+                {\color{blue}
+                    \begin{align*}
+                        Z_{hot    } &= Q_{tepid} + Q_{hot}\\
+                        Z_{cold   } &= Q_{cold} + Q_{tepid}\\
+                        Z_{motor_1} &= Q_{spin}\\
+                        Z_{motor_0} &= Q_{agit}\\
+                        Z_{timer_1} &= Q_{agit} + Q_{spin}\\
+                        Z_{timer_0} &= Q_{cold} + Q_{tepid} + Q_{hot} + Q_{zero} + Q_{drain}\\
+                        Z_{drain  } &= Q_{drain}
+                \end{align*}}
             }
         \end{onlysolution}
 
     \item \textbf{ (36 pts.)}
-        Construct a digital circuit to control the movement of an elevator
-        in a four-story building.  The elevator will always wait on its current floor
-        until a call button is pressed; see Figure~\ref{fig:elevator}.  The elevator
-        then moves to the floor that was called.  The elevator then opens its doors and
-        waits for an elevator control button to be pressed.  If no elevator control
-        button is pressed and a call to another floor is received, then the elevator
-        closes the doors and goes to the new floor.  When a floor is selected on the
-        elevator control panel, then the door close and the elevator moves to the
-        desired floor.
+        Construct a digital circuit to control the movement of an elevator in a
+        four-story building.  The elevator will always wait on its current floor
+        until a call button is pressed; see Figure~\ref{fig:elevator}.  The
+        elevator then moves to the floor that was called.  The elevator then
+        opens its doors and waits for an elevator control button to be pressed.
+        If a a call to another floor is received before an elevator control
+        button is pressed, then the elevator closes the doors and goes to the
+        new floor.  When a floor is selected on the elevator control panel, then
+        the door close and the elevator moves to the desired floor.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-15}}
+            \center{\includegraphics{Prob7-12}}
             \caption{The layout of an elevator in a four story tall building.}
             \label{fig:elevator}
         \end{figure}
@@ -785,15 +839,51 @@
             Motor                   &  00 stop &    01 up   & 10 down \\ \hline
         \end{tabular}
 
-        Submit; an algorithm the datapath and control unit,
+        Submit; an algorithm for the datapath and control unit,
         the control word table, the memory input equations, and output equations.
-
+        \begin{onlysolution}[fragile] \color{blue}%required to use verbatim environments inside of an answer
+            % Let me know what syntax I should use when waiting for the alignment. Currently it is the syntax I learned from embedded.
+\begin{lstlisting}
+int loc = 0; #Assume starting location
+int delta = 0;
+while(1) {
+    if(Creq){
+        Cack = 1;
+        Door = 0;
+        delta = Cfloor - loc;
+        Cack = 0;
+    }
+    if(Preq){
+        Pack = 1;
+        Door = 0;
+        delta = Pfloor - loc;
+        Pack = 0;
+    }
+    if delta != 0 {
+        if (delta > 0): Motor[0] = 1;
+        if (delta < 0){
+            Motor[1] = 1;
+            delta = 0 - delta;
+        }
+        while delta > 0{
+            while (Align == 0);
+            while (Align == 1);
+            delta--;
+        }
+        Motor[1] = 0;
+        Motor[0] = 0;
+        Door = 1;
+    }
+}
+\end{lstlisting} % This is written with the assumption that it will be turned into logical blocks
+            \includegraphics[max width=\textwidth, center]{sol7-12}
+        \end{onlysolution}
     \item \textbf{ (36 pts.)}
         Construct a digital circuit to control the movement of traffic
         at the four way intersection shown in Figure~\ref{fig:crossroad}.
 
         \begin{figure}[ht]
-            \center{\includegraphics{Prob7-16}}
+            \center{\includegraphics{Prob7-13}}
             \caption{The layout of a four way intersection.}
             \label{fig:crossroad}
         \end{figure}
@@ -860,11 +950,11 @@ while(1) {
         the control word table,
         the memory input equations, and
         output equations.
-
+        \newpage
         \begin{onlysolution}  \textbf{Solution} \itshape{
 
                 \begin{figure}[ht]
-                    \center{\includegraphics{Sol7-16}}
+                    \center{\includegraphics{Sol7-13}}
                     \caption{The FSM for a traffic light controller.}
                 \end{figure}
 
