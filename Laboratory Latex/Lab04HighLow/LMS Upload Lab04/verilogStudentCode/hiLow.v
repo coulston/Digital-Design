@@ -1,7 +1,7 @@
 //*****************************************************************
 // Name:    <Your Name>
 // Date:    <Term Year>
-// File:    hiLowStarter.v
+// File:    hiLow.v
 // Purp:    hiLow module
 //
 // Assisted: Christopher Coulston and Thomas MacDougall Spring 2023
