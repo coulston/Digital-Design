@@ -133,8 +133,14 @@
         \item \textbf{ (2 pts.)}Show how to connect together four 4-bit comparators to
             construct a 16-bit comparator.
 
-            \begin{onlysolution} \filbreak\textbf{Solutions}\\ \itshape{\includegraphics[max width = 0.95\textwidth]{Sol4-3} With L1, G1, E1 as the outputs from the highest four bits, and G4, E4, L4 as the output from the low bits.
+            \begin{onlysolution} 
+                  %\filbreak\textbf{Solutions}\\ \itshape{\includegraphics[max width = 0.95\textwidth]{Sol4-3} With L1, G1, E1 as the outputs from the highest four bits, and G4, E4, L4 as the output from the low bits.
                     % This is found via the truth table \lstinputlisting{./chapter04/FigHw/sol4-3.txt}
+                    Connect four comparators in a daisy chain with the 16-bit inputs $X$ and $Y$ divided into four 4-bit sub-vectors sent to one of the 4-bit comparators.  The connect
+                    the $G_{out}$, $L_{out}$, and $E_{out}$ signals of the more significant comparator to the $G_{in}$, $L_{in}$, and $E_{in}$ of the less significant comparator.
+                    Hardwire the $G_{in}$, $L_{in}$, and $E_{in}$ inputs of the most significant comparator (the one with $X(15\ldots12)$ and $Y(15\ldots12)$ as the data inputs)
+                    to $0,0,1$ respectively.  Use the  $G_{out}$, $L_{out}$, and $E_{out}$ of the leaqst significant comparator as the  $G_{out}$, $L_{out}$, and $E_{out}$ of the 
+                    16-bit comparator.
                 }
             \end{onlysolution}
 
@@ -626,7 +632,7 @@
                     \begin{onlysolution} \textbf{Solutions}
                         \begin{align*}
                             {\color{gray}
-                            1111\0\911\0 }&\\[-1.5ex]
+                            111\0\0\911\0 }&\\[-1.5ex]
                             1110\,1011&\\
                             +\:1111\,0001&\\[-2ex]
                             \rule{12ex}{1pt}\hspace{-1ex}&\\[-1ex]
@@ -656,7 +662,7 @@
                             1110\,1011&   &1110\,1011\\
                             -\:1111\,0001&&+\:0000\,1111\\[-2ex]
                             \rule{12ex}{1pt}\hspace{-1ex}&\ \raisebox{3.5ex}[0pt][0pt]{$\xLongrightarrow{\phantom{80em}}$}\ &\rule{12ex}{1pt}\hspace{-1ex}\\[-1ex]
-                            & &1101\,1100
+                            & &1101\,1010
                         \end{alignat*}
                     \end{onlysolution}
 
