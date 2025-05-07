@@ -842,35 +842,24 @@
         Submit; an algorithm for the datapath and control unit,
         the control word table, the memory input equations, and output equations.
         \begin{onlysolution}[fragile] \color{blue}%required to use verbatim environments inside of an answer
+            % Let me know what syntax I should use when waiting for the alignment. Currently it is the syntax I learned from embedded.
 \begin{lstlisting}
-uint2_t loc = 0; #Assume starting location
-int3_t delta;
+int loc = 0; #Assume starting location
+int delta = 0;
 while(1) {
     if(Creq){
         Cack = 1;
         Door = 0;
-
         delta = Cfloor - loc;
-        if (delta > 0): Motor[0] = 1;
-        if (delta < 0){
-            Motor[1] = 1;
-            delta = 0 - delta;
-        }
-        while delta > 0{
-            while (Align == 0);
-            while (Align == 1);
-            delta--;
-        }
-        Motor[1] = 0;
-        Motor[0] = 0;
-        Door = 1;
         Cack = 0;
     }
     if(Preq){
         Pack = 1;
         Door = 0;
-
-        delta = Preq - loc;
+        delta = Pfloor - loc;
+        Pack = 0;
+    }
+    if delta != 0 {
         if (delta > 0): Motor[0] = 1;
         if (delta < 0){
             Motor[1] = 1;
