@@ -405,7 +405,7 @@ to store ``lots" of data.  One of the downfalls of a cassette tape is the
 sequential nature of data access.  That is, the time to access a piece of
 data depends on its position on the tape and the current position of the
 tape.  RAMs do not suffer from the limits of a sequential access devices; the
-amount of time to access any \textit{ random location} is the same.
+amount of time to access any \textit{random location} is the same.
 
 In order to understand how RAMs work, you will need to understand a few
 concepts first, so let's start.
@@ -480,30 +480,23 @@ The input, output, and behavior of a synchronous static RAM is defined by the fo
 
 \index{RAM|(}
 \begin{buildingblock}{RAM}
-    \begin{tabular}{|p{2cm}|p{12cm}|} \hline
-
+    \begin{tabular}{|l|p{10.45cm}|} \hline
         Nomenclature:  & NxM RAM (random access memory)    \\ \hline
-        Data Input:    &  M-bit vector $D=d_{M-1} \ldots d_1 d_0$
-        $log_2(N)$-bit address $A=a_{log_2(N)-1} \ldots a_1 a_0$ \\ \hline
+        Data Input:    &  \makecell[l]{M-bit vector $D=d_{M-1} \ldots d_1 d_0$ \\
+        $log_2(N)$-bit address $A=a_{log_2(N)-1} \ldots a_1 a_0$} \\ \hline
         Data Output:   & M-bit vector $D=d_{M-1} \ldots d_1 d_0$     \\ \hline
         Control:       & 1-bit $enb$ (read enable), 1-bit $wen$ (write enable),        \\ \hline
         Status:        & none                                   \\ \hline
         Others:        & 1-bit edge sensitive clock                 \\ \hline
-        Behavior:      & \vspace{0.2cm}
-        \begin{tabular}{c|c|c|c|c|c||l|l}
-            clk            &    enb        &    wen        &    $A$    &    $D_{in}$    &   $D_{out}^+$
-            &    Internal  & Note                          \\ \hline
-            0, 1 falling        &     x         &    x         &     x     &     x         &    $D_{out}$
-            &             &                  \\ \hline
-            rising         &     0        &    0         &     x    &     x         &    $D_{out}$        &
-            & hold                     \\ \hline
-            rising         &     1        &    0         &     $A$    &     x         &    ram[$A$]        &
-            & read                     \\ \hline
-            rising         &     0        &    1         &     $A$    &     $D_{in}$     &    $D_{out}$
-            & ram[$A$] $\Leftarrow D_{in}$      & write \\ \hline
-            rising         &     1        &    1         &     $A$    &     $D_{in}$     &    $D_{in}$
-            & ram[$A$] $\Leftarrow D_{in}$     & read/write \\
-        \end{tabular}
+        Behavior:      & \scalebox{0.9}{
+            \begin{tabular}{c|c|c|c|c|c||l|l}
+                clk           & enb & wen & $A$ & $D_{in}$ & $D_{out}^+$ &  Internal  & Note  \\ \hline
+                0, 1, falling & x   & x   &  x  &  x       & $D_{out}$   &            &       \\ \hline
+                rising        & 0   & 0   &  x  &  x       & $D_{out}$   &            & hold  \\ \hline
+                rising        & 1   & 0   & $A$ &  x       & ram[$A$]    &            & read  \\ \hline
+                rising        & 0   & 1   & $A$ & $D_{in}$ & $D_{out}$   & ram[$A$] $\Leftarrow D_{in}$ & write      \\ \hline
+                rising        & 1   & 1   & $A$ & $D_{in}$ & $D_{in}$    & ram[$A$] $\Leftarrow D_{in}$ & R/W \\
+        \end{tabular}}
         \vspace{0.2cm} \\ \hline
 
     \end{tabular}
