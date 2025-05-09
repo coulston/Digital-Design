@@ -844,19 +844,21 @@
         \begin{onlysolution}[fragile] \color{blue}%required to use verbatim environments inside of an answer
             % Let me know what syntax I should use when waiting for the alignment. Currently it is the syntax I learned from embedded.
 \begin{lstlisting}
-int loc = 0; #Assume starting location
-int delta = 0;
+int loc;
+int delta;
 while(1) {
     if(Creq){
         Cack = 1;
         Door = 0;
         delta = Cfloor - loc;
+        loc = Cfloor;
         Cack = 0;
     }
     if(Preq){
         Pack = 1;
         Door = 0;
         delta = Pfloor - loc;
+        loc = Pfloor;
         Pack = 0;
     }
     if delta != 0 {
@@ -866,16 +868,16 @@ while(1) {
             delta = 0 - delta;
         }
         while delta > 0{
-            while (Align == 0);
-            while (Align == 1);
+            while (Align == 1); // Wait to stop being aligned
             delta--;
+            while (Align == 0); // Wait until aligned
         }
         Motor[1] = 0;
         Motor[0] = 0;
         Door = 1;
     }
 }
-\end{lstlisting} % This is written with the assumption that it will be turned into logical blocks
+\end{lstlisting}
             \includegraphics[max width=\textwidth, center]{sol7-12}
         \end{onlysolution}
     \item \textbf{ (36 pts.)}
