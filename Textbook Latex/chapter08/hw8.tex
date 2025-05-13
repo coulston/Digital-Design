@@ -4,31 +4,31 @@
 
 \begin{enumerate}
     \item \textbf{ (4 pts.)}
-        Show how to eliminate the 4-bit 2:1 mux in the bit counter by
-        assuming that the Y register had an asynchronous active low reset input.
-        Consider the fact that the external world still needs the ability to hit
-        a single button to reset the state of the entire circuit.
+        Show how to eliminate the 4-bit 2:1 mux in the bit counter by assuming
+        that the Y register had an asynchronous active low reset input. Consider
+        the fact that the external world still needs the ability to hit a single
+        button to reset the state of the entire circuit.
 
     \item  \textbf{ (6 pts.)}
         A control unit has been built with the following control word:
 
         \begin{tabular}{|c|c|c|c|c|}  \hline
-            Reg A       & Reg B         &  Reg P        & P mux         \\ \hline
-            00 hold     & 00 hold       &  1 hold       & 1 Load 0      \\ \hline
-            11 lsr      & 11 lsr        &               &               \\ \hline
-            10 lsl      & 10 lsl        &  0 load       & 0 Load Add    \\ \hline
-            01 load     & 01 load       &               &               \\ \hline
+            Reg A   & Reg B   & Reg P  & Mux M      \\ \hline
+            00 hold & 00 hold & 1 hold & 1 Load 0   \\ \hline
+            11 lsr  & 11 lsr  &        &            \\ \hline
+            10 lsl  & 10 lsl  & 0 load & 0 Load Add \\ \hline
+            01 load & 01 load &        &            \\ \hline
         \end{tabular}
 
         Regrettably, these setting were completely wrong.  In reality here is what the control word should
         have been:
 
         \begin{tabular}{|c|c|c|c|c|}  \hline
-            Reg A       & Reg B         &  Reg P        & P mux         \\ \hline
-            00 hold     & 00 hold       &  0 hold       & 0 Load 0      \\ \hline
-            01 lsr      & 01 lsr        &               &               \\ \hline
-            10 lsl      & 10 lsl        &  1 load       & 1 Load Add    \\ \hline
-            11 load     & 11 load       &               &               \\ \hline
+            Reg A   & Reg B   & Reg P  & Mux M      \\ \hline
+            00 hold & 00 hold & 0 hold & 0 Load 0   \\ \hline
+            01 lsr  & 01 lsr  &        &            \\ \hline
+            10 lsl  & 10 lsl  & 1 load & 1 Load Add \\ \hline
+            11 load & 11 load &        &            \\ \hline
         \end{tabular}
 
         The design team is in a total panic.
@@ -40,6 +40,16 @@
         fixed by changing something in the datapath, no extra hardware is
         required.  Identify this error and its solution.
 
+        \begin{onlysolution} \textbf{Solution: }
+            The mux's control input was flipped. If we change which signal is on what input, the issue will be dealt with.
+
+            To fix the others, we could use the following logic (A and B are the same)
+            \begin{align*}
+                A_1^* & = A_1 \otimes A_0 \\
+                A_0^* & = A_0             \\
+                M^*   & = M'
+            \end{align*}
+        \end{onlysolution}
     \item \textbf{ (8 pts.)}
         Modify the algorithm for the bit counting circuit so that it uses a
         two-line handshake to transmit the Y register.  The circuit should take
@@ -60,6 +70,59 @@
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
 
+        \begin{onlysolution}[fragile] \textbf{Solution: }
+            For this, we need to further expand on section~\ref{8-sec:Minimum Search}
+
+              \begin{verbatim}
+1.  min = 0xFFFFFFFF;         // Set the min reg to largest 32-bit value
+2.  for (i=0; i<8192; i++) {  // Search through the entire array
+3.      MBR=RAM[i];           // Read a value from RAM
+4.      if (MBR<min) then     // If MBR is smaller than min
+5.          min = MBR;        //   then set min to the smallest value
+6.  } // end for
+\end{verbatim}
+            \textbf{DP \& CU}\\
+            \includegraphics[max width=\textwidth, center]{Sol8-4}
+            \begin{tabular}{c|c|c|c|c|c}
+                \textbf{State}   & enb    & Min Reg & Min mux    & Counter  & MBR Reg \\ \hline
+                & 0      & 0 hold  & 0 load FF  & 00 hold  & 0 hold  \\ \hline
+                & 1 read & 1 load  & 1 load RAM & 01 load  & 1 load  \\ \hline
+                &        &         &            & 10 count &         \\ \hline
+                &        &         &            & 11 reset &         \\ \hline
+                &        &         &            &          &         \\ \hline
+                \textbf{InitMin} & 0      & 1       & 0          & 00       & 0       \\ \hline
+                \textbf{InitI}   & 0      & 0       & x          & 01       & 0       \\ \hline
+                \textbf{CompC}   & 0      & 0       & x          & 00       & 0       \\ \hline
+                \textbf{Read}    & 1      & 0       & x          & 00       & 1       \\ \hline
+                \textbf{CompM}   & 0      & 0       & x          & 00       & 0       \\ \hline
+                \textbf{NewMin}  & 0      & 1       & 1          & 01       & 0       \\ \hline
+                \textbf{Inc}     & 0      & 0       & x          & 10       & 0       \\ \hline
+                \textbf{Done}    & 0      & 0       & x          & 00       & 0       \\
+            \end{tabular}\\
+            \begin{tabular}{cc}
+                \textbf{MIE}                      & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{IM} & = 0                   \\
+                        D_{II} & = Q_{IM}              \\
+                        D_{CC} & = Q_{II} + Q_{I}      \\
+                        D_{R}  & = Q_{CC} * IC         \\
+                        D_{CM} & = Q_{R}               \\
+                        D_{D}  & = Q_{CC} * IC'        \\
+                        D_{NM} & = Q_{CM} * MC         \\
+                        D_{I}  & = Q_{NM} + Q_{CM}*MC' \\
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Z_{ENB} & = Q_{R}            \\
+                        Z_{RM}  & = Q_{IM}  + Q_{NM} \\
+                        Z_{MM}  & = Q_{NM}           \\
+                        Z_{C1}  & = Q_{I}            \\
+                        Z_{C0}  & = Q_{II} + Q_{NM}  \\
+                        Z_{MBR} & = Q_{R}
+                \end{aligned}$}
+            \end{tabular}
+        \end{onlysolution}
     \item \textbf{ (16 pts.)}
         A 8kx32 RAM is full of integer data.  Design a
         circuit that determines the sum of the integers {\em between} addresses
@@ -70,70 +133,70 @@
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution}[fragile]  \textbf{Solution}
 
-                \textbf{ Algorithm}
+            \textbf{ Algorithm}
+              \begin{verbatim}
+while(REQ==0);
+A = datain;
+ACK=1;
+while(REQ==1);
+ACK=0;
+while(REQ==0);
+B = datain;
+ACK=1;
+while(REQ==1);
+ACK=0;
+S=0;
+for(i=A; i<B; i++)  {
+    MBR=RAM[i];
+    S=S+MBR;
+} // end for
+\end{verbatim}
 
-                while(REQ==0); \\
-                A = datain; \\
-                ACK=1; \\
-                while(REQ==1); \\
-                ACK=0; \\
-                while(REQ==0); \\
-                B = datain; \\
-                ACK=1; \\
-                while(REQ==1); \\
-                ACK=0; \\
-                S=0; \\
-                for(i=A; i<B; i++)  { \\
-                    MBR=RAM[i]; \\
-                    S=S+MBR; \\
-                } // end for \\
+            \textbf{ DP \& CU}
 
-                \textbf{ DP \& CU}
+            \begin{figure}[ht]
+                \includegraphics[max width=\textwidth, center]{Sol8-5}
+                \caption{The datapath and control to determine the sum between
+                addresses A and B.}
+            \end{figure}
 
-                \begin{figure}[ht]
-                    \center{\scalebox{0.7}{\includegraphics{Sol8-5}}}
-                    \caption{The datapath and control to determine the sum between
-                    addresses A and B.}
-                \end{figure}
+            \textbf{ Control Word}
 
-                \textbf{ Control Word}
+            \begin{tabular}{l|l|l|l|l|l|l}
+                STATE  & A      & B      & MUX          & S      & MBR    & counter \\ \hline
+                & 0 hold & 0 hold & 0 pass 0     & 0 hold & 0 hold & 00 hold \\ \hline
+                & 1 load & 1 load & 1 pass S+MBR & 1 load & 1 load & 01 UP   \\ \hline
+                &        &        &              &        &        & 10 load \\ \hline
+                &        &        &              &        &        &         \\ \hline
+                Wait1A & 0      & 0      & 0            & 0      & 0      & 00      \\ \hline
+                GetA   & 1      & 0      & 0            & 0      & 0      & 00      \\ \hline
+                Wait2A & 0      & 0      & 0            & 0      & 0      & 00      \\ \hline
+                Wait1B & 0      & 0      & 0            & 0      & 0      & 00      \\ \hline
+                GetB   & 0      & 1      & 1            & 1      & 0      & 10      \\ \hline
+                Wait2B & 0      & 0      & 0            & 0      & 0      & 00      \\ \hline
+                For    & 0      & 0      & 0            & 0      & 0      & 00      \\ \hline
+                Read   & 0      & 0      & 0            & 0      & 1      & 01      \\ \hline
+                Inc    & 0      & 0      & 1            & 1      & 0      & 00      \\ \hline
+                Done   & 0      & 0      & 0            & 0      & 0      & 00      \\
+            \end{tabular}
 
-                \begin{tabular}{l|l|l|l|l|l|l}
-                    STATE & A      & B      &MUX          &S      &MBR    &counter    \\ \hline
-                    & 0 hold & 0 hold &0 pass 0     &0 hold &0 hold &00 hold    \\ \hline
-                    & 1 load & 1 load &1 pass S+MBR &1 load &1 load &01 UP    \\ \hline
-                    &        &        &             &       &       &10 load    \\ \hline
-                    Wait1A& 0      & 0      &0            &0      &0      &00    \\ \hline
-                    GetA  & 1      & 0      &0            &0      &0      &00    \\ \hline
-                    Wait2A& 0      & 0      &0            &0      &0      &00    \\ \hline
-                    Wait1B& 0      & 0      &0            &0      &0      &00    \\ \hline
-                    GetB  & 0      & 1      &1            &1      &0      &10    \\ \hline
-                    Wait2B& 0      & 0      &0            &0      &0      &00    \\ \hline
-                    For   & 0      & 0      &0            &0      &0      &00    \\ \hline
-                    Read  & 0      & 0      &0            &0      &1      &01    \\ \hline
-                    Inc   & 0      & 0      &1            &1      &0      &00    \\ \hline
-                    Done  & 0      & 0      &0            &0      &0      &00    \\
-                \end{tabular}
+            \textbf{ MIEs and OEs}
 
-                \textbf{ MIEs and OEs}
-
-                \begin{tabular}{ll}
-                    MIE                    &    OE            \\
-                    $D_{Wait1a}= Q_{wait1a}req'$        &  $Z_{A} = Q_{getA}$        \\
-                    $D_{GetA } = Q_{wait1a}req$        &  $Z_{B} = Q_{getB}$        \\
-                    $D_{wait2a}= Q_{getA} + Q_{wait2A}req$    &  $Z_{MUX} = Q_{getB} + Q_{Inc}$        \\
-                    $D_{wait1b}= Q_{wait2a}req' + Q_{wait1B}req'$    &  $Z_{S} = Q_{getB} + Q_{Inc}$        \\
-                    $D_{GetB } = Q_{wait1b}req$        &  $Z_{MBR} = Q_{Read}$        \\
-                    $D_{wait2B}= Q_{GetB} + Q_{wait2b}req$    &  $Z_{c1} = Q_{GetB}$        \\
-                    $D_{For  } = Q_{wait2B}req'$        &  $Z_{c0} = Q_{Read}$        \\
-                    $D_{Read } = Q_{For}LB$            &          \\
-                    $D_{Inc  } = Q_{Read}$            &         \\
-                    $D_{Done } = Q_{For}LB'$        &          \\
-                \end{tabular}
-
-            }
+            \begin{tabular}{ll}
+                MIE                                           & OE                             \\
+                $D_{Wait1a}= Q_{wait1a}req'$                  & $Z_{A} = Q_{getA}$             \\
+                $D_{GetA } = Q_{wait1a}req$                   & $Z_{B} = Q_{getB}$             \\
+                $D_{wait2a}= Q_{getA} + Q_{wait2A}req$        & $Z_{MUX} = Q_{getB} + Q_{Inc}$ \\
+                $D_{wait1b}= Q_{wait2a}req' + Q_{wait1B}req'$ & $Z_{S} = Q_{getB} + Q_{Inc}$   \\
+                $D_{GetB } = Q_{wait1b}req$                   & $Z_{MBR} = Q_{Read}$           \\
+                $D_{wait2B}= Q_{GetB} + Q_{wait2b}req$        & $Z_{c1} = Q_{GetB}$            \\
+                $D_{For  } = Q_{wait2B}req'$                  & $Z_{c0} = Q_{Read}$            \\
+                $D_{Read } = Q_{For}LB$                       &                                \\
+                $D_{Inc  } = Q_{Read}$                        &                                \\
+                $D_{Done } = Q_{For}LB'$                      &                                \\
+            \end{tabular}
         \end{onlysolution}
 
     \item  \textbf{ (16 pts.)}
@@ -143,7 +206,87 @@
         Turn in; an algorithm the datapath and control unit, the control word
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
-
+        \begin{onlysolution}[fragile]\par\textbf{Solution:} There are two approaches you
+            could take to this problem. The first approach is to store the previous value
+            and compare.\par
+            \textbf{Algorithm}
+              \begin{verbatim}
+bool oldX;
+while(1){
+    oldX = X;
+    while (oldX == X);
+    Y = Y + 1;
+}
+\end{verbatim}
+            \filbreak
+            \textbf{Datapath and Control}
+            \includegraphics[max width=\textwidth, center, scale=0.8]{sol8-6} \par
+            \begin{tabular}{c|c|c}
+                State & Reg A  & Counter \\ \hline
+                & 0 Hold & 00 Hold \\ \hline
+                & 1 Load & 01 Inc  \\ \hline
+                &        & 10 Load \\ \hline
+                &        &         \\ \hline
+                INIT  & 1      & 10      \\ \hline
+                Read  & 0      & 00      \\ \hline
+                Comp  & 1      & 01      \\ \hline
+            \end{tabular}
+            \begin{tabular}{cc}
+                \textbf{MIE}                                    & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{Read} & = Q_{INIT} + Q_{Read}E + Q_{Comp} \\
+                        D_{Comp} & = Q_{Read}E'
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Z_{A}   & = Q_{INIT} + Q_{Comp} \\
+                        Z_{C_1} & = Q_{INIT}            \\
+                        Z_{C_0} & = Q_{Comp}
+                \end{aligned}$}
+            \end{tabular}\par
+            An alternate way you could solve it would be to encode it all as state.\par % This isn't a good description
+              \begin{verbatim}
+while(1){
+    if (X == 0){
+        while(X == 0);
+        Y++;
+    }
+    if (X == 1){
+        while(X == 1);
+        Y++;
+    }
+}
+\end{verbatim}
+            \includegraphics[max width=\textwidth, center, scale=0.75]{sol8-6alt}\\
+            \begin{tabular}{c|c}
+                State     & Counter \\ \hline
+                & 00 Hold \\ \hline
+                & 01 Inc  \\ \hline
+                & 10 Load \\ \hline
+                &         \\ \hline
+                INIT      & 10      \\ \hline
+                $0$       & 00      \\ \hline
+                $1$       & 00      \\ \hline
+                $0\to1$   & 01      \\ \hline
+                $0\gets1$ & 01      \\
+            \end{tabular}
+            \begin{tabular}{cc}
+                \textbf{MIE}                                        & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{0}       & = Q_{INIT}X' + Q_0X' + Q_{0\gets1} \\
+                        D_{1}       & = Q_{INIT}X\,+ Q_1X\,+ Q_{0\to1}   \\
+                        D_{0\to1}   & = Q_{0}X                           \\
+                        D_{0\gets1} & = Q_{1}X'
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Z_{C_1} & = Q_{INIT}                \\
+                        Z_{C_0} & = Q_{0\to1} + Q_{0\gets1}
+                \end{aligned}$}
+            \end{tabular}\\
+        \end{onlysolution}
     \item \textbf{ (16 pts.)}
         A 256x8 RAM is full of data.  Design a circuit that jumps
         around in memory.  It does this by fetching a word and using the
@@ -163,7 +306,39 @@
             \caption{A 256x8 RAM loaded with some data.}
             \label{fig:RAMhopper}
         \end{figure}
-
+        \begin{onlysolution}[fragile]
+            \textbf{Algorithm}
+              \begin{verbatim}
+Addr = 0;
+while(1){
+    Addr = RAM[Addr];
+}
+\end{verbatim}
+            \filbreak
+            \textbf{Datapath and Control}\\
+            \includegraphics[max width=\textwidth, center]{Sol8-7}
+            \textbf{Control Words}\par
+            \begin{tabular}{c|c|c}
+                State & Reg A  & Mux   \\ \hline
+                & 0 Hold & 0 0   \\ \hline
+                & 1 Load & 1 RAM \\ \hline
+                &        &       \\ \hline
+                INIT  & 1      & 0     \\ \hline
+                Loop  & 1      & 1     \\
+            \end{tabular}
+            \begin{tabular}{cc}
+                \textbf{MIE}                   & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{Loop} = Q_{Init} + Q_{Loop}
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Z_A & = 1        \\
+                        Z_M & = Q_{Loop}
+                \end{aligned}$}
+            \end{tabular}\\
+        \end{onlysolution}
     \item \textbf{ (16 pts.)}
         A 256x8 RAM is full of data.  Design a circuit that jumps
         around in memory.   The current address should be stored in a
@@ -190,38 +365,40 @@
             \label{fig:RAMhopper2}
         \end{figure}
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution}[fragile]  \textbf{Solution}\par
+            \textbf{Algorithm}
+              \begin{verbatim}
 
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol8-8}}
-                    \caption{The datapath and control to conditionally hop around
-                    in RAM.}
-                \end{figure}
+\end{verbatim}
+            \textbf{Datapath and Control}
+            \begin{figure}[ht]
+                \includegraphics[max width=\textwidth, center]{Sol8-8}
+                \caption{The datapath and control to conditionally hop around
+                in RAM.}
+            \end{figure}
 
-                \textbf{ Control Word}
+            \textbf{Control Words}
 
-                \begin{tabular}{l|l|l|l|l|l|l}
-                    STATE & RE     & CS     &MUX          &MBR    & PC    \\ \hline
-                    & 0 nada & 0 nada &0 pass 1     &0 hold &0 hold    \\ \hline
-                    & 1 read & 1 RAM  &1 pass MBR   &1 load &1 load    \\ \hline
-                    &        &        &             &       &           \\ \hline
-                    READ  & 1      & 1      & x           & 1     & 0    \\ \hline
-                    MSB?  & 0      & 0      & x           & 0     & 0    \\ \hline
-                    INC   & 0      & 0      & 0           & 0     & 1    \\ \hline
-                    MBR   & 0      & 0      & 1           & 0     & 1    \\ \hline
-                \end{tabular}
+            \begin{tabular}{l|l|l|l|l}
+                STATE & MUX        & MBR    & PC     \\ \hline
+                & 0 pass 1   & 0 hold & 0 hold \\ \hline
+                & 1 pass MBR & 1 load & 1 load \\ \hline
+                &            &        &        \\ \hline
+                READ  & x          & 1      & 0      \\ \hline
+                MSB?  & x          & 0      & 0      \\ \hline
+                INC   & 0          & 0      & 1      \\ \hline
+                MBR   & 1          & 0      & 1      \\ \hline
+            \end{tabular}
 
-                \textbf{ MIEs and OEs}
+            \textbf{ MIEs and OEs}
 
-                \begin{tabular}{ll}
-                    MIE                    &    OE            \\
-                    $D_{read}= Q_{mbr}+Q_{inc}$        &  $Z_{re} = Q_{read}$        \\
-                    $D_{msb} = Q_{read}$            &  $Z_{cs} = Q_{read}$        \\
-                    $D_{inc}= Q_{msb} m'$            &  $Z_{MUX} = Q_{mbr}$        \\
-                    $D_{mbr}= Q_{msb} m$            &  $Z_{mbr} = Q_{read}$        \\
-                \end{tabular}
-
-            }
+            \begin{tabular}{ll}
+                MIE                         & OE                   \\
+                $D_{read}= Q_{mbr}+Q_{inc}$ & $Z_{re} = Q_{read}$  \\
+                $D_{msb} = Q_{read}$        & $Z_{cs} = Q_{read}$  \\
+                $D_{inc}= Q_{msb} m'$       & $Z_{MUX} = Q_{mbr}$  \\
+                $D_{mbr}= Q_{msb} m$        & $Z_{mbr} = Q_{read}$ \\
+            \end{tabular}
         \end{onlysolution}
 
     \item \textbf{ (16 pts.)}
@@ -259,68 +436,72 @@
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution}[fragile]  \textbf{Solution}
+            \textbf{ Algorithm}
+              \begin{verbatim}
+PC = 0;
+while(1) {
+    IR = RAM[PC];
+    if (IR(11,10) == 00)
+    ACC += 00 & IR(9 downto 0);
+    if (IR(11,10) == 01)
+    RAM[IR(9 downto 0) = ACC;
+    if (IR(11,10) == 10)
+    ACC = RAM[IR(9 downto 0)];
+    if (IR(11,10) == 11)
+    ACC = 0;
+    PC += 1;
+}
+\end{verbatim}
+            \filbreak
+            \textbf{Datapath and Control}\par
+            \includegraphics[max width=\textwidth, center]{Sol8-10}
+            \textbf{Control Word}\vspace{0.5em}
 
-                \textbf{ Algorithm}
-%% \begin{verbatim}
-%% PC = 0;
-%% while(1) {
-    %% IR = RAM[PC];
-    %% if (IR(11,10) == 00)
-    %% ACC += 00 & IR(9 downto 0);
-    %% if (IR(11,10) == 01)
-    %% RAM[IR(9 downto 0) = ACC;
-    %% if (IR(11,10) == 10)
-    %% ACC = RAM[IR(9 downto 0)];
-    %% if (IR(11,10) == 11)
-    %% ACC = 0;
-    %% PC += 1;
-%% }
-%% \end{verbatim}
-
-                \textbf{ Datapath and Control}
-
-                \begin{figure}[ht]
-                    \center{\scalebox{0.7}{\includegraphics{Sol8-10}}}
-                \end{figure}
-
-                \textbf{ Control Word}
-
-                \tiny{
+            \centerline{\resizebox{0.9\textwidth}{!}{
                     \begin{tabular}{l|l|l|l|l|l|l|l|l}
-                        State & ACC mux    & Acc   & IR    & TSB   & PC        & Addr Mux & CS    & R/W'    \\ \hline
-                        & 00 add & 0 hold & 0 hold & 0 Z    & 00 hold & 0 PC    & 0 no & 0 write \\ \hline
-                        & 01 0   & 0 load & 0 load & 1 pass & 01 load & 1 IR    & 0 on & 1 read \\ \hline
-                        & 10 RAM &     &     &     & 10 up    &         &      &     \\ \hline
-                        &     &     &     &     &     &          &      &     \\ \hline
-                        Init  &    01    & 1    & 0    & 0    & 01    &    x    & 0    & x    \\ \hline
-                        Read  & xx    & 0    & 1    & 0    & 00    &    0    & 1    & 1    \\ \hline
-                        Comp  & xx    & 0    & 0    & 0    & 00    &    x    & 0    & x    \\ \hline
-                        Add   & 00    & 1    & 0    & 0    & 00    &    x    & 0    & x    \\ \hline
-                        Stor  & xx    & 0    & 0    & 1    & 00    &    1    & 1    & 0    \\ \hline
-                        Load  & 10    & 0    & 0    & 0    & 00    &    1    & 1    & 1    \\ \hline
-                        Clr   & 01    & 1    & 0    & 0    & 00    &    x    & 0    & x    \\ \hline
-                        Inc   & xx    & 0    & 0    & 0    & 10    &    x    & 0    & x    \\
+                        State & ACC mux & Acc    & IR     & TSB    & PC      & Addr Mux & CS   & R/W'    \\ \hline
+                        & 00 add  & 0 hold & 0 hold & 0 Z    & 00 hold & 0 PC     & 0 no & 0 write \\ \hline
+                        & 01 0    & 0 load & 0 load & 1 pass & 01 load & 1 IR     & 0 on & 1 read  \\ \hline
+                        & 10 RAM  &        &        &        & 10 up   &          &      &         \\ \hline
+                        &         &        &        &        &         &          &      &         \\ \hline
+                        Init  & 01      & 1      & 0      & 0      & 01      & x        & 0    & x       \\ \hline
+                        Read  & xx      & 0      & 1      & 0      & 00      & 0        & 1    & 1       \\ \hline
+                        Comp  & xx      & 0      & 0      & 0      & 00      & x        & 0    & x       \\ \hline
+                        Add   & 00      & 1      & 0      & 0      & 00      & x        & 0    & x       \\ \hline
+                        Stor  & xx      & 0      & 0      & 1      & 00      & 1        & 1    & 0       \\ \hline
+                        Load  & 10      & 0      & 0      & 0      & 00      & 1        & 1    & 1       \\ \hline
+                        Clr   & 01      & 1      & 0      & 0      & 00      & x        & 0    & x       \\ \hline
+                        Inc   & xx      & 0      & 0      & 0      & 10      & x        & 0    & x       \\
                     \end{tabular}
-                }
-
-                \textbf{ MIEs and OEs}
-
-                \begin{tabular}{ll}
-                    MIE                                     &       OE                      \\
-                    $D_{Init}= Q_{wait1a}req'$            &  $Z_{m1} = Q_{load}$           \\
-                    $D_{Read } = Q_{wait1a}req$             &  $Z_{Init} = Q_{Clr}$           \\
-                    $D_{Comp}= Q_{getA} + Q_{wait2A}req$  &  $Z_{Acc} = Q_{Init} + Q_{Add} + Q_{Clr}$               \\
-                    $D_{Add}= Q_{wait2a}req' + Q_{wait1B}req'$   &  $Z_{IR} = Q_{Read}$     \\
-                    $D_{Stor} = Q_{wait1b}req$             &  $Z_{TSB} = Q_{Stor}$         \\
-                    $D_{Load}= Q_{GetB} + Q_{wait2b}req$  &  $Z_{PC1} = Q_{Inc}$          \\
-                    $D_{Clr  } = Q_{wait2B}req'$            &  $Z_{PC0} = Q_{Init}$          \\
-                    $D_{Inc } = Q_{For}LB$                 &   $Z_{CS} = Q_{Read}+Q_{Stor}+Q_{Load}$     \\
-                    &   $Z_{Amux} = Q_{Read}+Q_{Stor}+Q_{Load}$   \\
-                    &   $Z_{RW} = Q_{Read}+Q_{Load}$            \\
-                \end{tabular}
-
-            }
+            }}
+            \begin{tabular}{cc}
+                \textbf{MIE}                                    & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{Init} & = Q_{wait1a}req'                  \\
+                        D_{Read} & = Q_{wait1a}req                   \\
+                        D_{Comp} & = Q_{getA} + Q_{wait2A}req        \\
+                        D_{Add}  & = Q_{wait2a}req' + Q_{wait1B}req' \\
+                        D_{Stor} & = Q_{wait1b}req                   \\
+                        D_{Load} & = Q_{GetB} + Q_{wait2b}req        \\
+                        D_{Clr}  & = Q_{wait2B}req'                  \\
+                        D_{Inc}  & = Q_{For}LB
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Z_{m1}   & = Q_{load}                     \\
+                        Z_{Init} & = Q_{Clr}                      \\
+                        Z_{Acc}  & = Q_{Init} + Q_{Add} + Q_{Clr} \\
+                        Z_{IR}   & = Q_{Read}                     \\
+                        Z_{TSB}  & = Q_{Stor}                     \\
+                        Z_{PC1}  & = Q_{Inc}                      \\
+                        Z_{PC0}  & = Q_{Init}                     \\
+                        Z_{CS}   & = Q_{Read}+Q_{Stor}+Q_{Load}   \\
+                        Z_{Amux} & = Q_{Read}+Q_{Stor}+Q_{Load}   \\
+                        Z_{RW}   & = Q_{Read}+Q_{Load}
+                \end{aligned}$}
+            \end{tabular}
         \end{onlysolution}
 
     \item \textbf{ (16 pts.)}
@@ -378,7 +559,7 @@
         a pressure sensor at the exit tells the circuit when it is OK to close
         the exit gate.  See Figure~\ref{fig:Garage}.
         \begin{figure}[ht]
-            \center{\includegraphics{Prob8-14}}
+            \includegraphics[max width=\textwidth, center]{Prob8-14}
             \caption{The layout of an automated garage.}
             \label{fig:Garage}
         \end{figure}
@@ -386,16 +567,16 @@
         The signal names are defined in the following table:
 
         \begin{tabular}{|l|l||l|l|} \hline
-            Entrance gate    & InGate    & 0 Close gate & 1 Open gate \\ \hline
-            Entrance sensor    & InSen        & 0 No weight &  1 Weight present \\ \hline
-            Entrance REQ    & InREQ        & 0 No card read data & 1 Card reader has data  \\ \hline
-            Entrance ACK    & InACK        & \multicolumn{2}{c|}{Circuit control}   \\ \hline
-            Entrance ID    & InID        & \multicolumn{2}{c|}{Card ID} \\ \hline
-            Exit gate    & OutGate    & 0 Close gate &  1 Open gate \\ \hline
-            Exit sensor    & OutSen    & 0 No weight & 1 Weight present\\ \hline
-            Exit REQ    & OutREQ    & 0 No card read data & 1 Card reader has data  \\ \hline
-            Exit ACK    & OutACK    & \multicolumn{2}{c|}{Circuit control}   \\ \hline
-            Exit ID        & OutID        & \multicolumn{2}{c|}{Card ID} \\ \hline
+            Entrance gate   & InGate  & 0 Close gate                         & 1 Open gate            \\ \hline
+            Entrance sensor & InSen   & 0 No weight                          & 1 Weight present       \\ \hline
+            Entrance REQ    & InREQ   & 0 No card read data                  & 1 Card reader has data \\ \hline
+            Entrance ACK    & InACK   & \multicolumn{2}{c|}{Circuit control}                          \\ \hline
+            Entrance ID     & InID    & \multicolumn{2}{c|}{Card ID}                                  \\ \hline
+            Exit gate       & OutGate & 0 Close gate                         & 1 Open gate            \\ \hline
+            Exit sensor     & OutSen  & 0 No weight                          & 1 Weight present       \\ \hline
+            Exit REQ        & OutREQ  & 0 No card read data                  & 1 Card reader has data \\ \hline
+            Exit ACK        & OutACK  & \multicolumn{2}{c|}{Circuit control}                          \\ \hline
+            Exit ID         & OutID   & \multicolumn{2}{c|}{Card ID}                                  \\ \hline
         \end{tabular}
 
         The gate requires a logic 1 to start and to stay open. The sensor will
@@ -447,7 +628,9 @@
         Turn in; an algorithm the datapath and control unit, the control word
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
-
+        \begin{onlysolution}\par
+            \includegraphics[max width=\textwidth, center]{Sol8-12}
+        \end{onlysolution}
     \item \textbf{ (8 pts.)}
         Design a circuit that converts a 2 digit BCD number into a
         binary number.  The circuit acquires the BCD digits through 2 read
@@ -458,7 +641,7 @@
         A 2 digit BCD number can be converted into binary by multiplying the
         most significant digit by 10 then adding it to the least significant
         BCD digit.  A number can be multiplied by 10 using the shift-and-add
-        technique presented on page~\pageref{page:MulyBy10}.  Note, this
+        technique presented on page~\pageref{6-page:MulyBy10}.  Note, this
         task can be accomplished without using a single shift register.
         For example, the adder in Figure~\ref{fig:NineTimes} generates the value
         of 9*X from a 4-bit register by adding X, shifted left by three bits, to X.
@@ -474,7 +657,9 @@
         Turn in; an algorithm the datapath and control unit, the control word
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
-
+        \begin{onlysolution}\par
+            \includegraphics[max width=\textwidth, center]{Sol8-13}
+        \end{onlysolution}
     \item \textbf{ (36 pts.)}
         Design a digital circuit that plays a game of
         roulette, allows betting and keeps track of total earnings.
@@ -530,129 +715,145 @@
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
 
-        \begin{onlysolution}  \textbf{Solution} \itshape{
+        \begin{onlysolution}[fragile]  \textbf{Solution}
 
-                \textbf{ Algorithm}
+            \textbf{ Algorithm}
+              \begin{verbatim}
+cash = 10;
+left_seven = blank;
+right_seven = cash;
+while(cash > 0) {
+    led_array = 1 0 0 0;    // Pick Bet Win Loose
+    while(ROLL == 0);
+    guess = Datain;
+    while(ROLL == 1);
 
-                %% cash = 10;
-                %% left_seven = blank;
-                %% right_seven = cash;
-                %% while(cash > 0) {
-                %%     led_array = 1 0 0 0;    // Pick Bet Win Loose
-                %%     while(ROLL == 0);
-                %%     guess = Datain;
-                %%     while(ROLL == 1);
-                %%
-                %%     led_array = 0 1 0 0;    // Pick Bet Win Loose
-                %%     left_seven = guess;
-                %%     right_seven = blank;
-                %%     while(ROLL == 0);
-                %%     bet = Datain;
-                %%     while(ROLL == 1);
-                %%
-                %%     led_array = 0 0 0 0;    // Pick Bet Win Loose
-                %%     right_seven = bet;
-                %%     while(ROLL == 0);
-                %%     while(ROLL == 1) count = count + 1;
-                %%
-                %%     right_seven = count;
-                %%     if (count == guess) {
-                %%         cash = cash + (bet << 2);
-                %%         led_array = 0 0 1 0;    // Pick Bet Win Loose
-                %%     } else {
-                %%         cash = cash - bet;
-                %%         led_array = 0 0 0 1;    // Pick Bet Win Loose
-                %%     }
-                %%     while(ROLL == 0);
-                %%     while(ROLL == 1);
-                %%     right_seven = cash;
-                %%
-                %% }
-                %% led_array = 0 0 0 1;    // The user is out of money
-                %% while(1);        // Halt the machine
+    led_array = 0 1 0 0;    // Pick Bet Win Loose
+    left_seven = guess;
+    right_seven = blank;
+    while(ROLL == 0);
+    bet = Datain;
+    while(ROLL == 1);
 
-                \textbf{ Datapath and Control}
+    led_array = 0 0 0 0;    // Pick Bet Win Loose
+    right_seven = bet;
+    while(ROLL == 0);
+    while(ROLL == 1) count = count + 1;
 
-                \begin{figure}[ht]
-                    \center{\includegraphics{Sol8-16}}
-                \end{figure}
-
-                Note from the figure that, the user may acquire
-                up to 0xFF cash.  Each hex digit of the users total cash will
-                be displayed on its own 7-segment display.
-
-                \textbf{ Control Word}
-
-                {\tiny
-                    \begin{tabular}{l|l|l|l|l|l|l|l|l|l|l}
-                        State &  counter& guess  & bet    & cmux      & bmux     & cash   & add/sub & ledmux
-                        & rmux   & lmux \\ \hline
-                        & 00 hold & 0 hold & 0 hold & 0 \$10    & 0 bet    & 0 hold & 0 add  & 00 (pick) &00
-                        cash &00 cash  \\ \hline
-                        & 01 load & 0 load & 1 load & 1 add/sub & 1 bet<<2 & 1 load & 1 sub  & 01 (bet ) &01
-                        bet  &01 guess \\ \hline
-                        & 10 up   &        &        &            &          &        &        & 10 (win ) &10
-                        count&10 blank \\ \hline
-                        &         &        &        &            &          &        &        & 11 (loose)&11
-                        blank&         \\ \hline
-                        &         &        &        &            &          &        &        &          &
-                        &   \\ \hline
-                        init  & 00      & 0      &  1     & 0          & x        &  1     &  x     & 00
-                        &  11     & 11\\ \hline
-                        wg1   & 00      & 0      &  0     & x          & x        &  0     &  x     & 00
-                        &  00     & 00\\ \hline
-                        guess & 00      & 1      &  0     & x          & x        &  0     &  x     & 00
-                        &  11     & 01\\ \hline
-                        wg2   & 00      & 0      &  0     & x          & x        &  0     &  x     & 00
-                        &  11     & 01\\ \hline
-                        wb1   & 00      & 0      &  0     & x          & x        &  0     &  x     & 01
-                        &  11     & 01\\ \hline
-                        bet   & 01      & 0      &  1     & x          & x        &  0     &  x     & 01
-                        &  11     & 01\\ \hline
-                        wb2   & 00      & 0      &  0     & x          & x        &  0     &  x     & 00
-                        &  01     & 01\\ \hline
-                        wr1   &         &        &        & x          & x        &        &  x     &
-                        &         &   \\ \hline
-                        spin  & 10      & 0      &  0     & x          & x        &  0     &  x     & 00
-                        &  10     & 01\\ \hline
-                        load 1& 01      & 0      &  0     & x          & x        &  0     &  x     & 00
-                        &  10     & 01\\ \hline
-                        comp  & 00      & 0      &  0     & x          & x        &  0     &  x     & 00
-                        &  10     & 01\\ \hline
-                        win   & 00      & 0      &  0     & 1          & 1        &  1     &  0     & 10
-                        &  10     & 01\\ \hline
-                        add    &         &        &        &            &          &        &        &
-                        &         &   \\ \hline
-                        loose & 00      & 0      &  0     & 1          & 0        &  1     &  1     & 11
-                        &  10     & 01\\ \hline
-                        sub   &         &        &        &            &          &        &        &
-                        &         &   \\ \hline
-                        wn    & 00      & 0      &  0     & x          & x        &  0     &  x     & 00
-                        &  00     & 00\\
-                    \end{tabular}
-                }
-
-                \textbf{ MIEs and OEs}
-
-                $$
-                \begin{array}{ll}
-                    MIE                        &       OE                      \\
-                    D_{init}= 0                    &  Q_{c1} = Q_{spin}          \\
-                    D_{wg1}= Q_{wg1}*roll'+Q_{wn}*roll'        &  Z_{c0} = Q_{bet} + Q_{load1}           \\
-                    D_{guess} = Q_{wg1}*roll                   &  Z_{guess} = Q_{guess}           \\
-                    D_{wg2}= Q_{guess} + Q_{wg2}*roll        &  Z_{bet}= Q_{init} + Q_{bet} \\
-                    D_{wb1}= Q_{wg2}*roll'+Q_{wb1}*roll        &  Z_{cmux} = Q_{win}+Q_{loose}           \\
-                    D_{bet } = Q_{wb1}*roll'            &  Z_{bmux} = Q_{win}           \\
-                    D_{wb2}= Q_{bet} + Q_{wb2}*roll'        &  Z_{cash} = Q_{init} + Q_{win} + Q_{loose}    \\
-                    D_{spin}= Q_{wb2}roll + Q_{spin}*8E'roll + Q_{load1}  &  Z_{addsub} = Q_{loose}     \\
-                    D_{load1}= Q_{spin}*8E*roll            & Z_{led1} = Q_{win} + Q_{loose} \\
-                    D_{comp} = Q_{spin}roll'            & Z_{led0} = Q_{wb1}+Q_{bet}+Q{loose}         \\
-                    D_{win}= Q_{comp}*GE                & Z_{rseg1} = not (Q_{wg1}+Q_{wb2}+Q_{wn})      \\
-                    D_{loose} = Q_{comp}*GE'            & Z_{rseg0} = Q_{init,guess,wg2,wb1,bet,wb2}\\
-                    D_{wn2} = Q_{wn}*roll + Q_{win}*roll + Q_{loose}*roll & Z_{lseg1} = Q_{init}  \\
-                \end{array} $$
-
+    right_seven = count;
+    if (count == guess) {
+            cash = cash + (bet << 2);
+            led_array = 0 0 1 0;    // Pick Bet Win Loose
+        } else {
+                cash = cash - bet;
+                led_array = 0 0 0 1;    // Pick Bet Win Loose
             }
+            while(ROLL == 0);
+            while(ROLL == 1);
+            right_seven = cash;
+
+        }
+        led_array = 0 0 0 1;    // The user is out of money
+        while(1);        // Halt the machine
+\end{verbatim}
+            \textbf{ Datapath and Control}
+
+            \begin{figure}[ht]
+                \includegraphics[max width=\textwidth, center]{Sol8-16}
+            \end{figure}
+            \filbreak
+            Note from the figure that, the user may acquire
+            up to 0xFF cash.  Each hex digit of the users total cash will
+            be displayed on its own 7-segment display.
+
+            \textbf{ Control Word}
+
+            \centerline{\scalebox{0.85}{ %Center align table, ignoring margins. The full-sized table fits like this, however I think that it looks
+                    \begin{tabular}{l|l|l|l|l|l|l|l|l|l|l}
+                        State  & counter  & guess  & bet    & cmux      & bmux         & cash   & add/sub & ledmux
+                        & rmux     & lmux                                                                            \\ \hline
+                        & 00 hold  & 0 hold & 0 hold & 0 \$10    & 0 bet        & 0 hold & 0 add   & 00 (pick)  & 00
+                        cash   & 00 cash                                                                                    \\ \hline
+                        & 01 load  & 0 load & 1 load & 1 add/sub & 1 bet$\,<<$2 & 1 load & 1 sub   & 01 (bet)   & 01
+                        bet    & 01 guess                                                                                   \\ \hline
+                        & 10 up    &        &        &           &              &        &         & 10 (win)   & 10
+                        count  & 10 blank                                                                                   \\ \hline
+                        &          &        &        &           &              &        &         & 11 (loose) & 11
+                        blank  &                                                                                            \\ \hline
+                        &          &        &        &           &              &        &         &            &
+                        &                                                                                            \\ \hline
+                        init   & 00       & 0      & 1      & 0         & x            & 1      & x       & 00
+                        & 11       & 11                                                                              \\ \hline
+                        wg1    & 00       & 0      & 0      & x         & x            & 0      & x       & 00
+                        & 00       & 00                                                                              \\ \hline
+                        guess  & 00       & 1      & 0      & x         & x            & 0      & x       & 00
+                        & 11       & 01                                                                              \\ \hline
+                        wg2    & 00       & 0      & 0      & x         & x            & 0      & x       & 00
+                        & 11       & 01                                                                              \\ \hline
+                        wb1    & 00       & 0      & 0      & x         & x            & 0      & x       & 01
+                        & 11       & 01                                                                              \\ \hline
+                        bet    & 01       & 0      & 1      & x         & x            & 0      & x       & 01
+                        & 11       & 01                                                                              \\ \hline
+                        wb2    & 00       & 0      & 0      & x         & x            & 0      & x       & 00
+                        & 01       & 01                                                                              \\ \hline
+                        wr1    &          &        &        & x         & x            &        & x       &
+                        &          &                                                                                 \\ \hline
+                        spin   & 10       & 0      & 0      & x         & x            & 0      & x       & 00
+                        & 10       & 01                                                                              \\ \hline
+                        load 1 & 01       & 0      & 0      & x         & x            & 0      & x       & 00
+                        & 10       & 01                                                                              \\ \hline
+                        comp   & 00       & 0      & 0      & x         & x            & 0      & x       & 00
+                        & 10       & 01                                                                              \\ \hline
+                        win    & 00       & 0      & 0      & 1         & 1            & 1      & 0       & 10
+                        & 10       & 01                                                                              \\ \hline
+                        add    &          &        &        &           &              &        &         &
+                        &          &                                                                                 \\ \hline
+                        loose  & 00       & 0      & 0      & 1         & 0            & 1      & 1       & 11
+                        & 10       & 01                                                                              \\ \hline
+                        sub    &          &        &        &           &              &        &         &
+                        &          &                                                                                 \\ \hline
+                        wn     & 00       & 0      & 0      & x         & x            & 0      & x       & 00
+                        & 00       & 00                                                                              \\
+                    \end{tabular}
+            }}
+
+            \textbf{ MIEs and OEs}
+
+            \begin{tabular}{cc}
+                \textbf{MIE}                                                 & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{init}  & = 0                                           \\
+                        D_{wg1}   & = Q_{wg1}*roll'+Q_{wn}*roll'                  \\
+                        D_{guess} & = Q_{wg1}*roll                                \\
+                        D_{wg2}   & = Q_{guess} + Q_{wg2}*roll                    \\
+                        D_{wb1}   & = Q_{wg2}*roll'+Q_{wb1}*roll                  \\
+                        D_{bet }  & = Q_{wb1}*roll'                               \\
+                        D_{wb2}   & = Q_{bet} + Q_{wb2}*roll'                     \\
+                        D_{spin}  & = Q_{wb2}roll + Q_{spin}*8E'roll + Q_{load1}  \\
+                        D_{load1} & = Q_{spin}*8E*roll                            \\
+                        D_{comp}  & = Q_{spin}roll'                               \\
+                        D_{win}   & = Q_{comp}*GE                                 \\
+                        D_{loose} & = Q_{comp}*GE'                                \\
+                        D_{wn2}   & = Q_{wn}*roll + Q_{win}*roll + Q_{loose}*roll
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Q_{c1}     & = Q_{spin}                       \\
+                        Z_{c0}     & = Q_{bet} + Q_{load1}            \\
+                        Z_{guess}  & = Q_{guess}                      \\
+                        Z_{bet}    & = Q_{init} + Q_{bet}             \\
+                        Z_{cmux}   & = Q_{win}+Q_{loose}              \\
+                        Z_{bmux}   & = Q_{win}                        \\
+                        Z_{cash}   & = Q_{init} + Q_{win} + Q_{loose} \\
+                        Z_{addsub} & = Q_{loose}                      \\
+                        Z_{led1}   & = Q_{win} + Q_{loose}            \\
+                        Z_{led0}   & = Q_{wb1}+Q_{bet}+Q{loose}       \\
+                        Z_{rseg1}  & = not (Q_{wg1}+Q_{wb2}+Q_{wn})   \\
+                        Z_{rseg0}  & = Q_{init,guess,wg2,wb1,bet,wb2} \\
+                        Z_{lseg1}  & = Q_{init}
+                \end{aligned}$}
+            \end{tabular}
         \end{onlysolution}
 
     \item \textbf{ (20 pts.)}

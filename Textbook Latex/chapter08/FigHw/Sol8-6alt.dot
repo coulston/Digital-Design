@@ -1,0 +1,22 @@
+digraph G{
+    pad="1,0.1"
+    margin="0"
+    graph[rankdir="LR"]
+    node[shape=circle, margin=0, fixedsize=true, width=0.7]
+    0
+    {INIT[label="INIT*"]
+    01[label="0→1"]
+    10[label="0←1"]
+    rank=same}
+    1
+
+    INIT->0[label="0"]
+    INIT->1[label="1"]
+    0->0[label="0"]
+    1->1[label="1"]
+    0->01[label="1"]
+    1->10[label="0"]
+    01->1
+    10->0
+
+ }

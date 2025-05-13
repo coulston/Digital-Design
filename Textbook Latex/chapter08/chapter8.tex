@@ -329,7 +329,7 @@ In order to give this discussion concrete meaning, a circuit from Chapter
 
 %% ----------------Minimum Search -----------------------
 
-\section{Minimum Search}
+\section{Minimum Search}\label{sec:Minimum Search}
 
 The minimum search problem on page~\pageref{page:minsearch} is reexamined
 for two reasons.  First, the solution presented was unable to initialize
@@ -370,13 +370,13 @@ and control.
 \textbf{ Line 1.} The min register is initialized to the largest 8-bit integer,
 in this case hexadecimal FF.  When this assignment statement is parsed
 according to Figure~\ref{fig:datapathControlOp}, one state is added to
-the control unit and a register to the datapath.  The state is called
-\textbf{ InitMin}. Other initialization states in the
+the control unit and a register to the datapath. The state is called
+\textbf{InitMin}. Other initialization states in the
 control unit are to be expected and each should be given a distinct name.  An 8-bit
 register, labeled min, is placed in the datapath.  Since min is on the
 LHS of two assignment statements (Line 1 and Line 5), place a 8-bit 2:1
 mux in front of the min register; see Figure~\ref{fig:datapathControl2Source}.  When
-the control unit is in the \textbf{ InitMin} state, it asserts a load
+the control unit is in the \textbf{InitMin} state, it asserts a load
 signal on the min register's control input and should route 0xFF through
 the min register's mux.
 
@@ -384,27 +384,27 @@ the min register's mux.
 RAM looking for the smallest value.  When this for loop is parsed
 according to Figure~\ref{fig:datapathControlFor}, three states are added to
 the control unit and a counter and comparator is added to the datapath. In
-Figure~\ref{fig:datapathControlMinSearch}, the \textbf{ InitI, CompC, Inc} states correspond
-to the \textbf{ Init, Comp, Inc} in Figure~\ref{fig:datapathControlFor}, respectively. The
-body of the for loop is composed of Lines 3-5.  The \textbf{ Body} state of
+Figure~\ref{fig:datapathControlMinSearch}, the \textbf{InitI, CompC, Inc} states correspond
+to the \textbf{Init, Comp, Inc} in Figure~\ref{fig:datapathControlFor}, respectively. The
+body of the for loop is composed of Lines 3-5.  The \textbf{Body} state of
 the for loop in Figure~\ref{fig:datapathControlFor} is composed of the
-\textbf{ Read, CompM, NewMin} states in Figure~\ref{fig:datapathControlMinSearch}.  The
+\textbf{Read, CompM, NewMin} states in Figure~\ref{fig:datapathControlMinSearch}.  The
 output of the counter is sent to a comparator whose output, labeled
 IC, is sent to the control unit so, allowing the for loop to acknowledge when
 completed.
 
-When the control unit is in the \textbf{ InitI} state, it asserts a load
-signal on the counter's control input.  In the \textbf{ CompC} state, the control unit
-should have the counter hold its value.  In the \textbf{ Inc} state, the control
+When the control unit is in the \textbf{InitI} state, it asserts a load
+signal on the counter's control input.  In the \textbf{CompC} state, the control unit
+should have the counter hold its value.  In the \textbf{Inc} state, the control
 unit should assert an increment signal on the counter's control input.
 
 \textbf{ Line 3.} In this line, the RAM is read and its value is stored in the MBR.  When this
 assignment statement is parsed according to Figure~\ref{fig:datapathControlOp}, one state is added
 to the control unit, and a register and RAM is added to the
-datapath. The state \textbf{ Read} in Figure~\ref{fig:datapathControlMinSearch} corresponds to the state
-\textbf{ OP} in Figure~\ref{fig:datapathControlOp}.  Since the expression \verb+RAM[i]+ is on the RHS
+datapath. The state \textbf{Read} in Figure~\ref{fig:datapathControlMinSearch} corresponds to the state
+\textbf{OP} in Figure~\ref{fig:datapathControlOp}.  Since the expression \verb+RAM[i]+ is on the RHS
 of the assignment statement, the RAM provides the data to the
-MBR register.  When the control unit is in the \textbf{ Read} state,
+MBR register.  When the control unit is in the \textbf{Read} state,
 the enb signal is asserted on the RAM's control input and a load signal is asserted
 on the MBR register's control input.
 
@@ -416,28 +416,28 @@ Figure~\ref{fig:datapathControlIfThen}.
 This state uses the output of the comparator labeled MC to determine which
 state to enter next.  If min is less than the MBR, MC=1 and the
 control unit
-goes to the state \textbf{ NewMin} in the next clock cycle.  Otherwise, the control goes
-to the state \textbf{ Inc}.
+goes to the state \textbf{NewMin} in the next clock cycle.  Otherwise, the control goes
+to the state \textbf{Inc}.
 
 \textbf{ Line 5.}  The line of code is only executed if MBR is less than min.
 When the assignment statement is parsed according to Figure~\ref{fig:datapathControlOp},
 one state is added to the control unit and no additional hardware
 to the datapath because the min and MBR registers are already in the datapath.
-The state \textbf{ NewMin} in Figure~\ref{fig:datapathControlMinSearch} corresponds to the state
-\textbf{ OP} in Figure~\ref{fig:datapathControlOp}.  When the control unit is in the \textbf{ NewMin}
+The state \textbf{NewMin} in Figure~\ref{fig:datapathControlMinSearch} corresponds to the state
+\textbf{OP} in Figure~\ref{fig:datapathControlOp}.  When the control unit is in the \textbf{NewMin}
 state, a load signal is asserted on the min registers control input
 and routes MBR through the min register's mux.
 
 \textbf{ Line 6.}  The line of code halts the machine.  When the while loop is parsed,
 one state is added to the control unit and no hardware to the
-datapath.  The \textbf{ Done} state in Figure~\ref{fig:datapathControlMinSearch} corresponds to
-the state \textbf{ Comp} in Figure~\ref{fig:datapathControlWhile}.  The unconditional self arc
-to/from the \textbf{ Done} state halts a FSM when it gets to the \textbf{ Done}
+datapath.  The \textbf{Done} state in Figure~\ref{fig:datapathControlMinSearch} corresponds to
+the state \textbf{Comp} in Figure~\ref{fig:datapathControlWhile}.  The unconditional self arc
+to/from the \textbf{Done} state halts a FSM when it gets to the \textbf{Done}
 state.  However, in most cases the circuit will restart its primary
 operation from the beginning when it has completed one iteration.
 
 \begin{figure}[ht]
-    \center{\scalebox{0.7}{\includegraphics{MinSearch}}}
+    \includegraphics[max width=\textwidth, center]{MinSearch}
     \caption{The datapath and control components required to implement
     the minimum search circuit.}
     \label{fig:datapathControlMinSearch}
@@ -489,19 +489,19 @@ the actions each state performs and is discussed next.
 
 \begin{table}
     \begin{tabular}{c||c|c|c|c|c}
-        \textbf{ State}   & enb          &  Min Reg & Min mux       & Counter & MBR Reg    \\ \hline
-        & 0             &  0 hold   & 0 load FF     & 00 hold & 0 hold    \\ \hline
-        & 1 read     &  1 load   & 1 load RAM    & 01 load & 1 load    \\ \hline
-        &               &           &                       & 10 count&         \\ \hline
-        &                  &           &                       & 11 reset& \\ \hline \hline
-        \textbf{ InitMin } & 0             & 1         & 0                     & 00      & 0   \\ \hline
-        \textbf{ InitI }      & 0            & 0         & x                     & 01      & 0   \\ \hline
-        \textbf{ CompC }  & 0        & 0         & x                     & 00      & 0   \\ \hline
-        \textbf{ Read  }  & 1           & 0         & x                     & 00      & 1   \\ \hline
-        \textbf{ CompM }  & 0        & 0         & x                     & 00      & 0   \\ \hline
-        \textbf{ NewMin }  & 0      & 1         & 1                     & 01      & 0   \\ \hline
-        \textbf{ Inc  }   & 0            & 0         & x                     & 10      & 0   \\ \hline
-        \textbf{ Done }   & 0            & 0         & x                     & 00      & 0   \\
+        \textbf{ State}    & enb       &  Min Reg  & Min mux       & Counter  & MBR Reg   \\ \hline
+        & 0         &  0 hold   & 0 load FF     & 00 hold  & 0 hold    \\ \hline
+        & 1 read    &  1 load   & 1 load RAM    & 01 load  & 1 load    \\ \hline
+        &           &           &               & 10 count &           \\ \hline
+        &           &           &               & 11 reset & \\ \hline \hline
+        \textbf{ InitMin } & 0         & 1         & 0             & 00       & 0   \\ \hline
+        \textbf{ InitI }   & 0         & 0         & x             & 01       & 0   \\ \hline
+        \textbf{ CompC }   & 0         & 0         & x             & 00       & 0   \\ \hline
+        \textbf{ Read  }   & 1         & 0         & x             & 00       & 1   \\ \hline
+        \textbf{ CompM }   & 0         & 0         & x             & 00       & 0   \\ \hline
+        \textbf{ NewMin }  & 0         & 1         & 1             & 01       & 0   \\ \hline
+        \textbf{ Inc  }    & 0         & 0         & x             & 10       & 0   \\ \hline
+        \textbf{ Done }    & 0         & 0         & x             & 00       & 0   \\
     \end{tabular}
     \caption{The control word for the minimum search circuit and its values for each state.}
     \label{table:MinSearch}
