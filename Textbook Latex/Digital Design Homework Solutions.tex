@@ -3,6 +3,7 @@
 
 %%\documentclass[11pt,psfig]{book}
 \documentclass[letterpaper, 10pt]{memoir}
+\raggedbottom % Tell LaTeX that we are fine with pages not being full. This means it will not try to stretch content to fit the page, which looks bad since the contents are mostly figures.
 \chapterstyle{ger}
 \settrims{0pt}{0pt}
 \semiisopage[9]        % [N] is spine margin is 1/Nth pf page
@@ -75,5 +76,4 @@
 
 %\chapter{Optimizing Finite State Machines}
 %\include{./chapter11/hw11}
-
 \end{document}

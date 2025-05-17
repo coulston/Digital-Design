@@ -1,0 +1,26 @@
+# Document formatting standards
+<!-- Copied from document headers as reference. Should be updated  -->
+- States names should be bolded
+- Vector circuit signals are uppercase \$math\$
+- single-bit signals are upper case \$math\$
+- Individual components of a vector are lower case \$math\$
+- \$clk\$ and \$reset\$ are always lower case
+- literal program statements are \verb
+- "if/then/else" and "for loop" are regular font
+- The name of a hardware component is regular font, e.g. MBR
+- 4-bit register, "4" is always arabic; four bits of input, spell out when less than 10
+- Use `` quotes at beginning and " at end
+- 2's-complement number or using 2's complement.
+- If you italicize the first usage, it should also appear in the index
+- No "we", "you", "let's", "our",
+- Boolean Algebra
+- ``Don't care"
+- all time reference are regular font and use "=", e.g. time=20 Hz, or MHz
+- figure order, caption then label
+- references labels
+  - figure:\<camelCase\>
+  - \tableofcontents:\<camelCase\>
+  - section:\<dash separated\>
+  - index:\<camelCase\>
+  - example:\<camelCase\>
+  - equ:\<camelCase\>
