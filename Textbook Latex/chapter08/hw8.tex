@@ -154,15 +154,14 @@ for(i=A; i<B; i++)  {
 } // end for
 \end{verbatim}
 
-            \textbf{ DP \& CU}
-
-            \begin{figure}[ht]
+            \begin{figure}[H]
+                \textbf{ DP \& CU} \\ % Keep it with the graphic
                 \includegraphics[max width=\textwidth, center]{Sol8-5}
                 \caption{The datapath and control to determine the sum between
                 addresses A and B.}
             \end{figure}
 
-            \textbf{ Control Word}
+            \textbf{Control Word}
 
             \begin{tabular}{l|l|l|l|l|l|l}
                 STATE  & A      & B      & MUX          & S      & MBR    & counter \\ \hline
@@ -182,10 +181,8 @@ for(i=A; i<B; i++)  {
                 Done   & 0      & 0      & 0            & 0      & 0      & 00      \\
             \end{tabular}
 
-            \textbf{ MIEs and OEs}
-
             \begin{tabular}{ll}
-                MIE                                           & OE                             \\
+                \textbf{MIE}                                  & \textbf{OE}                    \\
                 $D_{Wait1a}= Q_{wait1a}req'$                  & $Z_{A} = Q_{getA}$             \\
                 $D_{GetA } = Q_{wait1a}req$                   & $Z_{B} = Q_{getB}$             \\
                 $D_{wait2a}= Q_{getA} + Q_{wait2A}req$        & $Z_{MUX} = Q_{getB} + Q_{Inc}$ \\
@@ -218,9 +215,12 @@ while(1){
     Y = Y + 1;
 }
 \end{verbatim}
-            \filbreak
             \textbf{Datapath and Control}
-            \includegraphics[max width=\textwidth, center, scale=0.8]{sol8-6} \par
+
+            \includegraphics[max width=\textwidth, center, scale=0.8]{sol8-6}
+            \filbreak
+            \textbf{Control Words}
+
             \begin{tabular}{c|c|c}
                 State & Reg A  & Counter \\ \hline
                 & 0 Hold & 00 Hold \\ \hline
@@ -231,6 +231,7 @@ while(1){
                 Read  & 0      & 00      \\ \hline
                 Comp  & 1      & 01      \\ \hline
             \end{tabular}
+
             \begin{tabular}{cc}
                 \textbf{MIE}                                    & \textbf{OE} \\
                 {$
@@ -258,7 +259,10 @@ while(1){
     }
 }
 \end{verbatim}
-            \includegraphics[max width=\textwidth, center, scale=0.75]{sol8-6alt}\\
+            \includegraphics[max width=\textwidth, center, scale=0.75]{sol8-6alt}
+            \filbreak
+            \textbf{Control Words}
+
             \begin{tabular}{c|c}
                 State     & Counter \\ \hline
                 & 00 Hold \\ \hline
@@ -271,6 +275,7 @@ while(1){
                 $0\to1$   & 01      \\ \hline
                 $0\gets1$ & 01      \\
             \end{tabular}
+
             \begin{tabular}{cc}
                 \textbf{MIE}                                        & \textbf{OE} \\
                 {$
@@ -326,6 +331,7 @@ while(1){
                 INIT  & 1      & 0     \\ \hline
                 Loop  & 1      & 1     \\
             \end{tabular}
+
             \begin{tabular}{cc}
                 \textbf{MIE}                   & \textbf{OE} \\
                 {$
@@ -365,13 +371,24 @@ while(1){
             \label{fig:RAMhopper2}
         \end{figure}
 
-        \begin{onlysolution}[fragile]  \textbf{Solution}\par
+        \begin{onlysolution}[fragile]\filbreak  \textbf{Solution}\par
             \textbf{Algorithm}
               \begin{verbatim}
-
+int PC = 0;
+int dat = 0;
+while(1){
+    dat = RAM[PC];
+    if (dat[7] == 1){
+        dat[7] = dat[6] // copy MSB of 2's comp number
+        PC += dat;
+    }
+    else{
+        PC++;
+    }
+}
 \end{verbatim}
             \textbf{Datapath and Control}
-            \begin{figure}[ht]
+            \begin{figure}[H]
                 \includegraphics[max width=\textwidth, center]{Sol8-8}
                 \caption{The datapath and control to conditionally hop around
                 in RAM.}
@@ -379,7 +396,7 @@ while(1){
 
             \textbf{Control Words}
 
-            \begin{tabular}{l|l|l|l|l}
+            \begin{tabular}{l|l|l|l}
                 STATE & MUX        & MBR    & PC     \\ \hline
                 & 0 pass 1   & 0 hold & 0 hold \\ \hline
                 & 1 pass MBR & 1 load & 1 load \\ \hline
@@ -387,45 +404,112 @@ while(1){
                 READ  & x          & 1      & 0      \\ \hline
                 MSB?  & x          & 0      & 0      \\ \hline
                 INC   & 0          & 0      & 1      \\ \hline
-                MBR   & 1          & 0      & 1      \\ \hline
+                MBR   & 1          & 0      & 1      \\
             \end{tabular}
 
-            \textbf{ MIEs and OEs}
-
-            \begin{tabular}{ll}
-                MIE                         & OE                   \\
-                $D_{read}= Q_{mbr}+Q_{inc}$ & $Z_{re} = Q_{read}$  \\
-                $D_{msb} = Q_{read}$        & $Z_{cs} = Q_{read}$  \\
-                $D_{inc}= Q_{msb} m'$       & $Z_{MUX} = Q_{mbr}$  \\
-                $D_{mbr}= Q_{msb} m$        & $Z_{mbr} = Q_{read}$ \\
-            \end{tabular}
+            \begin{tabular}{cc}
+                \textbf{MIE}       & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{read} & = Q_{mbr}+Q_{inc} \\
+                        D_{msb}  & = Q_{read}        \\
+                        D_{inc}  & = Q_{msb} m'      \\
+                        D_{mbr}  & = Q_{msb} m
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Z_{re}  & = Q_{read} \\
+                        Z_{cs}  & = Q_{read} \\
+                        Z_{MUX} & = Q_{mbr}  \\
+                        Z_{mbr} & = Q_{read}
+                \end{aligned}$}
+            \end{tabular}\\
         \end{onlysolution}
 
     \item \textbf{ (16 pts.)}
         Modify the circuit in the previous problem as follows.  Anytime
         an external input, called IRQ, is asserted the circuit is to stop
-        jumping around and assert and ACK.  The outside world will then read
+        jumping around and ACK.  The outside world will then read
         the PC (which must be routed outside the datapath) and then drop the
         IRQ.  The circuit should then drop the ACK and resume jumping.
         Turn in; an algorithm the datapath and control unit, the control word
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
+        \begin{onlysolution}[fragile]
+            \textbf{Algorithm}
+\begin{verbatim}
+int PC = 0;
+int dat = 0;
+while(1){
+    dat = RAM[PC];
+    if (dat[7] == 1){
+        dat[7] = dat[6] // copy MSB of 2's comp number
+        PC += dat;
+    }
+    else{
+        PC++;
+    }
+
+    if (IRQ){
+        ACK = 1;
+        while(IRQ);
+        ACK = 0;
+    }
+}
+\end{verbatim}
+            \textbf{Datapath and Control}\par
+
+            \includegraphics[max width=\textwidth, center]{Sol8-9}
+
+            \textbf{Control Words}
+
+            \begin{tabular}{l|l|l|l}
+                STATE & MUX        & MBR    & PC     \\ \hline
+                & 0 pass 1   & 0 hold & 0 hold \\ \hline
+                & 1 pass MBR & 1 load & 1 load \\ \hline
+                &            &        &        \\ \hline
+                READ  & x          & 1      & 0      \\ \hline
+                MSB?  & x          & 0      & 0      \\ \hline
+                INC   & 0          & 0      & 1      \\ \hline
+                MBR   & 1          & 0      & 1      \\
+            \end{tabular}
+
+            \begin{tabular}{cc}
+                \textbf{MIE}                                           & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                        D_{read} & = Q_{mbr}IRQ'+Q_{inc}IRQ' + Q_{wait}IRQ' \\
+                        D_{msb}  & = Q_{read}                               \\
+                        D_{inc}  & = Q_{msb} m'                             \\
+                        D_{mbr}  & = Q_{msb} m                              \\
+                        D_{wait} & = Q_{mbr}IRQ + Q_{inc}IRQ + Q_{wait}IRQ
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                        Z_{re}  & = Q_{read} \\
+                        Z_{cs}  & = Q_{read} \\
+                        Z_{MUX} & = Q_{mbr}  \\
+                        Z_{mbr} & = Q_{read} \\
+                        Z_{ACK} & = Q_{wait}
+                \end{aligned}$}
+            \end{tabular}\\
+        \end{onlysolution}
 
     \item  \textbf{ (16 pts.)} Design a circuit that reads successive words from
-        a 1kx12 RAM and
-        updates a 12-bit register called \textbf{ ACC} based on the upper two bits of the
-        memory word.  The address of the current memory word should be contained
-        in a register called PC (Program Counter).  Since the words read from the
-        RAM will tell us what operation to perform on the ACC, the memory word will
-        be stored in a register called IR (Instruction Register).  If the upper
-        two bits of IR are:
+        a 1kx12 RAM and updates a 12-bit register called \textbf{ACC} based on
+        the upper two bits of the memory word.  The address of the current
+        memory word should be contained in a register called PC (Program
+        Counter).  Since the words read from the RAM will tell us what
+        operation to perform on the ACC, the memory word will be stored in a
+        register called IR (Instruction Register).  If the upper two bits of
+        IR are:
         \begin{enumerate}
-            \item  00 then add the lower 10 bits of the IR to ACC.  Pad the upper two
-                bits of the IR with 0's before adding to the ACC.
-            \item  01 then store the ACC to the address specified by the
-                lower 10 bits of the IR.
-            \item  10 then load the ACC from from the address specified by the lower
-                10 bits of the IR.
+            \item  00 then add the lower ten bits of the IR to ACC.  Pad the
+                upper two bits of the IR with 0's before adding to ACC.
+            \item  01 then store ACC to the address specified by the lower ten
+                bits of the IR.
+            \item  10 then load the ACC from from the address specified by the
+                lower ten bits of the IR.
             \item  11 then clear the value of ACC to 0.
         \end{enumerate}
 
@@ -436,24 +520,23 @@ while(1){
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
 
-        \begin{onlysolution}[fragile]  \textbf{Solution}
+        \begin{onlysolution}[fragile]  \textbf{Solution}\par
             \textbf{ Algorithm}
               \begin{verbatim}
 PC = 0;
 while(1) {
     IR = RAM[PC];
-    if (IR(11,10) == 00)
-    ACC += 00 & IR(9 downto 0);
-    if (IR(11,10) == 01)
-    RAM[IR(9 downto 0) = ACC;
-    if (IR(11,10) == 10)
-    ACC = RAM[IR(9 downto 0)];
-    if (IR(11,10) == 11)
-    ACC = 0;
+    if (IR[11:10] == 0b00)
+        ACC += 00 & IR[9:0];
+    if (IR[11:10] == 0b01)
+        RAM[IR[9:0]] = ACC;
+    if (IR[11:10] == 0b10)
+        ACC = RAM[IR[9:0]];
+    if (IR[11:10] == 0b11)
+        ACC = 0;
     PC += 1;
 }
 \end{verbatim}
-            \filbreak
             \textbf{Datapath and Control}\par
             \includegraphics[max width=\textwidth, center]{Sol8-10}
             \textbf{Control Word}\vspace{0.5em}
@@ -517,15 +600,71 @@ while(1) {
         The control unit is to be implemented using a ones hot encoding.
         Do not worry about the sizes of the
         registers or RAM.
+        \begin{onlysolution}[fragile]\textbf{Solution}\par
+            \textbf{Algorithm}
+\begin{verbatim}
+//Fill back to front to avoid overwriting unseen
+int cdst = D + M;
+for (int loc = S + M; loc >= S; loc--){
+    RAM[cdst] = RAM[loc];
+}
+\end{verbatim}
+            \textbf{Datapath and Control}
+            %\includegraphics[max width=\textwidth, center]{Sol8-11}
+            \textbf{Control Words}
+            \begin{tabular}{c}
+            \end{tabular}
+            \begin{tabular}{cc}
+                \textbf{MIE} & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                \end{aligned}$}
+            \end{tabular}\\
+        \end{onlysolution}
 
     \item \textbf{ (16 pts.)}
         Design a circuit that determines how many times a user
-        specified 8-bit value, called \textbf{ key}, occurs in an 1kx8 RAM.
-        \textbf{ key} is to be read using a two-line handshake; the circuit
+        specified 8-bit value, called \textbf{key}, occurs in an 1kx8 RAM.
+        \textbf{key} is to be read using a two-line handshake; the circuit
         is the passive consumer.
         Turn in; an algorithm the datapath and control unit, the control word
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
+
+        \begin{onlysolution}[fragile]\textbf{Solution}\par
+            \textbf{Algorithm}
+\begin{verbatim}
+int count = 0;
+while(REQ == 0);
+ACK = 1;
+int key = INPUT;
+while(REQ == 1);
+ACK = 0;
+for (int loc = 0; loc < 1024; loc++){
+    if (RAM[loc] == key){
+        count++;
+    }
+}
+\end{verbatim}
+            \textbf{Datapath and Control}\par
+            %\includegraphics[max width=\textwidth, center]{Sol8-12}
+
+            \textbf{Control Words}
+            \begin{tabular}{c}
+            \end{tabular}
+            \begin{tabular}{cc}
+                \textbf{MIE} & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                \end{aligned}$}
+            \end{tabular}\\
+        \end{onlysolution}
 
     \item \textbf{ (16 pts.)} Design a circuit that records the number of times that it
         has seen an 8-bit, user specified value, \textbf{ key}.  The key will
@@ -544,7 +683,29 @@ while(1) {
         Turn in; an algorithm the datapath and control unit, the control word
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
+        \begin{onlysolution}[fragile]\textbf{Solution}\par
+            \textbf{Algorithm}
+        \begin{verbatim}
+\end{verbatim}
+            \textbf{Datapath and Control}
 
+            \includegraphics[max width=\textwidth, center]{Sol8-13}
+
+            \textbf{Control Words}
+
+            \begin{tabular}{c}
+            \end{tabular}
+
+            \begin{tabular}{cc}
+                \textbf{MIE} & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                \end{aligned}$}
+            \end{tabular}\\
+        \end{onlysolution}
     \item \textbf{ (36 pts.)}
         Design a digital circuit to control access to an
         automated parking garage containing 828 parking spaces.
@@ -613,6 +774,30 @@ while(1) {
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
 
+        \begin{onlysolution}[fragile]\textbf{Solution}\par
+            \textbf{Algorithm}
+        \begin{verbatim}
+\end{verbatim}
+            \textbf{Datapath and Control}
+
+            \includegraphics[max width=\textwidth, center]{Sol8-14}
+
+            \textbf{Control Words}
+
+            \begin{tabular}{c}
+            \end{tabular}
+
+            \begin{tabular}{cc}
+                \textbf{MIE} & \textbf{OE} \\
+                {$
+                    \begin{aligned}
+                \end{aligned}$} &
+                {$
+                    \begin{aligned}
+                \end{aligned}$}
+            \end{tabular}
+            \filbreak
+        \end{onlysolution}
     \item \textbf{ (16 pts.)} Design a circuit that converts a 6-bit binary number into a 2
         digit BCD representation.  The circuit acquires a 6-bit number through
         a two-line handshake where the circuit is a passive consumer.  The
@@ -628,9 +813,7 @@ while(1) {
         Turn in; an algorithm the datapath and control unit, the control word
         table, the memory input equations, and output equations.
         The control unit is to be implemented using a ones hot encoding.
-        \begin{onlysolution}\par
-            \includegraphics[max width=\textwidth, center]{Sol8-12}
-        \end{onlysolution}
+
     \item \textbf{ (8 pts.)}
         Design a circuit that converts a 2 digit BCD number into a
         binary number.  The circuit acquires the BCD digits through 2 read
