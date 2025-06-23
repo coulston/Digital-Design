@@ -1,27 +1,42 @@
 digraph FSM{
     graph[rankdir="LR"]
-    start
-    start -> start
-    start -> CStart[label="Creq"]
-    start -> Pstart[xlabel="Preq"]
-    movup[label="Move up"]
-    movdown[label="Move down"]
-    CStart -> movup[label="G"]
-    Pstart -> movup[label="G"]
-    CStart -> movdown[label="L"]
-    Pstart -> movdown[label="L"]
-    waitmv[label="Moving"]
-    movup -> waitmv
-    invDelt[label="Flip count"]
-    movdown -> invDelt-> waitmv
-    waitmv -> waitmv
-    waitmv -> aligned[label="Align"]
-    aligned -> dec
-    waitual[label="wait unaligned"]
-    dec -> waitual[label="G"]
-    waitual -> waitmv[label="Align'"]
-    waitual -> waitual[label="Align"]
-    dec -> arrived[label="E"]
-    arrived -> start
+    INIT[label="*INIT", rank=max]
+    INIT -> wait
+    wait[label="wait"]
+    wait -> wait
+    Done
+    FloorCall
+    PanelCall
+    Move[label="Move?"]
+    aUp[label="aligned"]
+    decUp[label="dec"]
+    uaUp[label="unaligned"]
+    aDown[label="aligned"]
+    incDw[label="inc"]
+    uaDw[label="unaligned"]
+    wait -> FloorCall[label="Creq"]
+    wait -> PanelCall[label="Preq"]
+    FloorCall -> Move
+    PanelCall -> Move
+    Move -> aUp   [label="G"]
+    Move -> aDown [label="L"]
+    Move -> wait[label="E"]
+    subgraph{
+        aUp   -> aUp  [label="align"]
+        aUp   -> decUp[label="align'"]
+        decUp -> uaUp
+        uaUp  -> uaUp [label="align'"]
+        uaUp  -> aUp  [label="align*E'"]
+        uaUp  -> Done [label="align*E"]
+    }
+    subgraph{
+        aDown -> aDown[label="align"]
+        aDown -> incDw[label="align'"]
+        incDw -> uaDw
+        uaDw  -> uaDw [label="align'"]
+        uaDw  -> aDown[label="align*E'"]
+        uaDw  -> Done [label="align*E"]
+    }
+    Done -> wait
 }
 # W/ ALU to calculate Delta, Comparator

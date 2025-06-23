@@ -841,8 +841,8 @@
 
         Submit; an algorithm for the datapath and control unit,
         the control word table, the memory input equations, and output equations.
-        \begin{onlysolution}[fragile] \color{blue}%required to use verbatim environments inside of an answer
-            % Let me know what syntax I should use when waiting for the alignment. Currently it is the syntax I learned from embedded.
+        \begin{onlysolution}[fragile] \color{blue}\par%fragile required to use verbatim environments inside of an answer
+            \textbf{Algorithm}
 \begin{lstlisting}
 int loc;
 int delta;
@@ -862,23 +862,32 @@ while(1) {
         Pack = 0;
     }
     if delta != 0 {
-        if (delta > 0): Motor[0] = 1;
-        if (delta < 0){
-            Motor[1] = 1;
-            delta = 0 - delta;
+        if (delta > 0) { // elevator needs to go up
+            while (delta > 0){
+                while(align == 1){Motor = 01;} // Keep powered
+                delta = delta - 1;
+                while(align == 0){Motor = 01;} // Wait until aligned
+            }
         }
-        while delta > 0{
-            while (Align == 1); // Wait to stop being aligned
-            delta--;
-            while (Align == 0); // Wait until aligned
+        else if (delta < 0) { // elevator needs to go down
+            while (delta < 0){
+                while(align == 1){Motor = 10;}
+                delta = delta + 1;
+                while(align == 0){Motor = 10;}
+            }
         }
-        Motor[1] = 0;
-        Motor[0] = 0;
+        Motor = 00;
         Door = 1;
     }
 }
 \end{lstlisting}
+            \textbf{Datapath and Control}
+
             \includegraphics[max width=\textwidth, center]{sol7-12}
+            \includegraphics[max width=\textwidth, center]{sol7-12DP}
+            \textbf{Control Words}
+            \begin{tabular}{c}
+            \end{tabular}
         \end{onlysolution}
     \item \textbf{ (36 pts.)}
         Construct a digital circuit to control the movement of traffic
