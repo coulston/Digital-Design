@@ -104,9 +104,12 @@ Lab \#8 	| Mod 10 Counter |  |
 |         | Exam III |             |
 
 
-# Contribute
-An important feature of this text is the ability for others to contribute to its ongoing improvement.
-At present the text lacks HDL material and would benefit from a unit on FPGA architectures.  There
-are countless ways that you can improve this text.  If you are interested in contributing, reach out
-to [Dr. Christopher Coulston](mailto:coulston@mines.edu?subject=[GitHub]%20Contributions) and I can arrange to make a branch of the text repository.  I'd enjoy
-working with others and sharing perspectives.
+# :mailbox: Feadback & Support
+Have ideas or find a bug? 
+* Please create an [GitHub Issue](https://github.com/coulston/Digital-Design/issue)
+* Reach out to [Dr. Christopher Coulston](mailto:coulston@mines.edu?subject=[GitHub]%20Contributions)
+
+# :handshake: Contributing
+Contributions are welcome! If you'd like to help out:
+* Submit a pull request with improvements or fixes
+* Star the repo to show support :star:
