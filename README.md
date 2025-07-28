@@ -106,7 +106,7 @@ Lab \#8 	| Mod 10 Counter |  |
 
 # :mailbox: Feadback & Support
 Have ideas or find a bug? 
-* Please create an [GitHub Issue](https://github.com/coulston/Digital-Design/issue)
+* Please create an [GitHub Issue](https://github.com/coulston/Digital-Design/issues)
 * Reach out to [Dr. Christopher Coulston](mailto:coulston@mines.edu?subject=[GitHub]%20Contributions)
 
 # :handshake: Contributing
