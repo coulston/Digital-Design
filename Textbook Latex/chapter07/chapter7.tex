@@ -404,19 +404,19 @@ reset state.  The complete FSM is shown in Figure~\ref{fig:sequentialFSMvend}.
 The state diagram is not complete in the sense of the
 definition given on page~\pageref{page:completeness} because it does not
 answer the question, ``What happen when no money is deposited?"
-It should be obvious that from any state $S$, the transition
-arcs labeled $N'$ or $D'$ point back to $S$.  In other words,
-if no money is deposited, then the total amount of money
-deposited does not change.  These arcs are omitted from the diagram for the
-sake of clarity.
+In otherwrds, what happen when N=0 and D = 0.  If $N'D'$ is true, this
+means no money was deposited, then the total amount of money
+deposited does not change and consequently, we should not change 
+state.  These self arcs are present on every state, except 35\textcent , but are omitted from the state diagram in the interests of clarity.
 
-Another interesting feature of the state diagram is the arc
-leaving state 35\textcent.  The arc is not labeled because
-this arc represents an unconditional state transition; the condition on
-the arc is assumed to be true regardless of the input
-condition.  The FSM spends only one clock cycle in this
-state, dispensing a single soda, before transitioning back to state
-0\textcent.
+Why is the $N'D'$ self arc not included on the 35\textcent~state?
+Well the FSM spends one clock cycle in this state dispensing a single soda, before 
+transitioning back to state 0\textcent.  Hence, the FSM must go from
+the 35\textcent~state to the 0\textcent~state regardless of the input conditions;
+an unconditional transition.
+By convention we do not put labels on unconditional transitions and
+understand that the FSM will only spend a single clock cycle in a state that
+has an unconditional arc leaving it.
 
 Finally, the FSM is not very user-friendly.  A user who deposits
 10\textcent~after depositing 30\textcent~gets a soda, but
@@ -429,30 +429,27 @@ number of flip flops, determining the MIEs, and determining the OEs.
 Since the FSM has eight states, the FSM will have eight flip flops,
 labeled 0\textcent, 5\textcent, $\ldots$ 35\textcent.
 
-In writing the MIEs, remember every state \textbf{ S} that has an outgoing
-arc labeled $N$, also has an undrawn arc labeled $N'$.  This undrawn
-arc leaves state \textbf{ S} and returns to state \textbf{ S}.  That is, if a nickel
-is not deposited, then the FSM stays in the same state.  Likewise
-every state which has an outgoing arc labeled $D$, has an undrawn self arc
-labeled $D'$.  For example, three arcs terminate at state 5\textcent.
-They are the arc from state 0\textcent labeled $N$ and the two arcs
-leaving from state 5\textcent~labeled $N'$ and $D'$.  Hence the MIE
-for state 5\textcent~is
-$D_{5} = Q_{0}N + Q_{5}N' + Q_{5}D'$ which
-can be simplified to
-$D_{5} = Q_{0}N + Q_{5}(N' + D')$.  The complete
-list of MIEs is given below.
+Let's write the memory input equation for the flip flop
+in charge of the 15\textcent~state.  To do this ask yourself how you
+could get into this state.  There are three options:
+You could be in state 5\textcent~and get a dime as an input
+You could be in state 10\textcent~and get a nickel as an input
+You could be in state 15\textcent~and get no nickel or dime input.
+Remember that you will never get the input of a nickel and dime simultaneously.
+Hence the MIE for state 5\textcent~is
+$D_{15} = Q_{5}D+ Q_{10}N + Q_{15}N'D'$ 
+The rest of the MIEs are listed below.
 
 \begin{tabular}{l}
 
     $D_{35} = Q_{25}D + Q_{30}N + Q_{30}D$ \\
-    $D_{30} = Q_{20}D + Q_{25}N + Q_{30}(N'+D')$ \\
-    $D_{25} = Q_{15}D + Q_{20}N + Q_{25}(N'+D')$ \\
-    $D_{20} = Q_{10}D + Q_{15}N + Q_{20}(N'+D')$ \\
-    $D_{15} = Q_{5}D +  Q_{10}N + Q_{15}(N'+D')$ \\
-    $D_{10} = Q_{0}D +  Q_{5}N  + Q_{10}(N'+D')$ \\
-    $D_{5}  =           Q_{0}N  + Q_{5}(N'+D')$ \\
-    $D_{0}  = Q{35} + Q_{0}(N'+D')$ \\
+    $D_{30} = Q_{20}D + Q_{25}N + Q_{30}N'D'$ \\
+    $D_{25} = Q_{15}D + Q_{20}N + Q_{25}N'D'$ \\
+    $D_{20} = Q_{10}D + Q_{15}N + Q_{20}N'D'$ \\
+    $D_{15} = Q_{5}D +  Q_{10}N + Q_{15}N'D'$ \\
+    $D_{10} = Q_{0}D +   Q_{5}N    + Q_{10}N'D'$ \\
+    $D_{5}  =                     Q_{0}N  + Q_{5}N'D'$ \\
+    $D_{0}  = Q{35} + Q_{0}N'D'$ \\
 
 \end{tabular}
 
