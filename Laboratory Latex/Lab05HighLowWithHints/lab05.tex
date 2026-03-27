@@ -204,10 +204,10 @@ shown in Listing~\ref{listing:adderSubtractor}.
  of the adder subtractor in Figure~\ref{fig:guessWithHintSystemArch}.},
  label={listing:adderSubtractor},
  frame=single]
-// Module definition for the adder subtractor
-module genericAdderSubtractor(a, b, fnc, sumDiff, sovf, uovf);
+// Module definition for the addSub module 
+genericAdderSubtractor(a, b, fnc, sumDiff, sovf, uovf);
 
-// Module instantiation for an adder subtractor in hiLow digital circuit
+// Instantiation for addSub in hotCold digital circuit
 genericAdderSubtractor #(4) prox(big, small, 1'b1, difference, , );
 \end{lstlisting}
 
@@ -322,9 +322,9 @@ output equals 1.
 
 \protect\hypertarget{hotWarmCold_Logic}{}{}
 \begin{verbatim}
-    cold =                               // write logic description
-    warm =                            // write logic description
-    hot = wLT;                       // given to you in  Figure~\ref{fig:guessWithHintSystemArch}
+    cold =                            // write logic description
+    warm =                          // write logic description
+    hot = wLT;                      // given to you in  Figure 1
 \end{verbatim}
 
 For the hotWarmCold block of code:
@@ -341,8 +341,8 @@ For the hotWarmCold block of code:
         type.
 \end{itemize}
 
-One you hve the logi or the hot/wrm nd cold signals you an strt building the
-hotWrmold logi block.
+One you have the logic for the hot/wrm nd cold signals you an start building the
+hotWarmold logic block.
 You will implement the hotWarmCold logic using an always/case statement
 that uses the 3-bit vector \emph{hot}, \emph{warm} and \emph{cold} to form
 the 7-segment output shown in Figure~\ref{figure:hiLoHintSevenSeg} when
@@ -383,19 +383,19 @@ For this block of code:
 //    wArm = `A' = <show binary code>
 //    Cold = `C' = <show binary code>
 //
-//         hex[0]
-//         -----
-//    hex[5]    |    |    hex[1]
-//        |    |
-//         -----    hex[6]
-//    hex[4]    |    |
-//        |    |    hex[2]
-//         -----
-//         hex[3]
+//            hex[0]
+//            ------
+//    hex[5]  |    |   hex[1]
+//            |    |
+//            ------  hex[6]
+//    hex[4]  |    |
+//            |    |   hex[2]
+//            ------
+//            hex[3]
 //*********************************************
 \end{lstlisting}
 
-\section{Module: hiLow}
+\section{Module: hotCold}
 This is the top-level module in Figure~\ref{fig:guessWithHintSystemArch}, the outermost
 block. \uline{If you were not able to get the previous lab working}, just
 implement the functionality identified in this assignment and make the
@@ -405,18 +405,18 @@ previous lab working correctly, then you should use the bottom
 declaration in Listing~\ref{listing:hiLowModule}.
 
 \begin{lstlisting}[language=Verilog,
- caption={The module declaration for the enhanced hiLow module if you did or did
+ caption={The module declaration for the hotCold module if you did or did
  not get the previous lab working.},
  label={listing:hiLowModule},
 basicstyle=\tiny\ttfamily,
  frame=single]
 
  // if you did not get the previous lab working, then use this module declaration
-module hiLow(seedSwitch, guessSwitch, hotColdBut, hotColdSeg);
+module hotCold(seedSwitch, guessSwitch, hotColdBut, hotColdSeg);
 
 // If you successfully completed previous lab, then use this module declaration (with no line break)
-module hiLow(seedSwitch, playSwitch, guessSwitch, randBut, hotColdBut, hiLowBut, randMsbSeg, randLsbSeg,
-                    greenLEDs, hotColdSeg, hiLowSeg);
+module hotCold (seedSwitch, playSwitch, guessSwitch, randBut, hiLowBut, hotColdBut, 
+	randSeg, greenLEDs, hiLowSeg, hotColdSeg);
  \end{lstlisting}
 
 For this block of code:
@@ -531,7 +531,7 @@ Figure~\ref{fig:guessTiming}.
 
 Use the image of the C5G Development Board in Figure~\ref{fig:iOonDevBorad} and the information
 in the User Guide to determine the FPGA pins associated with the input
-and output devices used by the hiLow module.
+and output devices used by the hotCold module.
 
 \begin{longtable}[]{@{}
         |  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2571}}|
@@ -585,7 +585,6 @@ and output devices used by the hiLow module.
     \endhead
     slide{[}3{]} & AE19 & N/A &  \\ \hline
     slide{[}2{]} &  & N/A &  \\ \hline
-    slide{[}1{]} &  &  & AE10 \\ \hline
     slide{[}0{]} &  & W11 &  \\
     \bottomrule()
 \end{longtable}
@@ -670,12 +669,12 @@ section next week.
     \item \protect\hyperlink{hotWarmCold_Logic}{Link} Logic for hot, warm, and cold signals
 \end{itemize}
 
-\subsubsection{Module: hiLow}
+\subsubsection{Module: hotCold}
 
 \begin{itemize}
     \item
         \protect\hyperlink{hilow-module}{Link} Verilog code for the body of
-        the hiLow module (courier 8-point font single spaced), leave out
+        the hotCold module (courier 8-point font single spaced), leave out
         header comments.
     \item  Complete Table~\ref{table:hiLowTestbenchValues}.
     \item  \protect\hyperlink{hilow_tb-module}{Link}  Complete testbench timing diagram.
@@ -683,7 +682,6 @@ section next week.
 
 \subsubsection{Pin-Assignment and Synthesis}
 \begin{itemize}
-    \item Complete pin-assignment table or ll the signals in Table~\ref{table:hiLowPinAssignment}.
     \item Demonstrate your completed circuit to a lab team member.
 \end{itemize}
 
